@@ -1,0 +1,277 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbd2600793483700f7085e10000")
+    (NAME "DUAL_PORT_RAM")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1984 832)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "DUAL_PORT_RAM")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1133969506 "Wed Dec 07 16:31:46 2005")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0c013cbd1410793483700f70e5e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (TYPE 3)
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_IN(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd1810793483700f7006e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (TYPE 3)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY 1944 344 2024 424)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DATA_OUT(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdb910793483700f7026e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WRCLOCK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 280 40 360)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WRCLOCK")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd8a10793483700f7046e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDCLOCK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 536 2024 616)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 576)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RDCLOCK")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdcb10793483700f7066e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd3f10793483700f7086e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WR_ADDRESS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2020" "0")
+        )
+      )
+      (GEOMETRY -40 664 40 744)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 704)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WR_ADDRESS(2020:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdd220793483700f70a6e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RD_ADDRESS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2020" "0")
+        )
+      )
+      (GEOMETRY 1944 152 2024 232)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RD_ADDRESS(2020:0)")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c013cbd2600793483700f7095e10000" "a0")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c013cbd2600793483700f7095e10000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "a0")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'DUAL_PORT_RAM."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'DUAL_PORT_RAM' :"
+                 "-- "
+                 "--   port("
+                 "--     DATA_IN    : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT   : out    std_logic_vector(11 downto 0);"
+                 "--     RDCLOCK    : in     std_logic;"
+                 "--     RD_ADDRESS : in     integer range 2020 downto 0;"
+                 "--     WE         : in     std_logic;"
+                 "--     WRCLOCK    : in     std_logic;"
+                 "--     WR_ADDRESS : in     integer range 2020 downto 0);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture a0 of DUAL_PORT_RAM is"
+                 ""
+                 "	type MEM is array(0 to 2020) of std_logic_vector(11 downto 0);"
+                 "	signal RAM_BLOCK : MEM;"
+                 "	signal RD_ADDRESS_REG : integer range 0 to 2020;"
+                 ""
+                 "begin"
+                 "	process (WRCLOCK)"
+                 "	begin"
+                 "		if (WRCLOCK'event and WRCLOCK = '1') then"
+                 "			if (WE = '1') then"
+                 "				RAM_BLOCK(WR_ADDRESS) <= DATA_IN;"
+                 "			end if;"
+                 ""
+                 "		end if;"
+                 "	end process;"
+                 ""
+                 "	process (RDCLOCK)"
+                 "	BEGIN"
+                 "		if (RDCLOCK'event and RDCLOCK = '1') then"
+                 "			DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);"
+                 "			RD_ADDRESS_REG <= RD_ADDRESS;"
+                 "		end if;"
+                 "	end process;"
+                 ""
+                 "end a0 ; -- of DUAL_PORT_RAM"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

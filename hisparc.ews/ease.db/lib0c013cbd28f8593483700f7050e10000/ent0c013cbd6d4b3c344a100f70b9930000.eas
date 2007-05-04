@@ -1,0 +1,364 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbd6d4b3c344a100f70b9930000")
+    (NAME "SYNCHRONISATION")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 2176 1536)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "SYNCHRONISATION")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1136899286 "Tue Jan 10 14:21:26 2006")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0c013cbd315b3c344a100f70e9930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 792 40 872)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 832)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd315b3c344a100f70f9930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 664 40 744)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 704)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd245b3c344a100f702a930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_POS_ADC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_POS_ADC(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd055b3c344a100f704a930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_NEG_ADC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 216 40 296)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_NEG_ADC(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd465b3c344a100f706a930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DCO_POS_ADC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 344 40 424)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DCO_POS_ADC")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdd65b3c344a100f708a930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DCO_NEG_ADC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DCO_NEG_ADC")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd595b3c344a100f70aa930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DOUT_POS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY 2136 88 2216 168)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2112 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DOUT_POS(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdd95b3c344a100f70ca930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DOUT_NEG")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY 2136 216 2216 296)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2112 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DOUT_NEG(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbddc8b3c344a100f704b930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LOCKED")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 920 40 1000)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 960)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "LOCKED")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c013cbd6d4b3c344a100f70c9930000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c013cbd6d4b3c344a100f70c9930000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'SYNCHRONISATION."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'SYNCHRONISATION' :"
+                 "-- "
+                 "--   port("
+                 "--     CLK200MHz    : in     std_logic;"
+                 "--     DATA_NEG_ADC : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_POS_ADC : in     std_logic_vector(11 downto 0);"
+                 "--     DCO_NEG_ADC  : in     std_logic;"
+                 "--     DCO_POS_ADC  : in     std_logic;"
+                 "--     DOUT_NEG     : out    std_logic_vector(11 downto 0);"
+                 "--     DOUT_POS     : out    std_logic_vector(11 downto 0);"
+                 "--     LOCKED       : in     std_logic;"
+                 "--     SYSRST       : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of SYNCHRONISATION is"
+                 ""
+                 "signal RST: std_logic; "
+                 "signal DATA_POS_ADC_TMP1: std_logic_vector(11 downto 0);"
+                 "signal DATA_POS_ADC_TMP2: std_logic_vector(11 downto 0);"
+                 "signal DATA_NEG_ADC_TMP1: std_logic_vector(11 downto 0);"
+                 "-- signal DATA_NEG_ADC_TMP2: std_logic_vector(11 downto 0);"
+                 ""
+                 "begin"
+                 "  "
+                 "  RST <= SYSRST or not LOCKED;"
+                 "  "
+                 "  process(DCO_POS_ADC,RST)"
+                 "  begin"
+                 "    if RST = '1' then"
+                 "      DATA_POS_ADC_TMP1 <= (others => '0');"
+                 "    elsif (DCO_POS_ADC'event and DCO_POS_ADC = '1') then"
+                 "      DATA_POS_ADC_TMP1 <= DATA_POS_ADC;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,RST)"
+                 "  begin"
+                 "    if RST = '1' then"
+                 "      DATA_POS_ADC_TMP2 <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '0') then -- negative edge"
+                 "      DATA_POS_ADC_TMP2 <= DATA_POS_ADC_TMP1;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,RST)"
+                 "  begin"
+                 "    if RST = '1' then"
+                 "      Dout_POS <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      Dout_POS <= DATA_POS_ADC_TMP2;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(DCO_NEG_ADC,RST)"
+                 "  begin"
+                 "    if RST = '1' then"
+                 "      DATA_NEG_ADC_TMP1 <= (others => '0');"
+                 "    elsif (DCO_NEG_ADC'event and DCO_NEG_ADC = '1') then"
+                 "      DATA_NEG_ADC_TMP1 <= DATA_NEG_ADC;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "--  process(CLK200MHz,RST)"
+                 "--  begin"
+                 "--    if RST = '1' then"
+                 "--      DATA_NEG_ADC_TMP2 <= (others => '0');"
+                 "--    elsif (CLK200MHz'event and CLK200MHz = '0') then"
+                 "--      DATA_NEG_ADC_TMP2 <= DATA_NEG_ADC_TMP1;"
+                 "--    end if;"
+                 "--  end process;  "
+                 ""
+                 "  process(CLK200MHz,RST)"
+                 "  begin"
+                 "    if RST = '1' then"
+                 "      Dout_NEG <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      Dout_NEG <= DATA_NEG_ADC_TMP1;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "end rtl ; -- of SYNCHRONISATION"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

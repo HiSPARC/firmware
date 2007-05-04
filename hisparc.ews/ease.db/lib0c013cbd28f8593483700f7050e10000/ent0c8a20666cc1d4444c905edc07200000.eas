@@ -1,0 +1,195 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c8a20666cc1d4444c905edc07200000")
+    (NAME "DETECT_10KHz")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1280 1408)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "DETECT_10KHz")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1145904326 "Mon Apr 24 20:45:26 2006")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0c8a20662fc1d4444c905edc37200000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK10MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1176 40 1256)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1216)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK10MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a2066a4d1d4444c905edc57200000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 984 40 1064)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1024)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a20660392d4444c905edc77200000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS10KHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 344 40 424)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "GPS10KHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a2066f492d4444c905edc97200000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1240 280 1320 360)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1216 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c8a20666cc1d4444c905edc17200000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c8a20666cc1d4444c905edc17200000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'DETECT_10KHz."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'DETECT_10KHz' :"
+                 "-- "
+                 "--   port("
+                 "--     CLK10MHz : in     std_logic;"
+                 "--     GPS10KHz : in     std_logic;"
+                 "--     MASTER   : out    std_logic;"
+                 "--     SYSRST   : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of DETECT_10KHz is"
+                 ""
+                 "signal GPS10KHz_DEL1: std_logic; -- GPS10KHz after one 10MHz period"
+                 "signal GPS10KHz_DEL2: std_logic; -- GPS10KHz after two 10MHz periods"
+                 "signal LIFETIME_10KHz_COUNTER: std_logic_vector(11 downto 0);"
+                 ""
+                 "begin"
+                 ""
+                 "-- The LIFETIME_10KHz_COUNTER is a free running counter, which can be resetted"
+                 "-- at a upgoing edge of the GPS10KHz signal. If this signal is present, the counter"
+                 "-- will not come to its maximum. The MSB bit will be high, when there is"
+                 "-- no GPS10KHz signal."
+                 ""
+                 "  MASTER <= not LIFETIME_10KHz_COUNTER(11);"
+                 "  "
+                 "  -- Delays"
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      GPS10KHz_DEL1 <= '0';"
+                 "      GPS10KHz_DEL2 <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      GPS10KHz_DEL1 <= GPS10KHz; "
+                 "      GPS10KHz_DEL2 <= GPS10KHz_DEL1; "
+                 "    end if;"
+                 "  end process;  "
+                 "  "
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      LIFETIME_10KHz_COUNTER <= \"000000000000\";"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      if GPS10KHz_DEL1 = '1' and GPS10KHz_DEL2 = '0' then"
+                 "        LIFETIME_10KHz_COUNTER <= \"000000000000\"; -- GPS10KHz present"
+                 "      elsif LIFETIME_10KHz_COUNTER = \"111111111111\" then"
+                 "        LIFETIME_10KHz_COUNTER <= LIFETIME_10KHz_COUNTER;"
+                 "      else   "
+                 "        LIFETIME_10KHz_COUNTER <= LIFETIME_10KHz_COUNTER + \"000000000001\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 "  "
+                 ""
+                 "end rtl ; -- of DETECT_10KHz"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

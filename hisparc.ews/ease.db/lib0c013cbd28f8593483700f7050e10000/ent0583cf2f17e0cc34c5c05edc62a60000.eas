@@ -1,0 +1,273 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0583cf2f17e0cc34c5c05edc62a60000")
+    (NAME "EVENT_FIFO")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1984 1152)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "EVENT_FIFO")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1137446513 "Mon Jan 16 22:21:53 2006")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0583cf2f8301cc34c5c05edc92a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "7" "0")
+        )
+      )
+      (GEOMETRY 1944 856 2024 936)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DATA_OUT(7:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f9401cc34c5c05edcb2a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "7" "0")
+        )
+      )
+      (GEOMETRY -40 920 40 1000)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 960)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_IN(7:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2fb801cc34c5c05edcd2a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RD_ADDRESS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "12020" "0")
+        )
+      )
+      (GEOMETRY 1944 216 2024 296)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RD_ADDRESS(12020:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f2c01cc34c5c05edcf2a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WR_ADDRESS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "12020" "0")
+        )
+      )
+      (GEOMETRY -40 408 40 488)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WR_ADDRESS(12020:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f2011cc34c5c05edc13a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WRCLOCK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WRCLOCK")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f2111cc34c5c05edc33a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDCLOCK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 408 2024 488)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RDCLOCK")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f8211cc34c5c05edc53a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 664 40 744)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 704)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WE")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0583cf2f17e0cc34c5c05edc72a60000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0583cf2f17e0cc34c5c05edc72a60000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'EVENT_FIFO."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'EVENT_FIFO' :"
+                 "-- "
+                 "--   port("
+                 "--     DATA_IN    : in     std_logic_vector(7 downto 0);"
+                 "--     DATA_OUT   : out    std_logic_vector(7 downto 0);"
+                 "--     RDCLOCK    : in     std_logic;"
+                 "--     RD_ADDRESS : in     integer range 12020 downto 0;"
+                 "--     WE         : in     std_logic;"
+                 "--     WRCLOCK    : in     std_logic;"
+                 "--     WR_ADDRESS : in     integer range 12020 downto 0);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of EVENT_FIFO is"
+                 ""
+                 "	type MEM is array(0 to 12020) of std_logic_vector(7 downto 0);"
+                 "	signal RAM_BLOCK : MEM;"
+                 "	signal RD_ADDRESS_REG : integer range 0 to 12020;"
+                 ""
+                 "begin"
+                 "	process (WRCLOCK)"
+                 "	begin"
+                 "		if (WRCLOCK'event and WRCLOCK = '1') then"
+                 "			if (WE = '1') then"
+                 "				RAM_BLOCK(WR_ADDRESS) <= DATA_IN;"
+                 "			end if;"
+                 ""
+                 "		end if;"
+                 "	end process;"
+                 ""
+                 "	process (RDCLOCK)"
+                 "	BEGIN"
+                 "		if (RDCLOCK'event and RDCLOCK = '1') then"
+                 "			DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);"
+                 "			RD_ADDRESS_REG <= RD_ADDRESS;"
+                 "		end if;"
+                 "	end process;"
+                 ""
+                 "end rtl ; -- of EVENT_FIFO"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

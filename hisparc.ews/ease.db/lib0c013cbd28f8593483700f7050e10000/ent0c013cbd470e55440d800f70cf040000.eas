@@ -1,0 +1,2116 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbd470e55440d800f70cf040000")
+    (NAME "GPS_STUFF")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 2432 2944)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Apr 23 09:04:21 2007")
+      (NAME "GPS_STUFF")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1146478708 "Mon May 01 12:18:28 2006")
+      (MODIFIED 1177311861 "Mon Apr 23 09:04:21 2007")
+    )
+    (PORT
+      (OBID "eprt0c013cbda81e55440d800f7050140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2136 40 2216)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2176)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COINC")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdda2e55440d800f7011140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_TS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "55" "0")
+        )
+      )
+      (GEOMETRY -40 600 40 680)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "GPS_TS_OUT(55:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd3b2e55440d800f7041140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTD_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY -40 728 40 808)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CTD_OUT(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd495e55440d800f7091140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 152 40 232)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd495e55440d800f70a1140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 280 40 360)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdbe0c854485900f703e030000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ONE_PPS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2392 40 2472)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2432)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "ONE_PPS")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdaa2c854485900f70ae030000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_TS_ONE_PPS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "55" "0")
+        )
+      )
+      (GEOMETRY 2392 88 2472 168)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_TS_ONE_PPS_OUT(55:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6464064401800f70bf010000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTD_TS_ONE_PPS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY 2392 408 2472 488)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CTD_TS_ONE_PPS_OUT(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6464064401800f70cf010000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTP_TS_ONE_PPS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY 2392 280 2472 360)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CTP_TS_ONE_PPS_OUT(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6b74064401800f7001110000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TS_ONE_PPS_VALID_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2392 1496 2472 1576)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1536)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TS_ONE_PPS_VALID_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd3d74064401800f7031110000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TS_ONE_PPS_READOUT_DONE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2392 1624 2472 1704)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1664)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TS_ONE_PPS_READOUT_DONE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6fb8064401800f70f2110000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LONGITUDE_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "63" "0")
+        )
+      )
+      (GEOMETRY 2392 1048 2472 1128)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1088)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LONGITUDE_OUT(63:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd61c8064401800f7023110000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LATITUDE_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "63" "0")
+        )
+      )
+      (GEOMETRY 2392 920 2472 1000)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 960)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LATITUDE_OUT(63:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd73522a4488200f70ddd60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK10MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 408 40 488)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK10MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a2066a61f8a4409b05edc19820000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_SDI")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2392 2328 2472 2408)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 2368)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_SDI")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a2066a61f8a4409b05edc29820000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RXD")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2520 40 2600)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2560)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "RXD")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd0fb5ea4445700f707b100000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ALTITUDE_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "63" "0")
+        )
+      )
+      (GEOMETRY 2392 1176 2472 1256)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1216)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ALTITUDE_OUT(63:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd81562b44cf400f70c6f50000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SPY_SDO")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2392 2456 2472 2536)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 2496)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "SPY_SDO")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca14af16354ce300f707b140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TEMP_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY 2392 1304 2472 1384)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1344)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TEMP_OUT(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca10a026354ce300f70eb140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SAT_INFO_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "487" "0")
+        )
+      )
+      (GEOMETRY 2392 600 2472 680)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "SAT_INFO_OUT(487:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca11d02f45448100f7081340000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 2776 40 2856)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2816)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca13483f45448100f7012340000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_PROG_ENABLE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2392 2200 2472 2280)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 2240)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_PROG_ENABLE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1007945540ae00f70a3520000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_SDO")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2648 40 2728)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2688)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "GPS_SDO")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca119766854cd300f70b7300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPL1_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1496 40 1576)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1536)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COMPL1_IN")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca119766854cd300f70c7300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPH1_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1624 40 1704)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1664)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COMPH1_IN")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca119766854cd300f70d7300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPL2_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1752 40 1832)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1792)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COMPL2_IN")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca119766854cd300f70e7300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPH2_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1880 40 1960)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1920)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COMPH2_IN")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1e9866854cd300f7078300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPDATA_VALID_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2392 1944 2472 2024)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1984)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COMPDATA_VALID_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca15b866854cd300f7098300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPDATA_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "127" "0")
+        )
+      )
+      (GEOMETRY 2392 1816 2472 1896)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 1856)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COMPDATA_OUT(127:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1ec866854cd300f70b8300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COMPDATA_READOUT_DONE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2392 2072 2472 2152)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 2112)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COMPDATA_READOUT_DONE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1a2809854cd300f700c300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SPY_SDI")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2392 2584 2472 2664)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 2624)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "SPY_SDI")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca194809854cd300f705c300000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SPY_CON")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2392 2712 2472 2792)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2368 2752)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "SPY_CON")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c8a20662d1f8a4409b05edc99820000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c8a20662d1f8a4409b05edc99820000")
+    (TYPE 2)
+    (HDL_IDENT
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "structure.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'GPS_STUFF."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'GPS_STUFF' :"
+                 "-- "
+                 "--   port("
+                 "--     ALTITUDE_OUT            : out    std_logic_vector(63 downto 0);"
+                 "--     CLK10MHz                : in     std_logic;"
+                 "--     CLK200MHz               : in     std_logic;"
+                 "--     COINC                   : in     std_logic;"
+                 "--     COMPDATA_OUT            : out    std_logic_vector(127 downto 0);"
+                 "--     COMPDATA_READOUT_DONE   : in     std_logic;"
+                 "--     COMPDATA_VALID_OUT      : out    std_logic;"
+                 "--     COMPH1_IN               : in     std_logic;"
+                 "--     COMPH2_IN               : in     std_logic;"
+                 "--     COMPL1_IN               : in     std_logic;"
+                 "--     COMPL2_IN               : in     std_logic;"
+                 "--     CTD_OUT                 : out    std_logic_vector(31 downto 0);"
+                 "--     CTD_TS_ONE_PPS_OUT      : out    std_logic_vector(31 downto 0);"
+                 "--     CTP_TS_ONE_PPS_OUT      : out    std_logic_vector(31 downto 0);"
+                 "--     GPS_PROG_ENABLE         : in     std_logic;"
+                 "--     GPS_SDI                 : out    std_logic;"
+                 "--     GPS_SDO                 : in     std_logic;"
+                 "--     GPS_TS_ONE_PPS_OUT      : out    std_logic_vector(55 downto 0);"
+                 "--     GPS_TS_OUT              : out    std_logic_vector(55 downto 0);"
+                 "--     LATITUDE_OUT            : out    std_logic_vector(63 downto 0);"
+                 "--     LONGITUDE_OUT           : out    std_logic_vector(63 downto 0);"
+                 "--     MASTER                  : out    std_logic;"
+                 "--     ONE_PPS                 : in     std_logic;"
+                 "--     RXD                     : in     std_logic;"
+                 "--     SAT_INFO_OUT            : out    std_logic_vector(487 downto 0);"
+                 "--     SPY_CON                 : in     std_logic;"
+                 "--     SPY_SDI                 : out    std_logic;"
+                 "--     SPY_SDO                 : in     std_logic;"
+                 "--     SYSRST                  : in     std_logic;"
+                 "--     TEMP_OUT                : out    std_logic_vector(31 downto 0);"
+                 "--     TS_ONE_PPS_READOUT_DONE : in     std_logic;"
+                 "--     TS_ONE_PPS_VALID_OUT    : out    std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of GPS_STUFF is"
+                 ""
+                 "signal COUNTER_153600 : std_logic_vector (6 downto 0); -- Counter at 153600Hz; Sample counter"
+                 "signal CLK_153600 : std_logic;  "
+                 ""
+                 "signal COUNTER_ONE_SEC_SEVEN : std_logic_vector (18 downto 0); -- Counter at 1.7 seconds; Time out counter for RXD; used for GPS master detection"
+                 "signal COUNTER_ONE_SEC_SEVEN_DEL : std_logic; -- Delayed COUNTER_ONE_SEC_SEVEN(18) bit"
+                 "signal RXD_TIME_OUT : std_logic_vector (1 downto 0); -- Time out counter for RXD; Counts 3 counts of COUNTER_ONE_SEC_SEVEN"
+                 "signal GPS_SDO_DEL : std_logic; "
+                 ""
+                 "signal SAMPLE_COUNT : integer range 168 downto 0; -- Counter which samples the incomming serial data"
+                 "signal TIME_OUT_COUNT : integer range 1760 downto 0; --10 bytes (16 times oversampling; 11 bits per byte (8xdata + parity, start and stop)) "
+                 "signal TIME_OUT : std_logic; -- Reset when there is 10 bytes long no data"
+                 "signal RST_MESSAGE : std_logic; -- This is a OR of TIME_OUT and when there is an END byte detected in one of the three messages (END_BYTE_DETECTED)"
+                 "signal DECODER_BYTE_COUNT : integer range 99 downto 0; -- Counts valid (not stuffed) number of bytes in the serial data stream"
+                 "signal GET_BYTE : std_logic_vector (7 downto 0); -- This byte stores the serial bits"
+                 "signal MESSAGE_BYTE1 : std_logic_vector (7 downto 0); -- This byte stores the first GET_BYTE"
+                 "signal MESSAGE_BYTE2 : std_logic_vector (7 downto 0); -- This byte stores the second GET_BYTE"
+                 "signal MESSAGE_BYTE3 : std_logic_vector (7 downto 0); -- This byte stores the third GET_BYTE"
+                 "signal DECODE_BYTE1 : std_logic_vector (7 downto 0); -- This byte stores a GET_BYTE in the message"
+                 "signal MESSAGE_SELECT : std_logic_vector (1 downto 0); -- \"00\" means nothing selected; \"01\" means 8F-AB selected; \"10\" means 8F-AC selected; \"11\" means 47 selected;"
+                 "signal STUFFED_BYTE : std_logic; -- This bit is thrue when there is a stuffed byte; in other words: an even number of 0x10 bytes "
+                 "signal END_BYTE_DETECTED : std_logic; -- This bit is thrue when a odd number of 0x10 bytes and a 0x03 byte is detected"
+                 "signal DUMP  : std_logic_vector (7 downto 0); -- Dump byte for case statement to satisfy Modelsim"
+                 "signal GPS_SEC  : std_logic_vector (7 downto 0); -- Seconds (0 to 59)"
+                 "signal GPS_MIN   : std_logic_vector (7 downto 0); -- Minutes (0 to 59)"
+                 "signal GPS_HOUR   : std_logic_vector (7 downto 0); -- Hours (0 to 23)"
+                 "signal GPS_DAY   : std_logic_vector (7 downto 0); -- Day (1 to 31)"
+                 "signal GPS_MONTH   : std_logic_vector (7 downto 0); -- Month (1 to 12)"
+                 "signal GPS_YEAR1   : std_logic_vector (7 downto 0); -- Year Higher byte"
+                 "signal GPS_YEAR0   : std_logic_vector (7 downto 0); -- Year Lower byte"
+                 "signal GPS_SEC_BUF  : std_logic_vector (7 downto 0); -- Buffering needed to stabilize the data during a COINC"
+                 "signal GPS_MIN_BUF   : std_logic_vector (7 downto 0); "
+                 "signal GPS_HOUR_BUF   : std_logic_vector (7 downto 0); "
+                 "signal GPS_DAY_BUF   : std_logic_vector (7 downto 0); "
+                 "signal GPS_MONTH_BUF   : std_logic_vector (7 downto 0); "
+                 "signal GPS_YEAR1_BUF   : std_logic_vector (7 downto 0); "
+                 "signal GPS_YEAR0_BUF   : std_logic_vector (7 downto 0); "
+                 "signal GPS_TEMP3   : std_logic_vector (7 downto 0); -- Temperture Higher byte"
+                 "signal GPS_TEMP2   : std_logic_vector (7 downto 0); -- Temperture "
+                 "signal GPS_TEMP1   : std_logic_vector (7 downto 0); -- Temperture "
+                 "signal GPS_TEMP0   : std_logic_vector (7 downto 0); -- Temperture Lower byte"
+                 "signal GPS_LAT7  : std_logic_vector (7 downto 0); -- Latitude Higher byte"
+                 "signal GPS_LAT6  : std_logic_vector (7 downto 0); -- Latitude"
+                 "signal GPS_LAT5  : std_logic_vector (7 downto 0); -- Latitude"
+                 "signal GPS_LAT4  : std_logic_vector (7 downto 0); -- Latitude"
+                 "signal GPS_LAT3  : std_logic_vector (7 downto 0); -- Latitude"
+                 "signal GPS_LAT2  : std_logic_vector (7 downto 0); -- Latitude"
+                 "signal GPS_LAT1  : std_logic_vector (7 downto 0); -- Latitude"
+                 "signal GPS_LAT0  : std_logic_vector (7 downto 0); -- Latitude Lower byte"
+                 "signal GPS_LONG7  : std_logic_vector (7 downto 0); -- Longitude Higher byte"
+                 "signal GPS_LONG6  : std_logic_vector (7 downto 0); -- Longitude"
+                 "signal GPS_LONG5  : std_logic_vector (7 downto 0); -- Longitude"
+                 "signal GPS_LONG4  : std_logic_vector (7 downto 0); -- Longitude"
+                 "signal GPS_LONG3  : std_logic_vector (7 downto 0); -- Longitude"
+                 "signal GPS_LONG2  : std_logic_vector (7 downto 0); -- Longitude"
+                 "signal GPS_LONG1  : std_logic_vector (7 downto 0); -- Longitude"
+                 "signal GPS_LONG0  : std_logic_vector (7 downto 0); -- Longitude Lower byte"
+                 "signal GPS_ALT7  : std_logic_vector (7 downto 0); -- Altitude Higher byte"
+                 "signal GPS_ALT6  : std_logic_vector (7 downto 0); -- Altitude"
+                 "signal GPS_ALT5  : std_logic_vector (7 downto 0); -- Altitude"
+                 "signal GPS_ALT4  : std_logic_vector (7 downto 0); -- Altitude"
+                 "signal GPS_ALT3  : std_logic_vector (7 downto 0); -- Altitude"
+                 "signal GPS_ALT2  : std_logic_vector (7 downto 0); -- Altitude"
+                 "signal GPS_ALT1  : std_logic_vector (7 downto 0); -- Altitude"
+                 "signal GPS_ALT0  : std_logic_vector (7 downto 0); -- Altitude Lower byte"
+                 "signal GPS_QUANT3  : std_logic_vector (7 downto 0); -- PPS Quantization error Higher byte"
+                 "signal GPS_QUANT2  : std_logic_vector (7 downto 0); -- PPS Quantization error"
+                 "signal GPS_QUANT1  : std_logic_vector (7 downto 0); -- PPS Quantization error"
+                 "signal GPS_QUANT0  : std_logic_vector (7 downto 0); -- PPS Quantization error Lower byte"
+                 "signal GPS_SATCOUNT  : std_logic_vector (7 downto 0); -- Number of tracked satellites"
+                 "signal GPS_SATNUM1  : std_logic_vector (7 downto 0); -- Number of satellite 1"
+                 "signal GPS_SAT1LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 1"
+                 "signal GPS_SAT1LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 1"
+                 "signal GPS_SAT1LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 1"
+                 "signal GPS_SAT1LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 1"
+                 "signal GPS_SATNUM2  : std_logic_vector (7 downto 0); -- Number of satellite 2"
+                 "signal GPS_SAT2LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 2"
+                 "signal GPS_SAT2LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 2"
+                 "signal GPS_SAT2LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 2"
+                 "signal GPS_SAT2LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 2"
+                 "signal GPS_SATNUM3  : std_logic_vector (7 downto 0); -- Number of satellite 3"
+                 "signal GPS_SAT3LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 3"
+                 "signal GPS_SAT3LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 3"
+                 "signal GPS_SAT3LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 3"
+                 "signal GPS_SAT3LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 3"
+                 "signal GPS_SATNUM4  : std_logic_vector (7 downto 0); -- Number of satellite 4"
+                 "signal GPS_SAT4LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 4"
+                 "signal GPS_SAT4LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 4"
+                 "signal GPS_SAT4LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 4"
+                 "signal GPS_SAT4LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 4"
+                 "signal GPS_SATNUM5  : std_logic_vector (7 downto 0); -- Number of satellite 5"
+                 "signal GPS_SAT5LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 5"
+                 "signal GPS_SAT5LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 5"
+                 "signal GPS_SAT5LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 5"
+                 "signal GPS_SAT5LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 5"
+                 "signal GPS_SATNUM6  : std_logic_vector (7 downto 0); -- Number of satellite 6"
+                 "signal GPS_SAT6LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 6"
+                 "signal GPS_SAT6LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 6"
+                 "signal GPS_SAT6LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 6"
+                 "signal GPS_SAT6LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 6"
+                 "signal GPS_SATNUM7  : std_logic_vector (7 downto 0); -- Number of satellite 7"
+                 "signal GPS_SAT7LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 7"
+                 "signal GPS_SAT7LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 7"
+                 "signal GPS_SAT7LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 7"
+                 "signal GPS_SAT7LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 7"
+                 "signal GPS_SATNUM8  : std_logic_vector (7 downto 0); -- Number of satellite 8"
+                 "signal GPS_SAT8LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 8"
+                 "signal GPS_SAT8LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 8"
+                 "signal GPS_SAT8LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 8"
+                 "signal GPS_SAT8LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 8"
+                 "signal GPS_SATNUM9  : std_logic_vector (7 downto 0); -- Number of satellite 9"
+                 "signal GPS_SAT9LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 9"
+                 "signal GPS_SAT9LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 9"
+                 "signal GPS_SAT9LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 9"
+                 "signal GPS_SAT9LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 9"
+                 "signal GPS_SATNUM10  : std_logic_vector (7 downto 0); -- Number of satellite 10"
+                 "signal GPS_SAT10LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 10"
+                 "signal GPS_SAT10LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 10"
+                 "signal GPS_SAT10LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 10"
+                 "signal GPS_SAT10LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 10"
+                 "signal GPS_SATNUM11  : std_logic_vector (7 downto 0); -- Number of satellite 11"
+                 "signal GPS_SAT11LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 11"
+                 "signal GPS_SAT11LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 11"
+                 "signal GPS_SAT11LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 11"
+                 "signal GPS_SAT11LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 11"
+                 "signal GPS_SATNUM12  : std_logic_vector (7 downto 0); -- Number of satellite 12"
+                 "signal GPS_SAT12LEV3  : std_logic_vector (7 downto 0); -- Signal level of satellite 12"
+                 "signal GPS_SAT12LEV2  : std_logic_vector (7 downto 0); -- Signal level of satellite 12"
+                 "signal GPS_SAT12LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 12"
+                 "signal GPS_SAT12LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 12"
+                 ""
+                 "signal COINC_DEL: std_logic ;"
+                 "signal CTP_COUNT: std_logic_vector(31 downto 0);"
+                 "signal NEG_FASE_BIT: std_logic ; -- This signal clocks the one PPS signal on the negative fase of the CLK200MHz clock to determine the offset 2.5ns better"
+                 "signal NEG_FASE_BIT_DEL: std_logic ; -- NEG_FASE_BIT after a negative edge of the CLK200MHz clock"
+                 "signal ONE_PPS_DEL1: std_logic ; -- One delay needed to synchronize the asynchronious ONE_PPS with the 200MHz"
+                 "signal ONE_PPS_DEL2: std_logic ;"
+                 "signal ONE_PPS_SLOW_DEL1: std_logic ; -- One delay needed to synchronize the asynchronious ONE_PPS with the 10MHz"
+                 "signal ONE_PPS_SLOW_DEL2: std_logic ;"
+                 "signal ONE_PPS_SLOW_DEL3: std_logic ;"
+                 "signal TS_ONE_PPS_READOUT_DONE_DEL1: std_logic ; -- One delay needed to synchronize the asynchronious TS_ONE_PPS_READOUT_DONE with the 200MHz"
+                 "signal TS_ONE_PPS_READOUT_DONE_DEL2: std_logic ;"
+                 ""
+                 "signal COMPL1_IN_DEL1: std_logic ; "
+                 "signal COMPL1_IN_DEL2: std_logic ; "
+                 "signal COMPH1_IN_DEL1: std_logic ; "
+                 "signal COMPH1_IN_DEL2: std_logic ; "
+                 "signal COMPL2_IN_DEL1: std_logic ; "
+                 "signal COMPL2_IN_DEL2: std_logic ; "
+                 "signal COMPH2_IN_DEL1: std_logic ; "
+                 "signal COMPH2_IN_DEL2: std_logic ; "
+                 "signal COMPL1_COUNT: std_logic_vector(31 downto 0); -- Counts the time COMPL1 is high"
+                 "signal COMPH1_COUNT: std_logic_vector(31 downto 0); -- Counts the time COMPH1 is high"
+                 "signal COMPL2_COUNT: std_logic_vector(31 downto 0); -- Counts the time COMPL2 is high"
+                 "signal COMPH2_COUNT: std_logic_vector(31 downto 0); -- Counts the time COMPH2 is high"
+                 "signal COMPL1_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPL1"
+                 "signal COMPH1_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPH1"
+                 "signal COMPL2_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPL2"
+                 "signal COMPH2_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPH2"
+                 "signal RST_COMPL1: std_logic ; -- Reset signal synchronized at 200MHz "
+                 "signal RST_COMPH1: std_logic ; -- Reset signal synchronized at 200MHz "
+                 "signal RST_COMPL2: std_logic ; -- Reset signal synchronized at 200MHz "
+                 "signal RST_COMPH2: std_logic ; -- Reset signal synchronized at 200MHz "
+                 "signal RST_COMPL1_10MHZ: std_logic ; "
+                 "signal RST_COMPH1_10MHZ: std_logic ; "
+                 "signal RST_COMPL2_10MHZ: std_logic ; "
+                 "signal RST_COMPH2_10MHZ: std_logic ; "
+                 "signal VALID_COMPL1: std_logic ; "
+                 "signal VALID_COMPH1: std_logic ; "
+                 "signal VALID_COMPL2: std_logic ; "
+                 "signal VALID_COMPH2: std_logic ; "
+                 "signal VALID_COMPL1_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz"
+                 "signal VALID_COMPH1_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz "
+                 "signal VALID_COMPL2_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz "
+                 "signal VALID_COMPH2_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz "
+                 "signal COMPDATA_READOUT_DONE_DEL1: std_logic ; "
+                 "signal COMPDATA_READOUT_DONE_DEL2: std_logic ; "
+                 "signal COMPDATA_VALID_OUT_TMP: std_logic ; "
+                 ""
+                 "begin"
+                 "  "
+                 ""
+                 "  GPS_SDI <= SPY_SDO and GPS_PROG_ENABLE; "
+                 "  SPY_SDI <= GPS_SDO when SPY_CON = '1' else 'Z'; "
+                 ""
+                 ""
+                 "-- 153600HZ counter/clock "
+                 "-- Used for sampling the serial RS232 data at 16 times the bautrate of 9600Hz"
+                 "-- This is actual 153850Hz (10Mhz divide by 65); Mismatch is 0.16%                  "
+                 "  process (CLK10MHz, SYSRST)"
+                 "  begin"
+                 "	if SYSRST = '1' then"
+                 "	  COUNTER_153600 <= (others => '0');                 "
+                 "	elsif CLK10MHz'event and CLK10MHz = '1' then"
+                 "	  if COUNTER_153600 >= \"1000000\" then -- 10Mhz divide by 65 (from 0 to 64)"
+                 "		COUNTER_153600 <= (others => '0');"
+                 "		CLK_153600 <= '1';"
+                 "	  else"
+                 "		COUNTER_153600<= COUNTER_153600 + \"0000001\";"
+                 "		CLK_153600 <= '0';"
+                 "	  end if;"
+                 "	end if;"
+                 "  end process;"
+                 ""
+                 " -- Counter at 1.7 seconds; Time out counter for RXD; used for GPS master detection "
+                 "  process(CLK_153600, SYSRST) "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  COUNTER_ONE_SEC_SEVEN <= (others => '0');"
+                 "  	  COUNTER_ONE_SEC_SEVEN_DEL <= '0';"
+                 "  	  GPS_SDO_DEL <= '0';"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "   	  COUNTER_ONE_SEC_SEVEN <= COUNTER_ONE_SEC_SEVEN + \"0000000000000000001\";"
+                 "  	  COUNTER_ONE_SEC_SEVEN_DEL <= COUNTER_ONE_SEC_SEVEN(18);"
+                 "  	  GPS_SDO_DEL <= GPS_SDO;"
+                 " 	end if; "
+                 "  end process; "
+                 ""
+                 " -- Master detection "
+                 "  process(CLK_153600, SYSRST) "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  RXD_TIME_OUT <= \"11\"; -- Default in Slave mode"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "  	  if GPS_SDO = '0' and GPS_SDO_DEL = '1' then -- Negative edge of TXD GPS reciever output"
+                 "  	    RXD_TIME_OUT <= \"00\"; -- Sets RXD_TIME_OUT in Master mode"
+                 "      elsif RXD_TIME_OUT = \"11\" then"
+                 "  	    RXD_TIME_OUT <= RXD_TIME_OUT;"
+                 "  	  elsif COUNTER_ONE_SEC_SEVEN(18) = '1' and COUNTER_ONE_SEC_SEVEN_DEL = '0' then -- Rising edge of 1.7s clock"
+                 "  	    RXD_TIME_OUT <= RXD_TIME_OUT + \"01\";"
+                 " 	  end if; "
+                 " 	end if; "
+                 "  end process; "
+                 ""
+                 "  MASTER <= '0' when RXD_TIME_OUT = \"11\" else '1'; "
+                 ""
+                 ""
+                 "------------------ Start Recieving GPS data -----------------------------------------"
+                 ""
+                 " -- Sample counter"
+                 "  process(CLK_153600, SYSRST)                               "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  SAMPLE_COUNT <= 0;"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "  	  if SAMPLE_COUNT = 0 and RXD = '1' then"
+                 "   		SAMPLE_COUNT <= 0 ; -- wait for start "
+                 "      elsif SAMPLE_COUNT = 8 and RXD = '1' then"
+                 "   		SAMPLE_COUNT <= 0 ; -- false start"
+                 "   	  elsif SAMPLE_COUNT = 168 then "
+                 "   		SAMPLE_COUNT <= 0; -- end"
+                 "      else"
+                 "   		SAMPLE_COUNT <= SAMPLE_COUNT + 1;"
+                 "   	  end if;"
+                 " 	end if; "
+                 "  end process;"
+                 ""
+                 " -- TIME_OUT counter"
+                 " -- This counter counts if there is 1 bytes (176 counts) long no input data (RXD = '1') "
+                 " -- After this, the counter latches itself till a startbit  (RXD = '0')"
+                 "  process(CLK_153600, SYSRST) "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  TIME_OUT_COUNT <= 0;"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "  	  if RXD = '0' then"
+                 "  		TIME_OUT_COUNT <= 0; "
+                 "  	  elsif TIME_OUT_COUNT = 1760 then"
+                 "  		TIME_OUT_COUNT <= TIME_OUT_COUNT;"
+                 "  	  else"
+                 "   		TIME_OUT_COUNT <= TIME_OUT_COUNT + 1;"
+                 "      end if;"
+                 " 	end if; "
+                 "  end process; "
+                 ""
+                 "  TIME_OUT <= '1' when TIME_OUT_COUNT = 1760 else '0'; "
+                 ""
+                 "  RST_MESSAGE <= TIME_OUT or END_BYTE_DETECTED;"
+                 ""
+                 "  -- Filling of GET_BYTE"
+                 "  process(CLK_153600, SYSRST)                               "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  GET_BYTE <= (others => '0');"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "      if SAMPLE_COUNT = 24 then"
+                 "        GET_BYTE(0) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 40 then"
+                 "        GET_BYTE(1) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 56 then"
+                 "        GET_BYTE(2) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 72 then"
+                 "        GET_BYTE(3) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 88 then"
+                 "        GET_BYTE(4) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 104 then"
+                 "        GET_BYTE(5) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 120 then"
+                 "        GET_BYTE(6) <= RXD;"
+                 "      end if;"
+                 "      if SAMPLE_COUNT = 136 then"
+                 "        GET_BYTE(7) <= RXD;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 "        "
+                 "  -- Filling of MESSAGE_BYTE's"
+                 "  process(CLK_153600, SYSRST)                               "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  MESSAGE_BYTE1 <= (others => '0');"
+                 "  	  MESSAGE_BYTE2 <= (others => '0');"
+                 "  	  MESSAGE_BYTE3 <= (others => '0');"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "  	  if RST_MESSAGE = '1' then"
+                 "  	    MESSAGE_BYTE1 <= (others => '0');"
+                 "  	    MESSAGE_BYTE2 <= (others => '0');"
+                 "  	    MESSAGE_BYTE3 <= (others => '0');"
+                 "      elsif SAMPLE_COUNT = 144 then"
+                 "        if STUFFED_BYTE = '0' then"
+                 "          MESSAGE_BYTE1 <= GET_BYTE;"
+                 "        end if;"
+                 "          MESSAGE_BYTE2 <= MESSAGE_BYTE1;"
+                 "          MESSAGE_BYTE3 <= MESSAGE_BYTE2;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  -- MESSAGE_SELECT"
+                 "  process(CLK_153600, SYSRST)                               "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  MESSAGE_SELECT <= \"00\";"
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "  	  if RST_MESSAGE = '1' then"
+                 "  	    MESSAGE_SELECT <= \"00\";"
+                 "      elsif MESSAGE_BYTE3 = \"00010000\" and MESSAGE_BYTE2 = \"10001111\" and MESSAGE_BYTE1 = \"10101011\" then"
+                 "  	    MESSAGE_SELECT <= \"01\";"
+                 "      elsif MESSAGE_BYTE3 = \"00010000\" and MESSAGE_BYTE2 = \"10001111\" and MESSAGE_BYTE1 = \"10101100\" then"
+                 "  	    MESSAGE_SELECT <= \"10\";"
+                 "      elsif MESSAGE_BYTE2 = \"00010000\" and MESSAGE_BYTE1 = \"01000111\" then"
+                 "  	    MESSAGE_SELECT <= \"11\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  -- MESSAGE decoding"
+                 "  process(CLK_153600,SYSRST,DECODER_BYTE_COUNT,DECODE_BYTE1)                               "
+                 "  begin"
+                 " 	if SYSRST = '1' then"
+                 "  	  STUFFED_BYTE <= '0';"
+                 "  	  END_BYTE_DETECTED <= '0';"
+                 "  	  DECODE_BYTE1 <= (others => '0');"
+                 "  	  DECODER_BYTE_COUNT <= 0;"
+                 "  	  GPS_SEC <= (others => '0');"
+                 "  	  GPS_MIN <= (others => '0');"
+                 "  	  GPS_HOUR <= (others => '0');"
+                 "  	  GPS_DAY <= (others => '0');"
+                 "  	  GPS_MONTH <= (others => '0');"
+                 "  	  GPS_YEAR1 <= (others => '0');"
+                 "  	  GPS_YEAR0 <= (others => '0');"
+                 "  	  GPS_TEMP3 <= (others => '0');"
+                 "  	  GPS_TEMP2 <= (others => '0');"
+                 "  	  GPS_TEMP1 <= (others => '0');"
+                 "  	  GPS_TEMP0 <= (others => '0');"
+                 "  	  GPS_LAT7 <= (others => '0');"
+                 "  	  GPS_LAT6 <= (others => '0');"
+                 "  	  GPS_LAT5 <= (others => '0');"
+                 "  	  GPS_LAT4 <= (others => '0');"
+                 "  	  GPS_LAT3 <= (others => '0');"
+                 "  	  GPS_LAT2 <= (others => '0');"
+                 "  	  GPS_LAT1 <= (others => '0');"
+                 "  	  GPS_LAT0 <= (others => '0');"
+                 "  	  GPS_LONG7 <= (others => '0');"
+                 "  	  GPS_LONG6 <= (others => '0');"
+                 "  	  GPS_LONG5 <= (others => '0');"
+                 "  	  GPS_LONG4 <= (others => '0');"
+                 "  	  GPS_LONG3 <= (others => '0');"
+                 "  	  GPS_LONG2 <= (others => '0');"
+                 "  	  GPS_LONG1 <= (others => '0');"
+                 "  	  GPS_LONG0 <= (others => '0');"
+                 "  	  GPS_ALT7 <= (others => '0');"
+                 "  	  GPS_ALT6 <= (others => '0');"
+                 "  	  GPS_ALT5 <= (others => '0');"
+                 "  	  GPS_ALT4 <= (others => '0');"
+                 "  	  GPS_ALT3 <= (others => '0');"
+                 "  	  GPS_ALT2 <= (others => '0');"
+                 "  	  GPS_ALT1 <= (others => '0');"
+                 "  	  GPS_ALT0 <= (others => '0');"
+                 "  	  GPS_QUANT3 <= (others => '0');"
+                 "  	  GPS_QUANT2 <= (others => '0');"
+                 "  	  GPS_QUANT1 <= (others => '0');"
+                 "  	  GPS_QUANT0 <= (others => '0');"
+                 "  	  GPS_SATCOUNT <= (others => '0');"
+                 "  	  GPS_SATNUM1 <= (others => '0');"
+                 "  	  GPS_SAT1LEV3 <= (others => '0');"
+                 "  	  GPS_SAT1LEV2 <= (others => '0');"
+                 "  	  GPS_SAT1LEV1 <= (others => '0');"
+                 "  	  GPS_SAT1LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM2 <= (others => '0');"
+                 "  	  GPS_SAT2LEV3 <= (others => '0');"
+                 "  	  GPS_SAT2LEV2 <= (others => '0');"
+                 "  	  GPS_SAT2LEV1 <= (others => '0');"
+                 "  	  GPS_SAT2LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM3 <= (others => '0');"
+                 "  	  GPS_SAT3LEV3 <= (others => '0');"
+                 "  	  GPS_SAT3LEV2 <= (others => '0');"
+                 "  	  GPS_SAT3LEV1 <= (others => '0');"
+                 "  	  GPS_SAT3LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM4 <= (others => '0');"
+                 "  	  GPS_SAT4LEV3 <= (others => '0');"
+                 "  	  GPS_SAT4LEV2 <= (others => '0');"
+                 "  	  GPS_SAT4LEV1 <= (others => '0');"
+                 "  	  GPS_SAT4LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM5 <= (others => '0');"
+                 "  	  GPS_SAT5LEV3 <= (others => '0');"
+                 "  	  GPS_SAT5LEV2 <= (others => '0');"
+                 "  	  GPS_SAT5LEV1 <= (others => '0');"
+                 "  	  GPS_SAT5LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM6 <= (others => '0');"
+                 "  	  GPS_SAT6LEV3 <= (others => '0');"
+                 "  	  GPS_SAT6LEV2 <= (others => '0');"
+                 "  	  GPS_SAT6LEV1 <= (others => '0');"
+                 "  	  GPS_SAT6LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM7 <= (others => '0');"
+                 "  	  GPS_SAT7LEV3 <= (others => '0');"
+                 "  	  GPS_SAT7LEV2 <= (others => '0');"
+                 "  	  GPS_SAT7LEV1 <= (others => '0');"
+                 "  	  GPS_SAT7LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM8 <= (others => '0');"
+                 "  	  GPS_SAT8LEV3 <= (others => '0');"
+                 "  	  GPS_SAT8LEV2 <= (others => '0');"
+                 "  	  GPS_SAT8LEV1 <= (others => '0');"
+                 "  	  GPS_SAT8LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM9 <= (others => '0');"
+                 "  	  GPS_SAT9LEV3 <= (others => '0');"
+                 "  	  GPS_SAT9LEV2 <= (others => '0');"
+                 "  	  GPS_SAT9LEV1 <= (others => '0');"
+                 "  	  GPS_SAT9LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM10 <= (others => '0');"
+                 "  	  GPS_SAT10LEV3 <= (others => '0');"
+                 "  	  GPS_SAT10LEV2 <= (others => '0');"
+                 "  	  GPS_SAT10LEV1 <= (others => '0');"
+                 "  	  GPS_SAT10LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM11 <= (others => '0');"
+                 "  	  GPS_SAT11LEV3 <= (others => '0');"
+                 "  	  GPS_SAT11LEV2 <= (others => '0');"
+                 "  	  GPS_SAT11LEV1 <= (others => '0');"
+                 "  	  GPS_SAT11LEV0 <= (others => '0');"
+                 "  	  GPS_SATNUM12 <= (others => '0');"
+                 "  	  GPS_SAT12LEV3 <= (others => '0');"
+                 "  	  GPS_SAT12LEV2 <= (others => '0');"
+                 "  	  GPS_SAT12LEV1 <= (others => '0');"
+                 "  	  GPS_SAT12LEV0 <= (others => '0');"
+                 ""
+                 "  	elsif CLK_153600'event and CLK_153600 = '1' then"
+                 "  	  if RST_MESSAGE = '1' then"
+                 "  	    STUFFED_BYTE <= '0';"
+                 "  	    DECODE_BYTE1 <= (others => '0');"
+                 "  	    END_BYTE_DETECTED <= '0';"
+                 "  	    DECODER_BYTE_COUNT <= 0;"
+                 "      elsif SAMPLE_COUNT = 144 and MESSAGE_SELECT /= \"00\" then"
+                 "        DECODE_BYTE1 <= GET_BYTE;"
+                 "        if GET_BYTE = \"00010000\" and DECODE_BYTE1 = \"00010000\" then"
+                 "  	      STUFFED_BYTE <= not STUFFED_BYTE;"
+                 "        else"
+                 "  	      STUFFED_BYTE <= '0';"
+                 "        end if;"
+                 "        if STUFFED_BYTE = '0' and GET_BYTE = \"00000011\" and DECODE_BYTE1 = \"00010000\" then"
+                 "  	      END_BYTE_DETECTED <= '1'; "
+                 "  	     else  "
+                 "  	      END_BYTE_DETECTED <= '0';"
+                 "        end if;"
+                 "        if STUFFED_BYTE = '0' then"
+                 "          DECODER_BYTE_COUNT <= DECODER_BYTE_COUNT + 1;"
+                 "        end if;"
+                 "      end if;"
+                 "      if MESSAGE_SELECT = \"01\" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' then"
+                 "   	    case DECODER_BYTE_COUNT is"
+                 "   	      when 10 => GPS_SEC <= DECODE_BYTE1;    "
+                 "   	      when 11 => GPS_MIN <= DECODE_BYTE1;    "
+                 "   	      when 12 => GPS_HOUR <= DECODE_BYTE1;    "
+                 "   	      when 13 => GPS_DAY <= DECODE_BYTE1;    "
+                 "   	      when 14 => GPS_MONTH <= DECODE_BYTE1;    "
+                 "   	      when 15 => GPS_YEAR1 <= DECODE_BYTE1;    "
+                 "   	      when 16 => GPS_YEAR0 <= DECODE_BYTE1;    "
+                 "          when others => DUMP <=  DECODE_BYTE1;      "
+                 "        end case;"
+                 "      end if;"
+                 "      if MESSAGE_SELECT = \"10\" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' then"
+                 "   	    case DECODER_BYTE_COUNT is"
+                 "   	      when 32 => GPS_TEMP3 <= DECODE_BYTE1;    "
+                 "   	      when 33 => GPS_TEMP2 <= DECODE_BYTE1;    "
+                 "   	      when 34 => GPS_TEMP1 <= DECODE_BYTE1;    "
+                 "   	      when 35 => GPS_TEMP0 <= DECODE_BYTE1;    "
+                 "   	      when 36 => GPS_LAT7 <= DECODE_BYTE1;    "
+                 "   	      when 37 => GPS_LAT6 <= DECODE_BYTE1;    "
+                 "   	      when 38 => GPS_LAT5 <= DECODE_BYTE1;    "
+                 "   	      when 39 => GPS_LAT4 <= DECODE_BYTE1;    "
+                 "   	      when 40 => GPS_LAT3 <= DECODE_BYTE1;    "
+                 "   	      when 41 => GPS_LAT2 <= DECODE_BYTE1;    "
+                 "   	      when 42 => GPS_LAT1 <= DECODE_BYTE1;    "
+                 "   	      when 43 => GPS_LAT0 <= DECODE_BYTE1;    "
+                 "   	      when 44 => GPS_LONG7 <= DECODE_BYTE1;    "
+                 "   	      when 45 => GPS_LONG6 <= DECODE_BYTE1;    "
+                 "   	      when 46 => GPS_LONG5 <= DECODE_BYTE1;    "
+                 "   	      when 47 => GPS_LONG4 <= DECODE_BYTE1;    "
+                 "   	      when 48 => GPS_LONG3 <= DECODE_BYTE1;    "
+                 "   	      when 49 => GPS_LONG2 <= DECODE_BYTE1;    "
+                 "   	      when 50 => GPS_LONG1 <= DECODE_BYTE1;    "
+                 "   	      when 51 => GPS_LONG0 <= DECODE_BYTE1;    "
+                 "   	      when 52 => GPS_ALT7 <= DECODE_BYTE1;    "
+                 "   	      when 53 => GPS_ALT6 <= DECODE_BYTE1;    "
+                 "   	      when 54 => GPS_ALT5 <= DECODE_BYTE1;    "
+                 "   	      when 55 => GPS_ALT4 <= DECODE_BYTE1;    "
+                 "   	      when 56 => GPS_ALT3 <= DECODE_BYTE1;    "
+                 "   	      when 57 => GPS_ALT2 <= DECODE_BYTE1;    "
+                 "   	      when 58 => GPS_ALT1 <= DECODE_BYTE1;    "
+                 "   	      when 59 => GPS_ALT0 <= DECODE_BYTE1;    "
+                 "   	      when 60 => GPS_QUANT3 <= DECODE_BYTE1;    "
+                 "   	      when 61 => GPS_QUANT2 <= DECODE_BYTE1;    "
+                 "   	      when 62 => GPS_QUANT1 <= DECODE_BYTE1;    "
+                 "   	      when 63 => GPS_QUANT0 <= DECODE_BYTE1;    "
+                 "          when others => DUMP <=  DECODE_BYTE1;      "
+                 "        end case;"
+                 "      end if;"
+                 "      if MESSAGE_SELECT = \"11\" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' and not (GET_BYTE = \"00000011\" and DECODE_BYTE1 = \"00010000\") then"
+                 "   	    case DECODER_BYTE_COUNT is"
+                 "   	      when 1 => GPS_SATCOUNT <= DECODE_BYTE1;    "
+                 "   	        	    GPS_SATNUM1 <= (others => '0');"
+                 "  	                GPS_SAT1LEV3 <= (others => '0');"
+                 "  	                GPS_SAT1LEV2 <= (others => '0');"
+                 "  	                GPS_SAT1LEV1 <= (others => '0');"
+                 "  	                GPS_SAT1LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM2 <= (others => '0');"
+                 "  	                GPS_SAT2LEV3 <= (others => '0');"
+                 "  	                GPS_SAT2LEV2 <= (others => '0');"
+                 "  	                GPS_SAT2LEV1 <= (others => '0');"
+                 "  	                GPS_SAT2LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM3 <= (others => '0');"
+                 "  	                GPS_SAT3LEV3 <= (others => '0');"
+                 "  	                GPS_SAT3LEV2 <= (others => '0');"
+                 "  	                GPS_SAT3LEV1 <= (others => '0');"
+                 "  	                GPS_SAT3LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM4 <= (others => '0');"
+                 "  	                GPS_SAT4LEV3 <= (others => '0');"
+                 "  	                GPS_SAT4LEV2 <= (others => '0');"
+                 "  	                GPS_SAT4LEV1 <= (others => '0');"
+                 "  	                GPS_SAT4LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM5 <= (others => '0');"
+                 "  	                GPS_SAT5LEV3 <= (others => '0');"
+                 "  	                GPS_SAT5LEV2 <= (others => '0');"
+                 "  	                GPS_SAT5LEV1 <= (others => '0');"
+                 "  	                GPS_SAT5LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM6 <= (others => '0');"
+                 "  	                GPS_SAT6LEV3 <= (others => '0');"
+                 "  	                GPS_SAT6LEV2 <= (others => '0');"
+                 "  	                GPS_SAT6LEV1 <= (others => '0');"
+                 "  	                GPS_SAT6LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM7 <= (others => '0');"
+                 "  	                GPS_SAT7LEV3 <= (others => '0');"
+                 "  	                GPS_SAT7LEV2 <= (others => '0');"
+                 "  	                GPS_SAT7LEV1 <= (others => '0');"
+                 "  	                GPS_SAT7LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM8 <= (others => '0');"
+                 "  	                GPS_SAT8LEV3 <= (others => '0');"
+                 "  	                GPS_SAT8LEV2 <= (others => '0');"
+                 "  	                GPS_SAT8LEV1 <= (others => '0');"
+                 "  	                GPS_SAT8LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM9 <= (others => '0');"
+                 "  	                GPS_SAT9LEV3 <= (others => '0');"
+                 "  	                GPS_SAT9LEV2 <= (others => '0');"
+                 "  	                GPS_SAT9LEV1 <= (others => '0');"
+                 "  	                GPS_SAT9LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM10 <= (others => '0');"
+                 "  	                GPS_SAT10LEV3 <= (others => '0');"
+                 "  	                GPS_SAT10LEV2 <= (others => '0');"
+                 "  	                GPS_SAT10LEV1 <= (others => '0');"
+                 "  	                GPS_SAT10LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM11 <= (others => '0');"
+                 "  	                GPS_SAT11LEV3 <= (others => '0');"
+                 "  	                GPS_SAT11LEV2 <= (others => '0');"
+                 "  	                GPS_SAT11LEV1 <= (others => '0');"
+                 "  	                GPS_SAT11LEV0 <= (others => '0');"
+                 "  	                GPS_SATNUM12 <= (others => '0');"
+                 "  	                GPS_SAT12LEV3 <= (others => '0');"
+                 "  	                GPS_SAT12LEV2 <= (others => '0');"
+                 "  	                GPS_SAT12LEV1 <= (others => '0');"
+                 "  	                GPS_SAT12LEV0 <= (others => '0');"
+                 "   	      when 2 => GPS_SATNUM1 <= DECODE_BYTE1;    "
+                 "   	      when 3 => GPS_SAT1LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 4 => GPS_SAT1LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 5 => GPS_SAT1LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 6 => GPS_SAT1LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 7 => GPS_SATNUM2 <= DECODE_BYTE1;    "
+                 "   	      when 8 => GPS_SAT2LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 9 => GPS_SAT2LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 10 => GPS_SAT2LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 11 => GPS_SAT2LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 12 => GPS_SATNUM3 <= DECODE_BYTE1;    "
+                 "   	      when 13 => GPS_SAT3LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 14 => GPS_SAT3LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 15 => GPS_SAT3LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 16 => GPS_SAT3LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 17 => GPS_SATNUM4 <= DECODE_BYTE1;    "
+                 "   	      when 18 => GPS_SAT4LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 19 => GPS_SAT4LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 20 => GPS_SAT4LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 21 => GPS_SAT4LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 22 => GPS_SATNUM5 <= DECODE_BYTE1;    "
+                 "   	      when 23 => GPS_SAT5LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 24 => GPS_SAT5LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 25 => GPS_SAT5LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 26 => GPS_SAT5LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 27 => GPS_SATNUM6 <= DECODE_BYTE1;    "
+                 "   	      when 28 => GPS_SAT6LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 29 => GPS_SAT6LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 30 => GPS_SAT6LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 31 => GPS_SAT6LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 32 => GPS_SATNUM7 <= DECODE_BYTE1;    "
+                 "   	      when 33 => GPS_SAT7LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 34 => GPS_SAT7LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 35 => GPS_SAT7LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 36 => GPS_SAT7LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 37 => GPS_SATNUM8 <= DECODE_BYTE1;    "
+                 "   	      when 38 => GPS_SAT8LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 39 => GPS_SAT8LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 40 => GPS_SAT8LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 41 => GPS_SAT8LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 42 => GPS_SATNUM9 <= DECODE_BYTE1;    "
+                 "   	      when 43 => GPS_SAT9LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 44 => GPS_SAT9LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 45 => GPS_SAT9LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 46 => GPS_SAT9LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 47 => GPS_SATNUM10 <= DECODE_BYTE1;    "
+                 "   	      when 48 => GPS_SAT10LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 49 => GPS_SAT10LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 50 => GPS_SAT10LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 51 => GPS_SAT10LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 52 => GPS_SATNUM11 <= DECODE_BYTE1;    "
+                 "   	      when 53 => GPS_SAT11LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 54 => GPS_SAT11LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 55 => GPS_SAT11LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 56 => GPS_SAT11LEV0 <= DECODE_BYTE1;    "
+                 "   	      when 57 => GPS_SATNUM12 <= DECODE_BYTE1;    "
+                 "   	      when 58 => GPS_SAT12LEV3 <= DECODE_BYTE1;    "
+                 "   	      when 59 => GPS_SAT12LEV2 <= DECODE_BYTE1;    "
+                 "   	      when 60 => GPS_SAT12LEV1 <= DECODE_BYTE1;    "
+                 "   	      when 61 => GPS_SAT12LEV0 <= DECODE_BYTE1;    "
+                 "          when others => DUMP <=  DECODE_BYTE1;      "
+                 "        end case;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "        "
+                 "------------------ End Recieving GPS data -----------------------------------------"
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COINC_DEL <= '0';        "
+                 "      ONE_PPS_DEL1 <= '0';        "
+                 "      ONE_PPS_DEL2 <= '0';        "
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      COINC_DEL <= COINC;        "
+                 "      ONE_PPS_DEL1 <= ONE_PPS;        "
+                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      ONE_PPS_SLOW_DEL1 <= '0';        "
+                 "      ONE_PPS_SLOW_DEL2 <= '0';        "
+                 "      ONE_PPS_SLOW_DEL3 <= '0';        "
+                 "      TS_ONE_PPS_READOUT_DONE_DEL1 <= '0';        "
+                 "      TS_ONE_PPS_READOUT_DONE_DEL2 <= '0';        "
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      ONE_PPS_SLOW_DEL1 <= ONE_PPS;        "
+                 "      ONE_PPS_SLOW_DEL2 <= ONE_PPS_SLOW_DEL1;        "
+                 "      ONE_PPS_SLOW_DEL3 <= ONE_PPS_SLOW_DEL2;        "
+                 "      TS_ONE_PPS_READOUT_DONE_DEL1 <= TS_ONE_PPS_READOUT_DONE;        "
+                 "      TS_ONE_PPS_READOUT_DONE_DEL2 <= TS_ONE_PPS_READOUT_DONE_DEL1;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 " -- CTP COUNTER"
+                 " -- The CTP counter counts from ONE_PPS to ONE_PPS"
+                 "  process (CLK200MHz,SYSRST)  "
+                 "  begin"
+                 "	if SYSRST = '1' then"
+                 "	  CTP_COUNT <= \"00000000000000000000000000000001\";"
+                 "	elsif CLK200MHz'event and CLK200MHz ='1' then"
+                 "	  if ONE_PPS_DEL1 = '1'and ONE_PPS_DEL2 = '0' then"
+                 "		CTP_COUNT <= \"00000000000000000000000000000001\";"
+                 "	  else "
+                 "		CTP_COUNT <= CTP_COUNT + \"00000000000000000000000000000001\";"
+                 "	  end if;"
+                 "	end if;"
+                 "  end process;"
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      NEG_FASE_BIT <= '0';        "
+                 "      NEG_FASE_BIT_DEL <= '0';        "
+                 "    elsif (CLK200MHz'event and CLK200MHz = '0') then -- on a negative edge of the CLK200MHz clock"
+                 "      NEG_FASE_BIT <= ONE_PPS;        "
+                 "      NEG_FASE_BIT_DEL <= NEG_FASE_BIT;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 ""
+                 "  -- Latch GPS_TIME and counter values on positive edge of ONE_PPS"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      CTP_TS_ONE_PPS_OUT <= (others => '0');"
+                 "      GPS_SEC_BUF <= (others => '0');"
+                 "      GPS_MIN_BUF <= (others => '0');"
+                 "      GPS_HOUR_BUF <= (others => '0');"
+                 "      GPS_DAY_BUF <= (others => '0');"
+                 "      GPS_MONTH_BUF <= (others => '0');"
+                 "      GPS_YEAR1_BUF <= (others => '0');"
+                 "      GPS_YEAR0_BUF <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then"
+                 "        CTP_TS_ONE_PPS_OUT(30 downto 0) <= CTP_COUNT(30 downto 0);"
+                 "        CTP_TS_ONE_PPS_OUT(31) <= NEG_FASE_BIT_DEL;"
+                 "        GPS_SEC_BUF <= GPS_SEC;"
+                 "        GPS_MIN_BUF <= GPS_MIN;"
+                 "        GPS_HOUR_BUF <= GPS_HOUR;"
+                 "        GPS_DAY_BUF <= GPS_DAY;"
+                 "        GPS_MONTH_BUF <= GPS_MONTH;"
+                 "        GPS_YEAR1_BUF <= GPS_YEAR1;"
+                 "        GPS_YEAR0_BUF <= GPS_YEAR0;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch GPS_TIME and counter values on positive edge of ONE_PPS"
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      GPS_TS_ONE_PPS_OUT <= (others => '0');"
+                 "      CTD_TS_ONE_PPS_OUT <= (others => '0');"
+                 "      LONGITUDE_OUT <= (others => '0');"
+                 "      LATITUDE_OUT <= (others => '0');"
+                 "      ALTITUDE_OUT <= (others => '0');"
+                 "      TEMP_OUT <= (others => '0');"
+                 "      SAT_INFO_OUT <= (others => '0');"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      if ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then"
+                 "        GPS_TS_ONE_PPS_OUT(55 downto 48) <= GPS_DAY; -- Day"
+                 "        GPS_TS_ONE_PPS_OUT(47 downto 40) <= GPS_MONTH; -- Month"
+                 "        GPS_TS_ONE_PPS_OUT(39 downto 32) <= GPS_YEAR1; -- Year"
+                 "        GPS_TS_ONE_PPS_OUT(31 downto 24) <= GPS_YEAR0; -- Year"
+                 "        GPS_TS_ONE_PPS_OUT(23 downto 16) <= GPS_HOUR; -- Hours"
+                 "        GPS_TS_ONE_PPS_OUT(15 downto 8) <= GPS_MIN; -- Minutes"
+                 "        GPS_TS_ONE_PPS_OUT(7 downto 0) <= GPS_SEC; -- Seconds"
+                 "        CTD_TS_ONE_PPS_OUT(31 downto 24) <= GPS_QUANT3;"
+                 "        CTD_TS_ONE_PPS_OUT(23 downto 16) <= GPS_QUANT2;"
+                 "        CTD_TS_ONE_PPS_OUT(15 downto 8) <= GPS_QUANT1;"
+                 "        CTD_TS_ONE_PPS_OUT(7 downto 0) <= GPS_QUANT0;"
+                 "        LATITUDE_OUT(63 downto 56) <= GPS_LAT7;"
+                 "        LATITUDE_OUT(55 downto 48) <= GPS_LAT6;"
+                 "        LATITUDE_OUT(47 downto 40) <= GPS_LAT5;"
+                 "        LATITUDE_OUT(39 downto 32) <= GPS_LAT4;"
+                 "        LATITUDE_OUT(31 downto 24) <= GPS_LAT3;"
+                 "        LATITUDE_OUT(23 downto 16) <= GPS_LAT2;"
+                 "        LATITUDE_OUT(15 downto 8) <= GPS_LAT1;"
+                 "        LATITUDE_OUT(7 downto 0) <= GPS_LAT0;"
+                 "        LONGITUDE_OUT(63 downto 56) <= GPS_LONG7;"
+                 "        LONGITUDE_OUT(55 downto 48) <= GPS_LONG6;"
+                 "        LONGITUDE_OUT(47 downto 40) <= GPS_LONG5;"
+                 "        LONGITUDE_OUT(39 downto 32) <= GPS_LONG4;"
+                 "        LONGITUDE_OUT(31 downto 24) <= GPS_LONG3;"
+                 "        LONGITUDE_OUT(23 downto 16) <= GPS_LONG2;"
+                 "        LONGITUDE_OUT(15 downto 8) <= GPS_LONG1;"
+                 "        LONGITUDE_OUT(7 downto 0) <= GPS_LONG0;"
+                 "        ALTITUDE_OUT(63 downto 56) <= GPS_ALT7;"
+                 "        ALTITUDE_OUT(55 downto 48) <= GPS_ALT6;"
+                 "        ALTITUDE_OUT(47 downto 40) <= GPS_ALT5;"
+                 "        ALTITUDE_OUT(39 downto 32) <= GPS_ALT4;"
+                 "        ALTITUDE_OUT(31 downto 24) <= GPS_ALT3;"
+                 "        ALTITUDE_OUT(23 downto 16) <= GPS_ALT2;"
+                 "        ALTITUDE_OUT(15 downto 8) <= GPS_ALT1;"
+                 "        ALTITUDE_OUT(7 downto 0) <= GPS_ALT0;"
+                 "        TEMP_OUT(31 downto 24) <= GPS_TEMP3;"
+                 "        TEMP_OUT(23 downto 16) <= GPS_TEMP2;"
+                 "        TEMP_OUT(15 downto 8) <= GPS_TEMP1;"
+                 "        TEMP_OUT(7 downto 0) <= GPS_TEMP0;"
+                 "        SAT_INFO_OUT(487 downto 480) <= GPS_SATCOUNT;"
+                 "        SAT_INFO_OUT(479 downto 472) <= GPS_SATNUM1;"
+                 "        SAT_INFO_OUT(471 downto 464) <= GPS_SAT1LEV3;"
+                 "        SAT_INFO_OUT(463 downto 456) <= GPS_SAT1LEV2;"
+                 "        SAT_INFO_OUT(455 downto 448) <= GPS_SAT1LEV1;"
+                 "        SAT_INFO_OUT(447 downto 440) <= GPS_SAT1LEV0;"
+                 "        SAT_INFO_OUT(439 downto 432) <= GPS_SATNUM2;"
+                 "        SAT_INFO_OUT(431 downto 424) <= GPS_SAT2LEV3;"
+                 "        SAT_INFO_OUT(423 downto 416) <= GPS_SAT2LEV2;"
+                 "        SAT_INFO_OUT(415 downto 408) <= GPS_SAT2LEV1;"
+                 "        SAT_INFO_OUT(407 downto 400) <= GPS_SAT2LEV0;"
+                 "        SAT_INFO_OUT(399 downto 392) <= GPS_SATNUM3;"
+                 "        SAT_INFO_OUT(391 downto 384) <= GPS_SAT3LEV3;"
+                 "        SAT_INFO_OUT(383 downto 376) <= GPS_SAT3LEV2;"
+                 "        SAT_INFO_OUT(375 downto 368) <= GPS_SAT3LEV1;"
+                 "        SAT_INFO_OUT(367 downto 360) <= GPS_SAT3LEV0;"
+                 "        SAT_INFO_OUT(359 downto 352) <= GPS_SATNUM4;"
+                 "        SAT_INFO_OUT(351 downto 344) <= GPS_SAT4LEV3;"
+                 "        SAT_INFO_OUT(343 downto 336) <= GPS_SAT4LEV2;"
+                 "        SAT_INFO_OUT(335 downto 328) <= GPS_SAT4LEV1;"
+                 "        SAT_INFO_OUT(327 downto 320) <= GPS_SAT4LEV0;"
+                 "        SAT_INFO_OUT(319 downto 312) <= GPS_SATNUM5;"
+                 "        SAT_INFO_OUT(311 downto 304) <= GPS_SAT5LEV3;"
+                 "        SAT_INFO_OUT(303 downto 296) <= GPS_SAT5LEV2;"
+                 "        SAT_INFO_OUT(295 downto 288) <= GPS_SAT5LEV1;"
+                 "        SAT_INFO_OUT(287 downto 280) <= GPS_SAT5LEV0;"
+                 "        SAT_INFO_OUT(279 downto 272) <= GPS_SATNUM6;"
+                 "        SAT_INFO_OUT(271 downto 264) <= GPS_SAT6LEV3;"
+                 "        SAT_INFO_OUT(263 downto 256) <= GPS_SAT6LEV2;"
+                 "        SAT_INFO_OUT(255 downto 248) <= GPS_SAT6LEV1;"
+                 "        SAT_INFO_OUT(247 downto 240) <= GPS_SAT6LEV0;"
+                 "        SAT_INFO_OUT(239 downto 232) <= GPS_SATNUM7;"
+                 "        SAT_INFO_OUT(231 downto 224) <= GPS_SAT7LEV3;"
+                 "        SAT_INFO_OUT(223 downto 216) <= GPS_SAT7LEV2;"
+                 "        SAT_INFO_OUT(215 downto 208) <= GPS_SAT7LEV1;"
+                 "        SAT_INFO_OUT(207 downto 200) <= GPS_SAT7LEV0;"
+                 "        SAT_INFO_OUT(199 downto 192) <= GPS_SATNUM8;"
+                 "        SAT_INFO_OUT(191 downto 184) <= GPS_SAT8LEV3;"
+                 "        SAT_INFO_OUT(183 downto 176) <= GPS_SAT8LEV2;"
+                 "        SAT_INFO_OUT(175 downto 168) <= GPS_SAT8LEV1;"
+                 "        SAT_INFO_OUT(167 downto 160) <= GPS_SAT8LEV0;"
+                 "        SAT_INFO_OUT(159 downto 152) <= GPS_SATNUM9;"
+                 "        SAT_INFO_OUT(151 downto 144) <= GPS_SAT9LEV3;"
+                 "        SAT_INFO_OUT(143 downto 136) <= GPS_SAT9LEV2;"
+                 "        SAT_INFO_OUT(135 downto 128) <= GPS_SAT9LEV1;"
+                 "        SAT_INFO_OUT(127 downto 120) <= GPS_SAT9LEV0;"
+                 "        SAT_INFO_OUT(119 downto 112) <= GPS_SATNUM10;"
+                 "        SAT_INFO_OUT(111 downto 104) <= GPS_SAT10LEV3;"
+                 "        SAT_INFO_OUT(103 downto 96) <= GPS_SAT10LEV2;"
+                 "        SAT_INFO_OUT(95 downto 88) <= GPS_SAT10LEV1;"
+                 "        SAT_INFO_OUT(87 downto 80) <= GPS_SAT10LEV0;"
+                 "        SAT_INFO_OUT(79 downto 72) <= GPS_SATNUM11;"
+                 "        SAT_INFO_OUT(71 downto 64) <= GPS_SAT11LEV3;"
+                 "        SAT_INFO_OUT(63 downto 56) <= GPS_SAT11LEV2;"
+                 "        SAT_INFO_OUT(55 downto 48) <= GPS_SAT11LEV1;"
+                 "        SAT_INFO_OUT(47 downto 40) <= GPS_SAT11LEV0;"
+                 "        SAT_INFO_OUT(39 downto 32) <= GPS_SATNUM12;"
+                 "        SAT_INFO_OUT(31 downto 24) <= GPS_SAT12LEV3;"
+                 "        SAT_INFO_OUT(23 downto 16) <= GPS_SAT12LEV2;"
+                 "        SAT_INFO_OUT(15 downto 8) <= GPS_SAT12LEV1;"
+                 "        SAT_INFO_OUT(7 downto 0) <= GPS_SAT12LEV0;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      TS_ONE_PPS_VALID_OUT <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      if ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then"
+                 "        TS_ONE_PPS_VALID_OUT <= '1';"
+                 "      elsif TS_ONE_PPS_READOUT_DONE_DEL1 = '1' and TS_ONE_PPS_READOUT_DONE_DEL2 = '0' then"
+                 "        TS_ONE_PPS_VALID_OUT <= '0';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  GPS_TS_OUT(55 downto 48) <= GPS_DAY_BUF; -- Day"
+                 "  GPS_TS_OUT(47 downto 40) <= GPS_MONTH_BUF; -- Month"
+                 "  GPS_TS_OUT(39 downto 32) <= GPS_YEAR1_BUF; -- Year"
+                 "  GPS_TS_OUT(31 downto 24) <= GPS_YEAR0_BUF; -- Year"
+                 "  GPS_TS_OUT(23 downto 16) <= GPS_HOUR_BUF; -- Hours"
+                 "  GPS_TS_OUT(15 downto 8) <= GPS_MIN_BUF; -- Minutes"
+                 "  GPS_TS_OUT(7 downto 0) <= GPS_SEC_BUF; -- Seconds"
+                 "  CTD_OUT <= CTP_COUNT;"
+                 ""
+                 "------------------------- Comparator stuff ----------------------------------"
+                 ""
+                 "  -- Delays and synchronization"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPL1_IN_DEL1 <= '0';"
+                 "      COMPL1_IN_DEL2 <= '0';"
+                 "      COMPH1_IN_DEL1 <= '0';"
+                 "      COMPH1_IN_DEL2 <= '0';"
+                 "      COMPL2_IN_DEL1 <= '0';"
+                 "      COMPL2_IN_DEL2 <= '0';"
+                 "      COMPH2_IN_DEL1 <= '0';"
+                 "      COMPH2_IN_DEL2 <= '0';"
+                 "      RST_COMPL1 <= '0';"
+                 "      RST_COMPH1 <= '0';"
+                 "      RST_COMPL2 <= '0';"
+                 "      RST_COMPH2 <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      COMPL1_IN_DEL1 <= COMPL1_IN; "
+                 "      COMPL1_IN_DEL2 <= COMPL1_IN_DEL1; "
+                 "      COMPH1_IN_DEL1 <= COMPH1_IN; "
+                 "      COMPH1_IN_DEL2 <= COMPH1_IN_DEL1; "
+                 "      COMPL2_IN_DEL1 <= COMPL2_IN; "
+                 "      COMPL2_IN_DEL2 <= COMPL2_IN_DEL1; "
+                 "      COMPH2_IN_DEL1 <= COMPH2_IN; "
+                 "      COMPH2_IN_DEL2 <= COMPH2_IN_DEL1; "
+                 "      RST_COMPL1 <= RST_COMPL1_10MHZ; "
+                 "      RST_COMPH1 <= RST_COMPH1_10MHZ; "
+                 "      RST_COMPL2 <= RST_COMPL2_10MHZ; "
+                 "      RST_COMPH2 <= RST_COMPH2_10MHZ; "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process (CLK10MHz, SYSRST)"
+                 "  begin"
+                 "	if SYSRST = '1' then"
+                 "	  VALID_COMPL1_10MHZ <= '0';                 "
+                 "	  VALID_COMPH1_10MHZ <= '0';                 "
+                 "	  VALID_COMPL2_10MHZ <= '0';                 "
+                 "	  VALID_COMPH2_10MHZ <= '0';                 "
+                 "      COMPDATA_READOUT_DONE_DEL1 <= '0';"
+                 "      COMPDATA_READOUT_DONE_DEL2 <= '0';"
+                 "	elsif CLK10MHz'event and CLK10MHz = '1' then"
+                 "	  VALID_COMPL1_10MHZ <= VALID_COMPL1;                 "
+                 "	  VALID_COMPH1_10MHZ <= VALID_COMPH1;                 "
+                 "	  VALID_COMPL2_10MHZ <= VALID_COMPL2;                 "
+                 "	  VALID_COMPH2_10MHZ <= VALID_COMPH2;                 "
+                 "	  COMPDATA_READOUT_DONE_DEL1 <= COMPDATA_READOUT_DONE;                 "
+                 "	  COMPDATA_READOUT_DONE_DEL2 <= COMPDATA_READOUT_DONE_DEL1;                 "
+                 "	end if;"
+                 "  end process;"
+                 ""
+                 "  -- Time over threshold counters"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPL1_COUNT <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPL1 = '1' then"
+                 "        COMPL1_COUNT <= (others => '0');"
+                 "      elsif COMPL1_COUNT = \"11111111111111111111111111111111\" then"
+                 "        COMPL1_COUNT <= COMPL1_COUNT;"
+                 "      elsif COMPL1_IN_DEL1 = '1' then"
+                 "        COMPL1_COUNT <= COMPL1_COUNT + \"00000000000000000000000000000001\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPH1_COUNT <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPH1 = '1' then"
+                 "        COMPH1_COUNT <= (others => '0');"
+                 "      elsif COMPH1_COUNT = \"11111111111111111111111111111111\" then"
+                 "        COMPH1_COUNT <= COMPH1_COUNT;"
+                 "      elsif COMPH1_IN_DEL1 = '1' then"
+                 "        COMPH1_COUNT <= COMPH1_COUNT + \"00000000000000000000000000000001\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPL2_COUNT <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPL2 = '1' then"
+                 "        COMPL2_COUNT <= (others => '0');"
+                 "      elsif COMPL1_COUNT = \"11111111111111111111111111111111\" then"
+                 "        COMPL2_COUNT <= COMPL2_COUNT;"
+                 "      elsif COMPL2_IN_DEL1 = '1' then"
+                 "        COMPL2_COUNT <= COMPL2_COUNT + \"00000000000000000000000000000001\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPH2_COUNT <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPH2 = '1' then"
+                 "        COMPH2_COUNT <= (others => '0');"
+                 "      elsif COMPL1_COUNT = \"11111111111111111111111111111111\" then"
+                 "        COMPH2_COUNT <= COMPH2_COUNT;"
+                 "      elsif COMPH2_IN_DEL1 = '1' then"
+                 "        COMPH2_COUNT <= COMPH2_COUNT + \"00000000000000000000000000000001\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Set valid bits for comparator signals"
+                 "  -- Valid on a negative edge of a COMP signal, because this is the end-time of the COMP counter"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      VALID_COMPL1 <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPL1 = '1' then"
+                 "        VALID_COMPL1 <= '0';"
+                 "      elsif COMPL1_IN_DEL1 = '0' and COMPL1_IN_DEL2 = '1' then"
+                 "        VALID_COMPL1 <= '1';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      VALID_COMPH1 <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPH1 = '1' then"
+                 "        VALID_COMPH1 <= '0';"
+                 "      elsif COMPH1_IN_DEL1 = '0' and COMPH1_IN_DEL2 = '1' then"
+                 "        VALID_COMPH1 <= '1';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      VALID_COMPL2 <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPL2 = '1' then"
+                 "        VALID_COMPL2 <= '0';"
+                 "      elsif COMPL2_IN_DEL1 = '0' and COMPL2_IN_DEL2 = '1' then"
+                 "        VALID_COMPL2 <= '1';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      VALID_COMPH2 <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if RST_COMPH2 = '1' then"
+                 "        VALID_COMPH2 <= '0';"
+                 "      elsif COMPH2_IN_DEL1 = '0' and COMPH2_IN_DEL2 = '1' then"
+                 "        VALID_COMPH2 <= '1';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch the time on a positive edge of a comparator signal"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPL1_TIMESTAMP <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if COMPL1_IN_DEL1 = '1' and COMPL1_IN_DEL2 = '0' then"
+                 "        COMPL1_TIMESTAMP(87 downto 80) <= GPS_DAY_BUF; -- Day"
+                 "        COMPL1_TIMESTAMP(79 downto 72) <= GPS_MONTH_BUF; -- Month"
+                 "        COMPL1_TIMESTAMP(71 downto 64) <= GPS_YEAR1_BUF; -- Year"
+                 "        COMPL1_TIMESTAMP(63 downto 56) <= GPS_YEAR0_BUF; -- Year"
+                 "        COMPL1_TIMESTAMP(55 downto 48) <= GPS_HOUR_BUF; -- Hours"
+                 "        COMPL1_TIMESTAMP(47 downto 40) <= GPS_MIN_BUF; -- Minutes"
+                 "        COMPL1_TIMESTAMP(39 downto 32) <= GPS_SEC_BUF; -- Seconds"
+                 "        COMPL1_TIMESTAMP(31 downto 0) <= CTP_COUNT;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPH1_TIMESTAMP <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if COMPH1_IN_DEL1 = '1' and COMPH1_IN_DEL2 = '0' then"
+                 "        COMPH1_TIMESTAMP(87 downto 80) <= GPS_DAY_BUF; -- Day"
+                 "        COMPH1_TIMESTAMP(79 downto 72) <= GPS_MONTH_BUF; -- Month"
+                 "        COMPH1_TIMESTAMP(71 downto 64) <= GPS_YEAR1_BUF; -- Year"
+                 "        COMPH1_TIMESTAMP(63 downto 56) <= GPS_YEAR0_BUF; -- Year"
+                 "        COMPH1_TIMESTAMP(55 downto 48) <= GPS_HOUR_BUF; -- Hours"
+                 "        COMPH1_TIMESTAMP(47 downto 40) <= GPS_MIN_BUF; -- Minutes"
+                 "        COMPH1_TIMESTAMP(39 downto 32) <= GPS_SEC_BUF; -- Seconds"
+                 "        COMPH1_TIMESTAMP(31 downto 0) <= CTP_COUNT;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPL2_TIMESTAMP <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if COMPL2_IN_DEL1 = '1' and COMPL2_IN_DEL2 = '0' then"
+                 "        COMPL2_TIMESTAMP(87 downto 80) <= GPS_DAY_BUF; -- Day"
+                 "        COMPL2_TIMESTAMP(79 downto 72) <= GPS_MONTH_BUF; -- Month"
+                 "        COMPL2_TIMESTAMP(71 downto 64) <= GPS_YEAR1_BUF; -- Year"
+                 "        COMPL2_TIMESTAMP(63 downto 56) <= GPS_YEAR0_BUF; -- Year"
+                 "        COMPL2_TIMESTAMP(55 downto 48) <= GPS_HOUR_BUF; -- Hours"
+                 "        COMPL2_TIMESTAMP(47 downto 40) <= GPS_MIN_BUF; -- Minutes"
+                 "        COMPL2_TIMESTAMP(39 downto 32) <= GPS_SEC_BUF; -- Seconds"
+                 "        COMPL2_TIMESTAMP(31 downto 0) <= CTP_COUNT;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPH2_TIMESTAMP <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if COMPH2_IN_DEL1 = '1' and COMPL1_IN_DEL2 = '0' then"
+                 "        COMPH2_TIMESTAMP(87 downto 80) <= GPS_DAY_BUF; -- Day"
+                 "        COMPH2_TIMESTAMP(79 downto 72) <= GPS_MONTH_BUF; -- Month"
+                 "        COMPH2_TIMESTAMP(71 downto 64) <= GPS_YEAR1_BUF; -- Year"
+                 "        COMPH2_TIMESTAMP(63 downto 56) <= GPS_YEAR0_BUF; -- Year"
+                 "        COMPH2_TIMESTAMP(55 downto 48) <= GPS_HOUR_BUF; -- Hours"
+                 "        COMPH2_TIMESTAMP(47 downto 40) <= GPS_MIN_BUF; -- Minutes"
+                 "        COMPH2_TIMESTAMP(39 downto 32) <= GPS_SEC_BUF; -- Seconds"
+                 "        COMPH2_TIMESTAMP(31 downto 0) <= CTP_COUNT;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 "  "
+                 "  -- Output selector"
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COMPDATA_VALID_OUT_TMP <= '0';"
+                 "      RST_COMPL1_10MHZ <= '0';"
+                 "      RST_COMPH1_10MHZ <= '0';"
+                 "      RST_COMPL2_10MHZ <= '0';"
+                 "      RST_COMPH2_10MHZ <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      if COMPDATA_VALID_OUT_TMP = '0' then"
+                 "        if VALID_COMPL1_10MHZ = '1' then"
+                 "          COMPDATA_VALID_OUT_TMP <= '1';"
+                 "          RST_COMPL1_10MHZ <= '1';"
+                 "          COMPDATA_OUT(127 downto 120) <= \"00000001\";"
+                 "          COMPDATA_OUT(119 downto 32) <= COMPL1_TIMESTAMP;"
+                 "          COMPDATA_OUT(31 downto 0) <= COMPL1_COUNT;"
+                 "        elsif VALID_COMPH1_10MHZ = '1' then"
+                 "          COMPDATA_VALID_OUT_TMP <= '1';"
+                 "          RST_COMPH1_10MHZ <= '1';"
+                 "          COMPDATA_OUT(127 downto 120) <= \"00000010\";"
+                 "          COMPDATA_OUT(119 downto 32) <= COMPH1_TIMESTAMP;"
+                 "          COMPDATA_OUT(31 downto 0) <= COMPH1_COUNT;"
+                 "        elsif VALID_COMPL2_10MHZ = '1' then"
+                 "          COMPDATA_VALID_OUT_TMP <= '1';"
+                 "          RST_COMPL2_10MHZ <= '1';"
+                 "          COMPDATA_OUT(127 downto 120) <= \"00000100\";"
+                 "          COMPDATA_OUT(119 downto 32) <= COMPL2_TIMESTAMP;"
+                 "          COMPDATA_OUT(31 downto 0) <= COMPL2_COUNT;"
+                 "        elsif VALID_COMPH2_10MHZ = '1' then"
+                 "          COMPDATA_VALID_OUT_TMP <= '1';"
+                 "          RST_COMPH2_10MHZ <= '1';"
+                 "          COMPDATA_OUT(127 downto 120) <= \"00001000\";"
+                 "          COMPDATA_OUT(119 downto 32) <= COMPH2_TIMESTAMP;"
+                 "          COMPDATA_OUT(31 downto 0) <= COMPH2_COUNT;"
+                 "        end if;"
+                 "      elsif COMPDATA_VALID_OUT_TMP = '1' then"
+                 "        RST_COMPL1_10MHZ <= '0';"
+                 "        RST_COMPH1_10MHZ <= '0';"
+                 "        RST_COMPL2_10MHZ <= '0';"
+                 "        RST_COMPH2_10MHZ <= '0';"
+                 "        if COMPDATA_READOUT_DONE_DEL1 = '1' and COMPDATA_READOUT_DONE_DEL2 = '0' then"
+                 "          COMPDATA_VALID_OUT_TMP <= '0';"
+                 "          COMPDATA_OUT <= (others => '0');"
+                 "        end if;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  COMPDATA_VALID_OUT <= COMPDATA_VALID_OUT_TMP;"
+                 ""
+                 "end rtl ; -- of GPS_STUFF"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

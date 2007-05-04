@@ -1,0 +1,918 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbd5928bc3447600f7073040000")
+    (NAME "CONVERSION_12_TO_8_BIT")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1984 7040)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Dec 18 10:55:37 2006")
+      (NAME "CONVERSION_12_TO_8_BIT")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1137410709 "Mon Jan 16 12:25:09 2006")
+      (MODIFIED 1166435631 "Mon Dec 18 10:53:51 2006")
+    )
+    (PORT
+      (OBID "eprt0c013cbd8738bc3447600f70a3040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT_CH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 600 40 680)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_OUT_CH1(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd5838bc3447600f70c3040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_READY_CH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_READY_CH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbde938bc3447600f70e3040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_VALID_CH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 728 40 808)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_VALID_CH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd4b38bc3447600f7004040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN_CH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 856 40 936)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "RDEN_CH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdcf38bc3447600f7024040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "FIFO_EMPTY")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 1048 2024 1128)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 1088)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "FIFO_EMPTY")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd4e48bc3447600f7044040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CONV_DATA_READY")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1944 856 2024 936)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CONV_DATA_READY")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdcf48bc3447600f7064040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "7" "0")
+        )
+      )
+      (GEOMETRY 1944 3352 2024 3432)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 3392)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DATA_OUT(7:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdee58bc3447600f7084040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CONVERSION_CLK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 2008 2024 2088)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 2048)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CONVERSION_CLK")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f6ba0cc34c5c05edc12a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TOTAL_TIME_3X")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "6000" "0")
+        )
+      )
+      (GEOMETRY -40 3096 40 3176)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 3136)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "TOTAL_TIME_3X(6000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f85d0cc34c5c05edc42a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLKRD")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 1688 2024 1768)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 1728)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CLKRD")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2f0921cc34c5c05edc73a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WR_ADDRESS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "12020" "0")
+        )
+      )
+      (GEOMETRY 1944 2840 2024 2920)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 2880)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "WR_ADDRESS(12020:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2faa21cc34c5c05edc93a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1944 3096 2024 3176)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 3136)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "WE")
+      )
+    )
+    (PORT
+      (OBID "eprt0583cf2fee61cc34c5c05edc05a60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 3352 40 3432)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 3392)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdda57fc3442400f702d720000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT_CH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 5272 40 5352)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 5312)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_OUT_CH2(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdea57fc3442400f703d720000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_READY_CH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 5144 40 5224)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 5184)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_READY_CH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbdfa57fc3442400f704d720000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_VALID_CH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 5400 40 5480)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 5440)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_VALID_CH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd0b57fc3442400f705d720000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN_CH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 5528 40 5608)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 5568)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "RDEN_CH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd42eb0d3442400f705f720000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TOTAL_TIME_6X")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "12000" "0")
+        )
+      )
+      (GEOMETRY 1944 152 2024 232)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TOTAL_TIME_6X(12000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a2066b90cc4444eb05edca8170000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TRIGGER_PATTERN_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "15" "0")
+        )
+      )
+      (GEOMETRY -40 5912 40 5992)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 5952)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "TRIGGER_PATTERN_IN(15:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a2066ea0cc4444eb05edcc8170000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TRIGGER_PATTERN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "15" "0")
+        )
+      )
+      (GEOMETRY 1944 4632 2024 4712)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 4672)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TRIGGER_PATTERN(15:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd43fe55440d800f7013140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_TS_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "55" "0")
+        )
+      )
+      (GEOMETRY -40 6744 40 6824)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 6784)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "GPS_TS_IN(55:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd43fe55440d800f7023140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTD_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY -40 6872 40 6952)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 6912)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CTD_IN(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd54fe55440d800f7053140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_TS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "55" "0")
+        )
+      )
+      (GEOMETRY 1944 4824 2024 4904)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 4864)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_TS_OUT(55:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd54fe55440d800f7063140000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTD_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY 1944 4952 2024 5032)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 4992)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CTD_OUT(31:0)")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c013cbd5928bc3447600f7083040000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c013cbd5928bc3447600f7083040000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'CONVERSION_12_TO_8_BIT."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'CONVERSION_12_TO_8_BIT' :"
+                 "-- "
+                 "--   port("
+                 "--     CLKRD              : in     std_logic;"
+                 "--     CONVERSION_CLK     : in     std_logic;"
+                 "--     CONV_DATA_READY    : out    std_logic;"
+                 "--     CTD_IN             : in     std_logic_vector(31 downto 0);"
+                 "--     CTD_OUT            : out    std_logic_vector(31 downto 0);"
+                 "--     DATA_OUT           : out    std_logic_vector(7 downto 0);"
+                 "--     DATA_OUT_CH1       : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT_CH2       : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_READY_CH1     : in     std_logic;"
+                 "--     DATA_READY_CH2     : in     std_logic;"
+                 "--     DATA_VALID_CH1     : in     std_logic;"
+                 "--     DATA_VALID_CH2     : in     std_logic;"
+                 "--     FIFO_EMPTY         : in     std_logic;"
+                 "--     GPS_TS_IN          : in     std_logic_vector(55 downto 0);"
+                 "--     GPS_TS_OUT         : out    std_logic_vector(55 downto 0);"
+                 "--     RDEN_CH1           : out    std_logic;"
+                 "--     RDEN_CH2           : out    std_logic;"
+                 "--     SYSRST             : in     std_logic;"
+                 "--     TOTAL_TIME_3X      : in     integer range 6000 downto 0;"
+                 "--     TOTAL_TIME_6X      : out    integer range 12000 downto 0;"
+                 "--     TRIGGER_PATTERN    : out    std_logic_vector(15 downto 0);"
+                 "--     TRIGGER_PATTERN_IN : in     std_logic_vector(15 downto 0);"
+                 "--     WE                 : out    std_logic;"
+                 "--     WR_ADDRESS         : out    integer range 12020 downto 0);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of CONVERSION_12_TO_8_BIT is"
+                 ""
+                 "signal PHASE1: std_logic;"
+                 "signal PHASE2: std_logic;"
+                 "signal PHASE: std_logic_vector(1 downto 0);  "
+                 "signal WR_ADDRESS_CNT: integer range 12020 downto 0;  "
+                 "signal DATA_OUT_TMP: std_logic_vector(3 downto 0);  "
+                 "signal WE_TMP: std_logic;"
+                 "signal WE_DEL: std_logic;"
+                 "signal FIFO_EMPTY_DEL: std_logic;"
+                 "signal CHANNEL_SELECT: std_logic;"
+                 "signal CHANNEL_SELECT_PRE1: std_logic;"
+                 "signal CHANNEL_SELECT_PRE2: std_logic;"
+                 "signal RDEN_SELECT: std_logic;"
+                 "signal DATA_SELECT: std_logic_vector(11 downto 0);  "
+                 "signal WR_ADDRESS_SELECT_BEGIN: integer range 12020 downto 0;  "
+                 "signal WR_ADDRESS_SELECT_END: integer range 12020 downto 0;  "
+                 "signal TOTAL_TIME_6X_TMP: integer range 12000 downto 0;  "
+                 "signal DATA_VALID_SELECT: std_logic;"
+                 ""
+                 "begin"
+                 "-- PHASE1 and PHASE2 are made to divide two periods of CLKRD in four parts"
+                 "-- each part has the lenght of CONVERSION_CLK"
+                 "  PHASE(0) <= PHASE1;"
+                 "  PHASE(1) <= PHASE2;"
+                 "  "
+                 "  WR_ADDRESS <= WR_ADDRESS_CNT;"
+                 "  WE <= WE_TMP;"
+                 "  TOTAL_TIME_6X <= TOTAL_TIME_6X_TMP;"
+                 ""
+                 ""
+                 "  process(CLKRD,DATA_VALID_SELECT)"
+                 "  begin"
+                 "    if DATA_VALID_SELECT = '0' then"
+                 "      PHASE1 <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      PHASE1 <= not PHASE1;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLKRD,DATA_VALID_SELECT)"
+                 "  begin"
+                 "    if DATA_VALID_SELECT = '0' then"
+                 "      PHASE2 <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '0') then"
+                 "      PHASE2 <= PHASE1;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CONVERSION_CLK,DATA_SELECT,WR_ADDRESS_CNT)"
+                 "  begin"
+                 "    if (CONVERSION_CLK'event and CONVERSION_CLK = '1') then"
+                 "      if DATA_VALID_SELECT = '1' then"
+                 "        if WR_ADDRESS_CNT < WR_ADDRESS_SELECT_END - 1 then"
+                 "    	  case PHASE is"
+                 "    	    -- In the first part the most significant 8 data bits from the ADCs"
+                 "    	    -- go to the output (input for FIFO) and the other 4 bits to a temporary register"
+                 "      	    when \"10\" => DATA_OUT <= DATA_SELECT(11 downto 4);"
+                 "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
+                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT +1;"
+                 "                       "
+                 "      	    -- The write address counter for the FIFO will not change"
+                 "      	    -- The counter only increments in the other 3 parts"
+                 "      	    when \"00\" => DATA_OUT <= DATA_SELECT(11 downto 4);"
+                 "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
+                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT; "
+                 "                       "
+                 "    	    -- In this part the data from the temporary register (this are the least"
+                 "    	    -- significant bits of the former data) go to the most significant bits"
+                 "    	    -- of the FIFO data and the least significant bits of the FIFO will be"
+                 "    	    -- the most significant bits of the new input data."
+                 "      	    when \"01\" => DATA_OUT(7 downto 4) <= DATA_OUT_TMP;"
+                 "                         DATA_OUT(3 downto 0) <= DATA_SELECT(11 downto 8);"
+                 "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
+                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT + 1;"
+                 "                       "
+                 "            -- In the last part the least significant bits of the new input data "
+                 "            -- go to the FIFO              "
+                 "      	    when \"11\" => DATA_OUT <= DATA_SELECT(7 downto 0);"
+                 "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
+                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT + 1;"
+                 "      	    when others => DATA_OUT <= DATA_SELECT(11 downto 4);"
+                 "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
+                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT;"
+                 "   		  end case;"
+                 "   	      WE_TMP <= '1';"
+                 "   	    else"
+                 "   	  	  WR_ADDRESS_CNT <= WR_ADDRESS_CNT;"
+                 "   	  	  DATA_OUT <= \"00000000\";"
+                 "   	  	  DATA_OUT_TMP <= \"0000\";"
+                 "   	      WE_TMP <= '0';"
+                 "   	    end if;"
+                 "   	  else"
+                 "   	    WR_ADDRESS_CNT <= WR_ADDRESS_SELECT_BEGIN;"
+                 "   	  end if;     	    "
+                 "    end if;"
+                 "  end process; "
+                 ""
+                 "  -- Delays"
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      WE_DEL <= '0';"
+                 "      FIFO_EMPTY_DEL <= '1';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      WE_DEL <= WE_TMP;"
+                 "      FIFO_EMPTY_DEL <= FIFO_EMPTY;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Read enable must go false at the end of writing the FIFO and true when readout has finished "
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      RDEN_SELECT <= '1';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      if WE_TMP = '0' and WE_DEL = '1' and CHANNEL_SELECT = '1' then"
+                 "        RDEN_SELECT <= '0';"
+                 "      elsif FIFO_EMPTY = '1' and FIFO_EMPTY_DEL = '0' then"
+                 "        RDEN_SELECT <= '1';"
+                 "      end if;  "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Data conversion (CONV_DATA_READY) must go true at the end of writing the FIFO and false when readout starts "
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      CONV_DATA_READY <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      if WE_TMP = '0' and WE_DEL = '1' and CHANNEL_SELECT = '1' then"
+                 "        CONV_DATA_READY <= '1';"
+                 "      elsif FIFO_EMPTY = '0' and FIFO_EMPTY_DEL = '1' then"
+                 "        CONV_DATA_READY <= '0';"
+                 "      end if;  "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      CHANNEL_SELECT <= '0';"
+                 "      CHANNEL_SELECT_PRE1 <= '0';"
+                 "      CHANNEL_SELECT_PRE2 <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      CHANNEL_SELECT_PRE2 <= CHANNEL_SELECT_PRE1;"
+                 "      CHANNEL_SELECT <= CHANNEL_SELECT_PRE2;"
+                 "      if WR_ADDRESS_CNT >= TOTAL_TIME_3X - 1 and WR_ADDRESS_CNT < TOTAL_TIME_6X_TMP - 1 then "
+                 "        CHANNEL_SELECT_PRE1 <= '1';"
+                 "      else"
+                 "        CHANNEL_SELECT_PRE1 <= '0';"
+                 "      end if;  "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Read enable select. If CHANNEL_SELECT = channel 1 then RDEN_CH1 has to be selected and RDEN_CH2 has to be zero"
+                 "  -- If CHANNEL_SELECT = channel 2 then RDEN_CH2 has to be selected and RDEN_CH1 has to be zero"
+                 "  RDEN_CH1 <= RDEN_SELECT when CHANNEL_SELECT = '0' else '0';"
+                 "  RDEN_CH2 <= RDEN_SELECT when CHANNEL_SELECT = '1' else '0';"
+                 "  "
+                 "  -- The input data is from channel 1 when CHANNEL_SELECT = 0 or from channel 2 when CHANNEL_SELECT = 1  "
+                 "  DATA_SELECT <= DATA_OUT_CH1 when CHANNEL_SELECT = '0' else DATA_OUT_CH2;"
+                 "  "
+                 "  -- Data valid is from channel 1 when CHANNEL_SELECT = 0 or from channel 2 when CHANNEL_SELECT = 1  "
+                 "  DATA_VALID_SELECT <= DATA_VALID_CH1 when CHANNEL_SELECT = '0' else DATA_VALID_CH2;"
+                 ""
+                 "  -- FIFO write address has to begin at zero and has to stop at 3 times the total time when doing channel 1"
+                 "  -- FIFO write address has to begin at 3 times the total time and has to stop at 6 times the total time when doing channel 2"
+                 "  TOTAL_TIME_6X_TMP <= TOTAL_TIME_3X + TOTAL_TIME_3X;"
+                 "  WR_ADDRESS_SELECT_BEGIN <= 0 when CHANNEL_SELECT = '0' else TOTAL_TIME_3X;"
+                 "  WR_ADDRESS_SELECT_END <= TOTAL_TIME_3X when CHANNEL_SELECT = '0' else TOTAL_TIME_6X_TMP;"
+                 ""
+                 "  -- Take over TRIGGER_PATTERN, GPS_TS and CTD "
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      TRIGGER_PATTERN <= \"0000000000000000\";"
+                 "      GPS_TS_OUT <= \"00000000000000000000000000000000000000000000000000000000\";"
+                 "      CTD_OUT <= \"00000000000000000000000000000000\";"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      if WE_TMP = '0' and WE_DEL = '1' and CHANNEL_SELECT = '1' then"
+                 "        TRIGGER_PATTERN <= TRIGGER_PATTERN_IN;"
+                 "        GPS_TS_OUT <= GPS_TS_IN;"
+                 "        CTD_OUT <= CTD_IN;"
+                 "      end if;  "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  "
+                 "end rtl ; -- of CONVERSION_12_TO_8_BIT"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

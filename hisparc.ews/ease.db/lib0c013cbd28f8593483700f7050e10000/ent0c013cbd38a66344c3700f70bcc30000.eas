@@ -1,0 +1,142 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbd38a66344c3700f70bcc30000")
+    (NAME "CLK_DIV")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 960 512)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "CLK_DIV")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1144416899 "Fri Apr 07 15:34:59 2006")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0c013cbdeaa66344c3700f70ecc30000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK10MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 152 40 232)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK10MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd7ca66344c3700f700dc30000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLKRD")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 920 280 1000 360)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 896 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CLKRD")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd13b66344c3700f702dc30000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 344 40 424)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c013cbd38a66344c3700f70ccc30000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c013cbd38a66344c3700f70ccc30000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'CLK_DIV."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'CLK_DIV' :"
+                 "-- "
+                 "--   port("
+                 "--     CLK10MHz : in     std_logic;"
+                 "--     CLKRD    : out    std_logic;"
+                 "--     SYSRST   : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of CLK_DIV is"
+                 ""
+                 "signal CLKRD_TMP: std_logic;"
+                 ""
+                 "begin"
+                 "  CLKRD <= CLKRD_TMP;"
+                 ""
+                 "  process(CLK10MHz,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  CLKRD_TMP <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '0') then -- let op: CLKRD gaat op een negatieve flank"
+                 "  	  CLKRD_TMP <=  not CLKRD_TMP;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "end rtl ; -- of CLK_DIV"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

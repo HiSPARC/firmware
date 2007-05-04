@@ -1,0 +1,664 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbd9df5984487500f70d0c00000")
+    (NAME "LVDS_MUX")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 2112 2240)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "LVDS_MUX")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1149853657 "Fri Jun 09 13:47:37 2006")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0c013cbde716984487500f7041c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd8f16984487500f7061c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ML1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2072 600 2152 680)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ML1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd8f16984487500f7071c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ML2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2072 728 2152 808)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ML2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd8f16984487500f7081c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2072 856 2152 936)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "MH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd8f16984487500f7091c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2072 984 2152 1064)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 1024)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "MH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd8126984487500f70e1c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2072 152 2152 232)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COINC_MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd1336984487500f7022c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 344 2152 424)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COINC")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6396984487500f70b2c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SL1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 280 40 360)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SL1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6396984487500f70c2c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 408 40 488)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6396984487500f70d2c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SL2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 536 40 616)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 576)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SL2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd6396984487500f70e2c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 664 40 744)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 704)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd96a6984487500f7033c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_IN1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1688 40 1768)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1728)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "LVDS_IN1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd97a6984487500f7053c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_IN2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1816 40 1896)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1856)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "LVDS_IN2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbde7a6984487500f7073c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_IN3")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1944 40 2024)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1984)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "LVDS_IN3")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd68a6984487500f7093c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_IN4")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2072 40 2152)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2112)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "LVDS_IN4")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd61c6984487500f7035c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ONE_PPS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 1176 2152 1256)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 1216)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ONE_PPS_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd03c6984487500f7055c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ONE_PPS_MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1112 40 1192)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1152)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "ONE_PPS_MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd84d6984487500f7095c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_DATA_MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1432 40 1512)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1472)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "GPS_DATA_MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbda5d6984487500f70b5c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_DATA_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 1432 2152 1512)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 1472)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_DATA_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd98e6984487500f70f6c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_OUT1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 1688 2152 1768)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 1728)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LVDS_OUT1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd29e6984487500f7017c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_OUT2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 1816 2152 1896)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 1856)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LVDS_OUT2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd1ae6984487500f7037c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_OUT3")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 1944 2152 2024)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 1984)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LVDS_OUT3")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd7ae6984487500f7057c00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LVDS_OUT4")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2072 2072 2152 2152)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2048 2112)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LVDS_OUT4")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c013cbd9df5984487500f70e0c00000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c013cbd9df5984487500f70e0c00000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'LVDS_MUX."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'LVDS_MUX' :"
+                 "-- "
+                 "--   port("
+                 "--     COINC           : out    std_logic;"
+                 "--     COINC_MASTER    : in     std_logic;"
+                 "--     GPS_DATA_MASTER : in     std_logic;"
+                 "--     GPS_DATA_OUT    : out    std_logic;"
+                 "--     LVDS_IN1        : in     std_logic;"
+                 "--     LVDS_IN2        : in     std_logic;"
+                 "--     LVDS_IN3        : in     std_logic;"
+                 "--     LVDS_IN4        : in     std_logic;"
+                 "--     LVDS_OUT1       : out    std_logic;"
+                 "--     LVDS_OUT2       : out    std_logic;"
+                 "--     LVDS_OUT3       : out    std_logic;"
+                 "--     LVDS_OUT4       : out    std_logic;"
+                 "--     MASTER          : in     std_logic;"
+                 "--     MH1             : in     std_logic;"
+                 "--     MH2             : in     std_logic;"
+                 "--     ML1             : in     std_logic;"
+                 "--     ML2             : in     std_logic;"
+                 "--     ONE_PPS_MASTER  : in     std_logic;"
+                 "--     ONE_PPS_OUT     : out    std_logic;"
+                 "--     SH1             : out    std_logic;"
+                 "--     SH2             : out    std_logic;"
+                 "--     SL1             : out    std_logic;"
+                 "--     SL2             : out    std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of LVDS_MUX is"
+                 ""
+                 "begin"
+                 ""
+                 "  SL1 <= LVDS_IN1 when MASTER = '1' else '1';"
+                 "  SH1 <= LVDS_IN2 when MASTER = '1' else '1';"
+                 "  SL2 <= LVDS_IN3 when MASTER = '1' else '1';"
+                 "  SH2 <= LVDS_IN4 when MASTER = '1' else '1';"
+                 ""
+                 "  GPS_DATA_OUT <= GPS_DATA_MASTER when MASTER = '1' else LVDS_IN1;"
+                 "  ONE_PPS_OUT <= ONE_PPS_MASTER when MASTER = '1' else LVDS_IN2;"
+                 "  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;"
+                 "  "
+                 "  LVDS_OUT1 <= GPS_DATA_MASTER when MASTER = '1' else ML1;"
+                 "  LVDS_OUT2 <= ONE_PPS_MASTER when MASTER = '1' else MH1;"
+                 "  LVDS_OUT3 <= COINC_MASTER when MASTER = '1' else ML2;"
+                 "  LVDS_OUT4 <= '0' when MASTER = '1' else MH2;"
+                 ""
+                 "end rtl ; -- of LVDS_MUX"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

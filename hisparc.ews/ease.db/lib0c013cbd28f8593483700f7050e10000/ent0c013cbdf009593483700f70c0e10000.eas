@@ -1,0 +1,233 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c013cbdf009593483700f70c0e10000")
+    (NAME "WINDOW_MAKER")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1856 1408)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (NAME "WINDOW_MAKER")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1133875215 "Tue Dec 06 14:20:15 2005")
+      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+    )
+    (PORT
+      (OBID "eprt0c013cbdc459593483700f70b1e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "POST_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "1600" "0")
+        )
+      )
+      (GEOMETRY 1816 920 1896 1000)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1792 960)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "POST_TIME(1600:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd5979593483700f7042e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "END_OF_COINC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 216 40 296)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "END_OF_COINC")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd347a593483700f7062e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1176 40 1256)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1216)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c013cbd587a593483700f7082e10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1048 40 1128)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1088)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprte32c736dbbb1a93407d05edcad240000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_TO_END_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1816 88 1896 168)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1792 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COINC_TO_END_TIME")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c013cbdf009593483700f70d0e10000" "a0")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c013cbdf009593483700f70d0e10000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "a0")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'WINDOW_MAKER."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'WINDOW_MAKER' :"
+                 "-- "
+                 "--   port("
+                 "--     CLK200MHz         : in     std_logic;"
+                 "--     COINC_TO_END_TIME : out    std_logic;"
+                 "--     END_OF_COINC      : in     std_logic;"
+                 "--     POST_TIME         : in     integer range 1600 downto 0;"
+                 "--     SYSRST            : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture a0 of WINDOW_MAKER is"
+                 ""
+                 "signal COINC_DEL1: std_logic ; -- COINC after one clockcycle  "
+                 "signal COINC_TO_END_TIME_TMP: std_logic ; -- Time from negative edge of COINC to end of POST_TIME  "
+                 "signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from COINC to end of POST_TIME"
+                 ""
+                 "begin"
+                 "  "
+                 "  COINC_TO_END_TIME <= COINC_TO_END_TIME_TMP;"
+                 "  "
+                 "  -- COINC delay"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COINC_DEL1 <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      COINC_DEL1 <= END_OF_COINC;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- COINC_TO_END_TIME_TMP starts at a negative edge of COINC and stops when COINC_TO_END_TIME_CNT reaches POST_TIME"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COINC_TO_END_TIME_TMP <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if END_OF_COINC = '1' and COINC_DEL1 = '0' then -- on a positive edge of END_OF_COINC"
+                 "        COINC_TO_END_TIME_TMP <= '1'; "
+                 "      elsif COINC_TO_END_TIME_CNT > POST_TIME then"
+                 "        COINC_TO_END_TIME_TMP <= '0';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- COINC_TO_END_TIME_CNT starts when COINC_TO_END_TIME_TMP = '1'"
+                 "  -- and counts as long COINC_TO_END_TIME_TMP is valid "
+                 "  -- and resets when COINC_TO_END_TIME_TMP = '0'"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COINC_TO_END_TIME_CNT <= 0;"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if COINC_TO_END_TIME_TMP = '1' then "
+                 "        COINC_TO_END_TIME_CNT <= COINC_TO_END_TIME_CNT + 1;"
+                 "      else"
+                 "        COINC_TO_END_TIME_CNT <= 0;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 " "
+                 "end a0 ; -- of WINDOW_MAKER"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)
