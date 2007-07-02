@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 2880 14016)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Dec 20 11:50:00 2006")
+      (PROPERTY "STAMP_TIME" "Tue Jun 26 12:59:33 2007")
       (NAME "DATA_CONTROLLER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146050445 "Wed Apr 26 13:20:45 2006")
-      (MODIFIED 1166611756 "Wed Dec 20 11:49:16 2006")
+      (MODIFIED 1182855526 "Tue Jun 26 12:58:46 2007")
     )
     (PORT
       (OBID "eprt0c013cbd1da5f44409500f70a2a60000")
@@ -1893,6 +1893,106 @@
         (SIDE 3)
         (FORMAT 35)
         (TEXT "COMPDATA_READOUT_DONE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca13eebb76403400f706fa00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "READ_BUSY_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2840 7256 2920 7336)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2816 7296)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "READ_BUSY_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1afebb76403400f709fa00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "USB_WRITE_ENABLE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2840 8024 2920 8104)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2816 8064)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "USB_WRITE_ENABLE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca15a26f76403400f70d0b00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "STOP_READ_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2840 12056 2920 12136)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2816 12096)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "STOP_READ_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1bd0f086403400f7051b00000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ERROR_READ_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2840 13400 2920 13480)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2816 13440)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ERROR_READ_OUT")
       )
     )
     (ARCH_DECLARATION 1 "arch0c013cbdd875f44409500f70ff960000" "structure")
@@ -3898,6 +3998,110 @@
           (SIDE 1)
           (FORMAT 35)
           (TEXT "COMPDATA_READOUT_DONE")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca13eebb76403400f707fa00000")
+        (PORT "eprt0c012ca13eebb76403400f706fa00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "READ_BUSY_OUT")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 5912 5528 5992 5608)
+        (SENSLIST 1)
+        (SIDE 3)
+        (LABEL
+          (POSITION 6016 5568)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 3)
+          (SIDE 3)
+          (FORMAT 35)
+          (TEXT "READ_BUSY_OUT")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca1afebb76403400f70afa00000")
+        (PORT "eprt0c012ca1afebb76403400f709fa00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "USB_WRITE_ENABLE")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 8280 8152 8360 8232)
+        (SENSLIST 1)
+        (SIDE 3)
+        (LABEL
+          (POSITION 8384 8192)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 3)
+          (SIDE 3)
+          (FORMAT 35)
+          (TEXT "USB_WRITE_ENABLE")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca15a26f76403400f70e0b00000")
+        (PORT "eprt0c012ca15a26f76403400f70d0b00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "STOP_READ_OUT")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 5912 5784 5992 5864)
+        (SENSLIST 1)
+        (SIDE 3)
+        (LABEL
+          (POSITION 6016 5824)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 3)
+          (SIDE 3)
+          (FORMAT 35)
+          (TEXT "STOP_READ_OUT")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca1bd0f086403400f7061b00000")
+        (PORT "eprt0c012ca1bd0f086403400f7051b00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "ERROR_READ_OUT")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 5912 5912 5992 5992)
+        (SENSLIST 1)
+        (SIDE 3)
+        (LABEL
+          (POSITION 6016 5952)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 3)
+          (SIDE 3)
+          (FORMAT 35)
+          (TEXT "ERROR_READ_OUT")
         )
       )
       (COMPONENT
@@ -7163,6 +7367,84 @@
             (TEXT "GPS_PROG_ENABLE")
           )
         )
+        (PORT
+          (OBID "cprt0c012ca138ebb76403400f705fa00000")
+          (PORT "eprt0c012ca138ebb76403400f704fa00000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "READ_BUSY_OUT")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 5400 5528 5480 5608)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 5376 5568)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "READ_BUSY_OUT")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1d926f76403400f70c0b00000")
+          (PORT "eprt0c012ca1d926f76403400f70b0b00000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "STOP_READ_OUT")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 5400 5784 5480 5864)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 5376 5824)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "STOP_READ_OUT")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca18c0f086403400f7041b00000")
+          (PORT "eprt0c012ca18c0f086403400f7031b00000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "ERROR_READ_OUT")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 5400 5912 5480 5992)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 5376 5952)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "ERROR_READ_OUT")
+          )
+        )
         (LABEL
           (POSITION 3509 3189)
           (SCALE 128)
@@ -7341,7 +7623,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 16320 11136 15360 11136)
+        (WIRE 15360 11136 16320 11136)
         (PORT
           (OBID "aprt0c013cbdebb5f44409500f70b4a60000")
           (NAME "USB_TXE")
@@ -7429,7 +7711,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 6144 11712 6144)
+        (WIRE 11712 6144 13376 6144)
         (PORT
           (OBID "cprt0c013cbd12c5f44409500f70b5a60000")
           (NAME "EVENT_WR_EN")
@@ -7517,7 +7799,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 5568 11712 5568)
+        (WIRE 11712 5568 13376 5568)
         (PORT
           (OBID "cprt0c013cbd0ec8054409500f7078a60000")
           (NAME "SEND_EVENT_DATA")
@@ -7646,7 +7928,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 13376 4288 13056 4288)
+        (WIRE 13056 4288 13376 4288)
         (PORT
           (OBID "cprt0c013cbdec3065440d800f7084140000")
           (NAME "CTD_IN")
@@ -8131,7 +8413,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 3520 13056 3520)
+        (WIRE 13056 3520 13376 3520)
         (PORT
           (OBID "cprt0c013cbdc655064401800f7052110000")
           (NAME "TS_ONE_PPS_READOUT_DONE")
@@ -8197,7 +8479,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 13376 3264 13056 3264)
+        (WIRE 13056 3264 13376 3264)
         (PORT
           (OBID "cprt0c013cbdc655064401800f7072110000")
           (NAME "CTP_TS_ONE_PPS")
@@ -8253,7 +8535,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 9280 5504 9280)
+        (WIRE 5504 9280 13376 9280)
         (PORT
           (OBID "cprt0c013cbd915b164401800f70b5110000")
           (NAME "PARAMETER_LIST_READOUT_DONE")
@@ -8309,7 +8591,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 10624 5504 10624)
+        (WIRE 5504 10624 13376 10624)
         (PORT
           (OBID "cprt0c013cbdd8c38644ca600f7036150000")
           (NAME "READ_ERROR_READOUT_DONE")
@@ -8363,19 +8645,26 @@
         (OBID "net0c8a206684c7964480a05edc14400000")
         (HDL_OBJECT
           (HDL_IDENT
-            (NAME "USB_WRITE_ENABLE")
+            (NAME "USB_WRITE_ENABLE_net")
             (USERNAME 0)
           )
           (HDL_TYPE
           )
         )
-        (WIRE 5504 8576 13376 8576)
+        (WIRE 8192 8576 13376 8576)
+        (WIRE 5504 8576 8192 8576)
+        (WIRE 8192 8192 8192 8576)
+        (WIRE 8192 8192 8256 8192)
         (PORT
           (OBID "cprt0c8a2066cdb7964480a05edca3400000")
           (NAME "USB_WRITE_ENABLE")
         )
         (PORT
           (OBID "cprt0c8a206651c7964480a05edce3400000")
+          (NAME "USB_WRITE_ENABLE")
+        )
+        (PORT
+          (OBID "aprt0c012ca1afebb76403400f70afa00000")
           (NAME "USB_WRITE_ENABLE")
         )
         (LABEL
@@ -8397,7 +8686,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 8704 5504 8704)
+        (WIRE 5504 8704 13376 8704)
         (PORT
           (OBID "cprt0c8a2066d0c7964480a05edcc3400000")
           (NAME "USB_WRITE_BUSY")
@@ -9530,7 +9819,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 13376 2496 13056 2496)
+        (WIRE 13056 2496 13376 2496)
         (PORT
           (OBID "cprt0c012ca1173f54548fa00f705b240000")
           (NAME "TEMP")
@@ -9629,7 +9918,7 @@
             (RANGE "63" "0")
           )
         )
-        (WIRE 13376 2880 13056 2880)
+        (WIRE 13056 2880 13376 2880)
         (PORT
           (OBID "cprt0c013cbdb7f8064401800f7064110000")
           (NAME "LONGITUDE")
@@ -9751,7 +10040,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 13376 2112 13056 2112)
+        (WIRE 13056 2112 13376 2112)
         (PORT
           (OBID "cprt0c012ca12c7a6854cd300f703b300000")
           (NAME "COMPDATA_VALID")
@@ -9787,6 +10076,90 @@
         (PORT
           (OBID "cprt0c012ca12c7a6854cd300f705b300000")
           (NAME "COMPDATA_READOUT_DONE")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca130fbb76403400f70cfa00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "READ_BUSY_OUT")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 5504 5568 5888 5568)
+        (PORT
+          (OBID "cprt0c012ca138ebb76403400f705fa00000")
+          (NAME "READ_BUSY_OUT")
+        )
+        (PORT
+          (OBID "aprt0c012ca13eebb76403400f707fa00000")
+          (NAME "READ_BUSY_OUT")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1ca26f76403400f7001b00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "STOP_READ_OUT")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 5504 5824 5888 5824)
+        (PORT
+          (OBID "cprt0c012ca1d926f76403400f70c0b00000")
+          (NAME "STOP_READ_OUT")
+        )
+        (PORT
+          (OBID "aprt0c012ca15a26f76403400f70e0b00000")
+          (NAME "STOP_READ_OUT")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca14e0f086403400f7081b00000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "ERROR_READ_OUT")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 5504 5952 5888 5952)
+        (PORT
+          (OBID "cprt0c012ca18c0f086403400f7041b00000")
+          (NAME "ERROR_READ_OUT")
+        )
+        (PORT
+          (OBID "aprt0c012ca1bd0f086403400f7061b00000")
+          (NAME "ERROR_READ_OUT")
         )
         (LABEL
           (POSITION 0 0)
