@@ -32,6 +32,7 @@
 --     READ_ERROR_READOUT_DONE     : out    std_logic;
 --     READ_ERROR_VALID            : in     std_logic;
 --     SAT_INFO                    : in     std_logic_vector(487 downto 0);
+--     SECOND_MESSAGE_ALLOWED      : in     std_logic;
 --     SEND_EVENT_DATA             : out    std_logic;
 --     START_WRITE_EVENT           : in     std_logic;
 --     SYSRST                      : in     std_logic;
@@ -40,7 +41,7 @@
 --     TRIGGER_PATTERN             : in     std_logic_vector(15 downto 0);
 --     TR_CONDITION                : in     std_logic_vector(7 downto 0);
 --     TS_ONE_PPS_READOUT_DONE     : out    std_logic;
---     TS_ONE_PPS_VALID_IN         : in     std_logic;
+--     TS_ONE_PPS_VALID_INPUT      : in     std_logic;
 --     USB_DATA_OUT                : out    std_logic_vector(7 downto 0);
 --     USB_TXE                     : in     std_logic;
 --     USB_WR                      : out    std_logic;
@@ -115,6 +116,7 @@ signal COMP_DATA_TMP: std_logic_vector(7 downto 0);
 signal WR_COMP_DATA: std_logic ; 
 signal WR_COMP_DATA_DEL: std_logic ; 
 
+signal TS_ONE_PPS_VALID_IN: std_logic ; 
 signal TS_ONE_PPS_VALID_IN_DEL: std_logic ; 
 signal START_WRITE_EVENT_DEL: std_logic ; 
 signal PARAMETER_LIST_VALID_DEL: std_logic ; 
@@ -124,6 +126,8 @@ signal USB_WRITE_BUSY_TMP: std_logic ;
 
 
 begin
+
+  TS_ONE_PPS_VALID_IN <= TS_ONE_PPS_VALID_INPUT and SECOND_MESSAGE_ALLOWED; -- Enable One second message with bit 1 of spare bytes
 
   USB_WRITE_REQUEST <= TS_ONE_PPS_VALID_IN or START_WRITE_EVENT or PARAMETER_LIST_VALID or READ_ERROR_VALID or COMPDATA_VALID;
   USB_WRITE_BUSY_TMP <= WRITE_EVENT_MODE or WRITE_GPS_MODE or WRITE_PARAMETER_LIST_MODE or WRITE_READ_ERROR_MODE or WRITE_COMP_MODE;

@@ -1,0 +1,175 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c012ca1ddf7b964c7c00f7077910000")
+    (NAME "SOFT_RESET")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1152 640)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Tue Jul 17 14:45:45 2007")
+      (NAME "SOFT_RESET")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1184595933 "Mon Jul 16 16:25:33 2007")
+      (MODIFIED 1184676344 "Tue Jul 17 14:45:44 2007")
+    )
+    (PORT
+      (OBID "eprt0c012ca1e208b964c7c00f70a7910000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "nHRESET")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "nHRESET")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca10a18b964c7c00f70c7910000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SRESET")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 280 40 360)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SRESET")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca16d18b964c7c00f70e7910000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLKRD")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLKRD")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1b128b964c7c00f7008910000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RESOUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1112 280 1192 360)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1088 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RESOUT")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c012ca1ddf7b964c7c00f7087910000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c012ca1ddf7b964c7c00f7087910000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'SOFT_RESET."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'SOFT_RESET' :"
+                 "-- "
+                 "--   port("
+                 "--     CLKRD   : in     std_logic;"
+                 "--     RESOUT  : out    std_logic;"
+                 "--     SRESET  : in     std_logic;"
+                 "--     nHRESET : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of SOFT_RESET is"
+                 ""
+                 "signal SRESET_COUNT: std_logic_vector(3 downto 0);"
+                 ""
+                 "begin"
+                 ""
+                 "  RESOUT <= not SRESET_COUNT(3) or not nHRESET;"
+                 "  "
+                 "  process (CLKRD, nHRESET)"
+                 "  begin"
+                 "	if nHRESET = '0' then"
+                 "	  SRESET_COUNT <= (others => '1');                 "
+                 "	elsif CLKRD'event and CLKRD = '1' then"
+                 "      if SRESET = '1' then"
+                 "	    SRESET_COUNT <= (others => '0');                 "
+                 "	  elsif SRESET_COUNT /= \"1111\" then "
+                 "		SRESET_COUNT <= SRESET_COUNT + \"0001\";"
+                 "	  else"
+                 "		SRESET_COUNT <= SRESET_COUNT;"
+                 "	  end if;"
+                 "	end if;"
+                 "  end process;"
+                 ""
+                 "end rtl ; -- of SOFT_RESET"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

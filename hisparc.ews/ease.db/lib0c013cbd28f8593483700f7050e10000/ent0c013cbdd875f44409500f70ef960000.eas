@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Tue Jun 26 12:59:33 2007")
+      (PROPERTY "STAMP_TIME" "Fri Jul 20 21:12:43 2007")
       (NAME "DATA_CONTROLLER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146050445 "Wed Apr 26 13:20:45 2006")
-      (MODIFIED 1182855526 "Tue Jun 26 12:58:46 2007")
+      (MODIFIED 1184750224 "Wed Jul 18 11:17:04 2007")
     )
     (PORT
       (OBID "eprt0c013cbd1da5f44409500f70a2a60000")
@@ -2966,11 +2966,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 2776 8920 2856 9000)
+        (GEOMETRY 2776 7256 2856 7336)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 2752 8960)
+          (POSITION 2752 7296)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -5102,7 +5102,7 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "TS_ONE_PPS_VALID_IN")
+              (NAME "TS_ONE_PPS_VALID_INPUT")
               (USERNAME 1)
             )
             (HDL_TYPE
@@ -5119,7 +5119,7 @@
             (ALIGNMENT 3)
             (SIDE 3)
             (FORMAT 35)
-            (TEXT "TS_ONE_PPS_VALID_IN")
+            (TEXT "TS_ONE_PPS_VALID_INPUT")
           )
         )
         (PORT
@@ -5717,6 +5717,32 @@
             (TEXT "COMPDATA_READOUT_DONE")
           )
         )
+        (PORT
+          (OBID "cprt0c012ca1c03dd964c7c00f7088910000")
+          (PORT "eprt0c012ca1c03dd964c7c00f7078910000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "SECOND_MESSAGE_ALLOWED")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 13400 8856 13480 8936)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 13504 8896)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "SECOND_MESSAGE_ALLOWED")
+          )
+        )
         (LABEL
           (POSITION 13434 1464)
           (SCALE 128)
@@ -6283,11 +6309,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 3416 8920 3496 9000)
+          (GEOMETRY 3416 7256 3496 7336)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 3520 8960)
+            (POSITION 3520 7296)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -7443,6 +7469,32 @@
             (SIDE 1)
             (FORMAT 35)
             (TEXT "ERROR_READ_OUT")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca19c2dd964c7c00f7068910000")
+          (PORT "eprt0c012ca19c2dd964c7c00f7058910000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "SECOND_MESSAGE_ALLOWED")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 5400 8856 5480 8936)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 5376 8896)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "SECOND_MESSAGE_ALLOWED")
           )
         )
         (LABEL
@@ -8837,7 +8889,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 2880 8960 3392 8960)
+        (WIRE 2880 7296 3392 7296)
         (PORT
           (OBID "aprt0c013cbde99ea644cf700f704c300000")
           (NAME "SOFT_RESET")
@@ -9692,7 +9744,7 @@
         )
         (PORT
           (OBID "cprt0c013cbdc655064401800f7042110000")
-          (NAME "TS_ONE_PPS_VALID_IN")
+          (NAME "TS_ONE_PPS_VALID_INPUT")
         )
         (LABEL
           (POSITION 0 0)
@@ -10160,6 +10212,34 @@
         (PORT
           (OBID "aprt0c012ca1bd0f086403400f7061b00000")
           (NAME "ERROR_READ_OUT")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1813dd964c7c00f7098910000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "SECOND_MESSAGE_ALLOWED")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 5504 8896 13376 8896)
+        (PORT
+          (OBID "cprt0c012ca19c2dd964c7c00f7068910000")
+          (NAME "SECOND_MESSAGE_ALLOWED")
+        )
+        (PORT
+          (OBID "cprt0c012ca1c03dd964c7c00f7088910000")
+          (NAME "SECOND_MESSAGE_ALLOWED")
         )
         (LABEL
           (POSITION 0 0)

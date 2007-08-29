@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 1856 10112)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Apr 27 09:05:10 2007")
+      (PROPERTY "STAMP_TIME" "Fri Jul 20 21:12:43 2007")
       (NAME "USB_WRITE_HANDLER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146050663 "Wed Apr 26 13:24:23 2006")
-      (MODIFIED 1177311871 "Mon Apr 23 09:04:31 2007")
+      (MODIFIED 1184750571 "Wed Jul 18 11:22:51 2007")
     )
     (PORT
       (OBID "eprt0c013cbdce85f44409500f7002a60000")
@@ -599,7 +599,7 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "TS_ONE_PPS_VALID_IN")
+          (NAME "TS_ONE_PPS_VALID_INPUT")
           (USERNAME 1)
         )
         (HDL_TYPE
@@ -616,7 +616,7 @@
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
-        (TEXT "TS_ONE_PPS_VALID_IN")
+        (TEXT "TS_ONE_PPS_VALID_INPUT")
       )
     )
     (PORT
@@ -1193,6 +1193,31 @@
         (TEXT "COMPDATA_READOUT_DONE")
       )
     )
+    (PORT
+      (OBID "eprt0c012ca1c03dd964c7c00f7078910000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SECOND_MESSAGE_ALLOWED")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 7064 40 7144)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 7104)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SECOND_MESSAGE_ALLOWED")
+      )
+    )
     (ARCH_DECLARATION 2 "arch0c013cbd7685f44409500f7001a60000" "rtl")
   )
   (ARCH_DEFINITION
@@ -1237,6 +1262,7 @@
                  "--     READ_ERROR_READOUT_DONE     : out    std_logic;"
                  "--     READ_ERROR_VALID            : in     std_logic;"
                  "--     SAT_INFO                    : in     std_logic_vector(487 downto 0);"
+                 "--     SECOND_MESSAGE_ALLOWED      : in     std_logic;"
                  "--     SEND_EVENT_DATA             : out    std_logic;"
                  "--     START_WRITE_EVENT           : in     std_logic;"
                  "--     SYSRST                      : in     std_logic;"
@@ -1245,7 +1271,7 @@
                  "--     TRIGGER_PATTERN             : in     std_logic_vector(15 downto 0);"
                  "--     TR_CONDITION                : in     std_logic_vector(7 downto 0);"
                  "--     TS_ONE_PPS_READOUT_DONE     : out    std_logic;"
-                 "--     TS_ONE_PPS_VALID_IN         : in     std_logic;"
+                 "--     TS_ONE_PPS_VALID_INPUT      : in     std_logic;"
                  "--     USB_DATA_OUT                : out    std_logic_vector(7 downto 0);"
                  "--     USB_TXE                     : in     std_logic;"
                  "--     USB_WR                      : out    std_logic;"
@@ -1320,6 +1346,7 @@
                  "signal WR_COMP_DATA: std_logic ; "
                  "signal WR_COMP_DATA_DEL: std_logic ; "
                  ""
+                 "signal TS_ONE_PPS_VALID_IN: std_logic ; "
                  "signal TS_ONE_PPS_VALID_IN_DEL: std_logic ; "
                  "signal START_WRITE_EVENT_DEL: std_logic ; "
                  "signal PARAMETER_LIST_VALID_DEL: std_logic ; "
@@ -1329,6 +1356,8 @@
                  ""
                  ""
                  "begin"
+                 ""
+                 "  TS_ONE_PPS_VALID_IN <= TS_ONE_PPS_VALID_INPUT and SECOND_MESSAGE_ALLOWED; -- Enable One second message with bit 1 of spare bytes"
                  ""
                  "  USB_WRITE_REQUEST <= TS_ONE_PPS_VALID_IN or START_WRITE_EVENT or PARAMETER_LIST_VALID or READ_ERROR_VALID or COMPDATA_VALID;"
                  "  USB_WRITE_BUSY_TMP <= WRITE_EVENT_MODE or WRITE_GPS_MODE or WRITE_PARAMETER_LIST_MODE or WRITE_READ_ERROR_MODE or WRITE_COMP_MODE;"

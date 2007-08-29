@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 960 512)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (PROPERTY "STAMP_TIME" "Tue Jul 17 13:19:15 2007")
       (NAME "CLK_DIV")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1144416899 "Fri Apr 07 15:34:59 2006")
-      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+      (MODIFIED 1184614968 "Mon Jul 16 21:42:48 2007")
     )
     (PORT
       (OBID "eprt0c013cbdeaa66344c3700f70ecc30000")
@@ -71,28 +71,28 @@
       )
     )
     (PORT
-      (OBID "eprt0c013cbd13b66344c3700f702dc30000")
+      (OBID "eprt0c012ca1d3d7b964c7c00f7047910000")
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
+          (NAME "RST")
           (USERNAME 1)
         )
         (HDL_TYPE
         )
         (MODE 1)
       )
-      (GEOMETRY -40 344 40 424)
+      (GEOMETRY -40 280 40 360)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 384)
+        (POSITION 64 320)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
-        (TEXT "SYSRST")
+        (TEXT "RST")
       )
     )
     (ARCH_DECLARATION 2 "arch0c013cbd38a66344c3700f70ccc30000" "rtl")
@@ -113,7 +113,7 @@
                  "--   port("
                  "--     CLK10MHz : in     std_logic;"
                  "--     CLKRD    : out    std_logic;"
-                 "--     SYSRST   : in     std_logic);"
+                 "--     RST      : in     std_logic);"
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
@@ -124,9 +124,9 @@
                  "begin"
                  "  CLKRD <= CLKRD_TMP;"
                  ""
-                 "  process(CLK10MHz,SYSRST)"
+                 "  process(CLK10MHz,RST)"
                  "  begin"
-                 "  	if SYSRST = '1' then"
+                 "  	if RST = '0' then"
                  "  	  CLKRD_TMP <= '0';"
                  "    elsif (CLK10MHz'event and CLK10MHz = '0') then -- let op: CLKRD gaat op een negatieve flank"
                  "  	  CLKRD_TMP <=  not CLKRD_TMP;"

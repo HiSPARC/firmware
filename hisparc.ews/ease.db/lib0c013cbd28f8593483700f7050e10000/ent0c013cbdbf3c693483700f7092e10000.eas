@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 4352 8256)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Dec 20 11:52:39 2006")
+      (PROPERTY "STAMP_TIME" "Mon Jul 16 16:35:09 2007")
       (NAME "topblock")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1133954043 "Wed Dec 07 12:14:03 2005")
-      (MODIFIED 1166611948 "Wed Dec 20 11:52:28 2006")
+      (MODIFIED 1184595806 "Mon Jul 16 16:23:26 2007")
     )
     (PORT
       (OBID "eprt0c8a2066410f8344c9805edc2d460000")
@@ -3068,32 +3068,6 @@
           )
         )
         (PORT
-          (OBID "cprt0c013cbd8c9ea644cf700f709c300000")
-          (PORT "eprt0c013cbd8c9ea644cf700f707c300000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "SOFT_RESET")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 5080 6680 5160 6760)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 5184 6720)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "SOFT_RESET")
-          )
-        )
-        (PORT
           (OBID "cprt0c013cbd2e8d274409600f70bef00000")
           (PORT "eprt0c013cbd2e8d274409600f709cf00000")
           (HDL_OBJECT
@@ -5225,32 +5199,6 @@
           )
         )
         (PORT
-          (OBID "cprt0c013cbdde9ea644cf700f70cc300000")
-          (PORT "eprt0c013cbdde9ea644cf700f70bc300000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "SOFT_RESET")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 4056 6680 4136 6760)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 4032 6720)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "SOFT_RESET")
-          )
-        )
-        (PORT
           (OBID "cprt0c013cbd6894984487500f70beb00000")
           (PORT "eprt0c013cbd6894984487500f709eb00000")
           (HDL_OBJECT
@@ -5974,34 +5922,6 @@
         (PORT
           (OBID "cprt0c8a2066d028964480a05edcc5400000")
           (NAME "USB_RXF")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c013cbd7f9ea644cf700f70dc300000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "SOFT_RESET")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 4160 6720 5056 6720)
-        (PORT
-          (OBID "cprt0c013cbdde9ea644cf700f70cc300000")
-          (NAME "SOFT_RESET")
-        )
-        (PORT
-          (OBID "cprt0c013cbd8c9ea644cf700f709c300000")
-          (NAME "SOFT_RESET")
         )
         (LABEL
           (POSITION 0 0)
@@ -7570,7 +7490,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 8512 6720 7936 6720)
+        (WIRE 7936 6720 8512 6720)
         (PORT
           (OBID "aprt0c012ca119809854cd300f700d300000")
           (NAME "SPY_SDI")

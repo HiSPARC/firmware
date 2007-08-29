@@ -6,7 +6,7 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Mon Jul 02 09:07:50 2007.
+-- Time stamp     : Wed Aug 29 15:06:39 2007.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -1922,7 +1922,7 @@ end rtl ; -- of LED_DRIVER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CLK_DIV'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Mon Jul 16 21:42:48 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1935,12 +1935,12 @@ entity CLK_DIV is
   port(
     CLK10MHz : in     std_logic;
     CLKRD    : out    std_logic;
-    SYSRST   : in     std_logic);
+    RST      : in     std_logic);
 end CLK_DIV ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CLK_DIV'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Mon Jul 16 21:42:48 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of CLK_DIV is
@@ -1950,9 +1950,9 @@ signal CLKRD_TMP: std_logic;
 begin
   CLKRD <= CLKRD_TMP;
 
-  process(CLK10MHz,SYSRST)
+  process(CLK10MHz,RST)
   begin
-  	if SYSRST = '1' then
+  	if RST = '0' then
   	  CLKRD_TMP <= '0';
     elsif (CLK10MHz'event and CLK10MHz = '0') then -- let op: CLKRD gaat op een negatieve flank
   	  CLKRD_TMP <=  not CLKRD_TMP;
@@ -2106,7 +2106,7 @@ end rtl ; -- of EVENT_DATA_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_WRITE_HANDLER'.
--- Last modified : Mon Apr 23 09:04:31 2007.
+-- Last modified : Wed Jul 18 11:22:51 2007.
 --------------------------------------------------------------------------------
 
 
@@ -2145,6 +2145,7 @@ entity USB_WRITE_HANDLER is
     READ_ERROR_READOUT_DONE     : out    std_logic;
     READ_ERROR_VALID            : in     std_logic;
     SAT_INFO                    : in     std_logic_vector(487 downto 0);
+    SECOND_MESSAGE_ALLOWED      : in     std_logic;
     SEND_EVENT_DATA             : out    std_logic;
     START_WRITE_EVENT           : in     std_logic;
     SYSRST                      : in     std_logic;
@@ -2153,7 +2154,7 @@ entity USB_WRITE_HANDLER is
     TRIGGER_PATTERN             : in     std_logic_vector(15 downto 0);
     TR_CONDITION                : in     std_logic_vector(7 downto 0);
     TS_ONE_PPS_READOUT_DONE     : out    std_logic;
-    TS_ONE_PPS_VALID_IN         : in     std_logic;
+    TS_ONE_PPS_VALID_INPUT      : in     std_logic;
     USB_DATA_OUT                : out    std_logic_vector(7 downto 0);
     USB_TXE                     : in     std_logic;
     USB_WR                      : out    std_logic;
@@ -2164,7 +2165,7 @@ end USB_WRITE_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_WRITE_HANDLER'
--- Last modified : Mon Apr 23 09:04:31 2007.
+-- Last modified : Wed Jul 18 11:22:51 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_WRITE_HANDLER is
@@ -2232,6 +2233,7 @@ signal COMP_DATA_TMP: std_logic_vector(7 downto 0);
 signal WR_COMP_DATA: std_logic ; 
 signal WR_COMP_DATA_DEL: std_logic ; 
 
+signal TS_ONE_PPS_VALID_IN: std_logic ; 
 signal TS_ONE_PPS_VALID_IN_DEL: std_logic ; 
 signal START_WRITE_EVENT_DEL: std_logic ; 
 signal PARAMETER_LIST_VALID_DEL: std_logic ; 
@@ -2241,6 +2243,8 @@ signal USB_WRITE_BUSY_TMP: std_logic ;
 
 
 begin
+
+  TS_ONE_PPS_VALID_IN <= TS_ONE_PPS_VALID_INPUT and SECOND_MESSAGE_ALLOWED; -- Enable One second message with bit 1 of spare bytes
 
   USB_WRITE_REQUEST <= TS_ONE_PPS_VALID_IN or START_WRITE_EVENT or PARAMETER_LIST_VALID or READ_ERROR_VALID or COMPDATA_VALID;
   USB_WRITE_BUSY_TMP <= WRITE_EVENT_MODE or WRITE_GPS_MODE or WRITE_PARAMETER_LIST_MODE or WRITE_READ_ERROR_MODE or WRITE_COMP_MODE;
@@ -2923,7 +2927,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Mon Jul 02 09:07:50 2007.
+-- Last modified : Wed Aug 29 15:06:39 2007.
 --------------------------------------------------------------------------------
 
 
@@ -2977,6 +2981,7 @@ entity USB_READ_HANDLER is
     READ_ERROR_DATA             : out    std_logic_vector(7 downto 0);
     READ_ERROR_READOUT_DONE     : in     std_logic;
     READ_ERROR_VALID            : out    std_logic;
+    SECOND_MESSAGE_ALLOWED      : out    std_logic;
     SERIAL_NUMBER               : in     std_logic_vector(9 downto 0);
     SLAVE_PRESENT               : in     std_logic;
     SOFT_RESET                  : out    std_logic;
@@ -2999,7 +3004,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Mon Jul 02 09:07:50 2007.
+-- Last modified : Wed Aug 29 15:06:39 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3119,6 +3124,7 @@ signal READ_ERROR_READOUT_DONE_DEL1: std_logic;
 --signal USB_READ_ENABLE: std_logic;
 signal USB_READ_BUSY: std_logic;
 signal USB_WRITE_ENABLE_TMP: std_logic;
+signal USB_WRITE_ALLOWED: std_logic; -- Least significant bit of SPARE_BYTES and controlled by LabView to enable writing to PC
 --signal START_READING: std_logic;
 signal STOP_READING: std_logic;
 signal USB_WRITE_BUSY_DEL1: std_logic; -- to detect the falling edge of USB_WRITE_BUSY
@@ -3163,47 +3169,6 @@ signal READ_COUNT: integer range 41 downto 0; -- Send message can be maximum 39 
 signal READ_ID: std_logic_vector(7 downto 0);
 signal TIME_OUT_COUNT: std_logic_vector(23 downto 0); --Counts 1 s when read busy hangs
 
---signal READ_COUNT_DEL: integer range 41 downto 0; 
---signal END_BYTE: std_logic_vector(2 downto 0); -- Place of end byte (66h)
---signal RD_DATA_TMP1: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP2: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP3: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP4: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP5: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP6: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP7: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP8: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP9: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP10: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP11: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP12: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP13: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP14: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP15: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP16: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP17: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP18: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP19: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP20: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP21: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP22: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP23: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP24: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP25: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP26: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP27: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP28: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP29: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP30: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP31: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP32: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP33: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP34: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP35: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP36: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP37: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP38: std_logic_vector(7 downto 0);
---signal RD_DATA_TMP39: std_logic_vector(7 downto 0);
 
 signal PRELOAD_DACS: std_logic;
 signal PRELOAD_DACS_DEL1: std_logic;
@@ -3221,11 +3186,14 @@ signal CURR_ADC_COUNT: integer range 75 downto 0;
 
 begin
 
-  STATUS(6 downto 2) <= "00000";
+  USB_WRITE_ALLOWED <= SPARE_BYTES(0);
+  SECOND_MESSAGE_ALLOWED <= SPARE_BYTES(1);
+  STATUS(6 downto 3) <= "0000";
+  STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= MASTER;
   GPS_PROG_ENABLE <= STATUS(7);
-  SOFTWARE_VERSION <= "00000010";
+  SOFTWARE_VERSION <= "00000011";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -3453,7 +3421,7 @@ begin
         USB_WRITE_ENABLE_TMP <= USB_WRITE_ENABLE_TMP; 
       elsif USB_READ_BUSY = '0' and USB_RXF = '0' then -- reading has first priority; USB_RXF = '0' when there is data to readout
         USB_READ_BUSY <= '1';
-      elsif USB_WRITE_ENABLE_TMP = '0' and USB_WRITE_REQUEST = '1' then 
+      elsif USB_WRITE_ENABLE_TMP = '0' and USB_WRITE_REQUEST = '1' and USB_WRITE_ALLOWED = '1' then 
         USB_WRITE_ENABLE_TMP <= '1';
       else
         USB_READ_BUSY <= '0';
@@ -3461,55 +3429,6 @@ begin
       end if;
     end if;
   end process;  
-
---  process(CLKRD,SYSRST)
---  begin
---    if SYSRST = '1' then
---      USB_RXF_DEL <= '1';        
---    elsif (CLKRD'event and CLKRD = '1') then
---      USB_RXF_DEL <= USB_RXF;        
---    end if;
---  end process;  
---
---  USB_RXF_OR <= USB_RXF_DEL and USB_RXF;
-
---
---  process(CLKRD,SYSRST)
---  begin
---    if SYSRST = '1' then
---      USB_READ_ENABLE <= '1'; -- Default (on power up) USB is in read mode
---      START_READING <= '0';
---    elsif (CLKRD'event and CLKRD = '1') then
---      if USB_WRITE_BUSY = '1' or USB_READ_BUSY = '1' then -- if writing or reading is busy then do nothing
---        USB_READ_ENABLE <= USB_READ_ENABLE;
---        START_READING <= '0';
---      elsif USB_RXF_OR = '0' then -- reading has first priority; USB_RXF = '0' when there is data to readout
---        START_READING <= '1';
---        USB_READ_ENABLE <= '1';
---      elsif USB_WRITE_REQUEST = '1' or USB_WRITE_REQUEST_DEL1 = '1' or USB_WRITE_REQUEST_DEL2 = '1' or USB_WRITE_REQUEST_DEL3 = '1' or USB_WRITE_REQUEST_DEL4 = '1' then  -- Delay time needed for USB_WRITE_BUSY to react on USB_WRITE_ENABLE
---        USB_READ_ENABLE <= '0';
---        START_READING <= '0';
---      else
---        USB_READ_ENABLE <= '1';
---        START_READING <= '0';
---      end if;
---    end if;
---  end process;  
-
---  process(CLKRD,SYSRST)
---  begin
---    if SYSRST = '1' then
---      USB_READ_BUSY <= '0'; 
---    elsif (CLKRD'event and CLKRD = '1') then
---      if START_READING = '1' then 
---        USB_READ_BUSY <= '1'; 
---      elsif STOP_READING = '1' or READ_ERROR = '1' then 
---        USB_READ_BUSY <= '0';
---      else
---        USB_READ_BUSY <= USB_READ_BUSY; 
---      end if;
---    end if;
---  end process;  
 
   process(CLKRD,SYSRST,READ_ID,USB_DATA_IN)
   begin
@@ -3547,30 +3466,30 @@ begin
 	  POST_TIME_LOAD_TMP <= (others => '0'); 
 	  SPARE_BYTES_TMP <= (others => '0');
       STATUS_TMP(7) <= '0';
-	  CH1_OFFSET_ADJ_POS <= (others => '0');
-	  CH1_OFFSET_ADJ_NEG <= (others => '0');
-	  CH2_OFFSET_ADJ_POS <= (others => '0');
-	  CH2_OFFSET_ADJ_NEG <= (others => '0');
-	  CH1_GAIN_ADJ_POS <= (others => '0');
-	  CH1_GAIN_ADJ_NEG <= (others => '0');
-	  CH2_GAIN_ADJ_POS <= (others => '0');
-	  CH2_GAIN_ADJ_NEG <= (others => '0');
-	  COMMON_OFFSET_ADJ <= (others => '0');
-	  FULL_SCALE_ADJ <= (others => '0');
-	  CH1_INTEGRATOR <= (others => '0');
-	  CH2_INTEGRATOR <= (others => '0');
-	  COMP_THRES_LOW <= (others => '0');
-	  COMP_THRES_HIGH <= (others => '0');
-	  CH1_PMT_HV_ADJ <= (others => '0');
-	  CH2_PMT_HV_ADJ <= (others => '0');
-	  CH1_THRES_LOW <= (others => '0');
-	  CH1_THRES_HIGH <= (others => '0');
-	  CH2_THRES_LOW <= (others => '0');
-	  CH2_THRES_HIGH <= (others => '0');
-  	  TR_CONDITION <= (others => '0');
-	  PRE_TIME_LOAD <= (others => '0');
-	  COINC_TIME_LOAD <= (others => '0');
-	  POST_TIME_LOAD <= (others => '0'); 
+	  CH1_OFFSET_ADJ_POS <= "10000000";
+	  CH1_OFFSET_ADJ_NEG <= "10000000";
+	  CH2_OFFSET_ADJ_POS <= "10000000";
+	  CH2_OFFSET_ADJ_NEG <= "10000000";
+	  CH1_GAIN_ADJ_POS <= "10000000";
+	  CH1_GAIN_ADJ_NEG <= "10000000";
+	  CH2_GAIN_ADJ_POS <= "10000000";
+	  CH2_GAIN_ADJ_NEG <= "10000000";
+	  COMMON_OFFSET_ADJ <= "00000000";
+	  FULL_SCALE_ADJ <= "00000000";
+	  CH1_INTEGRATOR <= "11111111";
+	  CH2_INTEGRATOR <= "11111111";
+	  COMP_THRES_LOW <= "01011000";
+	  COMP_THRES_HIGH <= "11100110";
+	  CH1_PMT_HV_ADJ <= "00000000";
+	  CH2_PMT_HV_ADJ <= "00000000";
+	  CH1_THRES_LOW <= "0000000100000000";
+	  CH1_THRES_HIGH <= "0000100000000000";
+	  CH2_THRES_LOW <= "0000000100000000";
+	  CH2_THRES_HIGH <= "0000100000000000";
+  	  TR_CONDITION <= "00001000";
+	  PRE_TIME_LOAD <= "0000000011001000";
+	  COINC_TIME_LOAD <= "0000000110010000";
+	  POST_TIME_LOAD <= "0000000110010000"; 
 	  SPARE_BYTES <= (others => '0');
       STATUS(7) <= '0';
       WRITE_PARAMETER_LIST <= '0';
@@ -3700,7 +3619,7 @@ begin
               end if;
       	      if READ_ID = "00010100" then
       	        if USB_DATA_IN = "01100110" then
-      	          CH1_GAIN_ADJ_POS_TMP <= CH1_GAIN_ADJ_POS_TMP; 
+      	          CH1_GAIN_ADJ_POS <= CH1_GAIN_ADJ_POS_TMP; 
 	              STOP_READING <= '1';
       	        else
                   READ_ERROR <= '1';
@@ -3709,7 +3628,7 @@ begin
               end if;
       	      if READ_ID = "00010101" then
       	        if USB_DATA_IN = "01100110" then
-      	          CH1_GAIN_ADJ_NEG_TMP <= CH1_GAIN_ADJ_NEG_TMP; 
+      	          CH1_GAIN_ADJ_NEG <= CH1_GAIN_ADJ_NEG_TMP; 
 	              STOP_READING <= '1';
       	        else
                   READ_ERROR <= '1';
@@ -3718,7 +3637,7 @@ begin
               end if;
       	      if READ_ID = "00010110" then
       	        if USB_DATA_IN = "01100110" then
-      	          CH2_GAIN_ADJ_POS_TMP <= CH2_GAIN_ADJ_POS_TMP; 
+      	          CH2_GAIN_ADJ_POS <= CH2_GAIN_ADJ_POS_TMP; 
 	              STOP_READING <= '1';
       	        else
                   READ_ERROR <= '1';
@@ -3727,7 +3646,7 @@ begin
               end if;
       	      if READ_ID = "00010111" then
       	        if USB_DATA_IN = "01100110" then
-      	          CH2_GAIN_ADJ_NEG_TMP <= CH2_GAIN_ADJ_NEG_TMP; 
+      	          CH2_GAIN_ADJ_NEG <= CH2_GAIN_ADJ_NEG_TMP; 
 	              STOP_READING <= '1';
       	        else
                   READ_ERROR <= '1';
@@ -4187,313 +4106,6 @@ begin
       end if;
     end if;
   end process;  
-
---  process(CLKRD,SYSRST,READ_COUNT,USB_DATA_IN)
---  begin
---    if SYSRST = '1' then
---      RD_TMP <= '1'; 
---      READ_COUNT <= 0;
---      READ_COUNT_DEL <= 0;        
---      RD_DATA_TMP1 <= "00000000";
---      RD_DATA_TMP2 <= "00000000";
---      RD_DATA_TMP3 <= "00000000";
---      RD_DATA_TMP4 <= "00000000";
---      RD_DATA_TMP5 <= "00000000";
---      RD_DATA_TMP6 <= "00000000";
---      RD_DATA_TMP7 <= "00000000";
---      RD_DATA_TMP8 <= "00000000";
---      RD_DATA_TMP9 <= "00000000";
---      RD_DATA_TMP10 <= "00000000";
---      RD_DATA_TMP11 <= "00000000";
---      RD_DATA_TMP12 <= "00000000";
---      RD_DATA_TMP13 <= "00000000";
---      RD_DATA_TMP14 <= "00000000";
---      RD_DATA_TMP15 <= "00000000";
---      RD_DATA_TMP16 <= "00000000";
---      RD_DATA_TMP17 <= "00000000";
---      RD_DATA_TMP18 <= "00000000";
---      RD_DATA_TMP19 <= "00000000";
---      RD_DATA_TMP20 <= "00000000";
---      RD_DATA_TMP21 <= "00000000";
---      RD_DATA_TMP22 <= "00000000";
---      RD_DATA_TMP23 <= "00000000";
---      RD_DATA_TMP24 <= "00000000";
---      RD_DATA_TMP25 <= "00000000";
---      RD_DATA_TMP26 <= "00000000";
---      RD_DATA_TMP27 <= "00000000";
---      RD_DATA_TMP28 <= "00000000";
---      RD_DATA_TMP29 <= "00000000";
---      RD_DATA_TMP30 <= "00000000";
---      RD_DATA_TMP31 <= "00000000";
---      RD_DATA_TMP32 <= "00000000";
---      RD_DATA_TMP33 <= "00000000";
---      RD_DATA_TMP34 <= "00000000";
---      RD_DATA_TMP35 <= "00000000";
---      RD_DATA_TMP36 <= "00000000";
---      RD_DATA_TMP37 <= "00000000";
---      RD_DATA_TMP38 <= "00000000";
---      RD_DATA_TMP39 <= "00000000";
---    elsif (CLKRD'event and CLKRD = '1') then
---      if USB_READ_BUSY = '1' and READ_ERROR = '0' and STOP_READING = '0' then
---        if USB_RXF = '0' then 
---          if RD_TMP = '1' then 
---            RD_TMP <= '0'; 
---            READ_COUNT <= READ_COUNT + 1;
---          else 
---            RD_TMP <= '1';
---      		READ_COUNT_DEL <= READ_COUNT;        
---      		case (READ_COUNT) is
---    		  when 1 => RD_DATA_TMP1 <= USB_DATA_IN; 
---      		  when 2 => RD_DATA_TMP2 <= USB_DATA_IN; 
---       	 	  when 3 => RD_DATA_TMP3 <= USB_DATA_IN; 
---      		  when 4 => RD_DATA_TMP4 <= USB_DATA_IN; 
---      		  when 5 => RD_DATA_TMP5 <= USB_DATA_IN; 
---      		  when 6 => RD_DATA_TMP6 <= USB_DATA_IN; 
---      		  when 7 => RD_DATA_TMP7 <= USB_DATA_IN; 
---      		  when 8 => RD_DATA_TMP8 <= USB_DATA_IN; 
---      		  when 9 => RD_DATA_TMP9 <= USB_DATA_IN; 
---      		  when 10 => RD_DATA_TMP10 <= USB_DATA_IN; 
---      		  when 11 => RD_DATA_TMP11 <= USB_DATA_IN; 
---      		  when 12 => RD_DATA_TMP12 <= USB_DATA_IN; 
---      		  when 13 => RD_DATA_TMP13 <= USB_DATA_IN; 
---      		  when 14 => RD_DATA_TMP14 <= USB_DATA_IN; 
---      		  when 15 => RD_DATA_TMP15 <= USB_DATA_IN; 
---      		  when 16 => RD_DATA_TMP16 <= USB_DATA_IN; 
---      		  when 17 => RD_DATA_TMP17 <= USB_DATA_IN; 
---      		  when 18 => RD_DATA_TMP18 <= USB_DATA_IN; 
---      		  when 19 => RD_DATA_TMP19 <= USB_DATA_IN; 
---      		  when 20 => RD_DATA_TMP20 <= USB_DATA_IN; 
---      		  when 21 => RD_DATA_TMP21 <= USB_DATA_IN; 
---      		  when 22 => RD_DATA_TMP22 <= USB_DATA_IN; 
---        	  when 23 => RD_DATA_TMP23 <= USB_DATA_IN; 
---      		  when 24 => RD_DATA_TMP24 <= USB_DATA_IN; 
---      		  when 25 => RD_DATA_TMP25 <= USB_DATA_IN; 
---      		  when 26 => RD_DATA_TMP26 <= USB_DATA_IN; 
---      		  when 27 => RD_DATA_TMP27 <= USB_DATA_IN; 
---      		  when 28 => RD_DATA_TMP28 <= USB_DATA_IN; 
---      		  when 29 => RD_DATA_TMP29 <= USB_DATA_IN; 
---      		  when 30 => RD_DATA_TMP30 <= USB_DATA_IN; 
---      		  when 31 => RD_DATA_TMP31 <= USB_DATA_IN; 
---      		  when 32 => RD_DATA_TMP32 <= USB_DATA_IN; 
---      		  when 33 => RD_DATA_TMP33 <= USB_DATA_IN; 
---      		  when 34 => RD_DATA_TMP34 <= USB_DATA_IN; 
---      		  when 35 => RD_DATA_TMP35 <= USB_DATA_IN; 
---      		  when 36 => RD_DATA_TMP36 <= USB_DATA_IN; 
---      		  when 37 => RD_DATA_TMP37 <= USB_DATA_IN; 
---      		  when 38 => RD_DATA_TMP38 <= USB_DATA_IN; 
---      		  when 39 => RD_DATA_TMP39 <= USB_DATA_IN; 
---      		  when others => -- Do nothing
---      		end case;
---          end if;
---        end if;
---      else
---        RD_TMP <= '1'; 
---        READ_COUNT <= 0;
---        READ_COUNT_DEL <= 0;
---      end if;
---    end if;
---  end process;  
-
---  process(CLKRD,SYSRST)
---  begin
---    if SYSRST = '1' then
---	  READ_ERROR <= '0';
---  	  READ_ERROR_DATA <= "00000000";
---	  STOP_READING <= '0';
---      END_BYTE <= "000";
---    elsif (CLKRD'event and CLKRD = '1') then
---      if USB_READ_BUSY = '1' and READ_ERROR = '0' and STOP_READING = '0' then
---        if READ_COUNT_DEL = 1 then
---          if RD_DATA_TMP1 /= "10011001" then
---            READ_ERROR <= '1';
---  			READ_ERROR_DATA <= "10011001"; -- Missing start byte
---          end if;
---        end if;
---        if READ_COUNT_DEL = 2 then
---          if RD_DATA_TMP2 = "01010101" or RD_DATA_TMP2 = "11111111" then
---            END_BYTE <= "001"; -- END_BYTE = 3
---          elsif RD_DATA_TMP2 = "00010000" or RD_DATA_TMP2 = "00010001" or RD_DATA_TMP2 = "00010010" or RD_DATA_TMP2 = "00010011" or RD_DATA_TMP2 = "00010100" or RD_DATA_TMP2 = "00010101" or RD_DATA_TMP2 = "00010110" or RD_DATA_TMP2 = "00010111" or RD_DATA_TMP2 = "00011000" or RD_DATA_TMP2 = "00011001" or RD_DATA_TMP2 = "00011010" or RD_DATA_TMP2 = "00011011" or RD_DATA_TMP2 = "00011100" or RD_DATA_TMP2 = "00011101" or RD_DATA_TMP2 = "00011110" or RD_DATA_TMP2 = "00011111" or RD_DATA_TMP2 = "00110000" or RD_DATA_TMP2 = "00110100" then
---            END_BYTE <= "010"; -- END_BYTE = 4
---          elsif RD_DATA_TMP2 = "00100000" or RD_DATA_TMP2 = "00100001" or RD_DATA_TMP2 = "00100010" or RD_DATA_TMP2 = "00100011" or RD_DATA_TMP2 = "00110001" or RD_DATA_TMP2 = "00110010" or RD_DATA_TMP2 = "00110011" then
---            END_BYTE <= "011"; -- END_BYTE = 5
---          elsif RD_DATA_TMP2 = "00110101" then
---            END_BYTE <= "100"; -- END_BYTE = 7
---          elsif RD_DATA_TMP2 = "01010000" then
---            END_BYTE <= "101"; -- END_BYTE = 38
---          else
---            READ_ERROR <= '1';
---  			READ_ERROR_DATA <= "10001001"; -- Wrong ID 89h
---          end if;
---        end if;
---        if READ_COUNT_DEL = 3 and END_BYTE = "001" then
---          if RD_DATA_TMP3 = "01100110" then
---            STOP_READING <= '1';
---          else
---            READ_ERROR <= '1';            
---  			READ_ERROR_DATA <= RD_DATA_TMP2; -- Message ID
---          end if;
---        end if;
---        if READ_COUNT_DEL = 4 and END_BYTE = "010" then
---          if RD_DATA_TMP4 = "01100110" then
---            STOP_READING <= '1';
---          else
---            READ_ERROR <= '1';            
---  			READ_ERROR_DATA <= RD_DATA_TMP2; -- Message ID
---          end if;
---        end if;
---        if READ_COUNT_DEL = 5 and END_BYTE = "011" then
---          if RD_DATA_TMP5 = "01100110" then
---            STOP_READING <= '1';
---          else
---            READ_ERROR <= '1';            
---  			READ_ERROR_DATA <= RD_DATA_TMP2; -- Message ID
---          end if;
---        end if;
---        if READ_COUNT_DEL = 7 and END_BYTE = "100" then
---          if RD_DATA_TMP7 = "01100110" then
---            STOP_READING <= '1';
---          else
---            READ_ERROR <= '1';            
---  			READ_ERROR_DATA <= RD_DATA_TMP2; -- Message ID
---          end if;
---        end if;
---        if READ_COUNT_DEL = 39 and END_BYTE = "101" then
---          if RD_DATA_TMP39 = "01100110" then
---            STOP_READING <= '1';
---          else
---            READ_ERROR <= '1';            
---  			READ_ERROR_DATA <= RD_DATA_TMP2; -- Message ID
---          end if;
---        end if;
---        if READ_COUNT_DEL = 40 then
---          READ_ERROR <= '1';            
---  		  READ_ERROR_DATA <= "01100110"; -- Missing stop byte
---        end if;
---      else
---	    READ_ERROR <= '0';
---	    STOP_READING <= '0';
---        END_BYTE <= "000";
---      end if;
---    end if;
---  end process;  
---
---
---  process(CLKRD,SYSRST,RD_DATA_TMP2,RD_DATA_TMP3,RD_DATA_TMP4,RD_DATA_TMP5,RD_DATA_TMP6,RD_DATA_TMP7,RD_DATA_TMP8,RD_DATA_TMP9,RD_DATA_TMP10,RD_DATA_TMP11,RD_DATA_TMP12,RD_DATA_TMP13,RD_DATA_TMP14,RD_DATA_TMP15,RD_DATA_TMP16,RD_DATA_TMP17,RD_DATA_TMP18,RD_DATA_TMP19,RD_DATA_TMP20,RD_DATA_TMP21,RD_DATA_TMP22,RD_DATA_TMP23,RD_DATA_TMP24,RD_DATA_TMP25,RD_DATA_TMP26,RD_DATA_TMP27,RD_DATA_TMP28,RD_DATA_TMP29,RD_DATA_TMP30,RD_DATA_TMP31,RD_DATA_TMP32,RD_DATA_TMP33,RD_DATA_TMP34,RD_DATA_TMP35,RD_DATA_TMP36,RD_DATA_TMP37)
---  begin
---    if SYSRST = '1' then
---	  CH1_OFFSET_ADJ_POS <= "10000000";
---	  CH1_OFFSET_ADJ_NEG <= "10000000";
---	  CH2_OFFSET_ADJ_POS <= "10000000";
---	  CH2_OFFSET_ADJ_NEG <= "10000000";
---	  CH1_GAIN_ADJ_POS <= "10000000";
---	  CH1_GAIN_ADJ_NEG <= "10000000";
---	  CH2_GAIN_ADJ_POS <= "10000000";
---	  CH2_GAIN_ADJ_NEG <= "10000000";
---	  COMMON_OFFSET_ADJ <= "00000000";
---	  FULL_SCALE_ADJ <= "00000000";
---	  CH1_INTEGRATOR <= "11111111";
---	  CH2_INTEGRATOR <= "11111111";
---	  COMP_THRES_LOW <= "01011000";
---	  COMP_THRES_HIGH <= "11100110";
---	  CH1_PMT_HV_ADJ <= "00000000";
---	  CH2_PMT_HV_ADJ <= "00000000";
---	  CH1_THRES_LOW <= "0000000001000000";
---	  CH1_THRES_HIGH <= "0000000100000000";
---	  CH2_THRES_LOW <= "0000000001111100";
---	  CH2_THRES_HIGH <= "0000000010000000";
---  	  TR_CONDITION <= "00001000";-- any high signals
---	  PRE_TIME_LOAD <= "0000000000000101"; -- 5
---	  COINC_TIME_LOAD <= "0000000000001010"; -- 10
---	  POST_TIME_LOAD <= "0000000000001010"; -- 10 
---	  SPARE_BYTES <= (others => '0');
---      STATUS(7) <= '0';
---      WRITE_PARAMETER_LIST <= '0';
---      SOFT_RESET <= '0';	  
---    elsif (CLKRD'event and CLKRD = '1') then
---      if STOP_READING = '1' then
---    	case (RD_DATA_TMP2) is
---      	  when "00010000" => CH1_OFFSET_ADJ_POS <= RD_DATA_TMP3; 
---      	  when "00010001" => CH1_OFFSET_ADJ_NEG <= RD_DATA_TMP3; 
---      	  when "00010010" => CH2_OFFSET_ADJ_POS <= RD_DATA_TMP3; 
---      	  when "00010011" => CH2_OFFSET_ADJ_NEG <= RD_DATA_TMP3; 
---      	  when "00010100" => CH1_GAIN_ADJ_POS <= RD_DATA_TMP3; 
---      	  when "00010101" => CH1_GAIN_ADJ_NEG <= RD_DATA_TMP3; 
---      	  when "00010110" => CH2_GAIN_ADJ_POS <= RD_DATA_TMP3; 
---      	  when "00010111" => CH2_GAIN_ADJ_NEG <= RD_DATA_TMP3; 
---      	  when "00011000" => COMMON_OFFSET_ADJ <= RD_DATA_TMP3; 
---      	  when "00011001" => FULL_SCALE_ADJ <= RD_DATA_TMP3; 
---      	  when "00011010" => CH1_INTEGRATOR <= RD_DATA_TMP3; 
---      	  when "00011011" => CH2_INTEGRATOR <= RD_DATA_TMP3; 
---      	  when "00011100" => COMP_THRES_LOW <= RD_DATA_TMP3; 
---      	  when "00011101" => COMP_THRES_HIGH <= RD_DATA_TMP3; 
---      	  when "00011110" => CH1_PMT_HV_ADJ <= RD_DATA_TMP3; 
---      	  when "00011111" => CH2_PMT_HV_ADJ <= RD_DATA_TMP3; 
---      	  when "00100000" => CH1_THRES_LOW(15 downto 8) <= RD_DATA_TMP3;
---      	  					 CH1_THRES_LOW(7 downto 0) <= RD_DATA_TMP4; 
---      	  when "00100001" => CH1_THRES_HIGH(15 downto 8) <= RD_DATA_TMP3;
---      	  					 CH1_THRES_HIGH(7 downto 0) <= RD_DATA_TMP4; 
---      	  when "00100010" => CH2_THRES_LOW(15 downto 8) <= RD_DATA_TMP3; 
---      	  					 CH2_THRES_LOW(7 downto 0) <= RD_DATA_TMP4; 
---      	  when "00100011" => CH2_THRES_HIGH(15 downto 8) <= RD_DATA_TMP3;
---      	  					 CH2_THRES_HIGH(7 downto 0) <= RD_DATA_TMP4; 
---     	  when "00110000" => TR_CONDITION <= RD_DATA_TMP3; 
---      	  when "00110001" => PRE_TIME_LOAD(15 downto 8) <= RD_DATA_TMP3;
---      	  					 PRE_TIME_LOAD(7 downto 0) <= RD_DATA_TMP4; 
---      	  when "00110010" => COINC_TIME_LOAD(15 downto 8) <= RD_DATA_TMP3;
---      	  					 COINC_TIME_LOAD(7 downto 0) <= RD_DATA_TMP4; 
---      	  when "00110011" => POST_TIME_LOAD(15 downto 8) <= RD_DATA_TMP3;
---      	  					 POST_TIME_LOAD(7 downto 0) <= RD_DATA_TMP4; 
---      	  when "00110100" => STATUS(7) <= RD_DATA_TMP3(7);
---      	  when "00110101" => SPARE_BYTES(31 downto 24) <= RD_DATA_TMP3;
---      	  					 SPARE_BYTES(23 downto 16) <= RD_DATA_TMP4;
---      	  					 SPARE_BYTES(15 downto 8) <= RD_DATA_TMP5;
---      	  					 SPARE_BYTES(7 downto 0) <= RD_DATA_TMP6; 
---      	  when "01010000" => CH1_OFFSET_ADJ_POS <= RD_DATA_TMP3;
---      	  					 CH1_OFFSET_ADJ_NEG <= RD_DATA_TMP4; 
---      	  					 CH2_OFFSET_ADJ_POS <= RD_DATA_TMP5; 
---      	  					 CH2_OFFSET_ADJ_NEG <= RD_DATA_TMP6; 
---      	  					 CH1_GAIN_ADJ_POS <= RD_DATA_TMP7; 
---      	  					 CH1_GAIN_ADJ_NEG <= RD_DATA_TMP8; 
---      	  					 CH2_GAIN_ADJ_POS <= RD_DATA_TMP9; 
---      	  					 CH2_GAIN_ADJ_NEG <= RD_DATA_TMP10; 
---      	  					 COMMON_OFFSET_ADJ <= RD_DATA_TMP11; 
---      	  					 FULL_SCALE_ADJ <= RD_DATA_TMP12; 
---      	  					 CH1_INTEGRATOR <= RD_DATA_TMP13; 
---      	  					 CH2_INTEGRATOR <= RD_DATA_TMP14; 
---      	  					 COMP_THRES_LOW <= RD_DATA_TMP15; 
---      	  					 COMP_THRES_HIGH <= RD_DATA_TMP16; 
---      	  					 CH1_PMT_HV_ADJ <= RD_DATA_TMP17; 
---      	  					 CH2_PMT_HV_ADJ <= RD_DATA_TMP18; 
---      	  					 CH1_THRES_LOW(15 downto 8) <= RD_DATA_TMP19; 
---      	  					 CH1_THRES_LOW(7 downto 0) <= RD_DATA_TMP20; 
---      	  					 CH1_THRES_HIGH(15 downto 8) <= RD_DATA_TMP21; 
---      	  					 CH1_THRES_HIGH(7 downto 0) <= RD_DATA_TMP22; 
---      	  					 CH2_THRES_LOW(15 downto 8) <= RD_DATA_TMP23; 
---      	  					 CH2_THRES_LOW(7 downto 0) <= RD_DATA_TMP24; 
---      	  					 CH2_THRES_HIGH(15 downto 8) <= RD_DATA_TMP25; 
---      	  					 CH2_THRES_HIGH(7 downto 0) <= RD_DATA_TMP26; 
---      	  					 TR_CONDITION <= RD_DATA_TMP27; 
---      	  					 PRE_TIME_LOAD(15 downto 8) <= RD_DATA_TMP28; 
---      	  					 PRE_TIME_LOAD(7 downto 0) <= RD_DATA_TMP29; 
---      	  					 COINC_TIME_LOAD(15 downto 8) <= RD_DATA_TMP30; 
---      	  					 COINC_TIME_LOAD(7 downto 0) <= RD_DATA_TMP31; 
---      	  					 POST_TIME_LOAD(15 downto 8) <= RD_DATA_TMP32; 
---      	  					 POST_TIME_LOAD(7 downto 0) <= RD_DATA_TMP33; 
---      	  					 STATUS(7) <= RD_DATA_TMP34(7); 
---      	  					 SPARE_BYTES(31 downto 24) <= RD_DATA_TMP35; 
---      	  					 SPARE_BYTES(23 downto 16) <= RD_DATA_TMP36; 
---      	  					 SPARE_BYTES(15 downto 8) <= RD_DATA_TMP37; 
---      	  					 SPARE_BYTES(7 downto 0) <= RD_DATA_TMP38; 
---      	  when "01010101" => WRITE_PARAMETER_LIST <= '1';
---      	  when "11111111" => SOFT_RESET <= '1';
---		  when others =>  -- Do nothing
---    	end case;
---      else  
---        WRITE_PARAMETER_LIST <= '0';
---        SOFT_RESET <= '0';
---      end if;
---    end if;
---  end process;  
 
   process(CLK10MHz,SYSRST)
   begin
@@ -6934,6 +6546,55 @@ begin
 end rtl ; -- of FIFO_SELECT
 
 --------------------------------------------------------------------------------
+-- Entity declaration of 'SOFT_RESET'.
+-- Last modified : Tue Jul 17 14:45:44 2007.
+--------------------------------------------------------------------------------
+
+
+library ieee ;
+use ieee.numeric_std.all ;
+use ieee.std_logic_unsigned.all ;
+use ieee.std_logic_1164.all ;
+
+entity SOFT_RESET is
+  port(
+    CLKRD   : in     std_logic;
+    RESOUT  : out    std_logic;
+    SRESET  : in     std_logic;
+    nHRESET : in     std_logic);
+end SOFT_RESET ;
+
+--------------------------------------------------------------------------------
+-- Architecture 'rtl' of 'SOFT_RESET'
+-- Last modified : Tue Jul 17 14:45:44 2007.
+--------------------------------------------------------------------------------
+
+architecture rtl of SOFT_RESET is
+
+signal SRESET_COUNT: std_logic_vector(3 downto 0);
+
+begin
+
+  RESOUT <= not SRESET_COUNT(3) or not nHRESET;
+  
+  process (CLKRD, nHRESET)
+  begin
+	if nHRESET = '0' then
+	  SRESET_COUNT <= (others => '1');                 
+	elsif CLKRD'event and CLKRD = '1' then
+      if SRESET = '1' then
+	    SRESET_COUNT <= (others => '0');                 
+	  elsif SRESET_COUNT /= "1111" then 
+		SRESET_COUNT <= SRESET_COUNT + "0001";
+	  else
+		SRESET_COUNT <= SRESET_COUNT;
+	  end if;
+	end if;
+  end process;
+
+end rtl ; -- of SOFT_RESET
+
+--------------------------------------------------------------------------------
 -- Entity declaration of 'STORAGE'.
 -- Last modified : Mon Jan 16 22:07:14 2006.
 --------------------------------------------------------------------------------
@@ -7284,7 +6945,7 @@ end structure ; -- of TRIGGER_STUFF
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DATA_CONTROLLER'.
--- Last modified : Tue Jun 26 12:58:46 2007.
+-- Last modified : Wed Jul 18 11:17:04 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7373,7 +7034,7 @@ end DATA_CONTROLLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'DATA_CONTROLLER'
--- Last modified : Tue Jun 26 12:58:46 2007.
+-- Last modified : Wed Jul 18 11:17:04 2007.
 --------------------------------------------------------------------------------
 
 architecture structure of DATA_CONTROLLER is
@@ -7423,6 +7084,7 @@ architecture structure of DATA_CONTROLLER is
       READ_ERROR_READOUT_DONE     : out    std_logic;
       READ_ERROR_VALID            : in     std_logic;
       SAT_INFO                    : in     std_logic_vector(487 downto 0);
+      SECOND_MESSAGE_ALLOWED      : in     std_logic;
       SEND_EVENT_DATA             : out    std_logic;
       START_WRITE_EVENT           : in     std_logic;
       SYSRST                      : in     std_logic;
@@ -7431,7 +7093,7 @@ architecture structure of DATA_CONTROLLER is
       TRIGGER_PATTERN             : in     std_logic_vector(15 downto 0);
       TR_CONDITION                : in     std_logic_vector(7 downto 0);
       TS_ONE_PPS_READOUT_DONE     : out    std_logic;
-      TS_ONE_PPS_VALID_IN         : in     std_logic;
+      TS_ONE_PPS_VALID_INPUT      : in     std_logic;
       USB_DATA_OUT                : out    std_logic_vector(7 downto 0);
       USB_TXE                     : in     std_logic;
       USB_WR                      : out    std_logic;
@@ -7485,6 +7147,7 @@ architecture structure of DATA_CONTROLLER is
       READ_ERROR_DATA             : out    std_logic_vector(7 downto 0);
       READ_ERROR_READOUT_DONE     : in     std_logic;
       READ_ERROR_VALID            : out    std_logic;
+      SECOND_MESSAGE_ALLOWED      : out    std_logic;
       SERIAL_NUMBER               : in     std_logic_vector(9 downto 0);
       SLAVE_PRESENT               : in     std_logic;
       SOFT_RESET                  : out    std_logic;
@@ -7523,6 +7186,7 @@ architecture structure of DATA_CONTROLLER is
   signal USB_WRITE_REQUEST           :  std_logic;
   signal TR_CONDITION_net            :  std_logic_vector(7 downto 0);
   signal PARAMETER_LIST              :  std_logic_vector(271 downto 0);
+  signal SECOND_MESSAGE_ALLOWED      :  std_logic;
 
 begin
 
@@ -7573,6 +7237,7 @@ begin
       READ_ERROR_READOUT_DONE => READ_ERROR_READOUT_DONE,
       READ_ERROR_VALID => READ_ERROR_VALID,
       SAT_INFO => SAT_INFO,
+      SECOND_MESSAGE_ALLOWED => SECOND_MESSAGE_ALLOWED,
       SEND_EVENT_DATA => SEND_EVENT_DATA,
       START_WRITE_EVENT => DATA_READY_FIFO,
       SYSRST => SYSRST,
@@ -7581,7 +7246,7 @@ begin
       TRIGGER_PATTERN => TRIGGER_PATTERN,
       TR_CONDITION => TR_CONDITION_net,
       TS_ONE_PPS_READOUT_DONE => TS_ONE_PPS_READOUT_DONE,
-      TS_ONE_PPS_VALID_IN => TS_ONE_PPS_VALID_IN,
+      TS_ONE_PPS_VALID_INPUT => TS_ONE_PPS_VALID_IN,
       USB_DATA_OUT => USB_DATA,
       USB_TXE => USB_TXE,
       USB_WR => USB_WR,
@@ -7634,6 +7299,7 @@ begin
       READ_ERROR_DATA => READ_ERROR_DATA,
       READ_ERROR_READOUT_DONE => READ_ERROR_READOUT_DONE,
       READ_ERROR_VALID => READ_ERROR_VALID,
+      SECOND_MESSAGE_ALLOWED => SECOND_MESSAGE_ALLOWED,
       SERIAL_NUMBER => SERIAL_NUMBER,
       SLAVE_PRESENT => SLAVE_PRESENT,
       SOFT_RESET => SOFT_RESET,
@@ -7741,7 +7407,7 @@ end structure ; -- of STORAGE_ONE_CHANNEL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Mon Jul 02 09:02:35 2007.
+-- Last modified : Tue Jul 17 14:45:41 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7817,7 +7483,6 @@ entity hisparc is
     LVDS_OUT4        : out    std_logic;
     ONE_PPS          : in     std_logic;
     SERIAL_NUMBER    : in     std_logic_vector(9 downto 0);
-    SOFT_RESET       : out    std_logic;
     SPY_CON          : in     std_logic;
     SPY_SDI          : out    std_logic;
     SPY_SDO          : in     std_logic;
@@ -7833,7 +7498,7 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Mon Jul 02 09:02:35 2007.
+-- Last modified : Tue Jul 17 14:45:41 2007.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
@@ -7981,7 +7646,7 @@ architecture a0 of hisparc is
     port(
       CLK10MHz : in     std_logic;
       CLKRD    : out    std_logic;
-      SYSRST   : in     std_logic);
+      RST      : in     std_logic);
   end component ;
 
   component DATA_CONTROLLER
@@ -8208,6 +7873,14 @@ architecture a0 of hisparc is
       TRIGGER_PATTERN_IN     : in     std_logic_vector(15 downto 0));
   end component ;
 
+  component SOFT_RESET
+    port(
+      CLKRD   : in     std_logic;
+      RESOUT  : out    std_logic;
+      SRESET  : in     std_logic;
+      nHRESET : in     std_logic);
+  end component ;
+
   signal SYSRST                  :  std_logic;
   signal CLK200MHz               :  std_logic;
   signal CLKRD                   :  std_logic;
@@ -8242,6 +7915,7 @@ architecture a0 of hisparc is
   signal CTP_TS_ONE_PPS_OUT      :  std_logic_vector(31 downto 0);
   signal CTD_TS_ONE_PPS_OUT      :  std_logic_vector(31 downto 0);
   signal TS_ONE_PPS_READOUT_DONE :  std_logic;
+  signal SOFT_RESET0             :  std_logic;
   signal COINC0                  :  std_logic;
   signal ML1_net                 :  std_logic;
   signal ML2_net                 :  std_logic;
@@ -8251,7 +7925,6 @@ architecture a0 of hisparc is
   signal SH1                     :  std_logic;
   signal SL2                     :  std_logic;
   signal SH2                     :  std_logic;
-  signal ONE_PPS_OUT             :  std_logic;
   signal TS_ONE_PPS_VALID_OUT    :  std_logic;
   signal GPS_DATA_OUT            :  std_logic;
   signal TR_CONDITION            :  std_logic_vector(7 downto 0);
@@ -8309,6 +7982,7 @@ architecture a0 of hisparc is
   signal STOP_READ_OUT           :  std_logic;
   signal ERROR_READ_OUT          :  std_logic;
   signal BLOCK_COINC             :  std_logic;
+  signal ONE_PPS_OUT0            :  std_logic;
 
 begin
   --Comparator signals twisted due to
@@ -8483,7 +8157,7 @@ begin
     port map(
       CLK10MHz => CLK10MHz,
       CLKRD => CLKRD,
-      SYSRST => SYSRST);
+      RST => nSYSRST);
 
   u11: DATA_CONTROLLER
     port map(
@@ -8533,14 +8207,14 @@ begin
       LONGITUDE => LONGITUDE_OUT,
       MASTER => MASTER,
       NEW_DATA_WHILE_READOUT => open,
-      ONE_PPS => ONE_PPS_OUT,
+      ONE_PPS => ONE_PPS_OUT0,
       POST_TIME => POST_TIME,
       RDEN => RDEN,
       READ_BUSY_OUT => READ_BUSY_OUT,
       SAT_INFO => SAT_INFO_OUT,
       SERIAL_NUMBER => SERIAL_NUMBER,
       SLAVE_PRESENT => SLAVE_PRESENT,
-      SOFT_RESET => SOFT_RESET,
+      SOFT_RESET => SOFT_RESET0,
       STOP_READ_OUT => STOP_READ_OUT,
       SYSRST => SYSRST,
       TEMP => TEMP_OUT,
@@ -8586,7 +8260,7 @@ begin
       LATITUDE_OUT => LATITUDE_OUT,
       LONGITUDE_OUT => LONGITUDE_OUT,
       MASTER => MASTER,
-      ONE_PPS => ONE_PPS_OUT,
+      ONE_PPS => ONE_PPS_OUT0,
       RXD => GPS_DATA_OUT,
       SAT_INFO_OUT => SAT_INFO_OUT,
       SPY_CON => SPY_CON,
@@ -8604,7 +8278,7 @@ begin
       MH2 => MH2_net,
       ML1 => ML1_net,
       ML2 => ML2_net,
-      ONE_PPS => ONE_PPS_OUT,
+      ONE_PPS => ONE_PPS_OUT0,
       SYSRST => SYSRST,
       TH_COUNTERS_OUT => TH_COUNTERS_OUT);
 
@@ -8628,16 +8302,11 @@ begin
       ML1 => ML1_net,
       ML2 => ML2_net,
       ONE_PPS_MASTER => ONE_PPS,
-      ONE_PPS_OUT => ONE_PPS_OUT,
+      ONE_PPS_OUT => ONE_PPS_OUT0,
       SH1 => SH1,
       SH2 => SH2,
       SL1 => SL1,
       SL2 => SL2);
-
-  u17: INVERTER
-    port map(
-      INP => nSYSRST,
-      OUTP => SYSRST);
 
   u19: INVERTER
     port map(
@@ -8660,7 +8329,7 @@ begin
   u23: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => ONE_PPS_OUT,
+      INP => ONE_PPS_OUT0,
       SYSRST => SYSRST,
       nOUTP => LED3);
 
@@ -8752,5 +8421,12 @@ begin
       INP => USB_WRITE_ENABLE,
       SYSRST => SYSRST,
       nOUTP => LED8);
+
+  u16: SOFT_RESET
+    port map(
+      CLKRD => CLKRD,
+      RESOUT => SYSRST,
+      SRESET => SOFT_RESET0,
+      nHRESET => nSYSRST);
 end a0 ; -- of hisparc
 

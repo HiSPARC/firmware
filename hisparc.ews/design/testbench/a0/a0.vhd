@@ -28,7 +28,6 @@
 --     SH2              : out    std_logic;
 --     SL1              : out    std_logic;
 --     SL2              : out    std_logic;
---     SOFT_RESET       : in     std_logic;
 --     USB_DATA_IN      : inout  std_logic_vector(7 downto 0);
 --     USB_DATA_OUT     : out    std_logic_vector(7 downto 0);
 --     USB_RD           : in     std_logic;
