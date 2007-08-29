@@ -1,8 +1,8 @@
 (DATABASE_VERSION 7)
 (ENTITY_FILE
   (ENTITY
-    (OBID "ent0c013cbd48097b440a600f7079170000")
-    (NAME "LED_DRIVER")
+    (OBID "ent0c012ca120555d644d900f709dd20000")
+    (NAME "LED_ONE_SHOT")
     (HDL 1)
     (EXTERNAL 0)
     (GEOMETRY 0 0 896 640)
@@ -12,16 +12,16 @@
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
       (PROPERTY "STAMP_TIME" "Wed Aug 29 14:56:39 2007")
-      (NAME "LED_DRIVER")
+      (NAME "LED_ONE_SHOT")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
-      (CREATED 1152880772 "Fri Jul 14 14:39:32 2006")
+      (CREATED 1188386050 "Wed Aug 29 13:14:10 2007")
       (MODIFIED 1188391505 "Wed Aug 29 14:45:05 2007")
     )
     (PORT
-      (OBID "eprt0c013cbda9097b440a600f70a9170000")
+      (OBID "eprt0c012ca1d2555d644d900f70edd20000")
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
@@ -46,32 +46,7 @@
       )
     )
     (PORT
-      (OBID "eprt0c013cbd4a097b440a600f70c9170000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "nOUTP")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY 856 88 936 168)
-      (SENSLIST 1)
-      (SIDE 1)
-      (LABEL
-        (POSITION 832 128)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
-        (FORMAT 35)
-        (TEXT "nOUTP")
-      )
-    )
-    (PORT
-      (OBID "eprt0c013cbdbd097b440a600f70e9170000")
+      (OBID "eprt0c012ca1d2555d644d900f70fdd20000")
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
@@ -96,7 +71,7 @@
       )
     )
     (PORT
-      (OBID "eprt0c013cbd70197b440a600f700a170000")
+      (OBID "eprt0c012ca1d2555d644d900f700ed20000")
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
@@ -120,10 +95,35 @@
         (TEXT "SYSRST")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd48097b440a600f7089170000" "rtl")
+    (PORT
+      (OBID "eprt0c012ca193555d644d900f704ed20000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "nOUTP")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 856 88 936 168)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 832 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "nOUTP")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c012ca120555d644d900f70add20000" "rtl")
   )
   (ARCH_DEFINITION
-    (OBID "arch0c013cbd48097b440a600f7089170000")
+    (OBID "arch0c012ca120555d644d900f70add20000")
     (TYPE 2)
     (HDL_IDENT
       (NAME "rtl")
@@ -131,9 +131,9 @@
     )
     (HDL_FILE
       (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'LED_DRIVER."
+                 "-- Architecture 'rtl' of 'LED_ONE_SHOT."
                  "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'LED_DRIVER' :"
+                 "-- Copy of the interface declaration of Entity 'LED_ONE_SHOT' :"
                  "-- "
                  "--   port("
                  "--     CLK10MHz : in     std_logic;"
@@ -143,18 +143,30 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of LED_DRIVER is"
+                 "architecture rtl of LED_ONE_SHOT is"
                  ""
                  "signal LEDSHINE_COUNTER: std_logic_vector(20 downto 0); -- Full is about 0.2 seconds"
+                 "signal INP_DEL: std_logic;"
                  ""
                  "begin"
                  "    "
                  "  process(CLK10MHz,SYSRST,INP)"
                  "  begin"
-                 "    if SYSRST = '1' or INP = '1' then"
+                 "    if SYSRST = '1' then"
+                 "      INP_DEL <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      INP_DEL <= INP;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  process(CLK10MHz,SYSRST,INP)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
                  "      LEDSHINE_COUNTER <= \"111111111111111111111\";"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
-                 "      if LEDSHINE_COUNTER /= \"111111111111111111111\" then"
+                 "      if INP = '1' and INP_DEL = '0' then"
+                 "        LEDSHINE_COUNTER <= \"000000000000000000000\";"
+                 "      elsif LEDSHINE_COUNTER /= \"111111111111111111111\" then"
                  "        LEDSHINE_COUNTER <= LEDSHINE_COUNTER + \"000000000000000000001\";"
                  "      else   "
                  "        LEDSHINE_COUNTER <= LEDSHINE_COUNTER; -- locks at full"
@@ -165,7 +177,7 @@
                  "  nOUTP <= '0' when LEDSHINE_COUNTER /= \"111111111111111111111\" else '1'; "
                  ""
                  ""
-                 "end rtl ; -- of LED_DRIVER"
+                 "end rtl ; -- of LED_ONE_SHOT"
                  ""
                  "")
     )

@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 1792 5184)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Apr 27 09:05:09 2007")
+      (PROPERTY "STAMP_TIME" "Mon Jul 16 16:35:09 2007")
       (NAME "testbench")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1133954471 "Wed Dec 07 12:21:11 2005")
-      (MODIFIED 1177311871 "Mon Apr 23 09:04:31 2007")
+      (MODIFIED 1184596509 "Mon Jul 16 16:35:09 2007")
     )
     (PORT
       (OBID "eprt0c013cbdfb5c693483700f7074e10000")
@@ -720,31 +720,6 @@
       )
     )
     (PORT
-      (OBID "eprt0c013cbdde9ea644cf700f70bc300000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SOFT_RESET")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-      )
-      (GEOMETRY 1752 4504 1832 4584)
-      (SENSLIST 1)
-      (SIDE 1)
-      (LABEL
-        (POSITION 1728 4544)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
-        (FORMAT 35)
-        (TEXT "SOFT_RESET")
-      )
-    )
-    (PORT
       (OBID "eprt0c013cbd6894984487500f709eb00000")
       (HDL_OBJECT
         (HDL_IDENT
@@ -892,7 +867,6 @@
                  "--     SH2              : out    std_logic;"
                  "--     SL1              : out    std_logic;"
                  "--     SL2              : out    std_logic;"
-                 "--     SOFT_RESET       : in     std_logic;"
                  "--     USB_DATA_IN      : inout  std_logic_vector(7 downto 0);"
                  "--     USB_DATA_OUT     : out    std_logic_vector(7 downto 0);"
                  "--     USB_RD           : in     std_logic;"

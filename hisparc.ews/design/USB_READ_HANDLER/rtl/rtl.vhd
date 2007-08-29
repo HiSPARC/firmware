@@ -34,6 +34,7 @@
 --     DAC_nRD                     : out    std_logic;
 --     DAC_nWR                     : out    std_logic;
 --     ERROR_READ_OUT              : out    std_logic;
+--     FORCE_MASTER                : out    std_logic;
 --     GPS_PROG_ENABLE             : out    std_logic;
 --     MASTER                      : in     std_logic;
 --     ONE_PPS                     : in     std_logic;
@@ -174,6 +175,8 @@ signal CH2_PMT_SUPPLY_CURR: std_logic_vector(7 downto 0);
 signal STATUS: std_logic_vector(7 downto 0);
 signal VERSION: std_logic_vector(23 downto 0);
 signal SOFTWARE_VERSION: std_logic_vector(7 downto 0);
+signal CHANGE_MS_STATE: std_logic;
+signal FORCE_MASTER_TMP: std_logic;
 
 signal WRITE_PARAMETER_LIST: std_logic;
 signal WRITE_PARAMETER_LIST_DEL: std_logic;
@@ -181,23 +184,15 @@ signal PARAMETER_LIST_READOUT_DONE_DEL1: std_logic;
 signal READ_ERROR: std_logic;
 signal READ_ERROR_READOUT_DONE_DEL1: std_logic;
 
---signal USB_RXF_DEL: std_logic;
---signal USB_RXF_OR: std_logic;
---signal USB_READ_ENABLE: std_logic;
 signal USB_READ_BUSY: std_logic;
 signal USB_WRITE_ENABLE_TMP: std_logic;
 signal USB_WRITE_ALLOWED: std_logic; -- Least significant bit of SPARE_BYTES and controlled by LabView to enable writing to PC
---signal START_READING: std_logic;
 signal STOP_READING: std_logic;
 signal USB_WRITE_BUSY_DEL1: std_logic; -- to detect the falling edge of USB_WRITE_BUSY
 signal USB_WRITE_BUSY_DEL2: std_logic;
 signal USB_WRITE_BUSY_DEL3: std_logic;
 signal USB_WRITE_BUSY_DEL4: std_logic;
 signal USB_WRITE_BUSY_DEL5: std_logic;
---signal USB_WRITE_REQUEST_DEL1: std_logic;
---signal USB_WRITE_REQUEST_DEL2: std_logic;
---signal USB_WRITE_REQUEST_DEL3: std_logic;
---signal USB_WRITE_REQUEST_DEL4: std_logic;
 
 signal CH1_OFFSET_ADJ_POS_TMP: std_logic_vector(7 downto 0);
 signal CH1_OFFSET_ADJ_NEG_TMP: std_logic_vector(7 downto 0);
@@ -224,13 +219,11 @@ signal PRE_TIME_LOAD_TMP: std_logic_vector(15 downto 0);
 signal COINC_TIME_LOAD_TMP: std_logic_vector(15 downto 0);
 signal POST_TIME_LOAD_TMP: std_logic_vector(15 downto 0);
 signal SPARE_BYTES_TMP: std_logic_vector(31 downto 0);
-signal STATUS_TMP: std_logic_vector(7 downto 0);
 
 signal RD_TMP: std_logic;
-signal READ_COUNT: integer range 41 downto 0; -- Send message can be maximum 39 bytes (1 extra for error notification)
+signal READ_COUNT: integer range 40 downto 0; -- Send message can be maximum 38 bytes (1 extra for error notification)
 signal READ_ID: std_logic_vector(7 downto 0);
 signal TIME_OUT_COUNT: std_logic_vector(23 downto 0); --Counts 1 s when read busy hangs
-
 
 signal PRELOAD_DACS: std_logic;
 signal PRELOAD_DACS_DEL1: std_logic;
@@ -250,12 +243,15 @@ begin
 
   USB_WRITE_ALLOWED <= SPARE_BYTES(0);
   SECOND_MESSAGE_ALLOWED <= SPARE_BYTES(1);
-  STATUS(6 downto 3) <= "0000";
+  GPS_PROG_ENABLE <= SPARE_BYTES(2);
+  CHANGE_MS_STATE <= SPARE_BYTES(3);
+  FORCE_MASTER <= FORCE_MASTER_TMP;
+  FORCE_MASTER_TMP <= MASTER when CHANGE_MS_STATE = '0' else not MASTER;
+  STATUS(7 downto 3) <= "00000";
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
-  STATUS(0) <= MASTER;
-  GPS_PROG_ENABLE <= STATUS(7);
-  SOFTWARE_VERSION <= "00000011";
+  STATUS(0) <= FORCE_MASTER_TMP;
+  SOFTWARE_VERSION <= "00000100";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -272,9 +268,6 @@ begin
   THH1 <= CH1_THRES_HIGH(11 downto 0);
   THL2 <= CH2_THRES_LOW(11 downto 0);
   THH2 <= CH2_THRES_HIGH(11 downto 0);
---  PRE_TIME_TMP <= PRE_TIME_LOAD when PRE_TIME_LOAD <= "0000000110010000" else "0000000110010000"; -- 400
---  COINC_TIME_TMP <= COINC_TIME_LOAD when COINC_TIME_LOAD <= "0000001111101000" else "0000001111101000"; -- 1000
---  POST_TIME_TMP <= POST_TIME_LOAD when POST_TIME_LOAD <= "0000011001000000" else "0000011001000000"; -- 1600
   PRE_TIME_OUT <= PRE_TIME_TMP;
   COINC_TIME_OUT <= COINC_TIME_TMP;
   POST_TIME_OUT <= POST_TIME_TMP;
@@ -283,7 +276,6 @@ begin
   COINC_TIME_SET <= to_integer(unsigned(COINC_TIME_TMP)) ;
   COINC_TIME <= COINC_TIME_SET;
   POST_TIME <= POST_TIME_SET;
---  TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET when (PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET) <= 2000 else TOTAL_TIME_TMP;
   TOTAL_TIME <= TOTAL_TIME_TMP;
   TOTAL_TIME_3X <= TOTAL_TIME_TMP + TOTAL_TIME_TMP + TOTAL_TIME_TMP;
     
@@ -422,10 +414,6 @@ begin
       USB_WRITE_BUSY_DEL3 <= '0';        
       USB_WRITE_BUSY_DEL4 <= '0';        
       USB_WRITE_BUSY_DEL5 <= '0';        
---      USB_WRITE_REQUEST_DEL1 <= '0';        
---      USB_WRITE_REQUEST_DEL2 <= '0';        
---      USB_WRITE_REQUEST_DEL3 <= '0';        
---      USB_WRITE_REQUEST_DEL4 <= '0';        
     elsif (CLKRD'event and CLKRD = '1') then
       WRITE_PARAMETER_LIST_DEL <= WRITE_PARAMETER_LIST;        
       PARAMETER_LIST_READOUT_DONE_DEL1 <= PARAMETER_LIST_READOUT_DONE;        
@@ -435,10 +423,6 @@ begin
       USB_WRITE_BUSY_DEL3 <= USB_WRITE_BUSY_DEL2;        
       USB_WRITE_BUSY_DEL4 <= USB_WRITE_BUSY_DEL3;        
       USB_WRITE_BUSY_DEL5 <= USB_WRITE_BUSY_DEL4;        
---      USB_WRITE_REQUEST_DEL1 <= USB_WRITE_REQUEST;        
---      USB_WRITE_REQUEST_DEL2 <= USB_WRITE_REQUEST_DEL1;        
---      USB_WRITE_REQUEST_DEL3 <= USB_WRITE_REQUEST_DEL2;        
---      USB_WRITE_REQUEST_DEL4 <= USB_WRITE_REQUEST_DEL3;        
     end if;
   end process;  
 
@@ -527,7 +511,6 @@ begin
 	  COINC_TIME_LOAD_TMP <= (others => '0');
 	  POST_TIME_LOAD_TMP <= (others => '0'); 
 	  SPARE_BYTES_TMP <= (others => '0');
-      STATUS_TMP(7) <= '0';
 	  CH1_OFFSET_ADJ_POS <= "10000000";
 	  CH1_OFFSET_ADJ_NEG <= "10000000";
 	  CH2_OFFSET_ADJ_POS <= "10000000";
@@ -553,7 +536,6 @@ begin
 	  COINC_TIME_LOAD <= "0000000110010000";
 	  POST_TIME_LOAD <= "0000000110010000"; 
 	  SPARE_BYTES <= (others => '0');
-      STATUS(7) <= '0';
       WRITE_PARAMETER_LIST <= '0';
       SOFT_RESET <= '0';	  
     elsif (CLKRD'event and CLKRD = '1') then
@@ -581,7 +563,7 @@ begin
                 or USB_DATA_IN = "00011100" or USB_DATA_IN = "00011101" or USB_DATA_IN = "00011110" or USB_DATA_IN = "00011111" 
                 or USB_DATA_IN = "00100000" or USB_DATA_IN = "00100001" or USB_DATA_IN = "00100010" or USB_DATA_IN = "00100011" 
                 or USB_DATA_IN = "00110000" or USB_DATA_IN = "00110001" or USB_DATA_IN = "00110010" or USB_DATA_IN = "00110011" 
-                or USB_DATA_IN = "00110100" or USB_DATA_IN = "00110101" 
+                or USB_DATA_IN = "00110101" 
                 or USB_DATA_IN = "01000000" or USB_DATA_IN = "01000001" or USB_DATA_IN = "01000010" or USB_DATA_IN = "01000011" 
                 or USB_DATA_IN = "01000100" or USB_DATA_IN = "01000101" or USB_DATA_IN = "01000110" or USB_DATA_IN = "01000111" 
                 or USB_DATA_IN = "01010000" or USB_DATA_IN = "01010101" or USB_DATA_IN = "10001000" or USB_DATA_IN = "11111111" then -- if there is a valid ID
@@ -636,7 +618,6 @@ begin
       	        when "00110001" => PRE_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;
       	        when "00110010" => COINC_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;
       	        when "00110011" => POST_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;
-      	        when "00110100" => STATUS_TMP(7) <= USB_DATA_IN(7);
       	        when "00110101" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;
       	        when "01010000" => CH1_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;
 		        when others =>  -- Do nothing
@@ -790,15 +771,6 @@ begin
       	      if READ_ID = "00110000" then
       	        if USB_DATA_IN = "01100110" then
       	          TR_CONDITION <= TR_CONDITION_TMP; 
-	              STOP_READING <= '1';
-      	        else
-                  READ_ERROR <= '1';
-  		          READ_ERROR_DATA <= "01100110"; -- Missing stop byte
-                end if;
-              end if;
-      	      if READ_ID = "00110100" then
-      	        if USB_DATA_IN = "01100110" then
-      	          STATUS(7) <= STATUS_TMP(7); 
 	              STOP_READING <= '1';
       	        else
                   READ_ERROR <= '1';
@@ -1078,34 +1050,28 @@ begin
             elsif READ_COUNT = 33 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => STATUS_TMP(7) <= USB_DATA_IN(7);
+      	        when "01010000" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
             elsif READ_COUNT = 34 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;
+      	        when "01010000" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
             elsif READ_COUNT = 35 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;
+      	        when "01010000" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
             elsif READ_COUNT = 36 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;
-		        when others =>  -- Do nothing
-    	      end case;
-            elsif READ_COUNT = 37 then              
-              READ_COUNT <= READ_COUNT + 1; 
-      		  case (READ_ID) is
       	        when "01010000" => SPARE_BYTES_TMP(7 downto 0) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
-            elsif READ_COUNT = 38 then              
+            elsif READ_COUNT = 37 then              
               READ_COUNT <= READ_COUNT + 1; 
       	      if READ_ID = "01010000" then
       	        if USB_DATA_IN = "01100110" then
@@ -1140,7 +1106,6 @@ begin
       	  		  COINC_TIME_LOAD(7 downto 0) <= COINC_TIME_LOAD_TMP(7 downto 0); 
       	  		  POST_TIME_LOAD(15 downto 8) <= POST_TIME_LOAD_TMP(15 downto 8); 
       	  		  POST_TIME_LOAD(7 downto 0) <= POST_TIME_LOAD_TMP(7 downto 0); 
-      	  		  STATUS(7) <= STATUS_TMP(7); 
       	  		  SPARE_BYTES(31 downto 24) <= SPARE_BYTES_TMP(31 downto 24); 
       	  		  SPARE_BYTES(23 downto 16) <= SPARE_BYTES_TMP(23 downto 16); 
       	  		  SPARE_BYTES(15 downto 8) <= SPARE_BYTES_TMP(15 downto 8); 
@@ -1151,7 +1116,7 @@ begin
   		          READ_ERROR_DATA <= "01100110"; -- Missing stop byte
                 end if;
               end if;
-            elsif READ_COUNT = 39 then              
+            elsif READ_COUNT = 38 then              
               READ_ERROR <= '1';
   		      READ_ERROR_DATA <= "01100110"; -- Missing stop byte
             end if;

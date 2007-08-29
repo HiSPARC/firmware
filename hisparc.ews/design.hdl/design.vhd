@@ -6,7 +6,7 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Wed Aug 29 15:06:39 2007.
+-- Time stamp     : Wed Aug 29 15:41:57 2007.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -1874,7 +1874,7 @@ end rtl ; -- of TRIGGER_MATRIX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_DRIVER'.
--- Last modified : Mon Apr 23 09:04:31 2007.
+-- Last modified : Wed Aug 29 14:45:05 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1893,7 +1893,7 @@ end LED_DRIVER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_DRIVER'
--- Last modified : Mon Apr 23 09:04:31 2007.
+-- Last modified : Wed Aug 29 14:45:05 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_DRIVER is
@@ -1905,7 +1905,7 @@ begin
   process(CLK10MHz,SYSRST,INP)
   begin
     if SYSRST = '1' or INP = '1' then
-      LEDSHINE_COUNTER <= "000000000000000000000";
+      LEDSHINE_COUNTER <= "111111111111111111111";
     elsif (CLK10MHz'event and CLK10MHz = '1') then
       if LEDSHINE_COUNTER /= "111111111111111111111" then
         LEDSHINE_COUNTER <= LEDSHINE_COUNTER + "000000000000000000001";
@@ -2927,7 +2927,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Wed Aug 29 15:06:39 2007.
+-- Last modified : Wed Aug 29 15:41:47 2007.
 --------------------------------------------------------------------------------
 
 
@@ -2968,6 +2968,7 @@ entity USB_READ_HANDLER is
     DAC_nRD                     : out    std_logic;
     DAC_nWR                     : out    std_logic;
     ERROR_READ_OUT              : out    std_logic;
+    FORCE_MASTER                : out    std_logic;
     GPS_PROG_ENABLE             : out    std_logic;
     MASTER                      : in     std_logic;
     ONE_PPS                     : in     std_logic;
@@ -3004,7 +3005,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Wed Aug 29 15:06:39 2007.
+-- Last modified : Wed Aug 29 15:41:47 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3112,6 +3113,8 @@ signal CH2_PMT_SUPPLY_CURR: std_logic_vector(7 downto 0);
 signal STATUS: std_logic_vector(7 downto 0);
 signal VERSION: std_logic_vector(23 downto 0);
 signal SOFTWARE_VERSION: std_logic_vector(7 downto 0);
+signal CHANGE_MS_STATE: std_logic;
+signal FORCE_MASTER_TMP: std_logic;
 
 signal WRITE_PARAMETER_LIST: std_logic;
 signal WRITE_PARAMETER_LIST_DEL: std_logic;
@@ -3119,23 +3122,15 @@ signal PARAMETER_LIST_READOUT_DONE_DEL1: std_logic;
 signal READ_ERROR: std_logic;
 signal READ_ERROR_READOUT_DONE_DEL1: std_logic;
 
---signal USB_RXF_DEL: std_logic;
---signal USB_RXF_OR: std_logic;
---signal USB_READ_ENABLE: std_logic;
 signal USB_READ_BUSY: std_logic;
 signal USB_WRITE_ENABLE_TMP: std_logic;
 signal USB_WRITE_ALLOWED: std_logic; -- Least significant bit of SPARE_BYTES and controlled by LabView to enable writing to PC
---signal START_READING: std_logic;
 signal STOP_READING: std_logic;
 signal USB_WRITE_BUSY_DEL1: std_logic; -- to detect the falling edge of USB_WRITE_BUSY
 signal USB_WRITE_BUSY_DEL2: std_logic;
 signal USB_WRITE_BUSY_DEL3: std_logic;
 signal USB_WRITE_BUSY_DEL4: std_logic;
 signal USB_WRITE_BUSY_DEL5: std_logic;
---signal USB_WRITE_REQUEST_DEL1: std_logic;
---signal USB_WRITE_REQUEST_DEL2: std_logic;
---signal USB_WRITE_REQUEST_DEL3: std_logic;
---signal USB_WRITE_REQUEST_DEL4: std_logic;
 
 signal CH1_OFFSET_ADJ_POS_TMP: std_logic_vector(7 downto 0);
 signal CH1_OFFSET_ADJ_NEG_TMP: std_logic_vector(7 downto 0);
@@ -3162,13 +3157,11 @@ signal PRE_TIME_LOAD_TMP: std_logic_vector(15 downto 0);
 signal COINC_TIME_LOAD_TMP: std_logic_vector(15 downto 0);
 signal POST_TIME_LOAD_TMP: std_logic_vector(15 downto 0);
 signal SPARE_BYTES_TMP: std_logic_vector(31 downto 0);
-signal STATUS_TMP: std_logic_vector(7 downto 0);
 
 signal RD_TMP: std_logic;
-signal READ_COUNT: integer range 41 downto 0; -- Send message can be maximum 39 bytes (1 extra for error notification)
+signal READ_COUNT: integer range 40 downto 0; -- Send message can be maximum 38 bytes (1 extra for error notification)
 signal READ_ID: std_logic_vector(7 downto 0);
 signal TIME_OUT_COUNT: std_logic_vector(23 downto 0); --Counts 1 s when read busy hangs
-
 
 signal PRELOAD_DACS: std_logic;
 signal PRELOAD_DACS_DEL1: std_logic;
@@ -3188,12 +3181,15 @@ begin
 
   USB_WRITE_ALLOWED <= SPARE_BYTES(0);
   SECOND_MESSAGE_ALLOWED <= SPARE_BYTES(1);
-  STATUS(6 downto 3) <= "0000";
+  GPS_PROG_ENABLE <= SPARE_BYTES(2);
+  CHANGE_MS_STATE <= SPARE_BYTES(3);
+  FORCE_MASTER <= FORCE_MASTER_TMP;
+  FORCE_MASTER_TMP <= MASTER when CHANGE_MS_STATE = '0' else not MASTER;
+  STATUS(7 downto 3) <= "00000";
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
-  STATUS(0) <= MASTER;
-  GPS_PROG_ENABLE <= STATUS(7);
-  SOFTWARE_VERSION <= "00000011";
+  STATUS(0) <= FORCE_MASTER_TMP;
+  SOFTWARE_VERSION <= "00000100";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -3210,9 +3206,6 @@ begin
   THH1 <= CH1_THRES_HIGH(11 downto 0);
   THL2 <= CH2_THRES_LOW(11 downto 0);
   THH2 <= CH2_THRES_HIGH(11 downto 0);
---  PRE_TIME_TMP <= PRE_TIME_LOAD when PRE_TIME_LOAD <= "0000000110010000" else "0000000110010000"; -- 400
---  COINC_TIME_TMP <= COINC_TIME_LOAD when COINC_TIME_LOAD <= "0000001111101000" else "0000001111101000"; -- 1000
---  POST_TIME_TMP <= POST_TIME_LOAD when POST_TIME_LOAD <= "0000011001000000" else "0000011001000000"; -- 1600
   PRE_TIME_OUT <= PRE_TIME_TMP;
   COINC_TIME_OUT <= COINC_TIME_TMP;
   POST_TIME_OUT <= POST_TIME_TMP;
@@ -3221,7 +3214,6 @@ begin
   COINC_TIME_SET <= to_integer(unsigned(COINC_TIME_TMP)) ;
   COINC_TIME <= COINC_TIME_SET;
   POST_TIME <= POST_TIME_SET;
---  TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET when (PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET) <= 2000 else TOTAL_TIME_TMP;
   TOTAL_TIME <= TOTAL_TIME_TMP;
   TOTAL_TIME_3X <= TOTAL_TIME_TMP + TOTAL_TIME_TMP + TOTAL_TIME_TMP;
     
@@ -3360,10 +3352,6 @@ begin
       USB_WRITE_BUSY_DEL3 <= '0';        
       USB_WRITE_BUSY_DEL4 <= '0';        
       USB_WRITE_BUSY_DEL5 <= '0';        
---      USB_WRITE_REQUEST_DEL1 <= '0';        
---      USB_WRITE_REQUEST_DEL2 <= '0';        
---      USB_WRITE_REQUEST_DEL3 <= '0';        
---      USB_WRITE_REQUEST_DEL4 <= '0';        
     elsif (CLKRD'event and CLKRD = '1') then
       WRITE_PARAMETER_LIST_DEL <= WRITE_PARAMETER_LIST;        
       PARAMETER_LIST_READOUT_DONE_DEL1 <= PARAMETER_LIST_READOUT_DONE;        
@@ -3373,10 +3361,6 @@ begin
       USB_WRITE_BUSY_DEL3 <= USB_WRITE_BUSY_DEL2;        
       USB_WRITE_BUSY_DEL4 <= USB_WRITE_BUSY_DEL3;        
       USB_WRITE_BUSY_DEL5 <= USB_WRITE_BUSY_DEL4;        
---      USB_WRITE_REQUEST_DEL1 <= USB_WRITE_REQUEST;        
---      USB_WRITE_REQUEST_DEL2 <= USB_WRITE_REQUEST_DEL1;        
---      USB_WRITE_REQUEST_DEL3 <= USB_WRITE_REQUEST_DEL2;        
---      USB_WRITE_REQUEST_DEL4 <= USB_WRITE_REQUEST_DEL3;        
     end if;
   end process;  
 
@@ -3465,7 +3449,6 @@ begin
 	  COINC_TIME_LOAD_TMP <= (others => '0');
 	  POST_TIME_LOAD_TMP <= (others => '0'); 
 	  SPARE_BYTES_TMP <= (others => '0');
-      STATUS_TMP(7) <= '0';
 	  CH1_OFFSET_ADJ_POS <= "10000000";
 	  CH1_OFFSET_ADJ_NEG <= "10000000";
 	  CH2_OFFSET_ADJ_POS <= "10000000";
@@ -3491,7 +3474,6 @@ begin
 	  COINC_TIME_LOAD <= "0000000110010000";
 	  POST_TIME_LOAD <= "0000000110010000"; 
 	  SPARE_BYTES <= (others => '0');
-      STATUS(7) <= '0';
       WRITE_PARAMETER_LIST <= '0';
       SOFT_RESET <= '0';	  
     elsif (CLKRD'event and CLKRD = '1') then
@@ -3519,7 +3501,7 @@ begin
                 or USB_DATA_IN = "00011100" or USB_DATA_IN = "00011101" or USB_DATA_IN = "00011110" or USB_DATA_IN = "00011111" 
                 or USB_DATA_IN = "00100000" or USB_DATA_IN = "00100001" or USB_DATA_IN = "00100010" or USB_DATA_IN = "00100011" 
                 or USB_DATA_IN = "00110000" or USB_DATA_IN = "00110001" or USB_DATA_IN = "00110010" or USB_DATA_IN = "00110011" 
-                or USB_DATA_IN = "00110100" or USB_DATA_IN = "00110101" 
+                or USB_DATA_IN = "00110101" 
                 or USB_DATA_IN = "01000000" or USB_DATA_IN = "01000001" or USB_DATA_IN = "01000010" or USB_DATA_IN = "01000011" 
                 or USB_DATA_IN = "01000100" or USB_DATA_IN = "01000101" or USB_DATA_IN = "01000110" or USB_DATA_IN = "01000111" 
                 or USB_DATA_IN = "01010000" or USB_DATA_IN = "01010101" or USB_DATA_IN = "10001000" or USB_DATA_IN = "11111111" then -- if there is a valid ID
@@ -3574,7 +3556,6 @@ begin
       	        when "00110001" => PRE_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;
       	        when "00110010" => COINC_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;
       	        when "00110011" => POST_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;
-      	        when "00110100" => STATUS_TMP(7) <= USB_DATA_IN(7);
       	        when "00110101" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;
       	        when "01010000" => CH1_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;
 		        when others =>  -- Do nothing
@@ -3728,15 +3709,6 @@ begin
       	      if READ_ID = "00110000" then
       	        if USB_DATA_IN = "01100110" then
       	          TR_CONDITION <= TR_CONDITION_TMP; 
-	              STOP_READING <= '1';
-      	        else
-                  READ_ERROR <= '1';
-  		          READ_ERROR_DATA <= "01100110"; -- Missing stop byte
-                end if;
-              end if;
-      	      if READ_ID = "00110100" then
-      	        if USB_DATA_IN = "01100110" then
-      	          STATUS(7) <= STATUS_TMP(7); 
 	              STOP_READING <= '1';
       	        else
                   READ_ERROR <= '1';
@@ -4016,34 +3988,28 @@ begin
             elsif READ_COUNT = 33 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => STATUS_TMP(7) <= USB_DATA_IN(7);
+      	        when "01010000" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
             elsif READ_COUNT = 34 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;
+      	        when "01010000" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
             elsif READ_COUNT = 35 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;
+      	        when "01010000" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
             elsif READ_COUNT = 36 then              
               READ_COUNT <= READ_COUNT + 1; 
       		  case (READ_ID) is
-      	        when "01010000" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;
-		        when others =>  -- Do nothing
-    	      end case;
-            elsif READ_COUNT = 37 then              
-              READ_COUNT <= READ_COUNT + 1; 
-      		  case (READ_ID) is
       	        when "01010000" => SPARE_BYTES_TMP(7 downto 0) <= USB_DATA_IN;
 		        when others =>  -- Do nothing
     	      end case;
-            elsif READ_COUNT = 38 then              
+            elsif READ_COUNT = 37 then              
               READ_COUNT <= READ_COUNT + 1; 
       	      if READ_ID = "01010000" then
       	        if USB_DATA_IN = "01100110" then
@@ -4078,7 +4044,6 @@ begin
       	  		  COINC_TIME_LOAD(7 downto 0) <= COINC_TIME_LOAD_TMP(7 downto 0); 
       	  		  POST_TIME_LOAD(15 downto 8) <= POST_TIME_LOAD_TMP(15 downto 8); 
       	  		  POST_TIME_LOAD(7 downto 0) <= POST_TIME_LOAD_TMP(7 downto 0); 
-      	  		  STATUS(7) <= STATUS_TMP(7); 
       	  		  SPARE_BYTES(31 downto 24) <= SPARE_BYTES_TMP(31 downto 24); 
       	  		  SPARE_BYTES(23 downto 16) <= SPARE_BYTES_TMP(23 downto 16); 
       	  		  SPARE_BYTES(15 downto 8) <= SPARE_BYTES_TMP(15 downto 8); 
@@ -4089,7 +4054,7 @@ begin
   		          READ_ERROR_DATA <= "01100110"; -- Missing stop byte
                 end if;
               end if;
-            elsif READ_COUNT = 39 then              
+            elsif READ_COUNT = 38 then              
               READ_ERROR <= '1';
   		      READ_ERROR_DATA <= "01100110"; -- Missing stop byte
             end if;
@@ -6595,6 +6560,66 @@ begin
 end rtl ; -- of SOFT_RESET
 
 --------------------------------------------------------------------------------
+-- Entity declaration of 'LED_ONE_SHOT'.
+-- Last modified : Wed Aug 29 14:45:05 2007.
+--------------------------------------------------------------------------------
+
+
+library ieee ;
+use ieee.numeric_std.all ;
+use ieee.std_logic_unsigned.all ;
+use ieee.std_logic_1164.all ;
+
+entity LED_ONE_SHOT is
+  port(
+    CLK10MHz : in     std_logic;
+    INP      : in     std_logic;
+    SYSRST   : in     std_logic;
+    nOUTP    : out    std_logic);
+end LED_ONE_SHOT ;
+
+--------------------------------------------------------------------------------
+-- Architecture 'rtl' of 'LED_ONE_SHOT'
+-- Last modified : Wed Aug 29 14:45:05 2007.
+--------------------------------------------------------------------------------
+
+architecture rtl of LED_ONE_SHOT is
+
+signal LEDSHINE_COUNTER: std_logic_vector(20 downto 0); -- Full is about 0.2 seconds
+signal INP_DEL: std_logic;
+
+begin
+    
+  process(CLK10MHz,SYSRST,INP)
+  begin
+    if SYSRST = '1' then
+      INP_DEL <= '0';
+    elsif (CLK10MHz'event and CLK10MHz = '1') then
+      INP_DEL <= INP;
+    end if;
+  end process;  
+
+  process(CLK10MHz,SYSRST,INP)
+  begin
+    if SYSRST = '1' then
+      LEDSHINE_COUNTER <= "111111111111111111111";
+    elsif (CLK10MHz'event and CLK10MHz = '1') then
+      if INP = '1' and INP_DEL = '0' then
+        LEDSHINE_COUNTER <= "000000000000000000000";
+      elsif LEDSHINE_COUNTER /= "111111111111111111111" then
+        LEDSHINE_COUNTER <= LEDSHINE_COUNTER + "000000000000000000001";
+      else   
+        LEDSHINE_COUNTER <= LEDSHINE_COUNTER; -- locks at full
+      end if;
+    end if;
+  end process;  
+
+  nOUTP <= '0' when LEDSHINE_COUNTER /= "111111111111111111111" else '1'; 
+
+
+end rtl ; -- of LED_ONE_SHOT
+
+--------------------------------------------------------------------------------
 -- Entity declaration of 'STORAGE'.
 -- Last modified : Mon Jan 16 22:07:14 2006.
 --------------------------------------------------------------------------------
@@ -6945,7 +6970,7 @@ end structure ; -- of TRIGGER_STUFF
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DATA_CONTROLLER'.
--- Last modified : Wed Jul 18 11:17:04 2007.
+-- Last modified : Wed Aug 29 13:09:45 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6995,6 +7020,7 @@ entity DATA_CONTROLLER is
     DATA_READY_FIFO         : in     std_logic;
     DIN_VALID               : in     std_logic;
     ERROR_READ_OUT          : out    std_logic;
+    FORCE_MASTER            : out    std_logic;
     GPS_PROG_ENABLE         : out    std_logic;
     GPS_TS_IN               : in     std_logic_vector(55 downto 0);
     GPS_TS_ONE_PPS          : in     std_logic_vector(55 downto 0);
@@ -7034,7 +7060,7 @@ end DATA_CONTROLLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'DATA_CONTROLLER'
--- Last modified : Wed Jul 18 11:17:04 2007.
+-- Last modified : Wed Aug 29 13:09:45 2007.
 --------------------------------------------------------------------------------
 
 architecture structure of DATA_CONTROLLER is
@@ -7134,6 +7160,7 @@ architecture structure of DATA_CONTROLLER is
       DAC_nRD                     : out    std_logic;
       DAC_nWR                     : out    std_logic;
       ERROR_READ_OUT              : out    std_logic;
+      FORCE_MASTER                : out    std_logic;
       GPS_PROG_ENABLE             : out    std_logic;
       MASTER                      : in     std_logic;
       ONE_PPS                     : in     std_logic;
@@ -7286,6 +7313,7 @@ begin
       DAC_nRD => DAC_nRD,
       DAC_nWR => DAC_nWR,
       ERROR_READ_OUT => ERROR_READ_OUT,
+      FORCE_MASTER => FORCE_MASTER,
       GPS_PROG_ENABLE => GPS_PROG_ENABLE,
       MASTER => MASTER,
       ONE_PPS => ONE_PPS,
@@ -7407,7 +7435,7 @@ end structure ; -- of STORAGE_ONE_CHANNEL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Tue Jul 17 14:45:41 2007.
+-- Last modified : Wed Aug 29 14:28:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7498,7 +7526,7 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Tue Jul 17 14:45:41 2007.
+-- Last modified : Wed Aug 29 14:28:14 2007.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
@@ -7690,6 +7718,7 @@ architecture a0 of hisparc is
       DATA_READY_FIFO         : in     std_logic;
       DIN_VALID               : in     std_logic;
       ERROR_READ_OUT          : out    std_logic;
+      FORCE_MASTER            : out    std_logic;
       GPS_PROG_ENABLE         : out    std_logic;
       GPS_TS_IN               : in     std_logic_vector(55 downto 0);
       GPS_TS_ONE_PPS          : in     std_logic_vector(55 downto 0);
@@ -7881,6 +7910,14 @@ architecture a0 of hisparc is
       nHRESET : in     std_logic);
   end component ;
 
+  component LED_ONE_SHOT
+    port(
+      CLK10MHz : in     std_logic;
+      INP      : in     std_logic;
+      SYSRST   : in     std_logic;
+      nOUTP    : out    std_logic);
+  end component ;
+
   signal SYSRST                  :  std_logic;
   signal CLK200MHz               :  std_logic;
   signal CLKRD                   :  std_logic;
@@ -7960,7 +7997,7 @@ architecture a0 of hisparc is
   signal DATA_READY_CH2          :  std_logic;
   signal READOUT_BUSY5           :  std_logic;
   signal DATA_VALID_CH2          :  std_logic;
-  signal COINC_net               :  std_logic;
+  signal COINC                   :  std_logic;
   signal DATA_VALID_CH1          :  std_logic;
   signal RDEN1_CH1               :  std_logic;
   signal DATA_READY4             :  std_logic;
@@ -7972,7 +8009,7 @@ architecture a0 of hisparc is
   signal LATITUDE_OUT            :  std_logic_vector(63 downto 0);
   signal LONGITUDE_OUT           :  std_logic_vector(63 downto 0);
   signal ALTITUDE_OUT            :  std_logic_vector(63 downto 0);
-  signal MASTER                  :  std_logic;
+  signal MASTER0                 :  std_logic;
   signal COMPDATA_OUT            :  std_logic_vector(127 downto 0);
   signal COMPDATA_VALID_OUT      :  std_logic;
   signal COMPDATA_READOUT_DONE   :  std_logic;
@@ -7983,6 +8020,7 @@ architecture a0 of hisparc is
   signal ERROR_READ_OUT          :  std_logic;
   signal BLOCK_COINC             :  std_logic;
   signal ONE_PPS_OUT0            :  std_logic;
+  signal FORCE_MASTER            :  std_logic;
 
 begin
   --Comparator signals twisted due to
@@ -7995,7 +8033,7 @@ begin
     port map(
       CLK200MHz => CLK200MHz,
       COINC_TO_END_TIME => COINC_TO_END_TIME,
-      END_OF_COINC => COINC_net,
+      END_OF_COINC => COINC,
       POST_TIME => POST_TIME,
       SYSRST => SYSRST);
 
@@ -8135,7 +8173,7 @@ begin
       EXT_TR_IN => EXT_TR_IN,
       HITLED1 => HITLED1,
       HITLED2 => HITLED2,
-      MASTER => MASTER,
+      MASTER => FORCE_MASTER,
       MH1 => MH1_net,
       MH2 => MH2_net,
       ML1 => ML1_net,
@@ -8200,12 +8238,13 @@ begin
       DATA_READY_FIFO => EVENT_DATA_READY_net0,
       DIN_VALID => DOUT_VALID,
       ERROR_READ_OUT => ERROR_READ_OUT,
+      FORCE_MASTER => FORCE_MASTER,
       GPS_PROG_ENABLE => GPS_PROG_ENABLE0,
       GPS_TS_IN => GPS_TS_OUT,
       GPS_TS_ONE_PPS => GPS_TS_ONE_PPS_OUT,
       LATITUDE => LATITUDE_OUT,
       LONGITUDE => LONGITUDE_OUT,
-      MASTER => MASTER,
+      MASTER => MASTER0,
       NEW_DATA_WHILE_READOUT => open,
       ONE_PPS => ONE_PPS_OUT0,
       POST_TIME => POST_TIME,
@@ -8241,7 +8280,7 @@ begin
       ALTITUDE_OUT => ALTITUDE_OUT,
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
-      COINC => COINC_net,
+      COINC => COINC,
       COMPDATA_OUT => COMPDATA_OUT,
       COMPDATA_READOUT_DONE => COMPDATA_READOUT_DONE,
       COMPDATA_VALID_OUT => COMPDATA_VALID_OUT,
@@ -8259,7 +8298,7 @@ begin
       GPS_TS_OUT => GPS_TS_OUT1,
       LATITUDE_OUT => LATITUDE_OUT,
       LONGITUDE_OUT => LONGITUDE_OUT,
-      MASTER => MASTER,
+      MASTER => MASTER0,
       ONE_PPS => ONE_PPS_OUT0,
       RXD => GPS_DATA_OUT,
       SAT_INFO_OUT => SAT_INFO_OUT,
@@ -8284,7 +8323,7 @@ begin
 
   u13: LVDS_MUX
     port map(
-      COINC => COINC_net,
+      COINC => COINC,
       COINC_MASTER => COINC0,
       GPS_DATA_MASTER => GPS_SDO,
       GPS_DATA_OUT => GPS_DATA_OUT,
@@ -8296,7 +8335,7 @@ begin
       LVDS_OUT2 => LVDS_OUT2,
       LVDS_OUT3 => LVDS_OUT3,
       LVDS_OUT4 => LVDS_OUT4,
-      MASTER => MASTER,
+      MASTER => FORCE_MASTER,
       MH1 => MH1_net,
       MH2 => MH2_net,
       ML1 => ML1_net,
@@ -8310,7 +8349,7 @@ begin
 
   u19: INVERTER
     port map(
-      INP => MASTER,
+      INP => FORCE_MASTER,
       OUTP => nMASTER);
 
   u20: DUMMIES
@@ -8375,13 +8414,6 @@ begin
       TRIGGER_PATTERN => TRIGGER_PATTERN0,
       TRIGGER_PATTERN_IN => TRIGGER_PATTERN);
 
-  u2: LED_DRIVER
-    port map(
-      CLK10MHz => CLK10MHz,
-      INP => COINC_net,
-      SYSRST => SYSRST,
-      nOUTP => LED5);
-
   u26: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
@@ -8428,5 +8460,12 @@ begin
       RESOUT => SYSRST,
       SRESET => SOFT_RESET0,
       nHRESET => nSYSRST);
+
+  u17: LED_ONE_SHOT
+    port map(
+      CLK10MHz => CLK10MHz,
+      INP => COINC,
+      SYSRST => SYSRST,
+      nOUTP => LED5);
 end a0 ; -- of hisparc
 

@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Jul 20 21:12:43 2007")
+      (PROPERTY "STAMP_TIME" "Wed Aug 29 13:10:00 2007")
       (NAME "DATA_CONTROLLER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146050445 "Wed Apr 26 13:20:45 2006")
-      (MODIFIED 1184750224 "Wed Jul 18 11:17:04 2007")
+      (MODIFIED 1188385785 "Wed Aug 29 13:09:45 2007")
     )
     (PORT
       (OBID "eprt0c013cbd1da5f44409500f70a2a60000")
@@ -1607,11 +1607,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 11352 40 11432)
+      (GEOMETRY -40 11416 40 11496)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 11392)
+        (POSITION 64 11456)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1632,11 +1632,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 11480 40 11560)
+      (GEOMETRY -40 11288 40 11368)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 11520)
+        (POSITION 64 11328)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1993,6 +1993,31 @@
         (SIDE 1)
         (FORMAT 35)
         (TEXT "ERROR_READ_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1e2355d644d900f70cbd20000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "FORCE_MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 11544 40 11624)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 11584)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "FORCE_MASTER")
       )
     )
     (ARCH_DECLARATION 1 "arch0c013cbdd875f44409500f70ff960000" "structure")
@@ -4102,6 +4127,32 @@
           (SIDE 3)
           (FORMAT 35)
           (TEXT "ERROR_READ_OUT")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca1e2355d644d900f70dbd20000")
+        (PORT "eprt0c012ca1e2355d644d900f70cbd20000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "FORCE_MASTER")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 2456 4952 2536 5032)
+        (SENSLIST 1)
+        (SIDE 1)
+        (LABEL
+          (POSITION 2432 4992)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "FORCE_MASTER")
         )
       )
       (COMPONENT
@@ -7497,6 +7548,32 @@
             (TEXT "SECOND_MESSAGE_ALLOWED")
           )
         )
+        (PORT
+          (OBID "cprt0c012ca1cd945d644d900f70bbd20000")
+          (PORT "eprt0c012ca1cd945d644d900f70abd20000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "FORCE_MASTER")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 3416 4952 3496 5032)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 3520 4992)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "FORCE_MASTER")
+          )
+        )
         (LABEL
           (POSITION 3509 3189)
           (SCALE 128)
@@ -10240,6 +10317,34 @@
         (PORT
           (OBID "cprt0c012ca1c03dd964c7c00f7088910000")
           (NAME "SECOND_MESSAGE_ALLOWED")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1e3355d644d900f70fbd20000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "FORCE_MASTER")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 2560 4992 3392 4992)
+        (PORT
+          (OBID "aprt0c012ca1e2355d644d900f70dbd20000")
+          (NAME "FORCE_MASTER")
+        )
+        (PORT
+          (OBID "cprt0c012ca1cd945d644d900f70bbd20000")
+          (NAME "FORCE_MASTER")
         )
         (LABEL
           (POSITION 0 0)
