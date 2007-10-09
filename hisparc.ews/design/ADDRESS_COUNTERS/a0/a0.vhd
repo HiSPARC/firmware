@@ -11,6 +11,7 @@
 --     DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
 --     DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
 --     DATA_READY        : out    std_logic;
+--     MASTER            : in     std_logic;
 --     RDEN              : in     std_logic;
 --     RD_ADDRESS        : out    integer range 2020 downto 0;
 --     READOUT_BUSY      : out    std_logic;
@@ -25,6 +26,8 @@ architecture a0 of ADDRESS_COUNTERS is
 
 signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true
 signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME 
+signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;  
+signal BEGIN_PRE_TIME_SLAVE: integer range 2020 downto 0 ;  
 signal END_POST_TIME: integer range 2020 downto 0 ; -- write address at end of POST_TIME 
 signal WR_ADDRESS_TMP: integer range 2020 downto 0 ;  
 signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;  
@@ -41,8 +44,10 @@ signal DATA_OUT_TMP: std_logic_vector(11 downto 0);
 
 begin
   -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO
-  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2010 - TOTAL_TIME + END_POST_TIME);
---  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2020 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2009 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2007 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;
+--  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2019 - TOTAL_TIME + END_POST_TIME);
   WR_ADDRESS <= WR_ADDRESS_TMP;
   RD_ADDRESS <= RD_ADDRESS_TMP;
   DATA_READY <= DATA_READY_TMP;

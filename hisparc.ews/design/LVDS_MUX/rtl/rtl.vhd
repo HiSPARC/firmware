@@ -4,6 +4,7 @@
 -- Copy of the interface declaration of Entity 'LVDS_MUX' :
 -- 
 --   port(
+--     CLK200MHz       : in     std_logic;
 --     COINC           : out    std_logic;
 --     COINC_MASTER    : in     std_logic;
 --     GPS_DATA_MASTER : in     std_logic;
@@ -41,7 +42,18 @@ begin
 
   GPS_DATA_OUT <= GPS_DATA_MASTER when MASTER = '1' else LVDS_IN1;
   ONE_PPS_OUT <= ONE_PPS_MASTER when MASTER = '1' else LVDS_IN2;
-  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;
+--  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;
+
+  process(CLK200MHz)
+  begin
+    if (CLK200MHz'event and CLK200MHz = '1') then
+      if MASTER = '1' then
+        COINC <= COINC_MASTER;
+      else
+        COINC <= LVDS_IN3;
+      end if;
+    end if;
+  end process;  
   
   LVDS_OUT1 <= GPS_DATA_MASTER when MASTER = '1' else ML1;
   LVDS_OUT2 <= ONE_PPS_MASTER when MASTER = '1' else MH1;

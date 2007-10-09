@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 2432 1728)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Oct 13 13:45:06 2006")
+      (PROPERTY "STAMP_TIME" "Mon Oct 01 14:21:32 2007")
       (NAME "STORAGE_ONE_CHANNEL")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1134386016 "Mon Dec 12 12:13:36 2005")
-      (MODIFIED 1137444555 "Mon Jan 16 21:49:15 2006")
+      (MODIFIED 1191241289 "Mon Oct 01 14:21:29 2007")
     )
     (PORT
       (OBID "eprt0c013cbdccb5d9348e000f7043040000")
@@ -440,6 +440,31 @@
         (SIDE 1)
         (FORMAT 35)
         (TEXT "TOTAL_TIME(2000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1921e007403610f7041d30000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1560 40 1640)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1600)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
       )
     )
     (ARCH_DECLARATION 1 "arch0c013cbd06b5d9348e000f7041040000" "structure")
@@ -895,6 +920,32 @@
           (TEXT "TOTAL_TIME(2000:0)")
         )
       )
+      (PORT
+        (OBID "aprt0c012ca1921e007403610f7071d30000")
+        (PORT "eprt0c012ca1921e007403610f7041d30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "MASTER")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 1)
+        )
+        (GEOMETRY 1624 3096 1704 3176)
+        (SENSLIST 1)
+        (SIDE 1)
+        (LABEL
+          (POSITION 1600 3136)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "MASTER")
+        )
+      )
       (COMPONENT
         (OBID "comp0c013cbd38b5d9348e000f7061040000")
         (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd1200793483700f7045e10000")
@@ -1206,6 +1257,32 @@
             (SIDE 1)
             (FORMAT 35)
             (TEXT "TOTAL_TIME(2000:0)")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1d91e007403610f70a1d30000")
+          (PORT "eprt0c012ca1d91e007403610f7081d30000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "MASTER")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 3480 3096 3560 3176)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 3584 3136)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "MASTER")
           )
         )
         (LABEL
@@ -1529,6 +1606,32 @@
             (SIDE 1)
             (FORMAT 35)
             (TEXT "TOTAL_TIME(2000:0)")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1d91e007403610f70b1d30000")
+          (PORT "eprt0c012ca1d91e007403610f7081d30000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "MASTER")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 3480 5272 3560 5352)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 3584 5312)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "MASTER")
           )
         )
         (LABEL
@@ -2043,6 +2146,41 @@
         (PORT
           (OBID "aprt0c013cbd0d78bc3447600f7075040000")
           (NAME "TOTAL_TIME")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1546e007403610f70c1d30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "MASTER")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 2368 3136 3456 3136)
+        (WIRE 1728 3136 2368 3136)
+        (WIRE 2368 5312 2368 3136)
+        (WIRE 3456 5312 2368 5312)
+        (PORT
+          (OBID "aprt0c012ca1921e007403610f7071d30000")
+          (NAME "MASTER")
+        )
+        (PORT
+          (OBID "cprt0c012ca1d91e007403610f70a1d30000")
+          (NAME "MASTER")
+        )
+        (PORT
+          (OBID "cprt0c012ca1d91e007403610f70b1d30000")
+          (NAME "MASTER")
         )
         (LABEL
           (POSITION 0 0)

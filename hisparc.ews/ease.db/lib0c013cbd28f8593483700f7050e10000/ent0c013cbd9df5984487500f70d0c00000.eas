@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 2112 2240)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Mon Nov 06 11:05:42 2006")
+      (PROPERTY "STAMP_TIME" "Thu Oct 04 13:34:25 2007")
       (NAME "LVDS_MUX")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1149853657 "Fri Jun 09 13:47:37 2006")
-      (MODIFIED 1162807272 "Mon Nov 06 11:01:12 2006")
+      (MODIFIED 1191497665 "Thu Oct 04 13:34:25 2007")
     )
     (PORT
       (OBID "eprt0c013cbde716984487500f7041c00000")
@@ -595,6 +595,31 @@
         (TEXT "LVDS_OUT4")
       )
     )
+    (PORT
+      (OBID "eprt0c012ca132ec407487710f704b040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 856 40 936)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
     (ARCH_DECLARATION 2 "arch0c013cbd9df5984487500f70e0c00000" "rtl")
   )
   (ARCH_DEFINITION
@@ -611,6 +636,7 @@
                  "-- Copy of the interface declaration of Entity 'LVDS_MUX' :"
                  "-- "
                  "--   port("
+                 "--     CLK200MHz       : in     std_logic;"
                  "--     COINC           : out    std_logic;"
                  "--     COINC_MASTER    : in     std_logic;"
                  "--     GPS_DATA_MASTER : in     std_logic;"
@@ -648,7 +674,18 @@
                  ""
                  "  GPS_DATA_OUT <= GPS_DATA_MASTER when MASTER = '1' else LVDS_IN1;"
                  "  ONE_PPS_OUT <= ONE_PPS_MASTER when MASTER = '1' else LVDS_IN2;"
-                 "  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;"
+                 "--  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;"
+                 ""
+                 "  process(CLK200MHz)"
+                 "  begin"
+                 "    if (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if MASTER = '1' then"
+                 "        COINC <= COINC_MASTER;"
+                 "      else"
+                 "        COINC <= LVDS_IN3;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
                  "  "
                  "  LVDS_OUT1 <= GPS_DATA_MASTER when MASTER = '1' else ML1;"
                  "  LVDS_OUT2 <= ONE_PPS_MASTER when MASTER = '1' else MH1;"

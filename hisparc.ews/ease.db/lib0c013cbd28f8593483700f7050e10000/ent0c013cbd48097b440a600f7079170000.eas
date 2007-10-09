@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Aug 29 14:56:39 2007")
+      (PROPERTY "STAMP_TIME" "Mon Oct 01 14:00:55 2007")
       (NAME "LED_DRIVER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1152880772 "Fri Jul 14 14:39:32 2006")
-      (MODIFIED 1188391505 "Wed Aug 29 14:45:05 2007")
+      (MODIFIED 1191227760 "Mon Oct 01 10:36:00 2007")
     )
     (PORT
       (OBID "eprt0c013cbda9097b440a600f70a9170000")
@@ -152,7 +152,7 @@
                  "  process(CLK10MHz,SYSRST,INP)"
                  "  begin"
                  "    if SYSRST = '1' or INP = '1' then"
-                 "      LEDSHINE_COUNTER <= \"111111111111111111111\";"
+                 "      LEDSHINE_COUNTER <= \"000000000000000000000\";"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
                  "      if LEDSHINE_COUNTER /= \"111111111111111111111\" then"
                  "        LEDSHINE_COUNTER <= LEDSHINE_COUNTER + \"000000000000000000001\";"

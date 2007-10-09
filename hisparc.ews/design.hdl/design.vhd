@@ -6,89 +6,12 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Wed Aug 29 15:41:57 2007.
+-- Time stamp     : Tue Oct 09 09:44:24 2007.
 --
 -- Designed by    : 
 -- Company        : Translogic.
 -- Design info    : 
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Entity declaration of 'WINDOW_MAKER'.
--- Last modified : Mon Nov 06 11:01:12 2006.
---------------------------------------------------------------------------------
-
-
-library ieee ;
-use ieee.numeric_std.all ;
-use ieee.std_logic_unsigned.all ;
-use ieee.std_logic_1164.all ;
-
-entity WINDOW_MAKER is
-  port(
-    CLK200MHz         : in     std_logic;
-    COINC_TO_END_TIME : out    std_logic;
-    END_OF_COINC      : in     std_logic;
-    POST_TIME         : in     integer range 1600 downto 0;
-    SYSRST            : in     std_logic);
-end WINDOW_MAKER ;
-
---------------------------------------------------------------------------------
--- Architecture 'a0' of 'WINDOW_MAKER'
--- Last modified : Mon Nov 06 11:01:12 2006.
---------------------------------------------------------------------------------
-
-architecture a0 of WINDOW_MAKER is
-
-signal COINC_DEL1: std_logic ; -- COINC after one clockcycle  
-signal COINC_TO_END_TIME_TMP: std_logic ; -- Time from negative edge of COINC to end of POST_TIME  
-signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from COINC to end of POST_TIME
-
-begin
-  
-  COINC_TO_END_TIME <= COINC_TO_END_TIME_TMP;
-  
-  -- COINC delay
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      COINC_DEL1 <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_DEL1 <= END_OF_COINC;
-    end if;
-  end process;  
-
-  -- COINC_TO_END_TIME_TMP starts at a negative edge of COINC and stops when COINC_TO_END_TIME_CNT reaches POST_TIME
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      COINC_TO_END_TIME_TMP <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if END_OF_COINC = '1' and COINC_DEL1 = '0' then -- on a positive edge of END_OF_COINC
-        COINC_TO_END_TIME_TMP <= '1'; 
-      elsif COINC_TO_END_TIME_CNT > POST_TIME then
-        COINC_TO_END_TIME_TMP <= '0';
-      end if;
-    end if;
-  end process;  
-
-  -- COINC_TO_END_TIME_CNT starts when COINC_TO_END_TIME_TMP = '1'
-  -- and counts as long COINC_TO_END_TIME_TMP is valid 
-  -- and resets when COINC_TO_END_TIME_TMP = '0'
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      COINC_TO_END_TIME_CNT <= 0;
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME_TMP = '1' then 
-        COINC_TO_END_TIME_CNT <= COINC_TO_END_TIME_CNT + 1;
-      else
-        COINC_TO_END_TIME_CNT <= 0;
-      end if;
-    end if;
-  end process;  
- 
-end a0 ; -- of WINDOW_MAKER
-
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DUAL_PORT_RAM'.
 -- Last modified : Mon Nov 06 11:01:12 2006.
@@ -145,7 +68,7 @@ end a0 ; -- of DUAL_PORT_RAM
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'ADDRESS_COUNTERS'.
--- Last modified : Fri May 04 10:12:29 2007.
+-- Last modified : Mon Oct 01 14:31:00 2007.
 --------------------------------------------------------------------------------
 
 
@@ -163,6 +86,7 @@ entity ADDRESS_COUNTERS is
     DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
     DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
     DATA_READY        : out    std_logic;
+    MASTER            : in     std_logic;
     RDEN              : in     std_logic;
     RD_ADDRESS        : out    integer range 2020 downto 0;
     READOUT_BUSY      : out    std_logic;
@@ -174,13 +98,15 @@ end ADDRESS_COUNTERS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'ADDRESS_COUNTERS'
--- Last modified : Fri May 04 10:12:29 2007.
+-- Last modified : Mon Oct 01 14:31:00 2007.
 --------------------------------------------------------------------------------
 
 architecture a0 of ADDRESS_COUNTERS is
 
 signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true
 signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME 
+signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;  
+signal BEGIN_PRE_TIME_SLAVE: integer range 2020 downto 0 ;  
 signal END_POST_TIME: integer range 2020 downto 0 ; -- write address at end of POST_TIME 
 signal WR_ADDRESS_TMP: integer range 2020 downto 0 ;  
 signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;  
@@ -197,8 +123,10 @@ signal DATA_OUT_TMP: std_logic_vector(11 downto 0);
 
 begin
   -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO
-  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2010 - TOTAL_TIME + END_POST_TIME);
---  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2020 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2009 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2007 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;
+--  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2019 - TOTAL_TIME + END_POST_TIME);
   WR_ADDRESS <= WR_ADDRESS_TMP;
   RD_ADDRESS <= RD_ADDRESS_TMP;
   DATA_READY <= DATA_READY_TMP;
@@ -1497,7 +1425,7 @@ end rtl ; -- of DISCRIMINATORS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_MATRIX'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Fri Sep 28 11:46:19 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1508,33 +1436,34 @@ use ieee.std_logic_1164.all ;
 
 entity TRIGGER_MATRIX is
   port(
-    BLOCK_COINC     : in     std_logic;
-    CLK10MHz        : in     std_logic;
-    CLK200MHz       : in     std_logic;
-    COMPH1          : in     std_logic;
-    COMPH2          : in     std_logic;
-    COMPL1          : in     std_logic;
-    COMPL2          : in     std_logic;
-    END_OF_COINC    : out    std_logic;
-    EXT_TR          : in     std_logic;
-    MASTER          : in     std_logic;
-    MH1             : in     std_logic;
-    MH2             : in     std_logic;
-    ML1             : in     std_logic;
-    ML2             : in     std_logic;
-    SH1_IN          : in     std_logic;
-    SH2_IN          : in     std_logic;
-    SL1_IN          : in     std_logic;
-    SL2_IN          : in     std_logic;
-    SLAVE_PRESENT   : in     std_logic;
-    SYSRST          : in     std_logic;
-    TRIGGER_PATTERN : out    std_logic_vector(15 downto 0);
-    TR_CONDITION    : in     std_logic_vector(7 downto 0));
+    BLOCK_COINC       : in     std_logic;
+    CLK10MHz          : in     std_logic;
+    CLK200MHz         : in     std_logic;
+    COINC_TO_END_TIME : out    std_logic;
+    COMPH1            : in     std_logic;
+    COMPH2            : in     std_logic;
+    COMPL1            : in     std_logic;
+    COMPL2            : in     std_logic;
+    EXT_TR            : in     std_logic;
+    MASTER            : in     std_logic;
+    MH1               : in     std_logic;
+    MH2               : in     std_logic;
+    ML1               : in     std_logic;
+    ML2               : in     std_logic;
+    POST_TIME         : in     integer range 1600 downto 0;
+    SH1_IN            : in     std_logic;
+    SH2_IN            : in     std_logic;
+    SL1_IN            : in     std_logic;
+    SL2_IN            : in     std_logic;
+    SLAVE_PRESENT     : in     std_logic;
+    SYSRST            : in     std_logic;
+    TRIGGER_PATTERN   : out    std_logic_vector(15 downto 0);
+    TR_CONDITION      : in     std_logic_vector(7 downto 0));
 end TRIGGER_MATRIX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'TRIGGER_MATRIX'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Fri Sep 28 11:46:19 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of TRIGGER_MATRIX is
@@ -1562,8 +1491,9 @@ signal CAL_EXTTRIG_PATTERN: std_logic_vector(1 downto 0); -- TR_CONDITION(7) sel
 signal SCINT_COINC: std_logic ; -- Selected scintillator trigger
 signal COINC_TMP: std_logic ;
 signal COINC_DEL: std_logic ;
+signal COINC_TO_END_TIME_TMP: std_logic ; -- Time from negative edge of COINC to end of POST_TIME  
+signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from COINC to end of POST_TIME
 signal BLOCK_COINC_SYNCHR: std_logic ;
-signal COINC_STRETCH: std_logic_vector(4 downto 0); -- Stretch COINC 32 x 5ns, because it has to go to the slave module via a cable
 signal CAL_COUNT: std_logic_vector(22 downto 0); -- Calibration counter Full scale is about 2^23 times 100ns is 0.84 seconds
 
 
@@ -1607,25 +1537,6 @@ begin
     end if;
   end process;  
       
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      COINC_STRETCH <= "00000";
-      END_OF_COINC <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TMP = '0' and COINC_DEL = '1' and BLOCK_COINC_SYNCHR = '0' then -- at falling edge of coinc
-        COINC_STRETCH <= "00000";
-        END_OF_COINC <= '1';
-      elsif COINC_STRETCH /= "11111" then
-        COINC_STRETCH <= COINC_STRETCH + "00001";
-        END_OF_COINC <= '1';
-      else
-        COINC_STRETCH <= COINC_STRETCH;
-        END_OF_COINC <= '0';
-      end if;
-    end if;
-  end process;  
-
 -- TR_CONDITION1
 -- 0H, 1L, at least one low signal
   process(CLK200MHz,SYSRST)
@@ -1818,29 +1729,17 @@ begin
   process(CLK200MHz,SCINT_COINC)
   begin
     if (CLK200MHz'event and CLK200MHz='1') then
-      case CAL_EXTTRIG_PATTERN is
-        when "00" => COINC_TMP <= SCINT_COINC; -- No External trigger, only triggers from scintillators
-        when "01" => COINC_TMP <= SCINT_COINC or EXT_TR; -- External trigger and triggers from scintillators selected; TR_CONDITION15 if SCINT_COINC = '0'; TR_CONDITION16  if SCINT_COINC = TR_CONDITION1 to 14
-        when "10" => COINC_TMP <= CAL_COUNT(22); -- Calibration selected
-        when "11" => COINC_TMP <= CAL_COUNT(22); -- Calibration selected
-        when others => COINC_TMP <= '0';
-      end case;  
+      if COINC_TO_END_TIME_TMP = '0' and BLOCK_COINC_SYNCHR = '0' then -- No running coinc and no block
+        case CAL_EXTTRIG_PATTERN is
+          when "00" => COINC_TMP <= SCINT_COINC; -- No External trigger, only triggers from scintillators
+          when "01" => COINC_TMP <= SCINT_COINC or EXT_TR; -- External trigger and triggers from scintillators selected; TR_CONDITION15 if SCINT_COINC = '0'; TR_CONDITION16  if SCINT_COINC = TR_CONDITION1 to 14
+          when "10" => COINC_TMP <= CAL_COUNT(22); -- Calibration selected
+          when "11" => COINC_TMP <= CAL_COUNT(22); -- Calibration selected
+          when others => COINC_TMP <= '0';
+        end case;  
+      end if;
     end if;
   end process;
-
-
---  process(CLK200MHz,SYSRST)
---  begin
---    if SYSRST = '1' then
---      COINC_TMP <= '0';
---    elsif (CLK200MHz'event and CLK200MHz = '1') then
---      if TR_CONDITION(6) = '1' then -- External trigger selected
---        COINC_TMP <= SCINT_COINC or EXT_TR; -- TR_CONDITION15 if SCINT_COINC = '0'; TR_CONDITION16  if SCINT_COINC = TR_CONDITION1 to 14
---      else
---        COINC_TMP <= SCINT_COINC; 
---      end if;
---    end if;
---  end process;  
 
   -- Latch TRIGGER_PATTERN on positive edge of COINC
   process(CLK200MHz,SYSRST)
@@ -1868,13 +1767,52 @@ begin
 	  end if;        
     end if;
   end process;  
+  
+  -- COINC_TO_END_TIME_TMP starts at a negative edge of COINC and stops when COINC_TO_END_TIME_CNT reaches POST_TIME
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      COINC_TO_END_TIME_TMP <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TMP = '0' and COINC_DEL = '1' then -- on a negative edge of COINC
+        COINC_TO_END_TIME_TMP <= '1'; 
+      elsif COINC_TO_END_TIME_CNT > POST_TIME then
+        COINC_TO_END_TIME_TMP <= '0';
+      end if;
+    end if;
+  end process;  
 
+  -- COINC_TO_END_TIME_CNT starts when COINC_TO_END_TIME_TMP = '1'
+  -- and counts as long COINC_TO_END_TIME_TMP is valid 
+  -- and resets when COINC_TO_END_TIME_TMP = '0'
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      COINC_TO_END_TIME_CNT <= 0;
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME_TMP = '1' then 
+        COINC_TO_END_TIME_CNT <= COINC_TO_END_TIME_CNT + 1;
+      else
+        COINC_TO_END_TIME_CNT <= 0;
+      end if;
+    end if;
+  end process;  
+
+  -- COINC_TO_END_TIME goes from begin of coinc till end of posttime
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      COINC_TO_END_TIME <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      COINC_TO_END_TIME <= COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP;
+    end if;
+  end process;  
 
 end rtl ; -- of TRIGGER_MATRIX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_DRIVER'.
--- Last modified : Wed Aug 29 14:45:05 2007.
+-- Last modified : Mon Oct 01 10:36:00 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1893,7 +1831,7 @@ end LED_DRIVER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_DRIVER'
--- Last modified : Wed Aug 29 14:45:05 2007.
+-- Last modified : Mon Oct 01 10:36:00 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_DRIVER is
@@ -1905,7 +1843,7 @@ begin
   process(CLK10MHz,SYSRST,INP)
   begin
     if SYSRST = '1' or INP = '1' then
-      LEDSHINE_COUNTER <= "111111111111111111111";
+      LEDSHINE_COUNTER <= "000000000000000000000";
     elsif (CLK10MHz'event and CLK10MHz = '1') then
       if LEDSHINE_COUNTER /= "111111111111111111111" then
         LEDSHINE_COUNTER <= LEDSHINE_COUNTER + "000000000000000000001";
@@ -2927,7 +2865,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Wed Aug 29 15:41:47 2007.
+-- Last modified : Fri Sep 28 12:49:50 2007.
 --------------------------------------------------------------------------------
 
 
@@ -3005,7 +2943,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Wed Aug 29 15:41:47 2007.
+-- Last modified : Fri Sep 28 12:49:50 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3189,7 +3127,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00000100";
+  SOFTWARE_VERSION <= "00000101";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -4684,7 +4622,7 @@ end rtl ; -- of USB_READ_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'GPS_STUFF'.
--- Last modified : Mon Apr 23 09:04:21 2007.
+-- Last modified : Thu Oct 04 13:30:49 2007.
 --------------------------------------------------------------------------------
 
 
@@ -4731,7 +4669,7 @@ end GPS_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'GPS_STUFF'
--- Last modified : Mon Apr 23 09:04:21 2007.
+-- Last modified : Thu Oct 04 13:30:49 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of GPS_STUFF is
@@ -6053,7 +5991,7 @@ end rtl ; -- of THRESHOLD_COUNTERS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LVDS_MUX'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Thu Oct 04 13:34:25 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6064,6 +6002,7 @@ use ieee.std_logic_1164.all ;
 
 entity LVDS_MUX is
   port(
+    CLK200MHz       : in     std_logic;
     COINC           : out    std_logic;
     COINC_MASTER    : in     std_logic;
     GPS_DATA_MASTER : in     std_logic;
@@ -6091,7 +6030,7 @@ end LVDS_MUX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LVDS_MUX'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Thu Oct 04 13:34:25 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of LVDS_MUX is
@@ -6105,7 +6044,18 @@ begin
 
   GPS_DATA_OUT <= GPS_DATA_MASTER when MASTER = '1' else LVDS_IN1;
   ONE_PPS_OUT <= ONE_PPS_MASTER when MASTER = '1' else LVDS_IN2;
-  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;
+--  COINC <= COINC_MASTER when MASTER = '1' else LVDS_IN3;
+
+  process(CLK200MHz)
+  begin
+    if (CLK200MHz'event and CLK200MHz = '1') then
+      if MASTER = '1' then
+        COINC <= COINC_MASTER;
+      else
+        COINC <= LVDS_IN3;
+      end if;
+    end if;
+  end process;  
   
   LVDS_OUT1 <= GPS_DATA_MASTER when MASTER = '1' else ML1;
   LVDS_OUT2 <= ONE_PPS_MASTER when MASTER = '1' else MH1;
@@ -6621,7 +6571,7 @@ end rtl ; -- of LED_ONE_SHOT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'STORAGE'.
--- Last modified : Mon Jan 16 22:07:14 2006.
+-- Last modified : Mon Oct 01 14:21:59 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6639,6 +6589,7 @@ entity STORAGE is
     DATA_ADC_POS      : in     std_logic_vector(11 downto 0);
     DATA_OUT          : out    std_logic_vector(11 downto 0);
     DATA_READY        : out    std_logic;
+    MASTER            : in     std_logic;
     RDEN              : in     std_logic;
     READOUT_BUSY      : out    std_logic;
     SYSRST            : in     std_logic;
@@ -6647,7 +6598,7 @@ end STORAGE ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'STORAGE'
--- Last modified : Mon Jan 16 22:07:14 2006.
+-- Last modified : Mon Oct 01 14:21:59 2007.
 --------------------------------------------------------------------------------
 
 architecture a0 of STORAGE is
@@ -6672,6 +6623,7 @@ architecture a0 of STORAGE is
       DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
       DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
       DATA_READY        : out    std_logic;
+      MASTER            : in     std_logic;
       RDEN              : in     std_logic;
       RD_ADDRESS        : out    integer range 2020 downto 0;
       READOUT_BUSY      : out    std_logic;
@@ -6709,6 +6661,7 @@ begin
       DATA_OUT_NEG => Net_1,
       DATA_OUT_POS => Net_8,
       DATA_READY => DATA_READY,
+      MASTER => MASTER,
       RDEN => RDEN,
       RD_ADDRESS => Net_16,
       READOUT_BUSY => READOUT_BUSY,
@@ -6730,7 +6683,7 @@ end a0 ; -- of STORAGE
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_STUFF'.
--- Last modified : Mon Dec 18 11:03:43 2006.
+-- Last modified : Fri Sep 28 11:46:16 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6741,44 +6694,45 @@ use ieee.std_logic_1164.all ;
 
 entity TRIGGER_STUFF is
   port(
-    BLOCK_COINC     : in     std_logic;
-    CLK10MHz        : in     std_logic;
-    CLK200MHz       : in     std_logic;
-    COINC_TIME      : in     integer range 1000 downto 0;
-    COMPH1          : in     std_logic;
-    COMPH2          : in     std_logic;
-    COMPL1          : in     std_logic;
-    COMPL2          : in     std_logic;
-    DATA_ADC1_NEG   : in     std_logic_vector(11 downto 0);
-    DATA_ADC1_POS   : in     std_logic_vector(11 downto 0);
-    DATA_ADC2_NEG   : in     std_logic_vector(11 downto 0);
-    DATA_ADC2_POS   : in     std_logic_vector(11 downto 0);
-    END_OF_COINC    : out    std_logic;
-    EXT_TR_IN       : in     std_logic;
-    HITLED1         : out    std_logic;
-    HITLED2         : out    std_logic;
-    MASTER          : in     std_logic;
-    MH1             : out    std_logic;
-    MH2             : out    std_logic;
-    ML1             : out    std_logic;
-    ML2             : out    std_logic;
-    SH1             : in     std_logic;
-    SH2             : in     std_logic;
-    SL1             : in     std_logic;
-    SL2             : in     std_logic;
-    SLAVE_PRESENT   : out    std_logic;
-    SYSRST          : in     std_logic;
-    THH1            : in     std_logic_vector(11 downto 0);
-    THH2            : in     std_logic_vector(11 downto 0);
-    THL1            : in     std_logic_vector(11 downto 0);
-    THL2            : in     std_logic_vector(11 downto 0);
-    TRIGGER_PATTERN : out    std_logic_vector(15 downto 0);
-    TR_CONDITION    : in     std_logic_vector(7 downto 0));
+    BLOCK_COINC       : in     std_logic;
+    CLK10MHz          : in     std_logic;
+    CLK200MHz         : in     std_logic;
+    COINC_TIME        : in     integer range 1000 downto 0;
+    COINC_TO_END_TIME : out    std_logic;
+    COMPH1            : in     std_logic;
+    COMPH2            : in     std_logic;
+    COMPL1            : in     std_logic;
+    COMPL2            : in     std_logic;
+    DATA_ADC1_NEG     : in     std_logic_vector(11 downto 0);
+    DATA_ADC1_POS     : in     std_logic_vector(11 downto 0);
+    DATA_ADC2_NEG     : in     std_logic_vector(11 downto 0);
+    DATA_ADC2_POS     : in     std_logic_vector(11 downto 0);
+    EXT_TR_IN         : in     std_logic;
+    HITLED1           : out    std_logic;
+    HITLED2           : out    std_logic;
+    MASTER            : in     std_logic;
+    MH1               : out    std_logic;
+    MH2               : out    std_logic;
+    ML1               : out    std_logic;
+    ML2               : out    std_logic;
+    POST_TIME         : in     integer range 1600 downto 0;
+    SH1               : in     std_logic;
+    SH2               : in     std_logic;
+    SL1               : in     std_logic;
+    SL2               : in     std_logic;
+    SLAVE_PRESENT     : out    std_logic;
+    SYSRST            : in     std_logic;
+    THH1              : in     std_logic_vector(11 downto 0);
+    THH2              : in     std_logic_vector(11 downto 0);
+    THL1              : in     std_logic_vector(11 downto 0);
+    THL2              : in     std_logic_vector(11 downto 0);
+    TRIGGER_PATTERN   : out    std_logic_vector(15 downto 0);
+    TR_CONDITION      : in     std_logic_vector(7 downto 0));
 end TRIGGER_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'TRIGGER_STUFF'
--- Last modified : Mon Dec 18 11:03:43 2006.
+-- Last modified : Fri Sep 28 11:46:16 2007.
 --------------------------------------------------------------------------------
 
 architecture structure of TRIGGER_STUFF is
@@ -6830,28 +6784,29 @@ architecture structure of TRIGGER_STUFF is
 
   component TRIGGER_MATRIX
     port(
-      BLOCK_COINC     : in     std_logic;
-      CLK10MHz        : in     std_logic;
-      CLK200MHz       : in     std_logic;
-      COMPH1          : in     std_logic;
-      COMPH2          : in     std_logic;
-      COMPL1          : in     std_logic;
-      COMPL2          : in     std_logic;
-      END_OF_COINC    : out    std_logic;
-      EXT_TR          : in     std_logic;
-      MASTER          : in     std_logic;
-      MH1             : in     std_logic;
-      MH2             : in     std_logic;
-      ML1             : in     std_logic;
-      ML2             : in     std_logic;
-      SH1_IN          : in     std_logic;
-      SH2_IN          : in     std_logic;
-      SL1_IN          : in     std_logic;
-      SL2_IN          : in     std_logic;
-      SLAVE_PRESENT   : in     std_logic;
-      SYSRST          : in     std_logic;
-      TRIGGER_PATTERN : out    std_logic_vector(15 downto 0);
-      TR_CONDITION    : in     std_logic_vector(7 downto 0));
+      BLOCK_COINC       : in     std_logic;
+      CLK10MHz          : in     std_logic;
+      CLK200MHz         : in     std_logic;
+      COINC_TO_END_TIME : out    std_logic;
+      COMPH1            : in     std_logic;
+      COMPH2            : in     std_logic;
+      COMPL1            : in     std_logic;
+      COMPL2            : in     std_logic;
+      EXT_TR            : in     std_logic;
+      MASTER            : in     std_logic;
+      MH1               : in     std_logic;
+      MH2               : in     std_logic;
+      ML1               : in     std_logic;
+      ML2               : in     std_logic;
+      POST_TIME         : in     integer range 1600 downto 0;
+      SH1_IN            : in     std_logic;
+      SH2_IN            : in     std_logic;
+      SL1_IN            : in     std_logic;
+      SL2_IN            : in     std_logic;
+      SLAVE_PRESENT     : in     std_logic;
+      SYSRST            : in     std_logic;
+      TRIGGER_PATTERN   : out    std_logic_vector(15 downto 0);
+      TR_CONDITION      : in     std_logic_vector(7 downto 0));
   end component ;
 
   component LED_DRIVER
@@ -6933,17 +6888,18 @@ begin
       BLOCK_COINC => BLOCK_COINC,
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
+      COINC_TO_END_TIME => COINC_TO_END_TIME,
       COMPH1 => COMPH1_net,
       COMPH2 => COMPH2_net,
       COMPL1 => COMPL1_net,
       COMPL2 => COMPL2_net,
-      END_OF_COINC => END_OF_COINC,
       EXT_TR => EXT_TR_OUT_net,
       MASTER => MASTER,
       MH1 => MH1_net,
       MH2 => MH2_net,
       ML1 => ML1_net,
       ML2 => ML2_net,
+      POST_TIME => POST_TIME,
       SH1_IN => SH1_SYNCHR,
       SH2_IN => SH2_SYNCHR,
       SL1_IN => SL1_SYNCHR1,
@@ -7350,7 +7306,7 @@ end structure ; -- of DATA_CONTROLLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'STORAGE_ONE_CHANNEL'.
--- Last modified : Mon Jan 16 21:49:15 2006.
+-- Last modified : Mon Oct 01 14:21:29 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7371,6 +7327,7 @@ entity STORAGE_ONE_CHANNEL is
     DATA_OUT2          : out    std_logic_vector(11 downto 0);
     DATA_READY1        : out    std_logic;
     DATA_READY2        : out    std_logic;
+    MASTER             : in     std_logic;
     RDEN1              : in     std_logic;
     RDEN2              : in     std_logic;
     READOUT_BUSY1      : out    std_logic;
@@ -7381,7 +7338,7 @@ end STORAGE_ONE_CHANNEL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'STORAGE_ONE_CHANNEL'
--- Last modified : Mon Jan 16 21:49:15 2006.
+-- Last modified : Mon Oct 01 14:21:29 2007.
 --------------------------------------------------------------------------------
 
 architecture structure of STORAGE_ONE_CHANNEL is
@@ -7395,6 +7352,7 @@ architecture structure of STORAGE_ONE_CHANNEL is
       DATA_ADC_POS      : in     std_logic_vector(11 downto 0);
       DATA_OUT          : out    std_logic_vector(11 downto 0);
       DATA_READY        : out    std_logic;
+      MASTER            : in     std_logic;
       RDEN              : in     std_logic;
       READOUT_BUSY      : out    std_logic;
       SYSRST            : in     std_logic;
@@ -7413,6 +7371,7 @@ begin
       DATA_ADC_POS => DATA_ADC_NEG,
       DATA_OUT => DATA_OUT1,
       DATA_READY => DATA_READY1,
+      MASTER => MASTER,
       RDEN => RDEN1,
       READOUT_BUSY => READOUT_BUSY1,
       SYSRST => SYSRST,
@@ -7427,6 +7386,7 @@ begin
       DATA_ADC_POS => DATA_ADC_NEG,
       DATA_OUT => DATA_OUT2,
       DATA_READY => DATA_READY2,
+      MASTER => MASTER,
       RDEN => RDEN2,
       READOUT_BUSY => READOUT_BUSY2,
       SYSRST => SYSRST,
@@ -7435,7 +7395,7 @@ end structure ; -- of STORAGE_ONE_CHANNEL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Wed Aug 29 14:28:14 2007.
+-- Last modified : Tue Oct 09 09:43:58 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7526,19 +7486,10 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Wed Aug 29 14:28:14 2007.
+-- Last modified : Tue Oct 09 09:43:58 2007.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
-
-  component WINDOW_MAKER
-    port(
-      CLK200MHz         : in     std_logic;
-      COINC_TO_END_TIME : out    std_logic;
-      END_OF_COINC      : in     std_logic;
-      POST_TIME         : in     integer range 1600 downto 0;
-      SYSRST            : in     std_logic);
-  end component ;
 
   component STORAGE_ONE_CHANNEL
     port(
@@ -7552,6 +7503,7 @@ architecture a0 of hisparc is
       DATA_OUT2          : out    std_logic_vector(11 downto 0);
       DATA_READY1        : out    std_logic;
       DATA_READY2        : out    std_logic;
+      MASTER             : in     std_logic;
       RDEN1              : in     std_logic;
       RDEN2              : in     std_logic;
       READOUT_BUSY1      : out    std_logic;
@@ -7635,39 +7587,40 @@ architecture a0 of hisparc is
 
   component TRIGGER_STUFF
     port(
-      BLOCK_COINC     : in     std_logic;
-      CLK10MHz        : in     std_logic;
-      CLK200MHz       : in     std_logic;
-      COINC_TIME      : in     integer range 1000 downto 0;
-      COMPH1          : in     std_logic;
-      COMPH2          : in     std_logic;
-      COMPL1          : in     std_logic;
-      COMPL2          : in     std_logic;
-      DATA_ADC1_NEG   : in     std_logic_vector(11 downto 0);
-      DATA_ADC1_POS   : in     std_logic_vector(11 downto 0);
-      DATA_ADC2_NEG   : in     std_logic_vector(11 downto 0);
-      DATA_ADC2_POS   : in     std_logic_vector(11 downto 0);
-      END_OF_COINC    : out    std_logic;
-      EXT_TR_IN       : in     std_logic;
-      HITLED1         : out    std_logic;
-      HITLED2         : out    std_logic;
-      MASTER          : in     std_logic;
-      MH1             : out    std_logic;
-      MH2             : out    std_logic;
-      ML1             : out    std_logic;
-      ML2             : out    std_logic;
-      SH1             : in     std_logic;
-      SH2             : in     std_logic;
-      SL1             : in     std_logic;
-      SL2             : in     std_logic;
-      SLAVE_PRESENT   : out    std_logic;
-      SYSRST          : in     std_logic;
-      THH1            : in     std_logic_vector(11 downto 0);
-      THH2            : in     std_logic_vector(11 downto 0);
-      THL1            : in     std_logic_vector(11 downto 0);
-      THL2            : in     std_logic_vector(11 downto 0);
-      TRIGGER_PATTERN : out    std_logic_vector(15 downto 0);
-      TR_CONDITION    : in     std_logic_vector(7 downto 0));
+      BLOCK_COINC       : in     std_logic;
+      CLK10MHz          : in     std_logic;
+      CLK200MHz         : in     std_logic;
+      COINC_TIME        : in     integer range 1000 downto 0;
+      COINC_TO_END_TIME : out    std_logic;
+      COMPH1            : in     std_logic;
+      COMPH2            : in     std_logic;
+      COMPL1            : in     std_logic;
+      COMPL2            : in     std_logic;
+      DATA_ADC1_NEG     : in     std_logic_vector(11 downto 0);
+      DATA_ADC1_POS     : in     std_logic_vector(11 downto 0);
+      DATA_ADC2_NEG     : in     std_logic_vector(11 downto 0);
+      DATA_ADC2_POS     : in     std_logic_vector(11 downto 0);
+      EXT_TR_IN         : in     std_logic;
+      HITLED1           : out    std_logic;
+      HITLED2           : out    std_logic;
+      MASTER            : in     std_logic;
+      MH1               : out    std_logic;
+      MH2               : out    std_logic;
+      ML1               : out    std_logic;
+      ML2               : out    std_logic;
+      POST_TIME         : in     integer range 1600 downto 0;
+      SH1               : in     std_logic;
+      SH2               : in     std_logic;
+      SL1               : in     std_logic;
+      SL2               : in     std_logic;
+      SLAVE_PRESENT     : out    std_logic;
+      SYSRST            : in     std_logic;
+      THH1              : in     std_logic_vector(11 downto 0);
+      THH2              : in     std_logic_vector(11 downto 0);
+      THL1              : in     std_logic_vector(11 downto 0);
+      THL2              : in     std_logic_vector(11 downto 0);
+      TRIGGER_PATTERN   : out    std_logic_vector(15 downto 0);
+      TR_CONDITION      : in     std_logic_vector(7 downto 0));
   end component ;
 
   component CLK_DIV
@@ -7806,6 +7759,7 @@ architecture a0 of hisparc is
 
   component LVDS_MUX
     port(
+      CLK200MHz       : in     std_logic;
       COINC           : out    std_logic;
       COINC_MASTER    : in     std_logic;
       GPS_DATA_MASTER : in     std_logic;
@@ -7965,8 +7919,8 @@ architecture a0 of hisparc is
   signal TS_ONE_PPS_VALID_OUT    :  std_logic;
   signal GPS_DATA_OUT            :  std_logic;
   signal TR_CONDITION            :  std_logic_vector(7 downto 0);
-  signal FIFO_EMPTY              :  std_logic;
-  signal EVENT_DATA_READY_net0   :  std_logic;
+  signal FIFO_EMPTY0             :  std_logic;
+  signal EVENT_DATA_READY        :  std_logic;
   signal DATA_OUT1               :  std_logic_vector(11 downto 0);
   signal DATA_OUT2               :  std_logic_vector(11 downto 0);
   signal READOUT_BUSY2           :  std_logic;
@@ -7990,14 +7944,13 @@ architecture a0 of hisparc is
   signal DATA_READY5             :  std_logic;
   signal DATA_READY3             :  std_logic;
   signal COINC_TO_END_TIME1_CH1  :  std_logic;
-  signal COINC_TO_END_TIME       :  std_logic;
   signal RDEN2_CH1               :  std_logic;
   signal RDEN2_CH2               :  std_logic;
   signal DATA_READY_CH1          :  std_logic;
   signal DATA_READY_CH2          :  std_logic;
   signal READOUT_BUSY5           :  std_logic;
   signal DATA_VALID_CH2          :  std_logic;
-  signal COINC                   :  std_logic;
+  signal COINC1                  :  std_logic;
   signal DATA_VALID_CH1          :  std_logic;
   signal RDEN1_CH1               :  std_logic;
   signal DATA_READY4             :  std_logic;
@@ -8014,13 +7967,13 @@ architecture a0 of hisparc is
   signal COMPDATA_VALID_OUT      :  std_logic;
   signal COMPDATA_READOUT_DONE   :  std_logic;
   signal READ_BUSY_OUT           :  std_logic;
-  signal USB_WRITE_ENABLE        :  std_logic;
   signal GPS_PROG_ENABLE0        :  std_logic;
   signal STOP_READ_OUT           :  std_logic;
   signal ERROR_READ_OUT          :  std_logic;
   signal BLOCK_COINC             :  std_logic;
   signal ONE_PPS_OUT0            :  std_logic;
   signal FORCE_MASTER            :  std_logic;
+  signal OUTP                    :  std_logic;
 
 begin
   --Comparator signals twisted due to
@@ -8028,14 +7981,6 @@ begin
   --ADC signals twisted due to
   --analog channel swap on the board
 
-
-  u0: WINDOW_MAKER
-    port map(
-      CLK200MHz => CLK200MHz,
-      COINC_TO_END_TIME => COINC_TO_END_TIME,
-      END_OF_COINC => COINC,
-      POST_TIME => POST_TIME,
-      SYSRST => SYSRST);
 
   u3: STORAGE_ONE_CHANNEL
     port map(
@@ -8049,6 +7994,7 @@ begin
       DATA_OUT2 => DATA_OUT2,
       DATA_READY1 => DATA_READY6,
       DATA_READY2 => DATA_READY4,
+      MASTER => FORCE_MASTER,
       RDEN1 => RDEN1_CH1,
       RDEN2 => RDEN2_CH1,
       READOUT_BUSY1 => READOUT_BUSY5,
@@ -8088,7 +8034,7 @@ begin
       DATA_READY_CH2 => DATA_READY_CH2,
       DATA_VALID_CH1 => DATA_VALID_CH1,
       DATA_VALID_CH2 => DATA_VALID_CH2,
-      FIFO_EMPTY => FIFO_EMPTY,
+      FIFO_EMPTY => FIFO_EMPTY0,
       GPS_TS_IN => GPS_TS_OUT0,
       GPS_TS_OUT => GPS_TS_OUT,
       RDEN_CH1 => RDEN_CH1,
@@ -8116,8 +8062,8 @@ begin
       CLKRD => CLKRD,
       DATA_READY_CONV => CONV_DATA_READY_net,
       DOUT_VALID => DOUT_VALID,
-      EVENT_DATA_READY => EVENT_DATA_READY_net0,
-      FIFO_EMPTY => FIFO_EMPTY,
+      EVENT_DATA_READY => EVENT_DATA_READY,
+      FIFO_EMPTY => FIFO_EMPTY0,
       RDCLOCK => RDCLOCK,
       RDEN => RDEN,
       RD_ADDRESS => RD_ADDRESS,
@@ -8148,6 +8094,7 @@ begin
       DATA_OUT2 => DATA_OUT4,
       DATA_READY1 => DATA_READY5,
       DATA_READY2 => DATA_READY3,
+      MASTER => FORCE_MASTER,
       RDEN1 => RDEN1_CH4,
       RDEN2 => RDEN2_CH2,
       READOUT_BUSY1 => READOUT_BUSY3,
@@ -8161,6 +8108,7 @@ begin
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
       COINC_TIME => COINC_TIME,
+      COINC_TO_END_TIME => COINC0,
       COMPH1 => COMPH2,
       COMPH2 => COMPH1,
       COMPL1 => COMPL2,
@@ -8169,7 +8117,6 @@ begin
       DATA_ADC1_POS => DOUT_POS1,
       DATA_ADC2_NEG => DOUT_NEG0,
       DATA_ADC2_POS => DOUT_POS0,
-      END_OF_COINC => COINC0,
       EXT_TR_IN => EXT_TR_IN,
       HITLED1 => HITLED1,
       HITLED2 => HITLED2,
@@ -8178,6 +8125,7 @@ begin
       MH2 => MH2_net,
       ML1 => ML1_net,
       ML2 => ML2_net,
+      POST_TIME => POST_TIME,
       SH1 => SH1,
       SH2 => SH2,
       SL1 => SL1,
@@ -8235,7 +8183,7 @@ begin
       DAC_nRD => DAC_nRD,
       DAC_nWR => DAC_nWR,
       DATA_IN => DATA_OUT,
-      DATA_READY_FIFO => EVENT_DATA_READY_net0,
+      DATA_READY_FIFO => EVENT_DATA_READY,
       DIN_VALID => DOUT_VALID,
       ERROR_READ_OUT => ERROR_READ_OUT,
       FORCE_MASTER => FORCE_MASTER,
@@ -8273,14 +8221,14 @@ begin
       USB_RXF => USB_RXF,
       USB_TXE => USB_TXE,
       USB_WR => USB_WR,
-      USB_WRITE_ENABLE => USB_WRITE_ENABLE);
+      USB_WRITE_ENABLE => open);
 
   u14: GPS_STUFF
     port map(
       ALTITUDE_OUT => ALTITUDE_OUT,
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
-      COINC => COINC,
+      COINC => COINC1,
       COMPDATA_OUT => COMPDATA_OUT,
       COMPDATA_READOUT_DONE => COMPDATA_READOUT_DONE,
       COMPDATA_VALID_OUT => COMPDATA_VALID_OUT,
@@ -8323,7 +8271,8 @@ begin
 
   u13: LVDS_MUX
     port map(
-      COINC => COINC,
+      CLK200MHz => CLK200MHz,
+      COINC => COINC1,
       COINC_MASTER => COINC0,
       GPS_DATA_MASTER => GPS_SDO,
       GPS_DATA_OUT => GPS_DATA_OUT,
@@ -8377,7 +8326,7 @@ begin
       BLOCK_COINC => BLOCK_COINC,
       CLK200MHz => CLK200MHz,
       CLKRD => CLKRD,
-      COINC_TO_END_TIME => COINC_TO_END_TIME,
+      COINC_TO_END_TIME => COINC1,
       COINC_TO_END_TIME1_CH1 => COINC_TO_END_TIME1_CH1,
       COINC_TO_END_TIME1_CH2 => COINC_TO_END_TIME1_CH2,
       COINC_TO_END_TIME2_CH1 => COINC_TO_END_TIME2_CH1,
@@ -8450,7 +8399,7 @@ begin
   u29: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => USB_WRITE_ENABLE,
+      INP => EVENT_DATA_READY,
       SYSRST => SYSRST,
       nOUTP => LED8);
 
@@ -8461,11 +8410,16 @@ begin
       SRESET => SOFT_RESET0,
       nHRESET => nSYSRST);
 
-  u17: LED_ONE_SHOT
+  u0: LED_ONE_SHOT
     port map(
       CLK10MHz => CLK10MHz,
-      INP => COINC,
+      INP => OUTP,
       SYSRST => SYSRST,
       nOUTP => LED5);
+
+  u22: INVERTER
+    port map(
+      INP => COINC1,
+      OUTP => OUTP);
 end a0 ; -- of hisparc
 
