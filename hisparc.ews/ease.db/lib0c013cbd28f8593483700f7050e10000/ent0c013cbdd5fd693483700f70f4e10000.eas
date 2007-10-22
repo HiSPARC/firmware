@@ -8,10 +8,10 @@
     (GEOMETRY 0 0 512 1024)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Dec 20 11:52:39 2006")
+      (PROPERTY "STAMP_TIME" "Wed Oct 10 13:13:25 2007")
       (NAME "Toplevel")
       (USERNAME 1)
     )

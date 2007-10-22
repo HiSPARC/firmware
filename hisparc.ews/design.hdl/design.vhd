@@ -6,229 +6,15 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Tue Oct 09 09:44:24 2007.
+-- Time stamp     : Mon Oct 22 22:27:40 2007.
 --
 -- Designed by    : 
 -- Company        : Translogic.
 -- Design info    : 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
--- Entity declaration of 'DUAL_PORT_RAM'.
--- Last modified : Mon Nov 06 11:01:12 2006.
---------------------------------------------------------------------------------
-
-
-library ieee ;
-use ieee.numeric_std.all ;
-use ieee.std_logic_unsigned.all ;
-use ieee.std_logic_1164.all ;
-
-entity DUAL_PORT_RAM is
-  port(
-    DATA_IN    : in     std_logic_vector(11 downto 0);
-    DATA_OUT   : out    std_logic_vector(11 downto 0);
-    RDCLOCK    : in     std_logic;
-    RD_ADDRESS : in     integer range 2020 downto 0;
-    WE         : in     std_logic;
-    WRCLOCK    : in     std_logic;
-    WR_ADDRESS : in     integer range 2020 downto 0);
-end DUAL_PORT_RAM ;
-
---------------------------------------------------------------------------------
--- Architecture 'a0' of 'DUAL_PORT_RAM'
--- Last modified : Mon Nov 06 11:01:12 2006.
---------------------------------------------------------------------------------
-
-architecture a0 of DUAL_PORT_RAM is
-
-	type MEM is array(0 to 2020) of std_logic_vector(11 downto 0);
-	signal RAM_BLOCK : MEM;
-	signal RD_ADDRESS_REG : integer range 0 to 2020;
-
-begin
-	process (WRCLOCK)
-	begin
-		if (WRCLOCK'event and WRCLOCK = '1') then
-			if (WE = '1') then
-				RAM_BLOCK(WR_ADDRESS) <= DATA_IN;
-			end if;
-
-		end if;
-	end process;
-
-	process (RDCLOCK)
-	BEGIN
-		if (RDCLOCK'event and RDCLOCK = '1') then
-			DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);
-			RD_ADDRESS_REG <= RD_ADDRESS;
-		end if;
-	end process;
-
-end a0 ; -- of DUAL_PORT_RAM
-
---------------------------------------------------------------------------------
--- Entity declaration of 'ADDRESS_COUNTERS'.
--- Last modified : Mon Oct 01 14:31:00 2007.
---------------------------------------------------------------------------------
-
-
-library ieee ;
-use ieee.numeric_std.all ;
-use ieee.std_logic_unsigned.all ;
-use ieee.std_logic_1164.all ;
-
-entity ADDRESS_COUNTERS is
-  port(
-    CLK200MHz         : in     std_logic;
-    CLKRD             : in     std_logic;
-    COINC_TO_END_TIME : in     std_logic;
-    DATA_OUT          : out    std_logic_vector(11 downto 0);
-    DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
-    DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
-    DATA_READY        : out    std_logic;
-    MASTER            : in     std_logic;
-    RDEN              : in     std_logic;
-    RD_ADDRESS        : out    integer range 2020 downto 0;
-    READOUT_BUSY      : out    std_logic;
-    SYSRST            : in     std_logic;
-    TOTAL_TIME        : in     integer range 2000 downto 0;
-    WE                : out    std_logic;
-    WR_ADDRESS        : out    integer range 2020 downto 0);
-end ADDRESS_COUNTERS ;
-
---------------------------------------------------------------------------------
--- Architecture 'a0' of 'ADDRESS_COUNTERS'
--- Last modified : Mon Oct 01 14:31:00 2007.
---------------------------------------------------------------------------------
-
-architecture a0 of ADDRESS_COUNTERS is
-
-signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true
-signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME 
-signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;  
-signal BEGIN_PRE_TIME_SLAVE: integer range 2020 downto 0 ;  
-signal END_POST_TIME: integer range 2020 downto 0 ; -- write address at end of POST_TIME 
-signal WR_ADDRESS_TMP: integer range 2020 downto 0 ;  
-signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;  
-signal POS_NEG_PHASE: std_logic ; -- help signal to determine the positive or negative RAM; high means positive
-signal COINC_TO_END_TIME_DEL: std_logic ;
-signal READOUT_BUSY_DEL1: std_logic ;
-signal READOUT_BUSY_DEL2: std_logic ;
-signal READOUT_BUSY_TMP: std_logic ;
-signal DATA_READY_PRE: std_logic ;
-signal DATA_READY_TMP: std_logic ;
-signal DATA_OUT_TMP: std_logic_vector(11 downto 0);
-
-
-
-begin
-  -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO
-  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2009 - TOTAL_TIME + END_POST_TIME);
-  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2007 - TOTAL_TIME + END_POST_TIME);
-  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;
---  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2019 - TOTAL_TIME + END_POST_TIME);
-  WR_ADDRESS <= WR_ADDRESS_TMP;
-  RD_ADDRESS <= RD_ADDRESS_TMP;
-  DATA_READY <= DATA_READY_TMP;
-  
-  
-  -- delays
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      COINC_TO_END_TIME_DEL <= '0';
-      READOUT_BUSY_DEL1 <= '0';
-      READOUT_BUSY_DEL2 <= '0';
-      WE <= '1';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;
-      READOUT_BUSY_DEL1 <= READOUT_BUSY_TMP;
-      READOUT_BUSY_DEL2 <= READOUT_BUSY_DEL1;
-      WE <= TAKE_DATA;
-    end if;
-  end process;  
-    
-  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout
-  -- and determine END_POST_TIME
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      TAKE_DATA <= '1';
-      END_POST_TIME <= 0;
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME
-        TAKE_DATA <= '0';
-        END_POST_TIME <= WR_ADDRESS_TMP;
-      elsif READOUT_BUSY_DEL1 = '0' and READOUT_BUSY_DEL2 = '1' then -- on a negative edge of READOUT_BUSY
-        TAKE_DATA <= '1';
-      end if;
-    end if;
-  end process;  
-
-  -- WR_ADDRESS_TMP
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      WR_ADDRESS_TMP <= 0;
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if TAKE_DATA = '1' then
-        if WR_ADDRESS_TMP = 2020 then
-          WR_ADDRESS_TMP <= 0;
-        else
-          WR_ADDRESS_TMP <= WR_ADDRESS_TMP + 1;
-        end if;
-      else
-        WR_ADDRESS_TMP <= WR_ADDRESS_TMP; 
-      end if;  
-    end if;
-  end process;  
-
-  -- DATA_READY is valid when the FIFOs are not taking data
-  -- not TAKE_DATA is synchronized with the readoutclock
-  process(CLKRD,SYSRST)
-  begin
-    if SYSRST = '1' then
-      DATA_READY_TMP <= '0';
-      DATA_READY_PRE <= '0';
-    elsif (CLKRD'event and CLKRD = '1') then
-      DATA_READY_PRE <= not TAKE_DATA;
-      DATA_READY_TMP <= DATA_READY_PRE;
-      READOUT_BUSY <= READOUT_BUSY_TMP;
-    end if;
-  end process;  
-
-  -- RD_ADDRESS and toggle outputbus
-  process(CLKRD)
-  begin
-    if (CLKRD'event and CLKRD = '1') then
-      if RDEN = '1' then
-        if POS_NEG_PHASE = '1' then
-          RD_ADDRESS_TMP <= RD_ADDRESS_TMP;
-        else
-          if RD_ADDRESS_TMP = 2020 then
-            RD_ADDRESS_TMP <= 0;
-          else
-            RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;
-          end if;
-        end if;
-        POS_NEG_PHASE <= not POS_NEG_PHASE;
-        READOUT_BUSY_TMP <= '1';          
-      else
-        RD_ADDRESS_TMP <= BEGIN_PRE_TIME;
-        POS_NEG_PHASE <= '1'; 
-        READOUT_BUSY_TMP <= '0';
-      end if;  
-    end if;
-  end process;  
-  
-  DATA_OUT_TMP <= DATA_OUT_POS  when POS_NEG_PHASE = '1' else DATA_OUT_NEG;
-  DATA_OUT <= DATA_OUT_TMP when READOUT_BUSY_TMP = '1' else "000000000000";
-
-end a0 ; -- of ADDRESS_COUNTERS
-
---------------------------------------------------------------------------------
 -- Entity declaration of 'PLL'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -246,7 +32,7 @@ end PLL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'PLL'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 LIBRARY ieee;
@@ -324,7 +110,7 @@ end rtl ; -- of PLL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SYNCHRONISATION'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -348,7 +134,7 @@ end SYNCHRONISATION ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SYNCHRONISATION'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of SYNCHRONISATION is
@@ -421,7 +207,7 @@ end rtl ; -- of SYNCHRONISATION
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CONVERSION_12_TO_8_BIT'.
--- Last modified : Mon Dec 18 10:53:51 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -460,7 +246,7 @@ end CONVERSION_12_TO_8_BIT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CONVERSION_12_TO_8_BIT'
--- Last modified : Mon Dec 18 10:53:51 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of CONVERSION_12_TO_8_BIT is
@@ -656,7 +442,7 @@ end rtl ; -- of CONVERSION_12_TO_8_BIT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_FIFO'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -678,7 +464,7 @@ end EVENT_FIFO ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_FIFO'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_FIFO is
@@ -710,7 +496,7 @@ end rtl ; -- of EVENT_FIFO
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_FIFO_CONTROL'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -735,7 +521,7 @@ end EVENT_FIFO_CONTROL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_FIFO_CONTROL'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_FIFO_CONTROL is
@@ -823,7 +609,7 @@ end rtl ; -- of EVENT_FIFO_CONTROL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SLAVE_DETECTOR'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -850,7 +636,7 @@ end SLAVE_DETECTOR ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SLAVE_DETECTOR'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of SLAVE_DETECTOR is
@@ -1016,7 +802,7 @@ end rtl ; -- of SLAVE_DETECTOR
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DISCRIMINATORS'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1056,7 +842,7 @@ end DISCRIMINATORS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'DISCRIMINATORS'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of DISCRIMINATORS is
@@ -1425,7 +1211,7 @@ end rtl ; -- of DISCRIMINATORS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_MATRIX'.
--- Last modified : Fri Sep 28 11:46:19 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1463,7 +1249,7 @@ end TRIGGER_MATRIX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'TRIGGER_MATRIX'
--- Last modified : Fri Sep 28 11:46:19 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of TRIGGER_MATRIX is
@@ -1812,7 +1598,7 @@ end rtl ; -- of TRIGGER_MATRIX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_DRIVER'.
--- Last modified : Mon Oct 01 10:36:00 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1831,7 +1617,7 @@ end LED_DRIVER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_DRIVER'
--- Last modified : Mon Oct 01 10:36:00 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_DRIVER is
@@ -1860,7 +1646,7 @@ end rtl ; -- of LED_DRIVER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CLK_DIV'.
--- Last modified : Mon Jul 16 21:42:48 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1878,7 +1664,7 @@ end CLK_DIV ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CLK_DIV'
--- Last modified : Mon Jul 16 21:42:48 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of CLK_DIV is
@@ -1901,7 +1687,7 @@ end rtl ; -- of CLK_DIV
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_DATA_HANDLER'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1927,7 +1713,7 @@ end EVENT_DATA_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_DATA_HANDLER'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_DATA_HANDLER is
@@ -2044,7 +1830,7 @@ end rtl ; -- of EVENT_DATA_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_WRITE_HANDLER'.
--- Last modified : Wed Jul 18 11:22:51 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -2103,7 +1889,7 @@ end USB_WRITE_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_WRITE_HANDLER'
--- Last modified : Wed Jul 18 11:22:51 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_WRITE_HANDLER is
@@ -2865,7 +2651,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Fri Sep 28 12:49:50 2007.
+-- Last modified : Mon Oct 22 22:27:39 2007.
 --------------------------------------------------------------------------------
 
 
@@ -2943,7 +2729,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Fri Sep 28 12:49:50 2007.
+-- Last modified : Mon Oct 22 22:27:39 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3127,7 +2913,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00000101";
+  SOFTWARE_VERSION <= "00000110";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -4622,7 +4408,7 @@ end rtl ; -- of USB_READ_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'GPS_STUFF'.
--- Last modified : Thu Oct 04 13:30:49 2007.
+-- Last modified : Fri Oct 19 13:34:33 2007.
 --------------------------------------------------------------------------------
 
 
@@ -4669,7 +4455,7 @@ end GPS_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'GPS_STUFF'
--- Last modified : Thu Oct 04 13:30:49 2007.
+-- Last modified : Fri Oct 19 13:34:33 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of GPS_STUFF is
@@ -4695,7 +4481,6 @@ signal DECODE_BYTE1 : std_logic_vector (7 downto 0); -- This byte stores a GET_B
 signal MESSAGE_SELECT : std_logic_vector (1 downto 0); -- "00" means nothing selected; "01" means 8F-AB selected; "10" means 8F-AC selected; "11" means 47 selected;
 signal STUFFED_BYTE : std_logic; -- This bit is thrue when there is a stuffed byte; in other words: an even number of 0x10 bytes 
 signal END_BYTE_DETECTED : std_logic; -- This bit is thrue when a odd number of 0x10 bytes and a 0x03 byte is detected
-signal DUMP  : std_logic_vector (7 downto 0); -- Dump byte for case statement to satisfy Modelsim
 signal GPS_SEC  : std_logic_vector (7 downto 0); -- Seconds (0 to 59)
 signal GPS_MIN   : std_logic_vector (7 downto 0); -- Minutes (0 to 59)
 signal GPS_HOUR   : std_logic_vector (7 downto 0); -- Hours (0 to 23)
@@ -4804,7 +4589,6 @@ signal GPS_SAT12LEV2  : std_logic_vector (7 downto 0); -- Signal level of satell
 signal GPS_SAT12LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 12
 signal GPS_SAT12LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 12
 
-signal COINC_DEL: std_logic ;
 signal CTP_COUNT: std_logic_vector(31 downto 0);
 signal NEG_FASE_BIT: std_logic ; -- This signal clocks the one PPS signal on the negative fase of the CLK200MHz clock to determine the offset 2.5ns better
 signal NEG_FASE_BIT_DEL: std_logic ; -- NEG_FASE_BIT after a negative edge of the CLK200MHz clock
@@ -4832,6 +4616,10 @@ signal COMPL1_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a
 signal COMPH1_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPH1
 signal COMPL2_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPL2
 signal COMPH2_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPH2
+signal COMPDATA_L1: std_logic_vector(127 downto 0); 
+signal COMPDATA_H1: std_logic_vector(127 downto 0); 
+signal COMPDATA_L2: std_logic_vector(127 downto 0); 
+signal COMPDATA_H2: std_logic_vector(127 downto 0); 
 signal RST_COMPL1: std_logic ; -- Reset signal synchronized at 200MHz 
 signal RST_COMPH1: std_logic ; -- Reset signal synchronized at 200MHz 
 signal RST_COMPL2: std_logic ; -- Reset signal synchronized at 200MHz 
@@ -4848,9 +4636,16 @@ signal VALID_COMPL1_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz
 signal VALID_COMPH1_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz 
 signal VALID_COMPL2_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz 
 signal VALID_COMPH2_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz 
+signal VALID_COMPL1_10MHZ_DEL: std_logic ; 
+signal VALID_COMPH1_10MHZ_DEL: std_logic ;  
+signal VALID_COMPL2_10MHZ_DEL: std_logic ;  
+signal VALID_COMPH2_10MHZ_DEL: std_logic ;  
+signal VALID_COMPL1_10MHZ_OUT: std_logic ; 
+signal VALID_COMPH1_10MHZ_OUT: std_logic ;  
+signal VALID_COMPL2_10MHZ_OUT: std_logic ;  
+signal VALID_COMPH2_10MHZ_OUT: std_logic ;  
 signal COMPDATA_READOUT_DONE_DEL1: std_logic ; 
 signal COMPDATA_READOUT_DONE_DEL2: std_logic ; 
-signal COMPDATA_VALID_OUT_TMP: std_logic ; 
 
 begin
   
@@ -5165,7 +4960,7 @@ begin
    	      when 14 => GPS_MONTH <= DECODE_BYTE1;    
    	      when 15 => GPS_YEAR1 <= DECODE_BYTE1;    
    	      when 16 => GPS_YEAR0 <= DECODE_BYTE1;    
-          when others => DUMP <=  DECODE_BYTE1;      
+          when others =>       
         end case;
       end if;
       if MESSAGE_SELECT = "10" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' then
@@ -5202,7 +4997,7 @@ begin
    	      when 61 => GPS_QUANT2 <= DECODE_BYTE1;    
    	      when 62 => GPS_QUANT1 <= DECODE_BYTE1;    
    	      when 63 => GPS_QUANT0 <= DECODE_BYTE1;    
-          when others => DUMP <=  DECODE_BYTE1;      
+          when others =>       
         end case;
       end if;
       if MESSAGE_SELECT = "11" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' and not (GET_BYTE = "00000011" and DECODE_BYTE1 = "00010000") then
@@ -5328,7 +5123,7 @@ begin
    	      when 59 => GPS_SAT12LEV2 <= DECODE_BYTE1;    
    	      when 60 => GPS_SAT12LEV1 <= DECODE_BYTE1;    
    	      when 61 => GPS_SAT12LEV0 <= DECODE_BYTE1;    
-          when others => DUMP <=  DECODE_BYTE1;      
+          when others =>       
         end case;
       end if;
     end if;
@@ -5340,11 +5135,9 @@ begin
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      COINC_DEL <= '0';        
       ONE_PPS_DEL1 <= '0';        
       ONE_PPS_DEL2 <= '0';        
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_DEL <= COINC;        
       ONE_PPS_DEL1 <= ONE_PPS;        
       ONE_PPS_DEL2 <= ONE_PPS_DEL1;        
     end if;
@@ -5601,6 +5394,10 @@ begin
 	  VALID_COMPH1_10MHZ <= '0';                 
 	  VALID_COMPL2_10MHZ <= '0';                 
 	  VALID_COMPH2_10MHZ <= '0';                 
+	  VALID_COMPL1_10MHZ_DEL <= '0';                 
+	  VALID_COMPH1_10MHZ_DEL <= '0';                 
+	  VALID_COMPL2_10MHZ_DEL <= '0';                 
+	  VALID_COMPH2_10MHZ_DEL <= '0';                 
       COMPDATA_READOUT_DONE_DEL1 <= '0';
       COMPDATA_READOUT_DONE_DEL2 <= '0';
 	elsif CLK10MHz'event and CLK10MHz = '1' then
@@ -5608,6 +5405,10 @@ begin
 	  VALID_COMPH1_10MHZ <= VALID_COMPH1;                 
 	  VALID_COMPL2_10MHZ <= VALID_COMPL2;                 
 	  VALID_COMPH2_10MHZ <= VALID_COMPH2;                 
+	  VALID_COMPL1_10MHZ_DEL <= VALID_COMPL1_10MHZ;                 
+	  VALID_COMPH1_10MHZ_DEL <= VALID_COMPH1_10MHZ;                 
+	  VALID_COMPL2_10MHZ_DEL <= VALID_COMPL2_10MHZ;                 
+	  VALID_COMPH2_10MHZ_DEL <= VALID_COMPH2_10MHZ;                 
 	  COMPDATA_READOUT_DONE_DEL1 <= COMPDATA_READOUT_DONE;                 
 	  COMPDATA_READOUT_DONE_DEL2 <= COMPDATA_READOUT_DONE_DEL1;                 
 	end if;
@@ -5805,58 +5606,85 @@ begin
   process(CLK10MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      COMPDATA_VALID_OUT_TMP <= '0';
+      COMPDATA_L1 <= (others => '0');
+      COMPDATA_H1 <= (others => '0');
+      COMPDATA_L2 <= (others => '0');
+      COMPDATA_H2 <= (others => '0');
+      COMPDATA_OUT <= (others => '0');
+      VALID_COMPL1_10MHZ_OUT <= '0';
+      VALID_COMPH1_10MHZ_OUT <= '0';
+      VALID_COMPL2_10MHZ_OUT <= '0';
+      VALID_COMPH2_10MHZ_OUT <= '0';
       RST_COMPL1_10MHZ <= '0';
       RST_COMPH1_10MHZ <= '0';
       RST_COMPL2_10MHZ <= '0';
       RST_COMPH2_10MHZ <= '0';
     elsif (CLK10MHz'event and CLK10MHz = '1') then
-      if COMPDATA_VALID_OUT_TMP = '0' then
-        if VALID_COMPL1_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+      if VALID_COMPL1_10MHZ = '1' and VALID_COMPL1_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPL1_10MHZ
+        VALID_COMPL1_10MHZ_OUT <= '1'; -- set VALID_COMPL1_10MHZ_OUT
+        COMPDATA_L1(127 downto 120) <= "00000001";
+        COMPDATA_L1(119 downto 32) <= COMPL1_TIMESTAMP;
+        COMPDATA_L1(31 downto 0) <= COMPL1_COUNT;
+      end if;
+      if VALID_COMPH1_10MHZ = '1' and VALID_COMPH1_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPH1_10MHZ
+        VALID_COMPH1_10MHZ_OUT <= '1'; -- set VALID_COMPL2_10MHZ_OUT
+        COMPDATA_H1(127 downto 120) <= "00000010";
+        COMPDATA_H1(119 downto 32) <= COMPH1_TIMESTAMP;
+        COMPDATA_H1(31 downto 0) <= COMPH1_COUNT;
+      end if;
+      if VALID_COMPL2_10MHZ = '1' and VALID_COMPL2_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPL2_10MHZ
+        VALID_COMPL2_10MHZ_OUT <= '1'; -- set VALID_COMPL2_10MHZ_OUT
+        COMPDATA_L2(127 downto 120) <= "00000100";
+        COMPDATA_L2(119 downto 32) <= COMPL2_TIMESTAMP;
+        COMPDATA_L2(31 downto 0) <= COMPL2_COUNT;
+      end if;
+      if VALID_COMPH2_10MHZ = '1' and VALID_COMPH2_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPH2_10MHZ
+        VALID_COMPH2_10MHZ_OUT <= '1'; -- set VALID_COMPH2_10MHZ_OUT
+        COMPDATA_H2(127 downto 120) <= "00001000";
+        COMPDATA_H2(119 downto 32) <= COMPH2_TIMESTAMP;
+        COMPDATA_H2(31 downto 0) <= COMPH2_COUNT;
+      end if;
+      if VALID_COMPL1_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_L1;
+      elsif VALID_COMPH1_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_H1;
+      elsif VALID_COMPL2_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_L2;
+      elsif VALID_COMPH2_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_H2;
+      else
+        COMPDATA_OUT <= (others => '0');
+      end if;
+      if COMPDATA_READOUT_DONE_DEL1 = '1' and COMPDATA_READOUT_DONE_DEL2 = '0' then
+        if VALID_COMPL1_10MHZ_OUT = '1' then
+          VALID_COMPL1_10MHZ_OUT <= '0';
           RST_COMPL1_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00000001";
-          COMPDATA_OUT(119 downto 32) <= COMPL1_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPL1_COUNT;
-        elsif VALID_COMPH1_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+        elsif VALID_COMPH1_10MHZ_OUT = '1' then
+          VALID_COMPH1_10MHZ_OUT <= '0';
           RST_COMPH1_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00000010";
-          COMPDATA_OUT(119 downto 32) <= COMPH1_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPH1_COUNT;
-        elsif VALID_COMPL2_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+        elsif VALID_COMPL2_10MHZ_OUT = '1' then
+          VALID_COMPL2_10MHZ_OUT <= '0';
           RST_COMPL2_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00000100";
-          COMPDATA_OUT(119 downto 32) <= COMPL2_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPL2_COUNT;
-        elsif VALID_COMPH2_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+        elsif VALID_COMPH2_10MHZ_OUT = '1' then
+          VALID_COMPH2_10MHZ_OUT <= '0';
           RST_COMPH2_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00001000";
-          COMPDATA_OUT(119 downto 32) <= COMPH2_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPH2_COUNT;
         end if;
-      elsif COMPDATA_VALID_OUT_TMP = '1' then
+      else
         RST_COMPL1_10MHZ <= '0';
         RST_COMPH1_10MHZ <= '0';
         RST_COMPL2_10MHZ <= '0';
         RST_COMPH2_10MHZ <= '0';
-        if COMPDATA_READOUT_DONE_DEL1 = '1' and COMPDATA_READOUT_DONE_DEL2 = '0' then
-          COMPDATA_VALID_OUT_TMP <= '0';
-          COMPDATA_OUT <= (others => '0');
-        end if;
       end if;
     end if;
   end process;  
 
-  COMPDATA_VALID_OUT <= COMPDATA_VALID_OUT_TMP;
+  COMPDATA_VALID_OUT <= VALID_COMPL1_10MHZ_OUT or VALID_COMPH1_10MHZ_OUT or VALID_COMPL2_10MHZ_OUT or VALID_COMPH2_10MHZ_OUT;
 
 end rtl ; -- of GPS_STUFF
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'THRESHOLD_COUNTERS'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -5879,7 +5707,7 @@ end THRESHOLD_COUNTERS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'THRESHOLD_COUNTERS'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of THRESHOLD_COUNTERS is
@@ -5991,7 +5819,7 @@ end rtl ; -- of THRESHOLD_COUNTERS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LVDS_MUX'.
--- Last modified : Thu Oct 04 13:34:25 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6030,7 +5858,7 @@ end LVDS_MUX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LVDS_MUX'
--- Last modified : Thu Oct 04 13:34:25 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of LVDS_MUX is
@@ -6066,7 +5894,7 @@ end rtl ; -- of LVDS_MUX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'INVERTER'.
--- Last modified : Fri Jun 22 14:11:35 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6083,7 +5911,7 @@ end INVERTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'INVERTER'
--- Last modified : Fri Jun 22 14:11:35 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of INVERTER is
@@ -6094,7 +5922,7 @@ end rtl ; -- of INVERTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DUMMIES'.
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6119,7 +5947,7 @@ end DUMMIES ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'DUMMIES'
--- Last modified : Mon Nov 06 11:01:12 2006.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of DUMMIES is
@@ -6144,7 +5972,7 @@ end rtl ; -- of DUMMIES
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'FIFO_SELECT'.
--- Last modified : Fri Jun 29 21:30:34 2007.
+-- Last modified : Fri Oct 19 16:04:58 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6155,50 +5983,48 @@ use ieee.std_logic_1164.all ;
 
 entity FIFO_SELECT is
   port(
-    BLOCK_COINC            : out    std_logic;
-    CLK200MHz              : in     std_logic;
-    CLKRD                  : in     std_logic;
-    COINC_TO_END_TIME      : in     std_logic;
-    COINC_TO_END_TIME1_CH1 : out    std_logic;
-    COINC_TO_END_TIME1_CH2 : out    std_logic;
-    COINC_TO_END_TIME2_CH1 : out    std_logic;
-    COINC_TO_END_TIME2_CH2 : out    std_logic;
-    CTD_IN                 : in     std_logic_vector(31 downto 0);
-    CTD_OUT                : out    std_logic_vector(31 downto 0);
-    DATA_OUT1_CH1          : in     std_logic_vector(11 downto 0);
-    DATA_OUT1_CH2          : in     std_logic_vector(11 downto 0);
-    DATA_OUT2_CH1          : in     std_logic_vector(11 downto 0);
-    DATA_OUT2_CH2          : in     std_logic_vector(11 downto 0);
-    DATA_OUT_CH1           : out    std_logic_vector(11 downto 0);
-    DATA_OUT_CH2           : out    std_logic_vector(11 downto 0);
-    DATA_READY1_CH1        : in     std_logic;
-    DATA_READY1_CH2        : in     std_logic;
-    DATA_READY2_CH1        : in     std_logic;
-    DATA_READY2_CH2        : in     std_logic;
-    DATA_READY_CH1         : out    std_logic;
-    DATA_READY_CH2         : out    std_logic;
-    DATA_VALID_CH1         : out    std_logic;
-    DATA_VALID_CH2         : out    std_logic;
-    GPS_TS_IN              : in     std_logic_vector(55 downto 0);
-    GPS_TS_OUT             : out    std_logic_vector(55 downto 0);
-    RDEN1_CH1              : out    std_logic;
-    RDEN1_CH2              : out    std_logic;
-    RDEN2_CH1              : out    std_logic;
-    RDEN2_CH2              : out    std_logic;
-    RDEN_CH1               : in     std_logic;
-    RDEN_CH2               : in     std_logic;
-    READOUT_BUSY1_CH1      : in     std_logic;
-    READOUT_BUSY1_CH2      : in     std_logic;
-    READOUT_BUSY2_CH1      : in     std_logic;
-    READOUT_BUSY2_CH2      : in     std_logic;
-    SYSRST                 : in     std_logic;
-    TRIGGER_PATTERN        : out    std_logic_vector(15 downto 0);
-    TRIGGER_PATTERN_IN     : in     std_logic_vector(15 downto 0));
+    BLOCK_COINC             : out    std_logic;
+    CLK200MHz               : in     std_logic;
+    CLKRD                   : in     std_logic;
+    COINC_TO_END_TIME       : in     std_logic;
+    COINC_TO_END_TIME_FIFO1 : out    std_logic;
+    COINC_TO_END_TIME_FIFO2 : out    std_logic;
+    CTD_IN                  : in     std_logic_vector(31 downto 0);
+    CTD_OUT                 : out    std_logic_vector(31 downto 0);
+    DATA_OUT1_CH1           : in     std_logic_vector(11 downto 0);
+    DATA_OUT1_CH2           : in     std_logic_vector(11 downto 0);
+    DATA_OUT2_CH1           : in     std_logic_vector(11 downto 0);
+    DATA_OUT2_CH2           : in     std_logic_vector(11 downto 0);
+    DATA_OUT_CH1            : out    std_logic_vector(11 downto 0);
+    DATA_OUT_CH2            : out    std_logic_vector(11 downto 0);
+    DATA_READY1_CH1         : in     std_logic;
+    DATA_READY1_CH2         : in     std_logic;
+    DATA_READY2_CH1         : in     std_logic;
+    DATA_READY2_CH2         : in     std_logic;
+    DATA_READY_CH1          : out    std_logic;
+    DATA_READY_CH2          : out    std_logic;
+    DATA_VALID_CH1          : out    std_logic;
+    DATA_VALID_CH2          : out    std_logic;
+    GPS_TS_IN               : in     std_logic_vector(55 downto 0);
+    GPS_TS_OUT              : out    std_logic_vector(55 downto 0);
+    RDEN1_CH1               : out    std_logic;
+    RDEN1_CH2               : out    std_logic;
+    RDEN2_CH1               : out    std_logic;
+    RDEN2_CH2               : out    std_logic;
+    RDEN_CH1                : in     std_logic;
+    RDEN_CH2                : in     std_logic;
+    READOUT_BUSY1_CH1       : in     std_logic;
+    READOUT_BUSY1_CH2       : in     std_logic;
+    READOUT_BUSY2_CH1       : in     std_logic;
+    READOUT_BUSY2_CH2       : in     std_logic;
+    SYSRST                  : in     std_logic;
+    TRIGGER_PATTERN         : out    std_logic_vector(15 downto 0);
+    TRIGGER_PATTERN_IN      : in     std_logic_vector(15 downto 0));
 end FIFO_SELECT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'FIFO_SELECT'
--- Last modified : Fri Jun 29 21:30:34 2007.
+-- Last modified : Fri Oct 19 16:04:58 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of FIFO_SELECT is
@@ -6255,10 +6081,8 @@ begin
   process(CLK200MHz)
   begin
     if (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_TO_END_TIME1_CH1 <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME2_CH1 <= COINC_TO_END_TIME2_TMP;
-      COINC_TO_END_TIME1_CH2 <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME2_CH2 <= COINC_TO_END_TIME2_TMP;
+      COINC_TO_END_TIME_FIFO1 <= COINC_TO_END_TIME1_TMP;
+      COINC_TO_END_TIME_FIFO2 <= COINC_TO_END_TIME2_TMP;
       COINC_TO_END_TIME1_TMP_DEL <= COINC_TO_END_TIME1_TMP;
       COINC_TO_END_TIME2_TMP_DEL <= COINC_TO_END_TIME2_TMP;
     end if;
@@ -6462,7 +6286,7 @@ end rtl ; -- of FIFO_SELECT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SOFT_RESET'.
--- Last modified : Tue Jul 17 14:45:44 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6481,7 +6305,7 @@ end SOFT_RESET ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SOFT_RESET'
--- Last modified : Tue Jul 17 14:45:44 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of SOFT_RESET is
@@ -6511,7 +6335,7 @@ end rtl ; -- of SOFT_RESET
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_ONE_SHOT'.
--- Last modified : Wed Aug 29 14:45:05 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6530,7 +6354,7 @@ end LED_ONE_SHOT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_ONE_SHOT'
--- Last modified : Wed Aug 29 14:45:05 2007.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_ONE_SHOT is
@@ -6570,8 +6394,8 @@ begin
 end rtl ; -- of LED_ONE_SHOT
 
 --------------------------------------------------------------------------------
--- Entity declaration of 'STORAGE'.
--- Last modified : Mon Oct 01 14:21:59 2007.
+-- Entity declaration of 'DUAL_PORT_RAM'.
+-- Last modified : Wed Oct 10 16:19:14 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6580,106 +6404,273 @@ use ieee.numeric_std.all ;
 use ieee.std_logic_unsigned.all ;
 use ieee.std_logic_1164.all ;
 
-entity STORAGE is
+entity DUAL_PORT_RAM is
   port(
+    DATA_IN    : in     std_logic_vector(11 downto 0);
+    DATA_OUT   : out    std_logic_vector(11 downto 0);
+    RDCLOCK    : in     std_logic;
+    RD_ADDRESS : in     integer range 2020 downto 0;
+    WE         : in     std_logic;
+    WRCLOCK    : in     std_logic;
+    WR_ADDRESS : in     integer range 2020 downto 0);
+end DUAL_PORT_RAM ;
+
+--------------------------------------------------------------------------------
+-- Architecture 'a0' of 'DUAL_PORT_RAM'
+-- Last modified : Wed Oct 10 16:19:14 2007.
+--------------------------------------------------------------------------------
+
+architecture a0 of DUAL_PORT_RAM is
+
+	type MEM is array(0 to 2020) of std_logic_vector(11 downto 0);
+	signal RAM_BLOCK : MEM;
+	signal RD_ADDRESS_REG : integer range 0 to 2020;
+
+begin
+	process (WRCLOCK)
+	begin
+		if (WRCLOCK'event and WRCLOCK = '1') then
+			if (WE = '1') then
+				RAM_BLOCK(WR_ADDRESS) <= DATA_IN;
+			end if;
+
+		end if;
+	end process;
+
+	process (RDCLOCK)
+	BEGIN
+		if (RDCLOCK'event and RDCLOCK = '1') then
+			DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);
+			RD_ADDRESS_REG <= RD_ADDRESS;
+		end if;
+	end process;
+
+end a0 ; -- of DUAL_PORT_RAM
+
+--------------------------------------------------------------------------------
+-- Entity declaration of 'WR_ADDRES_COUNTER'.
+-- Last modified : Mon Oct 22 22:27:39 2007.
+--------------------------------------------------------------------------------
+
+
+library ieee ;
+use ieee.numeric_std.all ;
+use ieee.std_logic_unsigned.all ;
+use ieee.std_logic_1164.all ;
+
+entity WR_ADDRES_COUNTER is
+  port(
+    BEGIN_PRE_TIME_OUT : out    integer range 2020 downto 0;
+    CLK200MHz          : in     std_logic;
+    COINC_TO_END_TIME  : in     std_logic;
+    MASTER             : in     std_logic;
+    RDEN_CH1           : in     std_logic;
+    RDEN_CH2           : in     std_logic;
+    SYSRST             : in     std_logic;
+    TOTAL_TIME         : in     integer range 2000 downto 0;
+    WE                 : out    std_logic;
+    WR_ADDRESS         : out    integer range 2020 downto 0);
+end WR_ADDRES_COUNTER ;
+
+--------------------------------------------------------------------------------
+-- Architecture 'rtl' of 'WR_ADDRES_COUNTER'
+-- Last modified : Mon Oct 22 22:27:39 2007.
+--------------------------------------------------------------------------------
+
+architecture rtl of WR_ADDRES_COUNTER is
+
+signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true
+signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME 
+signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;  
+signal BEGIN_PRE_TIME_SLAVE: integer range 2020 downto 0 ;  
+signal END_POST_TIME: integer range 2020 downto 0 ; -- write address at end of POST_TIME 
+signal WR_ADDRESS_TMP: integer range 2020 downto 0 ;  
+signal COINC_TO_END_TIME_DEL: std_logic ;
+signal RDEN_DEL1: std_logic ;
+signal RDEN_DEL2: std_logic ;
+
+begin
+  -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO
+  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;
+--  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);
+  WR_ADDRESS <= WR_ADDRESS_TMP;
+  
+  BEGIN_PRE_TIME_OUT <= BEGIN_PRE_TIME;
+
+  
+  -- delays
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      COINC_TO_END_TIME_DEL <= '0';
+      RDEN_DEL1 <= '0';
+      RDEN_DEL2 <= '0';
+      WE <= '1';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;
+      RDEN_DEL1 <= RDEN_CH1;
+      RDEN_DEL2 <= RDEN_DEL1;
+      WE <= TAKE_DATA and not RDEN_CH1 and not RDEN_CH2;
+    end if;
+  end process;  
+    
+  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout
+  -- and determine END_POST_TIME
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TAKE_DATA <= '1';
+      END_POST_TIME <= 0;
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME
+        TAKE_DATA <= '0';
+        END_POST_TIME <= WR_ADDRESS_TMP;
+      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN_CH1
+        TAKE_DATA <= '1';
+      end if;
+    end if;
+  end process;  
+
+  -- WR_ADDRESS_TMP
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      WR_ADDRESS_TMP <= 0;
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if TAKE_DATA = '1' then
+        if WR_ADDRESS_TMP = 2020 then
+          WR_ADDRESS_TMP <= 0;
+        else
+          WR_ADDRESS_TMP <= WR_ADDRESS_TMP + 1;
+        end if;
+      else
+        WR_ADDRESS_TMP <= WR_ADDRESS_TMP; 
+      end if;  
+    end if;
+  end process;  
+
+
+end rtl ; -- of WR_ADDRES_COUNTER
+
+--------------------------------------------------------------------------------
+-- Entity declaration of 'RD_ADDRES_COUNTER'.
+-- Last modified : Mon Oct 22 15:34:03 2007.
+--------------------------------------------------------------------------------
+
+
+library ieee ;
+use ieee.numeric_std.all ;
+use ieee.std_logic_unsigned.all ;
+use ieee.std_logic_1164.all ;
+
+entity RD_ADDRES_COUNTER is
+  port(
+    BEGIN_PRE_TIME    : in     integer range 2020 downto 0;
     CLK200MHz         : in     std_logic;
     CLKRD             : in     std_logic;
     COINC_TO_END_TIME : in     std_logic;
-    DATA_ADC_NEG      : in     std_logic_vector(11 downto 0);
-    DATA_ADC_POS      : in     std_logic_vector(11 downto 0);
     DATA_OUT          : out    std_logic_vector(11 downto 0);
+    DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
+    DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
     DATA_READY        : out    std_logic;
-    MASTER            : in     std_logic;
     RDEN              : in     std_logic;
+    RD_ADDRESS        : out    integer range 2020 downto 0;
     READOUT_BUSY      : out    std_logic;
-    SYSRST            : in     std_logic;
-    TOTAL_TIME        : in     integer range 2000 downto 0);
-end STORAGE ;
+    SYSRST            : in     std_logic);
+end RD_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
--- Architecture 'a0' of 'STORAGE'
--- Last modified : Mon Oct 01 14:21:59 2007.
+-- Architecture 'rtl' of 'RD_ADDRES_COUNTER'
+-- Last modified : Mon Oct 22 15:34:03 2007.
 --------------------------------------------------------------------------------
 
-architecture a0 of STORAGE is
+architecture rtl of RD_ADDRES_COUNTER is
 
-  component DUAL_PORT_RAM
-    port(
-      DATA_IN    : in     std_logic_vector(11 downto 0);
-      DATA_OUT   : out    std_logic_vector(11 downto 0);
-      RDCLOCK    : in     std_logic;
-      RD_ADDRESS : in     integer range 2020 downto 0;
-      WE         : in     std_logic;
-      WRCLOCK    : in     std_logic;
-      WR_ADDRESS : in     integer range 2020 downto 0);
-  end component ;
-
-  component ADDRESS_COUNTERS
-    port(
-      CLK200MHz         : in     std_logic;
-      CLKRD             : in     std_logic;
-      COINC_TO_END_TIME : in     std_logic;
-      DATA_OUT          : out    std_logic_vector(11 downto 0);
-      DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
-      DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
-      DATA_READY        : out    std_logic;
-      MASTER            : in     std_logic;
-      RDEN              : in     std_logic;
-      RD_ADDRESS        : out    integer range 2020 downto 0;
-      READOUT_BUSY      : out    std_logic;
-      SYSRST            : in     std_logic;
-      TOTAL_TIME        : in     integer range 2000 downto 0;
-      WE                : out    std_logic;
-      WR_ADDRESS        : out    integer range 2020 downto 0);
-  end component ;
-
-  signal WR_ADDRESS   :  integer range 2020 downto 0;
-  signal Net_8        :  std_logic_vector(11 downto 0);
-  signal Net_1        :  std_logic_vector(11 downto 0);
-  signal Net_16       :  integer range 2020 downto 0;
-  signal WE           :  std_logic;
+signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true
+signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;  
+signal POS_NEG_PHASE: std_logic ; -- help signal to determine the positive or negative RAM; high means positive
+signal READOUT_BUSY_TMP: std_logic ;
+signal DATA_READY_PRE: std_logic ;
+signal DATA_OUT_TMP: std_logic_vector(11 downto 0);
+signal COINC_TO_END_TIME_DEL: std_logic ;
+signal RDEN_DEL1: std_logic ;
+signal RDEN_DEL2: std_logic ;
 
 begin
 
+  RD_ADDRESS <= RD_ADDRESS_TMP;
+      
+  -- delays
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      COINC_TO_END_TIME_DEL <= '0';
+      RDEN_DEL1 <= '0';
+      RDEN_DEL2 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;
+      RDEN_DEL1 <= RDEN;
+      RDEN_DEL2 <= RDEN_DEL1;
+    end if;
+  end process;  
 
-  u0: DUAL_PORT_RAM
-    port map(
-      DATA_IN => DATA_ADC_POS,
-      DATA_OUT => Net_8,
-      RDCLOCK => CLKRD,
-      RD_ADDRESS => Net_16,
-      WE => WE,
-      WRCLOCK => CLK200MHz,
-      WR_ADDRESS => WR_ADDRESS);
+  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TAKE_DATA <= '1';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME
+        TAKE_DATA <= '0';
+      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN
+        TAKE_DATA <= '1';
+      end if;
+    end if;
+  end process;  
 
-  u1: ADDRESS_COUNTERS
-    port map(
-      CLK200MHz => CLK200MHz,
-      CLKRD => CLKRD,
-      COINC_TO_END_TIME => COINC_TO_END_TIME,
-      DATA_OUT => DATA_OUT,
-      DATA_OUT_NEG => Net_1,
-      DATA_OUT_POS => Net_8,
-      DATA_READY => DATA_READY,
-      MASTER => MASTER,
-      RDEN => RDEN,
-      RD_ADDRESS => Net_16,
-      READOUT_BUSY => READOUT_BUSY,
-      SYSRST => SYSRST,
-      TOTAL_TIME => TOTAL_TIME,
-      WE => WE,
-      WR_ADDRESS => WR_ADDRESS);
+  -- DATA_READY is valid when the FIFOs are not taking data
+  -- not TAKE_DATA is synchronized with the readoutclock
+  process(CLKRD,SYSRST)
+  begin
+    if SYSRST = '1' then
+      DATA_READY_PRE <= '0';
+    elsif (CLKRD'event and CLKRD = '1') then
+      DATA_READY_PRE <= not TAKE_DATA;
+      DATA_READY <= DATA_READY_PRE;
+      READOUT_BUSY <= READOUT_BUSY_TMP;
+    end if;
+  end process;  
 
-  u2: DUAL_PORT_RAM
-    port map(
-      DATA_IN => DATA_ADC_NEG,
-      DATA_OUT => Net_1,
-      RDCLOCK => CLKRD,
-      RD_ADDRESS => Net_16,
-      WE => WE,
-      WRCLOCK => CLK200MHz,
-      WR_ADDRESS => WR_ADDRESS);
-end a0 ; -- of STORAGE
+  -- RD_ADDRESS and toggle outputbus
+  process(CLKRD)
+  begin
+    if (CLKRD'event and CLKRD = '1') then
+      if RDEN = '1' then
+        if POS_NEG_PHASE = '1' then
+          RD_ADDRESS_TMP <= RD_ADDRESS_TMP;
+        else
+          if RD_ADDRESS_TMP = 2020 then
+            RD_ADDRESS_TMP <= 0;
+          else
+            RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;
+          end if;
+        end if;
+        POS_NEG_PHASE <= not POS_NEG_PHASE;
+        READOUT_BUSY_TMP <= '1';          
+      else
+        RD_ADDRESS_TMP <= BEGIN_PRE_TIME;
+        POS_NEG_PHASE <= '1'; 
+        READOUT_BUSY_TMP <= '0';
+      end if;  
+    end if;
+  end process;  
+  
+  DATA_OUT_TMP <= DATA_OUT_POS  when POS_NEG_PHASE = '1' else DATA_OUT_NEG;
+  DATA_OUT <= DATA_OUT_TMP when READOUT_BUSY_TMP = '1' else "000000000000";
+
+end rtl ; -- of RD_ADDRES_COUNTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_STUFF'.
@@ -7305,8 +7296,8 @@ begin
 end structure ; -- of DATA_CONTROLLER
 
 --------------------------------------------------------------------------------
--- Entity declaration of 'STORAGE_ONE_CHANNEL'.
--- Last modified : Mon Oct 01 14:21:29 2007.
+-- Entity declaration of 'STORAGE_CHANNELS'.
+-- Last modified : Mon Oct 22 15:33:42 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7315,87 +7306,279 @@ use ieee.numeric_std.all ;
 use ieee.std_logic_unsigned.all ;
 use ieee.std_logic_1164.all ;
 
-entity STORAGE_ONE_CHANNEL is
+entity STORAGE_CHANNELS is
   port(
-    CLK200MHz          : in     std_logic;
-    CLKRD              : in     std_logic;
-    COINC_TO_END_TIME1 : in     std_logic;
-    COINC_TO_END_TIME2 : in     std_logic;
-    DATA_ADC_NEG       : in     std_logic_vector(11 downto 0);
-    DATA_ADC_POS       : in     std_logic_vector(11 downto 0);
-    DATA_OUT1          : out    std_logic_vector(11 downto 0);
-    DATA_OUT2          : out    std_logic_vector(11 downto 0);
-    DATA_READY1        : out    std_logic;
-    DATA_READY2        : out    std_logic;
-    MASTER             : in     std_logic;
-    RDEN1              : in     std_logic;
-    RDEN2              : in     std_logic;
-    READOUT_BUSY1      : out    std_logic;
-    READOUT_BUSY2      : out    std_logic;
-    SYSRST             : in     std_logic;
-    TOTAL_TIME         : in     integer range 2000 downto 0);
-end STORAGE_ONE_CHANNEL ;
+    CLK200MHz               : in     std_logic;
+    CLKRD                   : in     std_logic;
+    COINC_TO_END_TIME_FIFO1 : in     std_logic;
+    COINC_TO_END_TIME_FIFO2 : in     std_logic;
+    DATA_ADC_NEG_CH1        : in     std_logic_vector(11 downto 0);
+    DATA_ADC_NEG_CH2        : in     std_logic_vector(11 downto 0);
+    DATA_ADC_POS_CH1        : in     std_logic_vector(11 downto 0);
+    DATA_ADC_POS_CH2        : in     std_logic_vector(11 downto 0);
+    DATA_OUT1_CH1           : out    std_logic_vector(11 downto 0);
+    DATA_OUT1_CH2           : out    std_logic_vector(11 downto 0);
+    DATA_OUT2_CH1           : out    std_logic_vector(11 downto 0);
+    DATA_OUT2_CH2           : out    std_logic_vector(11 downto 0);
+    DATA_READY1_CH1         : out    std_logic;
+    DATA_READY1_CH2         : out    std_logic;
+    DATA_READY2_CH1         : out    std_logic;
+    DATA_READY2_CH2         : out    std_logic;
+    MASTER                  : in     std_logic;
+    RDEN1_CH1               : in     std_logic;
+    RDEN1_CH2               : in     std_logic;
+    RDEN2_CH1               : in     std_logic;
+    RDEN2_CH2               : in     std_logic;
+    READOUT_BUSY1_CH1       : out    std_logic;
+    READOUT_BUSY1_CH2       : out    std_logic;
+    READOUT_BUSY2_CH1       : out    std_logic;
+    READOUT_BUSY2_CH2       : out    std_logic;
+    SYSRST                  : in     std_logic;
+    TOTAL_TIME              : in     integer range 2000 downto 0;
+    WE                      : out    std_logic);
+end STORAGE_CHANNELS ;
 
 --------------------------------------------------------------------------------
--- Architecture 'structure' of 'STORAGE_ONE_CHANNEL'
--- Last modified : Mon Oct 01 14:21:29 2007.
+-- Architecture 'structure' of 'STORAGE_CHANNELS'
+-- Last modified : Mon Oct 22 15:33:42 2007.
 --------------------------------------------------------------------------------
 
-architecture structure of STORAGE_ONE_CHANNEL is
+architecture structure of STORAGE_CHANNELS is
 
-  component STORAGE
+  component DUAL_PORT_RAM
     port(
+      DATA_IN    : in     std_logic_vector(11 downto 0);
+      DATA_OUT   : out    std_logic_vector(11 downto 0);
+      RDCLOCK    : in     std_logic;
+      RD_ADDRESS : in     integer range 2020 downto 0;
+      WE         : in     std_logic;
+      WRCLOCK    : in     std_logic;
+      WR_ADDRESS : in     integer range 2020 downto 0);
+  end component ;
+
+  component WR_ADDRES_COUNTER
+    port(
+      BEGIN_PRE_TIME_OUT : out    integer range 2020 downto 0;
+      CLK200MHz          : in     std_logic;
+      COINC_TO_END_TIME  : in     std_logic;
+      MASTER             : in     std_logic;
+      RDEN_CH1           : in     std_logic;
+      RDEN_CH2           : in     std_logic;
+      SYSRST             : in     std_logic;
+      TOTAL_TIME         : in     integer range 2000 downto 0;
+      WE                 : out    std_logic;
+      WR_ADDRESS         : out    integer range 2020 downto 0);
+  end component ;
+
+  component RD_ADDRES_COUNTER
+    port(
+      BEGIN_PRE_TIME    : in     integer range 2020 downto 0;
       CLK200MHz         : in     std_logic;
       CLKRD             : in     std_logic;
       COINC_TO_END_TIME : in     std_logic;
-      DATA_ADC_NEG      : in     std_logic_vector(11 downto 0);
-      DATA_ADC_POS      : in     std_logic_vector(11 downto 0);
       DATA_OUT          : out    std_logic_vector(11 downto 0);
+      DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);
+      DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
       DATA_READY        : out    std_logic;
-      MASTER            : in     std_logic;
       RDEN              : in     std_logic;
+      RD_ADDRESS        : out    integer range 2020 downto 0;
       READOUT_BUSY      : out    std_logic;
-      SYSRST            : in     std_logic;
-      TOTAL_TIME        : in     integer range 2000 downto 0);
+      SYSRST            : in     std_logic);
   end component ;
+
+  signal WR_ADDRESS              :  integer range 2020 downto 0;
+  signal WE_net                  :  std_logic;
+  signal RD_ADDRESS              :  integer range 2020 downto 0;
+  signal DATA_OUT3               :  std_logic_vector(11 downto 0);
+  signal DATA_OUT                :  std_logic_vector(11 downto 0);
+  signal RD_ADDRESS1             :  integer range 2020 downto 0;
+  signal DATA_OUT1               :  std_logic_vector(11 downto 0);
+  signal DATA_OUT2               :  std_logic_vector(11 downto 0);
+  signal WR_ADDRESS0             :  integer range 2020 downto 0;
+  signal WE0                     :  std_logic;
+  signal RD_ADDRESS0             :  integer range 2020 downto 0;
+  signal DATA_OUT0               :  std_logic_vector(11 downto 0);
+  signal Net_6                   :  integer range 2020 downto 0;
+  signal Net_7                   :  std_logic_vector(11 downto 0);
+  signal Net_8                   :  std_logic_vector(11 downto 0);
+  signal BEGIN_PRE_TIME_OUT      :  integer range 2020 downto 0;
+  signal BEGIN_PRE_TIME_OUT0     :  integer range 2020 downto 0;
+  signal DATA_OUT4               :  std_logic_vector(11 downto 0);
 
 begin
 
+  WE <= WE_net;
 
-  u0: STORAGE
+  u1: DUAL_PORT_RAM
     port map(
-      CLK200MHz => CLK200MHz,
-      CLKRD => CLKRD,
-      COINC_TO_END_TIME => COINC_TO_END_TIME1,
-      DATA_ADC_NEG => DATA_ADC_POS,
-      DATA_ADC_POS => DATA_ADC_NEG,
+      DATA_IN => DATA_ADC_POS_CH1,
+      DATA_OUT => DATA_OUT3,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => RD_ADDRESS,
+      WE => WE_net,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS);
+
+  u2: DUAL_PORT_RAM
+    port map(
+      DATA_IN => DATA_ADC_NEG_CH1,
+      DATA_OUT => DATA_OUT,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => RD_ADDRESS,
+      WE => WE_net,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS);
+
+  u4: DUAL_PORT_RAM
+    port map(
+      DATA_IN => DATA_ADC_POS_CH2,
       DATA_OUT => DATA_OUT1,
-      DATA_READY => DATA_READY1,
-      MASTER => MASTER,
-      RDEN => RDEN1,
-      READOUT_BUSY => READOUT_BUSY1,
-      SYSRST => SYSRST,
-      TOTAL_TIME => TOTAL_TIME);
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => RD_ADDRESS1,
+      WE => WE_net,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS);
 
-  u1: STORAGE
+  u5: DUAL_PORT_RAM
     port map(
+      DATA_IN => DATA_ADC_NEG_CH2,
+      DATA_OUT => DATA_OUT2,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => RD_ADDRESS1,
+      WE => WE_net,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS);
+
+  u12: WR_ADDRES_COUNTER
+    port map(
+      BEGIN_PRE_TIME_OUT => BEGIN_PRE_TIME_OUT,
+      CLK200MHz => CLK200MHz,
+      COINC_TO_END_TIME => COINC_TO_END_TIME_FIFO1,
+      MASTER => MASTER,
+      RDEN_CH1 => RDEN1_CH1,
+      RDEN_CH2 => RDEN1_CH2,
+      SYSRST => SYSRST,
+      TOTAL_TIME => TOTAL_TIME,
+      WE => WE_net,
+      WR_ADDRESS => WR_ADDRESS);
+
+  u13: RD_ADDRES_COUNTER
+    port map(
+      BEGIN_PRE_TIME => BEGIN_PRE_TIME_OUT,
       CLK200MHz => CLK200MHz,
       CLKRD => CLKRD,
-      COINC_TO_END_TIME => COINC_TO_END_TIME2,
-      DATA_ADC_NEG => DATA_ADC_POS,
-      DATA_ADC_POS => DATA_ADC_NEG,
-      DATA_OUT => DATA_OUT2,
-      DATA_READY => DATA_READY2,
+      COINC_TO_END_TIME => COINC_TO_END_TIME_FIFO1,
+      DATA_OUT => DATA_OUT1_CH2,
+      DATA_OUT_NEG => DATA_OUT2,
+      DATA_OUT_POS => DATA_OUT1,
+      DATA_READY => DATA_READY1_CH2,
+      RDEN => RDEN1_CH2,
+      RD_ADDRESS => RD_ADDRESS1,
+      READOUT_BUSY => READOUT_BUSY1_CH2,
+      SYSRST => SYSRST);
+
+  u3: DUAL_PORT_RAM
+    port map(
+      DATA_IN => DATA_ADC_POS_CH1,
+      DATA_OUT => DATA_OUT4,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => RD_ADDRESS0,
+      WE => WE0,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS0);
+
+  u6: DUAL_PORT_RAM
+    port map(
+      DATA_IN => DATA_ADC_NEG_CH1,
+      DATA_OUT => DATA_OUT0,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => RD_ADDRESS0,
+      WE => WE0,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS0);
+
+  u7: DUAL_PORT_RAM
+    port map(
+      DATA_IN => DATA_ADC_POS_CH2,
+      DATA_OUT => Net_7,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => Net_6,
+      WE => WE0,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS0);
+
+  u8: DUAL_PORT_RAM
+    port map(
+      DATA_IN => DATA_ADC_NEG_CH2,
+      DATA_OUT => Net_8,
+      RDCLOCK => CLKRD,
+      RD_ADDRESS => Net_6,
+      WE => WE0,
+      WRCLOCK => CLK200MHz,
+      WR_ADDRESS => WR_ADDRESS0);
+
+  u15: RD_ADDRES_COUNTER
+    port map(
+      BEGIN_PRE_TIME => BEGIN_PRE_TIME_OUT0,
+      CLK200MHz => CLK200MHz,
+      CLKRD => CLKRD,
+      COINC_TO_END_TIME => COINC_TO_END_TIME_FIFO2,
+      DATA_OUT => DATA_OUT2_CH2,
+      DATA_OUT_NEG => Net_8,
+      DATA_OUT_POS => Net_7,
+      DATA_READY => DATA_READY2_CH2,
+      RDEN => RDEN2_CH2,
+      RD_ADDRESS => Net_6,
+      READOUT_BUSY => READOUT_BUSY2_CH2,
+      SYSRST => SYSRST);
+
+  u16: RD_ADDRES_COUNTER
+    port map(
+      BEGIN_PRE_TIME => BEGIN_PRE_TIME_OUT,
+      CLK200MHz => CLK200MHz,
+      CLKRD => CLKRD,
+      COINC_TO_END_TIME => COINC_TO_END_TIME_FIFO1,
+      DATA_OUT => DATA_OUT1_CH1,
+      DATA_OUT_NEG => DATA_OUT,
+      DATA_OUT_POS => DATA_OUT3,
+      DATA_READY => DATA_READY1_CH1,
+      RDEN => RDEN1_CH1,
+      RD_ADDRESS => RD_ADDRESS,
+      READOUT_BUSY => READOUT_BUSY1_CH1,
+      SYSRST => SYSRST);
+
+  u17: WR_ADDRES_COUNTER
+    port map(
+      BEGIN_PRE_TIME_OUT => BEGIN_PRE_TIME_OUT0,
+      CLK200MHz => CLK200MHz,
+      COINC_TO_END_TIME => COINC_TO_END_TIME_FIFO2,
       MASTER => MASTER,
-      RDEN => RDEN2,
-      READOUT_BUSY => READOUT_BUSY2,
+      RDEN_CH1 => RDEN2_CH1,
+      RDEN_CH2 => RDEN2_CH2,
       SYSRST => SYSRST,
-      TOTAL_TIME => TOTAL_TIME);
-end structure ; -- of STORAGE_ONE_CHANNEL
+      TOTAL_TIME => TOTAL_TIME,
+      WE => WE0,
+      WR_ADDRESS => WR_ADDRESS0);
+
+  u18: RD_ADDRES_COUNTER
+    port map(
+      BEGIN_PRE_TIME => BEGIN_PRE_TIME_OUT0,
+      CLK200MHz => CLK200MHz,
+      CLKRD => CLKRD,
+      COINC_TO_END_TIME => COINC_TO_END_TIME_FIFO2,
+      DATA_OUT => DATA_OUT2_CH1,
+      DATA_OUT_NEG => DATA_OUT0,
+      DATA_OUT_POS => DATA_OUT4,
+      DATA_READY => DATA_READY2_CH1,
+      RDEN => RDEN2_CH1,
+      RD_ADDRESS => RD_ADDRESS0,
+      READOUT_BUSY => READOUT_BUSY2_CH1,
+      SYSRST => SYSRST);
+end structure ; -- of STORAGE_CHANNELS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Tue Oct 09 09:43:58 2007.
+-- Last modified : Mon Oct 22 09:29:48 2007.
 --------------------------------------------------------------------------------
 
 
@@ -7486,31 +7669,10 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Tue Oct 09 09:43:58 2007.
+-- Last modified : Mon Oct 22 09:29:48 2007.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
-
-  component STORAGE_ONE_CHANNEL
-    port(
-      CLK200MHz          : in     std_logic;
-      CLKRD              : in     std_logic;
-      COINC_TO_END_TIME1 : in     std_logic;
-      COINC_TO_END_TIME2 : in     std_logic;
-      DATA_ADC_NEG       : in     std_logic_vector(11 downto 0);
-      DATA_ADC_POS       : in     std_logic_vector(11 downto 0);
-      DATA_OUT1          : out    std_logic_vector(11 downto 0);
-      DATA_OUT2          : out    std_logic_vector(11 downto 0);
-      DATA_READY1        : out    std_logic;
-      DATA_READY2        : out    std_logic;
-      MASTER             : in     std_logic;
-      RDEN1              : in     std_logic;
-      RDEN2              : in     std_logic;
-      READOUT_BUSY1      : out    std_logic;
-      READOUT_BUSY2      : out    std_logic;
-      SYSRST             : in     std_logic;
-      TOTAL_TIME         : in     integer range 2000 downto 0);
-  end component ;
 
   component PLL
     port(
@@ -7815,45 +7977,43 @@ architecture a0 of hisparc is
 
   component FIFO_SELECT
     port(
-      BLOCK_COINC            : out    std_logic;
-      CLK200MHz              : in     std_logic;
-      CLKRD                  : in     std_logic;
-      COINC_TO_END_TIME      : in     std_logic;
-      COINC_TO_END_TIME1_CH1 : out    std_logic;
-      COINC_TO_END_TIME1_CH2 : out    std_logic;
-      COINC_TO_END_TIME2_CH1 : out    std_logic;
-      COINC_TO_END_TIME2_CH2 : out    std_logic;
-      CTD_IN                 : in     std_logic_vector(31 downto 0);
-      CTD_OUT                : out    std_logic_vector(31 downto 0);
-      DATA_OUT1_CH1          : in     std_logic_vector(11 downto 0);
-      DATA_OUT1_CH2          : in     std_logic_vector(11 downto 0);
-      DATA_OUT2_CH1          : in     std_logic_vector(11 downto 0);
-      DATA_OUT2_CH2          : in     std_logic_vector(11 downto 0);
-      DATA_OUT_CH1           : out    std_logic_vector(11 downto 0);
-      DATA_OUT_CH2           : out    std_logic_vector(11 downto 0);
-      DATA_READY1_CH1        : in     std_logic;
-      DATA_READY1_CH2        : in     std_logic;
-      DATA_READY2_CH1        : in     std_logic;
-      DATA_READY2_CH2        : in     std_logic;
-      DATA_READY_CH1         : out    std_logic;
-      DATA_READY_CH2         : out    std_logic;
-      DATA_VALID_CH1         : out    std_logic;
-      DATA_VALID_CH2         : out    std_logic;
-      GPS_TS_IN              : in     std_logic_vector(55 downto 0);
-      GPS_TS_OUT             : out    std_logic_vector(55 downto 0);
-      RDEN1_CH1              : out    std_logic;
-      RDEN1_CH2              : out    std_logic;
-      RDEN2_CH1              : out    std_logic;
-      RDEN2_CH2              : out    std_logic;
-      RDEN_CH1               : in     std_logic;
-      RDEN_CH2               : in     std_logic;
-      READOUT_BUSY1_CH1      : in     std_logic;
-      READOUT_BUSY1_CH2      : in     std_logic;
-      READOUT_BUSY2_CH1      : in     std_logic;
-      READOUT_BUSY2_CH2      : in     std_logic;
-      SYSRST                 : in     std_logic;
-      TRIGGER_PATTERN        : out    std_logic_vector(15 downto 0);
-      TRIGGER_PATTERN_IN     : in     std_logic_vector(15 downto 0));
+      BLOCK_COINC             : out    std_logic;
+      CLK200MHz               : in     std_logic;
+      CLKRD                   : in     std_logic;
+      COINC_TO_END_TIME       : in     std_logic;
+      COINC_TO_END_TIME_FIFO1 : out    std_logic;
+      COINC_TO_END_TIME_FIFO2 : out    std_logic;
+      CTD_IN                  : in     std_logic_vector(31 downto 0);
+      CTD_OUT                 : out    std_logic_vector(31 downto 0);
+      DATA_OUT1_CH1           : in     std_logic_vector(11 downto 0);
+      DATA_OUT1_CH2           : in     std_logic_vector(11 downto 0);
+      DATA_OUT2_CH1           : in     std_logic_vector(11 downto 0);
+      DATA_OUT2_CH2           : in     std_logic_vector(11 downto 0);
+      DATA_OUT_CH1            : out    std_logic_vector(11 downto 0);
+      DATA_OUT_CH2            : out    std_logic_vector(11 downto 0);
+      DATA_READY1_CH1         : in     std_logic;
+      DATA_READY1_CH2         : in     std_logic;
+      DATA_READY2_CH1         : in     std_logic;
+      DATA_READY2_CH2         : in     std_logic;
+      DATA_READY_CH1          : out    std_logic;
+      DATA_READY_CH2          : out    std_logic;
+      DATA_VALID_CH1          : out    std_logic;
+      DATA_VALID_CH2          : out    std_logic;
+      GPS_TS_IN               : in     std_logic_vector(55 downto 0);
+      GPS_TS_OUT              : out    std_logic_vector(55 downto 0);
+      RDEN1_CH1               : out    std_logic;
+      RDEN1_CH2               : out    std_logic;
+      RDEN2_CH1               : out    std_logic;
+      RDEN2_CH2               : out    std_logic;
+      RDEN_CH1                : in     std_logic;
+      RDEN_CH2                : in     std_logic;
+      READOUT_BUSY1_CH1       : in     std_logic;
+      READOUT_BUSY1_CH2       : in     std_logic;
+      READOUT_BUSY2_CH1       : in     std_logic;
+      READOUT_BUSY2_CH2       : in     std_logic;
+      SYSRST                  : in     std_logic;
+      TRIGGER_PATTERN         : out    std_logic_vector(15 downto 0);
+      TRIGGER_PATTERN_IN      : in     std_logic_vector(15 downto 0));
   end component ;
 
   component SOFT_RESET
@@ -7872,19 +8032,51 @@ architecture a0 of hisparc is
       nOUTP    : out    std_logic);
   end component ;
 
+  component STORAGE_CHANNELS
+    port(
+      CLK200MHz               : in     std_logic;
+      CLKRD                   : in     std_logic;
+      COINC_TO_END_TIME_FIFO1 : in     std_logic;
+      COINC_TO_END_TIME_FIFO2 : in     std_logic;
+      DATA_ADC_NEG_CH1        : in     std_logic_vector(11 downto 0);
+      DATA_ADC_NEG_CH2        : in     std_logic_vector(11 downto 0);
+      DATA_ADC_POS_CH1        : in     std_logic_vector(11 downto 0);
+      DATA_ADC_POS_CH2        : in     std_logic_vector(11 downto 0);
+      DATA_OUT1_CH1           : out    std_logic_vector(11 downto 0);
+      DATA_OUT1_CH2           : out    std_logic_vector(11 downto 0);
+      DATA_OUT2_CH1           : out    std_logic_vector(11 downto 0);
+      DATA_OUT2_CH2           : out    std_logic_vector(11 downto 0);
+      DATA_READY1_CH1         : out    std_logic;
+      DATA_READY1_CH2         : out    std_logic;
+      DATA_READY2_CH1         : out    std_logic;
+      DATA_READY2_CH2         : out    std_logic;
+      MASTER                  : in     std_logic;
+      RDEN1_CH1               : in     std_logic;
+      RDEN1_CH2               : in     std_logic;
+      RDEN2_CH1               : in     std_logic;
+      RDEN2_CH2               : in     std_logic;
+      READOUT_BUSY1_CH1       : out    std_logic;
+      READOUT_BUSY1_CH2       : out    std_logic;
+      READOUT_BUSY2_CH1       : out    std_logic;
+      READOUT_BUSY2_CH2       : out    std_logic;
+      SYSRST                  : in     std_logic;
+      TOTAL_TIME              : in     integer range 2000 downto 0;
+      WE                      : out    std_logic);
+  end component ;
+
   signal SYSRST                  :  std_logic;
   signal CLK200MHz               :  std_logic;
   signal CLKRD                   :  std_logic;
-  signal DOUT_POS1               :  std_logic_vector(11 downto 0);
-  signal DOUT_NEG1               :  std_logic_vector(11 downto 0);
+  signal DOUT_POS0               :  std_logic_vector(11 downto 0);
+  signal DOUT_NEG0               :  std_logic_vector(11 downto 0);
   signal WR_ADDRESS              :  integer range 12020 downto 0;
   signal WE                      :  std_logic;
   signal DATA_OUT_net0           :  std_logic_vector(7 downto 0);
   signal RD_ADDRESS              :  integer range 12020 downto 0;
   signal RDCLOCK                 :  std_logic;
   signal CONV_DATA_READY_net     :  std_logic;
-  signal DOUT_POS0               :  std_logic_vector(11 downto 0);
-  signal DOUT_NEG0               :  std_logic_vector(11 downto 0);
+  signal DOUT_POS                :  std_logic_vector(11 downto 0);
+  signal DOUT_NEG                :  std_logic_vector(11 downto 0);
   signal locked                  :  std_logic;
   signal TOTAL_TIME_6X           :  integer range 12000 downto 0;
   signal DOUT_VALID              :  std_logic;
@@ -7920,20 +8112,8 @@ architecture a0 of hisparc is
   signal GPS_DATA_OUT            :  std_logic;
   signal TR_CONDITION            :  std_logic_vector(7 downto 0);
   signal FIFO_EMPTY0             :  std_logic;
-  signal EVENT_DATA_READY        :  std_logic;
-  signal DATA_OUT1               :  std_logic_vector(11 downto 0);
-  signal DATA_OUT2               :  std_logic_vector(11 downto 0);
-  signal READOUT_BUSY2           :  std_logic;
-  signal COINC_TO_END_TIME2_CH1  :  std_logic;
   signal DATA_OUT_CH1            :  std_logic_vector(11 downto 0);
   signal RDEN_CH1                :  std_logic;
-  signal DATA_OUT3               :  std_logic_vector(11 downto 0);
-  signal DATA_OUT4               :  std_logic_vector(11 downto 0);
-  signal READOUT_BUSY3           :  std_logic;
-  signal READOUT_BUSY4           :  std_logic;
-  signal RDEN1_CH4               :  std_logic;
-  signal COINC_TO_END_TIME1_CH2  :  std_logic;
-  signal COINC_TO_END_TIME2_CH2  :  std_logic;
   signal TRIGGER_PATTERN         :  std_logic_vector(15 downto 0);
   signal DATA_OUT_CH2            :  std_logic_vector(11 downto 0);
   signal RDEN_CH2                :  std_logic;
@@ -7941,20 +8121,11 @@ architecture a0 of hisparc is
   signal GPS_TS_OUT0             :  std_logic_vector(55 downto 0);
   signal CTD_OUT0                :  std_logic_vector(31 downto 0);
   signal GPS_TS_OUT1             :  std_logic_vector(55 downto 0);
-  signal DATA_READY5             :  std_logic;
-  signal DATA_READY3             :  std_logic;
-  signal COINC_TO_END_TIME1_CH1  :  std_logic;
-  signal RDEN2_CH1               :  std_logic;
-  signal RDEN2_CH2               :  std_logic;
   signal DATA_READY_CH1          :  std_logic;
   signal DATA_READY_CH2          :  std_logic;
-  signal READOUT_BUSY5           :  std_logic;
   signal DATA_VALID_CH2          :  std_logic;
   signal COINC1                  :  std_logic;
   signal DATA_VALID_CH1          :  std_logic;
-  signal RDEN1_CH1               :  std_logic;
-  signal DATA_READY4             :  std_logic;
-  signal DATA_READY6             :  std_logic;
   signal SLAVE_PRESENT           :  std_logic;
   signal TEMP_OUT                :  std_logic_vector(31 downto 0);
   signal CTD_OUT1                :  std_logic_vector(31 downto 0);
@@ -7964,16 +8135,33 @@ architecture a0 of hisparc is
   signal ALTITUDE_OUT            :  std_logic_vector(63 downto 0);
   signal MASTER0                 :  std_logic;
   signal COMPDATA_OUT            :  std_logic_vector(127 downto 0);
-  signal COMPDATA_VALID_OUT      :  std_logic;
+  signal COMPDATA_VALID_OUT0     :  std_logic;
   signal COMPDATA_READOUT_DONE   :  std_logic;
-  signal READ_BUSY_OUT           :  std_logic;
   signal GPS_PROG_ENABLE0        :  std_logic;
-  signal STOP_READ_OUT           :  std_logic;
-  signal ERROR_READ_OUT          :  std_logic;
   signal BLOCK_COINC             :  std_logic;
   signal ONE_PPS_OUT0            :  std_logic;
-  signal FORCE_MASTER            :  std_logic;
+  signal FORCE_MASTER0           :  std_logic;
   signal OUTP                    :  std_logic;
+  signal DATA_OUT1_CH2           :  std_logic_vector(11 downto 0);
+  signal DATA_OUT2_CH2           :  std_logic_vector(11 downto 0);
+  signal DATA_READY2_CH2         :  std_logic;
+  signal READOUT_BUSY1_CH3       :  std_logic;
+  signal READOUT_BUSY2_CH2       :  std_logic;
+  signal RDEN1_CH3               :  std_logic;
+  signal RDEN2_CH2               :  std_logic;
+  signal DATA_OUT1_CH1           :  std_logic_vector(11 downto 0);
+  signal DATA_OUT2_CH1           :  std_logic_vector(11 downto 0);
+  signal DATA_READY1_CH1         :  std_logic;
+  signal DATA_READY2_CH1         :  std_logic;
+  signal READOUT_BUSY1_CH1       :  std_logic;
+  signal READOUT_BUSY2_CH1       :  std_logic;
+  signal RDEN1_CH1               :  std_logic;
+  signal RDEN2_CH1               :  std_logic;
+  signal EVENT_DATA_READY0       :  std_logic;
+  signal COINC_TO_END_TIME_FIFO1 :  std_logic;
+  signal COINC_TO_END_TIME_FIFO2 :  std_logic;
+  signal WE0                     :  std_logic;
+  signal DATA_READY1_CH2         :  std_logic;
 
 begin
   --Comparator signals twisted due to
@@ -7981,26 +8169,6 @@ begin
   --ADC signals twisted due to
   --analog channel swap on the board
 
-
-  u3: STORAGE_ONE_CHANNEL
-    port map(
-      CLK200MHz => CLK200MHz,
-      CLKRD => CLKRD,
-      COINC_TO_END_TIME1 => COINC_TO_END_TIME1_CH1,
-      COINC_TO_END_TIME2 => COINC_TO_END_TIME2_CH1,
-      DATA_ADC_NEG => DOUT_POS1,
-      DATA_ADC_POS => DOUT_NEG1,
-      DATA_OUT1 => DATA_OUT1,
-      DATA_OUT2 => DATA_OUT2,
-      DATA_READY1 => DATA_READY6,
-      DATA_READY2 => DATA_READY4,
-      MASTER => FORCE_MASTER,
-      RDEN1 => RDEN1_CH1,
-      RDEN2 => RDEN2_CH1,
-      READOUT_BUSY1 => READOUT_BUSY5,
-      READOUT_BUSY2 => READOUT_BUSY2,
-      SYSRST => SYSRST,
-      TOTAL_TIME => TOTAL_TIME);
 
   u4: PLL
     port map(
@@ -8015,8 +8183,8 @@ begin
       DATA_POS_ADC => DATA_POS_ADC_CH2,
       DCO_NEG_ADC => DCO_NEG_ADC_CH2,
       DCO_POS_ADC => DCO_POS_ADC_CH2,
-      DOUT_NEG => DOUT_NEG1,
-      DOUT_POS => DOUT_POS1,
+      DOUT_NEG => DOUT_NEG0,
+      DOUT_POS => DOUT_POS0,
       LOCKED => locked,
       SYSRST => SYSRST);
 
@@ -8062,7 +8230,7 @@ begin
       CLKRD => CLKRD,
       DATA_READY_CONV => CONV_DATA_READY_net,
       DOUT_VALID => DOUT_VALID,
-      EVENT_DATA_READY => EVENT_DATA_READY,
+      EVENT_DATA_READY => EVENT_DATA_READY0,
       FIFO_EMPTY => FIFO_EMPTY0,
       RDCLOCK => RDCLOCK,
       RDEN => RDEN,
@@ -8077,30 +8245,10 @@ begin
       DATA_POS_ADC => DATA_POS_ADC_CH1,
       DCO_NEG_ADC => DCO_NEG_ADC_CH1,
       DCO_POS_ADC => DCO_POS_ADC_CH1,
-      DOUT_NEG => DOUT_NEG0,
-      DOUT_POS => DOUT_POS0,
+      DOUT_NEG => DOUT_NEG,
+      DOUT_POS => DOUT_POS,
       LOCKED => locked,
       SYSRST => SYSRST);
-
-  u10: STORAGE_ONE_CHANNEL
-    port map(
-      CLK200MHz => CLK200MHz,
-      CLKRD => CLKRD,
-      COINC_TO_END_TIME1 => COINC_TO_END_TIME1_CH2,
-      COINC_TO_END_TIME2 => COINC_TO_END_TIME2_CH2,
-      DATA_ADC_NEG => DOUT_POS0,
-      DATA_ADC_POS => DOUT_NEG0,
-      DATA_OUT1 => DATA_OUT3,
-      DATA_OUT2 => DATA_OUT4,
-      DATA_READY1 => DATA_READY5,
-      DATA_READY2 => DATA_READY3,
-      MASTER => FORCE_MASTER,
-      RDEN1 => RDEN1_CH4,
-      RDEN2 => RDEN2_CH2,
-      READOUT_BUSY1 => READOUT_BUSY3,
-      READOUT_BUSY2 => READOUT_BUSY4,
-      SYSRST => SYSRST,
-      TOTAL_TIME => TOTAL_TIME);
 
   u12: TRIGGER_STUFF
     port map(
@@ -8113,14 +8261,14 @@ begin
       COMPH2 => COMPH1,
       COMPL1 => COMPL2,
       COMPL2 => COMPL1,
-      DATA_ADC1_NEG => DOUT_NEG1,
-      DATA_ADC1_POS => DOUT_POS1,
-      DATA_ADC2_NEG => DOUT_NEG0,
-      DATA_ADC2_POS => DOUT_POS0,
+      DATA_ADC1_NEG => DOUT_NEG0,
+      DATA_ADC1_POS => DOUT_POS0,
+      DATA_ADC2_NEG => DOUT_NEG,
+      DATA_ADC2_POS => DOUT_POS,
       EXT_TR_IN => EXT_TR_IN,
       HITLED1 => HITLED1,
       HITLED2 => HITLED2,
-      MASTER => FORCE_MASTER,
+      MASTER => FORCE_MASTER0,
       MH1 => MH1_net,
       MH2 => MH2_net,
       ML1 => ML1_net,
@@ -8161,7 +8309,7 @@ begin
       COINC_TIME => COINC_TIME,
       COMPDATA => COMPDATA_OUT,
       COMPDATA_READOUT_DONE => COMPDATA_READOUT_DONE,
-      COMPDATA_VALID => COMPDATA_VALID_OUT,
+      COMPDATA_VALID => COMPDATA_VALID_OUT0,
       CTD_IN => CTD_OUT,
       CTD_TS_ONE_PPS => CTD_TS_ONE_PPS_OUT,
       CTP_TS_ONE_PPS => CTP_TS_ONE_PPS_OUT,
@@ -8183,10 +8331,10 @@ begin
       DAC_nRD => DAC_nRD,
       DAC_nWR => DAC_nWR,
       DATA_IN => DATA_OUT,
-      DATA_READY_FIFO => EVENT_DATA_READY,
+      DATA_READY_FIFO => EVENT_DATA_READY0,
       DIN_VALID => DOUT_VALID,
-      ERROR_READ_OUT => ERROR_READ_OUT,
-      FORCE_MASTER => FORCE_MASTER,
+      ERROR_READ_OUT => open,
+      FORCE_MASTER => FORCE_MASTER0,
       GPS_PROG_ENABLE => GPS_PROG_ENABLE0,
       GPS_TS_IN => GPS_TS_OUT,
       GPS_TS_ONE_PPS => GPS_TS_ONE_PPS_OUT,
@@ -8197,12 +8345,12 @@ begin
       ONE_PPS => ONE_PPS_OUT0,
       POST_TIME => POST_TIME,
       RDEN => RDEN,
-      READ_BUSY_OUT => READ_BUSY_OUT,
+      READ_BUSY_OUT => open,
       SAT_INFO => SAT_INFO_OUT,
       SERIAL_NUMBER => SERIAL_NUMBER,
       SLAVE_PRESENT => SLAVE_PRESENT,
       SOFT_RESET => SOFT_RESET0,
-      STOP_READ_OUT => STOP_READ_OUT,
+      STOP_READ_OUT => open,
       SYSRST => SYSRST,
       TEMP => TEMP_OUT,
       THH1 => THH1,
@@ -8231,7 +8379,7 @@ begin
       COINC => COINC1,
       COMPDATA_OUT => COMPDATA_OUT,
       COMPDATA_READOUT_DONE => COMPDATA_READOUT_DONE,
-      COMPDATA_VALID_OUT => COMPDATA_VALID_OUT,
+      COMPDATA_VALID_OUT => COMPDATA_VALID_OUT0,
       COMPH1_IN => COMPH2,
       COMPH2_IN => COMPH1,
       COMPL1_IN => COMPL2,
@@ -8284,7 +8432,7 @@ begin
       LVDS_OUT2 => LVDS_OUT2,
       LVDS_OUT3 => LVDS_OUT3,
       LVDS_OUT4 => LVDS_OUT4,
-      MASTER => FORCE_MASTER,
+      MASTER => FORCE_MASTER0,
       MH1 => MH1_net,
       MH2 => MH2_net,
       ML1 => ML1_net,
@@ -8298,7 +8446,7 @@ begin
 
   u19: INVERTER
     port map(
-      INP => FORCE_MASTER,
+      INP => FORCE_MASTER0,
       OUTP => nMASTER);
 
   u20: DUMMIES
@@ -8327,22 +8475,20 @@ begin
       CLK200MHz => CLK200MHz,
       CLKRD => CLKRD,
       COINC_TO_END_TIME => COINC1,
-      COINC_TO_END_TIME1_CH1 => COINC_TO_END_TIME1_CH1,
-      COINC_TO_END_TIME1_CH2 => COINC_TO_END_TIME1_CH2,
-      COINC_TO_END_TIME2_CH1 => COINC_TO_END_TIME2_CH1,
-      COINC_TO_END_TIME2_CH2 => COINC_TO_END_TIME2_CH2,
+      COINC_TO_END_TIME_FIFO1 => COINC_TO_END_TIME_FIFO1,
+      COINC_TO_END_TIME_FIFO2 => COINC_TO_END_TIME_FIFO2,
       CTD_IN => CTD_OUT1,
       CTD_OUT => CTD_OUT0,
-      DATA_OUT1_CH1 => DATA_OUT1,
-      DATA_OUT1_CH2 => DATA_OUT3,
-      DATA_OUT2_CH1 => DATA_OUT2,
-      DATA_OUT2_CH2 => DATA_OUT4,
+      DATA_OUT1_CH1 => DATA_OUT1_CH1,
+      DATA_OUT1_CH2 => DATA_OUT1_CH2,
+      DATA_OUT2_CH1 => DATA_OUT2_CH1,
+      DATA_OUT2_CH2 => DATA_OUT2_CH2,
       DATA_OUT_CH1 => DATA_OUT_CH1,
       DATA_OUT_CH2 => DATA_OUT_CH2,
-      DATA_READY1_CH1 => DATA_READY6,
-      DATA_READY1_CH2 => DATA_READY5,
-      DATA_READY2_CH1 => DATA_READY4,
-      DATA_READY2_CH2 => DATA_READY3,
+      DATA_READY1_CH1 => DATA_READY1_CH1,
+      DATA_READY1_CH2 => DATA_READY1_CH2,
+      DATA_READY2_CH1 => DATA_READY2_CH1,
+      DATA_READY2_CH2 => DATA_READY2_CH2,
       DATA_READY_CH1 => DATA_READY_CH1,
       DATA_READY_CH2 => DATA_READY_CH2,
       DATA_VALID_CH1 => DATA_VALID_CH1,
@@ -8350,15 +8496,15 @@ begin
       GPS_TS_IN => GPS_TS_OUT1,
       GPS_TS_OUT => GPS_TS_OUT0,
       RDEN1_CH1 => RDEN1_CH1,
-      RDEN1_CH2 => RDEN1_CH4,
+      RDEN1_CH2 => RDEN1_CH3,
       RDEN2_CH1 => RDEN2_CH1,
       RDEN2_CH2 => RDEN2_CH2,
       RDEN_CH1 => RDEN_CH1,
       RDEN_CH2 => RDEN_CH2,
-      READOUT_BUSY1_CH1 => READOUT_BUSY5,
-      READOUT_BUSY1_CH2 => READOUT_BUSY3,
-      READOUT_BUSY2_CH1 => READOUT_BUSY2,
-      READOUT_BUSY2_CH2 => READOUT_BUSY4,
+      READOUT_BUSY1_CH1 => READOUT_BUSY1_CH1,
+      READOUT_BUSY1_CH2 => READOUT_BUSY1_CH3,
+      READOUT_BUSY2_CH1 => READOUT_BUSY2_CH1,
+      READOUT_BUSY2_CH2 => READOUT_BUSY2_CH2,
       SYSRST => SYSRST,
       TRIGGER_PATTERN => TRIGGER_PATTERN0,
       TRIGGER_PATTERN_IN => TRIGGER_PATTERN);
@@ -8378,28 +8524,28 @@ begin
   u24: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => ERROR_READ_OUT,
+      INP => RDEN1_CH3,
       SYSRST => SYSRST,
       nOUTP => LED4);
 
   u27: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => STOP_READ_OUT,
+      INP => READOUT_BUSY1_CH3,
       SYSRST => SYSRST,
       nOUTP => LED6);
 
   u28: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => READ_BUSY_OUT,
+      INP => WE0,
       SYSRST => SYSRST,
       nOUTP => LED9);
 
   u29: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => EVENT_DATA_READY,
+      INP => COMPDATA_VALID_OUT0,
       SYSRST => SYSRST,
       nOUTP => LED8);
 
@@ -8421,5 +8567,36 @@ begin
     port map(
       INP => COINC1,
       OUTP => OUTP);
+
+  u2: STORAGE_CHANNELS
+    port map(
+      CLK200MHz => CLK200MHz,
+      CLKRD => CLKRD,
+      COINC_TO_END_TIME_FIFO1 => COINC_TO_END_TIME_FIFO1,
+      COINC_TO_END_TIME_FIFO2 => COINC_TO_END_TIME_FIFO2,
+      DATA_ADC_NEG_CH1 => DOUT_NEG0,
+      DATA_ADC_NEG_CH2 => DOUT_NEG,
+      DATA_ADC_POS_CH1 => DOUT_POS0,
+      DATA_ADC_POS_CH2 => DOUT_POS,
+      DATA_OUT1_CH1 => DATA_OUT1_CH1,
+      DATA_OUT1_CH2 => DATA_OUT1_CH2,
+      DATA_OUT2_CH1 => DATA_OUT2_CH1,
+      DATA_OUT2_CH2 => DATA_OUT2_CH2,
+      DATA_READY1_CH1 => DATA_READY1_CH1,
+      DATA_READY1_CH2 => DATA_READY1_CH2,
+      DATA_READY2_CH1 => DATA_READY2_CH1,
+      DATA_READY2_CH2 => DATA_READY2_CH2,
+      MASTER => FORCE_MASTER0,
+      RDEN1_CH1 => RDEN1_CH1,
+      RDEN1_CH2 => RDEN1_CH3,
+      RDEN2_CH1 => RDEN2_CH1,
+      RDEN2_CH2 => RDEN2_CH2,
+      READOUT_BUSY1_CH1 => READOUT_BUSY1_CH1,
+      READOUT_BUSY1_CH2 => READOUT_BUSY1_CH3,
+      READOUT_BUSY2_CH1 => READOUT_BUSY2_CH1,
+      READOUT_BUSY2_CH2 => READOUT_BUSY2_CH2,
+      SYSRST => SYSRST,
+      TOTAL_TIME => TOTAL_TIME,
+      WE => WE0);
 end a0 ; -- of hisparc
 

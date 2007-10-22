@@ -5,20 +5,20 @@
     (NAME "FIFO_SELECT")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2240 7744)
+    (GEOMETRY 0 0 2240 9152)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Jun 29 21:30:34 2007")
+      (PROPERTY "STAMP_TIME" "Fri Oct 19 16:05:57 2007")
       (NAME "FIFO_SELECT")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1158095709 "Tue Sep 12 23:15:09 2006")
-      (MODIFIED 1183145434 "Fri Jun 29 21:30:34 2007")
+      (MODIFIED 1192802698 "Fri Oct 19 16:04:58 2007")
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc6d850000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2136 40 2216)
+      (GEOMETRY -40 3288 40 3368)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2176)
+        (POSITION 64 3328)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -61,11 +61,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 88 40 168)
+      (GEOMETRY -40 664 40 744)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 128)
+        (POSITION 64 704)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -79,24 +79,24 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME1_CH1")
+          (NAME "COINC_TO_END_TIME_FIFO1")
           (USERNAME 1)
         )
         (HDL_TYPE
         )
         (MODE 2)
       )
-      (GEOMETRY -40 1112 40 1192)
+      (GEOMETRY -40 2776 40 2856)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1152)
+        (POSITION 64 2816)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
-        (TEXT "COINC_TO_END_TIME1_CH1")
+        (TEXT "COINC_TO_END_TIME_FIFO1")
       )
     )
     (PORT
@@ -111,11 +111,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 856 40 936)
+      (GEOMETRY -40 1432 40 1512)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 896)
+        (POSITION 64 1472)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -136,11 +136,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 344 40 424)
+      (GEOMETRY -40 920 40 1000)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 384)
+        (POSITION 64 960)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -161,11 +161,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 600 40 680)
+      (GEOMETRY -40 1176 40 1256)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 640)
+        (POSITION 64 1216)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -190,11 +190,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 216 40 296)
+      (GEOMETRY -40 792 40 872)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 256)
+        (POSITION 64 832)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -215,11 +215,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 984 40 1064)
+      (GEOMETRY -40 1560 40 1640)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1024)
+        (POSITION 64 1600)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -240,11 +240,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY -40 1048 40 1128)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 64 1088)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -265,11 +265,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 728 40 808)
+      (GEOMETRY -40 1304 40 1384)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 768)
+        (POSITION 64 1344)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -283,24 +283,24 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME2_CH1")
+          (NAME "COINC_TO_END_TIME_FIFO2")
           (USERNAME 1)
         )
         (HDL_TYPE
         )
         (MODE 2)
       )
-      (GEOMETRY -40 1240 40 1320)
+      (GEOMETRY -40 2968 40 3048)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1280)
+        (POSITION 64 3008)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
-        (TEXT "COINC_TO_END_TIME2_CH1")
+        (TEXT "COINC_TO_END_TIME_FIFO2")
       )
     )
     (PORT
@@ -315,11 +315,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1624 40 1704)
+      (GEOMETRY -40 7640 40 7720)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1664)
+        (POSITION 64 7680)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -340,11 +340,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1752 40 1832)
+      (GEOMETRY -40 7768 40 7848)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1792)
+        (POSITION 64 7808)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -365,11 +365,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1880 40 1960)
+      (GEOMETRY -40 7896 40 7976)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1920)
+        (POSITION 64 7936)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -394,42 +394,17 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 4760 40 4840)
+      (GEOMETRY -40 6168 40 6248)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 4800)
+        (POSITION 64 6208)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
         (TEXT "DATA_OUT1_CH2(11:0)")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8a2046d6427054c3b05edc3f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME1_CH2")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY -40 5784 40 5864)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 5824)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "COINC_TO_END_TIME1_CH2")
       )
     )
     (PORT
@@ -444,11 +419,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 5528 40 5608)
+      (GEOMETRY -40 6936 40 7016)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5568)
+        (POSITION 64 6976)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -469,11 +444,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 5016 40 5096)
+      (GEOMETRY -40 6424 40 6504)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5056)
+        (POSITION 64 6464)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -494,11 +469,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 5272 40 5352)
+      (GEOMETRY -40 6680 40 6760)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5312)
+        (POSITION 64 6720)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -523,11 +498,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 4888 40 4968)
+      (GEOMETRY -40 6296 40 6376)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 4928)
+        (POSITION 64 6336)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -548,11 +523,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 5656 40 5736)
+      (GEOMETRY -40 7064 40 7144)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5696)
+        (POSITION 64 7104)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -573,11 +548,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 5144 40 5224)
+      (GEOMETRY -40 6552 40 6632)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5184)
+        (POSITION 64 6592)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -598,42 +573,17 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 5400 40 5480)
+      (GEOMETRY -40 6808 40 6888)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5440)
+        (POSITION 64 6848)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
         (TEXT "READOUT_BUSY2_CH2")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8a2046f7427054c3b05edcbf850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME2_CH2")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY -40 5912 40 5992)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 5952)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "COINC_TO_END_TIME2_CH2")
       )
     )
     (PORT
@@ -652,11 +602,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY -40 7448 40 7528)
+      (GEOMETRY -40 8856 40 8936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 7488)
+        (POSITION 64 8896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -681,11 +631,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 2200 280 2280 360)
+      (GEOMETRY 2200 1688 2280 1768)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 320)
+        (POSITION 2176 1728)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -706,11 +656,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2200 536 2280 616)
+      (GEOMETRY 2200 1944 2280 2024)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 576)
+        (POSITION 2176 1984)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -731,11 +681,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 152 2280 232)
+      (GEOMETRY 2200 1560 2280 1640)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 192)
+        (POSITION 2176 1600)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -756,11 +706,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 408 2280 488)
+      (GEOMETRY 2200 1816 2280 1896)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 448)
+        (POSITION 2176 1856)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -785,11 +735,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 2200 4952 2280 5032)
+      (GEOMETRY 2200 6360 2280 6440)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 4992)
+        (POSITION 2176 6400)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -810,11 +760,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2200 5208 2280 5288)
+      (GEOMETRY 2200 6616 2280 6696)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 5248)
+        (POSITION 2176 6656)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -835,11 +785,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 4824 2280 4904)
+      (GEOMETRY 2200 6232 2280 6312)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 4864)
+        (POSITION 2176 6272)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -860,11 +810,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 5080 2280 5160)
+      (GEOMETRY 2200 6488 2280 6568)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 5120)
+        (POSITION 2176 6528)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -889,11 +839,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY 2200 5592 2280 5672)
+      (GEOMETRY 2200 7000 2280 7080)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 5632)
+        (POSITION 2176 7040)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -919,11 +869,11 @@
           (RANGE "55" "0")
         )
       )
-      (GEOMETRY 2200 7448 2280 7528)
+      (GEOMETRY 2200 8856 2280 8936)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 7488)
+        (POSITION 2176 8896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -949,11 +899,11 @@
           (RANGE "31" "0")
         )
       )
-      (GEOMETRY 2200 7576 2280 7656)
+      (GEOMETRY 2200 8984 2280 9064)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 7616)
+        (POSITION 2176 9024)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -979,11 +929,11 @@
           (RANGE "55" "0")
         )
       )
-      (GEOMETRY 2200 6424 2280 6504)
+      (GEOMETRY 2200 7832 2280 7912)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 6464)
+        (POSITION 2176 7872)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1009,11 +959,11 @@
           (RANGE "31" "0")
         )
       )
-      (GEOMETRY 2200 6552 2280 6632)
+      (GEOMETRY 2200 7960 2280 8040)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 6592)
+        (POSITION 2176 8000)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1034,11 +984,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 7576 40 7656)
+      (GEOMETRY -40 8984 40 9064)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 7616)
+        (POSITION 64 9024)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1063,45 +1013,43 @@
                  "-- Copy of the interface declaration of Entity 'FIFO_SELECT' :"
                  "-- "
                  "--   port("
-                 "--     BLOCK_COINC            : out    std_logic;"
-                 "--     CLK200MHz              : in     std_logic;"
-                 "--     CLKRD                  : in     std_logic;"
-                 "--     COINC_TO_END_TIME      : in     std_logic;"
-                 "--     COINC_TO_END_TIME1_CH1 : out    std_logic;"
-                 "--     COINC_TO_END_TIME1_CH2 : out    std_logic;"
-                 "--     COINC_TO_END_TIME2_CH1 : out    std_logic;"
-                 "--     COINC_TO_END_TIME2_CH2 : out    std_logic;"
-                 "--     CTD_IN                 : in     std_logic_vector(31 downto 0);"
-                 "--     CTD_OUT                : out    std_logic_vector(31 downto 0);"
-                 "--     DATA_OUT1_CH1          : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT1_CH2          : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT2_CH1          : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT2_CH2          : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT_CH1           : out    std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT_CH2           : out    std_logic_vector(11 downto 0);"
-                 "--     DATA_READY1_CH1        : in     std_logic;"
-                 "--     DATA_READY1_CH2        : in     std_logic;"
-                 "--     DATA_READY2_CH1        : in     std_logic;"
-                 "--     DATA_READY2_CH2        : in     std_logic;"
-                 "--     DATA_READY_CH1         : out    std_logic;"
-                 "--     DATA_READY_CH2         : out    std_logic;"
-                 "--     DATA_VALID_CH1         : out    std_logic;"
-                 "--     DATA_VALID_CH2         : out    std_logic;"
-                 "--     GPS_TS_IN              : in     std_logic_vector(55 downto 0);"
-                 "--     GPS_TS_OUT             : out    std_logic_vector(55 downto 0);"
-                 "--     RDEN1_CH1              : out    std_logic;"
-                 "--     RDEN1_CH2              : out    std_logic;"
-                 "--     RDEN2_CH1              : out    std_logic;"
-                 "--     RDEN2_CH2              : out    std_logic;"
-                 "--     RDEN_CH1               : in     std_logic;"
-                 "--     RDEN_CH2               : in     std_logic;"
-                 "--     READOUT_BUSY1_CH1      : in     std_logic;"
-                 "--     READOUT_BUSY1_CH2      : in     std_logic;"
-                 "--     READOUT_BUSY2_CH1      : in     std_logic;"
-                 "--     READOUT_BUSY2_CH2      : in     std_logic;"
-                 "--     SYSRST                 : in     std_logic;"
-                 "--     TRIGGER_PATTERN        : out    std_logic_vector(15 downto 0);"
-                 "--     TRIGGER_PATTERN_IN     : in     std_logic_vector(15 downto 0));"
+                 "--     BLOCK_COINC             : out    std_logic;"
+                 "--     CLK200MHz               : in     std_logic;"
+                 "--     CLKRD                   : in     std_logic;"
+                 "--     COINC_TO_END_TIME       : in     std_logic;"
+                 "--     COINC_TO_END_TIME_FIFO1 : out    std_logic;"
+                 "--     COINC_TO_END_TIME_FIFO2 : out    std_logic;"
+                 "--     CTD_IN                  : in     std_logic_vector(31 downto 0);"
+                 "--     CTD_OUT                 : out    std_logic_vector(31 downto 0);"
+                 "--     DATA_OUT1_CH1           : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT1_CH2           : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT2_CH1           : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT2_CH2           : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT_CH1            : out    std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT_CH2            : out    std_logic_vector(11 downto 0);"
+                 "--     DATA_READY1_CH1         : in     std_logic;"
+                 "--     DATA_READY1_CH2         : in     std_logic;"
+                 "--     DATA_READY2_CH1         : in     std_logic;"
+                 "--     DATA_READY2_CH2         : in     std_logic;"
+                 "--     DATA_READY_CH1          : out    std_logic;"
+                 "--     DATA_READY_CH2          : out    std_logic;"
+                 "--     DATA_VALID_CH1          : out    std_logic;"
+                 "--     DATA_VALID_CH2          : out    std_logic;"
+                 "--     GPS_TS_IN               : in     std_logic_vector(55 downto 0);"
+                 "--     GPS_TS_OUT              : out    std_logic_vector(55 downto 0);"
+                 "--     RDEN1_CH1               : out    std_logic;"
+                 "--     RDEN1_CH2               : out    std_logic;"
+                 "--     RDEN2_CH1               : out    std_logic;"
+                 "--     RDEN2_CH2               : out    std_logic;"
+                 "--     RDEN_CH1                : in     std_logic;"
+                 "--     RDEN_CH2                : in     std_logic;"
+                 "--     READOUT_BUSY1_CH1       : in     std_logic;"
+                 "--     READOUT_BUSY1_CH2       : in     std_logic;"
+                 "--     READOUT_BUSY2_CH1       : in     std_logic;"
+                 "--     READOUT_BUSY2_CH2       : in     std_logic;"
+                 "--     SYSRST                  : in     std_logic;"
+                 "--     TRIGGER_PATTERN         : out    std_logic_vector(15 downto 0);"
+                 "--     TRIGGER_PATTERN_IN      : in     std_logic_vector(15 downto 0));"
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
@@ -1159,10 +1107,8 @@
                  "  process(CLK200MHz)"
                  "  begin"
                  "    if (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      COINC_TO_END_TIME1_CH1 <= COINC_TO_END_TIME1_TMP;"
-                 "      COINC_TO_END_TIME2_CH1 <= COINC_TO_END_TIME2_TMP;"
-                 "      COINC_TO_END_TIME1_CH2 <= COINC_TO_END_TIME1_TMP;"
-                 "      COINC_TO_END_TIME2_CH2 <= COINC_TO_END_TIME2_TMP;"
+                 "      COINC_TO_END_TIME_FIFO1 <= COINC_TO_END_TIME1_TMP;"
+                 "      COINC_TO_END_TIME_FIFO2 <= COINC_TO_END_TIME2_TMP;"
                  "      COINC_TO_END_TIME1_TMP_DEL <= COINC_TO_END_TIME1_TMP;"
                  "      COINC_TO_END_TIME2_TMP_DEL <= COINC_TO_END_TIME2_TMP;"
                  "    end if;"

@@ -62,7 +62,6 @@ signal DECODE_BYTE1 : std_logic_vector (7 downto 0); -- This byte stores a GET_B
 signal MESSAGE_SELECT : std_logic_vector (1 downto 0); -- "00" means nothing selected; "01" means 8F-AB selected; "10" means 8F-AC selected; "11" means 47 selected;
 signal STUFFED_BYTE : std_logic; -- This bit is thrue when there is a stuffed byte; in other words: an even number of 0x10 bytes 
 signal END_BYTE_DETECTED : std_logic; -- This bit is thrue when a odd number of 0x10 bytes and a 0x03 byte is detected
-signal DUMP  : std_logic_vector (7 downto 0); -- Dump byte for case statement to satisfy Modelsim
 signal GPS_SEC  : std_logic_vector (7 downto 0); -- Seconds (0 to 59)
 signal GPS_MIN   : std_logic_vector (7 downto 0); -- Minutes (0 to 59)
 signal GPS_HOUR   : std_logic_vector (7 downto 0); -- Hours (0 to 23)
@@ -171,7 +170,6 @@ signal GPS_SAT12LEV2  : std_logic_vector (7 downto 0); -- Signal level of satell
 signal GPS_SAT12LEV1  : std_logic_vector (7 downto 0); -- Signal level of satellite 12
 signal GPS_SAT12LEV0  : std_logic_vector (7 downto 0); -- Signal level of satellite 12
 
-signal COINC_DEL: std_logic ;
 signal CTP_COUNT: std_logic_vector(31 downto 0);
 signal NEG_FASE_BIT: std_logic ; -- This signal clocks the one PPS signal on the negative fase of the CLK200MHz clock to determine the offset 2.5ns better
 signal NEG_FASE_BIT_DEL: std_logic ; -- NEG_FASE_BIT after a negative edge of the CLK200MHz clock
@@ -199,6 +197,10 @@ signal COMPL1_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a
 signal COMPH1_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPH1
 signal COMPL2_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPL2
 signal COMPH2_TIMESTAMP: std_logic_vector(87 downto 0); -- Latches the time on a rising edge of COMPH2
+signal COMPDATA_L1: std_logic_vector(127 downto 0); 
+signal COMPDATA_H1: std_logic_vector(127 downto 0); 
+signal COMPDATA_L2: std_logic_vector(127 downto 0); 
+signal COMPDATA_H2: std_logic_vector(127 downto 0); 
 signal RST_COMPL1: std_logic ; -- Reset signal synchronized at 200MHz 
 signal RST_COMPH1: std_logic ; -- Reset signal synchronized at 200MHz 
 signal RST_COMPL2: std_logic ; -- Reset signal synchronized at 200MHz 
@@ -215,9 +217,16 @@ signal VALID_COMPL1_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz
 signal VALID_COMPH1_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz 
 signal VALID_COMPL2_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz 
 signal VALID_COMPH2_10MHZ: std_logic ; -- Valid signal synchronized at 10MHz 
+signal VALID_COMPL1_10MHZ_DEL: std_logic ; 
+signal VALID_COMPH1_10MHZ_DEL: std_logic ;  
+signal VALID_COMPL2_10MHZ_DEL: std_logic ;  
+signal VALID_COMPH2_10MHZ_DEL: std_logic ;  
+signal VALID_COMPL1_10MHZ_OUT: std_logic ; 
+signal VALID_COMPH1_10MHZ_OUT: std_logic ;  
+signal VALID_COMPL2_10MHZ_OUT: std_logic ;  
+signal VALID_COMPH2_10MHZ_OUT: std_logic ;  
 signal COMPDATA_READOUT_DONE_DEL1: std_logic ; 
 signal COMPDATA_READOUT_DONE_DEL2: std_logic ; 
-signal COMPDATA_VALID_OUT_TMP: std_logic ; 
 
 begin
   
@@ -532,7 +541,7 @@ begin
    	      when 14 => GPS_MONTH <= DECODE_BYTE1;    
    	      when 15 => GPS_YEAR1 <= DECODE_BYTE1;    
    	      when 16 => GPS_YEAR0 <= DECODE_BYTE1;    
-          when others => DUMP <=  DECODE_BYTE1;      
+          when others =>       
         end case;
       end if;
       if MESSAGE_SELECT = "10" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' then
@@ -569,7 +578,7 @@ begin
    	      when 61 => GPS_QUANT2 <= DECODE_BYTE1;    
    	      when 62 => GPS_QUANT1 <= DECODE_BYTE1;    
    	      when 63 => GPS_QUANT0 <= DECODE_BYTE1;    
-          when others => DUMP <=  DECODE_BYTE1;      
+          when others =>       
         end case;
       end if;
       if MESSAGE_SELECT = "11" and SAMPLE_COUNT = 144 and STUFFED_BYTE = '0' and not (GET_BYTE = "00000011" and DECODE_BYTE1 = "00010000") then
@@ -695,7 +704,7 @@ begin
    	      when 59 => GPS_SAT12LEV2 <= DECODE_BYTE1;    
    	      when 60 => GPS_SAT12LEV1 <= DECODE_BYTE1;    
    	      when 61 => GPS_SAT12LEV0 <= DECODE_BYTE1;    
-          when others => DUMP <=  DECODE_BYTE1;      
+          when others =>       
         end case;
       end if;
     end if;
@@ -707,11 +716,9 @@ begin
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      COINC_DEL <= '0';        
       ONE_PPS_DEL1 <= '0';        
       ONE_PPS_DEL2 <= '0';        
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_DEL <= COINC;        
       ONE_PPS_DEL1 <= ONE_PPS;        
       ONE_PPS_DEL2 <= ONE_PPS_DEL1;        
     end if;
@@ -968,6 +975,10 @@ begin
 	  VALID_COMPH1_10MHZ <= '0';                 
 	  VALID_COMPL2_10MHZ <= '0';                 
 	  VALID_COMPH2_10MHZ <= '0';                 
+	  VALID_COMPL1_10MHZ_DEL <= '0';                 
+	  VALID_COMPH1_10MHZ_DEL <= '0';                 
+	  VALID_COMPL2_10MHZ_DEL <= '0';                 
+	  VALID_COMPH2_10MHZ_DEL <= '0';                 
       COMPDATA_READOUT_DONE_DEL1 <= '0';
       COMPDATA_READOUT_DONE_DEL2 <= '0';
 	elsif CLK10MHz'event and CLK10MHz = '1' then
@@ -975,6 +986,10 @@ begin
 	  VALID_COMPH1_10MHZ <= VALID_COMPH1;                 
 	  VALID_COMPL2_10MHZ <= VALID_COMPL2;                 
 	  VALID_COMPH2_10MHZ <= VALID_COMPH2;                 
+	  VALID_COMPL1_10MHZ_DEL <= VALID_COMPL1_10MHZ;                 
+	  VALID_COMPH1_10MHZ_DEL <= VALID_COMPH1_10MHZ;                 
+	  VALID_COMPL2_10MHZ_DEL <= VALID_COMPL2_10MHZ;                 
+	  VALID_COMPH2_10MHZ_DEL <= VALID_COMPH2_10MHZ;                 
 	  COMPDATA_READOUT_DONE_DEL1 <= COMPDATA_READOUT_DONE;                 
 	  COMPDATA_READOUT_DONE_DEL2 <= COMPDATA_READOUT_DONE_DEL1;                 
 	end if;
@@ -1172,52 +1187,79 @@ begin
   process(CLK10MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      COMPDATA_VALID_OUT_TMP <= '0';
+      COMPDATA_L1 <= (others => '0');
+      COMPDATA_H1 <= (others => '0');
+      COMPDATA_L2 <= (others => '0');
+      COMPDATA_H2 <= (others => '0');
+      COMPDATA_OUT <= (others => '0');
+      VALID_COMPL1_10MHZ_OUT <= '0';
+      VALID_COMPH1_10MHZ_OUT <= '0';
+      VALID_COMPL2_10MHZ_OUT <= '0';
+      VALID_COMPH2_10MHZ_OUT <= '0';
       RST_COMPL1_10MHZ <= '0';
       RST_COMPH1_10MHZ <= '0';
       RST_COMPL2_10MHZ <= '0';
       RST_COMPH2_10MHZ <= '0';
     elsif (CLK10MHz'event and CLK10MHz = '1') then
-      if COMPDATA_VALID_OUT_TMP = '0' then
-        if VALID_COMPL1_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+      if VALID_COMPL1_10MHZ = '1' and VALID_COMPL1_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPL1_10MHZ
+        VALID_COMPL1_10MHZ_OUT <= '1'; -- set VALID_COMPL1_10MHZ_OUT
+        COMPDATA_L1(127 downto 120) <= "00000001";
+        COMPDATA_L1(119 downto 32) <= COMPL1_TIMESTAMP;
+        COMPDATA_L1(31 downto 0) <= COMPL1_COUNT;
+      end if;
+      if VALID_COMPH1_10MHZ = '1' and VALID_COMPH1_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPH1_10MHZ
+        VALID_COMPH1_10MHZ_OUT <= '1'; -- set VALID_COMPL2_10MHZ_OUT
+        COMPDATA_H1(127 downto 120) <= "00000010";
+        COMPDATA_H1(119 downto 32) <= COMPH1_TIMESTAMP;
+        COMPDATA_H1(31 downto 0) <= COMPH1_COUNT;
+      end if;
+      if VALID_COMPL2_10MHZ = '1' and VALID_COMPL2_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPL2_10MHZ
+        VALID_COMPL2_10MHZ_OUT <= '1'; -- set VALID_COMPL2_10MHZ_OUT
+        COMPDATA_L2(127 downto 120) <= "00000100";
+        COMPDATA_L2(119 downto 32) <= COMPL2_TIMESTAMP;
+        COMPDATA_L2(31 downto 0) <= COMPL2_COUNT;
+      end if;
+      if VALID_COMPH2_10MHZ = '1' and VALID_COMPH2_10MHZ_DEL = '0' then -- at rising edge of VALID_COMPH2_10MHZ
+        VALID_COMPH2_10MHZ_OUT <= '1'; -- set VALID_COMPH2_10MHZ_OUT
+        COMPDATA_H2(127 downto 120) <= "00001000";
+        COMPDATA_H2(119 downto 32) <= COMPH2_TIMESTAMP;
+        COMPDATA_H2(31 downto 0) <= COMPH2_COUNT;
+      end if;
+      if VALID_COMPL1_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_L1;
+      elsif VALID_COMPH1_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_H1;
+      elsif VALID_COMPL2_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_L2;
+      elsif VALID_COMPH2_10MHZ_OUT = '1' then
+        COMPDATA_OUT <= COMPDATA_H2;
+      else
+        COMPDATA_OUT <= (others => '0');
+      end if;
+      if COMPDATA_READOUT_DONE_DEL1 = '1' and COMPDATA_READOUT_DONE_DEL2 = '0' then
+        if VALID_COMPL1_10MHZ_OUT = '1' then
+          VALID_COMPL1_10MHZ_OUT <= '0';
           RST_COMPL1_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00000001";
-          COMPDATA_OUT(119 downto 32) <= COMPL1_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPL1_COUNT;
-        elsif VALID_COMPH1_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+        elsif VALID_COMPH1_10MHZ_OUT = '1' then
+          VALID_COMPH1_10MHZ_OUT <= '0';
           RST_COMPH1_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00000010";
-          COMPDATA_OUT(119 downto 32) <= COMPH1_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPH1_COUNT;
-        elsif VALID_COMPL2_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+        elsif VALID_COMPL2_10MHZ_OUT = '1' then
+          VALID_COMPL2_10MHZ_OUT <= '0';
           RST_COMPL2_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00000100";
-          COMPDATA_OUT(119 downto 32) <= COMPL2_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPL2_COUNT;
-        elsif VALID_COMPH2_10MHZ = '1' then
-          COMPDATA_VALID_OUT_TMP <= '1';
+        elsif VALID_COMPH2_10MHZ_OUT = '1' then
+          VALID_COMPH2_10MHZ_OUT <= '0';
           RST_COMPH2_10MHZ <= '1';
-          COMPDATA_OUT(127 downto 120) <= "00001000";
-          COMPDATA_OUT(119 downto 32) <= COMPH2_TIMESTAMP;
-          COMPDATA_OUT(31 downto 0) <= COMPH2_COUNT;
         end if;
-      elsif COMPDATA_VALID_OUT_TMP = '1' then
+      else
         RST_COMPL1_10MHZ <= '0';
         RST_COMPH1_10MHZ <= '0';
         RST_COMPL2_10MHZ <= '0';
         RST_COMPH2_10MHZ <= '0';
-        if COMPDATA_READOUT_DONE_DEL1 = '1' and COMPDATA_READOUT_DONE_DEL2 = '0' then
-          COMPDATA_VALID_OUT_TMP <= '0';
-          COMPDATA_OUT <= (others => '0');
-        end if;
       end if;
     end if;
   end process;  
 
-  COMPDATA_VALID_OUT <= COMPDATA_VALID_OUT_TMP;
+  COMPDATA_VALID_OUT <= VALID_COMPL1_10MHZ_OUT or VALID_COMPH1_10MHZ_OUT or VALID_COMPL2_10MHZ_OUT or VALID_COMPH2_10MHZ_OUT;
 
 end rtl ; -- of GPS_STUFF
 

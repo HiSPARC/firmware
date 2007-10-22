@@ -1,0 +1,400 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c012ca189b5b07409210f7015730000")
+    (NAME "WR_ADDRES_COUNTER")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1984 2368)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Tue Oct 23 12:35:01 2007")
+      (NAME "WR_ADDRES_COUNTER")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1191926680 "Tue Oct 09 12:44:40 2007")
+      (MODIFIED 1193084978 "Mon Oct 22 22:29:38 2007")
+    )
+    (PORT
+      (OBID "eprt0c012ca1feb5b07409210f7085730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_TO_END_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 856 2024 936)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "COINC_TO_END_TIME")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1feb5b07409210f7006730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TOTAL_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2000" "0")
+        )
+      )
+      (GEOMETRY 1944 536 2024 616)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 576)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TOTAL_TIME(2000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca131c5b07409210f70f7730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WR_ADDRESS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2020" "0")
+        )
+      )
+      (GEOMETRY -40 1752 40 1832)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1792)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WR_ADDRESS(2020:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca131c5b07409210f7008730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "WE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 2072 40 2152)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2112)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "WE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca131c5b07409210f7018730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 728 40 808)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca131c5b07409210f7028730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 920 40 1000)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 960)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca131c5b07409210f7038730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1112 40 1192)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1152)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca15306b07409210f7039730000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "BEGIN_PRE_TIME_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2020" "0")
+        )
+      )
+      (GEOMETRY -40 1432 40 1512)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1472)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "BEGIN_PRE_TIME_OUT(2020:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca182d9817409310f70d2e60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN_CH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 1624 2024 1704)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 1664)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RDEN_CH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1353ac17409310f70b6e60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN_CH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1944 1816 2024 1896)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1920 1856)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RDEN_CH2")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c012ca189b5b07409210f7025730000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c012ca189b5b07409210f7025730000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'WR_ADDRES_COUNTER."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'WR_ADDRES_COUNTER' :"
+                 "-- "
+                 "--   port("
+                 "--     BEGIN_PRE_TIME_OUT : out    integer range 2020 downto 0;"
+                 "--     CLK200MHz          : in     std_logic;"
+                 "--     COINC_TO_END_TIME  : in     std_logic;"
+                 "--     MASTER             : in     std_logic;"
+                 "--     RDEN_CH1           : in     std_logic;"
+                 "--     RDEN_CH2           : in     std_logic;"
+                 "--     SYSRST             : in     std_logic;"
+                 "--     TOTAL_TIME         : in     integer range 2000 downto 0;"
+                 "--     WE                 : out    std_logic;"
+                 "--     WR_ADDRESS         : out    integer range 2020 downto 0);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of WR_ADDRES_COUNTER is"
+                 ""
+                 "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
+                 "signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME "
+                 "signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;  "
+                 "signal BEGIN_PRE_TIME_SLAVE: integer range 2020 downto 0 ;  "
+                 "signal END_POST_TIME: integer range 2020 downto 0 ; -- write address at end of POST_TIME "
+                 "signal WR_ADDRESS_TMP: integer range 2020 downto 0 ;  "
+                 "signal COINC_TO_END_TIME_DEL: std_logic ;"
+                 "signal RDEN_DEL1: std_logic ;"
+                 "signal RDEN_DEL2: std_logic ;"
+                 ""
+                 "begin"
+                 "  -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO"
+                 "  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
+                 "  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
+                 "  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;"
+                 "--  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
+                 "  WR_ADDRESS <= WR_ADDRESS_TMP;"
+                 "  "
+                 "  BEGIN_PRE_TIME_OUT <= BEGIN_PRE_TIME;"
+                 ""
+                 "  "
+                 "  -- delays"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      COINC_TO_END_TIME_DEL <= '0';"
+                 "      RDEN_DEL1 <= '0';"
+                 "      RDEN_DEL2 <= '0';"
+                 "      WE <= '1';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;"
+                 "      RDEN_DEL1 <= RDEN_CH1;"
+                 "      RDEN_DEL2 <= RDEN_DEL1;"
+                 "      WE <= TAKE_DATA and not RDEN_CH1 and not RDEN_CH2;"
+                 "    end if;"
+                 "  end process;  "
+                 "    "
+                 "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
+                 "  -- and determine END_POST_TIME"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      TAKE_DATA <= '1';"
+                 "      END_POST_TIME <= 0;"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME"
+                 "        TAKE_DATA <= '0';"
+                 "        END_POST_TIME <= WR_ADDRESS_TMP;"
+                 "      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN_CH1"
+                 "        TAKE_DATA <= '1';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- WR_ADDRESS_TMP"
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      WR_ADDRESS_TMP <= 0;"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if TAKE_DATA = '1' then"
+                 "        if WR_ADDRESS_TMP = 2020 then"
+                 "          WR_ADDRESS_TMP <= 0;"
+                 "        else"
+                 "          WR_ADDRESS_TMP <= WR_ADDRESS_TMP + 1;"
+                 "        end if;"
+                 "      else"
+                 "        WR_ADDRESS_TMP <= WR_ADDRESS_TMP; "
+                 "      end if;  "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 ""
+                 "end rtl ; -- of WR_ADDRES_COUNTER"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

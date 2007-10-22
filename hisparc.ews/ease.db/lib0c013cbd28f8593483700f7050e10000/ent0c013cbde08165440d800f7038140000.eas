@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Sep 28 13:01:20 2007")
+      (PROPERTY "STAMP_TIME" "Tue Oct 23 12:35:01 2007")
       (NAME "USB_READ_HANDLER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146492942 "Mon May 01 16:15:42 2006")
-      (MODIFIED 1190976590 "Fri Sep 28 12:49:50 2007")
+      (MODIFIED 1193084978 "Mon Oct 22 22:29:38 2007")
     )
     (PORT
       (OBID "eprt0c013cbd028165440d800f7068140000")
@@ -1936,7 +1936,7 @@
                  "  STATUS(2) <= USB_WRITE_ALLOWED;"
                  "  STATUS(1) <= SLAVE_PRESENT;"
                  "  STATUS(0) <= FORCE_MASTER_TMP;"
-                 "  SOFTWARE_VERSION <= \"00000101\";"
+                 "  SOFTWARE_VERSION <= \"00000110\";"
                  "  VERSION(23 downto 16) <= SOFTWARE_VERSION;"
                  "  VERSION(15 downto 10) <= \"000000\";"
                  "  VERSION(9) <= not SERIAL_NUMBER(9);"

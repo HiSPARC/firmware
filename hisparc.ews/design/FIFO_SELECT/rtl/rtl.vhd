@@ -4,45 +4,43 @@
 -- Copy of the interface declaration of Entity 'FIFO_SELECT' :
 -- 
 --   port(
---     BLOCK_COINC            : out    std_logic;
---     CLK200MHz              : in     std_logic;
---     CLKRD                  : in     std_logic;
---     COINC_TO_END_TIME      : in     std_logic;
---     COINC_TO_END_TIME1_CH1 : out    std_logic;
---     COINC_TO_END_TIME1_CH2 : out    std_logic;
---     COINC_TO_END_TIME2_CH1 : out    std_logic;
---     COINC_TO_END_TIME2_CH2 : out    std_logic;
---     CTD_IN                 : in     std_logic_vector(31 downto 0);
---     CTD_OUT                : out    std_logic_vector(31 downto 0);
---     DATA_OUT1_CH1          : in     std_logic_vector(11 downto 0);
---     DATA_OUT1_CH2          : in     std_logic_vector(11 downto 0);
---     DATA_OUT2_CH1          : in     std_logic_vector(11 downto 0);
---     DATA_OUT2_CH2          : in     std_logic_vector(11 downto 0);
---     DATA_OUT_CH1           : out    std_logic_vector(11 downto 0);
---     DATA_OUT_CH2           : out    std_logic_vector(11 downto 0);
---     DATA_READY1_CH1        : in     std_logic;
---     DATA_READY1_CH2        : in     std_logic;
---     DATA_READY2_CH1        : in     std_logic;
---     DATA_READY2_CH2        : in     std_logic;
---     DATA_READY_CH1         : out    std_logic;
---     DATA_READY_CH2         : out    std_logic;
---     DATA_VALID_CH1         : out    std_logic;
---     DATA_VALID_CH2         : out    std_logic;
---     GPS_TS_IN              : in     std_logic_vector(55 downto 0);
---     GPS_TS_OUT             : out    std_logic_vector(55 downto 0);
---     RDEN1_CH1              : out    std_logic;
---     RDEN1_CH2              : out    std_logic;
---     RDEN2_CH1              : out    std_logic;
---     RDEN2_CH2              : out    std_logic;
---     RDEN_CH1               : in     std_logic;
---     RDEN_CH2               : in     std_logic;
---     READOUT_BUSY1_CH1      : in     std_logic;
---     READOUT_BUSY1_CH2      : in     std_logic;
---     READOUT_BUSY2_CH1      : in     std_logic;
---     READOUT_BUSY2_CH2      : in     std_logic;
---     SYSRST                 : in     std_logic;
---     TRIGGER_PATTERN        : out    std_logic_vector(15 downto 0);
---     TRIGGER_PATTERN_IN     : in     std_logic_vector(15 downto 0));
+--     BLOCK_COINC             : out    std_logic;
+--     CLK200MHz               : in     std_logic;
+--     CLKRD                   : in     std_logic;
+--     COINC_TO_END_TIME       : in     std_logic;
+--     COINC_TO_END_TIME_FIFO1 : out    std_logic;
+--     COINC_TO_END_TIME_FIFO2 : out    std_logic;
+--     CTD_IN                  : in     std_logic_vector(31 downto 0);
+--     CTD_OUT                 : out    std_logic_vector(31 downto 0);
+--     DATA_OUT1_CH1           : in     std_logic_vector(11 downto 0);
+--     DATA_OUT1_CH2           : in     std_logic_vector(11 downto 0);
+--     DATA_OUT2_CH1           : in     std_logic_vector(11 downto 0);
+--     DATA_OUT2_CH2           : in     std_logic_vector(11 downto 0);
+--     DATA_OUT_CH1            : out    std_logic_vector(11 downto 0);
+--     DATA_OUT_CH2            : out    std_logic_vector(11 downto 0);
+--     DATA_READY1_CH1         : in     std_logic;
+--     DATA_READY1_CH2         : in     std_logic;
+--     DATA_READY2_CH1         : in     std_logic;
+--     DATA_READY2_CH2         : in     std_logic;
+--     DATA_READY_CH1          : out    std_logic;
+--     DATA_READY_CH2          : out    std_logic;
+--     DATA_VALID_CH1          : out    std_logic;
+--     DATA_VALID_CH2          : out    std_logic;
+--     GPS_TS_IN               : in     std_logic_vector(55 downto 0);
+--     GPS_TS_OUT              : out    std_logic_vector(55 downto 0);
+--     RDEN1_CH1               : out    std_logic;
+--     RDEN1_CH2               : out    std_logic;
+--     RDEN2_CH1               : out    std_logic;
+--     RDEN2_CH2               : out    std_logic;
+--     RDEN_CH1                : in     std_logic;
+--     RDEN_CH2                : in     std_logic;
+--     READOUT_BUSY1_CH1       : in     std_logic;
+--     READOUT_BUSY1_CH2       : in     std_logic;
+--     READOUT_BUSY2_CH1       : in     std_logic;
+--     READOUT_BUSY2_CH2       : in     std_logic;
+--     SYSRST                  : in     std_logic;
+--     TRIGGER_PATTERN         : out    std_logic_vector(15 downto 0);
+--     TRIGGER_PATTERN_IN      : in     std_logic_vector(15 downto 0));
 -- 
 -- EASE/HDL end ----------------------------------------------------------------
 
@@ -100,10 +98,8 @@ begin
   process(CLK200MHz)
   begin
     if (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_TO_END_TIME1_CH1 <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME2_CH1 <= COINC_TO_END_TIME2_TMP;
-      COINC_TO_END_TIME1_CH2 <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME2_CH2 <= COINC_TO_END_TIME2_TMP;
+      COINC_TO_END_TIME_FIFO1 <= COINC_TO_END_TIME1_TMP;
+      COINC_TO_END_TIME_FIFO2 <= COINC_TO_END_TIME2_TMP;
       COINC_TO_END_TIME1_TMP_DEL <= COINC_TO_END_TIME1_TMP;
       COINC_TO_END_TIME2_TMP_DEL <= COINC_TO_END_TIME2_TMP;
     end if;
