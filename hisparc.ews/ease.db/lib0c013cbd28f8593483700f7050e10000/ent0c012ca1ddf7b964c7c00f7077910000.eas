@@ -5,20 +5,20 @@
     (NAME "SOFT_RESET")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1152 640)
+    (GEOMETRY 0 0 1152 896)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu Oct 11 03:06:43 2007")
+      (PROPERTY "STAMP_TIME" "Fri Dec 21 15:49:14 2007")
       (NAME "SOFT_RESET")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1184595933 "Mon Jul 16 16:25:33 2007")
-      (MODIFIED 1192025954 "Wed Oct 10 16:19:14 2007")
+      (MODIFIED 1198099628 "Wed Dec 19 22:27:08 2007")
     )
     (PORT
       (OBID "eprt0c012ca1e208b964c7c00f70a7910000")
@@ -57,11 +57,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 280 40 360)
+      (GEOMETRY -40 664 40 744)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 320)
+        (POSITION 64 704)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -82,11 +82,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY -40 280 40 360)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 64 320)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -120,6 +120,31 @@
         (TEXT "RESOUT")
       )
     )
+    (PORT
+      (OBID "eprt0c012ca1b898967449e00f707fd60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TORESET")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "TORESET")
+      )
+    )
     (ARCH_DECLARATION 2 "arch0c012ca1ddf7b964c7c00f7087910000" "rtl")
   )
   (ARCH_DEFINITION
@@ -139,6 +164,7 @@
                  "--     CLKRD   : in     std_logic;"
                  "--     RESOUT  : out    std_logic;"
                  "--     SRESET  : in     std_logic;"
+                 "--     TORESET : in     std_logic;"
                  "--     nHRESET : in     std_logic);"
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
@@ -153,17 +179,17 @@
                  "  "
                  "  process (CLKRD, nHRESET)"
                  "  begin"
-                 "	if nHRESET = '0' then"
-                 "	  SRESET_COUNT <= (others => '1');                 "
-                 "	elsif CLKRD'event and CLKRD = '1' then"
-                 "      if SRESET = '1' then"
-                 "	    SRESET_COUNT <= (others => '0');                 "
-                 "	  elsif SRESET_COUNT /= \"1111\" then "
-                 "		SRESET_COUNT <= SRESET_COUNT + \"0001\";"
-                 "	  else"
-                 "		SRESET_COUNT <= SRESET_COUNT;"
+                 "	  if nHRESET = '0' then"
+                 "	    SRESET_COUNT <= (others => '1');                 "
+                 "	  elsif CLKRD'event and CLKRD = '1' then"
+                 "      if SRESET = '1' or TORESET = '1' then"
+                 "	      SRESET_COUNT <= (others => '0');                 "
+                 "	    elsif SRESET_COUNT /= \"1111\" then "
+                 "		    SRESET_COUNT <= SRESET_COUNT + \"0001\";"
+                 "	    else"
+                 "		    SRESET_COUNT <= SRESET_COUNT;"
+                 "	    end if;"
                  "	  end if;"
-                 "	end if;"
                  "  end process;"
                  ""
                  "end rtl ; -- of SOFT_RESET"

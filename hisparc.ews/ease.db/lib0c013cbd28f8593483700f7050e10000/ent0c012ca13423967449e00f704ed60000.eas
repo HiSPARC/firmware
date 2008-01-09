@@ -1,0 +1,249 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c012ca13423967449e00f704ed60000")
+    (NAME "READOUT_TIMED_OUT")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 2176 1664)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Fri Dec 21 22:14:41 2007")
+      (NAME "READOUT_TIMED_OUT")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1198076483 "Wed Dec 19 16:01:23 2007")
+      (MODIFIED 1198271680 "Fri Dec 21 22:14:40 2007")
+    )
+    (PORT
+      (OBID "eprt0c012ca10923967449e00f707ed60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "USB_TXE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2136 216 2216 296)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2112 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "USB_TXE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca13a23967449e00f709ed60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "USB_WRITE_REQUEST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 216 40 296)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "USB_WRITE_REQUEST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca10b23967449e00f70bed60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ONE_PPS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 408 40 488)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "ONE_PPS")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca10e23967449e00f70ded60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "nSYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 600 40 680)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "nSYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca10e23967449e00f70eed60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK10MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 728 40 808)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK10MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1d033967449e00f701fd60000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TIME_OUT_RESET")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2136 600 2216 680)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2112 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TIME_OUT_RESET")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c012ca13423967449e00f705ed60000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c012ca13423967449e00f705ed60000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'READOUT_TIMED_OUT."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'READOUT_TIMED_OUT' :"
+                 "-- "
+                 "--   port("
+                 "--     CLK10MHz          : in     std_logic;"
+                 "--     ONE_PPS           : in     std_logic;"
+                 "--     TIME_OUT_RESET    : out    std_logic;"
+                 "--     USB_TXE           : in     std_logic;"
+                 "--     USB_WRITE_REQUEST : in     std_logic;"
+                 "--     nSYSRST           : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of READOUT_TIMED_OUT is"
+                 ""
+                 "signal TIME_OUT_COUNT: std_logic_vector(3 downto 0); "
+                 "signal USB_TXE_DEL1: std_logic ; "
+                 "signal USB_TXE_DEL2: std_logic ; "
+                 "signal ONE_PPS_DEL1: std_logic ; "
+                 "signal ONE_PPS_DEL2: std_logic ; "
+                 ""
+                 ""
+                 "begin"
+                 ""
+                 "  TIME_OUT_RESET <= TIME_OUT_COUNT(3);"
+                 ""
+                 "  process(CLK10MHz,nSYSRST)"
+                 "  begin"
+                 "  	if nSYSRST = '0' then"
+                 "  	  USB_TXE_DEL1 <= '0';"
+                 "  	  USB_TXE_DEL2 <= '0';"
+                 "  	  ONE_PPS_DEL1 <= '0';"
+                 "  	  ONE_PPS_DEL2 <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then "
+                 "  	  USB_TXE_DEL1 <= USB_TXE;"
+                 "  	  USB_TXE_DEL2 <= USB_TXE_DEL1;"
+                 "  	  ONE_PPS_DEL1 <= ONE_PPS;"
+                 "  	  ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  process(CLK10MHz,nSYSRST)"
+                 "  begin"
+                 "  	if nSYSRST = '0' then"
+                 "  	  TIME_OUT_COUNT <= \"0000\";"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then "
+                 "      if USB_TXE_DEL1 = '0' and USB_TXE_DEL2 = '1' then -- at falling edge of TXE"
+                 "  	    TIME_OUT_COUNT <= \"0000\"; -- reset counter"
+                 "      elsif TIME_OUT_COUNT = \"1000\" then -- after 8 seconds no TXE"
+                 "  	    TIME_OUT_COUNT <= TIME_OUT_COUNT; -- latch countvalue 8  "
+                 "  	  elsif USB_WRITE_REQUEST = '1' then "
+                 "        if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then -- at rising edge of PPS"
+                 "  	      TIME_OUT_COUNT <= TIME_OUT_COUNT + \"0001\"; -- increase counter    	   "
+                 "        end if;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "end rtl ; -- of READOUT_TIMED_OUT"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

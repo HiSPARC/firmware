@@ -123,6 +123,7 @@ signal PARAMETER_LIST_VALID_DEL: std_logic ;
 signal READ_ERROR_VALID_DEL: std_logic ; 
 signal COMPDATA_VALID_DEL: std_logic ; 
 signal USB_WRITE_BUSY_TMP: std_logic ; 
+signal USB_BUSYHOLD_COUNT: std_logic_vector(3 downto 0); -- Forces a gap between 2 BUSY signals
 
 
 begin
@@ -252,25 +253,34 @@ begin
       START_WRITE_PARAMETER_LIST_PRIOR <= '0'; 
       START_WRITE_READ_ERROR_PRIOR <= '0'; 
       START_WRITE_COMP_DATA_PRIOR <= '0'; 
-    elsif (CLKRD'event and CLKRD = '1') then 
-      if WRITE_EVENT_MODE = '0' and WRITE_GPS_MODE = '0' and WRITE_COMP_MODE = '0' and WRITE_PARAMETER_LIST_MODE = '0' and WRITE_READ_ERROR_MODE = '0' and USB_WRITE_ENABLE = '1' then  -- if there is no writing to USB
-        if TS_ONE_PPS_VALID_IN = '1' then -- Start WRITE_GPS_MODE
-          START_WRITE_GPS_COUNT_PRIOR <= '1'; 
-        elsif START_WRITE_EVENT = '1' then -- Start WRITE_EVENT_MODE
-          START_WRITE_EVENT_PRIOR <= '1'; 
-        elsif COMPDATA_VALID = '1' then -- Start WRITE_COMP_MODE
-          START_WRITE_COMP_DATA_PRIOR <= '1'; 
-        elsif PARAMETER_LIST_VALID = '1' then -- Start WRITE_PARAMETER_LIST_MODE
-          START_WRITE_PARAMETER_LIST_PRIOR <= '1'; 
-        elsif READ_ERROR_VALID = '1' then -- Start WRITE_READ_ERROR_MODE
-          START_WRITE_READ_ERROR_PRIOR <= '1'; 
-        end if;
-      else  
-  	    START_WRITE_EVENT_PRIOR <= '0';
-        START_WRITE_GPS_COUNT_PRIOR <= '0'; 
-        START_WRITE_PARAMETER_LIST_PRIOR <= '0'; 
-        START_WRITE_READ_ERROR_PRIOR <= '0'; 
-        START_WRITE_COMP_DATA_PRIOR <= '0'; 
+      USB_BUSYHOLD_COUNT <= "0000"; 
+    elsif (CLKRD'event and CLKRD = '1') then
+      if USB_WRITE_ENABLE = '1' then 
+        if USB_WRITE_BUSY_TMP = '0' then  -- if there is no writing to USB
+          if USB_BUSYHOLD_COUNT > "1000" then 
+            USB_BUSYHOLD_COUNT <= USB_BUSYHOLD_COUNT; 
+            if TS_ONE_PPS_VALID_IN = '1' then -- Start WRITE_GPS_MODE
+              START_WRITE_GPS_COUNT_PRIOR <= '1'; 
+            elsif START_WRITE_EVENT = '1' then -- Start WRITE_EVENT_MODE
+              START_WRITE_EVENT_PRIOR <= '1'; 
+            elsif COMPDATA_VALID = '1' then -- Start WRITE_COMP_MODE
+              START_WRITE_COMP_DATA_PRIOR <= '1'; 
+            elsif PARAMETER_LIST_VALID = '1' then -- Start WRITE_PARAMETER_LIST_MODE
+              START_WRITE_PARAMETER_LIST_PRIOR <= '1'; 
+            elsif READ_ERROR_VALID = '1' then -- Start WRITE_READ_ERROR_MODE
+              START_WRITE_READ_ERROR_PRIOR <= '1'; 
+            end if;
+          else
+            USB_BUSYHOLD_COUNT <= USB_BUSYHOLD_COUNT + "0001"; 
+          end if;
+	      else  
+	  	    START_WRITE_EVENT_PRIOR <= '0';
+	        START_WRITE_GPS_COUNT_PRIOR <= '0'; 
+	        START_WRITE_PARAMETER_LIST_PRIOR <= '0'; 
+	        START_WRITE_READ_ERROR_PRIOR <= '0'; 
+	        START_WRITE_COMP_DATA_PRIOR <= '0'; 
+          USB_BUSYHOLD_COUNT <= "0000"; 
+	      end if;
       end if;
     end if;
   end process;

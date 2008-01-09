@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Mon Oct 22 09:30:02 2007")
+      (PROPERTY "STAMP_TIME" "Wed Jan 09 12:05:06 2008")
       (NAME "hisparc")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1133875074 "Tue Dec 06 14:17:54 2005")
-      (MODIFIED 1193038188 "Mon Oct 22 09:29:48 2007")
+      (MODIFIED 1199876700 "Wed Jan 09 12:05:00 2008")
     )
     (PORT
       (OBID "eprt0c013cbd024c693483700f7023e10000")
@@ -2369,11 +2369,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 28504 6808 28584 6888)
+        (GEOMETRY 29080 6808 29160 6888)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 28608 6848)
+          (POSITION 29184 6848)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -2395,11 +2395,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 28504 6936 28584 7016)
+        (GEOMETRY 29528 6936 29608 7016)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 28608 6976)
+          (POSITION 29632 6976)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -2581,11 +2581,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 28504 7064 28584 7144)
+        (GEOMETRY 30040 7064 30120 7144)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 28608 7104)
+          (POSITION 30144 7104)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -2607,11 +2607,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 28504 7192 28584 7272)
+        (GEOMETRY 30616 7192 30696 7272)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 28608 7232)
+          (POSITION 30720 7232)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -3811,11 +3811,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 17688 3800 17768 3880)
+        (GEOMETRY 33176 6296 33256 6376)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 17792 3840)
+          (POSITION 33280 6336)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -3863,11 +3863,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 17752 2456 17832 2536)
+        (GEOMETRY 32664 4952 32744 5032)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 17856 2496)
+          (POSITION 32768 4992)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -3915,11 +3915,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 26392 19992 26472 20072)
+        (GEOMETRY 33560 7576 33640 7656)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 26496 20032)
+          (POSITION 33664 7616)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -3941,11 +3941,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 17688 1368 17768 1448)
+        (GEOMETRY 32600 3864 32680 3944)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 17792 1408)
+          (POSITION 32704 3904)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -8348,11 +8348,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 27544 11800 27624 11880)
+          (GEOMETRY 27544 18968 27624 19048)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 27520 11840)
+            (POSITION 27520 19008)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -9548,17 +9548,17 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 27544 18648 27624 18728)
+          (GEOMETRY 27544 17752 27624 17832)
           (SENSLIST 1)
           (SIDE 1)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 27640 18648 27808 18728)
+            (GEOMETRY 27640 17752 27808 17832)
             (TYPE 2)
             (LABEL
-              (POSITION 27840 18688)
+              (POSITION 27840 17792)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 3)
@@ -9567,7 +9567,7 @@
             )
           )
           (LABEL
-            (POSITION 27520 18688)
+            (POSITION 27520 17792)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -9600,6 +9600,58 @@
             (SIDE 3)
             (FORMAT 35)
             (TEXT "FORCE_MASTER")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1c633967449e00f705fd60000")
+          (PORT "eprt0c012ca1c633967449e00f703fd60000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "TIME_OUT_RESET")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 27544 18712 27624 18792)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 27520 18752)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "TIME_OUT_RESET")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca16bc2c6740c900f709e860000")
+          (PORT "eprt0c012ca16bc2c6740c900f707e860000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "nSYSRST")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 27544 18392 27624 18472)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 27520 18432)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "nSYSRST")
           )
         )
         (LABEL
@@ -13385,7 +13437,7 @@
           (NAME "u24")
           (USERNAME 1)
         )
-        (GEOMETRY 16320 3712 17216 4352)
+        (GEOMETRY 31808 6208 32704 6848)
         (SIDE 0)
         (PORT
           (OBID "cprt0c012ca1b8cbb76403400f707ea00000")
@@ -13400,11 +13452,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16280 3800 16360 3880)
+          (GEOMETRY 31768 6296 31848 6376)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 16384 3840)
+            (POSITION 31872 6336)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13426,11 +13478,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 17176 3800 17256 3880)
+          (GEOMETRY 32664 6296 32744 6376)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 17152 3840)
+            (POSITION 32640 6336)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -13452,17 +13504,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16280 3992 16360 4072)
+          (GEOMETRY 31768 6488 31848 6568)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 16096 3992 16264 4072)
+            (GEOMETRY 31584 6488 31752 6568)
             (TYPE 0)
             (LABEL
-              (POSITION 16064 4032)
+              (POSITION 31552 6528)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13471,7 +13523,7 @@
             )
           )
           (LABEL
-            (POSITION 16384 4032)
+            (POSITION 31872 6528)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13493,17 +13545,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16280 4184 16360 4264)
+          (GEOMETRY 31768 6680 31848 6760)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 16096 4184 16264 4264)
+            (GEOMETRY 31584 6680 31752 6760)
             (TYPE 0)
             (LABEL
-              (POSITION 16064 4224)
+              (POSITION 31552 6720)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13512,7 +13564,7 @@
             )
           )
           (LABEL
-            (POSITION 16384 4224)
+            (POSITION 31872 6720)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13522,7 +13574,7 @@
           )
         )
         (LABEL
-          (POSITION 16336 3696)
+          (POSITION 31824 6192)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -13538,7 +13590,7 @@
           (NAME "u27")
           (USERNAME 1)
         )
-        (GEOMETRY 16384 2368 17280 3008)
+        (GEOMETRY 31296 4864 32192 5504)
         (SIDE 0)
         (PORT
           (OBID "cprt0c012ca127dbb76403400f70eea00000")
@@ -13553,11 +13605,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16344 2456 16424 2536)
+          (GEOMETRY 31256 4952 31336 5032)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 16448 2496)
+            (POSITION 31360 4992)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13579,11 +13631,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 17240 2456 17320 2536)
+          (GEOMETRY 32152 4952 32232 5032)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 17216 2496)
+            (POSITION 32128 4992)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -13605,17 +13657,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16344 2648 16424 2728)
+          (GEOMETRY 31256 5144 31336 5224)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 16160 2648 16328 2728)
+            (GEOMETRY 31072 5144 31240 5224)
             (TYPE 0)
             (LABEL
-              (POSITION 16128 2688)
+              (POSITION 31040 5184)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13624,7 +13676,7 @@
             )
           )
           (LABEL
-            (POSITION 16448 2688)
+            (POSITION 31360 5184)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13646,17 +13698,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16344 2840 16424 2920)
+          (GEOMETRY 31256 5336 31336 5416)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 16160 2840 16328 2920)
+            (GEOMETRY 31072 5336 31240 5416)
             (TYPE 0)
             (LABEL
-              (POSITION 16128 2880)
+              (POSITION 31040 5376)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13665,7 +13717,7 @@
             )
           )
           (LABEL
-            (POSITION 16448 2880)
+            (POSITION 31360 5376)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13675,7 +13727,7 @@
           )
         )
         (LABEL
-          (POSITION 16400 2352)
+          (POSITION 31312 4848)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -13691,7 +13743,7 @@
           (NAME "u28")
           (USERNAME 1)
         )
-        (GEOMETRY 16384 1280 17280 1920)
+        (GEOMETRY 31296 3776 32192 4416)
         (SIDE 0)
         (PORT
           (OBID "cprt0c012ca173fbb76403400f70efa00000")
@@ -13706,11 +13758,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16344 1368 16424 1448)
+          (GEOMETRY 31256 3864 31336 3944)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 16448 1408)
+            (POSITION 31360 3904)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13732,11 +13784,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 17240 1368 17320 1448)
+          (GEOMETRY 32152 3864 32232 3944)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 17216 1408)
+            (POSITION 32128 3904)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -13758,17 +13810,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16344 1560 16424 1640)
+          (GEOMETRY 31256 4056 31336 4136)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 16160 1560 16328 1640)
+            (GEOMETRY 31072 4056 31240 4136)
             (TYPE 0)
             (LABEL
-              (POSITION 16128 1600)
+              (POSITION 31040 4096)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13777,7 +13829,7 @@
             )
           )
           (LABEL
-            (POSITION 16448 1600)
+            (POSITION 31360 4096)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13799,17 +13851,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 16344 1752 16424 1832)
+          (GEOMETRY 31256 4248 31336 4328)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 16160 1752 16328 1832)
+            (GEOMETRY 31072 4248 31240 4328)
             (TYPE 0)
             (LABEL
-              (POSITION 16128 1792)
+              (POSITION 31040 4288)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13818,7 +13870,7 @@
             )
           )
           (LABEL
-            (POSITION 16448 1792)
+            (POSITION 31360 4288)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13828,7 +13880,7 @@
           )
         )
         (LABEL
-          (POSITION 16400 1264)
+          (POSITION 31312 3760)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -13844,7 +13896,7 @@
           (NAME "u29")
           (USERNAME 1)
         )
-        (GEOMETRY 25152 19904 26048 20544)
+        (GEOMETRY 32320 7488 33216 8128)
         (SIDE 0)
         (PORT
           (OBID "cprt0c012ca1e3fbb76403400f7030b00000")
@@ -13859,11 +13911,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 25112 19992 25192 20072)
+          (GEOMETRY 32280 7576 32360 7656)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 25216 20032)
+            (POSITION 32384 7616)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13885,11 +13937,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 26008 19992 26088 20072)
+          (GEOMETRY 33176 7576 33256 7656)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 25984 20032)
+            (POSITION 33152 7616)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -13911,17 +13963,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 25112 20184 25192 20264)
+          (GEOMETRY 32280 7768 32360 7848)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 24928 20184 25096 20264)
+            (GEOMETRY 32096 7768 32264 7848)
             (TYPE 0)
             (LABEL
-              (POSITION 24896 20224)
+              (POSITION 32064 7808)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13930,7 +13982,7 @@
             )
           )
           (LABEL
-            (POSITION 25216 20224)
+            (POSITION 32384 7808)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13952,17 +14004,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 25112 20376 25192 20456)
+          (GEOMETRY 32280 7960 32360 8040)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 24928 20376 25096 20456)
+            (GEOMETRY 32096 7960 32264 8040)
             (TYPE 0)
             (LABEL
-              (POSITION 24896 20416)
+              (POSITION 32064 8000)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -13971,7 +14023,7 @@
             )
           )
           (LABEL
-            (POSITION 25216 20416)
+            (POSITION 32384 8000)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -13981,7 +14033,7 @@
           )
         )
         (LABEL
-          (POSITION 25168 19888)
+          (POSITION 32336 7472)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -13997,7 +14049,7 @@
           (NAME "u16")
           (USERNAME 1)
         )
-        (GEOMETRY 6208 9728 7360 10368)
+        (GEOMETRY 6208 9728 7360 10624)
         (SIDE 0)
         (PORT
           (OBID "cprt0c012ca1e208b964c7c00f70b7910000")
@@ -14038,11 +14090,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 6168 10008 6248 10088)
+          (GEOMETRY 6168 10392 6248 10472)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 6272 10048)
+            (POSITION 6272 10432)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -14064,17 +14116,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 6168 10200 6248 10280)
+          (GEOMETRY 6168 10008 6248 10088)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 5984 10200 6152 10280)
+            (GEOMETRY 5984 10008 6152 10088)
             (TYPE 0)
             (LABEL
-              (POSITION 5952 10240)
+              (POSITION 5952 10048)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -14083,7 +14135,7 @@
             )
           )
           (LABEL
-            (POSITION 6272 10240)
+            (POSITION 6272 10048)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -14132,6 +14184,32 @@
             (SIDE 1)
             (FORMAT 35)
             (TEXT "RESOUT")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1b898967449e00f708fd60000")
+          (PORT "eprt0c012ca1b898967449e00f707fd60000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "TORESET")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 6168 10200 6248 10280)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 6272 10240)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "TORESET")
           )
         )
         (LABEL
@@ -15193,6 +15271,21 @@
           (GEOMETRY 15128 5336 15208 5416)
           (SENSLIST 1)
           (SIDE 1)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 15224 5336 15392 5416)
+            (TYPE 2)
+            (LABEL
+              (POSITION 15424 5376)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 3)
+              (SIDE 1)
+              (FORMAT 1)
+            )
+          )
           (LABEL
             (POSITION 15104 5376)
             (SCALE 96)
@@ -15211,6 +15304,219 @@
           (SIDE 3)
           (FORMAT 13)
           (TEXT "u2:STORAGE_CHANNELS:structure(B)")
+        )
+      )
+      (COMPONENT
+        (OBID "comp0c012ca1ec9a487481310f7055f30000")
+        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd2b787b440a600f70e8170000")
+        (HDL_IDENT
+          (NAME "u30")
+          (USERNAME 1)
+        )
+        (GEOMETRY 29760 3712 30400 4096)
+        (SIDE 0)
+        (PORT
+          (OBID "cprt0c012ca1ec9a487481310f7065f30000")
+          (PORT "eprt0c013cbd0c787b440a600f7019170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "OUTP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 30360 3864 30440 3944)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 30336 3904)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "OUTP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1ec9a487481310f7075f30000")
+          (PORT "eprt0c013cbd3e787b440a600f7039170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "INP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 29720 3864 29800 3944)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 29812 3916)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "INP")
+          )
+        )
+        (LABEL
+          (POSITION 29714 4282)
+          (SCALE 128)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 13)
+          (TEXT "u30:INVERTER:rtl(V)")
+        )
+      )
+      (COMPONENT
+        (OBID "comp0c012ca161aa487481310f7085f30000")
+        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd2b787b440a600f70e8170000")
+        (HDL_IDENT
+          (NAME "u31")
+          (USERNAME 1)
+        )
+        (GEOMETRY 30528 6144 31168 6528)
+        (SIDE 0)
+        (PORT
+          (OBID "cprt0c012ca161aa487481310f7095f30000")
+          (PORT "eprt0c013cbd0c787b440a600f7019170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "OUTP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 31128 6296 31208 6376)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 31104 6336)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "OUTP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca161aa487481310f70a5f30000")
+          (PORT "eprt0c013cbd3e787b440a600f7039170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "INP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 30488 6296 30568 6376)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 30580 6348)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "INP")
+          )
+        )
+        (LABEL
+          (POSITION 30482 6714)
+          (SCALE 128)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 13)
+          (TEXT "u31:INVERTER:rtl(V)")
+        )
+      )
+      (COMPONENT
+        (OBID "comp0c012ca1f1aa487481310f70b5f30000")
+        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd2b787b440a600f70e8170000")
+        (HDL_IDENT
+          (NAME "u32")
+          (USERNAME 1)
+        )
+        (GEOMETRY 30976 7424 31616 7808)
+        (SIDE 0)
+        (PORT
+          (OBID "cprt0c012ca1f1aa487481310f70c5f30000")
+          (PORT "eprt0c013cbd0c787b440a600f7019170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "OUTP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 31576 7576 31656 7656)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 31552 7616)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "OUTP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1f1aa487481310f70d5f30000")
+          (PORT "eprt0c013cbd3e787b440a600f7039170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "INP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 30936 7576 31016 7656)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 31028 7628)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "INP")
+          )
+        )
+        (LABEL
+          (POSITION 30930 7994)
+          (SCALE 128)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 13)
+          (TEXT "u32:INVERTER:rtl(V)")
         )
       )
       (NET
@@ -16049,7 +16355,10 @@
           (HDL_TYPE
           )
         )
-        (WIRE 27648 6848 28480 6848)
+        (WIRE 28992 6848 29056 6848)
+        (WIRE 27648 6848 28992 6848)
+        (WIRE 28992 6848 28992 3904)
+        (WIRE 28992 3904 29696 3904)
         (PORT
           (OBID "cprt0c013cbdebb5f44409500f70e4a60000")
           (NAME "USB_TXE")
@@ -16057,6 +16366,10 @@
         (PORT
           (OBID "aprt0c013cbd04b563448e600f7047f20000")
           (NAME "USB_TXE")
+        )
+        (PORT
+          (OBID "cprt0c012ca1ec9a487481310f7075f30000")
+          (NAME "INP")
         )
         (LABEL
           (POSITION 0 0)
@@ -16071,13 +16384,16 @@
         (OBID "net0c013cbdb176f44409500f7036a60000")
         (HDL_OBJECT
           (HDL_IDENT
-            (NAME "USB_WR")
+            (NAME "USB_WR_net")
             (USERNAME 0)
           )
           (HDL_TYPE
           )
         )
-        (WIRE 28480 6976 27648 6976)
+        (WIRE 29440 6976 27648 6976)
+        (WIRE 29504 6976 29440 6976)
+        (WIRE 29440 6976 29440 4992)
+        (WIRE 29440 4992 31232 4992)
         (PORT
           (OBID "aprt0c013cbd04b563448e600f7057f20000")
           (NAME "USB_WR")
@@ -16085,6 +16401,10 @@
         (PORT
           (OBID "cprt0c013cbdebb5f44409500f70f4a60000")
           (NAME "USB_WR")
+        )
+        (PORT
+          (OBID "cprt0c012ca127dbb76403400f70eea00000")
+          (NAME "INP")
         )
         (LABEL
           (POSITION 0 0)
@@ -16207,7 +16527,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 24640 11264 20800 11264)
+        (WIRE 20800 11264 24640 11264)
         (PORT
           (OBID "cprt0c013cbd26fe55440d800f70e3140000")
           (NAME "CTD_IN")
@@ -16593,7 +16913,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 24640 13888 22528 13888)
+        (WIRE 22528 13888 24640 13888)
         (PORT
           (OBID "cprt0c013cbd6a74064401800f70e0110000")
           (NAME "CTD_TS_ONE_PPS")
@@ -16621,7 +16941,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 24640 15104 22528 15104)
+        (WIRE 22528 15104 24640 15104)
         (PORT
           (OBID "cprt0c013cbd1974064401800f7090110000")
           (NAME "TS_ONE_PPS_READOUT_DONE")
@@ -16649,7 +16969,10 @@
           (HDL_TYPE
           )
         )
-        (WIRE 27648 7104 28480 7104)
+        (WIRE 29952 7104 30016 7104)
+        (WIRE 27648 7104 29952 7104)
+        (WIRE 29952 7104 29952 6336)
+        (WIRE 29952 6336 30464 6336)
         (PORT
           (OBID "cprt0c8a2066b418964480a05edce4400000")
           (NAME "USB_RXF")
@@ -16657,6 +16980,10 @@
         (PORT
           (OBID "aprt0c8a20666a18964480a05edc45400000")
           (NAME "USB_RXF")
+        )
+        (PORT
+          (OBID "cprt0c012ca161aa487481310f70a5f30000")
+          (NAME "INP")
         )
         (LABEL
           (POSITION 0 0)
@@ -16671,13 +16998,16 @@
         (OBID "net0c8a2066ea18964480a05edc95400000")
         (HDL_OBJECT
           (HDL_IDENT
-            (NAME "USB_RD")
+            (NAME "USB_RD_net0")
             (USERNAME 0)
           )
           (HDL_TYPE
           )
         )
-        (WIRE 28480 7232 27648 7232)
+        (WIRE 30464 7232 27648 7232)
+        (WIRE 30592 7232 30464 7232)
+        (WIRE 30464 7232 30464 7616)
+        (WIRE 30464 7616 30912 7616)
         (PORT
           (OBID "aprt0c8a20666a18964480a05edc55400000")
           (NAME "USB_RD")
@@ -16685,6 +17015,10 @@
         (PORT
           (OBID "cprt0c8a2066b418964480a05edcf4400000")
           (NAME "USB_RD")
+        )
+        (PORT
+          (OBID "cprt0c012ca1f1aa487481310f70d5f30000")
+          (NAME "INP")
         )
         (LABEL
           (POSITION 0 0)
@@ -16705,18 +17039,18 @@
           (HDL_TYPE
           )
         )
-        (WIRE 5888 10048 5888 21632)
-        (WIRE 5888 10048 6144 10048)
+        (WIRE 5888 10432 5888 21632)
+        (WIRE 5888 10432 6144 10432)
         (WIRE 5888 21632 27968 21632)
-        (WIRE 27968 11840 27968 21632)
-        (WIRE 27648 11840 27968 11840)
-        (PORT
-          (OBID "cprt0c012ca10a18b964c7c00f70d7910000")
-          (NAME "SRESET")
-        )
+        (WIRE 27968 19008 27968 21632)
+        (WIRE 27648 19008 27968 19008)
         (PORT
           (OBID "cprt0c013cbde99ea644cf700f705c300000")
           (NAME "SOFT_RESET")
+        )
+        (PORT
+          (OBID "cprt0c012ca10a18b964c7c00f70d7910000")
+          (NAME "SRESET")
         )
         (LABEL
           (POSITION 1280 3392)
@@ -16765,7 +17099,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 8384 27648 8384)
+        (WIRE 27648 8384 28480 8384)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f70bdf00000")
           (NAME "DAC_DATA_1")
@@ -16821,7 +17155,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 8640 27648 8640)
+        (WIRE 27648 8640 28480 8640)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f70ddf00000")
           (NAME "DAC_DATA_3")
@@ -16877,7 +17211,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 8896 27648 8896)
+        (WIRE 27648 8896 28480 8896)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f70fdf00000")
           (NAME "DAC_DATA_5")
@@ -16933,7 +17267,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 9152 27648 9152)
+        (WIRE 27648 9152 28480 9152)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f701ef00000")
           (NAME "DAC_DATA_7")
@@ -16989,7 +17323,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 9408 27648 9408)
+        (WIRE 27648 9408 28480 9408)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f703ef00000")
           (NAME "DAC_A1")
@@ -17045,7 +17379,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 9664 27648 9664)
+        (WIRE 27648 9664 28480 9664)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f705ef00000")
           (NAME "DAC_nRD")
@@ -17101,7 +17435,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 9920 27648 9920)
+        (WIRE 27648 9920 28480 9920)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f707ef00000")
           (NAME "DAC_nLDAC")
@@ -17157,7 +17491,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 10176 27648 10176)
+        (WIRE 27648 10176 28480 10176)
         (PORT
           (OBID "aprt0c013cbd2e8d274409600f709ef00000")
           (NAME "DAC_nCS1")
@@ -17241,7 +17575,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 6336 27648 6336)
+        (WIRE 27648 6336 28480 6336)
         (PORT
           (OBID "aprt0c013cbd1860884487500f70e9b00000")
           (NAME "ADC_nCS")
@@ -17269,7 +17603,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 6208 27648 6208)
+        (WIRE 27648 6208 28480 6208)
         (PORT
           (OBID "aprt0c013cbd1860884487500f701ab00000")
           (NAME "ADC_MODE")
@@ -17325,7 +17659,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 5952 27648 5952)
+        (WIRE 27648 5952 28480 5952)
         (PORT
           (OBID "aprt0c013cbd1860884487500f70d9b00000")
           (NAME "ADC_nINT")
@@ -17413,7 +17747,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 28480 6720 27648 6720)
+        (WIRE 27648 6720 28480 6720)
         (PORT
           (OBID "aprt0c013cbd3580884487500f70bdb00000")
           (NAME "ADC_A0")
@@ -17643,7 +17977,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9664 19456 9472 19456)
+        (WIRE 9472 19456 9664 19456)
         (PORT
           (OBID "cprt0c013cbd97a6984487500f7063c00000")
           (NAME "LVDS_IN2")
@@ -17699,7 +18033,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9664 19712 9472 19712)
+        (WIRE 9472 19712 9664 19712)
         (PORT
           (OBID "cprt0c013cbd68a6984487500f70a3c00000")
           (NAME "LVDS_IN4")
@@ -17903,7 +18237,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 12352 19456 11904 19456)
+        (WIRE 11904 19456 12352 19456)
         (PORT
           (OBID "aprt0c013cbddae6984487500f70c7c00000")
           (NAME "LVDS_OUT2")
@@ -17959,7 +18293,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 12352 19712 11904 19712)
+        (WIRE 11904 19712 12352 19712)
         (PORT
           (OBID "aprt0c013cbddae6984487500f70e7c00000")
           (NAME "LVDS_OUT4")
@@ -18137,7 +18471,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9664 15104 9280 15104)
+        (WIRE 9280 15104 9664 15104)
         (PORT
           (OBID "cprt0c013cbd2be97b440a600f70fa170000")
           (NAME "HITLED2")
@@ -18165,7 +18499,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15040 16192 14720 16192)
+        (WIRE 14720 16192 15040 16192)
         (PORT
           (OBID "aprt0c013cbd9f4a7b440a600f705d170000")
           (NAME "nMASTER")
@@ -18229,7 +18563,7 @@
             (RANGE "11" "0")
           )
         )
-        (WIRE 9536 5504 8896 5504)
+        (WIRE 8896 5504 9536 5504)
         (PORT
           (OBID "cprt0c013cbd055b3c344a100f705a930000")
           (NAME "DATA_NEG_ADC")
@@ -18285,7 +18619,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9536 5760 8896 5760)
+        (WIRE 8896 5760 9536 5760)
         (PORT
           (OBID "cprt0c013cbdd65b3c344a100f709a930000")
           (NAME "DCO_NEG_ADC")
@@ -18317,7 +18651,7 @@
             (RANGE "11" "0")
           )
         )
-        (WIRE 9664 11392 8960 11392)
+        (WIRE 8960 11392 9664 11392)
         (PORT
           (OBID "aprte32c736d32c1a93407d05edcde240000")
           (NAME "DATA_POS_ADC_CH1")
@@ -18349,7 +18683,7 @@
             (RANGE "11" "0")
           )
         )
-        (WIRE 9664 11520 8960 11520)
+        (WIRE 8960 11520 9664 11520)
         (PORT
           (OBID "cprt0c013cbd1a27fc3442400f70c8720000")
           (NAME "DATA_NEG_ADC")
@@ -18377,7 +18711,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9664 11648 8960 11648)
+        (WIRE 8960 11648 9664 11648)
         (PORT
           (OBID "aprte32c736d32c1a93407d05edcee240000")
           (NAME "DCO_POS_ADC_CH1")
@@ -18405,7 +18739,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9664 11776 8960 11776)
+        (WIRE 8960 11776 9664 11776)
         (PORT
           (OBID "cprt0c013cbd1a27fc3442400f70e8720000")
           (NAME "DCO_NEG_ADC")
@@ -18461,7 +18795,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 30848 14848 30400 14848)
+        (WIRE 30400 14848 30848 14848)
         (PORT
           (OBID "cprt0c013cbd192d5c4482600f70f1220000")
           (NAME "ADC_1_NEG_OR")
@@ -18517,7 +18851,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 30848 15232 30400 15232)
+        (WIRE 30400 15232 30848 15232)
         (PORT
           (OBID "cprt0c013cbdaa2d5c4482600f7032220000")
           (NAME "ADC_2_NEG_OR")
@@ -18577,7 +18911,7 @@
             (RANGE "11" "0")
           )
         )
-        (WIRE 18688 6912 18240 6912)
+        (WIRE 18240 6912 18688 6912)
         (PORT
           (OBID "cprt0c013cbd8738bc3447600f70b3040000")
           (NAME "DATA_OUT_CH1")
@@ -18605,7 +18939,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 18688 7168 18240 7168)
+        (WIRE 18240 7168 18688 7168)
         (PORT
           (OBID "cprt0c013cbd4b38bc3447600f7014040000")
           (NAME "RDEN_CH1")
@@ -18673,7 +19007,7 @@
             (RANGE "11" "0")
           )
         )
-        (WIRE 18688 11584 18240 11584)
+        (WIRE 18240 11584 18688 11584)
         (PORT
           (OBID "cprt0c013cbd0b57fc3442400f706d720000")
           (NAME "DATA_OUT_CH2")
@@ -18701,7 +19035,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 18688 11840 18240 11840)
+        (WIRE 18240 11840 18688 11840)
         (PORT
           (OBID "cprt0c013cbd0b57fc3442400f709d720000")
           (NAME "RDEN_CH2")
@@ -18799,7 +19133,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 18688 13184 18240 13184)
+        (WIRE 18240 13184 18688 13184)
         (PORT
           (OBID "cprt0c013cbd43fe55440d800f7043140000")
           (NAME "CTD_IN")
@@ -18916,7 +19250,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 17088 16128 16960 16128)
+        (WIRE 16960 16128 17088 16128)
         (PORT
           (OBID "aprt0c013cbdd9d7e1448e800f70b4860000")
           (NAME "nSLAVE_PRESENT")
@@ -19085,7 +19419,7 @@
             (RANGE "31" "0")
           )
         )
-        (WIRE 24640 14784 22528 14784)
+        (WIRE 22528 14784 24640 14784)
         (PORT
           (OBID "cprt0c012ca1f0026354ce300f70bb140000")
           (NAME "TEMP")
@@ -19184,7 +19518,7 @@
             (RANGE "63" "0")
           )
         )
-        (WIRE 24640 14400 22528 14400)
+        (WIRE 22528 14400 24640 14400)
         (PORT
           (OBID "cprt0c013cbd32c8064401800f70a3110000")
           (NAME "LATITUDE")
@@ -19250,7 +19584,7 @@
             (RANGE "63" "0")
           )
         )
-        (WIRE 24640 14656 22528 14656)
+        (WIRE 22528 14656 24640 14656)
         (PORT
           (OBID "cprt0c013cbdac86ea4445700f70bb100000")
           (NAME "ALTITUDE")
@@ -19518,11 +19852,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 24192 15424 24640 15424)
-        (WIRE 22528 15424 24192 15424)
-        (WIRE 24192 15424 24192 20032)
-        (WIRE 24192 20032 24960 20032)
-        (WIRE 24960 20032 25088 20032)
+        (WIRE 22528 15424 24640 15424)
         (PORT
           (OBID "cprt0c012ca1dc6a6854cd300f70aa300000")
           (NAME "COMPDATA_VALID")
@@ -19531,12 +19861,8 @@
           (OBID "cprt0c012ca1e9866854cd300f7088300000")
           (NAME "COMPDATA_VALID_OUT")
         )
-        (PORT
-          (OBID "cprt0c012ca1e3fbb76403400f7030b00000")
-          (NAME "INP")
-        )
         (LABEL
-          (POSITION 1280 3392)
+          (POSITION 0 0)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -19694,7 +20020,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 22976 16192 22528 16192)
+        (WIRE 22528 16192 22976 16192)
         (PORT
           (OBID "aprt0c012ca1f4809854cd300f708c300000")
           (NAME "SPY_CON")
@@ -19750,7 +20076,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 17280 3840 17664 3840)
+        (WIRE 32768 6336 33152 6336)
         (PORT
           (OBID "cprt0c012ca1b8cbb76403400f708ea00000")
           (NAME "nOUTP")
@@ -19778,7 +20104,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 17728 2496 17344 2496)
+        (WIRE 32640 4992 32256 4992)
         (PORT
           (OBID "aprt0c013cbd256d5c4482600f7066220000")
           (NAME "LED6")
@@ -19806,7 +20132,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 17344 1408 17664 1408)
+        (WIRE 32256 3904 32576 3904)
         (PORT
           (OBID "cprt0c012ca173fbb76403400f70ffa00000")
           (NAME "nOUTP")
@@ -19834,14 +20160,14 @@
           (HDL_TYPE
           )
         )
-        (WIRE 26368 20032 26112 20032)
-        (PORT
-          (OBID "aprt0c013cbd256d5c4482600f7086220000")
-          (NAME "LED8")
-        )
+        (WIRE 33280 7616 33536 7616)
         (PORT
           (OBID "cprt0c012ca1e3fbb76403400f7040b00000")
           (NAME "nOUTP")
+        )
+        (PORT
+          (OBID "aprt0c013cbd256d5c4482600f7086220000")
+          (NAME "LED8")
         )
         (LABEL
           (POSITION 0 0)
@@ -19976,8 +20302,13 @@
         )
         (WIRE 6016 8960 6016 9856)
         (WIRE 6016 8960 6272 8960)
-        (WIRE 5440 9856 6016 9856)
+        (WIRE 5632 9856 6016 9856)
         (WIRE 6016 9856 6144 9856)
+        (WIRE 5440 9856 5632 9856)
+        (WIRE 5632 9856 5632 21888)
+        (WIRE 5632 21888 28224 21888)
+        (WIRE 28224 18432 28224 21888)
+        (WIRE 27648 18432 28224 18432)
         (PORT
           (OBID "cprt0c012ca1d3d7b964c7c00f7057910000")
           (NAME "RST")
@@ -19990,8 +20321,12 @@
           (OBID "cprt0c012ca1e208b964c7c00f70b7910000")
           (NAME "nHRESET")
         )
+        (PORT
+          (OBID "cprt0c012ca16bc2c6740c900f709e860000")
+          (NAME "nSYSRST")
+        )
         (LABEL
-          (POSITION 1280 3392)
+          (POSITION 0 0)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -20060,7 +20395,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 22784 17856 22592 17856)
+        (WIRE 22592 17856 22784 17856)
         (PORT
           (OBID "aprt0c013cbd256d5c4482600f7056220000")
           (NAME "LED5")
@@ -20199,42 +20534,6 @@
         )
       )
       (NET
-        (OBID "net0c012ca1cc27b07409210f70c2830000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "READOUT_BUSY1_CH3")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 15360 11904 15872 11904)
-        (WIRE 15232 11904 15360 11904)
-        (WIRE 15360 5504 15360 11904)
-        (WIRE 15360 5504 15360 2496)
-        (WIRE 15360 2496 16320 2496)
-        (PORT
-          (OBID "cprt0c012ca1a605b07409210f702a630000")
-          (NAME "READOUT_BUSY1_CH2")
-        )
-        (PORT
-          (OBID "cprt0c8a2046f7427054c3b05edc00950000")
-          (NAME "READOUT_BUSY1_CH2")
-        )
-        (PORT
-          (OBID "cprt0c012ca127dbb76403400f70eea00000")
-          (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
         (OBID "net0c012ca10d27b07409210f70d2830000")
         (HDL_OBJECT
           (HDL_IDENT
@@ -20252,42 +20551,6 @@
         (PORT
           (OBID "cprt0c012ca1a605b07409210f706a630000")
           (NAME "READOUT_BUSY2_CH2")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c012ca12d27b07409210f70e2830000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "RDEN1_CH3")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 15424 12160 15872 12160)
-        (WIRE 15232 12160 15424 12160)
-        (WIRE 15424 5632 15424 12160)
-        (WIRE 15424 5632 15424 3840)
-        (WIRE 15424 3840 16256 3840)
-        (PORT
-          (OBID "cprt0c012ca1a605b07409210f700a630000")
-          (NAME "RDEN1_CH2")
-        )
-        (PORT
-          (OBID "cprt0c8a2046f7427054c3b05edcef850000")
-          (NAME "RDEN1_CH2")
-        )
-        (PORT
-          (OBID "cprt0c012ca1b8cbb76403400f707ea00000")
-          (NAME "INP")
         )
         (LABEL
           (POSITION 0 0)
@@ -20372,7 +20635,7 @@
             (RANGE "11" "0")
           )
         )
-        (WIRE 15872 6016 15232 6016)
+        (WIRE 15232 6016 15872 6016)
         (PORT
           (OBID "cprt0c8a2046f9327054c3b05edcae850000")
           (NAME "DATA_OUT2_CH1")
@@ -20428,7 +20691,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15872 6272 15232 6272)
+        (WIRE 15232 6272 15872 6272)
         (PORT
           (OBID "cprt0c8a2046f9327054c3b05edcce850000")
           (NAME "DATA_READY2_CH1")
@@ -20484,7 +20747,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15872 6528 15232 6528)
+        (WIRE 15232 6528 15872 6528)
         (PORT
           (OBID "cprt0c8a2046f9327054c3b05edcde850000")
           (NAME "READOUT_BUSY2_CH1")
@@ -20540,7 +20803,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15872 6784 15232 6784)
+        (WIRE 15232 6784 15872 6784)
         (PORT
           (OBID "cprt0c8a2046f9327054c3b05edcbe850000")
           (NAME "RDEN2_CH1")
@@ -20568,7 +20831,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 24640 6976 23936 6976)
+        (WIRE 23936 6976 24640 6976)
         (PORT
           (OBID "cprt0c013cbd03b5f44409500f70c3a60000")
           (NAME "DATA_READY_FIFO")
@@ -20624,7 +20887,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15872 8192 15232 8192)
+        (WIRE 15232 8192 15872 8192)
         (PORT
           (OBID "cprt0c8a2046f9327054c3b05edcee850000")
           (NAME "COINC_TO_END_TIME_FIFO2")
@@ -20632,36 +20895,6 @@
         (PORT
           (OBID "cprt0c012ca1c82cc07409210f7039830000")
           (NAME "COINC_TO_END_TIME_FIFO2")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c012ca1ca9b817409310f7095e60000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "WE0")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 15296 5376 15296 1408)
-        (WIRE 15296 1408 16320 1408)
-        (WIRE 15232 5376 15296 5376)
-        (PORT
-          (OBID "cprt0c012ca173fbb76403400f70efa00000")
-          (NAME "INP")
-        )
-        (PORT
-          (OBID "cprt0c012ca1c105c17409310f70d5e60000")
-          (NAME "WE")
         )
         (LABEL
           (POSITION 0 0)
@@ -20690,6 +20923,178 @@
         (PORT
           (OBID "cprt0c8a2046f7427054c3b05edcff850000")
           (NAME "DATA_READY1_CH2")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1ad98967449e00f709fd60000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "TIME_OUT_RESET")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 5760 10240 6144 10240)
+        (WIRE 5760 10240 5760 21760)
+        (WIRE 5760 21760 28096 21760)
+        (WIRE 28096 18752 28096 21760)
+        (WIRE 27648 18752 28096 18752)
+        (PORT
+          (OBID "cprt0c012ca1b898967449e00f708fd60000")
+          (NAME "TORESET")
+        )
+        (PORT
+          (OBID "cprt0c012ca1c633967449e00f705fd60000")
+          (NAME "TIME_OUT_RESET")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1370a487481310f7083f30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "READOUT_BUSY1_CH2")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 15232 11904 15872 11904)
+        (PORT
+          (OBID "cprt0c8a2046f7427054c3b05edc00950000")
+          (NAME "READOUT_BUSY1_CH2")
+        )
+        (PORT
+          (OBID "cprt0c012ca1a605b07409210f702a630000")
+          (NAME "READOUT_BUSY1_CH2")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1870a487481310f7093f30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "RDEN1_CH2")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 15232 12160 15872 12160)
+        (PORT
+          (OBID "cprt0c8a2046f7427054c3b05edcef850000")
+          (NAME "RDEN1_CH2")
+        )
+        (PORT
+          (OBID "cprt0c012ca1a605b07409210f700a630000")
+          (NAME "RDEN1_CH2")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca105aa487481310f70e5f30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "OUTP0")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 30464 3904 31232 3904)
+        (PORT
+          (OBID "cprt0c012ca1ec9a487481310f7065f30000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "cprt0c012ca173fbb76403400f70efa00000")
+          (NAME "INP")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca175aa487481310f70f5f30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "OUTP1")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 31232 6336 31744 6336)
+        (PORT
+          (OBID "cprt0c012ca161aa487481310f7095f30000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "cprt0c012ca1b8cbb76403400f707ea00000")
+          (NAME "INP")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca1c5aa487481310f7006f30000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "OUTP2")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 31680 7616 32256 7616)
+        (PORT
+          (OBID "cprt0c012ca1f1aa487481310f70c5f30000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "cprt0c012ca1e3fbb76403400f7030b00000")
+          (NAME "INP")
         )
         (LABEL
           (POSITION 0 0)

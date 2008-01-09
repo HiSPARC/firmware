@@ -6,7 +6,7 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Mon Oct 22 22:27:40 2007.
+-- Time stamp     : Wed Jan 09 12:05:14 2008.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -1211,7 +1211,7 @@ end rtl ; -- of DISCRIMINATORS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_MATRIX'.
--- Last modified : Wed Oct 10 16:19:14 2007.
+-- Last modified : Sat Dec 22 18:53:19 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1249,7 +1249,7 @@ end TRIGGER_MATRIX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'TRIGGER_MATRIX'
--- Last modified : Wed Oct 10 16:19:14 2007.
+-- Last modified : Sat Dec 22 18:53:19 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of TRIGGER_MATRIX is
@@ -1258,6 +1258,38 @@ signal SL1: std_logic ;
 signal SL2: std_logic ;
 signal SH1: std_logic ;
 signal SH2: std_logic ;
+signal ML1_DEL1: std_logic ;
+signal ML2_DEL1: std_logic ;
+signal MH1_DEL1: std_logic ;
+signal MH2_DEL1: std_logic ;
+signal ML1_DEL2: std_logic ;
+signal ML2_DEL2: std_logic ;
+signal MH1_DEL2: std_logic ;
+signal MH2_DEL2: std_logic ;
+signal ML1_DEL3: std_logic ;
+signal ML2_DEL3: std_logic ;
+signal MH1_DEL3: std_logic ;
+signal MH2_DEL3: std_logic ;
+signal ML1_DEL4: std_logic ;
+signal ML2_DEL4: std_logic ;
+signal MH1_DEL4: std_logic ;
+signal MH2_DEL4: std_logic ;
+signal SL1_DEL1: std_logic ;
+signal SL2_DEL1: std_logic ;
+signal SH1_DEL1: std_logic ;
+signal SH2_DEL1: std_logic ;
+signal SL1_DEL2: std_logic ;
+signal SL2_DEL2: std_logic ;
+signal SH1_DEL2: std_logic ;
+signal SH2_DEL2: std_logic ;
+signal SL1_DEL3: std_logic ;
+signal SL2_DEL3: std_logic ;
+signal SH1_DEL3: std_logic ;
+signal SH2_DEL3: std_logic ;
+signal SL1_DEL4: std_logic ;
+signal SL2_DEL4: std_logic ;
+signal SH1_DEL4: std_logic ;
+signal SH2_DEL4: std_logic ;
 signal TR_CONDITION1: std_logic ;
 signal TR_CONDITION2: std_logic ;
 signal TR_CONDITION3: std_logic ;
@@ -1272,6 +1304,30 @@ signal TR_CONDITION11: std_logic ;
 signal TR_CONDITION12: std_logic ;
 signal TR_CONDITION13: std_logic ;
 signal TR_CONDITION14: std_logic ;
+signal TR_CONDITION15: std_logic ;
+signal TR_CONDITION16: std_logic ;
+signal TR_CONDITION17: std_logic ;
+signal TR_CONDITION18: std_logic ;
+signal TR_CONDITION19: std_logic ;
+signal TR_CONDITION20: std_logic ;
+signal TR_CONDITION21: std_logic ;
+signal TR_CONDITION22: std_logic ;
+signal TR_CONDITION23: std_logic ;
+signal TR_CONDITION24: std_logic ;
+signal TR_CONDITION25: std_logic ;
+signal TR_CONDITION26: std_logic ;
+signal TR_CONDITION27: std_logic ;
+signal TR_CONDITION28: std_logic ;
+signal TR_CONDITION29: std_logic ;
+signal TR_CONDITION30: std_logic ;
+signal TR_CONDITION1_DEL: std_logic ;
+signal TR_CONDITION2_DEL: std_logic ;
+signal TR_CONDITION3_DEL: std_logic ;
+signal TR_CONDITION4_DEL: std_logic ;
+signal TR_CONDITION5_DEL: std_logic ;
+signal TR_CONDITION9_DEL: std_logic ;
+signal TR_CONDITION12_DEL: std_logic ;
+signal TR_CONDITION14_DEL: std_logic ;
 signal SCINT_PATTERN: std_logic_vector(5 downto 0); -- The 6 LSB bits of TR_CONDITION selects a SCINT_PATTERN; TR_CONDITION(6) selects the ext. trigger
 signal CAL_EXTTRIG_PATTERN: std_logic_vector(1 downto 0); -- TR_CONDITION(7) selects a calibration; TR_CONDITION(6) selects the ext. trigger
 signal SCINT_COINC: std_logic ; -- Selected scintillator trigger
@@ -1297,9 +1353,90 @@ begin
       SH2 <= '0';  
       COINC_DEL <= '0';        
       BLOCK_COINC_SYNCHR <= '0';        
+      TR_CONDITION1_DEL <= '0';        
+      TR_CONDITION2_DEL <= '0';        
+      TR_CONDITION3_DEL <= '0';        
+      TR_CONDITION4_DEL <= '0';        
+      TR_CONDITION5_DEL <= '0';        
+      TR_CONDITION9_DEL <= '0';        
+      TR_CONDITION12_DEL <= '0';        
+      TR_CONDITION14_DEL <= '0';        
+      ML1_DEL1 <= '0';        
+      ML2_DEL1 <= '0';        
+      MH1_DEL1 <= '0';        
+      MH2_DEL1 <= '0';        
+      ML1_DEL2 <= '0';        
+      ML2_DEL2 <= '0';        
+      MH1_DEL2 <= '0';        
+      MH2_DEL2 <= '0';        
+      ML1_DEL3 <= '0';        
+      ML2_DEL3 <= '0';        
+      MH1_DEL3 <= '0';        
+      MH2_DEL3 <= '0';        
+      ML1_DEL4 <= '0';        
+      ML2_DEL4 <= '0';        
+      MH1_DEL4 <= '0';        
+      MH2_DEL4 <= '0';        
+      SL1_DEL1 <= '0';        
+      SL2_DEL1 <= '0';        
+      SH1_DEL1 <= '0';        
+      SH2_DEL1 <= '0';        
+      SL1_DEL2 <= '0';        
+      SL2_DEL2 <= '0';        
+      SH1_DEL2 <= '0';        
+      SH2_DEL2 <= '0';        
+      SL1_DEL3 <= '0';        
+      SL2_DEL3 <= '0';        
+      SH1_DEL3 <= '0';        
+      SH2_DEL3 <= '0';        
+      SL1_DEL4 <= '0';        
+      SL2_DEL4 <= '0';        
+      SH1_DEL4 <= '0';        
+      SH2_DEL4 <= '0';        
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       COINC_DEL <= COINC_TMP;        
       BLOCK_COINC_SYNCHR <= BLOCK_COINC;        
+      TR_CONDITION1_DEL <= TR_CONDITION1;        
+      TR_CONDITION2_DEL <= TR_CONDITION2;        
+      TR_CONDITION3_DEL <= TR_CONDITION3;        
+      TR_CONDITION4_DEL <= TR_CONDITION4;        
+      TR_CONDITION5_DEL <= TR_CONDITION5;        
+      TR_CONDITION9_DEL <= TR_CONDITION9;        
+      TR_CONDITION12_DEL <= TR_CONDITION12;        
+      TR_CONDITION14_DEL <= TR_CONDITION14;        
+      ML1_DEL1 <= ML1;        
+      ML1_DEL2 <= ML1_DEL1;        
+      ML1_DEL3 <= ML1_DEL2;        
+      ML1_DEL4 <= ML1_DEL3;        
+      ML2_DEL1 <= ML2;        
+      ML2_DEL2 <= ML2_DEL1;        
+      ML2_DEL3 <= ML2_DEL2;        
+      ML2_DEL4 <= ML2_DEL3;        
+      MH1_DEL1 <= MH1;        
+      MH1_DEL2 <= MH1_DEL1;        
+      MH1_DEL3 <= MH1_DEL2;        
+      MH1_DEL4 <= MH1_DEL3;        
+      MH2_DEL1 <= MH2;        
+      MH2_DEL2 <= MH2_DEL1;        
+      MH2_DEL3 <= MH2_DEL2;        
+      MH2_DEL4 <= MH2_DEL3;        
+
+      SL1_DEL1 <= SL1;        
+      SL1_DEL2 <= SL1_DEL1;        
+      SL1_DEL3 <= SL1_DEL2;        
+      SL1_DEL4 <= SL1_DEL3;        
+      SL2_DEL1 <= SL2;        
+      SL2_DEL2 <= SL2_DEL1;        
+      SL2_DEL3 <= SL2_DEL2;        
+      SL2_DEL4 <= SL2_DEL3;        
+      SH1_DEL1 <= SH1;        
+      SH1_DEL2 <= SH1_DEL1;        
+      SH1_DEL3 <= SH1_DEL2;        
+      SH1_DEL4 <= SH1_DEL3;        
+      SH2_DEL1 <= SH2;        
+      SH2_DEL2 <= SH2_DEL1;        
+      SH2_DEL3 <= SH2_DEL2;        
+      SH2_DEL4 <= SH2_DEL3;        
       if SLAVE_PRESENT = '1' then
         SL1 <= SL1_IN; 
         SL2 <= SL2_IN; 
@@ -1324,7 +1461,7 @@ begin
   end process;  
       
 -- TR_CONDITION1
--- 0H, 1L, at least one low signal
+-- 0H and 1L, at least one low signal
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1335,7 +1472,7 @@ begin
   end process;  
 
 -- TR_CONDITION2
--- 0H, 2L, at least two low signals
+-- 0H and 2L, at least two low signals
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1348,7 +1485,7 @@ begin
   end process;  
 
 -- TR_CONDITION3
--- 0H, 3L, at least three low signals
+-- 0H and 3L, at least three low signals
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1360,7 +1497,7 @@ begin
   end process;  
 
 -- TR_CONDITION4
--- 0H, 4L, all four low signals
+-- 0H and 4L, all four low signals
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1371,7 +1508,7 @@ begin
   end process;  
 
 -- TR_CONDITION5
--- 1H, 0L,  at least one high signal
+-- 1H and 0L,  at least one high signal
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1382,7 +1519,7 @@ begin
   end process;  
 
 -- TR_CONDITION6
--- 1H, 1L,  at least one high signal and at least one other low signal
+-- 1H and 1L,  at least one high signal and at least one other low signal
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
   process(CLK200MHz,SYSRST)
   begin
@@ -1394,7 +1531,7 @@ begin
   end process;  
 
 -- TR_CONDITION7
--- 1H, 2L,  at least one high signal and at least two other low signals
+-- 1H and 2L,  at least one high signal and at least two other low signals
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
   process(CLK200MHz,SYSRST)
   begin
@@ -1406,7 +1543,7 @@ begin
   end process;  
 
 -- TR_CONDITION8
--- 1H, 3L,  at least one high signal and at least three other low signals
+-- 1H and 3L,  at least one high signal and at least three other low signals
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
   process(CLK200MHz,SYSRST)
   begin
@@ -1418,7 +1555,7 @@ begin
   end process;  
 
 -- TR_CONDITION9
--- 2H, 0L, at least two high signals. 
+-- 2H and 0L, at least two high signals. 
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1431,7 +1568,7 @@ begin
   end process;  
 
 -- TR_CONDITION10
--- 2H, 1L,  at least two high signals and at least one other low signal
+-- 2H and 1L,  at least two high signals and at least one other low signal
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
   process(CLK200MHz,SYSRST)
   begin
@@ -1443,7 +1580,7 @@ begin
   end process;  
 
 -- TR_CONDITION11
--- 2H, 2L,  at least two high signals and at least two other low signals
+-- 2H and 2L,  at least two high signals and at least two other low signals
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
   process(CLK200MHz,SYSRST)
   begin
@@ -1455,7 +1592,7 @@ begin
   end process;  
 
 -- TR_CONDITION12
--- 3H, 0L,  at least two high signals and at least three other low signals
+-- 3H and 0L,  at least three high signals
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1467,7 +1604,7 @@ begin
   end process;  
 
 -- TR_CONDITION13
--- 3H, 1L,  at least three high signals and at least one other low signal
+-- 3H and 1L,  at least three high signals and at least one other low signal
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
   process(CLK200MHz,SYSRST)
   begin
@@ -1479,7 +1616,7 @@ begin
   end process;  
 
 -- TR_CONDITION14
--- 4H, 0L, all four high signals
+-- 4H and 0L, all four high signals
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -1489,24 +1626,222 @@ begin
     end if;
   end process;  
 
-  process (CLK200MHz,SCINT_PATTERN,TR_CONDITION1,TR_CONDITION2,TR_CONDITION3,TR_CONDITION4,TR_CONDITION5,TR_CONDITION6,TR_CONDITION7,TR_CONDITION8,TR_CONDITION9,TR_CONDITION10,TR_CONDITION11,TR_CONDITION12,TR_CONDITION13,TR_CONDITION14)
+-- TR_CONDITION15
+-- 1H or 1L,  at least one high signal or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION15 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION15 <= TR_CONDITION5 or TR_CONDITION1;
+    end if;
+  end process;  
+
+-- TR_CONDITION16
+-- 1H or 2L,  at least one high signal or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION16 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION16 <= TR_CONDITION5 or TR_CONDITION2;
+    end if;
+  end process;  
+
+-- TR_CONDITION17
+-- 1H or 3L,  at least one high signal or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION17 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION17 <= TR_CONDITION5 or TR_CONDITION3;
+    end if;
+  end process;  
+
+-- TR_CONDITION18
+-- 1H or 4L,  at least one high signal or all four signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION18 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION18 <= TR_CONDITION5 or TR_CONDITION4;
+    end if;
+  end process;  
+
+-- TR_CONDITION19
+-- 2H or 1L,  at least two high signals or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION19 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION19 <= TR_CONDITION9 or TR_CONDITION1;
+    end if;
+  end process;  
+
+-- TR_CONDITION20
+-- 2H or 2L,  at least two high signals or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION20 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION20 <= TR_CONDITION9 or TR_CONDITION2;
+    end if;
+  end process;  
+
+-- TR_CONDITION21
+-- 2H or 3L,  at least two high signals or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION21 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION21 <= TR_CONDITION9 or TR_CONDITION3;
+    end if;
+  end process;  
+
+-- TR_CONDITION22
+-- 2H or 4L,  at least two high signals or all four signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION22 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION22 <= TR_CONDITION9 or TR_CONDITION4;
+    end if;
+  end process;  
+
+-- TR_CONDITION23
+-- 3H or 1L,  at least three high signals or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION23 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION23 <= TR_CONDITION12 or TR_CONDITION1;
+    end if;
+  end process;  
+
+-- TR_CONDITION24
+-- 3H or 2L,  at least three high signals or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION24 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION24 <= TR_CONDITION12 or TR_CONDITION2;
+    end if;
+  end process;  
+
+-- TR_CONDITION25
+-- 3H or 3L,  at least three high signals or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION25 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION25 <= TR_CONDITION12 or TR_CONDITION3;
+    end if;
+  end process;  
+
+-- TR_CONDITION26
+-- 3H or 4L,  at least three high signals or all four signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION26 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION26 <= TR_CONDITION12 or TR_CONDITION4;
+    end if;
+  end process;  
+
+-- TR_CONDITION27
+-- 4H or 1L,  all four high signals or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION27 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION27 <= TR_CONDITION14 or TR_CONDITION1;
+    end if;
+  end process;  
+
+-- TR_CONDITION28
+-- 4H or 2L,  all four high signals or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION28 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION28 <= TR_CONDITION14 or TR_CONDITION2;
+    end if;
+  end process;  
+
+-- TR_CONDITION29
+-- 4H or 3L,  all four high signals or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION29 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION29 <= TR_CONDITION14 or TR_CONDITION3;
+    end if;
+  end process;  
+
+-- TR_CONDITION30
+-- 4H or 4L,  all four high signals or all four low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION30 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION30 <= TR_CONDITION14 or TR_CONDITION4;
+    end if;
+  end process;  
+
+  process (CLK200MHz,SCINT_PATTERN,
+    TR_CONDITION1,TR_CONDITION2,TR_CONDITION3,TR_CONDITION4,TR_CONDITION5,
+    TR_CONDITION6,TR_CONDITION7,TR_CONDITION8,TR_CONDITION9,TR_CONDITION10,
+    TR_CONDITION11,TR_CONDITION12,TR_CONDITION13,TR_CONDITION14,TR_CONDITION15,
+    TR_CONDITION16,TR_CONDITION17,TR_CONDITION18,TR_CONDITION19,TR_CONDITION20,
+    TR_CONDITION21,TR_CONDITION22,TR_CONDITION23,TR_CONDITION24,TR_CONDITION25,
+    TR_CONDITION26,TR_CONDITION27,TR_CONDITION28,TR_CONDITION29,TR_CONDITION30)
   begin
     if (CLK200MHz'event and CLK200MHz='1') then
       case SCINT_PATTERN is
-        when "000001" => SCINT_COINC <= TR_CONDITION1;
-        when "000010" => SCINT_COINC <= TR_CONDITION2;
-        when "000011" => SCINT_COINC <= TR_CONDITION3;
-        when "000100" => SCINT_COINC <= TR_CONDITION4;
-        when "001000" => SCINT_COINC <= TR_CONDITION5;
+        when "000001" => SCINT_COINC <= TR_CONDITION1_DEL;
+        when "000010" => SCINT_COINC <= TR_CONDITION2_DEL;
+        when "000011" => SCINT_COINC <= TR_CONDITION3_DEL;
+        when "000100" => SCINT_COINC <= TR_CONDITION4_DEL;
+        when "001000" => SCINT_COINC <= TR_CONDITION5_DEL;
         when "001001" => SCINT_COINC <= TR_CONDITION6;
         when "001010" => SCINT_COINC <= TR_CONDITION7;
         when "001011" => SCINT_COINC <= TR_CONDITION8;
-        when "010000" => SCINT_COINC <= TR_CONDITION9;
+        when "010000" => SCINT_COINC <= TR_CONDITION9_DEL;
         when "010001" => SCINT_COINC <= TR_CONDITION10;
         when "010010" => SCINT_COINC <= TR_CONDITION11;
-        when "011000" => SCINT_COINC <= TR_CONDITION12;
+        when "011000" => SCINT_COINC <= TR_CONDITION12_DEL;
         when "011001" => SCINT_COINC <= TR_CONDITION13;
-        when "100000" => SCINT_COINC <= TR_CONDITION14;
+        when "100000" => SCINT_COINC <= TR_CONDITION14_DEL;
+        when "001100" => SCINT_COINC <= TR_CONDITION15;
+        when "001101" => SCINT_COINC <= TR_CONDITION16;
+        when "001110" => SCINT_COINC <= TR_CONDITION17;
+        when "001111" => SCINT_COINC <= TR_CONDITION18;
+        when "010100" => SCINT_COINC <= TR_CONDITION19;
+        when "010101" => SCINT_COINC <= TR_CONDITION20;
+        when "010110" => SCINT_COINC <= TR_CONDITION21;
+        when "010111" => SCINT_COINC <= TR_CONDITION22;
+        when "011100" => SCINT_COINC <= TR_CONDITION23;
+        when "011101" => SCINT_COINC <= TR_CONDITION24;
+        when "011110" => SCINT_COINC <= TR_CONDITION25;
+        when "011111" => SCINT_COINC <= TR_CONDITION26;
+        when "100100" => SCINT_COINC <= TR_CONDITION27;
+        when "100101" => SCINT_COINC <= TR_CONDITION28;
+        when "100110" => SCINT_COINC <= TR_CONDITION29;
+        when "100111" => SCINT_COINC <= TR_CONDITION30;
         when others => SCINT_COINC <= '0';
       end case;  
     end if;
@@ -1534,14 +1869,14 @@ begin
       TRIGGER_PATTERN <= "0000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COINC_TMP = '1' and COINC_DEL = '0' then
-        TRIGGER_PATTERN(0) <= ML1;
-        TRIGGER_PATTERN(1) <= MH1;
-        TRIGGER_PATTERN(2) <= ML2;
-        TRIGGER_PATTERN(3) <= MH2;
-        TRIGGER_PATTERN(4) <= SL1;
-        TRIGGER_PATTERN(5) <= SH1;
-        TRIGGER_PATTERN(6) <= SL2;
-        TRIGGER_PATTERN(7) <= SH2;
+        TRIGGER_PATTERN(0) <= ML1_DEL4;
+        TRIGGER_PATTERN(1) <= MH1_DEL4;
+        TRIGGER_PATTERN(2) <= ML2_DEL4;
+        TRIGGER_PATTERN(3) <= MH2_DEL4;
+        TRIGGER_PATTERN(4) <= SL1_DEL4;
+        TRIGGER_PATTERN(5) <= SH1_DEL4;
+        TRIGGER_PATTERN(6) <= SL2_DEL4;
+        TRIGGER_PATTERN(7) <= SH2_DEL4;
         TRIGGER_PATTERN(8) <= EXT_TR;
         TRIGGER_PATTERN(9) <= MASTER;
         TRIGGER_PATTERN(10) <= SLAVE_PRESENT;
@@ -1550,7 +1885,7 @@ begin
         TRIGGER_PATTERN(13) <= COMPL2;
         TRIGGER_PATTERN(14) <= COMPH2;
         TRIGGER_PATTERN(15) <= '0';
-	  end if;        
+	    end if;        
     end if;
   end process;  
   
@@ -1830,7 +2165,7 @@ end rtl ; -- of EVENT_DATA_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_WRITE_HANDLER'.
--- Last modified : Wed Oct 10 16:19:14 2007.
+-- Last modified : Thu Dec 27 16:32:59 2007.
 --------------------------------------------------------------------------------
 
 
@@ -1889,7 +2224,7 @@ end USB_WRITE_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_WRITE_HANDLER'
--- Last modified : Wed Oct 10 16:19:14 2007.
+-- Last modified : Thu Dec 27 16:32:59 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_WRITE_HANDLER is
@@ -1964,6 +2299,7 @@ signal PARAMETER_LIST_VALID_DEL: std_logic ;
 signal READ_ERROR_VALID_DEL: std_logic ; 
 signal COMPDATA_VALID_DEL: std_logic ; 
 signal USB_WRITE_BUSY_TMP: std_logic ; 
+signal USB_BUSYHOLD_COUNT: std_logic_vector(3 downto 0); -- Forces a gap between 2 BUSY signals
 
 
 begin
@@ -2093,25 +2429,34 @@ begin
       START_WRITE_PARAMETER_LIST_PRIOR <= '0'; 
       START_WRITE_READ_ERROR_PRIOR <= '0'; 
       START_WRITE_COMP_DATA_PRIOR <= '0'; 
-    elsif (CLKRD'event and CLKRD = '1') then 
-      if WRITE_EVENT_MODE = '0' and WRITE_GPS_MODE = '0' and WRITE_COMP_MODE = '0' and WRITE_PARAMETER_LIST_MODE = '0' and WRITE_READ_ERROR_MODE = '0' and USB_WRITE_ENABLE = '1' then  -- if there is no writing to USB
-        if TS_ONE_PPS_VALID_IN = '1' then -- Start WRITE_GPS_MODE
-          START_WRITE_GPS_COUNT_PRIOR <= '1'; 
-        elsif START_WRITE_EVENT = '1' then -- Start WRITE_EVENT_MODE
-          START_WRITE_EVENT_PRIOR <= '1'; 
-        elsif COMPDATA_VALID = '1' then -- Start WRITE_COMP_MODE
-          START_WRITE_COMP_DATA_PRIOR <= '1'; 
-        elsif PARAMETER_LIST_VALID = '1' then -- Start WRITE_PARAMETER_LIST_MODE
-          START_WRITE_PARAMETER_LIST_PRIOR <= '1'; 
-        elsif READ_ERROR_VALID = '1' then -- Start WRITE_READ_ERROR_MODE
-          START_WRITE_READ_ERROR_PRIOR <= '1'; 
-        end if;
-      else  
-  	    START_WRITE_EVENT_PRIOR <= '0';
-        START_WRITE_GPS_COUNT_PRIOR <= '0'; 
-        START_WRITE_PARAMETER_LIST_PRIOR <= '0'; 
-        START_WRITE_READ_ERROR_PRIOR <= '0'; 
-        START_WRITE_COMP_DATA_PRIOR <= '0'; 
+      USB_BUSYHOLD_COUNT <= "0000"; 
+    elsif (CLKRD'event and CLKRD = '1') then
+      if USB_WRITE_ENABLE = '1' then 
+        if USB_WRITE_BUSY_TMP = '0' then  -- if there is no writing to USB
+          if USB_BUSYHOLD_COUNT > "1000" then 
+            USB_BUSYHOLD_COUNT <= USB_BUSYHOLD_COUNT; 
+            if TS_ONE_PPS_VALID_IN = '1' then -- Start WRITE_GPS_MODE
+              START_WRITE_GPS_COUNT_PRIOR <= '1'; 
+            elsif START_WRITE_EVENT = '1' then -- Start WRITE_EVENT_MODE
+              START_WRITE_EVENT_PRIOR <= '1'; 
+            elsif COMPDATA_VALID = '1' then -- Start WRITE_COMP_MODE
+              START_WRITE_COMP_DATA_PRIOR <= '1'; 
+            elsif PARAMETER_LIST_VALID = '1' then -- Start WRITE_PARAMETER_LIST_MODE
+              START_WRITE_PARAMETER_LIST_PRIOR <= '1'; 
+            elsif READ_ERROR_VALID = '1' then -- Start WRITE_READ_ERROR_MODE
+              START_WRITE_READ_ERROR_PRIOR <= '1'; 
+            end if;
+          else
+            USB_BUSYHOLD_COUNT <= USB_BUSYHOLD_COUNT + "0001"; 
+          end if;
+	      else  
+	  	    START_WRITE_EVENT_PRIOR <= '0';
+	        START_WRITE_GPS_COUNT_PRIOR <= '0'; 
+	        START_WRITE_PARAMETER_LIST_PRIOR <= '0'; 
+	        START_WRITE_READ_ERROR_PRIOR <= '0'; 
+	        START_WRITE_COMP_DATA_PRIOR <= '0'; 
+          USB_BUSYHOLD_COUNT <= "0000"; 
+	      end if;
       end if;
     end if;
   end process;
@@ -2651,7 +2996,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Mon Oct 22 22:27:39 2007.
+-- Last modified : Thu Dec 27 16:32:59 2007.
 --------------------------------------------------------------------------------
 
 
@@ -2729,7 +3074,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Mon Oct 22 22:27:39 2007.
+-- Last modified : Thu Dec 27 16:32:59 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -2913,7 +3258,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00000110";
+  SOFTWARE_VERSION <= "00000111";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -4405,6 +4750,79 @@ begin
 
 
 end rtl ; -- of USB_READ_HANDLER
+
+--------------------------------------------------------------------------------
+-- Entity declaration of 'READOUT_TIMED_OUT'.
+-- Last modified : Fri Dec 21 22:14:40 2007.
+--------------------------------------------------------------------------------
+
+
+library ieee ;
+use ieee.numeric_std.all ;
+use ieee.std_logic_unsigned.all ;
+use ieee.std_logic_1164.all ;
+
+entity READOUT_TIMED_OUT is
+  port(
+    CLK10MHz          : in     std_logic;
+    ONE_PPS           : in     std_logic;
+    TIME_OUT_RESET    : out    std_logic;
+    USB_TXE           : in     std_logic;
+    USB_WRITE_REQUEST : in     std_logic;
+    nSYSRST           : in     std_logic);
+end READOUT_TIMED_OUT ;
+
+--------------------------------------------------------------------------------
+-- Architecture 'rtl' of 'READOUT_TIMED_OUT'
+-- Last modified : Fri Dec 21 22:14:40 2007.
+--------------------------------------------------------------------------------
+
+architecture rtl of READOUT_TIMED_OUT is
+
+signal TIME_OUT_COUNT: std_logic_vector(3 downto 0); 
+signal USB_TXE_DEL1: std_logic ; 
+signal USB_TXE_DEL2: std_logic ; 
+signal ONE_PPS_DEL1: std_logic ; 
+signal ONE_PPS_DEL2: std_logic ; 
+
+
+begin
+
+  TIME_OUT_RESET <= TIME_OUT_COUNT(3);
+
+  process(CLK10MHz,nSYSRST)
+  begin
+  	if nSYSRST = '0' then
+  	  USB_TXE_DEL1 <= '0';
+  	  USB_TXE_DEL2 <= '0';
+  	  ONE_PPS_DEL1 <= '0';
+  	  ONE_PPS_DEL2 <= '0';
+    elsif (CLK10MHz'event and CLK10MHz = '1') then 
+  	  USB_TXE_DEL1 <= USB_TXE;
+  	  USB_TXE_DEL2 <= USB_TXE_DEL1;
+  	  ONE_PPS_DEL1 <= ONE_PPS;
+  	  ONE_PPS_DEL2 <= ONE_PPS_DEL1;
+    end if;
+  end process;
+
+  process(CLK10MHz,nSYSRST)
+  begin
+  	if nSYSRST = '0' then
+  	  TIME_OUT_COUNT <= "0000";
+    elsif (CLK10MHz'event and CLK10MHz = '1') then 
+      if USB_TXE_DEL1 = '0' and USB_TXE_DEL2 = '1' then -- at falling edge of TXE
+  	    TIME_OUT_COUNT <= "0000"; -- reset counter
+      elsif TIME_OUT_COUNT = "1000" then -- after 8 seconds no TXE
+  	    TIME_OUT_COUNT <= TIME_OUT_COUNT; -- latch countvalue 8  
+  	  elsif USB_WRITE_REQUEST = '1' then 
+        if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then -- at rising edge of PPS
+  	      TIME_OUT_COUNT <= TIME_OUT_COUNT + "0001"; -- increase counter    	   
+        end if;
+      end if;
+    end if;
+  end process;
+
+end rtl ; -- of READOUT_TIMED_OUT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'GPS_STUFF'.
@@ -6286,7 +6704,7 @@ end rtl ; -- of FIFO_SELECT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SOFT_RESET'.
--- Last modified : Wed Oct 10 16:19:14 2007.
+-- Last modified : Wed Dec 19 22:27:08 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6300,12 +6718,13 @@ entity SOFT_RESET is
     CLKRD   : in     std_logic;
     RESOUT  : out    std_logic;
     SRESET  : in     std_logic;
+    TORESET : in     std_logic;
     nHRESET : in     std_logic);
 end SOFT_RESET ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SOFT_RESET'
--- Last modified : Wed Oct 10 16:19:14 2007.
+-- Last modified : Wed Dec 19 22:27:08 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of SOFT_RESET is
@@ -6318,17 +6737,17 @@ begin
   
   process (CLKRD, nHRESET)
   begin
-	if nHRESET = '0' then
-	  SRESET_COUNT <= (others => '1');                 
-	elsif CLKRD'event and CLKRD = '1' then
-      if SRESET = '1' then
-	    SRESET_COUNT <= (others => '0');                 
-	  elsif SRESET_COUNT /= "1111" then 
-		SRESET_COUNT <= SRESET_COUNT + "0001";
-	  else
-		SRESET_COUNT <= SRESET_COUNT;
+	  if nHRESET = '0' then
+	    SRESET_COUNT <= (others => '1');                 
+	  elsif CLKRD'event and CLKRD = '1' then
+      if SRESET = '1' or TORESET = '1' then
+	      SRESET_COUNT <= (others => '0');                 
+	    elsif SRESET_COUNT /= "1111" then 
+		    SRESET_COUNT <= SRESET_COUNT + "0001";
+	    else
+		    SRESET_COUNT <= SRESET_COUNT;
+	    end if;
 	  end if;
-	end if;
   end process;
 
 end rtl ; -- of SOFT_RESET
@@ -6449,7 +6868,7 @@ end a0 ; -- of DUAL_PORT_RAM
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'WR_ADDRES_COUNTER'.
--- Last modified : Mon Oct 22 22:27:39 2007.
+-- Last modified : Mon Oct 22 22:29:38 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6474,7 +6893,7 @@ end WR_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'WR_ADDRES_COUNTER'
--- Last modified : Mon Oct 22 22:27:39 2007.
+-- Last modified : Mon Oct 22 22:29:38 2007.
 --------------------------------------------------------------------------------
 
 architecture rtl of WR_ADDRES_COUNTER is
@@ -6917,7 +7336,7 @@ end structure ; -- of TRIGGER_STUFF
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DATA_CONTROLLER'.
--- Last modified : Wed Aug 29 13:09:45 2007.
+-- Last modified : Fri Dec 21 22:15:19 2007.
 --------------------------------------------------------------------------------
 
 
@@ -6991,6 +7410,7 @@ entity DATA_CONTROLLER is
     THL1                    : out    std_logic_vector(11 downto 0);
     THL2                    : out    std_logic_vector(11 downto 0);
     TH_COUNTERS_IN          : in     std_logic_vector(63 downto 0);
+    TIME_OUT_RESET          : out    std_logic;
     TOTAL_TIME              : out    integer range 2000 downto 0;
     TOTAL_TIME_3X           : out    integer range 6000 downto 0;
     TRIGGER_PATTERN         : in     std_logic_vector(15 downto 0);
@@ -7002,12 +7422,13 @@ entity DATA_CONTROLLER is
     USB_RXF                 : in     std_logic;
     USB_TXE                 : in     std_logic;
     USB_WR                  : out    std_logic;
-    USB_WRITE_ENABLE        : out    std_logic);
+    USB_WRITE_ENABLE        : out    std_logic;
+    nSYSRST                 : in     std_logic);
 end DATA_CONTROLLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'DATA_CONTROLLER'
--- Last modified : Wed Aug 29 13:09:45 2007.
+-- Last modified : Fri Dec 21 22:15:19 2007.
 --------------------------------------------------------------------------------
 
 architecture structure of DATA_CONTROLLER is
@@ -7142,6 +7563,16 @@ architecture structure of DATA_CONTROLLER is
       USB_WRITE_REQUEST           : in     std_logic);
   end component ;
 
+  component READOUT_TIMED_OUT
+    port(
+      CLK10MHz          : in     std_logic;
+      ONE_PPS           : in     std_logic;
+      TIME_OUT_RESET    : out    std_logic;
+      USB_TXE           : in     std_logic;
+      USB_WRITE_REQUEST : in     std_logic;
+      nSYSRST           : in     std_logic);
+  end component ;
+
   signal USB_DATA_net                :  std_logic_vector(7 downto 0);
   signal WR_EN                       :  std_logic;
   signal READOUT_BUSY                :  std_logic;
@@ -7157,7 +7588,7 @@ architecture structure of DATA_CONTROLLER is
   signal READ_ERROR_DATA             :  std_logic_vector(7 downto 0);
   signal USB_WRITE_ENABLE_net        :  std_logic;
   signal USB_WRITE_BUSY              :  std_logic;
-  signal USB_WRITE_REQUEST           :  std_logic;
+  signal USB_WRITE_REQUEST0          :  std_logic;
   signal TR_CONDITION_net            :  std_logic_vector(7 downto 0);
   signal PARAMETER_LIST              :  std_logic_vector(271 downto 0);
   signal SECOND_MESSAGE_ALLOWED      :  std_logic;
@@ -7226,7 +7657,7 @@ begin
       USB_WR => USB_WR,
       USB_WRITE_BUSY => USB_WRITE_BUSY,
       USB_WRITE_ENABLE => USB_WRITE_ENABLE_net,
-      USB_WRITE_REQUEST => USB_WRITE_REQUEST);
+      USB_WRITE_REQUEST => USB_WRITE_REQUEST0);
 
   u4: USB_READ_HANDLER
     port map(
@@ -7292,7 +7723,16 @@ begin
       USB_RXF => USB_RXF,
       USB_WRITE_BUSY => USB_WRITE_BUSY,
       USB_WRITE_ENABLE => USB_WRITE_ENABLE_net,
-      USB_WRITE_REQUEST => USB_WRITE_REQUEST);
+      USB_WRITE_REQUEST => USB_WRITE_REQUEST0);
+
+  u0: READOUT_TIMED_OUT
+    port map(
+      CLK10MHz => CLK10MHz,
+      ONE_PPS => ONE_PPS,
+      TIME_OUT_RESET => TIME_OUT_RESET,
+      USB_TXE => USB_TXE,
+      USB_WRITE_REQUEST => USB_WRITE_REQUEST0,
+      nSYSRST => nSYSRST);
 end structure ; -- of DATA_CONTROLLER
 
 --------------------------------------------------------------------------------
@@ -7578,7 +8018,7 @@ end structure ; -- of STORAGE_CHANNELS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Mon Oct 22 09:29:48 2007.
+-- Last modified : Wed Jan 09 12:05:00 2008.
 --------------------------------------------------------------------------------
 
 
@@ -7669,7 +8109,7 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Mon Oct 22 09:29:48 2007.
+-- Last modified : Wed Jan 09 12:05:00 2008.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
@@ -7857,6 +8297,7 @@ architecture a0 of hisparc is
       THL1                    : out    std_logic_vector(11 downto 0);
       THL2                    : out    std_logic_vector(11 downto 0);
       TH_COUNTERS_IN          : in     std_logic_vector(63 downto 0);
+      TIME_OUT_RESET          : out    std_logic;
       TOTAL_TIME              : out    integer range 2000 downto 0;
       TOTAL_TIME_3X           : out    integer range 6000 downto 0;
       TRIGGER_PATTERN         : in     std_logic_vector(15 downto 0);
@@ -7868,7 +8309,8 @@ architecture a0 of hisparc is
       USB_RXF                 : in     std_logic;
       USB_TXE                 : in     std_logic;
       USB_WR                  : out    std_logic;
-      USB_WRITE_ENABLE        : out    std_logic);
+      USB_WRITE_ENABLE        : out    std_logic;
+      nSYSRST                 : in     std_logic);
   end component ;
 
   component GPS_STUFF
@@ -8021,6 +8463,7 @@ architecture a0 of hisparc is
       CLKRD   : in     std_logic;
       RESOUT  : out    std_logic;
       SRESET  : in     std_logic;
+      TORESET : in     std_logic;
       nHRESET : in     std_logic);
   end component ;
 
@@ -8082,6 +8525,7 @@ architecture a0 of hisparc is
   signal DOUT_VALID              :  std_logic;
   signal RDEN                    :  std_logic;
   signal DATA_OUT                :  std_logic_vector(7 downto 0);
+  signal USB_WR_net              :  std_logic;
   signal ADDITIONAL_DATA         :  std_logic_vector(15 downto 0);
   signal GPS_TS_OUT              :  std_logic_vector(55 downto 0);
   signal CTD_OUT                 :  std_logic_vector(31 downto 0);
@@ -8098,6 +8542,7 @@ architecture a0 of hisparc is
   signal CTP_TS_ONE_PPS_OUT      :  std_logic_vector(31 downto 0);
   signal CTD_TS_ONE_PPS_OUT      :  std_logic_vector(31 downto 0);
   signal TS_ONE_PPS_READOUT_DONE :  std_logic;
+  signal USB_RD_net0             :  std_logic;
   signal SOFT_RESET0             :  std_logic;
   signal COINC0                  :  std_logic;
   signal ML1_net                 :  std_logic;
@@ -8145,9 +8590,7 @@ architecture a0 of hisparc is
   signal DATA_OUT1_CH2           :  std_logic_vector(11 downto 0);
   signal DATA_OUT2_CH2           :  std_logic_vector(11 downto 0);
   signal DATA_READY2_CH2         :  std_logic;
-  signal READOUT_BUSY1_CH3       :  std_logic;
   signal READOUT_BUSY2_CH2       :  std_logic;
-  signal RDEN1_CH3               :  std_logic;
   signal RDEN2_CH2               :  std_logic;
   signal DATA_OUT1_CH1           :  std_logic_vector(11 downto 0);
   signal DATA_OUT2_CH1           :  std_logic_vector(11 downto 0);
@@ -8160,8 +8603,13 @@ architecture a0 of hisparc is
   signal EVENT_DATA_READY0       :  std_logic;
   signal COINC_TO_END_TIME_FIFO1 :  std_logic;
   signal COINC_TO_END_TIME_FIFO2 :  std_logic;
-  signal WE0                     :  std_logic;
   signal DATA_READY1_CH2         :  std_logic;
+  signal TIME_OUT_RESET          :  std_logic;
+  signal READOUT_BUSY1_CH2       :  std_logic;
+  signal RDEN1_CH2               :  std_logic;
+  signal OUTP0                   :  std_logic;
+  signal OUTP1                   :  std_logic;
+  signal OUTP2                   :  std_logic;
 
 begin
   --Comparator signals twisted due to
@@ -8169,6 +8617,8 @@ begin
   --ADC signals twisted due to
   --analog channel swap on the board
 
+  USB_WR <= USB_WR_net;
+  USB_RD <= USB_RD_net0;
 
   u4: PLL
     port map(
@@ -8358,6 +8808,7 @@ begin
       THL1 => THL1,
       THL2 => THL2,
       TH_COUNTERS_IN => TH_COUNTERS_OUT,
+      TIME_OUT_RESET => TIME_OUT_RESET,
       TOTAL_TIME => TOTAL_TIME,
       TOTAL_TIME_3X => TOTAL_TIME_3X,
       TRIGGER_PATTERN => ADDITIONAL_DATA,
@@ -8365,11 +8816,12 @@ begin
       TS_ONE_PPS_READOUT_DONE => TS_ONE_PPS_READOUT_DONE,
       TS_ONE_PPS_VALID_IN => TS_ONE_PPS_VALID_OUT,
       USB_DATA => USB_DATA,
-      USB_RD => USB_RD,
+      USB_RD => USB_RD_net0,
       USB_RXF => USB_RXF,
       USB_TXE => USB_TXE,
-      USB_WR => USB_WR,
-      USB_WRITE_ENABLE => open);
+      USB_WR => USB_WR_net,
+      USB_WRITE_ENABLE => open,
+      nSYSRST => nSYSRST);
 
   u14: GPS_STUFF
     port map(
@@ -8496,13 +8948,13 @@ begin
       GPS_TS_IN => GPS_TS_OUT1,
       GPS_TS_OUT => GPS_TS_OUT0,
       RDEN1_CH1 => RDEN1_CH1,
-      RDEN1_CH2 => RDEN1_CH3,
+      RDEN1_CH2 => RDEN1_CH2,
       RDEN2_CH1 => RDEN2_CH1,
       RDEN2_CH2 => RDEN2_CH2,
       RDEN_CH1 => RDEN_CH1,
       RDEN_CH2 => RDEN_CH2,
       READOUT_BUSY1_CH1 => READOUT_BUSY1_CH1,
-      READOUT_BUSY1_CH2 => READOUT_BUSY1_CH3,
+      READOUT_BUSY1_CH2 => READOUT_BUSY1_CH2,
       READOUT_BUSY2_CH1 => READOUT_BUSY2_CH1,
       READOUT_BUSY2_CH2 => READOUT_BUSY2_CH2,
       SYSRST => SYSRST,
@@ -8524,28 +8976,28 @@ begin
   u24: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => RDEN1_CH3,
+      INP => OUTP1,
       SYSRST => SYSRST,
       nOUTP => LED4);
 
   u27: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => READOUT_BUSY1_CH3,
+      INP => USB_WR_net,
       SYSRST => SYSRST,
       nOUTP => LED6);
 
   u28: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => WE0,
+      INP => OUTP0,
       SYSRST => SYSRST,
       nOUTP => LED9);
 
   u29: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => COMPDATA_VALID_OUT0,
+      INP => OUTP2,
       SYSRST => SYSRST,
       nOUTP => LED8);
 
@@ -8554,6 +9006,7 @@ begin
       CLKRD => CLKRD,
       RESOUT => SYSRST,
       SRESET => SOFT_RESET0,
+      TORESET => TIME_OUT_RESET,
       nHRESET => nSYSRST);
 
   u0: LED_ONE_SHOT
@@ -8588,15 +9041,30 @@ begin
       DATA_READY2_CH2 => DATA_READY2_CH2,
       MASTER => FORCE_MASTER0,
       RDEN1_CH1 => RDEN1_CH1,
-      RDEN1_CH2 => RDEN1_CH3,
+      RDEN1_CH2 => RDEN1_CH2,
       RDEN2_CH1 => RDEN2_CH1,
       RDEN2_CH2 => RDEN2_CH2,
       READOUT_BUSY1_CH1 => READOUT_BUSY1_CH1,
-      READOUT_BUSY1_CH2 => READOUT_BUSY1_CH3,
+      READOUT_BUSY1_CH2 => READOUT_BUSY1_CH2,
       READOUT_BUSY2_CH1 => READOUT_BUSY2_CH1,
       READOUT_BUSY2_CH2 => READOUT_BUSY2_CH2,
       SYSRST => SYSRST,
       TOTAL_TIME => TOTAL_TIME,
-      WE => WE0);
+      WE => open);
+
+  u30: INVERTER
+    port map(
+      INP => USB_TXE,
+      OUTP => OUTP0);
+
+  u31: INVERTER
+    port map(
+      INP => USB_RXF,
+      OUTP => OUTP1);
+
+  u32: INVERTER
+    port map(
+      INP => USB_RD_net0,
+      OUTP => OUTP2);
 end a0 ; -- of hisparc
 
