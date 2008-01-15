@@ -11,7 +11,7 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Mon Oct 22 15:34:03 2007")
+      (PROPERTY "STAMP_TIME" "Tue Jan 15 12:16:21 2008")
       (NAME "STORAGE_CHANNELS")
       (USERNAME 1)
     )
@@ -7104,7 +7104,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 16640 27712 14208 27712)
+        (WIRE 14208 27712 16640 27712)
         (PORT
           (OBID "aprt0c012ca1a605b07409210f700b630000")
           (NAME "READOUT_BUSY2_CH2")
@@ -7247,7 +7247,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 16704 8960 14208 8960)
+        (WIRE 14208 8960 16704 8960)
         (PORT
           (OBID "cprt0c012ca140acc07409210f708a830000")
           (NAME "READOUT_BUSY")
@@ -7370,12 +7370,12 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15744 8704 15744 5056)
+        (WIRE 15744 5056 15744 8704)
         (WIRE 15744 8704 15744 13888)
         (WIRE 14208 8704 15744 8704)
         (WIRE 15744 5056 16768 5056)
         (WIRE 14208 5056 15744 5056)
-        (WIRE 15744 13888 14208 13888)
+        (WIRE 14208 13888 15744 13888)
         (PORT
           (OBID "cprt0c012ca1aff9c17409310f7036e60000")
           (NAME "COINC_TO_END_TIME")
@@ -7506,7 +7506,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 16704 22592 14208 22592)
+        (WIRE 14208 22592 16704 22592)
         (PORT
           (OBID "aprt0c012ca14ef4b07409210f7009630000")
           (NAME "READOUT_BUSY2_CH1")
@@ -7572,9 +7572,9 @@
         (WIRE 15808 18624 16640 18624)
         (WIRE 15808 18624 15808 22336)
         (WIRE 14208 18624 15808 18624)
-        (WIRE 15808 22336 14208 22336)
+        (WIRE 14208 22336 15808 22336)
         (WIRE 15808 22336 15808 27456)
-        (WIRE 15808 27456 14208 27456)
+        (WIRE 14208 27456 15808 27456)
         (PORT
           (OBID "cprt0c012ca166ccc07409210f702b830000")
           (NAME "COINC_TO_END_TIME")
@@ -7610,7 +7610,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 16768 14144 14208 14144)
+        (WIRE 14208 14144 16768 14144)
         (PORT
           (OBID "cprt0c012ca150c5b07409210f70d7730000")
           (NAME "READOUT_BUSY")
@@ -7673,8 +7673,8 @@
           (HDL_TYPE
           )
         )
-        (WIRE 15424 28032 14208 28032)
-        (WIRE 16640 28032 15424 28032)
+        (WIRE 14208 28032 15424 28032)
+        (WIRE 15424 28032 16640 28032)
         (WIRE 15424 19584 15424 28032)
         (WIRE 14208 19584 15424 19584)
         (PORT
