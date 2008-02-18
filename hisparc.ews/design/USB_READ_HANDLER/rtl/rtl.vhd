@@ -82,6 +82,8 @@ signal POST_TIME_LOAD: std_logic_vector(15 downto 0);
 signal PRE_TIME_TMP: std_logic_vector(15 downto 0);
 signal COINC_TIME_TMP: std_logic_vector(15 downto 0);
 signal POST_TIME_TMP: std_logic_vector(15 downto 0);
+signal PRE_TIME_TMP2: std_logic_vector(15 downto 0);
+signal COINC_TIME_TMP2: std_logic_vector(15 downto 0);
 
 signal CH1_OFFSET_ADJ_POS: std_logic_vector(7 downto 0);
 signal CH1_OFFSET_ADJ_POS_DEL: std_logic_vector(7 downto 0);
@@ -251,7 +253,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00001000";
+  SOFTWARE_VERSION <= "00001001";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -271,9 +273,9 @@ begin
   PRE_TIME_OUT <= PRE_TIME_TMP;
   COINC_TIME_OUT <= COINC_TIME_TMP;
   POST_TIME_OUT <= POST_TIME_TMP;
-  PRE_TIME_SET <= to_integer(unsigned(PRE_TIME_TMP)) ;
+  PRE_TIME_SET <= to_integer(unsigned(PRE_TIME_TMP2)) ;
   POST_TIME_SET <= to_integer(unsigned(POST_TIME_TMP)) ;
-  COINC_TIME_SET <= to_integer(unsigned(COINC_TIME_TMP)) ;
+  COINC_TIME_SET <= to_integer(unsigned(COINC_TIME_TMP2)) ;
   COINC_TIME <= COINC_TIME_SET;
   POST_TIME <= POST_TIME_SET;
   TOTAL_TIME <= TOTAL_TIME_TMP;
@@ -301,16 +303,25 @@ begin
       else  
         COINC_TIME_TMP <= "0000001111101000";
       end if;
-      if POST_TIME_LOAD <= "0000011001000000" then -- 1600
+
+      if FORCE_MASTER_TMP = '1' then 
+        PRE_TIME_TMP2 <= PRE_TIME_TMP;
+        COINC_TIME_TMP2 <= COINC_TIME_TMP;
+      else  
+        PRE_TIME_TMP2 <= PRE_TIME_TMP + "0000000000000100"; -- When a module is a slave, the timing needs a 20ns correction
+        COINC_TIME_TMP2 <= COINC_TIME_TMP - "0000000000000100";
+      end if;
+
+      if POST_TIME_LOAD + PRE_TIME_TMP2 + COINC_TIME_TMP2 > "0000011111010000" then -- 2000
+        POST_TIME_TMP <= "0000011111010000" - PRE_TIME_TMP2 - COINC_TIME_TMP2;
+      elsif POST_TIME_LOAD <= "0000011001000000" then -- 1600
         POST_TIME_TMP <= POST_TIME_LOAD;
       else  
         POST_TIME_TMP <= "0000011001000000";
       end if;
-      if (PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET) <= 2000 then 
-        TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET;
-      else  
-        TOTAL_TIME_TMP <= 2000; -- Limit on 2000
-      end if;
+      
+      TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET;
+
     end if;
   end process;  
 

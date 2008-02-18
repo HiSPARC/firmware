@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Tue Jan 15 12:16:21 2008")
+      (PROPERTY "STAMP_TIME" "Wed Feb 13 16:29:16 2008")
       (NAME "hisparc")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1133875074 "Tue Dec 06 14:17:54 2005")
-      (MODIFIED 1199876700 "Wed Jan 09 12:05:00 2008")
+      (MODIFIED 1202916551 "Wed Feb 13 16:29:11 2008")
     )
     (PORT
       (OBID "eprt0c013cbd024c693483700f7023e10000")
@@ -14376,77 +14376,6 @@
         )
       )
       (COMPONENT
-        (OBID "comp0c012ca19213b07409210f7043630000")
-        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd2b787b440a600f70e8170000")
-        (HDL_IDENT
-          (NAME "u22")
-          (USERNAME 1)
-        )
-        (GEOMETRY 20160 17664 20800 18048)
-        (SIDE 0)
-        (PORT
-          (OBID "cprt0c012ca19213b07409210f7053630000")
-          (PORT "eprt0c013cbd0c787b440a600f7019170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "OUTP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 20760 17816 20840 17896)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 20736 17856)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "OUTP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c012ca19213b07409210f7063630000")
-          (PORT "eprt0c013cbd3e787b440a600f7039170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "INP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 20120 17816 20200 17896)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 20212 17868)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "INP")
-          )
-        )
-        (LABEL
-          (POSITION 20114 18234)
-          (SCALE 128)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 13)
-          (TEXT "u22:INVERTER:rtl(V)")
-        )
-      )
-      (COMPONENT
         (OBID "comp0c012ca105f4b07409210f7017630000")
         (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c012ca105f4b07409210f70f6630000")
         (HDL_IDENT
@@ -19297,50 +19226,6 @@
         )
       )
       (NET
-        (OBID "net0c013cbdc528e0548b500f703d910000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "COINC1")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 11904 17984 12544 17984)
-        (WIRE 12544 15616 12544 17984)
-        (WIRE 19712 15616 19968 15616)
-        (WIRE 15616 15616 19712 15616)
-        (WIRE 19712 15616 19712 17856)
-        (WIRE 19712 17856 20096 17856)
-        (WIRE 12544 15616 15616 15616)
-        (WIRE 15616 8512 15616 15616)
-        (WIRE 15616 8512 15872 8512)
-        (PORT
-          (OBID "cprt0c013cbd1336984487500f7032c00000")
-          (NAME "COINC")
-        )
-        (PORT
-          (OBID "cprt0c013cbda81e55440d800f7070140000")
-          (NAME "COINC")
-        )
-        (PORT
-          (OBID "cprt0c012ca19213b07409210f7063630000")
-          (NAME "INP")
-        )
-        (PORT
-          (OBID "cprt0c8a2046f9327054c3b05edc4e850000")
-          (NAME "COINC_TO_END_TIME")
-        )
-        (LABEL
-          (POSITION 1280 3392)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
         (OBID "net0c013cbd82db7154cc800f70f0f60000")
         (HDL_OBJECT
           (HDL_IDENT
@@ -20417,20 +20302,38 @@
         (OBID "net0c012ca1e313b07409210f7073630000")
         (HDL_OBJECT
           (HDL_IDENT
-            (NAME "OUTP")
+            (NAME "COINC")
             (USERNAME 0)
           )
           (HDL_TYPE
           )
         )
         (WIRE 20864 17856 21568 17856)
-        (PORT
-          (OBID "cprt0c012ca19213b07409210f7053630000")
-          (NAME "OUTP")
-        )
+        (WIRE 20096 17856 20864 17856)
+        (WIRE 19712 17856 20096 17856)
+        (WIRE 19712 15616 19712 17856)
+        (WIRE 19712 15616 19968 15616)
+        (WIRE 15616 15616 19712 15616)
+        (WIRE 12544 15616 15616 15616)
+        (WIRE 12544 15616 12544 17984)
+        (WIRE 11904 17984 12544 17984)
+        (WIRE 15616 8512 15616 15616)
+        (WIRE 15616 8512 15872 8512)
         (PORT
           (OBID "cprt0c012ca197dc407487710f700b040000")
           (NAME "INP")
+        )
+        (PORT
+          (OBID "cprt0c013cbda81e55440d800f7070140000")
+          (NAME "COINC")
+        )
+        (PORT
+          (OBID "cprt0c013cbd1336984487500f7032c00000")
+          (NAME "COINC")
+        )
+        (PORT
+          (OBID "cprt0c8a2046f9327054c3b05edc4e850000")
+          (NAME "COINC_TO_END_TIME")
         )
         (LABEL
           (POSITION 0 0)

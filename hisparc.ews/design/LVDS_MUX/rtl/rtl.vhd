@@ -27,7 +27,8 @@
 --     SH1             : out    std_logic;
 --     SH2             : out    std_logic;
 --     SL1             : out    std_logic;
---     SL2             : out    std_logic);
+--     SL2             : out    std_logic;
+--     SYSRST          : in     std_logic);
 -- 
 -- EASE/HDL end ----------------------------------------------------------------
 

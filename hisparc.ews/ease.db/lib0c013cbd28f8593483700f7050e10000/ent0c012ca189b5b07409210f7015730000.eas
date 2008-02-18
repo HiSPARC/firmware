@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Tue Jan 15 15:38:30 2008")
+      (PROPERTY "STAMP_TIME" "Wed Feb 13 16:29:16 2008")
       (NAME "WR_ADDRES_COUNTER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1191926680 "Tue Oct 09 12:44:40 2007")
-      (MODIFIED 1200396157 "Tue Jan 15 12:22:37 2008")
+      (MODIFIED 1202903508 "Wed Feb 13 12:51:48 2008")
     )
     (PORT
       (OBID "eprt0c012ca1feb5b07409210f7085730000")
@@ -330,8 +330,10 @@
                  ""
                  "begin"
                  "  -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO"
-                 "  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
-                 "  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
+                 "--  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
+                 "--  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
+                 "  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
+                 "  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 14 when (END_POST_TIME >= TOTAL_TIME + 14) else (2007 - TOTAL_TIME + END_POST_TIME);"
                  "  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;"
                  "--  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
                  "  WR_ADDRESS <= WR_ADDRESS_TMP;"

@@ -6,7 +6,7 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Tue Jan 15 15:40:25 2008.
+-- Time stamp     : Mon Feb 18 14:12:48 2008.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -2996,7 +2996,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Tue Jan 15 15:40:16 2008.
+-- Last modified : Thu Feb 14 11:17:01 2008.
 --------------------------------------------------------------------------------
 
 
@@ -3074,7 +3074,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Tue Jan 15 15:40:16 2008.
+-- Last modified : Thu Feb 14 11:17:01 2008.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3089,6 +3089,8 @@ signal POST_TIME_LOAD: std_logic_vector(15 downto 0);
 signal PRE_TIME_TMP: std_logic_vector(15 downto 0);
 signal COINC_TIME_TMP: std_logic_vector(15 downto 0);
 signal POST_TIME_TMP: std_logic_vector(15 downto 0);
+signal PRE_TIME_TMP2: std_logic_vector(15 downto 0);
+signal COINC_TIME_TMP2: std_logic_vector(15 downto 0);
 
 signal CH1_OFFSET_ADJ_POS: std_logic_vector(7 downto 0);
 signal CH1_OFFSET_ADJ_POS_DEL: std_logic_vector(7 downto 0);
@@ -3258,7 +3260,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00001000";
+  SOFTWARE_VERSION <= "00001001";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -3278,9 +3280,9 @@ begin
   PRE_TIME_OUT <= PRE_TIME_TMP;
   COINC_TIME_OUT <= COINC_TIME_TMP;
   POST_TIME_OUT <= POST_TIME_TMP;
-  PRE_TIME_SET <= to_integer(unsigned(PRE_TIME_TMP)) ;
+  PRE_TIME_SET <= to_integer(unsigned(PRE_TIME_TMP2)) ;
   POST_TIME_SET <= to_integer(unsigned(POST_TIME_TMP)) ;
-  COINC_TIME_SET <= to_integer(unsigned(COINC_TIME_TMP)) ;
+  COINC_TIME_SET <= to_integer(unsigned(COINC_TIME_TMP2)) ;
   COINC_TIME <= COINC_TIME_SET;
   POST_TIME <= POST_TIME_SET;
   TOTAL_TIME <= TOTAL_TIME_TMP;
@@ -3308,16 +3310,25 @@ begin
       else  
         COINC_TIME_TMP <= "0000001111101000";
       end if;
-      if POST_TIME_LOAD <= "0000011001000000" then -- 1600
+
+      if FORCE_MASTER_TMP = '1' then 
+        PRE_TIME_TMP2 <= PRE_TIME_TMP;
+        COINC_TIME_TMP2 <= COINC_TIME_TMP;
+      else  
+        PRE_TIME_TMP2 <= PRE_TIME_TMP + "0000000000000100"; -- When a module is a slave, the timing needs a 20ns correction
+        COINC_TIME_TMP2 <= COINC_TIME_TMP - "0000000000000100";
+      end if;
+
+      if POST_TIME_LOAD + PRE_TIME_TMP2 + COINC_TIME_TMP2 > "0000011111010000" then -- 2000
+        POST_TIME_TMP <= "0000011111010000" - PRE_TIME_TMP2 - COINC_TIME_TMP2;
+      elsif POST_TIME_LOAD <= "0000011001000000" then -- 1600
         POST_TIME_TMP <= POST_TIME_LOAD;
       else  
         POST_TIME_TMP <= "0000011001000000";
       end if;
-      if (PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET) <= 2000 then 
-        TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET;
-      else  
-        TOTAL_TIME_TMP <= 2000; -- Limit on 2000
-      end if;
+      
+      TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET;
+
     end if;
   end process;  
 
@@ -6761,7 +6772,7 @@ end rtl ; -- of SOFT_RESET
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_ONE_SHOT'.
--- Last modified : Tue Jan 15 12:22:37 2008.
+-- Last modified : Mon Feb 18 14:12:29 2008.
 --------------------------------------------------------------------------------
 
 
@@ -6780,41 +6791,35 @@ end LED_ONE_SHOT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_ONE_SHOT'
--- Last modified : Tue Jan 15 12:22:37 2008.
+-- Last modified : Mon Feb 18 14:12:29 2008.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_ONE_SHOT is
 
 signal LEDSHINE_COUNTER: std_logic_vector(20 downto 0); -- Full is about 0.2 seconds
-signal INP_DEL: std_logic;
+signal LED_ON: std_logic; 
 
 begin
     
   process(CLK10MHz,SYSRST,INP)
   begin
-    if SYSRST = '1' then
-      INP_DEL <= '0';
+    if SYSRST = '1' or INP = '1' then
+      LEDSHINE_COUNTER <= "000000000000000000000";
+      LED_ON <= '0';
     elsif (CLK10MHz'event and CLK10MHz = '1') then
-      INP_DEL <= INP;
-    end if;
-  end process;  
-
-  process(CLK10MHz,SYSRST,INP)
-  begin
-    if SYSRST = '1' then
-      LEDSHINE_COUNTER <= "111111111111111111111";
-    elsif (CLK10MHz'event and CLK10MHz = '1') then
-      if INP = '1' and INP_DEL = '0' then
-        LEDSHINE_COUNTER <= "000000000000000000000";
-      elsif LEDSHINE_COUNTER /= "111111111111111111111" then
+      if LEDSHINE_COUNTER /= "111111111111111111111" then
         LEDSHINE_COUNTER <= LEDSHINE_COUNTER + "000000000000000000001";
+        LED_ON <= '1';
       else   
         LEDSHINE_COUNTER <= LEDSHINE_COUNTER; -- locks at full
+        LED_ON <= '0';
       end if;
     end if;
   end process;  
 
-  nOUTP <= '0' when LEDSHINE_COUNTER /= "111111111111111111111" else '1'; 
+--  nOUTP <= '0' when LEDSHINE_COUNTER > "000000000000001100100" and LEDSHINE_COUNTER /= "111111111111111111111" else '1'; -- after 10us = 100 counts
+--  nOUTP <= '1'; 
+  nOUTP <= not (LEDSHINE_COUNTER(20) and LED_ON); 
 
 
 end rtl ; -- of LED_ONE_SHOT
@@ -6875,7 +6880,7 @@ end a0 ; -- of DUAL_PORT_RAM
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'WR_ADDRES_COUNTER'.
--- Last modified : Tue Jan 15 12:22:37 2008.
+-- Last modified : Wed Feb 13 12:51:48 2008.
 --------------------------------------------------------------------------------
 
 
@@ -6900,7 +6905,7 @@ end WR_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'WR_ADDRES_COUNTER'
--- Last modified : Tue Jan 15 12:22:37 2008.
+-- Last modified : Wed Feb 13 12:51:48 2008.
 --------------------------------------------------------------------------------
 
 architecture rtl of WR_ADDRES_COUNTER is
@@ -6917,8 +6922,10 @@ signal RDEN_DEL2: std_logic ;
 
 begin
   -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO
-  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);
-  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);
+--  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);
+--  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 14 when (END_POST_TIME >= TOTAL_TIME + 14) else (2007 - TOTAL_TIME + END_POST_TIME);
   BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;
 --  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);
   WR_ADDRESS <= WR_ADDRESS_TMP;
@@ -8027,7 +8034,7 @@ end structure ; -- of STORAGE_CHANNELS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Wed Jan 09 12:05:00 2008.
+-- Last modified : Wed Feb 13 16:29:11 2008.
 --------------------------------------------------------------------------------
 
 
@@ -8118,7 +8125,7 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Wed Jan 09 12:05:00 2008.
+-- Last modified : Wed Feb 13 16:29:11 2008.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
@@ -8578,7 +8585,6 @@ architecture a0 of hisparc is
   signal DATA_READY_CH1          :  std_logic;
   signal DATA_READY_CH2          :  std_logic;
   signal DATA_VALID_CH2          :  std_logic;
-  signal COINC1                  :  std_logic;
   signal DATA_VALID_CH1          :  std_logic;
   signal SLAVE_PRESENT           :  std_logic;
   signal TEMP_OUT                :  std_logic_vector(31 downto 0);
@@ -8595,7 +8601,7 @@ architecture a0 of hisparc is
   signal BLOCK_COINC             :  std_logic;
   signal ONE_PPS_OUT0            :  std_logic;
   signal FORCE_MASTER0           :  std_logic;
-  signal OUTP                    :  std_logic;
+  signal COINC                   :  std_logic;
   signal DATA_OUT1_CH2           :  std_logic_vector(11 downto 0);
   signal DATA_OUT2_CH2           :  std_logic_vector(11 downto 0);
   signal DATA_READY2_CH2         :  std_logic;
@@ -8837,7 +8843,7 @@ begin
       ALTITUDE_OUT => ALTITUDE_OUT,
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
-      COINC => COINC1,
+      COINC => COINC,
       COMPDATA_OUT => COMPDATA_OUT,
       COMPDATA_READOUT_DONE => COMPDATA_READOUT_DONE,
       COMPDATA_VALID_OUT => COMPDATA_VALID_OUT0,
@@ -8881,7 +8887,7 @@ begin
   u13: LVDS_MUX
     port map(
       CLK200MHz => CLK200MHz,
-      COINC => COINC1,
+      COINC => COINC,
       COINC_MASTER => COINC0,
       GPS_DATA_MASTER => GPS_SDO,
       GPS_DATA_OUT => GPS_DATA_OUT,
@@ -8935,7 +8941,7 @@ begin
       BLOCK_COINC => BLOCK_COINC,
       CLK200MHz => CLK200MHz,
       CLKRD => CLKRD,
-      COINC_TO_END_TIME => COINC1,
+      COINC_TO_END_TIME => COINC,
       COINC_TO_END_TIME_FIFO1 => COINC_TO_END_TIME_FIFO1,
       COINC_TO_END_TIME_FIFO2 => COINC_TO_END_TIME_FIFO2,
       CTD_IN => CTD_OUT1,
@@ -9021,14 +9027,9 @@ begin
   u0: LED_ONE_SHOT
     port map(
       CLK10MHz => CLK10MHz,
-      INP => OUTP,
+      INP => COINC,
       SYSRST => SYSRST,
       nOUTP => LED5);
-
-  u22: INVERTER
-    port map(
-      INP => COINC1,
-      OUTP => OUTP);
 
   u2: STORAGE_CHANNELS
     port map(
