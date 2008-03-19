@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Feb 13 16:29:16 2008")
+      (PROPERTY "STAMP_TIME" "Wed Mar 19 15:13:31 2008")
       (NAME "hisparc")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1133875074 "Tue Dec 06 14:17:54 2005")
-      (MODIFIED 1202916551 "Wed Feb 13 16:29:11 2008")
+      (MODIFIED 1205936008 "Wed Mar 19 15:13:28 2008")
     )
     (PORT
       (OBID "eprt0c013cbd024c693483700f7023e10000")
@@ -2555,11 +2555,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 8216 18712 8296 18792)
+        (GEOMETRY 8216 18904 8296 18984)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 8192 18752)
+          (POSITION 8192 18944)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -11315,11 +11315,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 9688 18712 9768 18792)
+          (GEOMETRY 9688 18904 9768 18984)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 9792 18752)
+            (POSITION 9792 18944)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -11523,6 +11523,88 @@
             (SIDE 3)
             (FORMAT 35)
             (TEXT "CLK200MHz")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1fcd11e748c900f706e240000")
+          (PORT "eprt0c012ca1fcd11e748c900f705e240000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "SYSRST")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 9688 18712 9768 18792)
+          (SENSLIST 1)
+          (SIDE 3)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 9504 18712 9672 18792)
+            (TYPE 0)
+            (LABEL
+              (POSITION 9472 18752)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 5)
+              (SIDE 3)
+              (FORMAT 1)
+            )
+          )
+          (LABEL
+            (POSITION 9792 18752)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "SYSRST")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca188f11e748c900f70a0340000")
+          (PORT "eprt0c012ca188f11e748c900f7090340000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "CLK10MHz")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 9688 18584 9768 18664)
+          (SENSLIST 1)
+          (SIDE 3)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 9504 18584 9672 18664)
+            (TYPE 0)
+            (LABEL
+              (POSITION 9472 18624)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 5)
+              (SIDE 3)
+              (FORMAT 1)
+            )
+          )
+          (LABEL
+            (POSITION 9792 18624)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "CLK10MHz")
           )
         )
         (LABEL
@@ -15530,6 +15612,10 @@
           (OBID "cprt0c012ca18415b07409210f704c630000")
           (NAME "SYSRST")
         )
+        (PORT
+          (OBID "cprt0c012ca1fcd11e748c900f706e240000")
+          (NAME "SYSRST")
+        )
         (LABEL
           (POSITION 0 0)
           (SCALE 96)
@@ -16147,6 +16233,10 @@
         )
         (PORT
           (OBID "cprt0c012ca197dc407487710f701b040000")
+          (NAME "CLK10MHz")
+        )
+        (PORT
+          (OBID "cprt0c012ca188f11e748c900f70a0340000")
           (NAME "CLK10MHz")
         )
         (LABEL
@@ -18110,7 +18200,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 8320 18752 9664 18752)
+        (WIRE 8320 18944 9664 18944)
         (PORT
           (OBID "aprt0c8a2066ad847544c6605edccff20000")
           (NAME "ONE_PPS")

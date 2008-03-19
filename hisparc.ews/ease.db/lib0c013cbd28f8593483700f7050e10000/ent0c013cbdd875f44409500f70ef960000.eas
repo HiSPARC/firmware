@@ -11,7 +11,7 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Tue Jan 15 12:17:53 2008")
+      (PROPERTY "STAMP_TIME" "Wed Mar 19 15:06:50 2008")
       (NAME "DATA_CONTROLLER")
       (USERNAME 1)
     )
@@ -9246,7 +9246,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 6016 11712 5504 11712)
+        (WIRE 5504 11712 6016 11712)
         (PORT
           (OBID "aprt0c8a2066b418964480a05edcd4400000")
           (NAME "USB_RD")
