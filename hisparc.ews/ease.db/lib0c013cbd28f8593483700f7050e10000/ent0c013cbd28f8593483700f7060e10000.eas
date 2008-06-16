@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Mar 19 15:13:31 2008")
+      (PROPERTY "STAMP_TIME" "Wed Jun 11 14:34:35 2008")
       (NAME "hisparc")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1133875074 "Tue Dec 06 14:17:54 2005")
-      (MODIFIED 1205936008 "Wed Mar 19 15:13:28 2008")
+      (MODIFIED 1213187358 "Wed Jun 11 14:29:18 2008")
     )
     (PORT
       (OBID "eprt0c013cbd024c693483700f7023e10000")
@@ -12526,17 +12526,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 15896 12824 15976 12904)
+          (GEOMETRY 15896 10712 15976 10792)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 15712 12824 15880 12904)
+            (GEOMETRY 15712 10712 15880 10792)
             (TYPE 0)
             (LABEL
-              (POSITION 15680 12864)
+              (POSITION 15680 10752)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -12545,7 +12545,7 @@
             )
           )
           (LABEL
-            (POSITION 16000 12864)
+            (POSITION 16000 10752)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -12567,17 +12567,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 15896 12952 15976 13032)
+          (GEOMETRY 15896 10840 15976 10920)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 15712 12952 15880 13032)
+            (GEOMETRY 15712 10840 15880 10920)
             (TYPE 0)
             (LABEL
-              (POSITION 15680 12992)
+              (POSITION 15680 10880)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -12586,7 +12586,7 @@
             )
           )
           (LABEL
-            (POSITION 16000 12992)
+            (POSITION 16000 10880)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -12608,17 +12608,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 15896 13080 15976 13160)
+          (GEOMETRY 15896 10968 15976 11048)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 15712 13080 15880 13160)
+            (GEOMETRY 15712 10968 15880 11048)
             (TYPE 0)
             (LABEL
-              (POSITION 15680 13120)
+              (POSITION 15680 11008)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -12627,7 +12627,7 @@
             )
           )
           (LABEL
-            (POSITION 16000 13120)
+            (POSITION 16000 11008)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -20313,7 +20313,7 @@
         (OBID "net0c012ca16c355d644d900f700cd20000")
         (HDL_OBJECT
           (HDL_IDENT
-            (NAME "FORCE_MASTER0")
+            (NAME "FORCE_MASTER")
             (USERNAME 0)
           )
           (HDL_TYPE
@@ -20352,7 +20352,7 @@
           (NAME "MASTER")
         )
         (LABEL
-          (POSITION 1280 3392)
+          (POSITION 0 0)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 6)

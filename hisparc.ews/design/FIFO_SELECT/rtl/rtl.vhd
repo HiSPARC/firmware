@@ -48,8 +48,8 @@ architecture rtl of FIFO_SELECT is
 
 signal COINC_TO_END_TIME1_TMP: std_logic;  
 signal COINC_TO_END_TIME2_TMP: std_logic;  
-signal COINC_TO_END_TIME1_TMP_DEL: std_logic;  
-signal COINC_TO_END_TIME2_TMP_DEL: std_logic;  
+signal COINC_TO_END_TIME1_TMP_DEL1: std_logic;  
+signal COINC_TO_END_TIME2_TMP_DEL1: std_logic;  
 signal COINC_SWITCH: std_logic_vector(1 downto 0); -- bit0 is DATA_READY1 and bit1 is DATA_READY2
 signal DATA_READY_FIFO1: std_logic;  
 signal DATA_READY_FIFO2: std_logic;  
@@ -100,8 +100,8 @@ begin
     if (CLK200MHz'event and CLK200MHz = '1') then
       COINC_TO_END_TIME_FIFO1 <= COINC_TO_END_TIME1_TMP;
       COINC_TO_END_TIME_FIFO2 <= COINC_TO_END_TIME2_TMP;
-      COINC_TO_END_TIME1_TMP_DEL <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME2_TMP_DEL <= COINC_TO_END_TIME2_TMP;
+      COINC_TO_END_TIME1_TMP_DEL1 <= COINC_TO_END_TIME1_TMP;
+      COINC_TO_END_TIME2_TMP_DEL1 <= COINC_TO_END_TIME2_TMP;
     end if;
   end process;  
 
@@ -207,6 +207,8 @@ begin
   end process; 
 
   -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1
+  -- For a master COINC_TO_END_TIME is 20ns delayed
+  -- This is to compensate for the slave to master time (cable, drivers) 
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
@@ -214,7 +216,7 @@ begin
       GPS_TS_TIME1 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME1 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL = '0' then
+      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL1 = '0' then
         TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
         GPS_TS_TIME1 <= GPS_TS_IN;
         CTD_TIME1 <= CTD_IN;
@@ -230,7 +232,7 @@ begin
       GPS_TS_TIME2 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME2 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL = '0' then
+      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL1 = '0' then
         TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
         GPS_TS_TIME2 <= GPS_TS_IN;
         CTD_TIME2 <= CTD_IN;
@@ -238,66 +240,6 @@ begin
     end if;
   end process;  
 
---
---  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1
---  process(COINC_TO_END_TIME1_TMP,SYSRST)
---  begin
---    if SYSRST = '1' then
---      TRIGGER_PATTERN_TIME1 <= "0000000000000000";
---    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then
---      TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
---    end if;
---  end process;  
---
---  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME2
---  process(COINC_TO_END_TIME2_TMP,SYSRST)
---  begin
---    if SYSRST = '1' then
---      TRIGGER_PATTERN_TIME2 <= "0000000000000000";
---    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then
---      TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
---    end if;
---  end process;  
---
---  -- Latch GPS_TS on positive edge of COINC_TO_END_TIME1
---  process(COINC_TO_END_TIME1_TMP,SYSRST)
---  begin
---    if SYSRST = '1' then
---      GPS_TS_TIME1 <= "00000000000000000000000000000000000000000000000000000000";
---    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then
---      GPS_TS_TIME1 <= GPS_TS_IN;
---    end if;
---  end process;  
---
---  -- Latch GPS_TS on positive edge of COINC_TO_END_TIME2
---  process(COINC_TO_END_TIME2_TMP,SYSRST)
---  begin
---    if SYSRST = '1' then
---      GPS_TS_TIME2 <= "00000000000000000000000000000000000000000000000000000000";
---    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then
---      GPS_TS_TIME2 <= GPS_TS_IN;
---    end if;
---  end process;  
---
---  -- Latch CTD on positive edge of COINC_TO_END_TIME1
---  process(COINC_TO_END_TIME1_TMP,SYSRST)
---  begin
---    if SYSRST = '1' then
---      CTD_TIME1 <= "00000000000000000000000000000000";
---    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then
---      CTD_TIME1 <= CTD_IN;
---    end if;
---  end process;  
---
---  -- Latch CTD on positive edge of COINC_TO_END_TIME2
---  process(COINC_TO_END_TIME2_TMP,SYSRST)
---  begin
---    if SYSRST = '1' then
---      CTD_TIME2 <= "00000000000000000000000000000000";
---    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then
---      CTD_TIME2 <= CTD_IN;
---    end if;
---  end process;  
 
 end rtl ; -- of FIFO_SELECT
 

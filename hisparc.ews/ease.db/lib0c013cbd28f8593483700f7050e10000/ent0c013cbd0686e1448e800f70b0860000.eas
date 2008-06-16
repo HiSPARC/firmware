@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Mar 19 15:06:50 2008")
+      (PROPERTY "STAMP_TIME" "Wed Jun 11 14:34:35 2008")
       (NAME "TRIGGER_STUFF")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1142843488 "Mon Mar 20 09:31:28 2006")
-      (MODIFIED 1190972776 "Fri Sep 28 11:46:16 2007")
+      (MODIFIED 1213187671 "Wed Jun 11 14:34:31 2008")
     )
     (PORT
       (OBID "eprt0c013cbd6a86e1448e800f70e0860000")
@@ -1763,11 +1763,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 8792 7704 8872 7784)
+        (GEOMETRY 7832 8024 7912 8104)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 8768 7744)
+          (POSITION 7808 8064)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -3016,6 +3016,32 @@
             (SIDE 1)
             (FORMAT 35)
             (TEXT "COMPH2")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca1056cf48440510f70e3900000")
+          (PORT "eprt0c012ca1056cf48440510f70d3900000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "MASTER")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 6296 7704 6376 7784)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 6272 7744)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "MASTER")
           )
         )
         (LABEL
@@ -5004,19 +5030,26 @@
         (OBID "net0c013cbd9516984487500f7031c00000")
         (HDL_OBJECT
           (HDL_IDENT
-            (NAME "MASTER_net")
+            (NAME "MASTER")
             (USERNAME 0)
           )
           (HDL_TYPE
           )
         )
-        (WIRE 8896 7744 9600 7744)
+        (WIRE 8000 8064 8000 7744)
+        (WIRE 8000 8064 7936 8064)
+        (WIRE 8000 7744 9600 7744)
+        (WIRE 6400 7744 8000 7744)
         (PORT
           (OBID "aprt0c013cbde416984487500f7021c00000")
           (NAME "MASTER")
         )
         (PORT
           (OBID "cprt0c8a2066c792d4444c905edcc7200000")
+          (NAME "MASTER")
+        )
+        (PORT
+          (OBID "cprt0c012ca1056cf48440510f70e3900000")
           (NAME "MASTER")
         )
         (LABEL

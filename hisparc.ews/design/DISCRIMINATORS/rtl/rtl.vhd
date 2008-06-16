@@ -20,6 +20,7 @@
 --     DATA_ADC2_POS : in     std_logic_vector(11 downto 0);
 --     EXT_TR_IN     : in     std_logic;
 --     EXT_TR_OUT    : out    std_logic;
+--     MASTER        : in     std_logic;
 --     MH1_OUT       : out    std_logic;
 --     MH2_OUT       : out    std_logic;
 --     ML1_OUT       : out    std_logic;
@@ -70,6 +71,22 @@ signal COMPH2_IN_DEL1: std_logic ;
 signal COMPH2_IN_DEL2: std_logic ; 
 signal COMPH2_IN_WIN: std_logic ; 
 signal COMPH2_IN_CNT: integer range 1000 downto 0 ; 
+signal ML1_DEL1: std_logic ; -- Compensates the delay from slave to master
+signal ML1_DEL2: std_logic ; 
+signal ML1_DEL3: std_logic ; 
+signal ML1_DEL4: std_logic ; 
+signal MH1_DEL1: std_logic ; 
+signal MH1_DEL2: std_logic ; 
+signal MH1_DEL3: std_logic ; 
+signal MH1_DEL4: std_logic ; 
+signal ML2_DEL1: std_logic ; 
+signal ML2_DEL2: std_logic ; 
+signal ML2_DEL3: std_logic ; 
+signal ML2_DEL4: std_logic ; 
+signal MH2_DEL1: std_logic ; 
+signal MH2_DEL2: std_logic ; 
+signal MH2_DEL3: std_logic ; 
+signal MH2_DEL4: std_logic ; 
 
 begin
 
@@ -78,10 +95,10 @@ begin
 --MH1_PRE <= '1' when (DATA_ADC1_POS > THH1 or DATA_ADC1_NEG > THH1) else '0'; -- Discriminator for MH1
 --MH2_PRE <= '1' when (DATA_ADC2_POS > THH2 or DATA_ADC2_NEG > THH2) else '0'; -- Discriminator for MH2
 
-ML1_OUT <= ML1;
-MH1_OUT <= MH1;
-ML2_OUT <= ML2;
-MH2_OUT <= MH2;
+ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;
+MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;
+ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;
+MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;
 EXT_TR_OUT <= EXT_TR;
 COMPL1 <= COMPL1_IN_WIN;
 COMPL2 <= COMPL2_IN_WIN;
@@ -133,6 +150,22 @@ COMPH2 <= COMPH2_IN_WIN;
       COMPL2_IN_DEL2 <= '0';
       COMPH2_IN_DEL1 <= '0';
       COMPH2_IN_DEL2 <= '0';
+      ML1_DEL1 <= '0';
+      ML1_DEL2 <= '0';
+      ML1_DEL3 <= '0';
+      ML1_DEL4 <= '0';
+      MH1_DEL1 <= '0';
+      MH1_DEL2 <= '0';
+      MH1_DEL3 <= '0';
+      MH1_DEL4 <= '0';
+      ML2_DEL1 <= '0';
+      ML2_DEL2 <= '0';
+      ML2_DEL3 <= '0';
+      ML2_DEL4 <= '0';
+      MH2_DEL1 <= '0';
+      MH2_DEL2 <= '0';
+      MH2_DEL3 <= '0';
+      MH2_DEL4 <= '0';
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       ML1_PRE_DEL <= ML1_PRE; 
       ML2_PRE_DEL <= ML2_PRE; 
@@ -148,6 +181,22 @@ COMPH2 <= COMPH2_IN_WIN;
       COMPL2_IN_DEL2 <= COMPL2_IN_DEL1; 
       COMPH2_IN_DEL1 <= COMPH2_IN; 
       COMPH2_IN_DEL2 <= COMPH2_IN_DEL1; 
+      ML1_DEL1 <= ML1; 
+      ML1_DEL2 <= ML1_DEL1; 
+      ML1_DEL3 <= ML1_DEL2; 
+      ML1_DEL4 <= ML1_DEL3; 
+      MH1_DEL1 <= MH1; 
+      MH1_DEL2 <= MH1_DEL1; 
+      MH1_DEL3 <= MH1_DEL2; 
+      MH1_DEL4 <= MH1_DEL3; 
+      ML2_DEL1 <= ML2; 
+      ML2_DEL2 <= ML2_DEL1; 
+      ML2_DEL3 <= ML2_DEL2; 
+      ML2_DEL4 <= ML2_DEL3; 
+      MH2_DEL1 <= MH2; 
+      MH2_DEL2 <= MH2_DEL1; 
+      MH2_DEL3 <= MH2_DEL2; 
+      MH2_DEL4 <= MH2_DEL3; 
     end if;
   end process;  
       

@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Mar 19 16:42:33 2008")
+      (PROPERTY "STAMP_TIME" "Wed Jun 11 14:34:35 2008")
       (NAME "FIFO_SELECT")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1158095709 "Tue Sep 12 23:15:09 2006")
-      (MODIFIED 1205936663 "Wed Mar 19 15:24:23 2008")
+      (MODIFIED 1213187675 "Wed Jun 11 14:34:35 2008")
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc6d850000")
@@ -315,11 +315,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 7640 40 7720)
+      (GEOMETRY -40 5528 40 5608)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 7680)
+        (POSITION 64 5568)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -340,11 +340,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 7768 40 7848)
+      (GEOMETRY -40 5656 40 5736)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 7808)
+        (POSITION 64 5696)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -365,11 +365,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 7896 40 7976)
+      (GEOMETRY -40 5784 40 5864)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 7936)
+        (POSITION 64 5824)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1057,8 +1057,8 @@
                  ""
                  "signal COINC_TO_END_TIME1_TMP: std_logic;  "
                  "signal COINC_TO_END_TIME2_TMP: std_logic;  "
-                 "signal COINC_TO_END_TIME1_TMP_DEL: std_logic;  "
-                 "signal COINC_TO_END_TIME2_TMP_DEL: std_logic;  "
+                 "signal COINC_TO_END_TIME1_TMP_DEL1: std_logic;  "
+                 "signal COINC_TO_END_TIME2_TMP_DEL1: std_logic;  "
                  "signal COINC_SWITCH: std_logic_vector(1 downto 0); -- bit0 is DATA_READY1 and bit1 is DATA_READY2"
                  "signal DATA_READY_FIFO1: std_logic;  "
                  "signal DATA_READY_FIFO2: std_logic;  "
@@ -1109,8 +1109,8 @@
                  "    if (CLK200MHz'event and CLK200MHz = '1') then"
                  "      COINC_TO_END_TIME_FIFO1 <= COINC_TO_END_TIME1_TMP;"
                  "      COINC_TO_END_TIME_FIFO2 <= COINC_TO_END_TIME2_TMP;"
-                 "      COINC_TO_END_TIME1_TMP_DEL <= COINC_TO_END_TIME1_TMP;"
-                 "      COINC_TO_END_TIME2_TMP_DEL <= COINC_TO_END_TIME2_TMP;"
+                 "      COINC_TO_END_TIME1_TMP_DEL1 <= COINC_TO_END_TIME1_TMP;"
+                 "      COINC_TO_END_TIME2_TMP_DEL1 <= COINC_TO_END_TIME2_TMP;"
                  "    end if;"
                  "  end process;  "
                  ""
@@ -1216,6 +1216,8 @@
                  "  end process; "
                  ""
                  "  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1"
+                 "  -- For a master COINC_TO_END_TIME is 20ns delayed"
+                 "  -- This is to compensate for the slave to master time (cable, drivers) "
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -1223,7 +1225,7 @@
                  "      GPS_TS_TIME1 <= \"00000000000000000000000000000000000000000000000000000000\";"
                  "      CTD_TIME1 <= \"00000000000000000000000000000000\";"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL = '0' then"
+                 "      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL1 = '0' then"
                  "        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;"
                  "        GPS_TS_TIME1 <= GPS_TS_IN;"
                  "        CTD_TIME1 <= CTD_IN;"
@@ -1239,7 +1241,7 @@
                  "      GPS_TS_TIME2 <= \"00000000000000000000000000000000000000000000000000000000\";"
                  "      CTD_TIME2 <= \"00000000000000000000000000000000\";"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL = '0' then"
+                 "      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL1 = '0' then"
                  "        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;"
                  "        GPS_TS_TIME2 <= GPS_TS_IN;"
                  "        CTD_TIME2 <= CTD_IN;"
@@ -1247,66 +1249,6 @@
                  "    end if;"
                  "  end process;  "
                  ""
-                 "--"
-                 "--  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1"
-                 "--  process(COINC_TO_END_TIME1_TMP,SYSRST)"
-                 "--  begin"
-                 "--    if SYSRST = '1' then"
-                 "--      TRIGGER_PATTERN_TIME1 <= \"0000000000000000\";"
-                 "--    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then"
-                 "--      TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;"
-                 "--    end if;"
-                 "--  end process;  "
-                 "--"
-                 "--  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME2"
-                 "--  process(COINC_TO_END_TIME2_TMP,SYSRST)"
-                 "--  begin"
-                 "--    if SYSRST = '1' then"
-                 "--      TRIGGER_PATTERN_TIME2 <= \"0000000000000000\";"
-                 "--    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then"
-                 "--      TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;"
-                 "--    end if;"
-                 "--  end process;  "
-                 "--"
-                 "--  -- Latch GPS_TS on positive edge of COINC_TO_END_TIME1"
-                 "--  process(COINC_TO_END_TIME1_TMP,SYSRST)"
-                 "--  begin"
-                 "--    if SYSRST = '1' then"
-                 "--      GPS_TS_TIME1 <= \"00000000000000000000000000000000000000000000000000000000\";"
-                 "--    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then"
-                 "--      GPS_TS_TIME1 <= GPS_TS_IN;"
-                 "--    end if;"
-                 "--  end process;  "
-                 "--"
-                 "--  -- Latch GPS_TS on positive edge of COINC_TO_END_TIME2"
-                 "--  process(COINC_TO_END_TIME2_TMP,SYSRST)"
-                 "--  begin"
-                 "--    if SYSRST = '1' then"
-                 "--      GPS_TS_TIME2 <= \"00000000000000000000000000000000000000000000000000000000\";"
-                 "--    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then"
-                 "--      GPS_TS_TIME2 <= GPS_TS_IN;"
-                 "--    end if;"
-                 "--  end process;  "
-                 "--"
-                 "--  -- Latch CTD on positive edge of COINC_TO_END_TIME1"
-                 "--  process(COINC_TO_END_TIME1_TMP,SYSRST)"
-                 "--  begin"
-                 "--    if SYSRST = '1' then"
-                 "--      CTD_TIME1 <= \"00000000000000000000000000000000\";"
-                 "--    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then"
-                 "--      CTD_TIME1 <= CTD_IN;"
-                 "--    end if;"
-                 "--  end process;  "
-                 "--"
-                 "--  -- Latch CTD on positive edge of COINC_TO_END_TIME2"
-                 "--  process(COINC_TO_END_TIME2_TMP,SYSRST)"
-                 "--  begin"
-                 "--    if SYSRST = '1' then"
-                 "--      CTD_TIME2 <= \"00000000000000000000000000000000\";"
-                 "--    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then"
-                 "--      CTD_TIME2 <= CTD_IN;"
-                 "--    end if;"
-                 "--  end process;  "
                  ""
                  "end rtl ; -- of FIFO_SELECT"
                  ""

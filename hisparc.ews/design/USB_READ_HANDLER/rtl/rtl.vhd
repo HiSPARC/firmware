@@ -253,7 +253,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00001010";
+  SOFTWARE_VERSION <= "00001011";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -304,13 +304,16 @@ begin
         COINC_TIME_TMP <= "0000001111101000";
       end if;
 
-      if FORCE_MASTER_TMP = '1' then 
         PRE_TIME_TMP2 <= PRE_TIME_TMP;
         COINC_TIME_TMP2 <= COINC_TIME_TMP;
-      else  
-        PRE_TIME_TMP2 <= PRE_TIME_TMP + "0000000000000100"; -- When a module is a slave, the timing needs a 20ns correction
-        COINC_TIME_TMP2 <= COINC_TIME_TMP - "0000000000000100";
-      end if;
+
+--      if FORCE_MASTER_TMP = '1' then 
+--        PRE_TIME_TMP2 <= PRE_TIME_TMP;
+--        COINC_TIME_TMP2 <= COINC_TIME_TMP;
+--      else  
+--        PRE_TIME_TMP2 <= PRE_TIME_TMP + "0000000000000100"; -- When a module is a slave, the timing needs a 20ns correction
+--        COINC_TIME_TMP2 <= COINC_TIME_TMP - "0000000000000100";
+--      end if;
 
       if POST_TIME_LOAD + PRE_TIME_TMP2 + COINC_TIME_TMP2 > "0000011111010000" then -- 2000
         POST_TIME_TMP <= "0000011111010000" - PRE_TIME_TMP2 - COINC_TIME_TMP2;
