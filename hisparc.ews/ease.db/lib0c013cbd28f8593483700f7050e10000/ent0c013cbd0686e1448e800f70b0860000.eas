@@ -11,7 +11,7 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Jun 11 14:34:35 2008")
+      (PROPERTY "STAMP_TIME" "Thu Feb 26 11:01:58 2009")
       (NAME "TRIGGER_STUFF")
       (USERNAME 1)
     )
@@ -5036,8 +5036,8 @@
           (HDL_TYPE
           )
         )
-        (WIRE 8000 8064 8000 7744)
-        (WIRE 8000 8064 7936 8064)
+        (WIRE 8000 7744 8000 8064)
+        (WIRE 7936 8064 8000 8064)
         (WIRE 8000 7744 9600 7744)
         (WIRE 6400 7744 8000 7744)
         (PORT
