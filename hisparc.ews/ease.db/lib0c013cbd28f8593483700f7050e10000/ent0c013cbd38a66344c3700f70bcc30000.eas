@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu Feb 26 12:27:04 2009")
+      (PROPERTY "STAMP_TIME" "Wed Mar 11 16:04:51 2009")
       (NAME "CLK_DIV")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1144416899 "Fri Apr 07 15:34:59 2006")
-      (MODIFIED 1235644095 "Thu Feb 26 11:28:15 2009")
+      (MODIFIED 1236783400 "Wed Mar 11 15:56:40 2009")
     )
     (PORT
       (OBID "eprt0c013cbdeaa66344c3700f70ecc30000")

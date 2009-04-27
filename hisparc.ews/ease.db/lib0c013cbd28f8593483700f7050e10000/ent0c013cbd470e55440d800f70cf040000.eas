@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu Feb 26 12:27:04 2009")
+      (PROPERTY "STAMP_TIME" "Fri Apr 24 13:20:23 2009")
       (NAME "GPS_STUFF")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146478708 "Mon May 01 12:18:28 2006")
-      (MODIFIED 1235644095 "Thu Feb 26 11:28:15 2009")
+      (MODIFIED 1240565215 "Fri Apr 24 11:26:55 2009")
     )
     (PORT
       (OBID "eprt0c013cbda81e55440d800f7050140000")
@@ -875,6 +875,31 @@
         (TEXT "SPY_CON")
       )
     )
+    (PORT
+      (OBID "eprt0c012ca1d1a50f944c600f70c1c10000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "STARTUP_BLOCK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2008 40 2088)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2048)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "STARTUP_BLOCK")
+      )
+    )
     (ARCH_DECLARATION 2 "arch0c8a20662d1f8a4409b05edc99820000" "rtl")
   )
   (ARCH_DEFINITION
@@ -920,6 +945,7 @@
                  "--     SPY_CON                 : in     std_logic;"
                  "--     SPY_SDI                 : out    std_logic;"
                  "--     SPY_SDO                 : in     std_logic;"
+                 "--     STARTUP_BLOCK           : in     std_logic;"
                  "--     SYSRST                  : in     std_logic;"
                  "--     TEMP_OUT                : out    std_logic_vector(31 downto 0);"
                  "--     TS_ONE_PPS_READOUT_DONE : in     std_logic;"
@@ -1805,7 +1831,7 @@
                  "    if SYSRST = '1' then"
                  "      TS_ONE_PPS_VALID_OUT <= '0';"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
-                 "      if ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then"
+                 "      if STARTUP_BLOCK = '0' and ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then"
                  "        TS_ONE_PPS_VALID_OUT <= '1';"
                  "      elsif TS_ONE_PPS_READOUT_DONE_DEL1 = '1' and TS_ONE_PPS_READOUT_DONE_DEL2 = '0' then"
                  "        TS_ONE_PPS_VALID_OUT <= '0';"

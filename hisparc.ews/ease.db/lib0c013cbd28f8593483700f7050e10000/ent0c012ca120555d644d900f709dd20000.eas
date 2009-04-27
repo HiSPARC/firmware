@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu Feb 26 12:27:04 2009")
+      (PROPERTY "STAMP_TIME" "Fri Apr 24 13:20:23 2009")
       (NAME "LED_ONE_SHOT")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1188386050 "Wed Aug 29 13:14:10 2007")
-      (MODIFIED 1235644095 "Thu Feb 26 11:28:15 2009")
+      (MODIFIED 1240564942 "Fri Apr 24 11:22:22 2009")
     )
     (PORT
       (OBID "eprt0c012ca1d2555d644d900f70edd20000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 88 40 168)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 128)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -57,11 +57,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 280 40 360)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 320)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -107,17 +107,42 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 856 88 936 168)
+      (GEOMETRY 856 216 936 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 832 128)
+        (POSITION 832 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
         (TEXT "nOUTP")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1d8f53c94cce00f707b260000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "STARTUP")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "STARTUP")
       )
     )
     (ARCH_DECLARATION 2 "arch0c012ca120555d644d900f70add20000" "rtl")
@@ -138,6 +163,7 @@
                  "--   port("
                  "--     CLK10MHz : in     std_logic;"
                  "--     INP      : in     std_logic;"
+                 "--     STARTUP  : in     std_logic;"
                  "--     SYSRST   : in     std_logic;"
                  "--     nOUTP    : out    std_logic);"
                  "-- "
@@ -166,9 +192,7 @@
                  "    end if;"
                  "  end process;  "
                  ""
-                 "--  nOUTP <= '0' when LEDSHINE_COUNTER > \"000000000000001100100\" and LEDSHINE_COUNTER /= \"111111111111111111111\" else '1'; -- after 10us = 100 counts"
-                 "--  nOUTP <= '1'; "
-                 "  nOUTP <= not (LEDSHINE_COUNTER(20) and LED_ON); "
+                 "  nOUTP <= STARTUP or not LED_ON; "
                  ""
                  ""
                  "end rtl ; -- of LED_ONE_SHOT"

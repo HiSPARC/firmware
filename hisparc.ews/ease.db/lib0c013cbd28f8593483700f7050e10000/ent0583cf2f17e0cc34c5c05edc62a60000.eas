@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu Feb 26 12:27:04 2009")
+      (PROPERTY "STAMP_TIME" "Wed Mar 11 16:04:51 2009")
       (NAME "EVENT_FIFO")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1137446513 "Mon Jan 16 22:21:53 2006")
-      (MODIFIED 1235644095 "Thu Feb 26 11:28:15 2009")
+      (MODIFIED 1236783400 "Wed Mar 11 15:56:40 2009")
     )
     (PORT
       (OBID "eprt0583cf2f8301cc34c5c05edc92a60000")

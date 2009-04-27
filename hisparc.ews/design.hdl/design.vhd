@@ -6,7 +6,7 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Fri Mar 06 12:35:15 2009.
+-- Time stamp     : Mon Apr 27 11:03:59 2009.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -14,7 +14,7 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Entity declaration of 'PLL'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -32,7 +32,7 @@ end PLL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'PLL'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 LIBRARY ieee;
@@ -110,7 +110,7 @@ end rtl ; -- of PLL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SYNCHRONISATION'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -134,7 +134,7 @@ end SYNCHRONISATION ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SYNCHRONISATION'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of SYNCHRONISATION is
@@ -207,7 +207,7 @@ end rtl ; -- of SYNCHRONISATION
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CONVERSION_12_TO_8_BIT'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -246,7 +246,7 @@ end CONVERSION_12_TO_8_BIT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CONVERSION_12_TO_8_BIT'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of CONVERSION_12_TO_8_BIT is
@@ -442,7 +442,7 @@ end rtl ; -- of CONVERSION_12_TO_8_BIT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_FIFO'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -464,7 +464,7 @@ end EVENT_FIFO ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_FIFO'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_FIFO is
@@ -496,7 +496,7 @@ end rtl ; -- of EVENT_FIFO
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_FIFO_CONTROL'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -521,7 +521,7 @@ end EVENT_FIFO_CONTROL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_FIFO_CONTROL'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_FIFO_CONTROL is
@@ -609,7 +609,7 @@ end rtl ; -- of EVENT_FIFO_CONTROL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SLAVE_DETECTOR'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -636,7 +636,7 @@ end SLAVE_DETECTOR ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SLAVE_DETECTOR'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of SLAVE_DETECTOR is
@@ -802,7 +802,7 @@ end rtl ; -- of SLAVE_DETECTOR
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DISCRIMINATORS'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 
@@ -834,6 +834,7 @@ entity DISCRIMINATORS is
     MH2_OUT       : out    std_logic;
     ML1_OUT       : out    std_logic;
     ML2_OUT       : out    std_logic;
+    POST_TIME     : in     integer range 1600 downto 0;
     SYSRST        : in     std_logic;
     THH1          : in     std_logic_vector(11 downto 0);
     THH2          : in     std_logic_vector(11 downto 0);
@@ -843,7 +844,7 @@ end DISCRIMINATORS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'DISCRIMINATORS'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of DISCRIMINATORS is
@@ -868,22 +869,30 @@ signal EXT_TR_IN_DEL1: std_logic ; -- External trigger after one 200MHz period
 signal EXT_TR_IN_DEL2: std_logic ; -- External trigger after two 200MHz periods; Two, because the external trigger is asynchronious
 signal EXT_TR: std_logic ; -- Coincidence window EXT_TR
 signal EXT_TR_CNT: integer range 1000 downto 0 ; -- Coincidence window counter EXT_TR
+
+-- De comparator windows worden tot en met posttime plus nog 200ns verlengd
+-- Om er zeker van te zijn dat ze op het eind van posttime in het volgenede blok ingeklokt worden.
+-- Dit is om het verschil in looptijd op te vangen tussen een signaal uit de ADC's, ongeveer 20 klokperiodes latency
+-- en de vertraging van een hardware comparator.
 signal COMPL1_IN_DEL1: std_logic ; 
 signal COMPL1_IN_DEL2: std_logic ; 
 signal COMPL1_IN_WIN: std_logic ; 
-signal COMPL1_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPL1_IN_CNT: integer range 2640 downto 0 ; 
 signal COMPH1_IN_DEL1: std_logic ; 
 signal COMPH1_IN_DEL2: std_logic ; 
 signal COMPH1_IN_WIN: std_logic ; 
-signal COMPH1_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPH1_IN_CNT: integer range 2640 downto 0 ; 
 signal COMPL2_IN_DEL1: std_logic ; 
 signal COMPL2_IN_DEL2: std_logic ; 
 signal COMPL2_IN_WIN: std_logic ; 
-signal COMPL2_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPL2_IN_CNT: integer range 2640 downto 0 ; 
 signal COMPH2_IN_DEL1: std_logic ; 
 signal COMPH2_IN_DEL2: std_logic ; 
 signal COMPH2_IN_WIN: std_logic ; 
-signal COMPH2_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPH2_IN_CNT: integer range 2640 downto 0 ; 
+
+signal COMP_WIN_LENGTH: integer range 2640 downto 0 ; 
+
 signal ML1_DEL1: std_logic ; -- Compensates the delay from slave to master
 signal ML1_DEL2: std_logic ; 
 signal ML1_DEL3: std_logic ; 
@@ -917,6 +926,8 @@ COMPL1 <= COMPL1_IN_WIN;
 COMPL2 <= COMPL2_IN_WIN;
 COMPH1 <= COMPH1_IN_WIN;
 COMPH2 <= COMPH2_IN_WIN;
+
+COMP_WIN_LENGTH <= COINC_TIME + POST_TIME + 40;
 
   process(CLK200MHz,SYSRST)
   begin
@@ -1156,7 +1167,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPL1_IN_DEL1 = '1' and COMPL1_IN_DEL2 = '0' then 
         COMPL1_IN_WIN <= '1'; 
-      elsif COMPL1_IN_CNT = COINC_TIME - 1 then
+      elsif COMPL1_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPL1_IN_WIN <= '0';
       end if;
     end if;
@@ -1183,7 +1194,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPH1_IN_DEL1 = '1' and COMPH1_IN_DEL2 = '0' then 
         COMPH1_IN_WIN <= '1'; 
-      elsif COMPH1_IN_CNT = COINC_TIME - 1 then
+      elsif COMPH1_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPH1_IN_WIN <= '0';
       end if;
     end if;
@@ -1210,7 +1221,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPL2_IN_DEL1 = '1' and COMPL2_IN_DEL2 = '0' then 
         COMPL2_IN_WIN <= '1'; 
-      elsif COMPL2_IN_CNT = COINC_TIME - 1 then
+      elsif COMPL2_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPL2_IN_WIN <= '0';
       end if;
     end if;
@@ -1237,7 +1248,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPH2_IN_DEL1 = '1' and COMPH2_IN_DEL2 = '0' then 
         COMPH2_IN_WIN <= '1'; 
-      elsif COMPH2_IN_CNT = COINC_TIME - 1 then
+      elsif COMPH2_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPH2_IN_WIN <= '0';
       end if;
     end if;
@@ -1260,7 +1271,7 @@ end rtl ; -- of DISCRIMINATORS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_MATRIX'.
--- Last modified : Fri Mar 06 12:35:14 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 
@@ -1285,12 +1296,14 @@ entity TRIGGER_MATRIX is
     MH2               : in     std_logic;
     ML1               : in     std_logic;
     ML2               : in     std_logic;
+    ONE_PPS           : in     std_logic;
     POST_TIME         : in     integer range 1600 downto 0;
     SH1_IN            : in     std_logic;
     SH2_IN            : in     std_logic;
     SL1_IN            : in     std_logic;
     SL2_IN            : in     std_logic;
     SLAVE_PRESENT     : in     std_logic;
+    STARTUP_BLOCK_OUT : out    std_logic;
     SYSRST            : in     std_logic;
     TRIGGER_PATTERN   : out    std_logic_vector(15 downto 0);
     TR_CONDITION      : in     std_logic_vector(7 downto 0));
@@ -1298,7 +1311,7 @@ end TRIGGER_MATRIX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'TRIGGER_MATRIX'
--- Last modified : Fri Mar 06 12:35:14 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of TRIGGER_MATRIX is
@@ -1339,6 +1352,22 @@ signal SL1_DEL4: std_logic ;
 signal SL2_DEL4: std_logic ;
 signal SH1_DEL4: std_logic ;
 signal SH2_DEL4: std_logic ;
+signal ML1_LATCHED: std_logic ;
+signal ML2_LATCHED: std_logic ;
+signal MH1_LATCHED: std_logic ;
+signal MH2_LATCHED: std_logic ;
+signal SL1_LATCHED: std_logic ;
+signal SL2_LATCHED: std_logic ;
+signal SH1_LATCHED: std_logic ;
+signal SH2_LATCHED: std_logic ;
+signal ML1_NEW: std_logic ;
+signal ML2_NEW: std_logic ;
+signal MH1_NEW: std_logic ;
+signal MH2_NEW: std_logic ;
+signal SL1_NEW: std_logic ;
+signal SL2_NEW: std_logic ;
+signal SH1_NEW: std_logic ;
+signal SH2_NEW: std_logic ;
 signal TR_CONDITION1: std_logic ;
 signal TR_CONDITION2: std_logic ;
 signal TR_CONDITION3: std_logic ;
@@ -1369,6 +1398,36 @@ signal TR_CONDITION27: std_logic ;
 signal TR_CONDITION28: std_logic ;
 signal TR_CONDITION29: std_logic ;
 signal TR_CONDITION30: std_logic ;
+signal TR_CONDITION1_NEW: std_logic ;
+signal TR_CONDITION2_NEW: std_logic ;
+signal TR_CONDITION3_NEW: std_logic ;
+signal TR_CONDITION4_NEW: std_logic ;
+signal TR_CONDITION5_NEW: std_logic ;
+signal TR_CONDITION6_NEW: std_logic ;
+signal TR_CONDITION7_NEW: std_logic ;
+signal TR_CONDITION8_NEW: std_logic ;
+signal TR_CONDITION9_NEW: std_logic ;
+signal TR_CONDITION10_NEW: std_logic ;
+signal TR_CONDITION11_NEW: std_logic ;
+signal TR_CONDITION12_NEW: std_logic ;
+signal TR_CONDITION13_NEW: std_logic ;
+signal TR_CONDITION14_NEW: std_logic ;
+signal TR_CONDITION15_NEW: std_logic ;
+signal TR_CONDITION16_NEW: std_logic ;
+signal TR_CONDITION17_NEW: std_logic ;
+signal TR_CONDITION18_NEW: std_logic ;
+signal TR_CONDITION19_NEW: std_logic ;
+signal TR_CONDITION20_NEW: std_logic ;
+signal TR_CONDITION21_NEW: std_logic ;
+signal TR_CONDITION22_NEW: std_logic ;
+signal TR_CONDITION23_NEW: std_logic ;
+signal TR_CONDITION24_NEW: std_logic ;
+signal TR_CONDITION25_NEW: std_logic ;
+signal TR_CONDITION26_NEW: std_logic ;
+signal TR_CONDITION27_NEW: std_logic ;
+signal TR_CONDITION28_NEW: std_logic ;
+signal TR_CONDITION29_NEW: std_logic ;
+signal TR_CONDITION30_NEW: std_logic ;
 signal TR_CONDITION1_DEL: std_logic ;
 signal TR_CONDITION2_DEL: std_logic ;
 signal TR_CONDITION3_DEL: std_logic ;
@@ -1377,20 +1436,32 @@ signal TR_CONDITION5_DEL: std_logic ;
 signal TR_CONDITION9_DEL: std_logic ;
 signal TR_CONDITION12_DEL: std_logic ;
 signal TR_CONDITION14_DEL: std_logic ;
+signal TR_CONDITION1_NEW_DEL: std_logic ;
+signal TR_CONDITION2_NEW_DEL: std_logic ;
+signal TR_CONDITION3_NEW_DEL: std_logic ;
+signal TR_CONDITION4_NEW_DEL: std_logic ;
+signal TR_CONDITION5_NEW_DEL: std_logic ;
+signal TR_CONDITION9_NEW_DEL: std_logic ;
+signal TR_CONDITION12_NEW_DEL: std_logic ;
+signal TR_CONDITION14_NEW_DEL: std_logic ;
+signal SCINT_LATCH: std_logic ; -- Latched de triggervoorwaarden zoals MH1, SH1 enz, Aktief als aan de triggervoorwaarden voldaan is.
+signal SCINT_LATCH_DEL: std_logic ; -- Nodig voor opgaande flank detectie
 signal SCINT_PATTERN: std_logic_vector(5 downto 0); -- The 6 LSB bits of TR_CONDITION selects a SCINT_PATTERN; TR_CONDITION(6) selects the ext. trigger
+signal TRIGGER_PATTERN_TMP: std_logic_vector(15 downto 0); -- Tijdelijke latching van het triggerpatroon voor de master en slave signalen. De comparatorsignalen worden later ingeklokt.
 -- signal CAL_EXTTRIG_PATTERN: std_logic_vector(1 downto 0); -- TR_CONDITION(7) selects a calibration; TR_CONDITION(6) selects the ext. trigger
 signal SCINT_COINC: std_logic ; -- Selected scintillator trigger
 signal SCINT_COINC_DEL: std_logic ; 
 signal COINC_TMP: std_logic ;
 signal COINC_DEL: std_logic ;
 signal COINC_TO_END_TIME_TMP: std_logic ; -- Time from negative edge of COINC to end of POST_TIME  
+signal COINC_TO_END_TIME_DEL_TMP: std_logic ;   
 signal BEGIN_COINC_TO_END_TIME_TMP: std_logic ; -- Time from positive edge of COINC to end of POST_TIME  
 signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from end COINC to end of POST_TIME
 -- There must be a gap between the end of a posttime and the beginning of a new coinctime.
 -- This is related to the readoutclock RDCLK. It will cost the COINC_TO_END_TIME switch in instance FIFO_SELECT two clockperiods
 -- to react. Periodtime is 200ns, thus the gap must be 400ns. That are 80 steps of 5ns. This will increase the deadtime.
 signal POST_PLUS_GAP_TIME_CNT: integer range 1680 downto 0 ; -- Counter from end COINC to end of POST_TIME plus gap
-signal GAP_TIME: integer range 1680 downto 0 ; -- POST_TIME plus gap
+signal GAP_TIME: integer range 1700 downto 0 ; -- POST_TIME plus gap
 signal COINC_TO_GAP_TIME: std_logic ; -- Time from negative edge of COINC to end of GAP_TIME  
 signal BLOCK_START_OF_COINC: std_logic ; -- This signal is the OR of all signals which prevent starting COINC.
 signal BLOCK_COINC_SYNCHR: std_logic ;
@@ -1400,13 +1471,21 @@ signal CAL_TR: std_logic ;
 signal CAL_TR_DEL1: std_logic ;
 signal CAL_TR_DEL2: std_logic ;
 
+-- Next signals are necessary to disable coint at startup, otherwise there will be a false hit
+signal ONE_PPS_DEL1: std_logic ;
+signal ONE_PPS_DEL2: std_logic ;
+signal ONE_PPS_DEL3: std_logic ;
+signal STARTUP_COUNT: std_logic_vector(3 downto 0); -- Counts 8 seconds from startup to disable coinc
+signal STARTUP_BLOCK: std_logic ;
+
 
 begin
 
   SCINT_PATTERN <= TR_CONDITION(5 downto 0);
 --  CAL_EXTTRIG_PATTERN <= TR_CONDITION(7 downto 6);
   COINC_TO_END_TIME <= BEGIN_COINC_TO_END_TIME_TMP;
-  GAP_TIME <= POST_TIME + 80;
+  STARTUP_BLOCK_OUT <= STARTUP_BLOCK;
+  GAP_TIME <= POST_TIME + 100; -- 0.5 us gap
   
   process(CLK200MHz,SYSRST)
   begin
@@ -1415,9 +1494,11 @@ begin
       SL2 <= '0';
       SH1 <= '0';
       SH2 <= '0';  
+      SCINT_LATCH_DEL <= '0';  
       EXT_TR_DEL <= '0';  
       SCINT_COINC_DEL <= '0';        
       COINC_DEL <= '0';        
+      COINC_TO_END_TIME_DEL_TMP <= '0';        
       BLOCK_COINC_SYNCHR <= '0';        
       CAL_TR <= '0';  
       CAL_TR_DEL1 <= '0';  
@@ -1430,6 +1511,14 @@ begin
       TR_CONDITION9_DEL <= '0';        
       TR_CONDITION12_DEL <= '0';        
       TR_CONDITION14_DEL <= '0';        
+      TR_CONDITION1_NEW_DEL <= '0';        
+      TR_CONDITION2_NEW_DEL <= '0';        
+      TR_CONDITION3_NEW_DEL <= '0';        
+      TR_CONDITION4_NEW_DEL <= '0';        
+      TR_CONDITION5_NEW_DEL <= '0';        
+      TR_CONDITION9_NEW_DEL <= '0';        
+      TR_CONDITION12_NEW_DEL <= '0';        
+      TR_CONDITION14_NEW_DEL <= '0';        
       ML1_DEL1 <= '0';        
       ML2_DEL1 <= '0';        
       MH1_DEL1 <= '0';        
@@ -1463,6 +1552,8 @@ begin
       SH1_DEL4 <= '0';        
       SH2_DEL4 <= '0';        
     elsif (CLK200MHz'event and CLK200MHz = '1') then
+      SCINT_LATCH_DEL <= SCINT_LATCH;        
+      COINC_TO_END_TIME_DEL_TMP <= COINC_TO_END_TIME_TMP;        
       SCINT_COINC_DEL <= SCINT_COINC;        
       COINC_DEL <= COINC_TMP;        
       BLOCK_COINC_SYNCHR <= BLOCK_COINC;        
@@ -1478,6 +1569,14 @@ begin
       TR_CONDITION9_DEL <= TR_CONDITION9;        
       TR_CONDITION12_DEL <= TR_CONDITION12;        
       TR_CONDITION14_DEL <= TR_CONDITION14;        
+      TR_CONDITION1_NEW_DEL <= TR_CONDITION1_NEW;        
+      TR_CONDITION2_NEW_DEL <= TR_CONDITION2_NEW;        
+      TR_CONDITION3_NEW_DEL <= TR_CONDITION3_NEW;        
+      TR_CONDITION4_NEW_DEL <= TR_CONDITION4_NEW;        
+      TR_CONDITION5_NEW_DEL <= TR_CONDITION5_NEW;        
+      TR_CONDITION9_NEW_DEL <= TR_CONDITION9_NEW;        
+      TR_CONDITION12_NEW_DEL <= TR_CONDITION12_NEW;        
+      TR_CONDITION14_NEW_DEL <= TR_CONDITION14_NEW;        
       ML1_DEL1 <= ML1;        
       ML1_DEL2 <= ML1_DEL1;        
       ML1_DEL3 <= ML1_DEL2;        
@@ -1533,6 +1632,36 @@ begin
       CAL_COUNT <= CAL_COUNT + "00000000000000000000001";
     end if;
   end process;  
+
+  process(CLK10MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      ONE_PPS_DEL1 <= '0';        
+      ONE_PPS_DEL2 <= '0';        
+      ONE_PPS_DEL3 <= '0';        
+    elsif (CLK10MHz'event and CLK10MHz = '1') then
+      ONE_PPS_DEL1 <= ONE_PPS;        
+      ONE_PPS_DEL2 <= ONE_PPS_DEL1;        
+      ONE_PPS_DEL3 <= ONE_PPS_DEL2;        
+    end if;
+  end process;  
+
+  process(CLK10MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      STARTUP_COUNT <= "0000";
+    elsif (CLK10MHz'event and CLK10MHz = '1') then
+      if STARTUP_COUNT = "1000" then -- Als er 8 sekonden geteld zijn.
+        STARTUP_COUNT <= STARTUP_COUNT; -- Tellerwaarde blijft hangen.
+      elsif ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then -- Op de voorflank van het PPS signaal
+        STARTUP_COUNT <= STARTUP_COUNT + "0001"; -- Verhoog de teller
+      end if;
+    end if;
+  end process;  
+
+  STARTUP_BLOCK <= not STARTUP_COUNT(3);
+
+-- Trigger condities die na 1 periode bepaald zijn
       
 -- TR_CONDITION1
 -- 0H and 1L, at least one low signal
@@ -1592,6 +1721,44 @@ begin
     end if;
   end process;  
 
+-- TR_CONDITION9
+-- 2H and 0L, at least two high signals. 
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION9 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION9 <= (MH1 and MH2) or (MH1 and SH1) or (MH1 and SH2) or 
+                 (MH2 and SH1) or (MH2 and SH2) or  
+                 (SH1 and SH2); 
+    end if;
+  end process;  
+
+-- TR_CONDITION12
+-- 3H and 0L,  at least three high signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION12 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION12 <= (MH1 and MH2 and SH1) or (MH1 and MH2 and SH2) or (MH1 and SH1 and SH2) or 
+                        (MH2 and SH1 and SH2);
+    end if;
+  end process;  
+
+-- TR_CONDITION14
+-- 4H and 0L, all four high signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION14 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION14 <= (MH1 and MH2 and SH1 and SH2);
+    end if;
+  end process;  
+
+-- Trigger condities die na 2 periodes bepaald zijn
+
 -- TR_CONDITION6
 -- 1H and 1L,  at least one high signal and at least one other low signal
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
@@ -1628,19 +1795,6 @@ begin
     end if;
   end process;  
 
--- TR_CONDITION9
--- 2H and 0L, at least two high signals. 
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      TR_CONDITION9 <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      TR_CONDITION9 <= (MH1 and MH2) or (MH1 and SH1) or (MH1 and SH2) or 
-                 (MH2 and SH1) or (MH2 and SH2) or  
-                 (SH1 and SH2); 
-    end if;
-  end process;  
-
 -- TR_CONDITION10
 -- 2H and 1L,  at least two high signals and at least one other low signal
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
@@ -1665,18 +1819,6 @@ begin
     end if;
   end process;  
 
--- TR_CONDITION12
--- 3H and 0L,  at least three high signals
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      TR_CONDITION12 <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      TR_CONDITION12 <= (MH1 and MH2 and SH1) or (MH1 and MH2 and SH2) or (MH1 and SH1 and SH2) or 
-                        (MH2 and SH1 and SH2);
-    end if;
-  end process;  
-
 -- TR_CONDITION13
 -- 3H and 1L,  at least three high signals and at least one other low signal
 -- Assuming that when the high signal is present, the low signal of that channel is also present.
@@ -1686,17 +1828,6 @@ begin
       TR_CONDITION13 <= '0';
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       TR_CONDITION13 <= TR_CONDITION12 and TR_CONDITION4;
-    end if;
-  end process;  
-
--- TR_CONDITION14
--- 4H and 0L, all four high signals
-  process(CLK200MHz,SYSRST)
-  begin
-    if SYSRST = '1' then
-      TR_CONDITION14 <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      TR_CONDITION14 <= (MH1 and MH2 and SH1 and SH2);
     end if;
   end process;  
 
@@ -1876,92 +2007,507 @@ begin
     end if;
   end process;  
 
-  process (CLK200MHz,SCINT_PATTERN,
-    TR_CONDITION1_DEL,TR_CONDITION2_DEL,TR_CONDITION3_DEL,TR_CONDITION4_DEL,TR_CONDITION5_DEL,
-    TR_CONDITION6,TR_CONDITION7,TR_CONDITION8,TR_CONDITION9_DEL,TR_CONDITION10,
-    TR_CONDITION11,TR_CONDITION12_DEL,TR_CONDITION13,TR_CONDITION14_DEL,TR_CONDITION15,
-    TR_CONDITION16,TR_CONDITION17,TR_CONDITION18,TR_CONDITION19,TR_CONDITION20,
-    TR_CONDITION21,TR_CONDITION22,TR_CONDITION23,TR_CONDITION24,TR_CONDITION25,
-    TR_CONDITION26,TR_CONDITION27,TR_CONDITION28,TR_CONDITION29,TR_CONDITION30)
+-- Als aan het triggerpatroon voldaan wordt, moeten de signalen uit de scintillator gelatched worden
+
+  process (CLK200MHz,SYSRST,SCINT_PATTERN)
   begin
-    if (CLK200MHz'event and CLK200MHz='1') then
+    if SYSRST = '1' then
+      SCINT_LATCH <= '0';
+    elsif (CLK200MHz'event and CLK200MHz='1') then
       case SCINT_PATTERN is
-        when "000001" => SCINT_COINC <= TR_CONDITION1_DEL;
-        when "000010" => SCINT_COINC <= TR_CONDITION2_DEL;
-        when "000011" => SCINT_COINC <= TR_CONDITION3_DEL;
-        when "000100" => SCINT_COINC <= TR_CONDITION4_DEL;
-        when "001000" => SCINT_COINC <= TR_CONDITION5_DEL;
-        when "001001" => SCINT_COINC <= TR_CONDITION6;
-        when "001010" => SCINT_COINC <= TR_CONDITION7;
-        when "001011" => SCINT_COINC <= TR_CONDITION8;
-        when "010000" => SCINT_COINC <= TR_CONDITION9_DEL;
-        when "010001" => SCINT_COINC <= TR_CONDITION10;
-        when "010010" => SCINT_COINC <= TR_CONDITION11;
-        when "011000" => SCINT_COINC <= TR_CONDITION12_DEL;
-        when "011001" => SCINT_COINC <= TR_CONDITION13;
-        when "100000" => SCINT_COINC <= TR_CONDITION14_DEL;
-        when "001100" => SCINT_COINC <= TR_CONDITION15;
-        when "001101" => SCINT_COINC <= TR_CONDITION16;
-        when "001110" => SCINT_COINC <= TR_CONDITION17;
-        when "001111" => SCINT_COINC <= TR_CONDITION18;
-        when "010100" => SCINT_COINC <= TR_CONDITION19;
-        when "010101" => SCINT_COINC <= TR_CONDITION20;
-        when "010110" => SCINT_COINC <= TR_CONDITION21;
-        when "010111" => SCINT_COINC <= TR_CONDITION22;
-        when "011100" => SCINT_COINC <= TR_CONDITION23;
-        when "011101" => SCINT_COINC <= TR_CONDITION24;
-        when "011110" => SCINT_COINC <= TR_CONDITION25;
-        when "011111" => SCINT_COINC <= TR_CONDITION26;
-        when "100100" => SCINT_COINC <= TR_CONDITION27;
-        when "100101" => SCINT_COINC <= TR_CONDITION28;
-        when "100110" => SCINT_COINC <= TR_CONDITION29;
-        when "100111" => SCINT_COINC <= TR_CONDITION30;
-        when others => SCINT_COINC <= '0';
+        when "000001" => SCINT_LATCH <= TR_CONDITION1_DEL;
+        when "000010" => SCINT_LATCH <= TR_CONDITION2_DEL;
+        when "000011" => SCINT_LATCH <= TR_CONDITION3_DEL;
+        when "000100" => SCINT_LATCH <= TR_CONDITION4_DEL;
+        when "001000" => SCINT_LATCH <= TR_CONDITION5_DEL;
+        when "001001" => SCINT_LATCH <= TR_CONDITION6;
+        when "001010" => SCINT_LATCH <= TR_CONDITION7;
+        when "001011" => SCINT_LATCH <= TR_CONDITION8;
+        when "010000" => SCINT_LATCH <= TR_CONDITION9_DEL;
+        when "010001" => SCINT_LATCH <= TR_CONDITION10;
+        when "010010" => SCINT_LATCH <= TR_CONDITION11;
+        when "011000" => SCINT_LATCH <= TR_CONDITION12_DEL;
+        when "011001" => SCINT_LATCH <= TR_CONDITION13;
+        when "100000" => SCINT_LATCH <= TR_CONDITION14_DEL;
+        when "001100" => SCINT_LATCH <= TR_CONDITION15;
+        when "001101" => SCINT_LATCH <= TR_CONDITION16;
+        when "001110" => SCINT_LATCH <= TR_CONDITION17;
+        when "001111" => SCINT_LATCH <= TR_CONDITION18;
+        when "010100" => SCINT_LATCH <= TR_CONDITION19;
+        when "010101" => SCINT_LATCH <= TR_CONDITION20;
+        when "010110" => SCINT_LATCH <= TR_CONDITION21;
+        when "010111" => SCINT_LATCH <= TR_CONDITION22;
+        when "011100" => SCINT_LATCH <= TR_CONDITION23;
+        when "011101" => SCINT_LATCH <= TR_CONDITION24;
+        when "011110" => SCINT_LATCH <= TR_CONDITION25;
+        when "011111" => SCINT_LATCH <= TR_CONDITION26;
+        when "100100" => SCINT_LATCH <= TR_CONDITION27;
+        when "100101" => SCINT_LATCH <= TR_CONDITION28;
+        when "100110" => SCINT_LATCH <= TR_CONDITION29;
+        when "100111" => SCINT_LATCH <= TR_CONDITION30;
+        when others => SCINT_LATCH <= '0';
       end case;  
     end if;
   end process;
 
---  process(CLK200MHz,SCINT_COINC)
---  begin
---    if (CLK200MHz'event and CLK200MHz='1') then
---      if BEGIN_COINC_TO_END_TIME_TMP = '0' and BLOCK_COINC_SYNCHR = '0' then -- No running coinc and no block
---        case CAL_EXTTRIG_PATTERN is
---          when "00" => COINC_TMP <= SCINT_COINC; -- No External trigger, only triggers from scintillators
---          when "01" => COINC_TMP <= SCINT_COINC or EXT_TR; -- External trigger and triggers from scintillators selected; TR_CONDITION15 if SCINT_COINC = '0'; TR_CONDITION16  if SCINT_COINC = TR_CONDITION1 to 14
---          when "10" => COINC_TMP <= CAL_COUNT(22); -- Calibration selected
---          when "11" => COINC_TMP <= CAL_COUNT(22); -- Calibration selected
---          when others => COINC_TMP <= '0';
---        end case;  
---      end if;
---    end if;
---  end process;
 
---  process(CLK200MHz,SYSRST)
---  begin
---    if SYSRST = '1' then
---      COINC_TMP <= '0';
---    elsif (CLK200MHz'event and CLK200MHz = '1') then
---      if BEGIN_COINC_TO_END_TIME_TMP = '0' and BLOCK_COINC_SYNCHR = '0' then -- No running coinc and no block
---        if TR_CONDITION(7) = '1' then -- Calibration selected
---          if CAL_TR_DEL1 = '1' and CAL_TR_DEL2 = '0' then  -- positive edge of calibration trigger
---            COINC_TMP <= '1';
---          elsif CAL_TR_DEL1 = '0' and CAL_TR_DEL2 = '1' then  -- negative edge of calibration trigger
---            COINC_TMP <= '0';
---          end if;
---        elsif TR_CONDITION(6) = '1' then -- -- External trigger and triggers from scintillators selected; TR_CONDITION15 if SCINT_COINC = '0'; TR_CONDITION16  if SCINT_COINC = TR_CONDITION1 to 14
---          if (EXT_TR = '1' and EXT_TR_DEL = '0') or (SCINT_COINC = '1' and SCINT_COINC_DEL = '0') then  -- positive edge of external trigger or positive edge of scintillator trigger
---            COINC_TMP <= '1';
---          elsif (EXT_TR = '0' and EXT_TR_DEL = '1') or (SCINT_COINC = '0' and SCINT_COINC_DEL = '1') then  -- negative edge of external trigger or negative edge of scintillator trigger
---            COINC_TMP <= '0';
---          end if;
---        elsif SCINT_COINC = '1' and SCINT_COINC_DEL = '0' then  -- positive edge of scintillator trigger
---            COINC_TMP <= '1';
---        elsif SCINT_COINC = '0' and SCINT_COINC_DEL = '1' then  -- negative edge of scintillator trigger
---            COINC_TMP <= '0';
---        end if;
---      end if;
---    end if;
---  end process;
+-- Het vasthouden of blokkeren van de ingangssignalen wordt aangezet door de opgaande flank van SCINT_LATCH
+-- en wordt geblockt door BLOCK_START_OF_COINC
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      ML1_LATCHED <= '0';
+      ML2_LATCHED <= '0';
+      MH1_LATCHED <= '0';
+      MH2_LATCHED <= '0';
+      SL1_LATCHED <= '0';
+      SL2_LATCHED <= '0';
+      SH1_LATCHED <= '0';
+      SH2_LATCHED <= '0';
+      TRIGGER_PATTERN_TMP <= "0000000000000000";
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if BLOCK_START_OF_COINC = '0' and SCINT_LATCH = '1' and SCINT_LATCH_DEL = '0' then
+        ML1_LATCHED <= ML1_DEL3;
+        ML2_LATCHED <= ML2_DEL3;
+        MH1_LATCHED <= MH1_DEL3;
+        MH2_LATCHED <= MH2_DEL3;
+        SL1_LATCHED <= SL1_DEL3;
+        SL2_LATCHED <= SL2_DEL3;
+        SH1_LATCHED <= SH1_DEL3;
+        SH2_LATCHED <= SH2_DEL3;
+        TRIGGER_PATTERN_TMP(0) <= ML1_DEL3;
+        TRIGGER_PATTERN_TMP(1) <= MH1_DEL3;
+        TRIGGER_PATTERN_TMP(2) <= ML2_DEL3;
+        TRIGGER_PATTERN_TMP(3) <= MH2_DEL3;
+        TRIGGER_PATTERN_TMP(4) <= SL1_DEL3;
+        TRIGGER_PATTERN_TMP(5) <= SH1_DEL3;
+        TRIGGER_PATTERN_TMP(6) <= SL2_DEL3;
+        TRIGGER_PATTERN_TMP(7) <= SH2_DEL3;
+        TRIGGER_PATTERN_TMP(8) <= EXT_TR;
+        TRIGGER_PATTERN_TMP(9) <= MASTER;
+        TRIGGER_PATTERN_TMP(10) <= SLAVE_PRESENT;
+        TRIGGER_PATTERN_TMP(15) <= '0';
+      end if;
+    end if;
+  end process;  
+
+-- Hier worden de nieuwe ingangssignalen gemaakt. Degene die de coincidentie starten.
+-- Mocht later de triggervoorwaarde verlengt worden door nog een geldige combinatie
+-- dan wordt dit tegengehouden.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      ML1_NEW <= '0';
+      ML2_NEW <= '0';
+      MH1_NEW <= '0';
+      MH2_NEW <= '0';
+      SL1_NEW <= '0';
+      SL2_NEW <= '0';
+      SH1_NEW <= '0';
+      SH2_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      ML1_NEW <= ML1_LATCHED and ML1_DEL4;
+      ML2_NEW <= ML2_LATCHED and ML2_DEL4;
+      MH1_NEW <= MH1_LATCHED and MH1_DEL4;
+      MH2_NEW <= MH2_LATCHED and MH2_DEL4;
+      SL1_NEW <= SL1_LATCHED and SL1_DEL4;
+      SL2_NEW <= SL2_LATCHED and SL2_DEL4;
+      SH1_NEW <= SH1_LATCHED and SH1_DEL4;
+      SH2_NEW <= SH2_LATCHED and SH2_DEL4;
+    end if;
+  end process;  
+
+-- Van de nieuwe signalen moet weer opnieuw de triggerconditie bepaald worden.
+-- Deze signalen kunnen alleen in het begin van een triggervoorwaarde opkomen en worden dus niet verlengd
+-- door een andere geldige combinatie
+
+-- Trigger condities die na 1 periode bepaald zijn
+      
+-- TR_CONDITION1_NEW
+-- 0H and 1L, at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION1_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION1_NEW <= (ML1_NEW or ML2_NEW or SL1_NEW or SL2_NEW);
+    end if;
+  end process;  
+
+-- TR_CONDITION2_NEW
+-- 0H and 2L, at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION2_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION2_NEW <= (ML1_NEW and ML2_NEW) or (ML1_NEW and SL1_NEW) or (ML1_NEW and SL2_NEW) or 
+                       (ML2_NEW and SL1_NEW) or (ML2_NEW and SL2_NEW) or 
+                       (SL1_NEW and SL2_NEW);
+    end if;
+  end process;  
+
+-- TR_CONDITION3_NEW
+-- 0H and 3L, at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION3_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION3_NEW <= (ML1_NEW and ML2_NEW and SL1_NEW) or (ML1_NEW and ML2_NEW and SL2_NEW) or (ML1_NEW and SL1_NEW and SL2_NEW) or 
+                       (ML2_NEW and SL1_NEW and SL2_NEW);
+    end if;
+  end process;  
+
+-- TR_CONDITION4_NEW
+-- 0H and 4L, all four low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION4_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION4_NEW <= (ML1_NEW and ML2_NEW and SL1_NEW and SL2_NEW);
+    end if;
+  end process;  
+
+-- TR_CONDITION5_NEW
+-- 1H and 0L,  at least one high signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION5_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION5_NEW <= (MH1_NEW or MH2_NEW or SH1_NEW or SH2_NEW);
+    end if;
+  end process;  
+
+-- TR_CONDITION9_NEW
+-- 2H and 0L, at least two high signals. 
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION9_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION9_NEW <= (MH1_NEW and MH2_NEW) or (MH1_NEW and SH1_NEW) or (MH1_NEW and SH2_NEW) or 
+                 (MH2_NEW and SH1_NEW) or (MH2_NEW and SH2_NEW) or  
+                 (SH1_NEW and SH2_NEW); 
+    end if;
+  end process;  
+
+-- TR_CONDITION12_NEW
+-- 3H and 0L,  at least three high signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION12_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION12_NEW <= (MH1_NEW and MH2_NEW and SH1_NEW) or (MH1_NEW and MH2_NEW and SH2_NEW) or (MH1_NEW and SH1_NEW and SH2_NEW) or 
+                        (MH2_NEW and SH1_NEW and SH2_NEW);
+    end if;
+  end process;  
+
+-- TR_CONDITION14_NEW
+-- 4H and 0L, all four high signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION14_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION14_NEW <= (MH1_NEW and MH2_NEW and SH1_NEW and SH2_NEW);
+    end if;
+  end process;  
+
+-- Trigger condities die na 2 periodes bepaald zijn
+
+-- TR_CONDITION6_NEW
+-- 1H and 1L,  at least one high signal and at least one other low signal
+-- Assuming that when the high signal is present, the low signal of that channel is also present.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION6_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION6_NEW <= TR_CONDITION5_NEW and TR_CONDITION2_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION7_NEW
+-- 1H and 2L,  at least one high signal and at least two other low signals
+-- Assuming that when the high signal is present, the low signal of that channel is also present.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION7_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION7_NEW <= TR_CONDITION5_NEW and TR_CONDITION3_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION8_NEW
+-- 1H and 3L,  at least one high signal and at least three other low signals
+-- Assuming that when the high signal is present, the low signal of that channel is also present.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION8_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION8_NEW <= TR_CONDITION5_NEW and TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION10_NEW
+-- 2H and 1L,  at least two high signals and at least one other low signal
+-- Assuming that when the high signal is present, the low signal of that channel is also present.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION10_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION10_NEW <= TR_CONDITION9_NEW and TR_CONDITION3_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION11_NEW
+-- 2H and 2L,  at least two high signals and at least two other low signals
+-- Assuming that when the high signal is present, the low signal of that channel is also present.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION11_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION11_NEW <= TR_CONDITION9_NEW and TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION13_NEW
+-- 3H and 1L,  at least three high signals and at least one other low signal
+-- Assuming that when the high signal is present, the low signal of that channel is also present.
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION13_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION13_NEW <= TR_CONDITION12_NEW and TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION15_NEW
+-- 1H or 1L,  at least one high signal or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION15_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION15_NEW <= TR_CONDITION5_NEW or TR_CONDITION1_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION16_NEW
+-- 1H or 2L,  at least one high signal or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION16_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION16_NEW <= TR_CONDITION5_NEW or TR_CONDITION2_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION17_NEW
+-- 1H or 3L,  at least one high signal or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION17_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION17_NEW <= TR_CONDITION5_NEW or TR_CONDITION3_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION18_NEW
+-- 1H or 4L,  at least one high signal or all four signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION18_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION18_NEW <= TR_CONDITION5_NEW or TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION19_NEW
+-- 2H or 1L,  at least two high signals or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION19_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION19_NEW <= TR_CONDITION9_NEW or TR_CONDITION1_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION20_NEW
+-- 2H or 2L,  at least two high signals or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION20_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION20_NEW <= TR_CONDITION9_NEW or TR_CONDITION2_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION21_NEW
+-- 2H or 3L,  at least two high signals or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION21_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION21_NEW <= TR_CONDITION9_NEW or TR_CONDITION3_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION22_NEW
+-- 2H or 4L,  at least two high signals or all four signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION22_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION22_NEW <= TR_CONDITION9_NEW or TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION23_NEW
+-- 3H or 1L,  at least three high signals or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION23_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION23_NEW <= TR_CONDITION12_NEW or TR_CONDITION1_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION24_NEW
+-- 3H or 2L,  at least three high signals or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION24_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION24_NEW <= TR_CONDITION12_NEW or TR_CONDITION2_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION25_NEW
+-- 3H or 3L,  at least three high signals or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION25_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION25_NEW <= TR_CONDITION12_NEW or TR_CONDITION3_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION26_NEW
+-- 3H or 4L,  at least three high signals or all four signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION26_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION26_NEW <= TR_CONDITION12_NEW or TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION27_NEW
+-- 4H or 1L,  all four high signals or at least one low signal
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION27_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION27_NEW <= TR_CONDITION14_NEW or TR_CONDITION1_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION28_NEW
+-- 4H or 2L,  all four high signals or at least two low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION28_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION28_NEW <= TR_CONDITION14_NEW or TR_CONDITION2_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION29_NEW
+-- 4H or 3L,  all four high signals or at least three low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION29_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION29_NEW <= TR_CONDITION14_NEW or TR_CONDITION3_NEW;
+    end if;
+  end process;  
+
+-- TR_CONDITION30_NEW
+-- 4H or 4L,  all four high signals or all four low signals
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TR_CONDITION30_NEW <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      TR_CONDITION30_NEW <= TR_CONDITION14_NEW or TR_CONDITION4_NEW;
+    end if;
+  end process;  
+
+-- Van de NEW gemaakte signalen moet weer bekeken worden of ze een coincidentie maken, indien ze geselecteerd zijn.
+  process (CLK200MHz,SYSRST,SCINT_PATTERN)
+  begin
+    if SYSRST = '1' then
+      SCINT_COINC <= '0';
+    elsif (CLK200MHz'event and CLK200MHz='1') then
+      case SCINT_PATTERN is
+        when "000001" => SCINT_COINC <= TR_CONDITION1_NEW_DEL;
+        when "000010" => SCINT_COINC <= TR_CONDITION2_NEW_DEL;
+        when "000011" => SCINT_COINC <= TR_CONDITION3_NEW_DEL;
+        when "000100" => SCINT_COINC <= TR_CONDITION4_NEW_DEL;
+        when "001000" => SCINT_COINC <= TR_CONDITION5_NEW_DEL;
+        when "001001" => SCINT_COINC <= TR_CONDITION6_NEW;
+        when "001010" => SCINT_COINC <= TR_CONDITION7_NEW;
+        when "001011" => SCINT_COINC <= TR_CONDITION8_NEW;
+        when "010000" => SCINT_COINC <= TR_CONDITION9_NEW_DEL;
+        when "010001" => SCINT_COINC <= TR_CONDITION10_NEW;
+        when "010010" => SCINT_COINC <= TR_CONDITION11_NEW;
+        when "011000" => SCINT_COINC <= TR_CONDITION12_NEW_DEL;
+        when "011001" => SCINT_COINC <= TR_CONDITION13_NEW;
+        when "100000" => SCINT_COINC <= TR_CONDITION14_NEW_DEL;
+        when "001100" => SCINT_COINC <= TR_CONDITION15_NEW;
+        when "001101" => SCINT_COINC <= TR_CONDITION16_NEW;
+        when "001110" => SCINT_COINC <= TR_CONDITION17_NEW;
+        when "001111" => SCINT_COINC <= TR_CONDITION18_NEW;
+        when "010100" => SCINT_COINC <= TR_CONDITION19_NEW;
+        when "010101" => SCINT_COINC <= TR_CONDITION20_NEW;
+        when "010110" => SCINT_COINC <= TR_CONDITION21_NEW;
+        when "010111" => SCINT_COINC <= TR_CONDITION22_NEW;
+        when "011100" => SCINT_COINC <= TR_CONDITION23_NEW;
+        when "011101" => SCINT_COINC <= TR_CONDITION24_NEW;
+        when "011110" => SCINT_COINC <= TR_CONDITION25_NEW;
+        when "011111" => SCINT_COINC <= TR_CONDITION26_NEW;
+        when "100100" => SCINT_COINC <= TR_CONDITION27_NEW;
+        when "100101" => SCINT_COINC <= TR_CONDITION28_NEW;
+        when "100110" => SCINT_COINC <= TR_CONDITION29_NEW;
+        when "100111" => SCINT_COINC <= TR_CONDITION30_NEW;
+        when others => SCINT_COINC <= '0';
+      end case;  
+    end if;
+  end process;
 
   process(CLK200MHz,SYSRST)
   begin
@@ -1995,29 +2541,29 @@ begin
 
 
 
-  -- Latch TRIGGER_PATTERN on positive edge of COINC
+  -- Latch TRIGGER_PATTERN op de achterkant van posttime
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
       TRIGGER_PATTERN <= "0000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TMP = '1' and COINC_DEL = '0' then
-        TRIGGER_PATTERN(0) <= ML1_DEL4;
-        TRIGGER_PATTERN(1) <= MH1_DEL4;
-        TRIGGER_PATTERN(2) <= ML2_DEL4;
-        TRIGGER_PATTERN(3) <= MH2_DEL4;
-        TRIGGER_PATTERN(4) <= SL1_DEL4;
-        TRIGGER_PATTERN(5) <= SH1_DEL4;
-        TRIGGER_PATTERN(6) <= SL2_DEL4;
-        TRIGGER_PATTERN(7) <= SH2_DEL4;
-        TRIGGER_PATTERN(8) <= EXT_TR;
-        TRIGGER_PATTERN(9) <= MASTER;
-        TRIGGER_PATTERN(10) <= SLAVE_PRESENT;
+      if COINC_TO_END_TIME_TMP = '0' and COINC_TO_END_TIME_DEL_TMP = '1' then
+        TRIGGER_PATTERN(0) <= TRIGGER_PATTERN_TMP(0);
+        TRIGGER_PATTERN(1) <= TRIGGER_PATTERN_TMP(1);
+        TRIGGER_PATTERN(2) <= TRIGGER_PATTERN_TMP(2);
+        TRIGGER_PATTERN(3) <= TRIGGER_PATTERN_TMP(3);
+        TRIGGER_PATTERN(4) <= TRIGGER_PATTERN_TMP(4);
+        TRIGGER_PATTERN(5) <= TRIGGER_PATTERN_TMP(5);
+        TRIGGER_PATTERN(6) <= TRIGGER_PATTERN_TMP(6);
+        TRIGGER_PATTERN(7) <= TRIGGER_PATTERN_TMP(7);
+        TRIGGER_PATTERN(8) <= TRIGGER_PATTERN_TMP(8);
+        TRIGGER_PATTERN(9) <= TRIGGER_PATTERN_TMP(9);
+        TRIGGER_PATTERN(10) <= TRIGGER_PATTERN_TMP(10);
         TRIGGER_PATTERN(11) <= COMPL1;
         TRIGGER_PATTERN(12) <= COMPH1;
         TRIGGER_PATTERN(13) <= COMPL2;
         TRIGGER_PATTERN(14) <= COMPH2;
-        TRIGGER_PATTERN(15) <= '0';
+        TRIGGER_PATTERN(15) <= TRIGGER_PATTERN_TMP(15);
 	    end if;        
     end if;
   end process;  
@@ -2095,10 +2641,8 @@ begin
   -- BLOCK_START_OF_COINC goes from begin of coinc till end of gaptime
   process(CLK200MHz,SYSRST)
   begin
-    if SYSRST = '1' then
-      BLOCK_START_OF_COINC <= '0';
-    elsif (CLK200MHz'event and CLK200MHz = '1') then
-      BLOCK_START_OF_COINC <= BLOCK_COINC_SYNCHR or COINC_TMP or COINC_DEL or COINC_TO_GAP_TIME;
+    if (CLK200MHz'event and CLK200MHz = '1') then
+      BLOCK_START_OF_COINC <= BLOCK_COINC_SYNCHR or COINC_TMP or COINC_DEL or COINC_TO_GAP_TIME or STARTUP_BLOCK;
     end if;
   end process;  
 
@@ -2106,7 +2650,7 @@ end rtl ; -- of TRIGGER_MATRIX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_DRIVER'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2125,7 +2669,7 @@ end LED_DRIVER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_DRIVER'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_DRIVER is
@@ -2154,7 +2698,7 @@ end rtl ; -- of LED_DRIVER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CLK_DIV'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2172,7 +2716,7 @@ end CLK_DIV ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CLK_DIV'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of CLK_DIV is
@@ -2195,7 +2739,7 @@ end rtl ; -- of CLK_DIV
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_DATA_HANDLER'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2221,7 +2765,7 @@ end EVENT_DATA_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_DATA_HANDLER'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_DATA_HANDLER is
@@ -2338,7 +2882,7 @@ end rtl ; -- of EVENT_DATA_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_WRITE_HANDLER'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2397,7 +2941,7 @@ end USB_WRITE_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_WRITE_HANDLER'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_WRITE_HANDLER is
@@ -3169,7 +3713,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Thu Feb 26 11:05:55 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 
@@ -3247,7 +3791,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Thu Feb 26 11:05:55 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3433,7 +3977,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00001100";
+  SOFTWARE_VERSION <= "00001101";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -4940,7 +5484,7 @@ end rtl ; -- of USB_READ_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'READOUT_TIMED_OUT'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -4962,7 +5506,7 @@ end READOUT_TIMED_OUT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'READOUT_TIMED_OUT'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of READOUT_TIMED_OUT is
@@ -5020,7 +5564,7 @@ end rtl ; -- of READOUT_TIMED_OUT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'GPS_STUFF'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:26:55 2009.
 --------------------------------------------------------------------------------
 
 
@@ -5059,6 +5603,7 @@ entity GPS_STUFF is
     SPY_CON                 : in     std_logic;
     SPY_SDI                 : out    std_logic;
     SPY_SDO                 : in     std_logic;
+    STARTUP_BLOCK           : in     std_logic;
     SYSRST                  : in     std_logic;
     TEMP_OUT                : out    std_logic_vector(31 downto 0);
     TS_ONE_PPS_READOUT_DONE : in     std_logic;
@@ -5067,7 +5612,7 @@ end GPS_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'GPS_STUFF'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:26:55 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of GPS_STUFF is
@@ -5948,7 +6493,7 @@ begin
     if SYSRST = '1' then
       TS_ONE_PPS_VALID_OUT <= '0';
     elsif (CLK10MHz'event and CLK10MHz = '1') then
-      if ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then
+      if STARTUP_BLOCK = '0' and ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then
         TS_ONE_PPS_VALID_OUT <= '1';
       elsif TS_ONE_PPS_READOUT_DONE_DEL1 = '1' and TS_ONE_PPS_READOUT_DONE_DEL2 = '0' then
         TS_ONE_PPS_VALID_OUT <= '0';
@@ -6296,7 +6841,7 @@ end rtl ; -- of GPS_STUFF
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'THRESHOLD_COUNTERS'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6319,7 +6864,7 @@ end THRESHOLD_COUNTERS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'THRESHOLD_COUNTERS'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of THRESHOLD_COUNTERS is
@@ -6431,7 +6976,7 @@ end rtl ; -- of THRESHOLD_COUNTERS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LVDS_MUX'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6472,7 +7017,7 @@ end LVDS_MUX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LVDS_MUX'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of LVDS_MUX is
@@ -6539,7 +7084,7 @@ end rtl ; -- of LVDS_MUX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'INVERTER'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6556,7 +7101,7 @@ end INVERTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'INVERTER'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of INVERTER is
@@ -6567,7 +7112,7 @@ end rtl ; -- of INVERTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DUMMIES'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6592,7 +7137,7 @@ end DUMMIES ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'DUMMIES'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of DUMMIES is
@@ -6617,7 +7162,7 @@ end rtl ; -- of DUMMIES
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'FIFO_SELECT'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6669,7 +7214,7 @@ end FIFO_SELECT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'FIFO_SELECT'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of FIFO_SELECT is
@@ -6834,46 +7379,63 @@ begin
     end case;
   end process; 
 
-  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1
   -- For a master COINC_TO_END_TIME is 20ns delayed
   -- This is to compensate for the slave to master time (cable, drivers) 
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      TRIGGER_PATTERN_TIME1 <= "0000000000000000";
       GPS_TS_TIME1 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME1 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL1 = '0' then
-        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
         GPS_TS_TIME1 <= GPS_TS_IN;
         CTD_TIME1 <= CTD_IN;
       end if;
     end if;
   end process;  
 
-  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME2
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      TRIGGER_PATTERN_TIME2 <= "0000000000000000";
       GPS_TS_TIME2 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME2 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL1 = '0' then
-        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
         GPS_TS_TIME2 <= GPS_TS_IN;
         CTD_TIME2 <= CTD_IN;
       end if;
     end if;
   end process;  
 
+  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_END_TIME1
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TRIGGER_PATTERN_TIME1 <= "0000000000000000";
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME1_TMP = '0' and COINC_TO_END_TIME1_TMP_DEL1 = '1' then
+        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
+      end if;
+    end if;
+  end process;  
+
+  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_END_TIME2
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TRIGGER_PATTERN_TIME2 <= "0000000000000000";
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME2_TMP = '0' and COINC_TO_END_TIME2_TMP_DEL1 = '1' then
+        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
+      end if;
+    end if;
+  end process;  
 
 end rtl ; -- of FIFO_SELECT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SOFT_RESET'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6893,7 +7455,7 @@ end SOFT_RESET ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SOFT_RESET'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of SOFT_RESET is
@@ -6923,7 +7485,7 @@ end rtl ; -- of SOFT_RESET
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_ONE_SHOT'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6936,13 +7498,14 @@ entity LED_ONE_SHOT is
   port(
     CLK10MHz : in     std_logic;
     INP      : in     std_logic;
+    STARTUP  : in     std_logic;
     SYSRST   : in     std_logic;
     nOUTP    : out    std_logic);
 end LED_ONE_SHOT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_ONE_SHOT'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Fri Apr 24 11:22:22 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_ONE_SHOT is
@@ -6968,16 +7531,14 @@ begin
     end if;
   end process;  
 
---  nOUTP <= '0' when LEDSHINE_COUNTER > "000000000000001100100" and LEDSHINE_COUNTER /= "111111111111111111111" else '1'; -- after 10us = 100 counts
---  nOUTP <= '1'; 
-  nOUTP <= not (LEDSHINE_COUNTER(20) and LED_ON); 
+  nOUTP <= STARTUP or not LED_ON; 
 
 
 end rtl ; -- of LED_ONE_SHOT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DUAL_PORT_RAM'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6999,7 +7560,7 @@ end DUAL_PORT_RAM ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'DUAL_PORT_RAM'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture a0 of DUAL_PORT_RAM is
@@ -7031,7 +7592,7 @@ end a0 ; -- of DUAL_PORT_RAM
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'WR_ADDRES_COUNTER'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Mon Apr 27 11:03:59 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7056,7 +7617,7 @@ end WR_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'WR_ADDRES_COUNTER'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Mon Apr 27 11:03:59 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of WR_ADDRES_COUNTER is
@@ -7075,10 +7636,10 @@ begin
   -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO
 --  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);
 --  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);
---  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);
---  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 14 when (END_POST_TIME >= TOTAL_TIME + 14) else (2007 - TOTAL_TIME + END_POST_TIME);
-  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 16 when (END_POST_TIME >= TOTAL_TIME + 16) else (2005 - TOTAL_TIME + END_POST_TIME);
-  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 18 when (END_POST_TIME >= TOTAL_TIME + 18) else (2003 - TOTAL_TIME + END_POST_TIME);
+--  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 16 when (END_POST_TIME >= TOTAL_TIME + 16) else (2005 - TOTAL_TIME + END_POST_TIME);
+--  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 18 when (END_POST_TIME >= TOTAL_TIME + 18) else (2003 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 21 when (END_POST_TIME >= TOTAL_TIME + 21) else (2000 - TOTAL_TIME + END_POST_TIME);
+  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 23 when (END_POST_TIME >= TOTAL_TIME + 23) else (1998 - TOTAL_TIME + END_POST_TIME);
   BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;
 --  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);
   WR_ADDRESS <= WR_ADDRESS_TMP;
@@ -7142,7 +7703,7 @@ end rtl ; -- of WR_ADDRES_COUNTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'RD_ADDRES_COUNTER'.
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7169,7 +7730,7 @@ end RD_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'RD_ADDRES_COUNTER'
--- Last modified : Thu Feb 26 11:28:15 2009.
+-- Last modified : Wed Mar 11 15:56:40 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of RD_ADDRES_COUNTER is
@@ -7260,7 +7821,7 @@ end rtl ; -- of RD_ADDRES_COUNTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_STUFF'.
--- Last modified : Wed Jun 11 14:34:31 2008.
+-- Last modified : Fri Mar 20 10:20:00 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7292,12 +7853,14 @@ entity TRIGGER_STUFF is
     MH2               : out    std_logic;
     ML1               : out    std_logic;
     ML2               : out    std_logic;
+    ONE_PPS           : in     std_logic;
     POST_TIME         : in     integer range 1600 downto 0;
     SH1               : in     std_logic;
     SH2               : in     std_logic;
     SL1               : in     std_logic;
     SL2               : in     std_logic;
     SLAVE_PRESENT     : out    std_logic;
+    STARTUP_BLOCK     : out    std_logic;
     SYSRST            : in     std_logic;
     THH1              : in     std_logic_vector(11 downto 0);
     THH2              : in     std_logic_vector(11 downto 0);
@@ -7309,7 +7872,7 @@ end TRIGGER_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'TRIGGER_STUFF'
--- Last modified : Wed Jun 11 14:34:31 2008.
+-- Last modified : Fri Mar 20 10:20:00 2009.
 --------------------------------------------------------------------------------
 
 architecture structure of TRIGGER_STUFF is
@@ -7353,6 +7916,7 @@ architecture structure of TRIGGER_STUFF is
       MH2_OUT       : out    std_logic;
       ML1_OUT       : out    std_logic;
       ML2_OUT       : out    std_logic;
+      POST_TIME     : in     integer range 1600 downto 0;
       SYSRST        : in     std_logic;
       THH1          : in     std_logic_vector(11 downto 0);
       THH2          : in     std_logic_vector(11 downto 0);
@@ -7376,12 +7940,14 @@ architecture structure of TRIGGER_STUFF is
       MH2               : in     std_logic;
       ML1               : in     std_logic;
       ML2               : in     std_logic;
+      ONE_PPS           : in     std_logic;
       POST_TIME         : in     integer range 1600 downto 0;
       SH1_IN            : in     std_logic;
       SH2_IN            : in     std_logic;
       SL1_IN            : in     std_logic;
       SL2_IN            : in     std_logic;
       SLAVE_PRESENT     : in     std_logic;
+      STARTUP_BLOCK_OUT : out    std_logic;
       SYSRST            : in     std_logic;
       TRIGGER_PATTERN   : out    std_logic_vector(15 downto 0);
       TR_CONDITION      : in     std_logic_vector(7 downto 0));
@@ -7456,6 +8022,7 @@ begin
       MH2_OUT => MH2_net,
       ML1_OUT => ML1_net,
       ML2_OUT => ML2_net,
+      POST_TIME => POST_TIME,
       SYSRST => SYSRST,
       THH1 => THH1,
       THH2 => THH2,
@@ -7478,12 +8045,14 @@ begin
       MH2 => MH2_net,
       ML1 => ML1_net,
       ML2 => ML2_net,
+      ONE_PPS => ONE_PPS,
       POST_TIME => POST_TIME,
       SH1_IN => SH1_SYNCHR,
       SH2_IN => SH2_SYNCHR,
       SL1_IN => SL1_SYNCHR1,
       SL2_IN => SL2_SYNCHR,
       SLAVE_PRESENT => SLAVE_PRESENT_net,
+      STARTUP_BLOCK_OUT => STARTUP_BLOCK,
       SYSRST => SYSRST,
       TRIGGER_PATTERN => TRIGGER_PATTERN,
       TR_CONDITION => TR_CONDITION);
@@ -8189,7 +8758,7 @@ end structure ; -- of STORAGE_CHANNELS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'hisparc'.
--- Last modified : Wed Jun 11 14:29:18 2008.
+-- Last modified : Thu Apr 23 14:08:22 2009.
 --------------------------------------------------------------------------------
 
 
@@ -8280,7 +8849,7 @@ end hisparc ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'hisparc'
--- Last modified : Wed Jun 11 14:29:18 2008.
+-- Last modified : Thu Apr 23 14:08:22 2009.
 --------------------------------------------------------------------------------
 
 architecture a0 of hisparc is
@@ -8381,12 +8950,14 @@ architecture a0 of hisparc is
       MH2               : out    std_logic;
       ML1               : out    std_logic;
       ML2               : out    std_logic;
+      ONE_PPS           : in     std_logic;
       POST_TIME         : in     integer range 1600 downto 0;
       SH1               : in     std_logic;
       SH2               : in     std_logic;
       SL1               : in     std_logic;
       SL2               : in     std_logic;
       SLAVE_PRESENT     : out    std_logic;
+      STARTUP_BLOCK     : out    std_logic;
       SYSRST            : in     std_logic;
       THH1              : in     std_logic_vector(11 downto 0);
       THH2              : in     std_logic_vector(11 downto 0);
@@ -8514,6 +9085,7 @@ architecture a0 of hisparc is
       SPY_CON                 : in     std_logic;
       SPY_SDI                 : out    std_logic;
       SPY_SDO                 : in     std_logic;
+      STARTUP_BLOCK           : in     std_logic;
       SYSRST                  : in     std_logic;
       TEMP_OUT                : out    std_logic_vector(31 downto 0);
       TS_ONE_PPS_READOUT_DONE : in     std_logic;
@@ -8644,6 +9216,7 @@ architecture a0 of hisparc is
     port(
       CLK10MHz : in     std_logic;
       INP      : in     std_logic;
+      STARTUP  : in     std_logic;
       SYSRST   : in     std_logic;
       nOUTP    : out    std_logic);
   end component ;
@@ -8756,9 +9329,9 @@ architecture a0 of hisparc is
   signal COMPDATA_READOUT_DONE   :  std_logic;
   signal GPS_PROG_ENABLE0        :  std_logic;
   signal BLOCK_COINC             :  std_logic;
-  signal ONE_PPS_OUT0            :  std_logic;
+  signal ONE_PPS_OUT             :  std_logic;
   signal FORCE_MASTER            :  std_logic;
-  signal COINC                   :  std_logic;
+  signal COINC1                  :  std_logic;
   signal DATA_OUT1_CH2           :  std_logic_vector(11 downto 0);
   signal DATA_OUT2_CH2           :  std_logic_vector(11 downto 0);
   signal DATA_READY2_CH2         :  std_logic;
@@ -8782,6 +9355,7 @@ architecture a0 of hisparc is
   signal OUTP0                   :  std_logic;
   signal OUTP1                   :  std_logic;
   signal OUTP2                   :  std_logic;
+  signal STARTUP_BLOCK0          :  std_logic;
 
 begin
   --Comparator signals twisted due to
@@ -8895,12 +9469,14 @@ begin
       MH2 => MH2_net,
       ML1 => ML1_net,
       ML2 => ML2_net,
+      ONE_PPS => ONE_PPS_OUT,
       POST_TIME => POST_TIME,
       SH1 => SH1,
       SH2 => SH2,
       SL1 => SL1,
       SL2 => SL2,
       SLAVE_PRESENT => SLAVE_PRESENT,
+      STARTUP_BLOCK => STARTUP_BLOCK0,
       SYSRST => SYSRST,
       THH1 => THH1,
       THH2 => THH2,
@@ -8964,7 +9540,7 @@ begin
       LONGITUDE => LONGITUDE_OUT,
       MASTER => MASTER0,
       NEW_DATA_WHILE_READOUT => open,
-      ONE_PPS => ONE_PPS_OUT0,
+      ONE_PPS => ONE_PPS_OUT,
       POST_TIME => POST_TIME,
       RDEN => RDEN,
       READ_BUSY_OUT => open,
@@ -9000,7 +9576,7 @@ begin
       ALTITUDE_OUT => ALTITUDE_OUT,
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
-      COINC => COINC,
+      COINC => COINC1,
       COMPDATA_OUT => COMPDATA_OUT,
       COMPDATA_READOUT_DONE => COMPDATA_READOUT_DONE,
       COMPDATA_VALID_OUT => COMPDATA_VALID_OUT0,
@@ -9019,12 +9595,13 @@ begin
       LATITUDE_OUT => LATITUDE_OUT,
       LONGITUDE_OUT => LONGITUDE_OUT,
       MASTER => MASTER0,
-      ONE_PPS => ONE_PPS_OUT0,
+      ONE_PPS => ONE_PPS_OUT,
       RXD => GPS_DATA_OUT,
       SAT_INFO_OUT => SAT_INFO_OUT,
       SPY_CON => SPY_CON,
       SPY_SDI => SPY_SDI,
       SPY_SDO => SPY_SDO,
+      STARTUP_BLOCK => STARTUP_BLOCK0,
       SYSRST => SYSRST,
       TEMP_OUT => TEMP_OUT,
       TS_ONE_PPS_READOUT_DONE => TS_ONE_PPS_READOUT_DONE,
@@ -9037,7 +9614,7 @@ begin
       MH2 => MH2_net,
       ML1 => ML1_net,
       ML2 => ML2_net,
-      ONE_PPS => ONE_PPS_OUT0,
+      ONE_PPS => ONE_PPS_OUT,
       SYSRST => SYSRST,
       TH_COUNTERS_OUT => TH_COUNTERS_OUT);
 
@@ -9045,7 +9622,7 @@ begin
     port map(
       CLK10MHz => CLK10MHz,
       CLK200MHz => CLK200MHz,
-      COINC => COINC,
+      COINC => COINC1,
       COINC_MASTER => COINC0,
       GPS_DATA_MASTER => GPS_SDO,
       GPS_DATA_OUT => GPS_DATA_OUT,
@@ -9063,7 +9640,7 @@ begin
       ML1 => ML1_net,
       ML2 => ML2_net,
       ONE_PPS_MASTER => ONE_PPS,
-      ONE_PPS_OUT => ONE_PPS_OUT0,
+      ONE_PPS_OUT => ONE_PPS_OUT,
       SH1 => SH1,
       SH2 => SH2,
       SL1 => SL1,
@@ -9091,7 +9668,7 @@ begin
   u23: LED_DRIVER
     port map(
       CLK10MHz => CLK10MHz,
-      INP => ONE_PPS_OUT0,
+      INP => ONE_PPS_OUT,
       SYSRST => SYSRST,
       nOUTP => LED3);
 
@@ -9100,7 +9677,7 @@ begin
       BLOCK_COINC => BLOCK_COINC,
       CLK200MHz => CLK200MHz,
       CLKRD => CLKRD,
-      COINC_TO_END_TIME => COINC,
+      COINC_TO_END_TIME => COINC1,
       COINC_TO_END_TIME_FIFO1 => COINC_TO_END_TIME_FIFO1,
       COINC_TO_END_TIME_FIFO2 => COINC_TO_END_TIME_FIFO2,
       CTD_IN => CTD_OUT1,
@@ -9186,7 +9763,8 @@ begin
   u0: LED_ONE_SHOT
     port map(
       CLK10MHz => CLK10MHz,
-      INP => COINC,
+      INP => COINC1,
+      STARTUP => STARTUP_BLOCK0,
       SYSRST => SYSRST,
       nOUTP => LED5);
 

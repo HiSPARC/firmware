@@ -25,6 +25,7 @@
 --     MH2_OUT       : out    std_logic;
 --     ML1_OUT       : out    std_logic;
 --     ML2_OUT       : out    std_logic;
+--     POST_TIME     : in     integer range 1600 downto 0;
 --     SYSRST        : in     std_logic;
 --     THH1          : in     std_logic_vector(11 downto 0);
 --     THH2          : in     std_logic_vector(11 downto 0);
@@ -55,22 +56,30 @@ signal EXT_TR_IN_DEL1: std_logic ; -- External trigger after one 200MHz period
 signal EXT_TR_IN_DEL2: std_logic ; -- External trigger after two 200MHz periods; Two, because the external trigger is asynchronious
 signal EXT_TR: std_logic ; -- Coincidence window EXT_TR
 signal EXT_TR_CNT: integer range 1000 downto 0 ; -- Coincidence window counter EXT_TR
+
+-- De comparator windows worden tot en met posttime plus nog 200ns verlengd
+-- Om er zeker van te zijn dat ze op het eind van posttime in het volgenede blok ingeklokt worden.
+-- Dit is om het verschil in looptijd op te vangen tussen een signaal uit de ADC's, ongeveer 20 klokperiodes latency
+-- en de vertraging van een hardware comparator.
 signal COMPL1_IN_DEL1: std_logic ; 
 signal COMPL1_IN_DEL2: std_logic ; 
 signal COMPL1_IN_WIN: std_logic ; 
-signal COMPL1_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPL1_IN_CNT: integer range 2640 downto 0 ; 
 signal COMPH1_IN_DEL1: std_logic ; 
 signal COMPH1_IN_DEL2: std_logic ; 
 signal COMPH1_IN_WIN: std_logic ; 
-signal COMPH1_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPH1_IN_CNT: integer range 2640 downto 0 ; 
 signal COMPL2_IN_DEL1: std_logic ; 
 signal COMPL2_IN_DEL2: std_logic ; 
 signal COMPL2_IN_WIN: std_logic ; 
-signal COMPL2_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPL2_IN_CNT: integer range 2640 downto 0 ; 
 signal COMPH2_IN_DEL1: std_logic ; 
 signal COMPH2_IN_DEL2: std_logic ; 
 signal COMPH2_IN_WIN: std_logic ; 
-signal COMPH2_IN_CNT: integer range 1000 downto 0 ; 
+signal COMPH2_IN_CNT: integer range 2640 downto 0 ; 
+
+signal COMP_WIN_LENGTH: integer range 2640 downto 0 ; 
+
 signal ML1_DEL1: std_logic ; -- Compensates the delay from slave to master
 signal ML1_DEL2: std_logic ; 
 signal ML1_DEL3: std_logic ; 
@@ -104,6 +113,8 @@ COMPL1 <= COMPL1_IN_WIN;
 COMPL2 <= COMPL2_IN_WIN;
 COMPH1 <= COMPH1_IN_WIN;
 COMPH2 <= COMPH2_IN_WIN;
+
+COMP_WIN_LENGTH <= COINC_TIME + POST_TIME + 40;
 
   process(CLK200MHz,SYSRST)
   begin
@@ -343,7 +354,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPL1_IN_DEL1 = '1' and COMPL1_IN_DEL2 = '0' then 
         COMPL1_IN_WIN <= '1'; 
-      elsif COMPL1_IN_CNT = COINC_TIME - 1 then
+      elsif COMPL1_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPL1_IN_WIN <= '0';
       end if;
     end if;
@@ -370,7 +381,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPH1_IN_DEL1 = '1' and COMPH1_IN_DEL2 = '0' then 
         COMPH1_IN_WIN <= '1'; 
-      elsif COMPH1_IN_CNT = COINC_TIME - 1 then
+      elsif COMPH1_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPH1_IN_WIN <= '0';
       end if;
     end if;
@@ -397,7 +408,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPL2_IN_DEL1 = '1' and COMPL2_IN_DEL2 = '0' then 
         COMPL2_IN_WIN <= '1'; 
-      elsif COMPL2_IN_CNT = COINC_TIME - 1 then
+      elsif COMPL2_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPL2_IN_WIN <= '0';
       end if;
     end if;
@@ -424,7 +435,7 @@ COMPH2 <= COMPH2_IN_WIN;
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COMPH2_IN_DEL1 = '1' and COMPH2_IN_DEL2 = '0' then 
         COMPH2_IN_WIN <= '1'; 
-      elsif COMPH2_IN_CNT = COINC_TIME - 1 then
+      elsif COMPH2_IN_CNT = COMP_WIN_LENGTH - 1 then
         COMPH2_IN_WIN <= '0';
       end if;
     end if;

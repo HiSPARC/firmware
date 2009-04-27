@@ -206,40 +206,57 @@ begin
     end case;
   end process; 
 
-  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1
   -- For a master COINC_TO_END_TIME is 20ns delayed
   -- This is to compensate for the slave to master time (cable, drivers) 
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      TRIGGER_PATTERN_TIME1 <= "0000000000000000";
       GPS_TS_TIME1 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME1 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL1 = '0' then
-        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
         GPS_TS_TIME1 <= GPS_TS_IN;
         CTD_TIME1 <= CTD_IN;
       end if;
     end if;
   end process;  
 
-  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME2
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
-      TRIGGER_PATTERN_TIME2 <= "0000000000000000";
       GPS_TS_TIME2 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME2 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
       if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL1 = '0' then
-        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
         GPS_TS_TIME2 <= GPS_TS_IN;
         CTD_TIME2 <= CTD_IN;
       end if;
     end if;
   end process;  
 
+  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_END_TIME1
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TRIGGER_PATTERN_TIME1 <= "0000000000000000";
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME1_TMP = '0' and COINC_TO_END_TIME1_TMP_DEL1 = '1' then
+        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
+      end if;
+    end if;
+  end process;  
+
+  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_END_TIME2
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      TRIGGER_PATTERN_TIME2 <= "0000000000000000";
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_TO_END_TIME2_TMP = '0' and COINC_TO_END_TIME2_TMP_DEL1 = '1' then
+        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
+      end if;
+    end if;
+  end process;  
 
 end rtl ; -- of FIFO_SELECT
 

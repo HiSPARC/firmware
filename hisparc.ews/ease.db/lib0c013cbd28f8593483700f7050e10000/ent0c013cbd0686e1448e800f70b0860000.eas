@@ -5,20 +5,20 @@
     (NAME "TRIGGER_STUFF")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2176 3136)
+    (GEOMETRY 0 0 2176 3264)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu Feb 26 11:01:58 2009")
+      (PROPERTY "STAMP_TIME" "Fri Mar 20 10:21:17 2009")
       (NAME "TRIGGER_STUFF")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1142843488 "Mon Mar 20 09:31:28 2006")
-      (MODIFIED 1213187671 "Wed Jun 11 14:34:31 2008")
+      (MODIFIED 1237540800 "Fri Mar 20 10:20:00 2009")
     )
     (PORT
       (OBID "eprt0c013cbd6a86e1448e800f70e0860000")
@@ -469,11 +469,11 @@
           (RANGE "1000" "0")
         )
       )
-      (GEOMETRY 2136 2136 2216 2216)
+      (GEOMETRY 2136 2200 2216 2280)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2112 2176)
+        (POSITION 2112 2240)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -519,11 +519,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2136 2968 2216 3048)
+      (GEOMETRY 2136 3096 2216 3176)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2112 3008)
+        (POSITION 2112 3136)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -919,6 +919,56 @@
         (SIDE 1)
         (FORMAT 35)
         (TEXT "POST_TIME(1600:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca156676b9489c00f70bc040000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ONE_PPS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2136 2968 2216 3048)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2112 3008)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ONE_PPS")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca17de53c94cce00f701b260000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "STARTUP_BLOCK")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 2136 2072 2216 2152)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2112 2112)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "STARTUP_BLOCK")
       )
     )
     (ARCH_DECLARATION 1 "arch0c013cbd0686e1448e800f70c0860000" "structure")
@@ -1794,11 +1844,11 @@
             (RANGE "7" "0")
           )
         )
-        (GEOMETRY 8792 7384 8872 7464)
+        (GEOMETRY 8792 4632 8872 4712)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 8768 7424)
+          (POSITION 8768 4672)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -1903,17 +1953,69 @@
             (RANGE "1600" "0")
           )
         )
-        (GEOMETRY 9240 5336 9320 5416)
+        (GEOMETRY 8536 7576 8616 7656)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 9216 5376)
+          (POSITION 8512 7616)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
           (SIDE 1)
           (FORMAT 35)
           (TEXT "POST_TIME(1600:0)")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca156676b9489c00f70dc040000")
+        (PORT "eprt0c012ca156676b9489c00f70bc040000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "ONE_PPS")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 1)
+        )
+        (GEOMETRY 8792 4760 8872 4840)
+        (SENSLIST 1)
+        (SIDE 1)
+        (LABEL
+          (POSITION 8768 4800)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "ONE_PPS")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012ca17de53c94cce00f703b260000")
+        (PORT "eprt0c012ca17de53c94cce00f701b260000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "STARTUP_BLOCK")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 12696 6936 12776 7016)
+        (SENSLIST 1)
+        (SIDE 3)
+        (LABEL
+          (POSITION 12800 6976)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 3)
+          (SIDE 3)
+          (FORMAT 35)
+          (TEXT "STARTUP_BLOCK")
         )
       )
       (COMPONENT
@@ -3044,6 +3146,37 @@
             (TEXT "MASTER")
           )
         )
+        (PORT
+          (OBID "cprt0c012ca130d43c94cce00f70ea260000")
+          (PORT "eprt0c012ca130d43c94cce00f70da260000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "POST_TIME")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+              (NAME "integer")
+            )
+            (MODE 1)
+            (BUS
+              (DIRECTION 1)
+              (RANGE "1600" "0")
+            )
+          )
+          (GEOMETRY 6296 7384 6376 7464)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 6272 7424)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "POST_TIME(1600:0)")
+          )
+        )
         (LABEL
           (POSITION 4409 5818)
           (SCALE 128)
@@ -3061,7 +3194,7 @@
           (NAME "u2")
           (USERNAME 1)
         )
-        (GEOMETRY 9664 5056 12032 8640)
+        (GEOMETRY 9664 4480 12032 8640)
         (SIDE 0)
         (PORT
           (OBID "cprt0c013cbd257ce1448e800f70bc860000")
@@ -3609,11 +3742,11 @@
               (RANGE "7" "0")
             )
           )
-          (GEOMETRY 9624 7384 9704 7464)
+          (GEOMETRY 9624 4632 9704 4712)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 9728 7424)
+            (POSITION 9728 4672)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -3707,11 +3840,11 @@
               (RANGE "1600" "0")
             )
           )
-          (GEOMETRY 9624 5336 9704 5416)
+          (GEOMETRY 9624 7384 9704 7464)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 9728 5376)
+            (POSITION 9728 7424)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -3720,8 +3853,60 @@
             (TEXT "POST_TIME(1600:0)")
           )
         )
+        (PORT
+          (OBID "cprt0c012ca1ae676b9489c00f700d040000")
+          (PORT "eprt0c012ca1ae676b9489c00f70fc040000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "ONE_PPS")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 9624 4760 9704 4840)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 9728 4800)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "ONE_PPS")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012ca106e53c94cce00f700b260000")
+          (PORT "eprt0c012ca106e53c94cce00f70fa260000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "STARTUP_BLOCK_OUT")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 11992 6936 12072 7016)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 11968 6976)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "STARTUP_BLOCK_OUT")
+          )
+        )
         (LABEL
-          (POSITION 9941 5023)
+          (POSITION 10047 4432)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -4688,7 +4873,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 6400 6976 9600 6976)
+        (WIRE 9600 6976 6400 6976)
         (PORT
           (OBID "cprt0c8a20666e9dc4444eb05edcdb170000")
           (NAME "COMPH1")
@@ -4744,7 +4929,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 6400 7232 9600 7232)
+        (WIRE 9600 7232 6400 7232)
         (PORT
           (OBID "cprt0c8a20666e9dc4444eb05edcfb170000")
           (NAME "COMPH2")
@@ -5076,7 +5261,7 @@
             (RANGE "7" "0")
           )
         )
-        (WIRE 8896 7424 9600 7424)
+        (WIRE 8896 4672 9600 4672)
         (PORT
           (OBID "aprt0c013cbd13d43b44cf400f7058f50000")
           (NAME "TR_CONDITION")
@@ -5342,13 +5527,20 @@
             (RANGE "1600" "0")
           )
         )
-        (WIRE 9344 5376 9600 5376)
+        (WIRE 8704 7616 8704 7424)
+        (WIRE 8704 7616 8640 7616)
+        (WIRE 8704 7424 9600 7424)
+        (WIRE 6400 7424 8704 7424)
         (PORT
           (OBID "aprt0c012ca1d36bbf64caf00f7074630000")
           (NAME "POST_TIME")
         )
         (PORT
           (OBID "cprt0c012ca13d6bbf64caf00f70a4630000")
+          (NAME "POST_TIME")
+        )
+        (PORT
+          (OBID "cprt0c012ca130d43c94cce00f70ea260000")
           (NAME "POST_TIME")
         )
         (LABEL
@@ -5378,6 +5570,62 @@
         (PORT
           (OBID "aprt0c013cbd1d2202448e800f703f860000")
           (NAME "COINC_TO_END_TIME")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca14f676b9489c00f701d040000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "ONE_PPS")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 8896 4800 9600 4800)
+        (PORT
+          (OBID "aprt0c012ca156676b9489c00f70dc040000")
+          (NAME "ONE_PPS")
+        )
+        (PORT
+          (OBID "cprt0c012ca1ae676b9489c00f700d040000")
+          (NAME "ONE_PPS")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012ca13ee53c94cce00f704b260000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "STARTUP_BLOCK")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 12096 6976 12672 6976)
+        (PORT
+          (OBID "cprt0c012ca106e53c94cce00f700b260000")
+          (NAME "STARTUP_BLOCK_OUT")
+        )
+        (PORT
+          (OBID "aprt0c012ca17de53c94cce00f703b260000")
+          (NAME "STARTUP_BLOCK")
         )
         (LABEL
           (POSITION 0 0)

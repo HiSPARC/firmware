@@ -6,6 +6,7 @@
 --   port(
 --     CLK10MHz : in     std_logic;
 --     INP      : in     std_logic;
+--     STARTUP  : in     std_logic;
 --     SYSRST   : in     std_logic;
 --     nOUTP    : out    std_logic);
 -- 
@@ -34,9 +35,7 @@ begin
     end if;
   end process;  
 
---  nOUTP <= '0' when LEDSHINE_COUNTER > "000000000000001100100" and LEDSHINE_COUNTER /= "111111111111111111111" else '1'; -- after 10us = 100 counts
---  nOUTP <= '1'; 
-  nOUTP <= not (LEDSHINE_COUNTER(20) and LED_ON); 
+  nOUTP <= STARTUP or not LED_ON; 
 
 
 end rtl ; -- of LED_ONE_SHOT

@@ -32,6 +32,7 @@
 --     SPY_CON                 : in     std_logic;
 --     SPY_SDI                 : out    std_logic;
 --     SPY_SDO                 : in     std_logic;
+--     STARTUP_BLOCK           : in     std_logic;
 --     SYSRST                  : in     std_logic;
 --     TEMP_OUT                : out    std_logic_vector(31 downto 0);
 --     TS_ONE_PPS_READOUT_DONE : in     std_logic;
@@ -917,7 +918,7 @@ begin
     if SYSRST = '1' then
       TS_ONE_PPS_VALID_OUT <= '0';
     elsif (CLK10MHz'event and CLK10MHz = '1') then
-      if ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then
+      if STARTUP_BLOCK = '0' and ONE_PPS_SLOW_DEL2 = '1' and ONE_PPS_SLOW_DEL3 = '0' then
         TS_ONE_PPS_VALID_OUT <= '1';
       elsif TS_ONE_PPS_READOUT_DONE_DEL1 = '1' and TS_ONE_PPS_READOUT_DONE_DEL2 = '0' then
         TS_ONE_PPS_VALID_OUT <= '0';
