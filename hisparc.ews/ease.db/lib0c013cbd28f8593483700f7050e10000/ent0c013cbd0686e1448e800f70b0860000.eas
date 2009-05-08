@@ -11,7 +11,7 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Mar 20 10:21:17 2009")
+      (PROPERTY "STAMP_TIME" "Wed May 06 14:46:16 2009")
       (NAME "TRIGGER_STUFF")
       (USERNAME 1)
     )
@@ -4873,7 +4873,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9600 6976 6400 6976)
+        (WIRE 6400 6976 9600 6976)
         (PORT
           (OBID "cprt0c8a20666e9dc4444eb05edcdb170000")
           (NAME "COMPH1")
@@ -4929,7 +4929,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 9600 7232 6400 7232)
+        (WIRE 6400 7232 9600 7232)
         (PORT
           (OBID "cprt0c8a20666e9dc4444eb05edcfb170000")
           (NAME "COMPH2")
@@ -5527,8 +5527,8 @@
             (RANGE "1600" "0")
           )
         )
-        (WIRE 8704 7616 8704 7424)
-        (WIRE 8704 7616 8640 7616)
+        (WIRE 8704 7424 8704 7616)
+        (WIRE 8640 7616 8704 7616)
         (WIRE 8704 7424 9600 7424)
         (WIRE 6400 7424 8704 7424)
         (PORT

@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri Apr 24 13:20:23 2009")
+      (PROPERTY "STAMP_TIME" "Fri May 08 09:44:06 2009")
       (NAME "TRIGGER_MATRIX")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1142866558 "Mon Mar 20 15:55:58 2006")
-      (MODIFIED 1240564942 "Fri Apr 24 11:22:22 2009")
+      (MODIFIED 1241706872 "Thu May 07 16:34:32 2009")
     )
     (PORT
       (OBID "eprt0c013cbd257ce1448e800f706c860000")
@@ -846,14 +846,7 @@
                  "signal COINC_TO_END_TIME_DEL_TMP: std_logic ;   "
                  "signal BEGIN_COINC_TO_END_TIME_TMP: std_logic ; -- Time from positive edge of COINC to end of POST_TIME  "
                  "signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from end COINC to end of POST_TIME"
-                 "-- There must be a gap between the end of a posttime and the beginning of a new coinctime."
-                 "-- This is related to the readoutclock RDCLK. It will cost the COINC_TO_END_TIME switch in instance FIFO_SELECT two clockperiods"
-                 "-- to react. Periodtime is 200ns, thus the gap must be 400ns. That are 80 steps of 5ns. This will increase the deadtime."
-                 "signal POST_PLUS_GAP_TIME_CNT: integer range 1680 downto 0 ; -- Counter from end COINC to end of POST_TIME plus gap"
-                 "signal GAP_TIME: integer range 1700 downto 0 ; -- POST_TIME plus gap"
-                 "signal COINC_TO_GAP_TIME: std_logic ; -- Time from negative edge of COINC to end of GAP_TIME  "
                  "signal BLOCK_START_OF_COINC: std_logic ; -- This signal is the OR of all signals which prevent starting COINC."
-                 "signal BLOCK_COINC_SYNCHR: std_logic ;"
                  "signal EXT_TR_DEL: std_logic ;"
                  "signal CAL_COUNT: std_logic_vector(22 downto 0); -- Calibration counter Full scale is about 2^23 times 100ns is 0.84 seconds"
                  "signal CAL_TR: std_logic ;"
@@ -874,7 +867,6 @@
                  "--  CAL_EXTTRIG_PATTERN <= TR_CONDITION(7 downto 6);"
                  "  COINC_TO_END_TIME <= BEGIN_COINC_TO_END_TIME_TMP;"
                  "  STARTUP_BLOCK_OUT <= STARTUP_BLOCK;"
-                 "  GAP_TIME <= POST_TIME + 100; -- 0.5 us gap"
                  "  "
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -888,7 +880,6 @@
                  "      SCINT_COINC_DEL <= '0';        "
                  "      COINC_DEL <= '0';        "
                  "      COINC_TO_END_TIME_DEL_TMP <= '0';        "
-                 "      BLOCK_COINC_SYNCHR <= '0';        "
                  "      CAL_TR <= '0';  "
                  "      CAL_TR_DEL1 <= '0';  "
                  "      CAL_TR_DEL2 <= '0';  "
@@ -945,7 +936,6 @@
                  "      COINC_TO_END_TIME_DEL_TMP <= COINC_TO_END_TIME_TMP;        "
                  "      SCINT_COINC_DEL <= SCINT_COINC;        "
                  "      COINC_DEL <= COINC_TMP;        "
-                 "      BLOCK_COINC_SYNCHR <= BLOCK_COINC;        "
                  "      EXT_TR_DEL <= EXT_TR;        "
                  "      CAL_TR <= CAL_COUNT(22);        "
                  "      CAL_TR_DEL1 <= CAL_TR;        "
@@ -1997,41 +1987,11 @@
                  "    end if;"
                  "  end process;  "
                  ""
-                 "  -- COINC_TO_GAP_TIME starts at a negative edge of COINC and stops when POST_PLUS_GAP_TIME_CNT reaches GAP_TIME"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      COINC_TO_GAP_TIME <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TMP = '0' and COINC_DEL = '1' then -- on a negative edge of COINC"
-                 "        COINC_TO_GAP_TIME <= '1'; "
-                 "      elsif POST_PLUS_GAP_TIME_CNT > GAP_TIME then"
-                 "        COINC_TO_GAP_TIME <= '0';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;  "
-                 ""
-                 "  -- POST_PLUS_GAP_TIME_CNT starts when COINC_TO_GAP_TIME = '1'"
-                 "  -- and counts as long COINC_TO_GAP_TIME is valid "
-                 "  -- and resets when COINC_TO_GAP_TIME = '0'"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      POST_PLUS_GAP_TIME_CNT <= 0;"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_GAP_TIME = '1' then "
-                 "        POST_PLUS_GAP_TIME_CNT <= POST_PLUS_GAP_TIME_CNT + 1;"
-                 "      else"
-                 "        POST_PLUS_GAP_TIME_CNT <= 0;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;  "
-                 ""
-                 "  -- BLOCK_START_OF_COINC goes from begin of coinc till end of gaptime"
+                 "  -- BLOCK_START_OF_COINC goes from begin of coinc till end of COINC_TO_END_TIME_TMP"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      BLOCK_START_OF_COINC <= BLOCK_COINC_SYNCHR or COINC_TMP or COINC_DEL or COINC_TO_GAP_TIME or STARTUP_BLOCK;"
+                 "      BLOCK_START_OF_COINC <= BLOCK_COINC or COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP or STARTUP_BLOCK;"
                  "    end if;"
                  "  end process;  "
                  ""

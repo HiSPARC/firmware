@@ -46,14 +46,22 @@
 
 architecture rtl of FIFO_SELECT is
 
-signal COINC_TO_END_TIME1_TMP: std_logic;  
-signal COINC_TO_END_TIME2_TMP: std_logic;  
-signal COINC_TO_END_TIME1_TMP_DEL1: std_logic;  
-signal COINC_TO_END_TIME2_TMP_DEL1: std_logic;  
-signal COINC_SWITCH: std_logic_vector(1 downto 0); -- bit0 is DATA_READY1 and bit1 is DATA_READY2
+signal COINC_TO_END_TIME_DEL1: std_logic;  
+signal COINC_SWITCH: std_logic_vector(1 downto 0); -- bit0 is gates coinc to channel 1 and bit1 to channel 2
+signal BLOCK_SWITCH: std_logic_vector(1 downto 0); -- bit0 is set at a coinc to channel 1 and bit1 is set at a coinc to channel 2; end of readout of the channel, clears the bit
+signal DATA_READY1: std_logic; -- active when there is latched data in one of the first fifo's 
+signal DATA_READY2: std_logic; -- active when there is latched data in one of the second fifo's 
+signal DATA_READY1_DEL1: std_logic; -- delay's to synchronize it with the 200MHz 
+signal DATA_READY2_DEL1: std_logic; -- delay's to synchronize it with the 200MHz 
+signal DATA_READY1_DEL2: std_logic;  
+signal DATA_READY2_DEL2: std_logic;  
 signal DATA_READY_FIFO1: std_logic;  
 signal DATA_READY_FIFO2: std_logic;  
 signal READY: std_logic_vector(1 downto 0); -- bit0 selects FIFO1 and bit1 selects FIFO2
+signal COINC_TO_FIFO1: std_logic;  
+signal COINC_TO_FIFO1_DEL1: std_logic;  
+signal COINC_TO_FIFO2: std_logic;  
+signal COINC_TO_FIFO2_DEL1: std_logic;  
 signal RDEN_CH2_DEL1: std_logic;  
 signal TRIGGER_PATTERN_TIME1: std_logic_vector(15 downto 0);  
 signal TRIGGER_PATTERN_TIME2: std_logic_vector(15 downto 0);  
@@ -65,47 +73,82 @@ signal GPS_TS_TIME2: std_logic_vector(55 downto 0);
 
 begin
 
+  COINC_TO_END_TIME_FIFO1 <= COINC_TO_FIFO1;
+  COINC_TO_END_TIME_FIFO2 <= COINC_TO_FIFO2;
 
   -- DATA_READY_FIFO is true when there is data in both fifo's of the channels made on the same COINC
   DATA_READY_FIFO1 <= DATA_READY1_CH1 and DATA_READY1_CH2;
   DATA_READY_FIFO2 <= DATA_READY2_CH1 and DATA_READY2_CH2;
 
   -- BLOCK_COINC if FIFO's1 and FIFO's2 are full
-  BLOCK_COINC <= ((DATA_READY1_CH1 or READOUT_BUSY1_CH1) and (DATA_READY2_CH1 or READOUT_BUSY2_CH1)) 
-              or ((DATA_READY1_CH2 or READOUT_BUSY1_CH2) and (DATA_READY2_CH2 or READOUT_BUSY2_CH2));
+  BLOCK_COINC <= '1' when BLOCK_SWITCH = "11" else '0';
 
-  COINC_SWITCH(0) <= DATA_READY1_CH1 or DATA_READY1_CH2;
-  COINC_SWITCH(1) <= DATA_READY2_CH1 or DATA_READY2_CH2;
+  DATA_READY1 <= DATA_READY1_CH1 or DATA_READY1_CH2;
+  DATA_READY2 <= DATA_READY2_CH1 or DATA_READY2_CH2;
 
-  -- COINC Multiplexer
-  process(COINC_SWITCH,COINC_TO_END_TIME)
+  process(CLK200MHz,SYSRST)
   begin
-    case(COINC_SWITCH) is
-      when "00" => COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;
-                   COINC_TO_END_TIME2_TMP <= '0';
-      when "01" => COINC_TO_END_TIME1_TMP <= '0';       
-                   COINC_TO_END_TIME2_TMP <= COINC_TO_END_TIME;
-      when "10" => COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;        
-                   COINC_TO_END_TIME2_TMP <= '0';
-      when "11" => COINC_TO_END_TIME1_TMP <= '0';        
-                   COINC_TO_END_TIME2_TMP <= '0';
-      when others =>
-    end case;
+    if SYSRST = '1' then
+      COINC_SWITCH <= "00"; 
+      BLOCK_SWITCH <= "00"; 
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if DATA_READY1_DEL1 = '0' and  DATA_READY1_DEL2 = '1' then -- on a falling edge of DATA_READY1, the first fifo's have been read out
+        COINC_SWITCH(0) <= '0'; -- Clear coinc_switch0
+        BLOCK_SWITCH(0) <= '0'; -- Clear block_switch0
+      elsif DATA_READY2_DEL1 = '0' and  DATA_READY2_DEL2 = '1' then -- on a falling edge of DATA_READY2, the second fifo's have been read out
+        COINC_SWITCH(1) <= '0'; -- Clear coinc_switch1
+        BLOCK_SWITCH(1) <= '0'; -- Clear block_switch1
+      elsif BLOCK_SWITCH /= "11" and (COINC_SWITCH = "00" or COINC_SWITCH = "10") and COINC_TO_END_TIME = '1' and  COINC_TO_END_TIME_DEL1 = '0' then -- on a rising edge of COINC_TO_END_TIME and COINC_SWITCH(0) = '0'
+        COINC_SWITCH <= "01"; -- Set coinc_switch0
+        BLOCK_SWITCH(0) <= '1'; -- Set block_switch0
+      elsif BLOCK_SWITCH /= "11" and COINC_SWITCH = "01" and COINC_TO_END_TIME = '1' and  COINC_TO_END_TIME_DEL1 = '0' then -- on a rising edge of COINC_TO_END_TIME and COINC_SWITCH(0) = '1' and COINC_SWITCH(1) = '0'
+        COINC_SWITCH <= "10"; -- Set coinc_switch1
+        BLOCK_SWITCH(1) <= '1'; -- Set block_switch1
+      end if;
+    end if;
   end process; 
 
-
-  -- This is done to please the fitter for timing requirements
-  process(CLK200MHz)
+  -- COINC Multiplexer
+  process(CLK200MHz,SYSRST)
   begin
-    if (CLK200MHz'event and CLK200MHz = '1') then
-      COINC_TO_END_TIME_FIFO1 <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME_FIFO2 <= COINC_TO_END_TIME2_TMP;
-      COINC_TO_END_TIME1_TMP_DEL1 <= COINC_TO_END_TIME1_TMP;
-      COINC_TO_END_TIME2_TMP_DEL1 <= COINC_TO_END_TIME2_TMP;
+    if SYSRST = '1' then
+      COINC_TO_FIFO1 <= '0'; 
+      COINC_TO_FIFO2 <= '0'; 
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if COINC_SWITCH = "01" then
+        COINC_TO_FIFO1 <= COINC_TO_END_TIME_DEL1;
+      elsif COINC_SWITCH = "10" then
+        COINC_TO_FIFO2 <= COINC_TO_END_TIME_DEL1;
+      else
+        COINC_TO_FIFO1 <= '0';
+        COINC_TO_FIFO2 <= '0';
+      end if;
+    end if;
+  end process; 
+
+  -- delay's  on CLK200MHz
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      COINC_TO_END_TIME_DEL1 <= '0';
+      DATA_READY1_DEL1 <= '0';
+      DATA_READY1_DEL2 <= '0';
+      DATA_READY2_DEL1 <= '0';
+      DATA_READY2_DEL2 <= '0';
+      COINC_TO_FIFO1_DEL1 <= '0';
+      COINC_TO_FIFO2_DEL1 <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      COINC_TO_END_TIME_DEL1 <= COINC_TO_END_TIME;
+      DATA_READY1_DEL1 <= DATA_READY1;
+      DATA_READY1_DEL2 <= DATA_READY1_DEL1;
+      DATA_READY2_DEL1 <= DATA_READY2;
+      DATA_READY2_DEL2 <= DATA_READY2_DEL1;
+      COINC_TO_FIFO1_DEL1 <= COINC_TO_FIFO1;
+      COINC_TO_FIFO2_DEL1 <= COINC_TO_FIFO2;
     end if;
   end process;  
 
-  -- delay's
+  -- delay's  on CLKRD
   process(CLKRD,SYSRST)
   begin
     if SYSRST = '1' then
@@ -146,8 +189,6 @@ begin
                    DATA_READY_CH1 <= '0';
                    RDEN1_CH1 <= '0';
                    RDEN2_CH1 <= '0';
---                   COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;
---                   COINC_TO_END_TIME2_TMP <= '0';
                    DATA_OUT_CH2 <= DATA_OUT1_CH2;        
                    DATA_READY_CH2 <= '0';
                    DATA_VALID_CH1 <= '0';
@@ -161,8 +202,6 @@ begin
                    DATA_READY_CH1 <= DATA_READY1_CH1;
                    RDEN1_CH1 <= RDEN_CH1;
                    RDEN2_CH1 <= '0';
---                   COINC_TO_END_TIME1_TMP <= '0';
---                   COINC_TO_END_TIME2_TMP <= COINC_TO_END_TIME;
                    DATA_OUT_CH2 <= DATA_OUT1_CH2;        
                    DATA_READY_CH2 <= DATA_READY1_CH2;
                    DATA_VALID_CH1 <= READOUT_BUSY1_CH1;
@@ -176,8 +215,6 @@ begin
                    DATA_READY_CH1 <= DATA_READY2_CH1;
                    RDEN1_CH1 <= '0';
                    RDEN2_CH1 <= RDEN_CH1;
---                   COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;
---                   COINC_TO_END_TIME2_TMP <= '0';
                    DATA_OUT_CH2 <= DATA_OUT2_CH2;        
                    DATA_READY_CH2 <= DATA_READY2_CH2;
                    DATA_VALID_CH1 <= READOUT_BUSY2_CH1;
@@ -191,8 +228,6 @@ begin
                    DATA_READY_CH1 <= '0';
                    RDEN1_CH1 <= '0';
                    RDEN2_CH1 <= '0';
---                   COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;
---                   COINC_TO_END_TIME2_TMP <= '0';
                    DATA_OUT_CH2 <= DATA_OUT1_CH2;        
                    DATA_READY_CH2 <= '0';
                    DATA_VALID_CH1 <= '0';
@@ -214,7 +249,7 @@ begin
       GPS_TS_TIME1 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME1 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_TMP_DEL1 = '0' then
+      if COINC_TO_FIFO1 = '1' and COINC_TO_FIFO1_DEL1 = '0' then
         GPS_TS_TIME1 <= GPS_TS_IN;
         CTD_TIME1 <= CTD_IN;
       end if;
@@ -227,32 +262,32 @@ begin
       GPS_TS_TIME2 <= "00000000000000000000000000000000000000000000000000000000";
       CTD_TIME2 <= "00000000000000000000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_TMP_DEL1 = '0' then
+      if COINC_TO_FIFO2 = '1' and COINC_TO_FIFO2_DEL1 = '0' then
         GPS_TS_TIME2 <= GPS_TS_IN;
         CTD_TIME2 <= CTD_IN;
       end if;
     end if;
   end process;  
 
-  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_END_TIME1
+  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_FIFO1
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
       TRIGGER_PATTERN_TIME1 <= "0000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME1_TMP = '0' and COINC_TO_END_TIME1_TMP_DEL1 = '1' then
+      if COINC_TO_FIFO1 = '0' and COINC_TO_FIFO1_DEL1 = '1' then
         TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;
       end if;
     end if;
   end process;  
 
-  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_END_TIME2
+  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_FIFO2
   process(CLK200MHz,SYSRST)
   begin
     if SYSRST = '1' then
       TRIGGER_PATTERN_TIME2 <= "0000000000000000";
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if COINC_TO_END_TIME2_TMP = '0' and COINC_TO_END_TIME2_TMP_DEL1 = '1' then
+      if COINC_TO_FIFO2 = '0' and COINC_TO_FIFO2_DEL1 = '1' then
         TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;
       end if;
     end if;

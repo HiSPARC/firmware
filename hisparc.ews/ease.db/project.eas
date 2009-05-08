@@ -14,7 +14,7 @@
   (PROPERTY "EntityFileFormatSpec" "%e.%x")
   (PROPERTY "ModuleFileFormatSpec" "%e.%x")
   (PROPERTY "STAMP_TOOL" "Ease")
-  (PROPERTY "STAMP_TIME" "Tue Mar 10 15:13:07 2009")
+  (PROPERTY "STAMP_TIME" "Wed May 06 14:46:16 2009")
   (PROPERTY "VerilogExt" "v")
   (PROPERTY "VHDL_VECTOR" "std_logic_vector")
   (PROPERTY "VHDL_SIGNAL" "std_logic")
