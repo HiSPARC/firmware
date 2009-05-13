@@ -294,7 +294,7 @@ begin
 -- This counter counts the number of words (bytes) in the serial data stream
   process(CLK_153600, SYSRST) 
   begin
-	if SYSRST = '1'then
+	if SYSRST = '1' then
 	  WORD_COUNT <= 0;
  	  elsif CLK_153600'event and CLK_153600 = '1' then
   	    if TIME_OUT = '1' then

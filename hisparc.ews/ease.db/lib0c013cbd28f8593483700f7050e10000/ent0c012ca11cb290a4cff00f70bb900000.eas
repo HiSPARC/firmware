@@ -1,0 +1,390 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c012ca11cb290a4cff00f70bb900000")
+    (NAME "BLOCK_THRESH_SWITCH")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1536 2944)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Tue May 12 11:41:13 2009")
+      (NAME "BLOCK_THRESH_SWITCH")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1242115009 "Tue May 12 09:56:49 2009")
+      (MODIFIED 1242121272 "Tue May 12 11:41:12 2009")
+    )
+    (PORT
+      (OBID "eprt0c012ca12fb290a4cff00f70eb900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ML1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1880 40 1960)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1920)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "ML1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca12fb290a4cff00f70fb900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ML2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2008 40 2088)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2048)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "ML2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca12fb290a4cff00f700c900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MH1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2136 40 2216)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2176)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MH1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca12fb290a4cff00f701c900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MH2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2264 40 2344)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2304)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1a0c290a4cff00f706c900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1560 40 1640)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1600)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1a0c290a4cff00f707c900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1432 40 1512)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1472)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca131c290a4cff00f70ac900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2712 40 2792)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2752)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1b5c290a4cff00f70ec900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ML1_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1496 344 1576 424)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1472 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ML1_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1b5c290a4cff00f70fc900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "ML2_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1496 472 1576 552)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1472 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "ML2_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1b5c290a4cff00f700d900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MH1_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1496 600 1576 680)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1472 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "MH1_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1b5c290a4cff00f701d900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MH2_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1496 728 1576 808)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1472 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "MH2_OUT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca1d0d290a4cff00f70bd900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "BLOCK_COINC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1496 1944 1576 2024)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1472 1984)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "BLOCK_COINC")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c012ca11cb290a4cff00f70cb900000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c012ca11cb290a4cff00f70cb900000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'BLOCK_THRESH_SWITCH."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'BLOCK_THRESH_SWITCH' :"
+                 "-- "
+                 "--   port("
+                 "--     BLOCK_COINC : in     std_logic;"
+                 "--     CLK200MHz   : in     std_logic;"
+                 "--     MASTER      : in     std_logic;"
+                 "--     MH1         : in     std_logic;"
+                 "--     MH1_OUT     : out    std_logic;"
+                 "--     MH2         : in     std_logic;"
+                 "--     MH2_OUT     : out    std_logic;"
+                 "--     ML1         : in     std_logic;"
+                 "--     ML1_OUT     : out    std_logic;"
+                 "--     ML2         : in     std_logic;"
+                 "--     ML2_OUT     : out    std_logic;"
+                 "--     SYSRST      : in     std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of BLOCK_THRESH_SWITCH is"
+                 ""
+                 "begin"
+                 ""
+                 "-- Als een slave zijn block_coinc naar een master door wil geven, dan doet hij dat door de threshold signalen"
+                 "-- op een normaal niet bestaande / mogelijke waarde te zetten, namelijk: wel hoge threshold waarden, zonder lage waarden."
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      ML1_OUT <= '0';"
+                 "      ML2_OUT <= '0';"
+                 "      MH1_OUT <= '0';"
+                 "      MH2_OUT <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if MASTER = '0' and BLOCK_COINC = '1' then "
+                 "        ML1_OUT <= '0';"
+                 "        ML2_OUT <= '0';"
+                 "        MH1_OUT <= '1';"
+                 "        MH2_OUT <= '1';"
+                 "      else"
+                 "        ML1_OUT <= ML1;"
+                 "        ML2_OUT <= ML2;"
+                 "        MH1_OUT <= MH1;"
+                 "        MH2_OUT <= MH2;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 ""
+                 "end rtl ; -- of BLOCK_THRESH_SWITCH"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

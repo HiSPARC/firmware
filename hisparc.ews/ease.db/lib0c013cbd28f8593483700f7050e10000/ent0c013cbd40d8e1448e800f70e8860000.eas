@@ -5,20 +5,20 @@
     (NAME "DISCRIMINATORS")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2240 2688)
+    (GEOMETRY 0 0 2240 2880)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Fri May 08 09:44:06 2009")
+      (PROPERTY "STAMP_TIME" "Tue May 12 11:41:13 2009")
       (NAME "DISCRIMINATORS")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1142852868 "Mon Mar 20 12:07:48 2006")
-      (MODIFIED 1241705008 "Thu May 07 16:03:28 2009")
+      (MODIFIED 1242121272 "Tue May 12 11:41:12 2009")
     )
     (PORT
       (OBID "eprt0c013cbd08d8e1448e800f7019860000")
@@ -36,11 +36,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 856 40 936)
+      (GEOMETRY -40 1048 40 1128)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 896)
+        (POSITION 64 1088)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -65,11 +65,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 984 40 1064)
+      (GEOMETRY -40 1176 40 1256)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1024)
+        (POSITION 64 1216)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -94,11 +94,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1112 40 1192)
+      (GEOMETRY -40 1304 40 1384)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1152)
+        (POSITION 64 1344)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -123,11 +123,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1240 40 1320)
+      (GEOMETRY -40 1432 40 1512)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1280)
+        (POSITION 64 1472)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -152,11 +152,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1624 40 1704)
+      (GEOMETRY -40 1816 40 1896)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1664)
+        (POSITION 64 1856)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -181,11 +181,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1752 40 1832)
+      (GEOMETRY -40 1944 40 2024)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1792)
+        (POSITION 64 1984)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -210,11 +210,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1880 40 1960)
+      (GEOMETRY -40 2072 40 2152)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1920)
+        (POSITION 64 2112)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -239,11 +239,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 2008 40 2088)
+      (GEOMETRY -40 2200 40 2280)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2048)
+        (POSITION 64 2240)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -264,11 +264,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2456 40 2536)
+      (GEOMETRY -40 2648 40 2728)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2496)
+        (POSITION 64 2688)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -289,11 +289,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2328 40 2408)
+      (GEOMETRY -40 2520 40 2600)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2368)
+        (POSITION 64 2560)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -319,11 +319,11 @@
           (RANGE "1000" "0")
         )
       )
-      (GEOMETRY -40 2136 40 2216)
+      (GEOMETRY -40 2328 40 2408)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2176)
+        (POSITION 64 2368)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -344,11 +344,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 216 2280 296)
+      (GEOMETRY 2200 408 2280 488)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 256)
+        (POSITION 2176 448)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -369,11 +369,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 344 2280 424)
+      (GEOMETRY 2200 536 2280 616)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 384)
+        (POSITION 2176 576)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -394,11 +394,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 472 2280 552)
+      (GEOMETRY 2200 664 2280 744)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 512)
+        (POSITION 2176 704)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -419,11 +419,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 600 2280 680)
+      (GEOMETRY 2200 792 2280 872)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 640)
+        (POSITION 2176 832)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -444,11 +444,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1432 40 1512)
+      (GEOMETRY -40 1624 40 1704)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1472)
+        (POSITION 64 1664)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -469,11 +469,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 728 2280 808)
+      (GEOMETRY 2200 920 2280 1000)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 768)
+        (POSITION 2176 960)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -494,11 +494,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 216 40 296)
+      (GEOMETRY -40 408 40 488)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 256)
+        (POSITION 64 448)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -519,11 +519,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 344 40 424)
+      (GEOMETRY -40 536 40 616)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 384)
+        (POSITION 64 576)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -544,11 +544,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY -40 664 40 744)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 64 704)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -569,11 +569,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 600 40 680)
+      (GEOMETRY -40 792 40 872)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 640)
+        (POSITION 64 832)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -594,11 +594,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 920 2280 1000)
+      (GEOMETRY 2200 1112 2280 1192)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 960)
+        (POSITION 2176 1152)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -619,11 +619,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1048 2280 1128)
+      (GEOMETRY 2200 1240 2280 1320)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1088)
+        (POSITION 2176 1280)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -644,11 +644,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1176 2280 1256)
+      (GEOMETRY 2200 1368 2280 1448)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1216)
+        (POSITION 2176 1408)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -669,11 +669,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1304 2280 1384)
+      (GEOMETRY 2200 1496 2280 1576)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1344)
+        (POSITION 2176 1536)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -694,11 +694,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2200 1816 2280 1896)
+      (GEOMETRY 2200 2008 2280 2088)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1856)
+        (POSITION 2176 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -724,17 +724,42 @@
           (RANGE "1600" "0")
         )
       )
-      (GEOMETRY 2200 1496 2280 1576)
+      (GEOMETRY 2200 1688 2280 1768)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1536)
+        (POSITION 2176 1728)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
         (TEXT "POST_TIME(1600:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012ca15e3490a4cff00f70ed900000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "BLOCK_COINC")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2200 216 2280 296)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 2176 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "BLOCK_COINC")
       )
     )
     (ARCH_DECLARATION 2 "arch0c013cbd40d8e1448e800f70f8860000" "rtl")
@@ -753,6 +778,7 @@
                  "-- Copy of the interface declaration of Entity 'DISCRIMINATORS' :"
                  "-- "
                  "--   port("
+                 "--     BLOCK_COINC   : in     std_logic;"
                  "--     CLK200MHz     : in     std_logic;"
                  "--     COINC_TIME    : in     integer range 1000 downto 0;"
                  "--     COMPH1        : out    std_logic;"
@@ -853,10 +879,42 @@
                  "--MH1_PRE <= '1' when (DATA_ADC1_POS > THH1 or DATA_ADC1_NEG > THH1) else '0'; -- Discriminator for MH1"
                  "--MH2_PRE <= '1' when (DATA_ADC2_POS > THH2 or DATA_ADC2_NEG > THH2) else '0'; -- Discriminator for MH2"
                  ""
-                 "ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;"
-                 "MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;"
-                 "ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;"
-                 "MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;"
+                 "-- Als een slave zijn block_coinc naar een master door wil geven, dan doet hij dat door de threshold signalen"
+                 "-- op een normaal niet bestaande / mogelijke waarde te zetten, namelijk: wel hoge threshold waarden, zonder lage waarden."
+                 ""
+                 "  process(CLK200MHz,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      ML1_OUT <= '0';"
+                 "      ML2_OUT <= '0';"
+                 "      MH1_OUT <= '0';"
+                 "      MH2_OUT <= '0';"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if MASTER = '0' then "
+                 "        if BLOCK_COINC = '1' then "
+                 "          ML1_OUT <= '0';"
+                 "          ML2_OUT <= '0';"
+                 "          MH1_OUT <= '1';"
+                 "          MH2_OUT <= '1';"
+                 "        else"
+                 "          ML1_OUT <= ML1;"
+                 "          ML2_OUT <= ML2;"
+                 "          MH1_OUT <= MH1;"
+                 "          MH2_OUT <= MH2;"
+                 "        end if;"
+                 "      else"
+                 "        ML1_OUT <= ML1_DEL4;"
+                 "        ML2_OUT <= ML2_DEL4;"
+                 "        MH1_OUT <= MH1_DEL4;"
+                 "        MH2_OUT <= MH2_DEL4;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "--ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;"
+                 "--MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;"
+                 "--ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;"
+                 "--MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;"
                  "EXT_TR_OUT <= EXT_TR;"
                  "COMPL1 <= COMPL1_IN_WIN;"
                  "COMPL2 <= COMPL2_IN_WIN;"

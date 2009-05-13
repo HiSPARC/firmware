@@ -6,7 +6,7 @@
 -- Design library : design.
 -- Host name      : ricinus.
 -- User name      : hansvk.
--- Time stamp     : Fri May 08 09:44:18 2009.
+-- Time stamp     : Wed May 13 09:08:54 2009.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -14,7 +14,7 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Entity declaration of 'PLL'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -32,7 +32,7 @@ end PLL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'PLL'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 LIBRARY ieee;
@@ -110,7 +110,7 @@ end rtl ; -- of PLL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SYNCHRONISATION'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -134,7 +134,7 @@ end SYNCHRONISATION ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SYNCHRONISATION'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of SYNCHRONISATION is
@@ -207,7 +207,7 @@ end rtl ; -- of SYNCHRONISATION
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CONVERSION_12_TO_8_BIT'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -246,7 +246,7 @@ end CONVERSION_12_TO_8_BIT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CONVERSION_12_TO_8_BIT'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of CONVERSION_12_TO_8_BIT is
@@ -442,7 +442,7 @@ end rtl ; -- of CONVERSION_12_TO_8_BIT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_FIFO'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -464,7 +464,7 @@ end EVENT_FIFO ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_FIFO'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_FIFO is
@@ -496,7 +496,7 @@ end rtl ; -- of EVENT_FIFO
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_FIFO_CONTROL'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -521,7 +521,7 @@ end EVENT_FIFO_CONTROL ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_FIFO_CONTROL'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_FIFO_CONTROL is
@@ -609,7 +609,7 @@ end rtl ; -- of EVENT_FIFO_CONTROL
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SLAVE_DETECTOR'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -636,7 +636,7 @@ end SLAVE_DETECTOR ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SLAVE_DETECTOR'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of SLAVE_DETECTOR is
@@ -802,7 +802,7 @@ end rtl ; -- of SLAVE_DETECTOR
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DISCRIMINATORS'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:41:12 2009.
 --------------------------------------------------------------------------------
 
 
@@ -813,6 +813,7 @@ use ieee.std_logic_1164.all ;
 
 entity DISCRIMINATORS is
   port(
+    BLOCK_COINC   : in     std_logic;
     CLK200MHz     : in     std_logic;
     COINC_TIME    : in     integer range 1000 downto 0;
     COMPH1        : out    std_logic;
@@ -844,7 +845,7 @@ end DISCRIMINATORS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'DISCRIMINATORS'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:41:12 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of DISCRIMINATORS is
@@ -917,10 +918,42 @@ begin
 --MH1_PRE <= '1' when (DATA_ADC1_POS > THH1 or DATA_ADC1_NEG > THH1) else '0'; -- Discriminator for MH1
 --MH2_PRE <= '1' when (DATA_ADC2_POS > THH2 or DATA_ADC2_NEG > THH2) else '0'; -- Discriminator for MH2
 
-ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;
-MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;
-ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;
-MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;
+-- Als een slave zijn block_coinc naar een master door wil geven, dan doet hij dat door de threshold signalen
+-- op een normaal niet bestaande / mogelijke waarde te zetten, namelijk: wel hoge threshold waarden, zonder lage waarden.
+
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      ML1_OUT <= '0';
+      ML2_OUT <= '0';
+      MH1_OUT <= '0';
+      MH2_OUT <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if MASTER = '0' then 
+        if BLOCK_COINC = '1' then 
+          ML1_OUT <= '0';
+          ML2_OUT <= '0';
+          MH1_OUT <= '1';
+          MH2_OUT <= '1';
+        else
+          ML1_OUT <= ML1;
+          ML2_OUT <= ML2;
+          MH1_OUT <= MH1;
+          MH2_OUT <= MH2;
+        end if;
+      else
+        ML1_OUT <= ML1_DEL4;
+        ML2_OUT <= ML2_DEL4;
+        MH1_OUT <= MH1_DEL4;
+        MH2_OUT <= MH2_DEL4;
+      end if;
+    end if;
+  end process;  
+
+--ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;
+--MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;
+--ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;
+--MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;
 EXT_TR_OUT <= EXT_TR;
 COMPL1 <= COMPL1_IN_WIN;
 COMPL2 <= COMPL2_IN_WIN;
@@ -1271,7 +1304,7 @@ end rtl ; -- of DISCRIMINATORS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_MATRIX'.
--- Last modified : Thu May 07 16:34:32 2009.
+-- Last modified : Wed May 13 09:08:00 2009.
 --------------------------------------------------------------------------------
 
 
@@ -1311,7 +1344,7 @@ end TRIGGER_MATRIX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'TRIGGER_MATRIX'
--- Last modified : Thu May 07 16:34:32 2009.
+-- Last modified : Wed May 13 09:08:00 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of TRIGGER_MATRIX is
@@ -1458,6 +1491,7 @@ signal COINC_TO_END_TIME_DEL_TMP: std_logic ;
 signal BEGIN_COINC_TO_END_TIME_TMP: std_logic ; -- Time from positive edge of COINC to end of POST_TIME  
 signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from end COINC to end of POST_TIME
 signal BLOCK_START_OF_COINC: std_logic ; -- This signal is the OR of all signals which prevent starting COINC.
+signal BLOCK_COINC_SLAVE: std_logic ; -- Dit signaal komt op als de fifo's in de slave vol zitten. De informatie zit in de threshold signalen
 signal EXT_TR_DEL: std_logic ;
 signal CAL_COUNT: std_logic_vector(22 downto 0); -- Calibration counter Full scale is about 2^23 times 100ns is 0.84 seconds
 signal CAL_TR: std_logic ;
@@ -1486,6 +1520,7 @@ begin
       SL2 <= '0';
       SH1 <= '0';
       SH2 <= '0';  
+      BLOCK_COINC_SLAVE <= '0';  
       SCINT_LATCH_DEL <= '0';  
       EXT_TR_DEL <= '0';  
       SCINT_COINC_DEL <= '0';        
@@ -1601,11 +1636,29 @@ begin
       SH2_DEL3 <= SH2_DEL2;        
       SH2_DEL4 <= SH2_DEL3;        
       if SLAVE_PRESENT = '1' then
-        SL1 <= SL1_IN; 
-        SL2 <= SL2_IN; 
-        SH1 <= SH1_IN; 
-        SH2 <= SH2_IN; 
+        if SL1_IN = '0' and SL2_IN = '0' and SH1_IN = '1' and SH2_IN = '1' then
+          BLOCK_COINC_SLAVE <= '1';
+          SL1 <= '0';
+          SL2 <= '0';
+          SH1 <= '0';
+          SH2 <= '0';
+        else
+          BLOCK_COINC_SLAVE <= '0';
+          if SH1_IN = '1' then
+            SL1 <= '1'; 
+          else
+            SL1 <= SL1_IN; 
+          end if;
+          if SH2_IN = '1' then
+            SL2 <= '1'; 
+          else
+            SL2 <= SL2_IN; 
+          end if;
+          SH1 <= SH1_IN; 
+          SH2 <= SH2_IN; 
+        end if;
       else
+        BLOCK_COINC_SLAVE <= '0';
         SL1 <= '0';
         SL2 <= '0';
         SH1 <= '0';
@@ -2602,7 +2655,7 @@ begin
   process(CLK200MHz,SYSRST)
   begin
     if (CLK200MHz'event and CLK200MHz = '1') then
-      BLOCK_START_OF_COINC <= BLOCK_COINC or COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP or STARTUP_BLOCK;
+      BLOCK_START_OF_COINC <= BLOCK_COINC or COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP or STARTUP_BLOCK or BLOCK_COINC_SLAVE;
     end if;
   end process;  
 
@@ -2610,7 +2663,7 @@ end rtl ; -- of TRIGGER_MATRIX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_DRIVER'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2629,7 +2682,7 @@ end LED_DRIVER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_DRIVER'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_DRIVER is
@@ -2658,7 +2711,7 @@ end rtl ; -- of LED_DRIVER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'CLK_DIV'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2676,7 +2729,7 @@ end CLK_DIV ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'CLK_DIV'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of CLK_DIV is
@@ -2699,7 +2752,7 @@ end rtl ; -- of CLK_DIV
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'EVENT_DATA_HANDLER'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2725,7 +2778,7 @@ end EVENT_DATA_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'EVENT_DATA_HANDLER'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of EVENT_DATA_HANDLER is
@@ -2842,7 +2895,7 @@ end rtl ; -- of EVENT_DATA_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_WRITE_HANDLER'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2901,7 +2954,7 @@ end USB_WRITE_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_WRITE_HANDLER'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_WRITE_HANDLER is
@@ -3673,7 +3726,7 @@ end rtl ; -- of USB_WRITE_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_READ_HANDLER'.
--- Last modified : Fri May 08 09:44:06 2009.
+-- Last modified : Tue May 12 11:46:48 2009.
 --------------------------------------------------------------------------------
 
 
@@ -3751,7 +3804,7 @@ end USB_READ_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_READ_HANDLER'
--- Last modified : Fri May 08 09:44:06 2009.
+-- Last modified : Tue May 12 11:46:48 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_READ_HANDLER is
@@ -3937,7 +3990,7 @@ begin
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00001110";
+  SOFTWARE_VERSION <= "00001111";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -5444,7 +5497,7 @@ end rtl ; -- of USB_READ_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'READOUT_TIMED_OUT'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -5466,7 +5519,7 @@ end READOUT_TIMED_OUT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'READOUT_TIMED_OUT'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of READOUT_TIMED_OUT is
@@ -5524,7 +5577,7 @@ end rtl ; -- of READOUT_TIMED_OUT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'GPS_STUFF'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -5572,7 +5625,7 @@ end GPS_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'GPS_STUFF'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of GPS_STUFF is
@@ -6801,7 +6854,7 @@ end rtl ; -- of GPS_STUFF
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'THRESHOLD_COUNTERS'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6824,7 +6877,7 @@ end THRESHOLD_COUNTERS ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'THRESHOLD_COUNTERS'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of THRESHOLD_COUNTERS is
@@ -6936,7 +6989,7 @@ end rtl ; -- of THRESHOLD_COUNTERS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LVDS_MUX'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -6977,7 +7030,7 @@ end LVDS_MUX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LVDS_MUX'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of LVDS_MUX is
@@ -7044,7 +7097,7 @@ end rtl ; -- of LVDS_MUX
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'INVERTER'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7061,7 +7114,7 @@ end INVERTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'INVERTER'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of INVERTER is
@@ -7072,7 +7125,7 @@ end rtl ; -- of INVERTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DUMMIES'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7097,7 +7150,7 @@ end DUMMIES ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'DUMMIES'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of DUMMIES is
@@ -7122,7 +7175,7 @@ end rtl ; -- of DUMMIES
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'FIFO_SELECT'.
--- Last modified : Thu May 07 16:04:31 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7174,7 +7227,7 @@ end FIFO_SELECT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'FIFO_SELECT'
--- Last modified : Thu May 07 16:04:31 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of FIFO_SELECT is
@@ -7430,7 +7483,7 @@ end rtl ; -- of FIFO_SELECT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'SOFT_RESET'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7450,7 +7503,7 @@ end SOFT_RESET ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'SOFT_RESET'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of SOFT_RESET is
@@ -7480,7 +7533,7 @@ end rtl ; -- of SOFT_RESET
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'LED_ONE_SHOT'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7500,7 +7553,7 @@ end LED_ONE_SHOT ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'LED_ONE_SHOT'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of LED_ONE_SHOT is
@@ -7533,7 +7586,7 @@ end rtl ; -- of LED_ONE_SHOT
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'DUAL_PORT_RAM'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7555,7 +7608,7 @@ end DUAL_PORT_RAM ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'a0' of 'DUAL_PORT_RAM'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture a0 of DUAL_PORT_RAM is
@@ -7587,7 +7640,7 @@ end a0 ; -- of DUAL_PORT_RAM
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'WR_ADDRES_COUNTER'.
--- Last modified : Fri May 08 09:44:06 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7612,7 +7665,7 @@ end WR_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'WR_ADDRES_COUNTER'
--- Last modified : Fri May 08 09:44:06 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of WR_ADDRES_COUNTER is
@@ -7698,7 +7751,7 @@ end rtl ; -- of WR_ADDRES_COUNTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'RD_ADDRES_COUNTER'.
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7725,7 +7778,7 @@ end RD_ADDRES_COUNTER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'RD_ADDRES_COUNTER'
--- Last modified : Thu May 07 16:03:28 2009.
+-- Last modified : Tue May 12 11:42:36 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of RD_ADDRES_COUNTER is
@@ -7816,7 +7869,7 @@ end rtl ; -- of RD_ADDRES_COUNTER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_STUFF'.
--- Last modified : Fri Mar 20 10:20:00 2009.
+-- Last modified : Tue May 12 11:40:56 2009.
 --------------------------------------------------------------------------------
 
 
@@ -7867,7 +7920,7 @@ end TRIGGER_STUFF ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'structure' of 'TRIGGER_STUFF'
--- Last modified : Fri Mar 20 10:20:00 2009.
+-- Last modified : Tue May 12 11:40:56 2009.
 --------------------------------------------------------------------------------
 
 architecture structure of TRIGGER_STUFF is
@@ -7890,6 +7943,7 @@ architecture structure of TRIGGER_STUFF is
 
   component DISCRIMINATORS
     port(
+      BLOCK_COINC   : in     std_logic;
       CLK200MHz     : in     std_logic;
       COINC_TIME    : in     integer range 1000 downto 0;
       COMPH1        : out    std_logic;
@@ -7958,7 +8012,6 @@ architecture structure of TRIGGER_STUFF is
 
   signal SLAVE_PRESENT_net :  std_logic;
   signal MH2_net           :  std_logic;
-  signal MH1_net           :  std_logic;
   signal COMPL1_net        :  std_logic;
   signal COMPH1_net        :  std_logic;
   signal COMPL2_net        :  std_logic;
@@ -7970,14 +8023,15 @@ architecture structure of TRIGGER_STUFF is
   signal ML2_net           :  std_logic;
   signal ML1_net           :  std_logic;
   signal EXT_TR_OUT_net    :  std_logic;
+  signal MH1_net           :  std_logic;
 
 begin
 
   SLAVE_PRESENT <= SLAVE_PRESENT_net;
   MH2 <= MH2_net;
-  MH1 <= MH1_net;
   ML2 <= ML2_net;
   ML1 <= ML1_net;
+  MH1 <= MH1_net;
 
   u0: SLAVE_DETECTOR
     port map(
@@ -7996,6 +8050,7 @@ begin
 
   u1: DISCRIMINATORS
     port map(
+      BLOCK_COINC => BLOCK_COINC,
       CLK200MHz => CLK200MHz,
       COINC_TIME => COINC_TIME,
       COMPH1 => COMPH1_net,

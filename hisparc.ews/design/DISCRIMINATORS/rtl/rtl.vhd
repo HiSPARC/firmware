@@ -4,6 +4,7 @@
 -- Copy of the interface declaration of Entity 'DISCRIMINATORS' :
 -- 
 --   port(
+--     BLOCK_COINC   : in     std_logic;
 --     CLK200MHz     : in     std_logic;
 --     COINC_TIME    : in     integer range 1000 downto 0;
 --     COMPH1        : out    std_logic;
@@ -104,10 +105,42 @@ begin
 --MH1_PRE <= '1' when (DATA_ADC1_POS > THH1 or DATA_ADC1_NEG > THH1) else '0'; -- Discriminator for MH1
 --MH2_PRE <= '1' when (DATA_ADC2_POS > THH2 or DATA_ADC2_NEG > THH2) else '0'; -- Discriminator for MH2
 
-ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;
-MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;
-ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;
-MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;
+-- Als een slave zijn block_coinc naar een master door wil geven, dan doet hij dat door de threshold signalen
+-- op een normaal niet bestaande / mogelijke waarde te zetten, namelijk: wel hoge threshold waarden, zonder lage waarden.
+
+  process(CLK200MHz,SYSRST)
+  begin
+    if SYSRST = '1' then
+      ML1_OUT <= '0';
+      ML2_OUT <= '0';
+      MH1_OUT <= '0';
+      MH2_OUT <= '0';
+    elsif (CLK200MHz'event and CLK200MHz = '1') then
+      if MASTER = '0' then 
+        if BLOCK_COINC = '1' then 
+          ML1_OUT <= '0';
+          ML2_OUT <= '0';
+          MH1_OUT <= '1';
+          MH2_OUT <= '1';
+        else
+          ML1_OUT <= ML1;
+          ML2_OUT <= ML2;
+          MH1_OUT <= MH1;
+          MH2_OUT <= MH2;
+        end if;
+      else
+        ML1_OUT <= ML1_DEL4;
+        ML2_OUT <= ML2_DEL4;
+        MH1_OUT <= MH1_DEL4;
+        MH2_OUT <= MH2_DEL4;
+      end if;
+    end if;
+  end process;  
+
+--ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;
+--MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;
+--ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;
+--MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;
 EXT_TR_OUT <= EXT_TR;
 COMPL1 <= COMPL1_IN_WIN;
 COMPL2 <= COMPL2_IN_WIN;

@@ -176,6 +176,7 @@ signal COINC_TO_END_TIME_DEL_TMP: std_logic ;
 signal BEGIN_COINC_TO_END_TIME_TMP: std_logic ; -- Time from positive edge of COINC to end of POST_TIME  
 signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from end COINC to end of POST_TIME
 signal BLOCK_START_OF_COINC: std_logic ; -- This signal is the OR of all signals which prevent starting COINC.
+signal BLOCK_COINC_SLAVE: std_logic ; -- Dit signaal komt op als de fifo's in de slave vol zitten. De informatie zit in de threshold signalen
 signal EXT_TR_DEL: std_logic ;
 signal CAL_COUNT: std_logic_vector(22 downto 0); -- Calibration counter Full scale is about 2^23 times 100ns is 0.84 seconds
 signal CAL_TR: std_logic ;
@@ -204,6 +205,7 @@ begin
       SL2 <= '0';
       SH1 <= '0';
       SH2 <= '0';  
+      BLOCK_COINC_SLAVE <= '0';  
       SCINT_LATCH_DEL <= '0';  
       EXT_TR_DEL <= '0';  
       SCINT_COINC_DEL <= '0';        
@@ -319,11 +321,29 @@ begin
       SH2_DEL3 <= SH2_DEL2;        
       SH2_DEL4 <= SH2_DEL3;        
       if SLAVE_PRESENT = '1' then
-        SL1 <= SL1_IN; 
-        SL2 <= SL2_IN; 
-        SH1 <= SH1_IN; 
-        SH2 <= SH2_IN; 
+        if SL1_IN = '0' and SL2_IN = '0' and SH1_IN = '1' and SH2_IN = '1' then
+          BLOCK_COINC_SLAVE <= '1';
+          SL1 <= '0';
+          SL2 <= '0';
+          SH1 <= '0';
+          SH2 <= '0';
+        else
+          BLOCK_COINC_SLAVE <= '0';
+          if SH1_IN = '1' then
+            SL1 <= '1'; 
+          else
+            SL1 <= SL1_IN; 
+          end if;
+          if SH2_IN = '1' then
+            SL2 <= '1'; 
+          else
+            SL2 <= SL2_IN; 
+          end if;
+          SH1 <= SH1_IN; 
+          SH2 <= SH2_IN; 
+        end if;
       else
+        BLOCK_COINC_SLAVE <= '0';
         SL1 <= '0';
         SL2 <= '0';
         SH1 <= '0';
@@ -1320,7 +1340,7 @@ begin
   process(CLK200MHz,SYSRST)
   begin
     if (CLK200MHz'event and CLK200MHz = '1') then
-      BLOCK_START_OF_COINC <= BLOCK_COINC or COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP or STARTUP_BLOCK;
+      BLOCK_START_OF_COINC <= BLOCK_COINC or COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP or STARTUP_BLOCK or BLOCK_COINC_SLAVE;
     end if;
   end process;  
 
