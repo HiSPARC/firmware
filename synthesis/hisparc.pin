@@ -1,4 +1,4 @@
- -- Copyright (C) 1991-2009 Altera Corporation
+ -- Copyright (C) 1991-2010 Altera Corporation
  -- Your use of Altera Corporation's design tools, logic functions 
  -- and other software and tools, and its AMPP partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -26,13 +26,13 @@
  -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
  -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
  --                 of its bank.
- --					Bank 1:		2.5V
- --					Bank 2:		3.3V
- --					Bank 3:		3.3V
+ --					Bank 1:		3.3V
+ --					Bank 2:		2.5V
+ --					Bank 3:		2.5V
  --					Bank 4:		2.5V
- --					Bank 5:		3.3V
- --					Bank 6:		2.5V
- --					Bank 7:		2.5V
+ --					Bank 5:		2.5V
+ --					Bank 6:		3.3V
+ --					Bank 7:		3.3V
  --					Bank 8:		2.5V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
  --					It can also be used to report unused dedicated pins. The connection
@@ -48,11 +48,7 @@
  --					This pin should be connected to GND. It may also be connected  to a
  --					valid signal  on the board  (low, high, or toggling)  if that signal
  --					is required for a different revision of the design.
- -- GND*          : Unused  I/O  pin.   For transceiver I/O banks (Bank 13, 14, 15, 16 and 17),
- --           	    connect each pin marked GND* either individually through a 10k Ohm resistor
- --           	    to GND or tie all pins together and connect through a single 10k Ohm resistor
- --           	    to GND.
- --           	    For non-transceiver I/O banks, connect each pin marked GND* directly to GND
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
  --           	    or leave it unconnected.
  -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
  -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
@@ -67,283 +63,283 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Full Version
-CHIP  "hisparc"  ASSIGNED TO AN: EP2C35F484C6
+Quartus II Version 10.1 Build 153 11/29/2010 SJ Full Version
+CHIP  "FPGA"  ASSIGNED TO AN: EP3C40F484C6
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-VCCIO3                       : A2        : power  :                   : 3.3V    : 3         :                
-SPY_SDO                      : A3        : input  : 3.3-V LVTTL       :         : 3         : Y              
-SPY_SDI                      : A4        : output : 3.3-V LVTTL       :         : 3         : Y              
-ONE_PPS                      : A5        : input  : 3.3-V LVTTL       :         : 3         : Y              
-GPS_SDI                      : A6        : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : A7        :        :                   :         : 3         :                
-USB_TXE                      : A8        : input  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[1]                  : A9        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[6]                  : A10       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_RD                       : A11       : output : 3.3-V LVTTL       :         : 3         : Y              
-CLK200MHz_LVDS               : A12       : input  : LVDS              :         : 4         : Y              
-GND*                         : A13       :        :                   :         : 4         :                
-GND*                         : A14       :        :                   :         : 4         :                
-LVDS_OUT4                    : A15       : output : LVDS              :         : 4         : Y              
-LVDS_OUT3                    : A16       : output : LVDS              :         : 4         : Y              
-LVDS_OUT2                    : A17       : output : LVDS              :         : 4         : Y              
-LVDS_IN3                     : A18       : input  : LVDS              :         : 4         : Y              
-LVDS_IN2                     : A19       : input  : LVDS              :         : 4         : Y              
-LVDS_IN1                     : A20       : input  : LVDS              :         : 4         : Y              
-VCCIO4                       : A21       : power  :                   : 2.5V    : 4         :                
+VCCIO8                       : A2        : power  :                   : 2.5V    : 8         :                
+LED1                         : A3        : output : 2.5 V             :         : 8         : Y              
+LED4                         : A4        : output : 2.5 V             :         : 8         : Y              
+LED7                         : A5        : output : 2.5 V             :         : 8         : Y              
+LVDS_IN4(n)                  : A6        : input  : LVDS              :         : 8         : N              
+LVDS_IN3(n)                  : A7        : input  : LVDS              :         : 8         : N              
+LVDS_OUT4(n)                 : A8        : output : LVDS_E_3R         :         : 8         : N              
+LVDS_OUT2(n)                 : A9        : output : LVDS_E_3R         :         : 8         : N              
+LVDS_OUT3(n)                 : A10       : output : LVDS_E_3R         :         : 8         : N              
+CLK200MHz_LVDS(n)            : A11       : input  : LVDS              :         : 8         : N              
+GND+                         : A12       :        :                   :         : 7         :                
+USB_DATA[1]                  : A13       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+USB_DATA[3]                  : A14       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+USB_DATA[5]                  : A15       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+SERIAL_NUMBER[1]             : A16       : input  : 3.3-V LVTTL       :         : 7         : Y              
+SERIAL_NUMBER[2]             : A17       : input  : 3.3-V LVTTL       :         : 7         : Y              
+SERIAL_NUMBER[7]             : A18       : input  : 3.3-V LVTTL       :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 7         :                
+VCCIO7                       : A21       : power  :                   : 3.3V    : 7         :                
 GND                          : A22       : gnd    :                   :         :           :                
-VCCIO1                       : AA1       : power  :                   : 2.5V    : 1         :                
-GND                          : AA2       : gnd    :                   :         :           :                
-ADC_2_POS_OR(n)              : AA3       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[11](n)      : AA4       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[10](n)      : AA5       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[8](n)       : AA6       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[7](n)       : AA7       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[6](n)       : AA8       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[3](n)       : AA9       : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[2](n)       : AA10      : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH2[0](n)       : AA11      : input  : LVDS              :         : 8         : N              
-DATA_POS_ADC_CH1[0](n)       : AA12      : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[1](n)       : AA13      : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[4](n)       : AA14      : input  : LVDS              :         : 7         : N              
-GND*                         : AA15      :        :                   :         : 7         :                
-DATA_POS_ADC_CH1[5](n)       : AA16      : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[8](n)       : AA17      : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[10](n)      : AA18      : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[11](n)      : AA19      : input  : LVDS              :         : 7         : N              
-ADC_1_POS_OR(n)              : AA20      : input  : LVDS              :         : 7         : N              
-GND                          : AA21      : gnd    :                   :         :           :                
-VCCIO6                       : AA22      : power  :                   : 2.5V    : 6         :                
+DATA_NEG_ADC_CH1[11](n)      : AA1       : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[11]         : AA2       : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 3         :                
+DATA_POS_ADC_CH1[10]         : AA5       : input  : LVDS              :         : 3         : Y              
+VCCIO3                       : AA6       : power  :                   : 2.5V    : 3         :                
+DATA_POS_ADC_CH1[7]          : AA7       : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[5]          : AA8       : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[3]          : AA9       : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[1]          : AA10      : input  : LVDS              :         : 3         : Y              
+DCO_POS_ADC_CH1              : AA11      : input  : LVDS              :         : 3         : Y              
+DCO_POS_ADC_CH2              : AA12      : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[10]         : AA13      : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[8]          : AA14      : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[6]          : AA15      : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[4]          : AA16      : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[3]          : AA17      : input  : LVDS              :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 4         :                
+DATA_POS_ADC_CH2[0]          : AA20      : input  : LVDS              :         : 4         : Y              
+DATA_NEG_ADC_CH2[0]          : AA21      : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[0](n)       : AA22      : input  : LVDS              :         : 5         : N              
 GND                          : AB1       : gnd    :                   :         :           :                
-VCCIO8                       : AB2       : power  :                   : 2.5V    : 8         :                
-ADC_2_POS_OR                 : AB3       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[11]         : AB4       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[10]         : AB5       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[8]          : AB6       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[7]          : AB7       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[6]          : AB8       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[3]          : AB9       : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[2]          : AB10      : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[0]          : AB11      : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH1[0]          : AB12      : input  : LVDS              :         : 7         : Y              
-DATA_POS_ADC_CH1[1]          : AB13      : input  : LVDS              :         : 7         : Y              
-DATA_POS_ADC_CH1[4]          : AB14      : input  : LVDS              :         : 7         : Y              
-GND*                         : AB15      :        :                   :         : 7         :                
-DATA_POS_ADC_CH1[5]          : AB16      : input  : LVDS              :         : 7         : Y              
-DATA_POS_ADC_CH1[8]          : AB17      : input  : LVDS              :         : 7         : Y              
-DATA_POS_ADC_CH1[10]         : AB18      : input  : LVDS              :         : 7         : Y              
-DATA_POS_ADC_CH1[11]         : AB19      : input  : LVDS              :         : 7         : Y              
-ADC_1_POS_OR                 : AB20      : input  : LVDS              :         : 7         : Y              
-VCCIO7                       : AB21      : power  :                   : 2.5V    : 7         :                
+VCCIO3                       : AB2       : power  :                   : 2.5V    : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 3         :                
+DATA_POS_ADC_CH1[10](n)      : AB5       : input  : LVDS              :         : 3         : N              
+GND                          : AB6       : gnd    :                   :         :           :                
+DATA_POS_ADC_CH1[7](n)       : AB7       : input  : LVDS              :         : 3         : N              
+DATA_POS_ADC_CH1[5](n)       : AB8       : input  : LVDS              :         : 3         : N              
+DATA_POS_ADC_CH1[3](n)       : AB9       : input  : LVDS              :         : 3         : N              
+DATA_POS_ADC_CH1[1](n)       : AB10      : input  : LVDS              :         : 3         : N              
+DCO_POS_ADC_CH1(n)           : AB11      : input  : LVDS              :         : 3         : N              
+DCO_POS_ADC_CH2(n)           : AB12      : input  : LVDS              :         : 4         : N              
+DATA_POS_ADC_CH2[10](n)      : AB13      : input  : LVDS              :         : 4         : N              
+DATA_POS_ADC_CH2[8](n)       : AB14      : input  : LVDS              :         : 4         : N              
+DATA_POS_ADC_CH2[6](n)       : AB15      : input  : LVDS              :         : 4         : N              
+DATA_POS_ADC_CH2[4](n)       : AB16      : input  : LVDS              :         : 4         : N              
+DATA_POS_ADC_CH2[3](n)       : AB17      : input  : LVDS              :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB18      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB19      :        :                   :         : 4         :                
+DATA_POS_ADC_CH2[0](n)       : AB20      : input  : LVDS              :         : 4         : N              
+VCCIO4                       : AB21      : power  :                   : 2.5V    : 4         :                
 GND                          : AB22      : gnd    :                   :         :           :                
-VCCIO2                       : B1        : power  :                   : 3.3V    : 2         :                
-GND                          : B2        : gnd    :                   :         :           :                
-GND*                         : B3        :        :                   :         : 3         :                
-EXT_TR_IN                    : B4        : input  : 3.3-V LVTTL       :         : 3         : Y              
-GPS_SDO                      : B5        : input  : 3.3-V LVTTL       :         : 3         : Y              
-SPY_CON                      : B6        : input  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[0]                  : B7        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[2]                  : B8        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[7]                  : B9        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[3]                  : B10       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_WR                       : B11       : output : 3.3-V LVTTL       :         : 3         : Y              
-CLK200MHz_LVDS(n)            : B12       : input  : LVDS              :         : 4         : N              
-GND*                         : B13       :        :                   :         : 4         :                
-GND*                         : B14       :        :                   :         : 4         :                
-LVDS_OUT4(n)                 : B15       : output : LVDS              :         : 4         : N              
-LVDS_OUT3(n)                 : B16       : output : LVDS              :         : 4         : N              
-LVDS_OUT2(n)                 : B17       : output : LVDS              :         : 4         : N              
-LVDS_IN3(n)                  : B18       : input  : LVDS              :         : 4         : N              
-LVDS_IN2(n)                  : B19       : input  : LVDS              :         : 4         : N              
-LVDS_IN1(n)                  : B20       : input  : LVDS              :         : 4         : N              
-GND                          : B21       : gnd    :                   :         :           :                
-VCCIO5                       : B22       : power  :                   : 3.3V    : 5         :                
-ADC_A0                       : C1        : output : 3.3-V LVTTL       :         : 2         : Y              
-ADC_A1                       : C2        : output : 3.3-V LVTTL       :         : 2         : Y              
-~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C3        : input  : 3.3-V LVTTL       :         : 2         : N              
-~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C4        : input  : 3.3-V LVTTL       :         : 2         : N              
+FT232_RXD                    : B1        : output : 3.3-V LVTTL       :         : 1         : Y              
+FT232_CON                    : B2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+LED0                         : B3        : output : 2.5 V             :         : 8         : Y              
+LED5                         : B4        : output : 2.5 V             :         : 8         : Y              
+LED6                         : B5        : output : 2.5 V             :         : 8         : Y              
+LVDS_IN4                     : B6        : input  : LVDS              :         : 8         : Y              
+LVDS_IN3                     : B7        : input  : LVDS              :         : 8         : Y              
+LVDS_OUT4                    : B8        : output : LVDS_E_3R         :         : 8         : Y              
+LVDS_OUT2                    : B9        : output : LVDS_E_3R         :         : 8         : Y              
+LVDS_OUT3                    : B10       : output : LVDS_E_3R         :         : 8         : Y              
+CLK200MHz_LVDS               : B11       : input  : LVDS              :         : 8         : Y              
+GND+                         : B12       :        :                   :         : 7         :                
+USB_DATA[0]                  : B13       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+USB_DATA[2]                  : B14       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+USB_DATA[4]                  : B15       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+SERIAL_NUMBER[0]             : B16       : input  : 3.3-V LVTTL       :         : 7         : Y              
+SERIAL_NUMBER[5]             : B17       : input  : 3.3-V LVTTL       :         : 7         : Y              
+SERIAL_NUMBER[6]             : B18       : input  : 3.3-V LVTTL       :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B19       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 7         :                
+EXT_TR_IN_n                  : B21       : input  : 3.3-V LVTTL       :         : 6         : Y              
+INTF2_IO[0]                  : B22       : input  : 3.3-V LVTTL       :         : 6         : Y              
+GPS_RXD                      : C1        : output : 3.3-V LVTTL       :         : 1         : Y              
+FT232_TXD                    : C2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+LED2                         : C3        : output : 2.5 V             :         : 8         : Y              
+LED3                         : C4        : output : 2.5 V             :         : 8         : Y              
 GND                          : C5        : gnd    :                   :         :           :                
-VCCIO3                       : C6        : power  :                   : 3.3V    : 3         :                
-USB_RXF                      : C7        : input  : 3.3-V LVTTL       :         : 3         : Y              
-GND                          : C8        : gnd    :                   :         :           :                
-USB_DATA[4]                  : C9        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-USB_DATA[5]                  : C10       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-VCCIO3                       : C11       : power  :                   : 3.3V    : 3         :                
-VCCIO4                       : C12       : power  :                   : 2.5V    : 4         :                
-GND*                         : C13       :        :                   :         : 4         :                
-LVDS_OUT1                    : C14       : output : LVDS              :         : 4         : Y              
-GND                          : C15       : gnd    :                   :         :           :                
-GND*                         : C16       :        :                   :         : 4         :                
-GND*                         : C17       :        :                   :         : 4         :                
-GND*                         : C18       :        :                   :         : 4         :                
-GND*                         : C19       :        :                   :         : 5         :                
-GND*                         : C20       :        :                   :         : 5         :                
-DAC_DATA_4                   : C21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_nCS2                     : C22       : output : 3.3-V LVTTL       :         : 5         : Y              
-ADC_DATA[7]                  : D1        : input  : 3.3-V LVTTL       :         : 2         : Y              
-ADC_DATA[6]                  : D2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-SERIAL_NUMBER[8]             : D3        : input  : 3.3-V LVTTL       :         : 2         : Y              
-SERIAL_NUMBER[5]             : D4        : input  : 3.3-V LVTTL       :         : 2         : Y              
-SERIAL_NUMBER[6]             : D5        : input  : 3.3-V LVTTL       :         : 2         : Y              
-SERIAL_NUMBER[7]             : D6        : input  : 3.3-V LVTTL       :         : 2         : Y              
-HITLED1                      : D7        : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : D8        :        :                   :         : 3         :                
-GND*                         : D9        :        :                   :         : 3         :                
-GND                          : D10       : gnd    :                   :         :           :                
-nMASTER                      : D11       : output : 3.3-V LVTTL       :         : 3         : Y              
-GND+                         : D12       :        :                   :         : 3         :                
-GND                          : D13       : gnd    :                   :         :           :                
-GND*                         : D14       :        :                   :         : 4         :                
-LVDS_OUT1(n)                 : D15       : output : LVDS              :         : 4         : N              
-LVDS_IN4(n)                  : D16       : input  : LVDS              :         : 4         : N              
-VCCIO4                       : D17       : power  :                   : 2.5V    : 4         :                
-GND                          : D18       : gnd    :                   :         :           :                
-GND*                         : D19       :        :                   :         : 5         :                
-nSYSRST                      : D20       : input  : 3.3-V LVTTL       :         : 5         : Y              
-DAC_DATA_5                   : D21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_DATA_3                   : D22       : output : 3.3-V LVTTL       :         : 5         : Y              
-ADC_DATA[5]                  : E1        : input  : 3.3-V LVTTL       :         : 2         : Y              
-ADC_DATA[4]                  : E2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : E3        :        :                   :         : 2         :                
-GND*                         : E4        :        :                   :         : 2         :                
-VCCD_PLL3                    : E5        : power  :                   : 1.2V    :           :                
-VCCA_PLL3                    : E6        : power  :                   : 1.2V    :           :                
-LED7                         : E7        : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : E8        :        :                   :         : 3         :                
-GND*                         : E9        :        :                   :         : 3         :                
-VCCIO3                       : E10       : power  :                   : 3.3V    : 3         :                
-LED3                         : E11       : output : 3.3-V LVTTL       :         : 3         : Y              
-CLK10MHz                     : E12       : input  : 3.3-V LVTTL       :         : 3         : Y              
-VCCIO4                       : E13       : power  :                   : 2.5V    : 4         :                
-GND*                         : E14       :        :                   :         : 4         :                
-LVDS_IN4                     : E15       : input  : LVDS              :         : 4         : Y              
-GNDA_PLL2                    : E16       : gnd    :                   :         :           :                
-GND_PLL2                     : E17       : gnd    :                   :         :           :                
-GND*                         : E18       :        :                   :         : 5         :                
-GND*                         : E19       :        :                   :         : 5         :                
-DAC_DATA_1                   : E20       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_DATA_6                   : E21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_DATA_2                   : E22       : output : 3.3-V LVTTL       :         : 5         : Y              
-ADC_nCS                      : F1        : output : 3.3-V LVTTL       :         : 2         : Y              
-ADC_nWR_RDY                  : F2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : F3        :        :                   :         : 2         :                
-GND*                         : F4        :        :                   :         : 2         :                
-GND_PLL3                     : F5        : gnd    :                   :         :           :                
-GND_PLL3                     : F6        : gnd    :                   :         :           :                
-GNDA_PLL3                    : F7        : gnd    :                   :         :           :                
-HITLED2                      : F8        : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : F9        :        :                   :         : 3         :                
-LED6                         : F10       : output : 3.3-V LVTTL       :         : 3         : Y              
-nSLAVE_PRESENT               : F11       : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : F12       :        :                   :         : 4         :                
-GND*                         : F13       :        :                   :         : 4         :                
-GND*                         : F14       :        :                   :         : 4         :                
-GND*                         : F15       :        :                   :         : 4         :                
-VCCA_PLL2                    : F16       : power  :                   : 1.2V    :           :                
-VCCD_PLL2                    : F17       : power  :                   : 1.2V    :           :                
-GND_PLL2                     : F18       : gnd    :                   :         :           :                
-GND                          : F19       : gnd    :                   :         :           :                
-GND*                         : F20       :        :                   :         : 5         :                
-DAC_DATA_0                   : F21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_DATA_7                   : F22       : output : 3.3-V LVTTL       :         : 5         : Y              
-ADC_MODE                     : G1        : output : 3.3-V LVTTL       :         : 2         : Y              
-ADC_DATA[0]                  : G2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : G3        :        :                   :         : 2         :                
-GND                          : G4        : gnd    :                   :         :           :                
-GND*                         : G5        :        :                   :         : 2         :                
-SERIAL_NUMBER[4]             : G6        : input  : 3.3-V LVTTL       :         : 2         : Y              
-LED8                         : G7        : output : 3.3-V LVTTL       :         : 3         : Y              
-VCCINT                       : G8        : power  :                   : 1.2V    :           :                
-VCCIO3                       : G9        : power  :                   : 3.3V    : 3         :                
-GND                          : G10       : gnd    :                   :         :           :                
-LED4                         : G11       : output : 3.3-V LVTTL       :         : 3         : Y              
+LVDS_IN2(n)                  : C6        : input  : LVDS              :         : 8         : N              
+LVDS_IN1                     : C7        : input  : LVDS              :         : 8         : Y              
+LVDS_IN1(n)                  : C8        : input  : LVDS              :         : 8         : N              
+GND                          : C9        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C10       :        :                   :         : 8         :                
+GND                          : C11       : gnd    :                   :         :           :                
+GND                          : C12       : gnd    :                   :         :           :                
+USB_RXF                      : C13       : input  : 3.3-V LVTTL       :         : 7         : Y              
+GND                          : C14       : gnd    :                   :         :           :                
+USB_WR                       : C15       : output : 3.3-V LVTTL       :         : 7         : Y              
+GND                          : C16       : gnd    :                   :         :           :                
+SERIAL_NUMBER[4]             : C17       : input  : 3.3-V LVTTL       :         : 7         : Y              
+GND                          : C18       : gnd    :                   :         :           :                
+SERIAL_NUMBER[9]             : C19       : input  : 3.3-V LVTTL       :         : 7         : Y              
+INTF2_IO[1]                  : C20       : input  : 3.3-V LVTTL       :         : 6         : Y              
+INTF2_IO[3]                  : C21       : input  : 3.3-V LVTTL       :         : 6         : Y              
+INTF2_IO[2]                  : C22       : input  : 3.3-V LVTTL       :         : 6         : Y              
+GPS_1PPS                     : D1        : input  : 3.3-V LVTTL       :         : 1         : Y              
+GPS_TXD                      : D2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+GND                          : D3        : gnd    :                   :         :           :                
+VCCIO1                       : D4        : power  :                   : 3.3V    : 1         :                
+VCCIO8                       : D5        : power  :                   : 2.5V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
+LVDS_IN2                     : D7        : input  : LVDS              :         : 8         : Y              
+GND                          : D8        : gnd    :                   :         :           :                
+VCCIO8                       : D9        : power  :                   : 2.5V    : 8         :                
+LVDS_OUT1(n)                 : D10       : output : LVDS_E_3R         :         : 8         : N              
+VCCIO8                       : D11       : power  :                   : 2.5V    : 8         :                
+VCCIO7                       : D12       : power  :                   : 3.3V    : 7         :                
+USB_TXE                      : D13       : input  : 3.3-V LVTTL       :         : 7         : Y              
+VCCIO7                       : D14       : power  :                   : 3.3V    : 7         :                
+USB_nPWREN                   : D15       : input  : 3.3-V LVTTL       :         : 7         : Y              
+VCCIO7                       : D16       : power  :                   : 3.3V    : 7         :                
+SERIAL_NUMBER[3]             : D17       : input  : 3.3-V LVTTL       :         : 7         : Y              
+VCCIO7                       : D18       : power  :                   : 3.3V    : 7         :                
+SERIAL_NUMBER[8]             : D19       : input  : 3.3-V LVTTL       :         : 7         : Y              
+INTF2_IO[4]                  : D20       : input  : 3.3-V LVTTL       :         : 6         : Y              
+INTF2_IO[5]                  : D21       : input  : 3.3-V LVTTL       :         : 6         : Y              
+INTF2_IO[7]                  : D22       : input  : 3.3-V LVTTL       :         : 6         : Y              
+INTF1_IO[2]                  : E1        : input  : 3.3-V LVTTL       :         : 1         : Y              
+INTF1_IO[1]                  : E2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+INTF1_IO[0]                  : E3        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_A0                       : E4        : output : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
+VCCIO8                       : E8        : power  :                   : 2.5V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 8         :                
+LVDS_OUT1                    : E10       : output : LVDS_E_3R         :         : 8         : Y              
+USB_DATA[6]                  : E11       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+USB_DATA[7]                  : E12       : bidir  : 3.3-V LVTTL       :         : 7         : Y              
+USB_RD                       : E13       : output : 3.3-V LVTTL       :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E16       :        :                   :         : 7         :                
+VCCD_PLL2                    : E17       : power  :                   : 1.2V    :           :                
+GNDA2                        : E18       : gnd    :                   :         :           :                
+VCCIO6                       : E19       : power  :                   : 3.3V    : 6         :                
+GND                          : E20       : gnd    :                   :         :           :                
+INTF2_IO[6]                  : E21       : input  : 3.3-V LVTTL       :         : 6         : Y              
+DAC_nCLR                     : E22       : output : 3.3-V LVTTL       :         : 6         : Y              
+ADC_MODE                     : F1        : output : 3.3-V LVTTL       :         : 1         : Y              
+ADC_A1                       : F2        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND                          : F3        : gnd    :                   :         :           :                
+VCCIO1                       : F4        : power  :                   : 3.3V    : 1         :                
+GNDA3                        : F5        : gnd    :                   :         :           :                
+VCCD_PLL3                    : F6        : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F10       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F11       :        :                   :         : 7         :                
+GND                          : F12       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F13       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 6         :                
+VCCA2                        : F18       : power  :                   : 2.5V    :           :                
+DAC_nRD                      : F19       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_nWR                      : F20       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_nCS_GAIN                 : F21       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_DATA_6                   : F22       : output : 3.3-V LVTTL       :         : 6         : Y              
+GND+                         : G1        :        :                   :         : 1         :                
+GND+                         : G2        :        :                   :         : 1         :                
+ADC_DATA[6]                  : G3        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_DATA[7]                  : G4        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_DATA[0]                  : G5        : input  : 3.3-V LVTTL       :         : 1         : Y              
+VCCA3                        : G6        : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G7        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G10       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :         : 8         :                
 VCCINT                       : G12       : power  :                   : 1.2V    :           :                
-GND                          : G13       : gnd    :                   :         :           :                
-VCCIO4                       : G14       : power  :                   : 2.5V    : 4         :                
-GND                          : G15       : gnd    :                   :         :           :                
-GND*                         : G16       :        :                   :         : 4         :                
-GND*                         : G17       :        :                   :         : 5         :                
-GND*                         : G18       :        :                   :         : 5         :                
-VCCIO5                       : G19       : power  :                   : 3.3V    : 5         :                
-GND*                         : G20       :        :                   :         : 5         :                
-DAC_nRD                      : G21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_nCS1                     : G22       : output : 3.3-V LVTTL       :         : 5         : Y              
-ADC_DATA[1]                  : H1        : input  : 3.3-V LVTTL       :         : 2         : Y              
-ADC_DATA[2]                  : H2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : H3        :        :                   :         : 2         :                
-GND*                         : H4        :        :                   :         : 2         :                
-GND*                         : H5        :        :                   :         : 2         :                
-SERIAL_NUMBER[9]             : H6        : input  : 3.3-V LVTTL       :         : 2         : Y              
-LED9                         : H7        : output : 3.3-V LVTTL       :         : 3         : Y              
-VCCINT                       : H8        : power  :                   : 1.2V    :           :                
-GND                          : H9        : gnd    :                   :         :           :                
-GND                          : H10       : gnd    :                   :         :           :                
-LED5                         : H11       : output : 3.3-V LVTTL       :         : 3         : Y              
-VCCINT                       : H12       : power  :                   : 1.2V    :           :                
-VCCINT                       : H13       : power  :                   : 1.2V    :           :                
-GND*                         : H14       :        :                   :         : 4         :                
-GND*                         : H15       :        :                   :         : 4         :                
-GND*                         : H16       :        :                   :         : 5         :                
-GND*                         : H17       :        :                   :         : 5         :                
-GND*                         : H18       :        :                   :         : 5         :                
-SERIAL_NUMBER[3]             : H19       : input  : 3.3-V LVTTL       :         : 5         : Y              
-GND                          : H20       : gnd    :                   :         :           :                
-DAC_nCLR                     : H21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_nWR                      : H22       : output : 3.3-V LVTTL       :         : 5         : Y              
-ADC_DATA[3]                  : J1        : input  : 3.3-V LVTTL       :         : 2         : Y              
-ADC_nRD                      : J2        : output : 3.3-V LVTTL       :         : 2         : Y              
-ADC_nINT                     : J3        : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : J4        :        :                   :         : 2         :                
-GND*                         : J5        :        :                   :         : 2         :                
-GND*                         : J6        :        :                   :         : 2         :                
-VCCIO2                       : J7        : power  :                   : 3.3V    : 2         :                
-GND                          : J8        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 6         :                
+DAC_DATA_7                   : G18       : output : 3.3-V LVTTL       :         : 6         : Y              
+VCCIO6                       : G19       : power  :                   : 3.3V    : 6         :                
+GND                          : G20       : gnd    :                   :         :           :                
+CLK40MHz_CMOS                : G21       : input  : 3.3-V LVTTL       :         : 6         : Y              
+GND+                         : G22       :        :                   :         : 6         :                
+ADC_DATA[2]                  : H1        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_DATA[5]                  : H2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+GND                          : H3        : gnd    :                   :         :           :                
+VCCIO1                       : H4        : power  :                   : 3.3V    : 1         :                
+ADC_DATA[1]                  : H5        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_DATA[3]                  : H6        : input  : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H8        :        :                   :         : 1         :                
+VCCINT                       : H9        : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H10       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H11       :        :                   :         : 8         :                
+GND                          : H12       : gnd    :                   :         :           :                
+GND                          : H13       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
+DAC_DATA_1                   : H18       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_DATA_4                   : H19       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_DATA_5                   : H20       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_DATA_3                   : H21       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_DATA_2                   : H22       : output : 3.3-V LVTTL       :         : 6         : Y              
+ADC_nWR_RDY                  : J1        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_nCS                      : J2        : output : 3.3-V LVTTL       :         : 1         : Y              
+ADC_DATA[4]                  : J3        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_nINT                     : J4        : input  : 3.3-V LVTTL       :         : 1         : Y              
+ADC_nRD                      : J5        : output : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J8        :        :                   :         : 1         :                
 GND                          : J9        : gnd    :                   :         :           :                
 VCCINT                       : J10       : power  :                   : 1.2V    :           :                
 VCCINT                       : J11       : power  :                   : 1.2V    :           :                
 VCCINT                       : J12       : power  :                   : 1.2V    :           :                
 VCCINT                       : J13       : power  :                   : 1.2V    :           :                
-GND*                         : J14       :        :                   :         : 4         :                
-GND*                         : J15       :        :                   :         : 5         :                
-VCCIO5                       : J16       : power  :                   : 3.3V    : 5         :                
-GND*                         : J17       :        :                   :         : 5         :                
-SERIAL_NUMBER[2]             : J18       : input  : 3.3-V LVTTL       :         : 5         : Y              
-SERIAL_NUMBER[1]             : J19       : input  : 3.3-V LVTTL       :         : 5         : Y              
-GND*                         : J20       :        :                   :         : 5         :                
-DAC_nLDAC                    : J21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_A2                       : J22       : output : 3.3-V LVTTL       :         : 5         : Y              
-nCE                          : K1        :        :                   :         : 2         :                
-TCK                          : K2        : input  :                   :         : 2         :                
+VCCINT                       : J14       : power  :                   : 1.2V    :           :                
+GND                          : J15       : gnd    :                   :         :           :                
+VCCINT                       : J16       : power  :                   : 1.2V    :           :                
+DAC_DATA_0                   : J17       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_nCS_OFFSET               : J18       : output : 3.3-V LVTTL       :         : 6         : Y              
+GND                          : J19       : gnd    :                   :         :           :                
+VCCIO6                       : J20       : power  :                   : 3.3V    : 6         :                
+DAC_A2                       : J21       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_A1                       : J22       : output : 3.3-V LVTTL       :         : 6         : Y              
+~ALTERA_DATA0~ / RESERVED_INPUT : K1        : input  : 3.3-V LVTTL       :         : 1         : N              
+~ALTERA_DCLK~ / RESERVED_INPUT : K2        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : K3        : gnd    :                   :         :           :                
-DATA0                        : K4        : input  :                   :         : 2         :                
-TDI                          : K5        : input  :                   :         : 2         :                
-TMS                          : K6        : input  :                   :         : 2         :                
-GND                          : K7        : gnd    :                   :         :           :                
-VCCINT                       : K8        : power  :                   : 1.2V    :           :                
+VCCIO1                       : K4        : power  :                   : 3.3V    : 1         :                
+nCONFIG                      : K5        :        :                   :         : 1         :                
+nSTATUS                      : K6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1         :                
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 GND                          : K11       : gnd    :                   :         :           :                
 GND                          : K12       : gnd    :                   :         :           :                
 GND                          : K13       : gnd    :                   :         :           :                
 VCCINT                       : K14       : power  :                   : 1.2V    :           :                
-GND                          : K15       : gnd    :                   :         :           :                
+VCCINT                       : K15       : power  :                   : 1.2V    :           :                
 GND                          : K16       : gnd    :                   :         :           :                
-GND*                         : K17       :        :                   :         : 5         :                
-GND*                         : K18       :        :                   :         : 5         :                
-GND                          : K19       : gnd    :                   :         :           :                
-SERIAL_NUMBER[0]             : K20       : input  : 3.3-V LVTTL       :         : 5         : Y              
-DAC_A1                       : K21       : output : 3.3-V LVTTL       :         : 5         : Y              
-DAC_A0                       : K22       : output : 3.3-V LVTTL       :         : 5         : Y              
-GND+                         : L1        :        :                   :         : 2         :                
-GND+                         : L2        :        :                   :         : 2         :                
-VCCIO2                       : L3        : power  :                   : 3.3V    : 2         :                
-nCONFIG                      : L4        :        :                   :         : 2         :                
-TDO                          : L5        : output :                   :         : 2         :                
-DCLK                         : L6        :        :                   :         : 2         :                
-GND*                         : L7        :        :                   :         : 2         :                
-GND*                         : L8        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K17       :        :                   :         : 6         :                
+HITLED_CH1                   : K18       : output : 3.3-V LVTTL       :         : 6         : Y              
+nSYSRST                      : K19       : input  : 3.3-V LVTTL       :         : 6         : Y              
+MSEL3                        : K20       :        :                   :         : 6         :                
+DAC_A0                       : K21       : output : 3.3-V LVTTL       :         : 6         : Y              
+DAC_nLDAC                    : K22       : output : 3.3-V LVTTL       :         : 6         : Y              
+TMS                          : L1        : input  :                   :         : 1         :                
+TCK                          : L2        : input  :                   :         : 1         :                
+nCE                          : L3        :        :                   :         : 1         :                
+TDO                          : L4        : output :                   :         : 1         :                
+TDI                          : L5        : input  :                   :         : 1         :                
+DATA_NEG_ADC_CH1[0]          : L6        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
 VCCINT                       : L9        : power  :                   : 1.2V    :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -352,207 +348,207 @@ GND                          : L13       : gnd    :                   :         
 VCCINT                       : L14       : power  :                   : 1.2V    :           :                
 GND                          : L15       : gnd    :                   :         :           :                
 VCCINT                       : L16       : power  :                   : 1.2V    :           :                
-GND*                         : L17       :        :                   :         : 5         :                
-GND*                         : L18       :        :                   :         : 5         :                
-GND*                         : L19       :        :                   :         : 5         :                
-VCCIO5                       : L20       : power  :                   : 3.3V    : 5         :                
-GND+                         : L21       :        :                   :         : 5         :                
-GND+                         : L22       :        :                   :         : 5         :                
-DCO_NEG_ADC_CH2              : M1        : input  : LVDS              :         : 1         : Y              
-DCO_NEG_ADC_CH2(n)           : M2        : input  : LVDS              :         : 1         : N              
-VCCIO1                       : M3        : power  :                   : 2.5V    : 1         :                
-GND                          : M4        : gnd    :                   :         :           :                
-GND*                         : M5        :        :                   :         : 1         :                
-GND*                         : M6        :        :                   :         : 1         :                
-GND*                         : M7        :        :                   :         : 1         :                
-GND*                         : M8        :        :                   :         : 1         :                
+MSEL2                        : L17       :        :                   :         : 6         :                
+MSEL1                        : L18       :        :                   :         : 6         :                
+VCCIO6                       : L19       : power  :                   : 3.3V    : 6         :                
+GND                          : L20       : gnd    :                   :         :           :                
+COINC_LED                    : L21       : output : 3.3-V LVTTL       :         : 6         : Y              
+HITLED_CH2                   : L22       : output : 3.3-V LVTTL       :         : 6         : Y              
+DATA_NEG_ADC_CH1[1](n)       : M1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[1]          : M2        : input  : LVDS              :         : 2         : Y              
+DATA_NEG_ADC_CH1[2](n)       : M3        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[2]          : M4        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M5        :        :                   :         : 2         :                
+DATA_NEG_ADC_CH1[0](n)       : M6        : input  : LVDS              :         : 2         : N              
+COMPH1(n)                    : M7        : input  : LVDS              :         : 2         : N              
+COMPL1                       : M8        : input  : LVDS              :         : 2         : Y              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
 GND                          : M10       : gnd    :                   :         :           :                
 GND                          : M11       : gnd    :                   :         :           :                
 GND                          : M12       : gnd    :                   :         :           :                
 GND                          : M13       : gnd    :                   :         :           :                
 VCCINT                       : M14       : power  :                   : 1.2V    :           :                
-COMPH1                       : M15       : input  : LVDS              :         : 6         : Y              
-COMPH1(n)                    : M16       : input  : LVDS              :         : 6         : N              
+VCCINT                       : M15       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M16       :        :                   :         : 5         :                
 MSEL0                        : M17       :        :                   :         : 6         :                
-COMPL1                       : M18       : input  : LVDS              :         : 6         : Y              
-COMPL1(n)                    : M19       : input  : LVDS              :         : 6         : N              
-VCCIO6                       : M20       : power  :                   : 2.5V    : 6         :                
-DCO_NEG_ADC_CH1(n)           : M21       : input  : LVDS              :         : 6         : N              
-DCO_NEG_ADC_CH1              : M22       : input  : LVDS              :         : 6         : Y              
-ADC_2_NEG_OR                 : N1        : input  : LVDS              :         : 1         : Y              
-ADC_2_NEG_OR(n)              : N2        : input  : LVDS              :         : 1         : N              
-COMPL2                       : N3        : input  : LVDS              :         : 1         : Y              
-COMPL2(n)                    : N4        : input  : LVDS              :         : 1         : N              
-COMPH2(n)                    : N5        : input  : LVDS              :         : 1         : N              
-COMPH2                       : N6        : input  : LVDS              :         : 1         : Y              
-GND                          : N7        : gnd    :                   :         :           :                
-GND                          : N8        : gnd    :                   :         :           :                
+CONF_DONE                    : M18       :        :                   :         : 6         :                
+DATA_NEG_ADC_CH2[10]         : M19       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[10](n)      : M20       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH2[11]         : M21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[11](n)      : M22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[3](n)       : N1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[3]          : N2        : input  : LVDS              :         : 2         : Y              
+GND                          : N3        : gnd    :                   :         :           :                
+VCCIO2                       : N4        : power  :                   : 2.5V    : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 2         :                
+COMPH1                       : N6        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N7        :        :                   :         : 2         :                
+COMPL1(n)                    : N8        : input  : LVDS              :         : 2         : N              
 VCCINT                       : N9        : power  :                   : 1.2V    :           :                
 GND                          : N10       : gnd    :                   :         :           :                
 GND                          : N11       : gnd    :                   :         :           :                
 GND                          : N12       : gnd    :                   :         :           :                
 GND                          : N13       : gnd    :                   :         :           :                
 VCCINT                       : N14       : power  :                   : 1.2V    :           :                
-GND*                         : N15       :        :                   :         : 6         :                
-GND                          : N16       : gnd    :                   :         :           :                
-MSEL1                        : N17       :        :                   :         : 6         :                
-CONF_DONE                    : N18       :        :                   :         : 6         :                
-GND                          : N19       : gnd    :                   :         :           :                
-nSTATUS                      : N20       :        :                   :         : 6         :                
-ADC_1_NEG_OR(n)              : N21       : input  : LVDS              :         : 6         : N              
-ADC_1_NEG_OR                 : N22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[11]         : P1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[11](n)      : P2        : input  : LVDS              :         : 1         : N              
-GND*                         : P3        :        :                   :         : 1         :                
-DATA_NEG_ADC_CH2[10]         : P4        : input  : LVDS              :         : 1         : Y              
-GND*                         : P5        :        :                   :         : 1         :                
-GND*                         : P6        :        :                   :         : 1         :                
-VCCIO1                       : P7        : power  :                   : 2.5V    : 1         :                
+GND                          : N15       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5         :                
+COMPH2(n)                    : N17       : input  : LVDS              :         : 5         : N              
+COMPH2                       : N18       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[9]          : N19       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[9](n)       : N20       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH2[8]          : N21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[8](n)       : N22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[4](n)       : P1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[4]          : P2        : input  : LVDS              :         : 2         : Y              
+DATA_NEG_ADC_CH1[6](n)       : P3        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[6]          : P4        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P7        :        :                   :         : 2         :                
 GND                          : P8        : gnd    :                   :         :           :                
-GND                          : P9        : gnd    :                   :         :           :                
+VCCINT                       : P9        : power  :                   : 1.2V    :           :                
 VCCINT                       : P10       : power  :                   : 1.2V    :           :                
 VCCINT                       : P11       : power  :                   : 1.2V    :           :                
 VCCINT                       : P12       : power  :                   : 1.2V    :           :                
 VCCINT                       : P13       : power  :                   : 1.2V    :           :                
 VCCINT                       : P14       : power  :                   : 1.2V    :           :                
-GND*                         : P15       :        :                   :         : 6         :                
-VCCIO6                       : P16       : power  :                   : 2.5V    : 6         :                
-GND*                         : P17       :        :                   :         : 6         :                
-GND*                         : P18       :        :                   :         : 6         :                
-DATA_NEG_ADC_CH1[11]         : P19       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH1[11](n)      : P20       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[10](n)      : P21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[10]         : P22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[9]          : R1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[9](n)       : R2        : input  : LVDS              :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P16       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P17       :        :                   :         : 5         :                
+VCCIO5                       : P18       : power  :                   : 2.5V    : 5         :                
+GND                          : P19       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P20       :        :                   :         : 5         :                
+DATA_NEG_ADC_CH2[7]          : P21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[7](n)       : P22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[5](n)       : R1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[5]          : R2        : input  : LVDS              :         : 2         : Y              
 GND                          : R3        : gnd    :                   :         :           :                
-DATA_NEG_ADC_CH2[10](n)      : R4        : input  : LVDS              :         : 1         : N              
-DATA_NEG_ADC_CH2[8]          : R5        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[8](n)       : R6        : input  : LVDS              :         : 1         : N              
-GND*                         : R7        :        :                   :         : 1         :                
-GND*                         : R8        :        :                   :         : 1         :                
+VCCIO2                       : R4        : power  :                   : 2.5V    : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 2         :                
+VCCINT                       : R8        : power  :                   : 1.2V    :           :                
 GND                          : R9        : gnd    :                   :         :           :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
-GND*                         : R11       :        :                   :         : 8         :                
+GND                          : R11       : gnd    :                   :         :           :                
 VCCINT                       : R12       : power  :                   : 1.2V    :           :                
 GND                          : R13       : gnd    :                   :         :           :                
-GND*                         : R14       :        :                   :         : 7         :                
-GND*                         : R15       :        :                   :         : 7         :                
-DATA_POS_ADC_CH1[7]          : R16       : input  : LVDS              :         : 7         : Y              
-GND*                         : R17       :        :                   :         : 6         :                
-DATA_NEG_ADC_CH1[9](n)       : R18       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[9]          : R19       : input  : LVDS              :         : 6         : Y              
-GND*                         : R20       :        :                   :         : 6         :                
-DATA_NEG_ADC_CH1[8](n)       : R21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[8]          : R22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[7]          : T1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[7](n)       : T2        : input  : LVDS              :         : 1         : N              
-GND*                         : T3        :        :                   :         : 1         :                
-VCCIO1                       : T4        : power  :                   : 2.5V    : 1         :                
-DATA_NEG_ADC_CH2[6]          : T5        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[6](n)       : T6        : input  : LVDS              :         : 1         : N              
-GND*                         : T7        :        :                   :         : 8         :                
-GND*                         : T8        :        :                   :         : 8         :                
-VCCIO8                       : T9        : power  :                   : 2.5V    : 8         :                
-GND                          : T10       : gnd    :                   :         :           :                
-GND*                         : T11       :        :                   :         : 8         :                
-VCCINT                       : T12       : power  :                   : 1.2V    :           :                
-GND                          : T13       : gnd    :                   :         :           :                
-VCCIO7                       : T14       : power  :                   : 2.5V    : 7         :                
-VCCINT                       : T15       : power  :                   : 1.2V    :           :                
-DATA_POS_ADC_CH1[7](n)       : T16       : input  : LVDS              :         : 7         : N              
-GND_PLL4                     : T17       : gnd    :                   :         :           :                
-GND*                         : T18       :        :                   :         : 6         :                
-VCCIO6                       : T19       : power  :                   : 2.5V    : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R15       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R17       :        :                   :         : 5         :                
+COMPL2(n)                    : R18       : input  : LVDS              :         : 5         : N              
+COMPL2                       : R19       : input  : LVDS              :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R20       :        :                   :         : 5         :                
+DATA_NEG_ADC_CH2[6]          : R21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[6](n)       : R22       : input  : LVDS              :         : 5         : N              
+DCO_NEG_ADC_CH1(n)           : T1        : input  : LVDS              :         : 2         : N              
+DCO_NEG_ADC_CH1              : T2        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 2         :                
+VCCA1                        : T6        : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 2         :                
+DATA_POS_ADC_CH1[2]          : T8        : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[2](n)       : T9        : input  : LVDS              :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 4         :                
+DATA_POS_ADC_CH2[7]          : T14       : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[7](n)       : T15       : input  : LVDS              :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T16       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T17       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T18       :        :                   :         : 5         :                
+VCCIO5                       : T19       : power  :                   : 2.5V    : 5         :                
 GND                          : T20       : gnd    :                   :         :           :                
-DATA_NEG_ADC_CH1[7](n)       : T21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[7]          : T22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[5]          : U1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[5](n)       : U2        : input  : LVDS              :         : 1         : N              
-GND*                         : U3        :        :                   :         : 1         :                
-GND*                         : U4        :        :                   :         : 1         :                
-GND_PLL1                     : U5        : gnd    :                   :         :           :                
+DCO_NEG_ADC_CH2              : T21       : input  : LVDS              :         : 5         : Y              
+DCO_NEG_ADC_CH2(n)           : T22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[7](n)       : U1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[7]          : U2        : input  : LVDS              :         : 2         : Y              
+GND                          : U3        : gnd    :                   :         :           :                
+VCCIO2                       : U4        : power  :                   : 2.5V    : 2         :                
+GNDA1                        : U5        : gnd    :                   :         :           :                
 VCCD_PLL1                    : U6        : power  :                   : 1.2V    :           :                
-VCCA_PLL1                    : U7        : power  :                   : 1.2V    :           :                
-GND*                         : U8        :        :                   :         : 8         :                
-GND*                         : U9        :        :                   :         : 8         :                
-GND*                         : U10       :        :                   :         : 8         :                
-DCO_POS_ADC_CH2              : U11       : input  : LVDS              :         : 8         : Y              
-DCO_POS_ADC_CH2(n)           : U12       : input  : LVDS              :         : 8         : N              
-GND*                         : U13       :        :                   :         : 7         :                
-GND*                         : U14       :        :                   :         : 7         :                
-DATA_POS_ADC_CH1[6]          : U15       : input  : LVDS              :         : 7         : Y              
-VCCA_PLL4                    : U16       : power  :                   : 1.2V    :           :                
-VCCD_PLL4                    : U17       : power  :                   : 1.2V    :           :                
-GND*                         : U18       :        :                   :         : 6         :                
-DATA_NEG_ADC_CH1[5](n)       : U19       : input  : LVDS              :         : 6         : N              
-GND*                         : U20       :        :                   :         : 6         :                
-DATA_NEG_ADC_CH1[6](n)       : U21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[6]          : U22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[4]          : V1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[4](n)       : V2        : input  : LVDS              :         : 1         : N              
-GND                          : V3        : gnd    :                   :         :           :                
-GND*                         : V4        :        :                   :         : 1         :                
-GND_PLL1                     : V5        : gnd    :                   :         :           :                
-GND                          : V6        : gnd    :                   :         :           :                
-GNDA_PLL1                    : V7        : gnd    :                   :         :           :                
-DATA_POS_ADC_CH2[5]          : V8        : input  : LVDS              :         : 8         : Y              
-GND*                         : V9        :        :                   :         : 8         :                
-VCCIO8                       : V10       : power  :                   : 2.5V    : 8         :                
-DATA_POS_ADC_CH2[1](n)       : V11       : input  : LVDS              :         : 8         : N              
-DCO_POS_ADC_CH1(n)           : V12       : input  : LVDS              :         : 7         : N              
-VCCIO7                       : V13       : power  :                   : 2.5V    : 7         :                
-DATA_POS_ADC_CH1[2](n)       : V14       : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[6](n)       : V15       : input  : LVDS              :         : 7         : N              
-GNDA_PLL4                    : V16       : gnd    :                   :         :           :                
-GND                          : V17       : gnd    :                   :         :           :                
-GND_PLL4                     : V18       : gnd    :                   :         :           :                
-DATA_NEG_ADC_CH1[3](n)       : V19       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[5]          : V20       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH1[4](n)       : V21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[4]          : V22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[3]          : W1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[3](n)       : W2        : input  : LVDS              :         : 1         : N              
-DATA_NEG_ADC_CH2[2]          : W3        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[2](n)       : W4        : input  : LVDS              :         : 1         : N              
-GND*                         : W5        :        :                   :         : 1         :                
-VCCIO8                       : W6        : power  :                   : 2.5V    : 8         :                
-DATA_POS_ADC_CH2[5](n)       : W7        : input  : LVDS              :         : 8         : N              
-GND*                         : W8        :        :                   :         : 8         :                
-DATA_POS_ADC_CH2[4](n)       : W9        : input  : LVDS              :         : 8         : N              
-GND                          : W10       : gnd    :                   :         :           :                
-DATA_POS_ADC_CH2[1]          : W11       : input  : LVDS              :         : 8         : Y              
-DCO_POS_ADC_CH1              : W12       : input  : LVDS              :         : 7         : Y              
-GND                          : W13       : gnd    :                   :         :           :                
-DATA_POS_ADC_CH1[2]          : W14       : input  : LVDS              :         : 7         : Y              
-DATA_POS_ADC_CH1[3](n)       : W15       : input  : LVDS              :         : 7         : N              
-DATA_POS_ADC_CH1[9](n)       : W16       : input  : LVDS              :         : 7         : N              
-VCCIO7                       : W17       : power  :                   : 2.5V    : 7         :                
-GND*                         : W18       :        :                   :         : 6         :                
-GND                          : W19       : gnd    :                   :         :           :                
-DATA_NEG_ADC_CH1[3]          : W20       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH1[2](n)       : W21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[2]          : W22       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH2[1]          : Y1        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[1](n)       : Y2        : input  : LVDS              :         : 1         : N              
-DATA_NEG_ADC_CH2[0]          : Y3        : input  : LVDS              :         : 1         : Y              
-DATA_NEG_ADC_CH2[0](n)       : Y4        : input  : LVDS              :         : 1         : N              
-DATA_POS_ADC_CH2[9]          : Y5        : input  : LVDS              :         : 8         : Y              
-DATA_POS_ADC_CH2[9](n)       : Y6        : input  : LVDS              :         : 8         : N              
-GND*                         : Y7        :        :                   :         : 8         :                
-GND                          : Y8        : gnd    :                   :         :           :                
-DATA_POS_ADC_CH2[4]          : Y9        : input  : LVDS              :         : 8         : Y              
-GND*                         : Y10       :        :                   :         : 8         :                
-VCCIO8                       : Y11       : power  :                   : 2.5V    : 8         :                
-VCCIO7                       : Y12       : power  :                   : 2.5V    : 7         :                
-GND*                         : Y13       :        :                   :         : 7         :                
-DATA_POS_ADC_CH1[3]          : Y14       : input  : LVDS              :         : 7         : Y              
+DATA_POS_ADC_CH1[6]          : U7        : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[6](n)       : U8        : input  : LVDS              :         : 3         : N              
+DATA_POS_ADC_CH1[4]          : U9        : input  : LVDS              :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U11       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U13       :        :                   :         : 4         :                
+DATA_POS_ADC_CH2[9](n)       : U14       : input  : LVDS              :         : 4         : N              
+DATA_POS_ADC_CH2[5]          : U15       : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[1]          : U16       : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[1](n)       : U17       : input  : LVDS              :         : 4         : N              
+VCCA4                        : U18       : power  :                   : 2.5V    :           :                
+DATA_NEG_ADC_CH2[4]          : U19       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[4](n)       : U20       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH2[5]          : U21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[5](n)       : U22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[8](n)       : V1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[8]          : V2        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 2         :                
+DATA_POS_ADC_CH1[11](n)      : V5        : input  : LVDS              :         : 3         : N              
+DATA_POS_ADC_CH1[11]         : V6        : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[9](n)       : V7        : input  : LVDS              :         : 3         : N              
+DATA_POS_ADC_CH1[4](n)       : V8        : input  : LVDS              :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V9        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V10       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V12       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 4         :                
+DATA_POS_ADC_CH2[9]          : V14       : input  : LVDS              :         : 4         : Y              
+DATA_POS_ADC_CH2[5](n)       : V15       : input  : LVDS              :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 4         :                
+VCCD_PLL4                    : V17       : power  :                   : 1.2V    :           :                
+GNDA4                        : V18       : gnd    :                   :         :           :                
+VCCIO5                       : V19       : power  :                   : 2.5V    : 5         :                
+GND                          : V20       : gnd    :                   :         :           :                
+DATA_NEG_ADC_CH2[3]          : V21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[3](n)       : V22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[9](n)       : W1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[9]          : W2        : input  : LVDS              :         : 2         : Y              
+GND                          : W3        : gnd    :                   :         :           :                
+VCCIO2                       : W4        : power  :                   : 2.5V    : 2         :                
+VCCIO3                       : W5        : power  :                   : 2.5V    : 3         :                
+DATA_POS_ADC_CH1[9]          : W6        : input  : LVDS              :         : 3         : Y              
+DATA_POS_ADC_CH1[8]          : W7        : input  : LVDS              :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 3         :                
+VCCIO3                       : W9        : power  :                   : 2.5V    : 3         :                
+DATA_POS_ADC_CH1[0]          : W10       : input  : LVDS              :         : 3         : Y              
+VCCIO3                       : W11       : power  :                   : 2.5V    : 3         :                
+VCCIO4                       : W12       : power  :                   : 2.5V    : 4         :                
+DATA_POS_ADC_CH2[11]         : W13       : input  : LVDS              :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 4         :                
+VCCIO4                       : W16       : power  :                   : 2.5V    : 4         :                
+DATA_POS_ADC_CH2[2]          : W17       : input  : LVDS              :         : 4         : Y              
+VCCIO4                       : W18       : power  :                   : 2.5V    : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W19       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W20       :        :                   :         : 5         :                
+DATA_NEG_ADC_CH2[2]          : W21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[2](n)       : W22       : input  : LVDS              :         : 5         : N              
+DATA_NEG_ADC_CH1[10](n)      : Y1        : input  : LVDS              :         : 2         : N              
+DATA_NEG_ADC_CH1[10]         : Y2        : input  : LVDS              :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 3         :                
+GND                          : Y5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 3         :                
+DATA_POS_ADC_CH1[8](n)       : Y7        : input  : LVDS              :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
+GND                          : Y9        : gnd    :                   :         :           :                
+DATA_POS_ADC_CH1[0](n)       : Y10       : input  : LVDS              :         : 3         : N              
+GND                          : Y11       : gnd    :                   :         :           :                
+GND                          : Y12       : gnd    :                   :         :           :                
+DATA_POS_ADC_CH2[11](n)      : Y13       : input  : LVDS              :         : 4         : N              
+VCCIO4                       : Y14       : power  :                   : 2.5V    : 4         :                
 GND                          : Y15       : gnd    :                   :         :           :                
-GND*                         : Y16       :        :                   :         : 7         :                
-DATA_POS_ADC_CH1[9]          : Y17       : input  : LVDS              :         : 7         : Y              
-GND*                         : Y18       :        :                   :         : 6         :                
-DATA_NEG_ADC_CH1[1](n)       : Y19       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[1]          : Y20       : input  : LVDS              :         : 6         : Y              
-DATA_NEG_ADC_CH1[0](n)       : Y21       : input  : LVDS              :         : 6         : N              
-DATA_NEG_ADC_CH1[0]          : Y22       : input  : LVDS              :         : 6         : Y              
+GND                          : Y16       : gnd    :                   :         :           :                
+DATA_POS_ADC_CH2[2](n)       : Y17       : input  : LVDS              :         : 4         : N              
+GND                          : Y18       : gnd    :                   :         :           :                
+VCCIO5                       : Y19       : power  :                   : 2.5V    : 5         :                
+GND                          : Y20       : gnd    :                   :         :           :                
+DATA_NEG_ADC_CH2[1]          : Y21       : input  : LVDS              :         : 5         : Y              
+DATA_NEG_ADC_CH2[1](n)       : Y22       : input  : LVDS              :         : 5         : N              

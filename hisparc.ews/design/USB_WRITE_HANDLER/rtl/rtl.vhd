@@ -124,6 +124,7 @@ signal READ_ERROR_VALID_DEL: std_logic ;
 signal COMPDATA_VALID_DEL: std_logic ; 
 signal USB_WRITE_BUSY_TMP: std_logic ; 
 signal USB_BUSYHOLD_COUNT: std_logic_vector(3 downto 0); -- Forces a gap between 2 BUSY signals
+signal USB_WRITE_HOLDOFF_COUNTER: std_logic_vector(6 downto 0); 
 
 
 begin
@@ -360,9 +361,10 @@ begin
   process(CLKRD,SYSRST)
   begin
   	if SYSRST = '1' then
+  	  USB_WRITE_HOLDOFF_COUNTER <= "0000000";
   	  WR_TMP <= '0';
     elsif (CLKRD'event and CLKRD = '1') then 
-  	  if USB_WR_EN = '1' then
+  	  if USB_WR_EN = '1' and USB_WRITE_HOLDOFF_COUNTER = "0000000" then
    	    if USB_TXE = '0' then
           WR_TMP <= not WR_TMP;
         else  
@@ -371,6 +373,7 @@ begin
 	  else 
         WR_TMP <= '0';
       end if;
+  	  USB_WRITE_HOLDOFF_COUNTER <= USB_WRITE_HOLDOFF_COUNTER + "0000001";
     end if;
   end process;
 

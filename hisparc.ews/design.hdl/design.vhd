@@ -4,9 +4,9 @@
 --
 -- Ease 5.2 Revision 13.
 -- Design library : design.
--- Host name      : ricinus.
+-- Host name      : selderie.
 -- User name      : hansvk.
--- Time stamp     : Wed May 13 09:08:54 2009.
+-- Time stamp     : Tue Oct 13 10:53:23 2009.
 --
 -- Designed by    : 
 -- Company        : Translogic.
@@ -1304,7 +1304,7 @@ end rtl ; -- of DISCRIMINATORS
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'TRIGGER_MATRIX'.
--- Last modified : Wed May 13 09:08:00 2009.
+-- Last modified : Wed May 13 09:11:50 2009.
 --------------------------------------------------------------------------------
 
 
@@ -1344,7 +1344,7 @@ end TRIGGER_MATRIX ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'TRIGGER_MATRIX'
--- Last modified : Wed May 13 09:08:00 2009.
+-- Last modified : Wed May 13 09:11:50 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of TRIGGER_MATRIX is
@@ -2895,7 +2895,7 @@ end rtl ; -- of EVENT_DATA_HANDLER
 
 --------------------------------------------------------------------------------
 -- Entity declaration of 'USB_WRITE_HANDLER'.
--- Last modified : Tue May 12 11:42:36 2009.
+-- Last modified : Tue Oct 13 10:52:51 2009.
 --------------------------------------------------------------------------------
 
 
@@ -2954,7 +2954,7 @@ end USB_WRITE_HANDLER ;
 
 --------------------------------------------------------------------------------
 -- Architecture 'rtl' of 'USB_WRITE_HANDLER'
--- Last modified : Tue May 12 11:42:36 2009.
+-- Last modified : Tue Oct 13 10:52:51 2009.
 --------------------------------------------------------------------------------
 
 architecture rtl of USB_WRITE_HANDLER is
@@ -3030,6 +3030,7 @@ signal READ_ERROR_VALID_DEL: std_logic ;
 signal COMPDATA_VALID_DEL: std_logic ; 
 signal USB_WRITE_BUSY_TMP: std_logic ; 
 signal USB_BUSYHOLD_COUNT: std_logic_vector(3 downto 0); -- Forces a gap between 2 BUSY signals
+signal USB_WRITE_HOLDOFF_COUNTER: std_logic_vector(6 downto 0); 
 
 
 begin
@@ -3266,9 +3267,10 @@ begin
   process(CLKRD,SYSRST)
   begin
   	if SYSRST = '1' then
+  	  USB_WRITE_HOLDOFF_COUNTER <= "0000000";
   	  WR_TMP <= '0';
     elsif (CLKRD'event and CLKRD = '1') then 
-  	  if USB_WR_EN = '1' then
+  	  if USB_WR_EN = '1' and USB_WRITE_HOLDOFF_COUNTER = "0000000" then
    	    if USB_TXE = '0' then
           WR_TMP <= not WR_TMP;
         else  
@@ -3277,6 +3279,7 @@ begin
 	  else 
         WR_TMP <= '0';
       end if;
+  	  USB_WRITE_HOLDOFF_COUNTER <= USB_WRITE_HOLDOFF_COUNTER + "0000001";
     end if;
   end process;
 

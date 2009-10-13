@@ -11,14 +11,14 @@
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Tue Oct 13 10:53:14 2009")
       (NAME "USB_WRITE_HANDLER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1146050663 "Wed Apr 26 13:24:23 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1255423971 "Tue Oct 13 10:52:51 2009")
     )
     (PORT
       (OBID "eprt0c013cbdce85f44409500f7002a60000")
@@ -1354,6 +1354,7 @@
                  "signal COMPDATA_VALID_DEL: std_logic ; "
                  "signal USB_WRITE_BUSY_TMP: std_logic ; "
                  "signal USB_BUSYHOLD_COUNT: std_logic_vector(3 downto 0); -- Forces a gap between 2 BUSY signals"
+                 "signal USB_WRITE_HOLDOFF_COUNTER: std_logic_vector(6 downto 0); "
                  ""
                  ""
                  "begin"
@@ -1590,9 +1591,10 @@
                  "  process(CLKRD,SYSRST)"
                  "  begin"
                  "  	if SYSRST = '1' then"
+                 "  	  USB_WRITE_HOLDOFF_COUNTER <= \"0000000\";"
                  "  	  WR_TMP <= '0';"
                  "    elsif (CLKRD'event and CLKRD = '1') then "
-                 "  	  if USB_WR_EN = '1' then"
+                 "  	  if USB_WR_EN = '1' and USB_WRITE_HOLDOFF_COUNTER = \"0000000\" then"
                  "   	    if USB_TXE = '0' then"
                  "          WR_TMP <= not WR_TMP;"
                  "        else  "
@@ -1601,6 +1603,7 @@
                  "	  else "
                  "        WR_TMP <= '0';"
                  "      end if;"
+                 "  	  USB_WRITE_HOLDOFF_COUNTER <= USB_WRITE_HOLDOFF_COUNTER + \"0000001\";"
                  "    end if;"
                  "  end process;"
                  ""
