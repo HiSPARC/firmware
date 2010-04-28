@@ -5,20 +5,20 @@
     (NAME "EVENT_FIFO")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1984 1152)
+    (GEOMETRY 0 0 1536 896)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "EVENT_FIFO")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1137446513 "Mon Jan 16 22:21:53 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0583cf2f8301cc34c5c05edc92a60000")
@@ -36,11 +36,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY 1944 856 2024 936)
+      (GEOMETRY 1496 600 1576 680)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 896)
+        (POSITION 1472 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -65,11 +65,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY -40 920 40 1000)
+      (GEOMETRY -40 600 40 680)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 960)
+        (POSITION 64 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -95,11 +95,11 @@
           (RANGE "12020" "0")
         )
       )
-      (GEOMETRY 1944 216 2024 296)
+      (GEOMETRY 1496 216 1576 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 256)
+        (POSITION 1472 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -125,11 +125,11 @@
           (RANGE "12020" "0")
         )
       )
-      (GEOMETRY -40 408 40 488)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 448)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -175,11 +175,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 408 2024 488)
+      (GEOMETRY 1496 472 1576 552)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 448)
+        (POSITION 1472 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -200,11 +200,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 664 40 744)
+      (GEOMETRY -40 472 40 552)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 704)
+        (POSITION 64 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -213,18 +213,19 @@
         (TEXT "WE")
       )
     )
-    (ARCH_DECLARATION 2 "arch0583cf2f17e0cc34c5c05edc72a60000" "rtl")
+    (ARCH_DECLARATION 2 "arch0583cf2f17e0cc34c5c05edc72a60000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0583cf2f17e0cc34c5c05edc72a60000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'EVENT_FIFO."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'EVENT_FIFO."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'EVENT_FIFO' :"
                  "-- "
@@ -239,32 +240,32 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of EVENT_FIFO is"
+                 "architecture a0 of EVENT_FIFO is"
                  ""
-                 "	type MEM is array(0 to 12020) of std_logic_vector(7 downto 0);"
-                 "	signal RAM_BLOCK : MEM;"
-                 "	signal RD_ADDRESS_REG : integer range 0 to 12020;"
+                 "  type MEM is array(0 to 12020) of std_logic_vector(7 downto 0);"
+                 "  signal RAM_BLOCK : MEM;"
+                 "  signal RD_ADDRESS_REG : integer range 0 to 12020;"
                  ""
                  "begin"
-                 "	process (WRCLOCK)"
-                 "	begin"
-                 "		if (WRCLOCK'event and WRCLOCK = '1') then"
-                 "			if (WE = '1') then"
-                 "				RAM_BLOCK(WR_ADDRESS) <= DATA_IN;"
-                 "			end if;"
                  ""
-                 "		end if;"
-                 "	end process;"
+                 "  process (WRCLOCK)"
+                 "  begin"
+                 "    if (WRCLOCK'event and WRCLOCK = '1') then"
+                 "      if (WE = '1') then"
+                 "        RAM_BLOCK(WR_ADDRESS) <= DATA_IN;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
                  ""
-                 "	process (RDCLOCK)"
-                 "	BEGIN"
-                 "		if (RDCLOCK'event and RDCLOCK = '1') then"
-                 "			DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);"
-                 "			RD_ADDRESS_REG <= RD_ADDRESS;"
-                 "		end if;"
-                 "	end process;"
+                 "  process (RDCLOCK)"
+                 "  BEGIN"
+                 "    if (RDCLOCK'event and RDCLOCK = '1') then"
+                 "      DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);"
+                 "      RD_ADDRESS_REG <= RD_ADDRESS;"
+                 "    end if;"
+                 "  end process;"
                  ""
-                 "end rtl ; -- of EVENT_FIFO"
+                 "end architecture a0 ; -- of EVENT_FIFO"
                  ""
                  "")
     )

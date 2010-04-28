@@ -5,20 +5,20 @@
     (NAME "WR_ADDRES_COUNTER")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1984 2368)
+    (GEOMETRY 0 0 2048 1024)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
       (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Thu May 20 12:12:08 2010")
       (NAME "WR_ADDRES_COUNTER")
       (USERNAME 1)
     )
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1191926680 "Tue Oct 09 12:44:40 2007")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1274349520 "Thu May 20 11:58:40 2010")
     )
     (PORT
       (OBID "eprt0c012ca1feb5b07409210f7085730000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 856 2024 936)
+      (GEOMETRY 2008 344 2088 424)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 896)
+        (POSITION 1984 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -63,11 +63,11 @@
           (RANGE "2000" "0")
         )
       )
-      (GEOMETRY 1944 536 2024 616)
+      (GEOMETRY 2008 216 2088 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 576)
+        (POSITION 1984 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -94,11 +94,11 @@
           (RANGE "2020" "0")
         )
       )
-      (GEOMETRY -40 1752 40 1832)
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1792)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -119,11 +119,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 2072 40 2152)
+      (GEOMETRY -40 856 40 936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2112)
+        (POSITION 64 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -144,11 +144,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 728 40 808)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 768)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -169,11 +169,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 920 40 1000)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 960)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -194,11 +194,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1112 40 1192)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1152)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -224,11 +224,11 @@
           (RANGE "2020" "0")
         )
       )
-      (GEOMETRY -40 1432 40 1512)
+      (GEOMETRY -40 600 40 680)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1472)
+        (POSITION 64 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -249,11 +249,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 1624 2024 1704)
+      (GEOMETRY 2008 728 2088 808)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1664)
+        (POSITION 1984 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -274,11 +274,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 1816 2024 1896)
+      (GEOMETRY 2008 856 2088 936)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1856)
+        (POSITION 1984 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -287,18 +287,19 @@
         (TEXT "RDEN_CH2")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c012ca189b5b07409210f7025730000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c012ca189b5b07409210f7025730000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c012ca189b5b07409210f7025730000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'WR_ADDRES_COUNTER."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'WR_ADDRES_COUNTER."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'WR_ADDRES_COUNTER' :"
                  "-- "
@@ -316,33 +317,42 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of WR_ADDRES_COUNTER is"
+                 "architecture a0 of WR_ADDRES_COUNTER is"
                  ""
                  "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
-                 "signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME "
-                 "signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;  "
-                 "signal BEGIN_PRE_TIME_SLAVE: integer range 2020 downto 0 ;  "
-                 "signal END_POST_TIME: integer range 2020 downto 0 ; -- write address at end of POST_TIME "
-                 "signal WR_ADDRESS_TMP: integer range 2020 downto 0 ;  "
+                 "signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME"
+                 "signal BEGIN_PRE_TIME_NO_CORR: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME without timecorrection to adjust COINC with the stored event in the FIFO"
+                 "signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;"
+                 "signal BEGIN_PRE_TIME_SLAVE : integer range 2020 downto 0 ;"
+                 "signal END_POST_TIME : integer range 2020 downto 0; -- write address at end of POST_TIME"
+                 "signal WR_ADDRESS_TMP: integer range 2020 downto 0;"
                  "signal COINC_TO_END_TIME_DEL: std_logic ;"
                  "signal RDEN_DEL1: std_logic ;"
                  "signal RDEN_DEL2: std_logic ;"
                  ""
                  "begin"
-                 "  -- Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO"
-                 "--  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
-                 "--  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
-                 "--  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 16 when (END_POST_TIME >= TOTAL_TIME + 16) else (2005 - TOTAL_TIME + END_POST_TIME);"
-                 "--  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 18 when (END_POST_TIME >= TOTAL_TIME + 18) else (2003 - TOTAL_TIME + END_POST_TIME);"
-                 "  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 22 when (END_POST_TIME >= TOTAL_TIME + 22) else (1999 - TOTAL_TIME + END_POST_TIME);"
-                 "  BEGIN_PRE_TIME_SLAVE <= END_POST_TIME - TOTAL_TIME - 24 when (END_POST_TIME >= TOTAL_TIME + 24) else (1997 - TOTAL_TIME + END_POST_TIME);"
+                 ""
+                 "  --Subtract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO"
+                 "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
+                 "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
+                 "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 16 when (END_POST_TIME >= TOTAL_TIME + 16) else (2005 - TOTAL_TIME + END_POST_TIME);"
+                 "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 18 when (END_POST_TIME >= TOTAL_TIME + 18) else (2003 - TOTAL_TIME + END_POST_TIME);"
+                 "  --BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
+                 "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 22 when (END_POST_TIME >= TOTAL_TIME + 22) else (1999 - TOTAL_TIME + END_POST_TIME);"
+                 "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 24 when (END_POST_TIME >= TOTAL_TIME + 24) else (1997 - TOTAL_TIME + END_POST_TIME);"
+                 ""
+                 "  BEGIN_PRE_TIME_NO_CORR <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
+                 ""
+                 "  -- BEGIN_PRE_TIME_MASTER has to start 22 x 5ns sooner, to compensate delay hit master to coincidence matrix."
+                 "  BEGIN_PRE_TIME_MASTER <= BEGIN_PRE_TIME_NO_CORR - 22 when (BEGIN_PRE_TIME_NO_CORR >= 22) else (1999 + BEGIN_PRE_TIME_NO_CORR);"
+                 "  -- BEGIN_PRE_TIME_SLAVE has to start 24 x 5ns sooner, to compensate delay hit slave to coincidence matrix."
+                 "  BEGIN_PRE_TIME_SLAVE <= BEGIN_PRE_TIME_NO_CORR - 24 when (BEGIN_PRE_TIME_NO_CORR >= 24) else (1997 + BEGIN_PRE_TIME_NO_CORR);"
+                 ""
                  "  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;"
-                 "--  BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
+                 ""
                  "  WR_ADDRESS <= WR_ADDRESS_TMP;"
-                 "  "
                  "  BEGIN_PRE_TIME_OUT <= BEGIN_PRE_TIME;"
                  ""
-                 "  "
                  "  -- delays"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -357,8 +367,8 @@
                  "      RDEN_DEL2 <= RDEN_DEL1;"
                  "      WE <= TAKE_DATA and not RDEN_CH1 and not RDEN_CH2;"
                  "    end if;"
-                 "  end process;  "
-                 "    "
+                 "  end process;"
+                 ""
                  "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
                  "  -- and determine END_POST_TIME"
                  "  process(CLK200MHz,SYSRST)"
@@ -374,7 +384,7 @@
                  "        TAKE_DATA <= '1';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- WR_ADDRESS_TMP"
                  "  process(CLK200MHz,SYSRST)"
@@ -389,13 +399,12 @@
                  "          WR_ADDRESS_TMP <= WR_ADDRESS_TMP + 1;"
                  "        end if;"
                  "      else"
-                 "        WR_ADDRESS_TMP <= WR_ADDRESS_TMP; "
-                 "      end if;  "
+                 "        WR_ADDRESS_TMP <= WR_ADDRESS_TMP;"
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 ""
-                 "end rtl ; -- of WR_ADDRES_COUNTER"
+                 "end architecture a0 ; -- of WR_ADDRES_COUNTER"
                  ""
                  "")
     )

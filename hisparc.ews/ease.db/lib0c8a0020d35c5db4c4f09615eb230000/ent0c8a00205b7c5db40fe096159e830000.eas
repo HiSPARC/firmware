@@ -1,0 +1,905 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c8a00205b7c5db40fe096159e830000")
+    (NAME "RAM_SELECT_PLUS_EXTRA")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1728 3712)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (NAME "RAM_SELECT_PLUS_EXTRA")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "thei")
+      (CREATED 1145862957 "Mon Apr 24 09:15:57 2006")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615ae830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY 1688 280 1768 360)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DATA_OUT(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615be830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1688 536 1768 616)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 576)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "RDEN")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615ce830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_READY")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1688 152 1768 232)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DATA_READY")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615de830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_VALID")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1688 408 1768 488)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "DATA_VALID")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615ee830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_TO_END_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 2136 40 2216)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2176)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COINC_TO_END_TIME")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615fe830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_OUT1(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096150f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_TO_END_TIME1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 1112 40 1192)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1152)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COINC_TO_END_TIME1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096151f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 856 40 936)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "RDEN1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096152f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_READY1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 344 40 424)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_READY1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096153f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "READOUT_BUSY1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 600 40 680)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "READOUT_BUSY1")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096154f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_OUT2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 216 40 296)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_OUT2(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096155f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 984 40 1064)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1024)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "RDEN2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096156f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_READY2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_READY2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096157f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "READOUT_BUSY2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 728 40 808)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "READOUT_BUSY2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096158f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_TO_END_TIME2")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 1240 40 1320)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1280)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COINC_TO_END_TIME2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe096159f830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1624 40 1704)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1664)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615af830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TRIGGER_PATTERN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "15" "0")
+        )
+      )
+      (GEOMETRY 1688 920 1768 1000)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 960)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TRIGGER_PATTERN(15:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615bf830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TRIGGER_PATTERN_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "15" "0")
+        )
+      )
+      (GEOMETRY -40 3480 40 3560)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 3520)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "TRIGGER_PATTERN_IN(15:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615cf830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_TS_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "55" "0")
+        )
+      )
+      (GEOMETRY 1688 2968 1768 3048)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 3008)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_TS_IN(55:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615df830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTD_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY 1688 3096 1768 3176)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 3136)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CTD_IN(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615ef830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "GPS_TS_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "55" "0")
+        )
+      )
+      (GEOMETRY 1688 1752 1768 1832)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 1792)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "GPS_TS_OUT(55:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe09615ff830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CTD_OUT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "std_logic_vector")
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "31" "0")
+        )
+      )
+      (GEOMETRY 1688 1880 1768 1960)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 1920)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CTD_OUT(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe0961500930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLKRD")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1752 40 1832)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1792)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLKRD")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00205b7c5db40fe0961510930000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK200MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1880 40 1960)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1920)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK200MHz")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c8a00205b7c5db40fe0961520930000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c8a00205b7c5db40fe0961520930000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'RAM_SELECT_PLUS_EXTRA."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'RAM_SELECT_PLUS_EXTRA' :"
+                 "-- "
+                 "--   port("
+                 "--     CLK200MHz          : in     std_logic;"
+                 "--     CLKRD              : in     std_logic;"
+                 "--     COINC_TO_END_TIME  : in     std_logic;"
+                 "--     COINC_TO_END_TIME1 : out    std_logic;"
+                 "--     COINC_TO_END_TIME2 : out    std_logic;"
+                 "--     CTD_IN             : in     std_logic_vector(31 downto 0);"
+                 "--     CTD_OUT            : out    std_logic_vector(31 downto 0);"
+                 "--     DATA_OUT           : out    std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT1          : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_OUT2          : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_READY         : out    std_logic;"
+                 "--     DATA_READY1        : in     std_logic;"
+                 "--     DATA_READY2        : in     std_logic;"
+                 "--     DATA_VALID         : out    std_logic;"
+                 "--     GPS_TS_IN          : in     std_logic_vector(55 downto 0);"
+                 "--     GPS_TS_OUT         : out    std_logic_vector(55 downto 0);"
+                 "--     RDEN               : in     std_logic;"
+                 "--     RDEN1              : out    std_logic;"
+                 "--     RDEN2              : out    std_logic;"
+                 "--     READOUT_BUSY1      : in     std_logic;"
+                 "--     READOUT_BUSY2      : in     std_logic;"
+                 "--     SYSRST             : in     std_logic;"
+                 "--     TRIGGER_PATTERN    : out    std_logic_vector(15 downto 0);"
+                 "--     TRIGGER_PATTERN_IN : in     std_logic_vector(15 downto 0));"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of RAM_SELECT_PLUS_EXTRA is"
+                 " "
+                 "signal READY: std_logic_vector(1 downto 0);  "
+                 "signal DATA_READY1_DEL: std_logic;  "
+                 "signal DATA_READY2_DEL: std_logic;  "
+                 "signal COINC_TO_END_TIME1_TMP: std_logic;  "
+                 "signal COINC_TO_END_TIME2_TMP: std_logic;  "
+                 "signal TRIGGER_PATTERN_TIME1: std_logic_vector(15 downto 0);  "
+                 "signal TRIGGER_PATTERN_TIME2: std_logic_vector(15 downto 0);  "
+                 "signal CTD_TIME1: std_logic_vector(31 downto 0);  "
+                 "signal CTD_TIME2: std_logic_vector(31 downto 0);  "
+                 "signal GPS_TS_TIME1: std_logic_vector(55 downto 0);  "
+                 "signal GPS_TS_TIME2: std_logic_vector(55 downto 0);  "
+                 "signal DATA_READY2: std_logic;  "
+                 ""
+                 "begin"
+                 "  "
+                 "  -- Data is valid at the start of BUSY. Readout has to be done till the totaltime is reached "
+                 "  -- BUSY is longer true than the totaltime."
+                 "--  DATA_VALID <= READOUT_BUSY1 or READOUT_BUSY2;"
+                 "  DATA_VALID <= READOUT_BUSY1;"
+                 "  DATA_READY2 <= '0';"
+                 ""
+                 "  process(CLK200MHz)"
+                 "  begin"
+                 "    if (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      COINC_TO_END_TIME1 <= COINC_TO_END_TIME1_TMP;"
+                 "      COINC_TO_END_TIME2 <= COINC_TO_END_TIME2_TMP;"
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- delay's"
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      DATA_READY1_DEL <= '0';"
+                 "      DATA_READY2_DEL <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "      DATA_READY1_DEL <= DATA_READY1;"
+                 "      DATA_READY2_DEL <= DATA_READY2;"
+                 "    end if;"
+                 "  end process;  "
+                 "  "
+                 "  -- Determine which channel has to be readout"
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      READY <= \"00\";"
+                 "    elsif (CLKRD'event and CLKRD = '1') then"
+                 "    "
+                 "      -- if DATA_READY2 = '0' and an upgoing edge of DATA_READY1"
+                 "      -- or"
+                 "      -- if DATA_READY1 = '1' and a downgoing edge of DATA_READY2"
+                 "      -- Select channel 1"
+                 "      if (DATA_READY2 = '0' and DATA_READY1 = '1' and DATA_READY1_DEL = '0') or"
+                 "         (DATA_READY1 = '1' and DATA_READY2 = '0' and DATA_READY2_DEL = '1') then"
+                 "        READY <= \"01\";"
+                 "        "
+                 "      -- if DATA_READY1 = '0' and an upgoing edge of DATA_READY2"
+                 "      -- or"
+                 "      -- if DATA_READY2 = '1' and a downgoing edge of DATA_READY1"
+                 "      -- Select channel 2"
+                 "      elsif (DATA_READY1 = '0' and DATA_READY2 = '1' and DATA_READY2_DEL = '0') or"
+                 "            (DATA_READY2 = '1' and DATA_READY1 = '0' and DATA_READY1_DEL = '1') then"
+                 "        READY <= \"10\";"
+                 "        "
+                 "      -- if DATA_READY1 = '0' and a downgoing edge of DATA_READY2"
+                 "      -- or"
+                 "      -- if DATA_READY2 = '0' and a downgoing edge of DATA_READY1"
+                 "      -- Deselect channels"
+                 "      elsif (DATA_READY1 = '0' and DATA_READY2 = '0' and DATA_READY2_DEL = '1') or"
+                 "            (DATA_READY2 = '0' and DATA_READY1 = '0' and DATA_READY1_DEL = '1') then"
+                 "        READY <= \"00\";"
+                 "      end if;"
+                 "    end if;"
+                 "  end process; "
+                 ""
+                 ""
+                 "  -- Determine which channel has to be readout"
+                 "  process(READY,DATA_OUT1,DATA_READY1,DATA_OUT2,DATA_READY2,RDEN,COINC_TO_END_TIME,TRIGGER_PATTERN_TIME1,GPS_TS_TIME1,CTD_TIME1,TRIGGER_PATTERN_TIME2,GPS_TS_TIME2,CTD_TIME2)"
+                 "  begin"
+                 "    case(READY) is"
+                 "      when \"00\" => DATA_OUT <= DATA_OUT1;        "
+                 "                   DATA_READY <= DATA_READY1;"
+                 "                   RDEN1 <= RDEN;"
+                 "                   RDEN2 <= '0';"
+                 "                   COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;"
+                 "                   COINC_TO_END_TIME2_TMP <= '0';"
+                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
+                 "                   GPS_TS_OUT <= GPS_TS_TIME1;"
+                 "                   CTD_OUT <= CTD_TIME1;"
+                 "      when \"01\" => DATA_OUT <= DATA_OUT1;        "
+                 "                   DATA_READY <= DATA_READY1;"
+                 "                   RDEN1 <= RDEN;"
+                 "                   RDEN2 <= '0';"
+                 "                   COINC_TO_END_TIME1_TMP <= '0';"
+                 "                   COINC_TO_END_TIME2_TMP <= COINC_TO_END_TIME;"
+                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
+                 "                   GPS_TS_OUT <= GPS_TS_TIME1;"
+                 "                   CTD_OUT <= CTD_TIME1;"
+                 "      when \"10\" => DATA_OUT <= DATA_OUT2;        "
+                 "                   DATA_READY <= DATA_READY2;"
+                 "                   RDEN1 <= '0';"
+                 "                   RDEN2 <= RDEN;"
+                 "                   COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;"
+                 "                   COINC_TO_END_TIME2_TMP <= '0';"
+                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME2;"
+                 "                   GPS_TS_OUT <= GPS_TS_TIME2;"
+                 "                   CTD_OUT <= CTD_TIME2;"
+                 "      when \"11\" => DATA_OUT <= DATA_OUT1; -- never assigned        "
+                 "                   DATA_READY <= DATA_READY1;"
+                 "                   RDEN1 <= RDEN;"
+                 "                   RDEN2 <= '0';"
+                 "                   COINC_TO_END_TIME1_TMP <= COINC_TO_END_TIME;"
+                 "                   COINC_TO_END_TIME2_TMP <= '0';"
+                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
+                 "                   GPS_TS_OUT <= GPS_TS_TIME1;"
+                 "                   CTD_OUT <= CTD_TIME1;"
+                 "    end case;"
+                 "  end process; "
+                 ""
+                 "  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME1"
+                 "  process(COINC_TO_END_TIME1_TMP,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      TRIGGER_PATTERN_TIME1 <= \"0000000000000000\";"
+                 "    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then"
+                 "--      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_DEL = '0' then"
+                 "        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;"
+                 "--	  end if;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch TRIGGER_PATTERN on positive edge of COINC_TO_END_TIME2"
+                 "  process(COINC_TO_END_TIME2_TMP,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      TRIGGER_PATTERN_TIME2 <= \"0000000000000000\";"
+                 "    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then"
+                 "--      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_DEL = '0' then"
+                 "        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;"
+                 "--	  end if;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch GPS_TS on positive edge of COINC_TO_END_TIME1"
+                 "  process(COINC_TO_END_TIME1_TMP,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      GPS_TS_TIME1 <= \"00000000000000000000000000000000000000000000000000000000\";"
+                 "    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then"
+                 "--      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_DEL = '0' then"
+                 "        GPS_TS_TIME1 <= GPS_TS_IN;"
+                 "--	  end if;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch GPS_TS on positive edge of COINC_TO_END_TIME2"
+                 "  process(COINC_TO_END_TIME2_TMP,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      GPS_TS_TIME2 <= \"00000000000000000000000000000000000000000000000000000000\";"
+                 "    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then"
+                 "--      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_DEL = '0' then"
+                 "        GPS_TS_TIME2 <= GPS_TS_IN;"
+                 "--	  end if;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch CTD on positive edge of COINC_TO_END_TIME1"
+                 "  process(COINC_TO_END_TIME1_TMP,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      CTD_TIME1 <= \"00000000000000000000000000000000\";"
+                 "    elsif (COINC_TO_END_TIME1_TMP'event and COINC_TO_END_TIME1_TMP = '1') then"
+                 "--      if COINC_TO_END_TIME1_TMP = '1' and COINC_TO_END_TIME1_DEL = '0' then"
+                 "        CTD_TIME1 <= CTD_IN;"
+                 "--	  end if;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "  -- Latch CTD on positive edge of COINC_TO_END_TIME2"
+                 "  process(COINC_TO_END_TIME2_TMP,SYSRST)"
+                 "  begin"
+                 "    if SYSRST = '1' then"
+                 "      CTD_TIME2 <= \"00000000000000000000000000000000\";"
+                 "    elsif (COINC_TO_END_TIME2_TMP'event and COINC_TO_END_TIME2_TMP = '1') then"
+                 "--      if COINC_TO_END_TIME2_TMP = '1' and COINC_TO_END_TIME2_DEL = '0' then"
+                 "        CTD_TIME2 <= CTD_IN;"
+                 "--	  end if;        "
+                 "    end if;"
+                 "  end process;  "
+                 ""
+                 "end architecture rtl ; -- of RAM_SELECT_PLUS_EXTRA"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

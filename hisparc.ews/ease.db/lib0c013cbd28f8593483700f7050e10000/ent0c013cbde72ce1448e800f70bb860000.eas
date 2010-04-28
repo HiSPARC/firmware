@@ -5,20 +5,20 @@
     (NAME "TRIGGER_MATRIX")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2368 4160)
+    (GEOMETRY 0 0 1984 3712)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "TRIGGER_MATRIX")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1142866558 "Mon Mar 20 15:55:58 2006")
-      (MODIFIED 1242198710 "Wed May 13 09:11:50 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd257ce1448e800f706c860000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1624 40 1704)
+      (GEOMETRY -40 1048 40 1128)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1664)
+        (POSITION 64 1088)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -57,11 +57,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1752 40 1832)
+      (GEOMETRY -40 1176 40 1256)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1792)
+        (POSITION 64 1216)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -82,11 +82,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1880 40 1960)
+      (GEOMETRY -40 1304 40 1384)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1920)
+        (POSITION 64 1344)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -107,11 +107,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2008 40 2088)
+      (GEOMETRY -40 1432 40 1512)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2048)
+        (POSITION 64 1472)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -132,11 +132,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2136 40 2216)
+      (GEOMETRY -40 1560 40 1640)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2176)
+        (POSITION 64 1600)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -157,11 +157,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3416 40 3496)
+      (GEOMETRY -40 2904 40 2984)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3456)
+        (POSITION 64 2944)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -182,11 +182,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3544 40 3624)
+      (GEOMETRY -40 3032 40 3112)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3584)
+        (POSITION 64 3072)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -207,11 +207,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3672 40 3752)
+      (GEOMETRY -40 3160 40 3240)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3712)
+        (POSITION 64 3200)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -232,11 +232,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3800 40 3880)
+      (GEOMETRY -40 3288 40 3368)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3840)
+        (POSITION 64 3328)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -257,11 +257,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3992 40 4072)
+      (GEOMETRY -40 3544 40 3624)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 4032)
+        (POSITION 64 3584)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -282,11 +282,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2328 1624 2408 1704)
+      (GEOMETRY 1944 1176 2024 1256)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2304 1664)
+        (POSITION 1920 1216)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -307,11 +307,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 984 40 1064)
+      (GEOMETRY -40 472 40 552)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1024)
+        (POSITION 64 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -332,11 +332,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 856 40 936)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 896)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -361,11 +361,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY 2328 2008 2408 2088)
+      (GEOMETRY 1944 1560 2024 1640)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2304 2048)
+        (POSITION 1920 1600)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -386,11 +386,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2328 40 2408)
+      (GEOMETRY -40 1752 40 1832)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2368)
+        (POSITION 64 1792)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -411,11 +411,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2456 40 2536)
+      (GEOMETRY -40 1880 40 1960)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2496)
+        (POSITION 64 1920)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -436,11 +436,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2584 40 2664)
+      (GEOMETRY -40 2008 40 2088)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2624)
+        (POSITION 64 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -461,11 +461,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2712 40 2792)
+      (GEOMETRY -40 2136 40 2216)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2752)
+        (POSITION 64 2176)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -486,11 +486,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3224 40 3304)
+      (GEOMETRY -40 2648 40 2728)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3264)
+        (POSITION 64 2688)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -516,11 +516,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -541,11 +541,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1112 40 1192)
+      (GEOMETRY -40 600 40 680)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1152)
+        (POSITION 64 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -566,11 +566,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1432 40 1512)
+      (GEOMETRY -40 856 40 936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1472)
+        (POSITION 64 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -596,11 +596,11 @@
           (RANGE "1600" "0")
         )
       )
-      (GEOMETRY -40 2904 40 2984)
+      (GEOMETRY -40 2392 40 2472)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2944)
+        (POSITION 64 2432)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -621,11 +621,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 600 40 680)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 640)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -646,11 +646,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2328 2456 2408 2536)
+      (GEOMETRY 1944 2008 2024 2088)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2304 2496)
+        (POSITION 1920 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -659,18 +659,19 @@
         (TEXT "STARTUP_BLOCK_OUT")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbde72ce1448e800f70cb860000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbde72ce1448e800f70cb860000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbde72ce1448e800f70cb860000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'TRIGGER_MATRIX."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'TRIGGER_MATRIX."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'TRIGGER_MATRIX' :"
                  "-- "
@@ -703,7 +704,7 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of TRIGGER_MATRIX is"
+                 "architecture a0 of TRIGGER_MATRIX is"
                  ""
                  "signal SL1: std_logic ;"
                  "signal SL2: std_logic ;"
@@ -839,12 +840,12 @@
                  "signal TRIGGER_PATTERN_TMP: std_logic_vector(15 downto 0); -- Tijdelijke latching van het triggerpatroon voor de master en slave signalen. De comparatorsignalen worden later ingeklokt."
                  "-- signal CAL_EXTTRIG_PATTERN: std_logic_vector(1 downto 0); -- TR_CONDITION(7) selects a calibration; TR_CONDITION(6) selects the ext. trigger"
                  "signal SCINT_COINC: std_logic ; -- Selected scintillator trigger"
-                 "signal SCINT_COINC_DEL: std_logic ; "
+                 "signal SCINT_COINC_DEL: std_logic ;"
                  "signal COINC_TMP: std_logic ;"
                  "signal COINC_DEL: std_logic ;"
-                 "signal COINC_TO_END_TIME_TMP: std_logic ; -- Time from negative edge of COINC to end of POST_TIME  "
-                 "signal COINC_TO_END_TIME_DEL_TMP: std_logic ;   "
-                 "signal BEGIN_COINC_TO_END_TIME_TMP: std_logic ; -- Time from positive edge of COINC to end of POST_TIME  "
+                 "signal COINC_TO_END_TIME_TMP: std_logic ; -- Time from negative edge of COINC to end of POST_TIME"
+                 "signal COINC_TO_END_TIME_DEL_TMP: std_logic ;"
+                 "signal BEGIN_COINC_TO_END_TIME_TMP: std_logic ; -- Time from positive edge of COINC to end of POST_TIME"
                  "signal COINC_TO_END_TIME_CNT: integer range 1600 downto 0 ; -- Counter from end COINC to end of POST_TIME"
                  "signal BLOCK_START_OF_COINC: std_logic ; -- This signal is the OR of all signals which prevent starting COINC."
                  "signal BLOCK_COINC_SLAVE: std_logic ; -- Dit signaal komt op als de fifo's in de slave vol zitten. De informatie zit in de threshold signalen"
@@ -861,136 +862,135 @@
                  "signal STARTUP_COUNT: std_logic_vector(3 downto 0); -- Counts 8 seconds from startup to disable coinc"
                  "signal STARTUP_BLOCK: std_logic ;"
                  ""
-                 ""
                  "begin"
                  ""
                  "  SCINT_PATTERN <= TR_CONDITION(5 downto 0);"
                  "--  CAL_EXTTRIG_PATTERN <= TR_CONDITION(7 downto 6);"
                  "  COINC_TO_END_TIME <= BEGIN_COINC_TO_END_TIME_TMP;"
                  "  STARTUP_BLOCK_OUT <= STARTUP_BLOCK;"
-                 "  "
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      SL1 <= '0';"
                  "      SL2 <= '0';"
                  "      SH1 <= '0';"
-                 "      SH2 <= '0';  "
-                 "      BLOCK_COINC_SLAVE <= '0';  "
-                 "      SCINT_LATCH_DEL <= '0';  "
-                 "      EXT_TR_DEL <= '0';  "
-                 "      SCINT_COINC_DEL <= '0';        "
-                 "      COINC_DEL <= '0';        "
-                 "      COINC_TO_END_TIME_DEL_TMP <= '0';        "
-                 "      CAL_TR <= '0';  "
-                 "      CAL_TR_DEL1 <= '0';  "
-                 "      CAL_TR_DEL2 <= '0';  "
-                 "      TR_CONDITION1_DEL <= '0';        "
-                 "      TR_CONDITION2_DEL <= '0';        "
-                 "      TR_CONDITION3_DEL <= '0';        "
-                 "      TR_CONDITION4_DEL <= '0';        "
-                 "      TR_CONDITION5_DEL <= '0';        "
-                 "      TR_CONDITION9_DEL <= '0';        "
-                 "      TR_CONDITION12_DEL <= '0';        "
-                 "      TR_CONDITION14_DEL <= '0';        "
-                 "      TR_CONDITION1_NEW_DEL <= '0';        "
-                 "      TR_CONDITION2_NEW_DEL <= '0';        "
-                 "      TR_CONDITION3_NEW_DEL <= '0';        "
-                 "      TR_CONDITION4_NEW_DEL <= '0';        "
-                 "      TR_CONDITION5_NEW_DEL <= '0';        "
-                 "      TR_CONDITION9_NEW_DEL <= '0';        "
-                 "      TR_CONDITION12_NEW_DEL <= '0';        "
-                 "      TR_CONDITION14_NEW_DEL <= '0';        "
-                 "      ML1_DEL1 <= '0';        "
-                 "      ML2_DEL1 <= '0';        "
-                 "      MH1_DEL1 <= '0';        "
-                 "      MH2_DEL1 <= '0';        "
-                 "      ML1_DEL2 <= '0';        "
-                 "      ML2_DEL2 <= '0';        "
-                 "      MH1_DEL2 <= '0';        "
-                 "      MH2_DEL2 <= '0';        "
-                 "      ML1_DEL3 <= '0';        "
-                 "      ML2_DEL3 <= '0';        "
-                 "      MH1_DEL3 <= '0';        "
-                 "      MH2_DEL3 <= '0';        "
-                 "      ML1_DEL4 <= '0';        "
-                 "      ML2_DEL4 <= '0';        "
-                 "      MH1_DEL4 <= '0';        "
-                 "      MH2_DEL4 <= '0';        "
-                 "      SL1_DEL1 <= '0';        "
-                 "      SL2_DEL1 <= '0';        "
-                 "      SH1_DEL1 <= '0';        "
-                 "      SH2_DEL1 <= '0';        "
-                 "      SL1_DEL2 <= '0';        "
-                 "      SL2_DEL2 <= '0';        "
-                 "      SH1_DEL2 <= '0';        "
-                 "      SH2_DEL2 <= '0';        "
-                 "      SL1_DEL3 <= '0';        "
-                 "      SL2_DEL3 <= '0';        "
-                 "      SH1_DEL3 <= '0';        "
-                 "      SH2_DEL3 <= '0';        "
-                 "      SL1_DEL4 <= '0';        "
-                 "      SL2_DEL4 <= '0';        "
-                 "      SH1_DEL4 <= '0';        "
-                 "      SH2_DEL4 <= '0';        "
+                 "      SH2 <= '0';"
+                 "      BLOCK_COINC_SLAVE <= '0';"
+                 "      SCINT_LATCH_DEL <= '0';"
+                 "      EXT_TR_DEL <= '0';"
+                 "      SCINT_COINC_DEL <= '0';"
+                 "      COINC_DEL <= '0';"
+                 "      COINC_TO_END_TIME_DEL_TMP <= '0';"
+                 "      CAL_TR <= '0';"
+                 "      CAL_TR_DEL1 <= '0';"
+                 "      CAL_TR_DEL2 <= '0';"
+                 "      TR_CONDITION1_DEL <= '0';"
+                 "      TR_CONDITION2_DEL <= '0';"
+                 "      TR_CONDITION3_DEL <= '0';"
+                 "      TR_CONDITION4_DEL <= '0';"
+                 "      TR_CONDITION5_DEL <= '0';"
+                 "      TR_CONDITION9_DEL <= '0';"
+                 "      TR_CONDITION12_DEL <= '0';"
+                 "      TR_CONDITION14_DEL <= '0';"
+                 "      TR_CONDITION1_NEW_DEL <= '0';"
+                 "      TR_CONDITION2_NEW_DEL <= '0';"
+                 "      TR_CONDITION3_NEW_DEL <= '0';"
+                 "      TR_CONDITION4_NEW_DEL <= '0';"
+                 "      TR_CONDITION5_NEW_DEL <= '0';"
+                 "      TR_CONDITION9_NEW_DEL <= '0';"
+                 "      TR_CONDITION12_NEW_DEL <= '0';"
+                 "      TR_CONDITION14_NEW_DEL <= '0';"
+                 "      ML1_DEL1 <= '0';"
+                 "      ML2_DEL1 <= '0';"
+                 "      MH1_DEL1 <= '0';"
+                 "      MH2_DEL1 <= '0';"
+                 "      ML1_DEL2 <= '0';"
+                 "      ML2_DEL2 <= '0';"
+                 "      MH1_DEL2 <= '0';"
+                 "      MH2_DEL2 <= '0';"
+                 "      ML1_DEL3 <= '0';"
+                 "      ML2_DEL3 <= '0';"
+                 "      MH1_DEL3 <= '0';"
+                 "      MH2_DEL3 <= '0';"
+                 "      ML1_DEL4 <= '0';"
+                 "      ML2_DEL4 <= '0';"
+                 "      MH1_DEL4 <= '0';"
+                 "      MH2_DEL4 <= '0';"
+                 "      SL1_DEL1 <= '0';"
+                 "      SL2_DEL1 <= '0';"
+                 "      SH1_DEL1 <= '0';"
+                 "      SH2_DEL1 <= '0';"
+                 "      SL1_DEL2 <= '0';"
+                 "      SL2_DEL2 <= '0';"
+                 "      SH1_DEL2 <= '0';"
+                 "      SH2_DEL2 <= '0';"
+                 "      SL1_DEL3 <= '0';"
+                 "      SL2_DEL3 <= '0';"
+                 "      SH1_DEL3 <= '0';"
+                 "      SH2_DEL3 <= '0';"
+                 "      SL1_DEL4 <= '0';"
+                 "      SL2_DEL4 <= '0';"
+                 "      SH1_DEL4 <= '0';"
+                 "      SH2_DEL4 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      SCINT_LATCH_DEL <= SCINT_LATCH;        "
-                 "      COINC_TO_END_TIME_DEL_TMP <= COINC_TO_END_TIME_TMP;        "
-                 "      SCINT_COINC_DEL <= SCINT_COINC;        "
-                 "      COINC_DEL <= COINC_TMP;        "
-                 "      EXT_TR_DEL <= EXT_TR;        "
-                 "      CAL_TR <= CAL_COUNT(22);        "
-                 "      CAL_TR_DEL1 <= CAL_TR;        "
-                 "      CAL_TR_DEL2 <= CAL_TR_DEL1;        "
-                 "      TR_CONDITION1_DEL <= TR_CONDITION1;        "
-                 "      TR_CONDITION2_DEL <= TR_CONDITION2;        "
-                 "      TR_CONDITION3_DEL <= TR_CONDITION3;        "
-                 "      TR_CONDITION4_DEL <= TR_CONDITION4;        "
-                 "      TR_CONDITION5_DEL <= TR_CONDITION5;        "
-                 "      TR_CONDITION9_DEL <= TR_CONDITION9;        "
-                 "      TR_CONDITION12_DEL <= TR_CONDITION12;        "
-                 "      TR_CONDITION14_DEL <= TR_CONDITION14;        "
-                 "      TR_CONDITION1_NEW_DEL <= TR_CONDITION1_NEW;        "
-                 "      TR_CONDITION2_NEW_DEL <= TR_CONDITION2_NEW;        "
-                 "      TR_CONDITION3_NEW_DEL <= TR_CONDITION3_NEW;        "
-                 "      TR_CONDITION4_NEW_DEL <= TR_CONDITION4_NEW;        "
-                 "      TR_CONDITION5_NEW_DEL <= TR_CONDITION5_NEW;        "
-                 "      TR_CONDITION9_NEW_DEL <= TR_CONDITION9_NEW;        "
-                 "      TR_CONDITION12_NEW_DEL <= TR_CONDITION12_NEW;        "
-                 "      TR_CONDITION14_NEW_DEL <= TR_CONDITION14_NEW;        "
-                 "      ML1_DEL1 <= ML1;        "
-                 "      ML1_DEL2 <= ML1_DEL1;        "
-                 "      ML1_DEL3 <= ML1_DEL2;        "
-                 "      ML1_DEL4 <= ML1_DEL3;        "
-                 "      ML2_DEL1 <= ML2;        "
-                 "      ML2_DEL2 <= ML2_DEL1;        "
-                 "      ML2_DEL3 <= ML2_DEL2;        "
-                 "      ML2_DEL4 <= ML2_DEL3;        "
-                 "      MH1_DEL1 <= MH1;        "
-                 "      MH1_DEL2 <= MH1_DEL1;        "
-                 "      MH1_DEL3 <= MH1_DEL2;        "
-                 "      MH1_DEL4 <= MH1_DEL3;        "
-                 "      MH2_DEL1 <= MH2;        "
-                 "      MH2_DEL2 <= MH2_DEL1;        "
-                 "      MH2_DEL3 <= MH2_DEL2;        "
-                 "      MH2_DEL4 <= MH2_DEL3;        "
+                 "      SCINT_LATCH_DEL <= SCINT_LATCH;"
+                 "      COINC_TO_END_TIME_DEL_TMP <= COINC_TO_END_TIME_TMP;"
+                 "      SCINT_COINC_DEL <= SCINT_COINC;"
+                 "      COINC_DEL <= COINC_TMP;"
+                 "      EXT_TR_DEL <= EXT_TR;"
+                 "      CAL_TR <= CAL_COUNT(22);"
+                 "      CAL_TR_DEL1 <= CAL_TR;"
+                 "      CAL_TR_DEL2 <= CAL_TR_DEL1;"
+                 "      TR_CONDITION1_DEL <= TR_CONDITION1;"
+                 "      TR_CONDITION2_DEL <= TR_CONDITION2;"
+                 "      TR_CONDITION3_DEL <= TR_CONDITION3;"
+                 "      TR_CONDITION4_DEL <= TR_CONDITION4;"
+                 "      TR_CONDITION5_DEL <= TR_CONDITION5;"
+                 "      TR_CONDITION9_DEL <= TR_CONDITION9;"
+                 "      TR_CONDITION12_DEL <= TR_CONDITION12;"
+                 "      TR_CONDITION14_DEL <= TR_CONDITION14;"
+                 "      TR_CONDITION1_NEW_DEL <= TR_CONDITION1_NEW;"
+                 "      TR_CONDITION2_NEW_DEL <= TR_CONDITION2_NEW;"
+                 "      TR_CONDITION3_NEW_DEL <= TR_CONDITION3_NEW;"
+                 "      TR_CONDITION4_NEW_DEL <= TR_CONDITION4_NEW;"
+                 "      TR_CONDITION5_NEW_DEL <= TR_CONDITION5_NEW;"
+                 "      TR_CONDITION9_NEW_DEL <= TR_CONDITION9_NEW;"
+                 "      TR_CONDITION12_NEW_DEL <= TR_CONDITION12_NEW;"
+                 "      TR_CONDITION14_NEW_DEL <= TR_CONDITION14_NEW;"
+                 "      ML1_DEL1 <= ML1;"
+                 "      ML1_DEL2 <= ML1_DEL1;"
+                 "      ML1_DEL3 <= ML1_DEL2;"
+                 "      ML1_DEL4 <= ML1_DEL3;"
+                 "      ML2_DEL1 <= ML2;"
+                 "      ML2_DEL2 <= ML2_DEL1;"
+                 "      ML2_DEL3 <= ML2_DEL2;"
+                 "      ML2_DEL4 <= ML2_DEL3;"
+                 "      MH1_DEL1 <= MH1;"
+                 "      MH1_DEL2 <= MH1_DEL1;"
+                 "      MH1_DEL3 <= MH1_DEL2;"
+                 "      MH1_DEL4 <= MH1_DEL3;"
+                 "      MH2_DEL1 <= MH2;"
+                 "      MH2_DEL2 <= MH2_DEL1;"
+                 "      MH2_DEL3 <= MH2_DEL2;"
+                 "      MH2_DEL4 <= MH2_DEL3;"
                  ""
-                 "      SL1_DEL1 <= SL1;        "
-                 "      SL1_DEL2 <= SL1_DEL1;        "
-                 "      SL1_DEL3 <= SL1_DEL2;        "
-                 "      SL1_DEL4 <= SL1_DEL3;        "
-                 "      SL2_DEL1 <= SL2;        "
-                 "      SL2_DEL2 <= SL2_DEL1;        "
-                 "      SL2_DEL3 <= SL2_DEL2;        "
-                 "      SL2_DEL4 <= SL2_DEL3;        "
-                 "      SH1_DEL1 <= SH1;        "
-                 "      SH1_DEL2 <= SH1_DEL1;        "
-                 "      SH1_DEL3 <= SH1_DEL2;        "
-                 "      SH1_DEL4 <= SH1_DEL3;        "
-                 "      SH2_DEL1 <= SH2;        "
-                 "      SH2_DEL2 <= SH2_DEL1;        "
-                 "      SH2_DEL3 <= SH2_DEL2;        "
-                 "      SH2_DEL4 <= SH2_DEL3;        "
+                 "      SL1_DEL1 <= SL1;"
+                 "      SL1_DEL2 <= SL1_DEL1;"
+                 "      SL1_DEL3 <= SL1_DEL2;"
+                 "      SL1_DEL4 <= SL1_DEL3;"
+                 "      SL2_DEL1 <= SL2;"
+                 "      SL2_DEL2 <= SL2_DEL1;"
+                 "      SL2_DEL3 <= SL2_DEL2;"
+                 "      SL2_DEL4 <= SL2_DEL3;"
+                 "      SH1_DEL1 <= SH1;"
+                 "      SH1_DEL2 <= SH1_DEL1;"
+                 "      SH1_DEL3 <= SH1_DEL2;"
+                 "      SH1_DEL4 <= SH1_DEL3;"
+                 "      SH2_DEL1 <= SH2;"
+                 "      SH2_DEL2 <= SH2_DEL1;"
+                 "      SH2_DEL3 <= SH2_DEL2;"
+                 "      SH2_DEL4 <= SH2_DEL3;"
                  "      if SLAVE_PRESENT = '1' then"
                  "        if SL1_IN = '0' and SL2_IN = '0' and SH1_IN = '1' and SH2_IN = '1' then"
                  "          BLOCK_COINC_SLAVE <= '1';"
@@ -1001,17 +1001,17 @@
                  "        else"
                  "          BLOCK_COINC_SLAVE <= '0';"
                  "          if SH1_IN = '1' then"
-                 "            SL1 <= '1'; "
+                 "            SL1 <= '1';"
                  "          else"
-                 "            SL1 <= SL1_IN; "
+                 "            SL1 <= SL1_IN;"
                  "          end if;"
                  "          if SH2_IN = '1' then"
-                 "            SL2 <= '1'; "
+                 "            SL2 <= '1';"
                  "          else"
-                 "            SL2 <= SL2_IN; "
+                 "            SL2 <= SL2_IN;"
                  "          end if;"
-                 "          SH1 <= SH1_IN; "
-                 "          SH2 <= SH2_IN; "
+                 "          SH1 <= SH1_IN;"
+                 "          SH2 <= SH2_IN;"
                  "        end if;"
                  "      else"
                  "        BLOCK_COINC_SLAVE <= '0';"
@@ -1021,7 +1021,7 @@
                  "        SH2 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
@@ -1030,20 +1030,20 @@
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
                  "      CAL_COUNT <= CAL_COUNT + \"00000000000000000000001\";"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
-                 "      ONE_PPS_DEL1 <= '0';        "
-                 "      ONE_PPS_DEL2 <= '0';        "
-                 "      ONE_PPS_DEL3 <= '0';        "
+                 "      ONE_PPS_DEL1 <= '0';"
+                 "      ONE_PPS_DEL2 <= '0';"
+                 "      ONE_PPS_DEL3 <= '0';"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
-                 "      ONE_PPS_DEL1 <= ONE_PPS;        "
-                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;        "
-                 "      ONE_PPS_DEL3 <= ONE_PPS_DEL2;        "
+                 "      ONE_PPS_DEL1 <= ONE_PPS;"
+                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
+                 "      ONE_PPS_DEL3 <= ONE_PPS_DEL2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
@@ -1056,12 +1056,12 @@
                  "        STARTUP_COUNT <= STARTUP_COUNT + \"0001\"; -- Verhoog de teller"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  STARTUP_BLOCK <= not STARTUP_COUNT(3);"
                  ""
                  "-- Trigger condities die na 1 periode bepaald zijn"
-                 "      "
+                 ""
                  "-- TR_CONDITION1"
                  "-- 0H and 1L, at least one low signal"
                  "  process(CLK200MHz,SYSRST)"
@@ -1071,7 +1071,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION1 <= (ML1 or ML2 or SL1 or SL2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION2"
                  "-- 0H and 2L, at least two low signals"
@@ -1080,11 +1080,11 @@
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION2 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION2 <= (ML1 and ML2) or (ML1 and SL1) or (ML1 and SL2) or "
-                 "                       (ML2 and SL1) or (ML2 and SL2) or "
+                 "      TR_CONDITION2 <= (ML1 and ML2) or (ML1 and SL1) or (ML1 and SL2) or"
+                 "                       (ML2 and SL1) or (ML2 and SL2) or"
                  "                       (SL1 and SL2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION3"
                  "-- 0H and 3L, at least three low signals"
@@ -1093,10 +1093,10 @@
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION3 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION3 <= (ML1 and ML2 and SL1) or (ML1 and ML2 and SL2) or (ML1 and SL1 and SL2) or "
+                 "      TR_CONDITION3 <= (ML1 and ML2 and SL1) or (ML1 and ML2 and SL2) or (ML1 and SL1 and SL2) or"
                  "                       (ML2 and SL1 and SL2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION4"
                  "-- 0H and 4L, all four low signals"
@@ -1107,7 +1107,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION4 <= (ML1 and ML2 and SL1 and SL2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION5"
                  "-- 1H and 0L,  at least one high signal"
@@ -1118,20 +1118,20 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION5 <= (MH1 or MH2 or SH1 or SH2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION9"
-                 "-- 2H and 0L, at least two high signals. "
+                 "-- 2H and 0L, at least two high signals."
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION9 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION9 <= (MH1 and MH2) or (MH1 and SH1) or (MH1 and SH2) or "
-                 "                 (MH2 and SH1) or (MH2 and SH2) or  "
-                 "                 (SH1 and SH2); "
+                 "      TR_CONDITION9 <= (MH1 and MH2) or (MH1 and SH1) or (MH1 and SH2) or"
+                 "                 (MH2 and SH1) or (MH2 and SH2) or"
+                 "                 (SH1 and SH2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION12"
                  "-- 3H and 0L,  at least three high signals"
@@ -1140,10 +1140,10 @@
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION12 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION12 <= (MH1 and MH2 and SH1) or (MH1 and MH2 and SH2) or (MH1 and SH1 and SH2) or "
+                 "      TR_CONDITION12 <= (MH1 and MH2 and SH1) or (MH1 and MH2 and SH2) or (MH1 and SH1 and SH2) or"
                  "                        (MH2 and SH1 and SH2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION14"
                  "-- 4H and 0L, all four high signals"
@@ -1154,7 +1154,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION14 <= (MH1 and MH2 and SH1 and SH2);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- Trigger condities die na 2 periodes bepaald zijn"
                  ""
@@ -1168,7 +1168,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION6 <= TR_CONDITION5 and TR_CONDITION2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION7"
                  "-- 1H and 2L,  at least one high signal and at least two other low signals"
@@ -1180,7 +1180,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION7 <= TR_CONDITION5 and TR_CONDITION3;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION8"
                  "-- 1H and 3L,  at least one high signal and at least three other low signals"
@@ -1192,7 +1192,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION8 <= TR_CONDITION5 and TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION10"
                  "-- 2H and 1L,  at least two high signals and at least one other low signal"
@@ -1204,7 +1204,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION10 <= TR_CONDITION9 and TR_CONDITION3;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION11"
                  "-- 2H and 2L,  at least two high signals and at least two other low signals"
@@ -1216,7 +1216,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION11 <= TR_CONDITION9 and TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION13"
                  "-- 3H and 1L,  at least three high signals and at least one other low signal"
@@ -1228,7 +1228,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION13 <= TR_CONDITION12 and TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION15"
                  "-- 1H or 1L,  at least one high signal or at least one low signal"
@@ -1239,7 +1239,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION15 <= TR_CONDITION5 or TR_CONDITION1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION16"
                  "-- 1H or 2L,  at least one high signal or at least two low signals"
@@ -1250,7 +1250,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION16 <= TR_CONDITION5 or TR_CONDITION2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION17"
                  "-- 1H or 3L,  at least one high signal or at least three low signals"
@@ -1261,7 +1261,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION17 <= TR_CONDITION5 or TR_CONDITION3;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION18"
                  "-- 1H or 4L,  at least one high signal or all four signals"
@@ -1272,7 +1272,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION18 <= TR_CONDITION5 or TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION19"
                  "-- 2H or 1L,  at least two high signals or at least one low signal"
@@ -1283,7 +1283,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION19 <= TR_CONDITION9 or TR_CONDITION1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION20"
                  "-- 2H or 2L,  at least two high signals or at least two low signals"
@@ -1294,7 +1294,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION20 <= TR_CONDITION9 or TR_CONDITION2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION21"
                  "-- 2H or 3L,  at least two high signals or at least three low signals"
@@ -1305,7 +1305,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION21 <= TR_CONDITION9 or TR_CONDITION3;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION22"
                  "-- 2H or 4L,  at least two high signals or all four signals"
@@ -1316,7 +1316,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION22 <= TR_CONDITION9 or TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION23"
                  "-- 3H or 1L,  at least three high signals or at least one low signal"
@@ -1327,7 +1327,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION23 <= TR_CONDITION12 or TR_CONDITION1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION24"
                  "-- 3H or 2L,  at least three high signals or at least two low signals"
@@ -1338,7 +1338,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION24 <= TR_CONDITION12 or TR_CONDITION2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION25"
                  "-- 3H or 3L,  at least three high signals or at least three low signals"
@@ -1349,7 +1349,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION25 <= TR_CONDITION12 or TR_CONDITION3;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION26"
                  "-- 3H or 4L,  at least three high signals or all four signals"
@@ -1360,7 +1360,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION26 <= TR_CONDITION12 or TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION27"
                  "-- 4H or 1L,  all four high signals or at least one low signal"
@@ -1371,7 +1371,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION27 <= TR_CONDITION14 or TR_CONDITION1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION28"
                  "-- 4H or 2L,  all four high signals or at least two low signals"
@@ -1382,7 +1382,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION28 <= TR_CONDITION14 or TR_CONDITION2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION29"
                  "-- 4H or 3L,  all four high signals or at least three low signals"
@@ -1393,7 +1393,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION29 <= TR_CONDITION14 or TR_CONDITION3;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION30"
                  "-- 4H or 4L,  all four high signals or all four low signals"
@@ -1404,7 +1404,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION30 <= TR_CONDITION14 or TR_CONDITION4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- Als aan het triggerpatroon voldaan wordt, moeten de signalen uit de scintillator gelatched worden"
                  ""
@@ -1445,10 +1445,9 @@
                  "        when \"100110\" => SCINT_LATCH <= TR_CONDITION29;"
                  "        when \"100111\" => SCINT_LATCH <= TR_CONDITION30;"
                  "        when others => SCINT_LATCH <= '0';"
-                 "      end case;  "
+                 "      end case;"
                  "    end if;"
                  "  end process;"
-                 ""
                  ""
                  "-- Het vasthouden of blokkeren van de ingangssignalen wordt aangezet door de opgaande flank van SCINT_LATCH"
                  "-- en wordt geblockt door BLOCK_START_OF_COINC"
@@ -1488,7 +1487,7 @@
                  "        TRIGGER_PATTERN_TMP(15) <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- Hier worden de nieuwe ingangssignalen gemaakt. Degene die de coincidentie starten."
                  "-- Mocht later de triggervoorwaarde verlengt worden door nog een geldige combinatie"
@@ -1514,14 +1513,14 @@
                  "      SH1_NEW <= SH1_LATCHED and SH1_DEL4;"
                  "      SH2_NEW <= SH2_LATCHED and SH2_DEL4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- Van de nieuwe signalen moet weer opnieuw de triggerconditie bepaald worden."
                  "-- Deze signalen kunnen alleen in het begin van een triggervoorwaarde opkomen en worden dus niet verlengd"
                  "-- door een andere geldige combinatie"
                  ""
                  "-- Trigger condities die na 1 periode bepaald zijn"
-                 "      "
+                 ""
                  "-- TR_CONDITION1_NEW"
                  "-- 0H and 1L, at least one low signal"
                  "  process(CLK200MHz,SYSRST)"
@@ -1531,7 +1530,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION1_NEW <= (ML1_NEW or ML2_NEW or SL1_NEW or SL2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION2_NEW"
                  "-- 0H and 2L, at least two low signals"
@@ -1540,11 +1539,11 @@
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION2_NEW <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION2_NEW <= (ML1_NEW and ML2_NEW) or (ML1_NEW and SL1_NEW) or (ML1_NEW and SL2_NEW) or "
-                 "                       (ML2_NEW and SL1_NEW) or (ML2_NEW and SL2_NEW) or "
+                 "      TR_CONDITION2_NEW <= (ML1_NEW and ML2_NEW) or (ML1_NEW and SL1_NEW) or (ML1_NEW and SL2_NEW) or"
+                 "                       (ML2_NEW and SL1_NEW) or (ML2_NEW and SL2_NEW) or"
                  "                       (SL1_NEW and SL2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION3_NEW"
                  "-- 0H and 3L, at least three low signals"
@@ -1553,10 +1552,10 @@
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION3_NEW <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION3_NEW <= (ML1_NEW and ML2_NEW and SL1_NEW) or (ML1_NEW and ML2_NEW and SL2_NEW) or (ML1_NEW and SL1_NEW and SL2_NEW) or "
+                 "      TR_CONDITION3_NEW <= (ML1_NEW and ML2_NEW and SL1_NEW) or (ML1_NEW and ML2_NEW and SL2_NEW) or (ML1_NEW and SL1_NEW and SL2_NEW) or"
                  "                       (ML2_NEW and SL1_NEW and SL2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION4_NEW"
                  "-- 0H and 4L, all four low signals"
@@ -1567,7 +1566,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION4_NEW <= (ML1_NEW and ML2_NEW and SL1_NEW and SL2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION5_NEW"
                  "-- 1H and 0L,  at least one high signal"
@@ -1578,20 +1577,20 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION5_NEW <= (MH1_NEW or MH2_NEW or SH1_NEW or SH2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION9_NEW"
-                 "-- 2H and 0L, at least two high signals. "
+                 "-- 2H and 0L, at least two high signals."
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION9_NEW <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION9_NEW <= (MH1_NEW and MH2_NEW) or (MH1_NEW and SH1_NEW) or (MH1_NEW and SH2_NEW) or "
-                 "                 (MH2_NEW and SH1_NEW) or (MH2_NEW and SH2_NEW) or  "
-                 "                 (SH1_NEW and SH2_NEW); "
+                 "      TR_CONDITION9_NEW <= (MH1_NEW and MH2_NEW) or (MH1_NEW and SH1_NEW) or (MH1_NEW and SH2_NEW) or"
+                 "                 (MH2_NEW and SH1_NEW) or (MH2_NEW and SH2_NEW) or"
+                 "                 (SH1_NEW and SH2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION12_NEW"
                  "-- 3H and 0L,  at least three high signals"
@@ -1600,10 +1599,10 @@
                  "    if SYSRST = '1' then"
                  "      TR_CONDITION12_NEW <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      TR_CONDITION12_NEW <= (MH1_NEW and MH2_NEW and SH1_NEW) or (MH1_NEW and MH2_NEW and SH2_NEW) or (MH1_NEW and SH1_NEW and SH2_NEW) or "
+                 "      TR_CONDITION12_NEW <= (MH1_NEW and MH2_NEW and SH1_NEW) or (MH1_NEW and MH2_NEW and SH2_NEW) or (MH1_NEW and SH1_NEW and SH2_NEW) or"
                  "                        (MH2_NEW and SH1_NEW and SH2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION14_NEW"
                  "-- 4H and 0L, all four high signals"
@@ -1614,7 +1613,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION14_NEW <= (MH1_NEW and MH2_NEW and SH1_NEW and SH2_NEW);"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- Trigger condities die na 2 periodes bepaald zijn"
                  ""
@@ -1628,7 +1627,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION6_NEW <= TR_CONDITION5_NEW and TR_CONDITION2_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION7_NEW"
                  "-- 1H and 2L,  at least one high signal and at least two other low signals"
@@ -1640,7 +1639,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION7_NEW <= TR_CONDITION5_NEW and TR_CONDITION3_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION8_NEW"
                  "-- 1H and 3L,  at least one high signal and at least three other low signals"
@@ -1652,7 +1651,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION8_NEW <= TR_CONDITION5_NEW and TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION10_NEW"
                  "-- 2H and 1L,  at least two high signals and at least one other low signal"
@@ -1664,7 +1663,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION10_NEW <= TR_CONDITION9_NEW and TR_CONDITION3_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION11_NEW"
                  "-- 2H and 2L,  at least two high signals and at least two other low signals"
@@ -1676,7 +1675,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION11_NEW <= TR_CONDITION9_NEW and TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION13_NEW"
                  "-- 3H and 1L,  at least three high signals and at least one other low signal"
@@ -1688,7 +1687,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION13_NEW <= TR_CONDITION12_NEW and TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION15_NEW"
                  "-- 1H or 1L,  at least one high signal or at least one low signal"
@@ -1699,7 +1698,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION15_NEW <= TR_CONDITION5_NEW or TR_CONDITION1_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION16_NEW"
                  "-- 1H or 2L,  at least one high signal or at least two low signals"
@@ -1710,7 +1709,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION16_NEW <= TR_CONDITION5_NEW or TR_CONDITION2_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION17_NEW"
                  "-- 1H or 3L,  at least one high signal or at least three low signals"
@@ -1721,7 +1720,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION17_NEW <= TR_CONDITION5_NEW or TR_CONDITION3_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION18_NEW"
                  "-- 1H or 4L,  at least one high signal or all four signals"
@@ -1732,7 +1731,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION18_NEW <= TR_CONDITION5_NEW or TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION19_NEW"
                  "-- 2H or 1L,  at least two high signals or at least one low signal"
@@ -1743,7 +1742,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION19_NEW <= TR_CONDITION9_NEW or TR_CONDITION1_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION20_NEW"
                  "-- 2H or 2L,  at least two high signals or at least two low signals"
@@ -1754,7 +1753,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION20_NEW <= TR_CONDITION9_NEW or TR_CONDITION2_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION21_NEW"
                  "-- 2H or 3L,  at least two high signals or at least three low signals"
@@ -1765,7 +1764,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION21_NEW <= TR_CONDITION9_NEW or TR_CONDITION3_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION22_NEW"
                  "-- 2H or 4L,  at least two high signals or all four signals"
@@ -1776,7 +1775,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION22_NEW <= TR_CONDITION9_NEW or TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION23_NEW"
                  "-- 3H or 1L,  at least three high signals or at least one low signal"
@@ -1787,7 +1786,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION23_NEW <= TR_CONDITION12_NEW or TR_CONDITION1_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION24_NEW"
                  "-- 3H or 2L,  at least three high signals or at least two low signals"
@@ -1798,7 +1797,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION24_NEW <= TR_CONDITION12_NEW or TR_CONDITION2_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION25_NEW"
                  "-- 3H or 3L,  at least three high signals or at least three low signals"
@@ -1809,7 +1808,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION25_NEW <= TR_CONDITION12_NEW or TR_CONDITION3_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION26_NEW"
                  "-- 3H or 4L,  at least three high signals or all four signals"
@@ -1820,7 +1819,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION26_NEW <= TR_CONDITION12_NEW or TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION27_NEW"
                  "-- 4H or 1L,  all four high signals or at least one low signal"
@@ -1831,7 +1830,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION27_NEW <= TR_CONDITION14_NEW or TR_CONDITION1_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION28_NEW"
                  "-- 4H or 2L,  all four high signals or at least two low signals"
@@ -1842,7 +1841,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION28_NEW <= TR_CONDITION14_NEW or TR_CONDITION2_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION29_NEW"
                  "-- 4H or 3L,  all four high signals or at least three low signals"
@@ -1853,7 +1852,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION29_NEW <= TR_CONDITION14_NEW or TR_CONDITION3_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- TR_CONDITION30_NEW"
                  "-- 4H or 4L,  all four high signals or all four low signals"
@@ -1864,7 +1863,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      TR_CONDITION30_NEW <= TR_CONDITION14_NEW or TR_CONDITION4_NEW;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "-- Van de NEW gemaakte signalen moet weer bekeken worden of ze een coincidentie maken, indien ze geselecteerd zijn."
                  "  process (CLK200MHz,SYSRST,SCINT_PATTERN)"
@@ -1904,7 +1903,7 @@
                  "        when \"100110\" => SCINT_COINC <= TR_CONDITION29_NEW;"
                  "        when \"100111\" => SCINT_COINC <= TR_CONDITION30_NEW;"
                  "        when others => SCINT_COINC <= '0';"
-                 "      end case;  "
+                 "      end case;"
                  "    end if;"
                  "  end process;"
                  ""
@@ -1936,10 +1935,6 @@
                  "    end if;"
                  "  end process;"
                  ""
-                 ""
-                 ""
-                 ""
-                 ""
                  "  -- Latch TRIGGER_PATTERN op de achterkant van posttime"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -1963,10 +1958,10 @@
                  "        TRIGGER_PATTERN(13) <= COMPL2;"
                  "        TRIGGER_PATTERN(14) <= COMPH2;"
                  "        TRIGGER_PATTERN(15) <= TRIGGER_PATTERN_TMP(15);"
-                 "	    end if;        "
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "  "
+                 "  end process;"
+                 ""
                  "  -- COINC_TO_END_TIME_TMP starts at a negative edge of COINC and stops when COINC_TO_END_TIME_CNT reaches POST_TIME"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -1974,28 +1969,28 @@
                  "      COINC_TO_END_TIME_TMP <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if COINC_TMP = '0' and COINC_DEL = '1' then -- on a negative edge of COINC"
-                 "        COINC_TO_END_TIME_TMP <= '1'; "
+                 "        COINC_TO_END_TIME_TMP <= '1';"
                  "      elsif COINC_TO_END_TIME_CNT > POST_TIME then"
                  "        COINC_TO_END_TIME_TMP <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- COINC_TO_END_TIME_CNT starts when COINC_TO_END_TIME_TMP = '1'"
-                 "  -- and counts as long COINC_TO_END_TIME_TMP is valid "
+                 "  -- and counts as long COINC_TO_END_TIME_TMP is valid"
                  "  -- and resets when COINC_TO_END_TIME_TMP = '0'"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      COINC_TO_END_TIME_CNT <= 0;"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_END_TIME_TMP = '1' then "
+                 "      if COINC_TO_END_TIME_TMP = '1' then"
                  "        COINC_TO_END_TIME_CNT <= COINC_TO_END_TIME_CNT + 1;"
                  "      else"
                  "        COINC_TO_END_TIME_CNT <= 0;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- BEGIN_COINC_TO_END_TIME_TMP goes from begin of coinc till end of posttime"
                  "  process(CLK200MHz,SYSRST)"
@@ -2005,7 +2000,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      BEGIN_COINC_TO_END_TIME_TMP <= COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- BLOCK_START_OF_COINC goes from begin of coinc till end of COINC_TO_END_TIME_TMP"
                  "  process(CLK200MHz,SYSRST)"
@@ -2013,9 +2008,9 @@
                  "    if (CLK200MHz'event and CLK200MHz = '1') then"
                  "      BLOCK_START_OF_COINC <= BLOCK_COINC or COINC_TMP or COINC_DEL or COINC_TO_END_TIME_TMP or STARTUP_BLOCK or BLOCK_COINC_SLAVE;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "end rtl ; -- of TRIGGER_MATRIX"
+                 "end architecture a0 ; -- of TRIGGER_MATRIX"
                  ""
                  "")
     )

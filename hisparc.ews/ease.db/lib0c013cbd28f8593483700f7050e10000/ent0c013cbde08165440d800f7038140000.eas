@@ -5,20 +5,20 @@
     (NAME "USB_READ_HANDLER")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1984 10176)
+    (GEOMETRY 0 0 1984 8448)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "USB_READ_HANDLER")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1146492942 "Mon May 01 16:15:42 2006")
-      (MODIFIED 1242121608 "Tue May 12 11:46:48 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd028165440d800f7068140000")
@@ -36,11 +36,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 7960 2024 8040)
+      (GEOMETRY 1944 6616 2024 6696)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8000)
+        (POSITION 1920 6656)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -65,11 +65,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 8088 2024 8168)
+      (GEOMETRY 1944 6744 2024 6824)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8128)
+        (POSITION 1920 6784)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -94,11 +94,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 8216 2024 8296)
+      (GEOMETRY 1944 6872 2024 6952)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8256)
+        (POSITION 1920 6912)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -123,11 +123,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 8344 2024 8424)
+      (GEOMETRY 1944 7000 2024 7080)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8384)
+        (POSITION 1920 7040)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -153,11 +153,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY 1944 6936 2024 7016)
+      (GEOMETRY 1944 5656 2024 5736)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 6976)
+        (POSITION 1920 5696)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -184,11 +184,11 @@
           (RANGE "1000" "0")
         )
       )
-      (GEOMETRY 1944 8664 2024 8744)
+      (GEOMETRY 1944 7192 2024 7272)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8704)
+        (POSITION 1920 7232)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -215,11 +215,11 @@
           (RANGE "1600" "0")
         )
       )
-      (GEOMETRY 1944 8792 2024 8872)
+      (GEOMETRY 1944 7320 2024 7400)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8832)
+        (POSITION 1920 7360)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -246,11 +246,11 @@
           (RANGE "2000" "0")
         )
       )
-      (GEOMETRY 1944 8920 2024 9000)
+      (GEOMETRY 1944 7448 2024 7528)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 8960)
+        (POSITION 1920 7488)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -277,11 +277,11 @@
           (RANGE "6000" "0")
         )
       )
-      (GEOMETRY 1944 9048 2024 9128)
+      (GEOMETRY 1944 7576 2024 7656)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 9088)
+        (POSITION 1920 7616)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -306,11 +306,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY 1944 6552 2024 6632)
+      (GEOMETRY 1944 5464 2024 5544)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 6592)
+        (POSITION 1920 5504)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -335,11 +335,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY 1944 6424 2024 6504)
+      (GEOMETRY 1944 5336 2024 5416)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 6464)
+        (POSITION 1920 5376)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -364,11 +364,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY 1944 6296 2024 6376)
+      (GEOMETRY 1944 5208 2024 5288)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 6336)
+        (POSITION 1920 5248)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -394,11 +394,11 @@
           (RANGE "271" "0")
         )
       )
-      (GEOMETRY 1944 6168 2024 6248)
+      (GEOMETRY 1944 5080 2024 5160)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 6208)
+        (POSITION 1920 5120)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -419,11 +419,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 8792 40 8872)
+      (GEOMETRY -40 2840 40 2920)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 8832)
+        (POSITION 64 2880)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -444,11 +444,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 8920 40 9000)
+      (GEOMETRY -40 2584 40 2664)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 8960)
+        (POSITION 64 2624)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -469,11 +469,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 5848 2024 5928)
+      (GEOMETRY 1944 4760 2024 4840)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 5888)
+        (POSITION 1920 4800)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -494,11 +494,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 5976 2024 6056)
+      (GEOMETRY 1944 4888 2024 4968)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 6016)
+        (POSITION 1920 4928)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -519,11 +519,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 3992 40 4072)
+      (GEOMETRY -40 3480 40 3560)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 4032)
+        (POSITION 64 3520)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -544,11 +544,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 7192 2024 7272)
+      (GEOMETRY 1944 6104 2024 6184)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 7232)
+        (POSITION 1920 6144)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -569,11 +569,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 7320 2024 7400)
+      (GEOMETRY 1944 6232 2024 6312)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 7360)
+        (POSITION 1920 6272)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -598,11 +598,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY 1944 7512 2024 7592)
+      (GEOMETRY 1944 6424 2024 6504)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 7552)
+        (POSITION 1920 6464)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -623,11 +623,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 5272 2024 5352)
+      (GEOMETRY 1944 4184 2024 4264)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 5312)
+        (POSITION 1920 4224)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -648,11 +648,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 5400 2024 5480)
+      (GEOMETRY 1944 4312 2024 4392)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 5440)
+        (POSITION 1920 4352)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -677,11 +677,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY 1944 9368 2024 9448)
+      (GEOMETRY 1944 7832 2024 7912)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 9408)
+        (POSITION 1920 7872)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -702,11 +702,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 9752 2024 9832)
+      (GEOMETRY 1944 8152 2024 8232)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 9792)
+        (POSITION 1920 8192)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -727,11 +727,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 9624 2024 9704)
+      (GEOMETRY 1944 8024 2024 8104)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 9664)
+        (POSITION 1920 8064)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -752,11 +752,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 5144 2024 5224)
+      (GEOMETRY 1944 4056 2024 4136)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 5184)
+        (POSITION 1920 4096)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -777,11 +777,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 2840 2024 2920)
+      (GEOMETRY 1944 1816 2024 1896)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2880)
+        (POSITION 1920 1856)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -802,11 +802,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 2968 2024 3048)
+      (GEOMETRY 1944 1944 2024 2024)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3008)
+        (POSITION 1920 1984)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -827,11 +827,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3096 2024 3176)
+      (GEOMETRY 1944 2072 2024 2152)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3136)
+        (POSITION 1920 2112)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -852,11 +852,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3224 2024 3304)
+      (GEOMETRY 1944 2200 2024 2280)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3264)
+        (POSITION 1920 2240)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -877,11 +877,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3352 2024 3432)
+      (GEOMETRY 1944 2328 2024 2408)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3392)
+        (POSITION 1920 2368)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -902,11 +902,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3480 2024 3560)
+      (GEOMETRY 1944 2456 2024 2536)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3520)
+        (POSITION 1920 2496)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -927,11 +927,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3608 2024 3688)
+      (GEOMETRY 1944 2584 2024 2664)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3648)
+        (POSITION 1920 2624)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -952,11 +952,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3736 2024 3816)
+      (GEOMETRY 1944 2712 2024 2792)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3776)
+        (POSITION 1920 2752)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -977,11 +977,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3864 2024 3944)
+      (GEOMETRY 1944 2840 2024 2920)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3904)
+        (POSITION 1920 2880)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1002,11 +1002,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3992 2024 4072)
+      (GEOMETRY 1944 2968 2024 3048)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4032)
+        (POSITION 1920 3008)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1027,11 +1027,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4120 2024 4200)
+      (GEOMETRY 1944 3096 2024 3176)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4160)
+        (POSITION 1920 3136)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1052,11 +1052,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4248 2024 4328)
+      (GEOMETRY 1944 3224 2024 3304)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4288)
+        (POSITION 1920 3264)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1077,11 +1077,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4376 2024 4456)
+      (GEOMETRY 1944 3352 2024 3432)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4416)
+        (POSITION 1920 3392)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1102,11 +1102,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4504 2024 4584)
+      (GEOMETRY 1944 3480 2024 3560)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4544)
+        (POSITION 1920 3520)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1127,11 +1127,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4632 2024 4712)
+      (GEOMETRY 1944 3608 2024 3688)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4672)
+        (POSITION 1920 3648)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1152,11 +1152,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4760 2024 4840)
+      (GEOMETRY 1944 3736 2024 3816)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4800)
+        (POSITION 1920 3776)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1177,11 +1177,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 4888 2024 4968)
+      (GEOMETRY 1944 3864 2024 3944)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4928)
+        (POSITION 1920 3904)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1202,11 +1202,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 9368 40 9448)
+      (GEOMETRY -40 6680 40 6760)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 9408)
+        (POSITION 64 6720)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1227,11 +1227,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 856 2024 936)
+      (GEOMETRY 1944 344 2024 424)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 896)
+        (POSITION 1920 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1252,11 +1252,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 984 2024 1064)
+      (GEOMETRY 1944 472 2024 552)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1024)
+        (POSITION 1920 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1281,11 +1281,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY 1944 1112 2024 1192)
+      (GEOMETRY 1944 600 2024 680)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1152)
+        (POSITION 1920 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1306,11 +1306,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 1240 2024 1320)
+      (GEOMETRY 1944 728 2024 808)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1280)
+        (POSITION 1920 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1331,11 +1331,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 1368 2024 1448)
+      (GEOMETRY 1944 856 2024 936)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1408)
+        (POSITION 1920 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1356,11 +1356,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 1496 2024 1576)
+      (GEOMETRY 1944 984 2024 1064)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1536)
+        (POSITION 1920 1024)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1381,11 +1381,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 1624 2024 1704)
+      (GEOMETRY 1944 1112 2024 1192)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1664)
+        (POSITION 1920 1152)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1406,11 +1406,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 1752 2024 1832)
+      (GEOMETRY 1944 1240 2024 1320)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1792)
+        (POSITION 1920 1280)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1435,11 +1435,11 @@
           (RANGE "9" "0")
         )
       )
-      (GEOMETRY 1944 664 2024 744)
+      (GEOMETRY 1944 216 2024 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 704)
+        (POSITION 1920 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1460,11 +1460,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1432 40 1512)
+      (GEOMETRY -40 920 40 1000)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1472)
+        (POSITION 64 960)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1485,11 +1485,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1560 40 1640)
+      (GEOMETRY -40 1048 40 1128)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1600)
+        (POSITION 64 1088)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1510,11 +1510,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 9048 40 9128)
+      (GEOMETRY -40 2712 40 2792)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 9088)
+        (POSITION 64 2752)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1535,11 +1535,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 408 2024 488)
+      (GEOMETRY 1944 88 2024 168)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 448)
+        (POSITION 1920 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1560,11 +1560,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 2264 2024 2344)
+      (GEOMETRY 1944 1432 2024 1512)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2304)
+        (POSITION 1920 1472)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1585,11 +1585,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 2520 2024 2600)
+      (GEOMETRY 1944 1560 2024 1640)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2560)
+        (POSITION 1920 1600)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1610,11 +1610,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 2648 2024 2728)
+      (GEOMETRY 1944 1688 2024 1768)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2688)
+        (POSITION 1920 1728)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1635,11 +1635,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 5592 2024 5672)
+      (GEOMETRY 1944 4504 2024 4584)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 5632)
+        (POSITION 1920 4544)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -1660,11 +1660,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 1688 40 1768)
+      (GEOMETRY -40 1176 40 1256)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1728)
+        (POSITION 64 1216)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -1673,18 +1673,19 @@
         (TEXT "FORCE_MASTER")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbde08165440d800f7048140000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbde08165440d800f7048140000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbde08165440d800f7048140000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'USB_READ_HANDLER."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'USB_READ_HANDLER."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'USB_READ_HANDLER' :"
                  "-- "
@@ -1755,12 +1756,16 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of USB_READ_HANDLER is"
+                 "architecture a0 of USB_READ_HANDLER is"
                  ""
-                 "signal PRE_TIME_SET: integer range 400 downto 0;-- The maximum PRE_TIME_SET can be 2 us. This are 400 steps of 5 ns. "
-                 "signal COINC_TIME_SET: integer range 1000 downto 0;-- The maximum COINC_TIME_SET can be 5 us. This are 1000 steps of 5 ns.  "
-                 "signal POST_TIME_SET: integer range 1600 downto 0;-- The maximum POST_TIME_SET can be 8 us. This are 1600 steps of 5 ns.  "
-                 "signal TOTAL_TIME_TMP: integer range 2000 downto 0;-- The maximum TOTAL_TIME can be 10 us. This are 2000 steps of 5 ns. "
+                 "signal PRE_TIME_SET:   integer range  400 downto 0 :=  200;"
+                 "        -- The maximum PRE_TIME_SET can be 2 us. This are 400 steps of 5 ns."
+                 "signal COINC_TIME_SET: integer range 1000 downto 0 :=  400;"
+                 "        -- The maximum COINC_TIME_SET can be 5 us. This are 1000 steps of 5 ns."
+                 "signal POST_TIME_SET:  integer range 1600 downto 0 :=  400;"
+                 "        -- The maximum POST_TIME_SET can be 8 us. This are 1600 steps of 5 ns."
+                 "signal TOTAL_TIME_TMP: integer range 2000 downto 0 := 1000;"
+                 "        -- The maximum TOTAL_TIME can be 10 us. This are 2000 steps of 5 ns."
                  "signal PRE_TIME_LOAD: std_logic_vector(15 downto 0);"
                  "signal COINC_TIME_LOAD: std_logic_vector(15 downto 0);"
                  "signal POST_TIME_LOAD: std_logic_vector(15 downto 0);"
@@ -1923,8 +1928,7 @@
                  "signal ONE_PPS_DEL2: std_logic;"
                  "signal SET_CURR_ADC: std_logic;"
                  "signal CLR_CURR_ADC: std_logic;"
-                 "signal CURR_ADC_COUNT: integer range 75 downto 0; "
-                 ""
+                 "signal CURR_ADC_COUNT: integer range 75 downto 0;"
                  ""
                  "begin"
                  ""
@@ -1934,6 +1938,7 @@
                  "  CHANGE_MS_STATE <= SPARE_BYTES(3);"
                  "  FORCE_MASTER <= FORCE_MASTER_TMP;"
                  "  FORCE_MASTER_TMP <= MASTER when CHANGE_MS_STATE = '0' else not MASTER;"
+                 ""
                  "  STATUS(7 downto 3) <= \"00000\";"
                  "  STATUS(2) <= USB_WRITE_ALLOWED;"
                  "  STATUS(1) <= SLAVE_PRESENT;"
@@ -1965,7 +1970,6 @@
                  "  POST_TIME <= POST_TIME_SET;"
                  "  TOTAL_TIME <= TOTAL_TIME_TMP;"
                  "  TOTAL_TIME_3X <= TOTAL_TIME_TMP + TOTAL_TIME_TMP + TOTAL_TIME_TMP;"
-                 "    "
                  "  ADC_MODE <= '0';"
                  "  ADC_nCS <= '0';"
                  "  ADC_A1 <= '0';"
@@ -1974,29 +1978,35 @@
                  "  READ_BUSY_OUT <= USB_READ_BUSY;"
                  "  STOP_READ_OUT <= STOP_READING;"
                  "  ERROR_READ_OUT <= READ_ERROR;"
-                 "  "
-                 "  process(CLK10MHz)"
+                 ""
+                 "  process(CLK10MHz, SYSRST)"
                  "  begin"
-                 "    if (CLK10MHz'event and CLK10MHz = '1') then"
+                 "    if (SYSRST = '1') then"
+                 "      PRE_TIME_TMP    <= \"0000000011001000\"; -- xc8= 200."
+                 "      PRE_TIME_TMP2   <= \"0000000011001000\";"
+                 "      COINC_TIME_TMP  <= \"0000000110010000\"; --x190= 400."
+                 "      COINC_TIME_TMP2 <= \"0000000110010000\";"
+                 "      POST_TIME_TMP   <= \"0000000110010000\"; --x190= 400."
+                 "      TOTAL_TIME_TMP  <= 1000;               --x3e8=1000."
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
                  "      if PRE_TIME_LOAD <= \"0000000110010000\" then -- 400"
                  "        PRE_TIME_TMP <= PRE_TIME_LOAD;"
-                 "      else  "
+                 "      else"
                  "        PRE_TIME_TMP <= \"0000000110010000\";"
                  "      end if;"
                  "      if COINC_TIME_LOAD <= \"0000001111101000\" then -- 1000"
                  "        COINC_TIME_TMP <= COINC_TIME_LOAD;"
-                 "      else  "
+                 "      else"
                  "        COINC_TIME_TMP <= \"0000001111101000\";"
                  "      end if;"
                  ""
-                 "        PRE_TIME_TMP2 <= PRE_TIME_TMP;"
-                 "        COINC_TIME_TMP2 <= COINC_TIME_TMP;"
+                 "      PRE_TIME_TMP2 <= PRE_TIME_TMP;"
+                 "      COINC_TIME_TMP2 <= COINC_TIME_TMP;"
                  ""
-                 "--      if FORCE_MASTER_TMP = '1' then "
+                 "--      if FORCE_MASTER_TMP = '1' then"
                  "--        PRE_TIME_TMP2 <= PRE_TIME_TMP;"
                  "--        COINC_TIME_TMP2 <= COINC_TIME_TMP;"
-                 "--      else  "
-                 "--        PRE_TIME_TMP2 <= PRE_TIME_TMP + \"0000000000000100\"; -- When a module is a slave, the timing needs a 20ns correction"
+                 "--      else--        PRE_TIME_TMP2 <= PRE_TIME_TMP + \"0000000000000100\"; -- When a module is a slave, the timing needs a 20ns correction"
                  "--        COINC_TIME_TMP2 <= COINC_TIME_TMP - \"0000000000000100\";"
                  "--      end if;"
                  ""
@@ -2004,14 +2014,12 @@
                  "        POST_TIME_TMP <= \"0000011111010000\" - PRE_TIME_TMP2 - COINC_TIME_TMP2;"
                  "      elsif POST_TIME_LOAD <= \"0000011001000000\" then -- 1600"
                  "        POST_TIME_TMP <= POST_TIME_LOAD;"
-                 "      else  "
+                 "      else"
                  "        POST_TIME_TMP <= \"0000011001000000\";"
                  "      end if;"
-                 "      "
                  "      TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET;"
-                 ""
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  PARAMETER_LIST(7 downto 0) <= CH1_OFFSET_ADJ_POS;"
                  "  PARAMETER_LIST(15 downto 8) <= CH1_OFFSET_ADJ_NEG;"
@@ -2039,7 +2047,6 @@
                  "  PARAMETER_LIST(247 downto 240) <= CH2_PMT_SUPPLY_CURR;"
                  "  PARAMETER_LIST(271 downto 248) <= VERSION;"
                  ""
-                 ""
                  "  --USB_WRITE_ENABLE <= not USB_READ_ENABLE;"
                  "  USB_RD <= RD_TMP;"
                  "  DAC_nWR <= WR_DACS;"
@@ -2054,76 +2061,76 @@
                  "  DAC_DATA_5 <= DAC_DATA_OUT(5);"
                  "  DAC_DATA_6 <= DAC_DATA_OUT(6);"
                  "  DAC_DATA_7 <= DAC_DATA_OUT(7);"
-                 "  "
+                 ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
-                 "      PRELOAD_DACS_DEL1 <= '0';        "
-                 "      PRELOAD_DACS_DEL2 <= '0';        "
-                 "      CH1_OFFSET_ADJ_POS_DEL <= \"00000000\";        "
-                 "      CH1_OFFSET_ADJ_NEG_DEL <= \"00000000\";        "
-                 "      CH2_OFFSET_ADJ_POS_DEL <= \"00000000\";        "
-                 "      CH2_OFFSET_ADJ_NEG_DEL <= \"00000000\";        "
-                 "      CH1_GAIN_ADJ_POS_DEL <= \"00000000\";        "
-                 "      CH1_GAIN_ADJ_NEG_DEL <= \"00000000\";        "
-                 "      CH2_GAIN_ADJ_POS_DEL <= \"00000000\";        "
-                 "      CH2_GAIN_ADJ_NEG_DEL <= \"00000000\";        "
-                 "      COMMON_OFFSET_ADJ_DEL <= \"00000000\";        "
-                 "      FULL_SCALE_ADJ_DEL <= \"00000000\";        "
-                 "      CH1_INTEGRATOR_DEL <= \"00000000\";        "
-                 "      CH2_INTEGRATOR_DEL <= \"00000000\";        "
-                 "      COMP_THRES_LOW_DEL <= \"00000000\";        "
-                 "      COMP_THRES_HIGH_DEL <= \"00000000\";        "
-                 "      CH1_PMT_HV_ADJ_DEL <= \"00000000\";        "
-                 "      CH2_PMT_HV_ADJ_DEL <= \"00000000\";        "
-                 "      ONE_PPS_DEL1 <= '0';        "
-                 "      ONE_PPS_DEL2 <= '0';        "
+                 "      PRELOAD_DACS_DEL1 <= '0';"
+                 "      PRELOAD_DACS_DEL2 <= '0';"
+                 "      CH1_OFFSET_ADJ_POS_DEL <= \"00000000\";"
+                 "      CH1_OFFSET_ADJ_NEG_DEL <= \"00000000\";"
+                 "      CH2_OFFSET_ADJ_POS_DEL <= \"00000000\";"
+                 "      CH2_OFFSET_ADJ_NEG_DEL <= \"00000000\";"
+                 "      CH1_GAIN_ADJ_POS_DEL <= \"00000000\";"
+                 "      CH1_GAIN_ADJ_NEG_DEL <= \"00000000\";"
+                 "      CH2_GAIN_ADJ_POS_DEL <= \"00000000\";"
+                 "      CH2_GAIN_ADJ_NEG_DEL <= \"00000000\";"
+                 "      COMMON_OFFSET_ADJ_DEL <= \"00000000\";"
+                 "      FULL_SCALE_ADJ_DEL <= \"00000000\";"
+                 "      CH1_INTEGRATOR_DEL <= \"00000000\";"
+                 "      CH2_INTEGRATOR_DEL <= \"00000000\";"
+                 "      COMP_THRES_LOW_DEL <= \"00000000\";"
+                 "      COMP_THRES_HIGH_DEL <= \"00000000\";"
+                 "      CH1_PMT_HV_ADJ_DEL <= \"00000000\";"
+                 "      CH2_PMT_HV_ADJ_DEL <= \"00000000\";"
+                 "      ONE_PPS_DEL1 <= '0';"
+                 "      ONE_PPS_DEL2 <= '0';"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
-                 "      PRELOAD_DACS_DEL1 <= PRELOAD_DACS;        "
-                 "      PRELOAD_DACS_DEL2 <= PRELOAD_DACS_DEL1;        "
-                 "      CH1_OFFSET_ADJ_POS_DEL <= CH1_OFFSET_ADJ_POS;        "
-                 "      CH1_OFFSET_ADJ_NEG_DEL <= CH1_OFFSET_ADJ_NEG;        "
-                 "      CH2_OFFSET_ADJ_POS_DEL <= CH2_OFFSET_ADJ_POS;        "
-                 "      CH2_OFFSET_ADJ_NEG_DEL <= CH2_OFFSET_ADJ_NEG;        "
-                 "      CH1_GAIN_ADJ_POS_DEL <= CH1_GAIN_ADJ_POS;        "
-                 "      CH1_GAIN_ADJ_NEG_DEL <= CH1_GAIN_ADJ_NEG;        "
-                 "      CH2_GAIN_ADJ_POS_DEL <= CH2_GAIN_ADJ_POS;        "
-                 "      CH2_GAIN_ADJ_NEG_DEL <= CH2_GAIN_ADJ_NEG;        "
-                 "      COMMON_OFFSET_ADJ_DEL <= COMMON_OFFSET_ADJ;        "
-                 "      FULL_SCALE_ADJ_DEL <= FULL_SCALE_ADJ;        "
-                 "      CH1_INTEGRATOR_DEL <= CH1_INTEGRATOR;        "
-                 "      CH2_INTEGRATOR_DEL <= CH2_INTEGRATOR;        "
-                 "      COMP_THRES_LOW_DEL <= COMP_THRES_LOW;        "
-                 "      COMP_THRES_HIGH_DEL <= COMP_THRES_HIGH;        "
-                 "      CH1_PMT_HV_ADJ_DEL <= CH1_PMT_HV_ADJ;        "
-                 "      CH2_PMT_HV_ADJ_DEL <= CH2_PMT_HV_ADJ;        "
-                 "      ONE_PPS_DEL1 <= ONE_PPS;        "
-                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;        "
+                 "      PRELOAD_DACS_DEL1 <= PRELOAD_DACS;"
+                 "      PRELOAD_DACS_DEL2 <= PRELOAD_DACS_DEL1;"
+                 "      CH1_OFFSET_ADJ_POS_DEL <= CH1_OFFSET_ADJ_POS;"
+                 "      CH1_OFFSET_ADJ_NEG_DEL <= CH1_OFFSET_ADJ_NEG;"
+                 "      CH2_OFFSET_ADJ_POS_DEL <= CH2_OFFSET_ADJ_POS;"
+                 "      CH2_OFFSET_ADJ_NEG_DEL <= CH2_OFFSET_ADJ_NEG;"
+                 "      CH1_GAIN_ADJ_POS_DEL <= CH1_GAIN_ADJ_POS;"
+                 "      CH1_GAIN_ADJ_NEG_DEL <= CH1_GAIN_ADJ_NEG;"
+                 "      CH2_GAIN_ADJ_POS_DEL <= CH2_GAIN_ADJ_POS;"
+                 "      CH2_GAIN_ADJ_NEG_DEL <= CH2_GAIN_ADJ_NEG;"
+                 "      COMMON_OFFSET_ADJ_DEL <= COMMON_OFFSET_ADJ;"
+                 "      FULL_SCALE_ADJ_DEL <= FULL_SCALE_ADJ;"
+                 "      CH1_INTEGRATOR_DEL <= CH1_INTEGRATOR;"
+                 "      CH2_INTEGRATOR_DEL <= CH2_INTEGRATOR;"
+                 "      COMP_THRES_LOW_DEL <= COMP_THRES_LOW;"
+                 "      COMP_THRES_HIGH_DEL <= COMP_THRES_HIGH;"
+                 "      CH1_PMT_HV_ADJ_DEL <= CH1_PMT_HV_ADJ;"
+                 "      CH2_PMT_HV_ADJ_DEL <= CH2_PMT_HV_ADJ;"
+                 "      ONE_PPS_DEL1 <= ONE_PPS;"
+                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
-                 "      WRITE_PARAMETER_LIST_DEL <= '0';        "
-                 "      PARAMETER_LIST_READOUT_DONE_DEL1 <= '0';        "
-                 "      READ_ERROR_READOUT_DONE_DEL1 <= '0';        "
-                 "      USB_WRITE_BUSY_DEL1 <= '0';        "
-                 "      USB_WRITE_BUSY_DEL2 <= '0';        "
-                 "      USB_WRITE_BUSY_DEL3 <= '0';        "
-                 "      USB_WRITE_BUSY_DEL4 <= '0';        "
-                 "      USB_WRITE_BUSY_DEL5 <= '0';        "
+                 "      WRITE_PARAMETER_LIST_DEL <= '0';"
+                 "      PARAMETER_LIST_READOUT_DONE_DEL1 <= '0';"
+                 "      READ_ERROR_READOUT_DONE_DEL1 <= '0';"
+                 "      USB_WRITE_BUSY_DEL1 <= '0';"
+                 "      USB_WRITE_BUSY_DEL2 <= '0';"
+                 "      USB_WRITE_BUSY_DEL3 <= '0';"
+                 "      USB_WRITE_BUSY_DEL4 <= '0';"
+                 "      USB_WRITE_BUSY_DEL5 <= '0';"
                  "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      WRITE_PARAMETER_LIST_DEL <= WRITE_PARAMETER_LIST;        "
-                 "      PARAMETER_LIST_READOUT_DONE_DEL1 <= PARAMETER_LIST_READOUT_DONE;        "
-                 "      READ_ERROR_READOUT_DONE_DEL1 <= READ_ERROR_READOUT_DONE;        "
-                 "      USB_WRITE_BUSY_DEL1 <= USB_WRITE_BUSY;        "
-                 "      USB_WRITE_BUSY_DEL2 <= USB_WRITE_BUSY_DEL1;        "
-                 "      USB_WRITE_BUSY_DEL3 <= USB_WRITE_BUSY_DEL2;        "
-                 "      USB_WRITE_BUSY_DEL4 <= USB_WRITE_BUSY_DEL3;        "
-                 "      USB_WRITE_BUSY_DEL5 <= USB_WRITE_BUSY_DEL4;        "
+                 "      WRITE_PARAMETER_LIST_DEL <= WRITE_PARAMETER_LIST;"
+                 "      PARAMETER_LIST_READOUT_DONE_DEL1 <= PARAMETER_LIST_READOUT_DONE;"
+                 "      READ_ERROR_READOUT_DONE_DEL1 <= READ_ERROR_READOUT_DONE;"
+                 "      USB_WRITE_BUSY_DEL1 <= USB_WRITE_BUSY;"
+                 "      USB_WRITE_BUSY_DEL2 <= USB_WRITE_BUSY_DEL1;"
+                 "      USB_WRITE_BUSY_DEL3 <= USB_WRITE_BUSY_DEL2;"
+                 "      USB_WRITE_BUSY_DEL4 <= USB_WRITE_BUSY_DEL3;"
+                 "      USB_WRITE_BUSY_DEL5 <= USB_WRITE_BUSY_DEL4;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,SYSRST)"
                  "  begin"
@@ -2136,7 +2143,7 @@
                  "        PARAMETER_LIST_VALID <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,SYSRST)"
                  "  begin"
@@ -2149,694 +2156,694 @@
                  "        READ_ERROR_VALID <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      USB_WRITE_ENABLE_TMP <= '0'; -- Default (on power up) USB is in read mode"
-                 "      USB_READ_BUSY <= '0'; "
+                 "      USB_READ_BUSY <= '0';"
                  "    elsif (CLKRD'event and CLKRD = '1') then"
                  "      if STOP_READING = '1' or READ_ERROR = '1' then -- on stop or error, reset USB_READ_BUSY"
                  "        USB_READ_BUSY <= '0';"
                  "      elsif USB_WRITE_BUSY_DEL4 = '0' and USB_WRITE_BUSY_DEL5 = '1' then -- on falling edge of USB_WRITE_BUSY, reset USB_WRITE_ENABLE"
                  "        USB_WRITE_ENABLE_TMP <= '0';"
                  "      elsif USB_WRITE_ENABLE_TMP = '1' or USB_READ_BUSY = '1' then -- if writing or reading is busy then do nothing"
-                 "        USB_READ_BUSY <= USB_READ_BUSY; "
-                 "        USB_WRITE_ENABLE_TMP <= USB_WRITE_ENABLE_TMP; "
+                 "        USB_READ_BUSY <= USB_READ_BUSY;"
+                 "        USB_WRITE_ENABLE_TMP <= USB_WRITE_ENABLE_TMP;"
                  "      elsif USB_READ_BUSY = '0' and USB_RXF = '0' then -- reading has first priority; USB_RXF = '0' when there is data to readout"
                  "        USB_READ_BUSY <= '1';"
-                 "      elsif USB_WRITE_ENABLE_TMP = '0' and USB_WRITE_REQUEST = '1' and USB_WRITE_ALLOWED = '1' then "
+                 "      elsif USB_WRITE_ENABLE_TMP = '0' and USB_WRITE_REQUEST = '1' and USB_WRITE_ALLOWED = '1' then"
                  "        USB_WRITE_ENABLE_TMP <= '1';"
                  "      else"
                  "        USB_READ_BUSY <= '0';"
                  "        USB_WRITE_ENABLE_TMP <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,SYSRST,READ_ID,USB_DATA_IN)"
                  "  begin"
                  "    if SYSRST = '1' then"
-                 "      RD_TMP <= '1'; "
+                 "      RD_TMP <= '1';"
                  "      READ_COUNT <= 0;"
                  "      READ_ID <= (others => '0');"
-                 "	  READ_ERROR <= '0';"
-                 "  	  READ_ERROR_DATA <= (others => '0');"
-                 "	  STOP_READING <= '0';"
-                 "  	  TIME_OUT_COUNT <= (others => '0');"
-                 "	  CH1_OFFSET_ADJ_POS_TMP <= (others => '0');"
-                 "	  CH1_OFFSET_ADJ_NEG_TMP <= (others => '0');"
-                 "	  CH2_OFFSET_ADJ_POS_TMP <= (others => '0');"
-                 "	  CH2_OFFSET_ADJ_NEG_TMP <= (others => '0');"
-                 "	  CH1_GAIN_ADJ_POS_TMP <= (others => '0');"
-                 "	  CH1_GAIN_ADJ_NEG_TMP <= (others => '0');"
-                 "	  CH2_GAIN_ADJ_POS_TMP <= (others => '0');"
-                 "	  CH2_GAIN_ADJ_NEG_TMP <= (others => '0');"
-                 "	  COMMON_OFFSET_ADJ_TMP <= (others => '0');"
-                 "	  FULL_SCALE_ADJ_TMP <= (others => '0');"
-                 "	  CH1_INTEGRATOR_TMP <= (others => '0');"
-                 "	  CH2_INTEGRATOR_TMP <= (others => '0');"
-                 "	  COMP_THRES_LOW_TMP <= (others => '0');"
-                 "	  COMP_THRES_HIGH_TMP <= (others => '0');"
-                 "	  CH1_PMT_HV_ADJ_TMP <= (others => '0');"
-                 "	  CH2_PMT_HV_ADJ_TMP <= (others => '0');"
-                 "	  CH1_THRES_LOW_TMP <= (others => '0');"
-                 "	  CH1_THRES_HIGH_TMP <= (others => '0');"
-                 "	  CH2_THRES_LOW_TMP <= (others => '0');"
-                 "	  CH2_THRES_HIGH_TMP <= (others => '0');"
-                 "  	  TR_CONDITION_TMP <= (others => '0');"
-                 "	  PRE_TIME_LOAD_TMP <= (others => '0');"
-                 "	  COINC_TIME_LOAD_TMP <= (others => '0');"
-                 "	  POST_TIME_LOAD_TMP <= (others => '0'); "
-                 "	  SPARE_BYTES_TMP <= (others => '0');"
-                 "	  CH1_OFFSET_ADJ_POS <= \"10000000\";"
-                 "	  CH1_OFFSET_ADJ_NEG <= \"10000000\";"
-                 "	  CH2_OFFSET_ADJ_POS <= \"10000000\";"
-                 "	  CH2_OFFSET_ADJ_NEG <= \"10000000\";"
-                 "	  CH1_GAIN_ADJ_POS <= \"10000000\";"
-                 "	  CH1_GAIN_ADJ_NEG <= \"10000000\";"
-                 "	  CH2_GAIN_ADJ_POS <= \"10000000\";"
-                 "	  CH2_GAIN_ADJ_NEG <= \"10000000\";"
-                 "	  COMMON_OFFSET_ADJ <= \"00000000\";"
-                 "	  FULL_SCALE_ADJ <= \"00000000\";"
-                 "	  CH1_INTEGRATOR <= \"11111111\";"
-                 "	  CH2_INTEGRATOR <= \"11111111\";"
-                 "	  COMP_THRES_LOW <= \"01011000\";"
-                 "	  COMP_THRES_HIGH <= \"11100110\";"
-                 "	  CH1_PMT_HV_ADJ <= \"00000000\";"
-                 "	  CH2_PMT_HV_ADJ <= \"00000000\";"
-                 "	  CH1_THRES_LOW <= \"0000000100000000\";"
-                 "	  CH1_THRES_HIGH <= \"0000100000000000\";"
-                 "	  CH2_THRES_LOW <= \"0000000100000000\";"
-                 "	  CH2_THRES_HIGH <= \"0000100000000000\";"
-                 "  	  TR_CONDITION <= \"00001000\";"
-                 "	  PRE_TIME_LOAD <= \"0000000011001000\";"
-                 "	  COINC_TIME_LOAD <= \"0000000110010000\";"
-                 "	  POST_TIME_LOAD <= \"0000000110010000\"; "
-                 "	  SPARE_BYTES <= (others => '0');"
+                 "      READ_ERROR <= '0';"
+                 "      READ_ERROR_DATA <= (others => '0');"
+                 "      STOP_READING <= '0';"
+                 "      TIME_OUT_COUNT <= (others => '0');"
+                 "      CH1_OFFSET_ADJ_POS_TMP <= (others => '0');"
+                 "      CH1_OFFSET_ADJ_NEG_TMP <= (others => '0');"
+                 "      CH2_OFFSET_ADJ_POS_TMP <= (others => '0');"
+                 "      CH2_OFFSET_ADJ_NEG_TMP <= (others => '0');"
+                 "      CH1_GAIN_ADJ_POS_TMP <= (others => '0');"
+                 "      CH1_GAIN_ADJ_NEG_TMP <= (others => '0');"
+                 "      CH2_GAIN_ADJ_POS_TMP <= (others => '0');"
+                 "      CH2_GAIN_ADJ_NEG_TMP <= (others => '0');"
+                 "      COMMON_OFFSET_ADJ_TMP <= (others => '0');"
+                 "      FULL_SCALE_ADJ_TMP <= (others => '0');"
+                 "      CH1_INTEGRATOR_TMP <= (others => '0');"
+                 "      CH2_INTEGRATOR_TMP <= (others => '0');"
+                 "      COMP_THRES_LOW_TMP <= (others => '0');"
+                 "      COMP_THRES_HIGH_TMP <= (others => '0');"
+                 "      CH1_PMT_HV_ADJ_TMP <= (others => '0');"
+                 "      CH2_PMT_HV_ADJ_TMP <= (others => '0');"
+                 "      CH1_THRES_LOW_TMP <= (others => '0');"
+                 "      CH1_THRES_HIGH_TMP <= (others => '0');"
+                 "      CH2_THRES_LOW_TMP <= (others => '0');"
+                 "      CH2_THRES_HIGH_TMP <= (others => '0');"
+                 "      TR_CONDITION_TMP <= \"01000000\"; --(others => '0');"
+                 "      PRE_TIME_LOAD_TMP <= (others => '0');"
+                 "      COINC_TIME_LOAD_TMP <= (others => '0');"
+                 "      POST_TIME_LOAD_TMP <= (others => '0');"
+                 "      SPARE_BYTES_TMP <= (others => '0');"
+                 "      CH1_OFFSET_ADJ_POS <= \"10000000\";"
+                 "      CH1_OFFSET_ADJ_NEG <= \"10000000\";"
+                 "      CH2_OFFSET_ADJ_POS <= \"10000000\";"
+                 "      CH2_OFFSET_ADJ_NEG <= \"10000000\";"
+                 "      CH1_GAIN_ADJ_POS <= \"10000000\";"
+                 "      CH1_GAIN_ADJ_NEG <= \"10000000\";"
+                 "      CH2_GAIN_ADJ_POS <= \"10000000\";"
+                 "      CH2_GAIN_ADJ_NEG <= \"10000000\";"
+                 "      COMMON_OFFSET_ADJ <= \"00000000\";"
+                 "      FULL_SCALE_ADJ <= \"00000000\";"
+                 "      CH1_INTEGRATOR <= \"11111111\";"
+                 "      CH2_INTEGRATOR <= \"11111111\";"
+                 "      COMP_THRES_LOW <= \"01011000\";"
+                 "      COMP_THRES_HIGH <= \"11100110\";"
+                 "      CH1_PMT_HV_ADJ <= \"00000000\";"
+                 "      CH2_PMT_HV_ADJ <= \"00000000\";"
+                 "      CH1_THRES_LOW <= \"0000000100000000\";"
+                 "      CH1_THRES_HIGH <= \"0000100000000000\";"
+                 "      CH2_THRES_LOW <= \"0000000100000000\";"
+                 "      CH2_THRES_HIGH <= \"0000100000000000\";"
+                 "      TR_CONDITION <= \"00001000\";"
+                 "      PRE_TIME_LOAD <= \"0000000011001000\";"
+                 "      COINC_TIME_LOAD <= \"0000000110010000\";"
+                 "      POST_TIME_LOAD <= \"0000000110010000\";"
+                 "      SPARE_BYTES <= (others => '0');"
                  "      WRITE_PARAMETER_LIST <= '0';"
-                 "      SOFT_RESET <= '0';	  "
+                 "      SOFT_RESET <= '0';"
                  "    elsif (CLKRD'event and CLKRD = '1') then"
                  "      if USB_READ_BUSY = '1' and READ_ERROR = '0' and STOP_READING = '0' then"
                  "        TIME_OUT_COUNT <= TIME_OUT_COUNT + \"000000000000000000000001\"; -- counts 1s if reading hangs"
-                 "        if TIME_OUT_COUNT(23) = '1' then "
+                 "        if TIME_OUT_COUNT(23) = '1' then"
                  "          READ_ERROR <= '1';"
-                 "  	      READ_ERROR_DATA <= \"11111111\"; -- Timed out"
-                 "        elsif USB_RXF = '0' then "
-                 "          if RD_TMP = '1' then "
-                 "            RD_TMP <= '0'; "
-                 "          else "
+                 "          READ_ERROR_DATA <= \"11111111\"; -- Timed out"
+                 "        elsif USB_RXF = '0' then"
+                 "          if RD_TMP = '1' then"
+                 "            RD_TMP <= '0';"
+                 "          else"
                  "            RD_TMP <= '1';"
                  "            if READ_COUNT = 0 then -- wait for startbyte 99h"
                  "              if USB_DATA_IN = \"10011001\" then -- if there is a startbyte"
                  "                READ_COUNT <= READ_COUNT + 1; -- count the startbyte"
                  "              else -- if there is no startbyte"
                  "                READ_ERROR <= '1';"
-                 "  			    READ_ERROR_DATA <= \"10011001\"; -- Missing start byte"
+                 "                READ_ERROR_DATA <= \"10011001\"; -- Missing start byte"
                  "              end if;"
                  "            elsif READ_COUNT = 1 then -- get ID"
-                 "              if USB_DATA_IN = \"00010000\" or USB_DATA_IN = \"00010001\" or USB_DATA_IN = \"00010010\" or USB_DATA_IN = \"00010011\" "
-                 "                or USB_DATA_IN = \"00010100\" or USB_DATA_IN = \"00010101\" or USB_DATA_IN = \"00010110\" or USB_DATA_IN = \"00010111\" "
-                 "                or USB_DATA_IN = \"00011000\" or USB_DATA_IN = \"00011001\" or USB_DATA_IN = \"00011010\" or USB_DATA_IN = \"00011011\" "
-                 "                or USB_DATA_IN = \"00011100\" or USB_DATA_IN = \"00011101\" or USB_DATA_IN = \"00011110\" or USB_DATA_IN = \"00011111\" "
-                 "                or USB_DATA_IN = \"00100000\" or USB_DATA_IN = \"00100001\" or USB_DATA_IN = \"00100010\" or USB_DATA_IN = \"00100011\" "
-                 "                or USB_DATA_IN = \"00110000\" or USB_DATA_IN = \"00110001\" or USB_DATA_IN = \"00110010\" or USB_DATA_IN = \"00110011\" "
-                 "                or USB_DATA_IN = \"00110101\" "
-                 "                or USB_DATA_IN = \"01000000\" or USB_DATA_IN = \"01000001\" or USB_DATA_IN = \"01000010\" or USB_DATA_IN = \"01000011\" "
-                 "                or USB_DATA_IN = \"01000100\" or USB_DATA_IN = \"01000101\" or USB_DATA_IN = \"01000110\" or USB_DATA_IN = \"01000111\" "
-                 "                or USB_DATA_IN = \"01010000\" or USB_DATA_IN = \"01010101\" or USB_DATA_IN = \"10001000\" or USB_DATA_IN = \"11111111\" then -- if there is a valid ID"
+                 "              if USB_DATA_IN = \"00010000\" or USB_DATA_IN = \"00010001\" or USB_DATA_IN = \"00010010\" or USB_DATA_IN = \"00010011\""
+                 "              or USB_DATA_IN = \"00010100\" or USB_DATA_IN = \"00010101\" or USB_DATA_IN = \"00010110\" or USB_DATA_IN = \"00010111\""
+                 "              or USB_DATA_IN = \"00011000\" or USB_DATA_IN = \"00011001\" or USB_DATA_IN = \"00011010\" or USB_DATA_IN = \"00011011\""
+                 "              or USB_DATA_IN = \"00011100\" or USB_DATA_IN = \"00011101\" or USB_DATA_IN = \"00011110\" or USB_DATA_IN = \"00011111\""
+                 "              or USB_DATA_IN = \"00100000\" or USB_DATA_IN = \"00100001\" or USB_DATA_IN = \"00100010\" or USB_DATA_IN = \"00100011\""
+                 "              or USB_DATA_IN = \"00110000\" or USB_DATA_IN = \"00110001\" or USB_DATA_IN = \"00110010\" or USB_DATA_IN = \"00110011\""
+                 "              or USB_DATA_IN = \"00110101\""
+                 "              or USB_DATA_IN = \"01000000\" or USB_DATA_IN = \"01000001\" or USB_DATA_IN = \"01000010\" or USB_DATA_IN = \"01000011\""
+                 "              or USB_DATA_IN = \"01000100\" or USB_DATA_IN = \"01000101\" or USB_DATA_IN = \"01000110\" or USB_DATA_IN = \"01000111\""
+                 "              or USB_DATA_IN = \"01010000\" or USB_DATA_IN = \"01010101\" or USB_DATA_IN = \"10001000\" or USB_DATA_IN = \"11111111\" then -- if there is a valid ID"
                  "                READ_COUNT <= READ_COUNT + 1; -- count the ID byte"
                  "                READ_ID <= USB_DATA_IN;"
                  "              else -- if there is no valid ID"
                  "                READ_ERROR <= '1';"
-                 "  			    READ_ERROR_DATA <= \"10001001\"; -- Wrong ID 89h"
+                 "                READ_ERROR_DATA <= \"10001001\"; -- Wrong ID 89h"
                  "              end if;"
-                 "            elsif READ_COUNT = 2 then -- get first data byte or end byte             "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      	      if READ_ID = \"01010101\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          WRITE_PARAMETER_LIST <= '1'; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "            elsif READ_COUNT = 2 then -- get first data byte or end byte"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              if READ_ID = \"01010101\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  WRITE_PARAMETER_LIST <= '1';"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"11111111\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          SOFT_RESET <= '1'; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"11111111\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  SOFT_RESET <= '1';"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      		  case (READ_ID) is"
-                 "    		    when \"00010000\" => CH1_OFFSET_ADJ_POS_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010001\" => CH1_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010010\" => CH2_OFFSET_ADJ_POS_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010011\" => CH2_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010100\" => CH1_GAIN_ADJ_POS_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010101\" => CH1_GAIN_ADJ_NEG_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010110\" => CH2_GAIN_ADJ_POS_TMP <= USB_DATA_IN; "
-                 "    		    when \"00010111\" => CH2_GAIN_ADJ_NEG_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011000\" => COMMON_OFFSET_ADJ_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011001\" => FULL_SCALE_ADJ_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011010\" => CH1_INTEGRATOR_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011011\" => CH2_INTEGRATOR_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011100\" => COMP_THRES_LOW_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011101\" => COMP_THRES_HIGH_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011110\" => CH1_PMT_HV_ADJ_TMP <= USB_DATA_IN; "
-                 "    		    when \"00011111\" => CH2_PMT_HV_ADJ_TMP <= USB_DATA_IN; "
-                 "      	        when \"00100000\" => CH1_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "      	        when \"00100001\" => CH1_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "      	        when \"00100010\" => CH2_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN; "
+                 "              case (READ_ID) is"
+                 "                when \"00010000\" => CH1_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when \"00010001\" => CH1_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when \"00010010\" => CH2_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when \"00010011\" => CH2_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when \"00010100\" => CH1_GAIN_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when \"00010101\" => CH1_GAIN_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when \"00010110\" => CH2_GAIN_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when \"00010111\" => CH2_GAIN_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when \"00011000\" => COMMON_OFFSET_ADJ_TMP <= USB_DATA_IN;"
+                 "                when \"00011001\" => FULL_SCALE_ADJ_TMP <= USB_DATA_IN;"
+                 "                when \"00011010\" => CH1_INTEGRATOR_TMP <= USB_DATA_IN;"
+                 "                when \"00011011\" => CH2_INTEGRATOR_TMP <= USB_DATA_IN;"
+                 "                when \"00011100\" => COMP_THRES_LOW_TMP <= USB_DATA_IN;"
+                 "                when \"00011101\" => COMP_THRES_HIGH_TMP <= USB_DATA_IN;"
+                 "                when \"00011110\" => CH1_PMT_HV_ADJ_TMP <= USB_DATA_IN;"
+                 "                when \"00011111\" => CH2_PMT_HV_ADJ_TMP <= USB_DATA_IN;"
+                 "                when \"00100000\" => CH1_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when \"00100001\" => CH1_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when \"00100010\" => CH2_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
                  "      	        when \"00100011\" => CH2_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "     	        when \"00110000\" => TR_CONDITION_TMP <= USB_DATA_IN; "
+                 "     	        when \"00110000\" => TR_CONDITION_TMP <= USB_DATA_IN;"
                  "      	        when \"00110001\" => PRE_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
                  "      	        when \"00110010\" => COINC_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
                  "      	        when \"00110011\" => POST_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
                  "      	        when \"00110101\" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;"
                  "      	        when \"01010000\" => CH1_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
+                 "                when others =>  -- Do nothing"
                  "    	      end case;"
-                 "            elsif READ_COUNT = 3 then -- get second data byte or end byte             "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      	      if READ_ID = \"00010000\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_OFFSET_ADJ_POS <= CH1_OFFSET_ADJ_POS_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "            elsif READ_COUNT = 3 then -- get second data byte or end byte"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              if READ_ID = \"00010000\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_OFFSET_ADJ_POS <= CH1_OFFSET_ADJ_POS_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010001\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_OFFSET_ADJ_NEG <= CH1_OFFSET_ADJ_NEG_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010001\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_OFFSET_ADJ_NEG <= CH1_OFFSET_ADJ_NEG_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010010\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_OFFSET_ADJ_POS <= CH2_OFFSET_ADJ_POS_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010010\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_OFFSET_ADJ_POS <= CH2_OFFSET_ADJ_POS_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010011\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_OFFSET_ADJ_NEG <= CH2_OFFSET_ADJ_NEG_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010011\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_OFFSET_ADJ_NEG <= CH2_OFFSET_ADJ_NEG_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010100\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_GAIN_ADJ_POS <= CH1_GAIN_ADJ_POS_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010100\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_GAIN_ADJ_POS <= CH1_GAIN_ADJ_POS_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010101\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_GAIN_ADJ_NEG <= CH1_GAIN_ADJ_NEG_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010101\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_GAIN_ADJ_NEG <= CH1_GAIN_ADJ_NEG_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010110\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_GAIN_ADJ_POS <= CH2_GAIN_ADJ_POS_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010110\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_GAIN_ADJ_POS <= CH2_GAIN_ADJ_POS_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00010111\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_GAIN_ADJ_NEG <= CH2_GAIN_ADJ_NEG_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00010111\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_GAIN_ADJ_NEG <= CH2_GAIN_ADJ_NEG_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011000\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          COMMON_OFFSET_ADJ <= COMMON_OFFSET_ADJ_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011000\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  COMMON_OFFSET_ADJ <= COMMON_OFFSET_ADJ_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011001\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          FULL_SCALE_ADJ <= FULL_SCALE_ADJ_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011001\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  FULL_SCALE_ADJ <= FULL_SCALE_ADJ_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011010\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_INTEGRATOR <= CH1_INTEGRATOR_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011010\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_INTEGRATOR <= CH1_INTEGRATOR_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011011\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_INTEGRATOR <= CH2_INTEGRATOR_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011011\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_INTEGRATOR <= CH2_INTEGRATOR_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011100\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          COMP_THRES_LOW <= COMP_THRES_LOW_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011100\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  COMP_THRES_LOW <= COMP_THRES_LOW_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011101\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          COMP_THRES_HIGH <= COMP_THRES_HIGH_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011101\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  COMP_THRES_HIGH <= COMP_THRES_HIGH_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011110\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_PMT_HV_ADJ <= CH1_PMT_HV_ADJ_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011110\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_PMT_HV_ADJ <= CH1_PMT_HV_ADJ_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00011111\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_PMT_HV_ADJ <= CH2_PMT_HV_ADJ_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00011111\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_PMT_HV_ADJ <= CH2_PMT_HV_ADJ_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00110000\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          TR_CONDITION <= TR_CONDITION_TMP; "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00110000\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  TR_CONDITION <= TR_CONDITION_TMP;"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      		  case (READ_ID) is"
-                 "      	        when \"00100000\" => CH1_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "      	        when \"00100001\" => CH1_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "      	        when \"00100010\" => CH2_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN; "
-                 "      	        when \"00100011\" => CH2_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "      	        when \"00110001\" => PRE_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "      	        when \"00110010\" => COINC_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "      	        when \"00110011\" => POST_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "              case (READ_ID) is"
+                 "                when \"00100000\" => CH1_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when \"00100001\" => CH1_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when \"00100010\" => CH2_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when \"00100011\" => CH2_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when \"00110001\" => PRE_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when \"00110010\" => COINC_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when \"00110011\" => POST_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
                  "      	        when \"00110101\" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;"
-                 "      	        when \"01010000\" => CH1_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 4 then -- get third data byte or end byte             "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      	      if READ_ID = \"00100000\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_THRES_LOW(15 downto 8) <= CH1_THRES_LOW_TMP(15 downto 8); "
-                 "      	          CH1_THRES_LOW(7 downto 0) <= CH1_THRES_LOW_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "                when \"01010000\" => CH1_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 4 then -- get third data byte or end byte"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              if READ_ID = \"00100000\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_THRES_LOW(15 downto 8) <= CH1_THRES_LOW_TMP(15 downto 8);"
+                 "                  CH1_THRES_LOW(7 downto 0) <= CH1_THRES_LOW_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00100001\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_THRES_HIGH(15 downto 8) <= CH1_THRES_HIGH_TMP(15 downto 8); "
-                 "      	          CH1_THRES_HIGH(7 downto 0) <= CH1_THRES_HIGH_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00100001\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_THRES_HIGH(15 downto 8) <= CH1_THRES_HIGH_TMP(15 downto 8);"
+                 "                  CH1_THRES_HIGH(7 downto 0) <= CH1_THRES_HIGH_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00100010\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_THRES_LOW(15 downto 8) <= CH2_THRES_LOW_TMP(15 downto 8); "
-                 "      	          CH2_THRES_LOW(7 downto 0) <= CH2_THRES_LOW_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00100010\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_THRES_LOW(15 downto 8) <= CH2_THRES_LOW_TMP(15 downto 8);"
+                 "                  CH2_THRES_LOW(7 downto 0) <= CH2_THRES_LOW_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00100011\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH2_THRES_HIGH(15 downto 8) <= CH2_THRES_HIGH_TMP(15 downto 8); "
-                 "      	          CH2_THRES_HIGH(7 downto 0) <= CH2_THRES_HIGH_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00100011\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH2_THRES_HIGH(15 downto 8) <= CH2_THRES_HIGH_TMP(15 downto 8);"
+                 "                  CH2_THRES_HIGH(7 downto 0) <= CH2_THRES_HIGH_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00110001\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          PRE_TIME_LOAD(15 downto 8) <= PRE_TIME_LOAD_TMP(15 downto 8); "
-                 "      	          PRE_TIME_LOAD(7 downto 0) <= PRE_TIME_LOAD_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00110001\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  PRE_TIME_LOAD(15 downto 8) <= PRE_TIME_LOAD_TMP(15 downto 8);"
+                 "                  PRE_TIME_LOAD(7 downto 0) <= PRE_TIME_LOAD_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00110010\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          COINC_TIME_LOAD(15 downto 8) <= COINC_TIME_LOAD_TMP(15 downto 8); "
-                 "      	          COINC_TIME_LOAD(7 downto 0) <= COINC_TIME_LOAD_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00110010\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  COINC_TIME_LOAD(15 downto 8) <= COINC_TIME_LOAD_TMP(15 downto 8);"
+                 "                  COINC_TIME_LOAD(7 downto 0) <= COINC_TIME_LOAD_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      	      if READ_ID = \"00110011\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          POST_TIME_LOAD(15 downto 8) <= POST_TIME_LOAD_TMP(15 downto 8); "
-                 "      	          POST_TIME_LOAD(7 downto 0) <= POST_TIME_LOAD_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              if READ_ID = \"00110011\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  POST_TIME_LOAD(15 downto 8) <= POST_TIME_LOAD_TMP(15 downto 8);"
+                 "                  POST_TIME_LOAD(7 downto 0) <= POST_TIME_LOAD_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      		  case (READ_ID) is"
-                 "      	        when \"00110101\" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "      	        when \"01010000\" => CH2_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 5 then -- get fourth data byte or end byte             "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"00110101\" => SPARE_BYTES_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "      	        when \"01010000\" => CH2_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 6 then -- get fifth data byte or end byte             "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      	      if READ_ID = \"00110101\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          SPARE_BYTES(31 downto 24) <= SPARE_BYTES_TMP(31 downto 24); "
-                 "      	          SPARE_BYTES(23 downto 16) <= SPARE_BYTES_TMP(23 downto 16); "
-                 "      	          SPARE_BYTES(15 downto 8) <= SPARE_BYTES_TMP(15 downto 8); "
-                 "      	          SPARE_BYTES(7 downto 0) <= SPARE_BYTES_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "              case (READ_ID) is"
+                 "                when \"00110101\" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when \"01010000\" => CH2_OFFSET_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 5 then -- get fourth data byte or end byte"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "              when \"00110101\" => SPARE_BYTES_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "              when \"01010000\" => CH2_OFFSET_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "              when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 6 then -- get fifth data byte or end byte"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              if READ_ID = \"00110101\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  SPARE_BYTES(31 downto 24) <= SPARE_BYTES_TMP(31 downto 24);"
+                 "                  SPARE_BYTES(23 downto 16) <= SPARE_BYTES_TMP(23 downto 16);"
+                 "                  SPARE_BYTES(15 downto 8) <= SPARE_BYTES_TMP(15 downto 8);"
+                 "                  SPARE_BYTES(7 downto 0) <= SPARE_BYTES_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_GAIN_ADJ_POS_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_GAIN_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 7 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_GAIN_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 8 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_GAIN_ADJ_POS_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
                  "    	      end case;"
-                 "            elsif READ_COUNT = 7 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_GAIN_ADJ_NEG_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
+                 "            elsif READ_COUNT = 9 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_GAIN_ADJ_NEG_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
                  "    	      end case;"
-                 "            elsif READ_COUNT = 8 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_GAIN_ADJ_POS_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
+                 "            elsif READ_COUNT = 10 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => COMMON_OFFSET_ADJ_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 11 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => FULL_SCALE_ADJ_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
                  "    	      end case;"
-                 "            elsif READ_COUNT = 9 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_GAIN_ADJ_NEG_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 10 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => COMMON_OFFSET_ADJ_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 11 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => FULL_SCALE_ADJ_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 12 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_INTEGRATOR_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 13 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_INTEGRATOR_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 14 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => COMP_THRES_LOW_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 15 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => COMP_THRES_HIGH_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 16 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_PMT_HV_ADJ_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 17 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_PMT_HV_ADJ_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 18 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 19 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 20 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 21 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH1_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 22 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 23 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 24 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 25 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => CH2_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 26 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => TR_CONDITION_TMP <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 27 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => PRE_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 28 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => PRE_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 29 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => COINC_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 30 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => COINC_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 31 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => POST_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 32 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => POST_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 33 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 34 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 35 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 36 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      		  case (READ_ID) is"
-                 "      	        when \"01010000\" => SPARE_BYTES_TMP(7 downto 0) <= USB_DATA_IN;"
-                 "		        when others =>  -- Do nothing"
-                 "    	      end case;"
-                 "            elsif READ_COUNT = 37 then              "
-                 "              READ_COUNT <= READ_COUNT + 1; "
-                 "      	      if READ_ID = \"01010000\" then"
-                 "      	        if USB_DATA_IN = \"01100110\" then"
-                 "      	          CH1_OFFSET_ADJ_POS <= CH1_OFFSET_ADJ_POS_TMP;"
-                 "	  			  CH1_OFFSET_ADJ_NEG <= CH1_OFFSET_ADJ_NEG_TMP; "
-                 "      	  		  CH2_OFFSET_ADJ_POS <= CH2_OFFSET_ADJ_POS_TMP; "
-                 "      	  		  CH2_OFFSET_ADJ_NEG <= CH2_OFFSET_ADJ_NEG_TMP; "
-                 "      	  		  CH1_GAIN_ADJ_POS <= CH1_GAIN_ADJ_POS_TMP; "
-                 "      	  		  CH1_GAIN_ADJ_NEG <= CH1_GAIN_ADJ_NEG_TMP; "
-                 "      	  		  CH2_GAIN_ADJ_POS <= CH2_GAIN_ADJ_POS_TMP; "
-                 "      	  		  CH2_GAIN_ADJ_NEG <= CH2_GAIN_ADJ_NEG_TMP; "
-                 "      	  		  COMMON_OFFSET_ADJ <= COMMON_OFFSET_ADJ_TMP; "
-                 "      	  		  FULL_SCALE_ADJ <= FULL_SCALE_ADJ_TMP; "
-                 "      	  		  CH1_INTEGRATOR <= CH1_INTEGRATOR_TMP; "
-                 "      	  		  CH2_INTEGRATOR <= CH2_INTEGRATOR_TMP; "
-                 "      	  		  COMP_THRES_LOW <= COMP_THRES_LOW_TMP; "
-                 "      	  		  COMP_THRES_HIGH <= COMP_THRES_HIGH_TMP; "
-                 "      	  		  CH1_PMT_HV_ADJ <= CH1_PMT_HV_ADJ_TMP; "
-                 "      	  		  CH2_PMT_HV_ADJ <= CH2_PMT_HV_ADJ_TMP; "
-                 "      	  		  CH1_THRES_LOW(15 downto 8) <= CH1_THRES_LOW_TMP(15 downto 8); "
-                 "      	  		  CH1_THRES_LOW(7 downto 0) <= CH1_THRES_LOW_TMP(7 downto 0); "
-                 "      	  		  CH1_THRES_HIGH(15 downto 8) <= CH1_THRES_HIGH_TMP(15 downto 8); "
-                 "      	  		  CH1_THRES_HIGH(7 downto 0) <= CH1_THRES_HIGH_TMP(7 downto 0); "
-                 "      	  		  CH2_THRES_LOW(15 downto 8) <= CH2_THRES_LOW_TMP(15 downto 8); "
-                 "      	  		  CH2_THRES_LOW(7 downto 0) <= CH2_THRES_LOW_TMP(7 downto 0); "
-                 "      	  		  CH2_THRES_HIGH(15 downto 8) <= CH2_THRES_HIGH_TMP(15 downto 8); "
-                 "      	  		  CH2_THRES_HIGH(7 downto 0) <= CH2_THRES_HIGH_TMP(7 downto 0); "
-                 "      	  	      TR_CONDITION <= TR_CONDITION_TMP; "
-                 "      	  		  PRE_TIME_LOAD(15 downto 8) <= PRE_TIME_LOAD_TMP(15 downto 8); "
-                 "      	  		  PRE_TIME_LOAD(7 downto 0) <= PRE_TIME_LOAD_TMP(7 downto 0); "
-                 "      	  		  COINC_TIME_LOAD(15 downto 8) <= COINC_TIME_LOAD_TMP(15 downto 8); "
-                 "      	  		  COINC_TIME_LOAD(7 downto 0) <= COINC_TIME_LOAD_TMP(7 downto 0); "
-                 "      	  		  POST_TIME_LOAD(15 downto 8) <= POST_TIME_LOAD_TMP(15 downto 8); "
-                 "      	  		  POST_TIME_LOAD(7 downto 0) <= POST_TIME_LOAD_TMP(7 downto 0); "
-                 "      	  		  SPARE_BYTES(31 downto 24) <= SPARE_BYTES_TMP(31 downto 24); "
-                 "      	  		  SPARE_BYTES(23 downto 16) <= SPARE_BYTES_TMP(23 downto 16); "
-                 "      	  		  SPARE_BYTES(15 downto 8) <= SPARE_BYTES_TMP(15 downto 8); "
-                 "      	  		  SPARE_BYTES(7 downto 0) <= SPARE_BYTES_TMP(7 downto 0); "
-                 "	              STOP_READING <= '1';"
-                 "      	        else"
+                 "            elsif READ_COUNT = 12 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_INTEGRATOR_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 13 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_INTEGRATOR_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 14 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => COMP_THRES_LOW_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 15 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => COMP_THRES_HIGH_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 16 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_PMT_HV_ADJ_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 17 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_PMT_HV_ADJ_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 18 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 19 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 20 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 21 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH1_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 22 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_THRES_LOW_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 23 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_THRES_LOW_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 24 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_THRES_HIGH_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 25 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => CH2_THRES_HIGH_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 26 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => TR_CONDITION_TMP <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 27 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => PRE_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 28 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => PRE_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 29 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => COINC_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 30 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => COINC_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 31 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => POST_TIME_LOAD_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 32 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => POST_TIME_LOAD_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 33 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => SPARE_BYTES_TMP(31 downto 24) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 34 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => SPARE_BYTES_TMP(23 downto 16) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 35 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => SPARE_BYTES_TMP(15 downto 8) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 36 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              case (READ_ID) is"
+                 "                when \"01010000\" => SPARE_BYTES_TMP(7 downto 0) <= USB_DATA_IN;"
+                 "                when others =>  -- Do nothing"
+                 "              end case;"
+                 "            elsif READ_COUNT = 37 then"
+                 "              READ_COUNT <= READ_COUNT + 1;"
+                 "              if READ_ID = \"01010000\" then"
+                 "                if USB_DATA_IN = \"01100110\" then"
+                 "                  CH1_OFFSET_ADJ_POS <= CH1_OFFSET_ADJ_POS_TMP;"
+                 "                  CH1_OFFSET_ADJ_NEG <= CH1_OFFSET_ADJ_NEG_TMP;"
+                 "                  CH2_OFFSET_ADJ_POS <= CH2_OFFSET_ADJ_POS_TMP;"
+                 "                  CH2_OFFSET_ADJ_NEG <= CH2_OFFSET_ADJ_NEG_TMP;"
+                 "                  CH1_GAIN_ADJ_POS <= CH1_GAIN_ADJ_POS_TMP;"
+                 "                  CH1_GAIN_ADJ_NEG <= CH1_GAIN_ADJ_NEG_TMP;"
+                 "                  CH2_GAIN_ADJ_POS <= CH2_GAIN_ADJ_POS_TMP;"
+                 "                  CH2_GAIN_ADJ_NEG <= CH2_GAIN_ADJ_NEG_TMP;"
+                 "                  COMMON_OFFSET_ADJ <= COMMON_OFFSET_ADJ_TMP;"
+                 "                  FULL_SCALE_ADJ <= FULL_SCALE_ADJ_TMP;"
+                 "                  CH1_INTEGRATOR <= CH1_INTEGRATOR_TMP;"
+                 "                  CH2_INTEGRATOR <= CH2_INTEGRATOR_TMP;"
+                 "                  COMP_THRES_LOW <= COMP_THRES_LOW_TMP;"
+                 "                  COMP_THRES_HIGH <= COMP_THRES_HIGH_TMP;"
+                 "                  CH1_PMT_HV_ADJ <= CH1_PMT_HV_ADJ_TMP;"
+                 "                  CH2_PMT_HV_ADJ <= CH2_PMT_HV_ADJ_TMP;"
+                 "                  CH1_THRES_LOW(15 downto 8) <= CH1_THRES_LOW_TMP(15 downto 8);"
+                 "                  CH1_THRES_LOW(7 downto 0) <= CH1_THRES_LOW_TMP(7 downto 0);"
+                 "                  CH1_THRES_HIGH(15 downto 8) <= CH1_THRES_HIGH_TMP(15 downto 8);"
+                 "                  CH1_THRES_HIGH(7 downto 0) <= CH1_THRES_HIGH_TMP(7 downto 0);"
+                 "                  CH2_THRES_LOW(15 downto 8) <= CH2_THRES_LOW_TMP(15 downto 8);"
+                 "                  CH2_THRES_LOW(7 downto 0) <= CH2_THRES_LOW_TMP(7 downto 0);"
+                 "                  CH2_THRES_HIGH(15 downto 8) <= CH2_THRES_HIGH_TMP(15 downto 8);"
+                 "                  CH2_THRES_HIGH(7 downto 0) <= CH2_THRES_HIGH_TMP(7 downto 0);"
+                 "                  TR_CONDITION <= TR_CONDITION_TMP;"
+                 "                  PRE_TIME_LOAD(15 downto 8) <= PRE_TIME_LOAD_TMP(15 downto 8);"
+                 "                  PRE_TIME_LOAD(7 downto 0) <= PRE_TIME_LOAD_TMP(7 downto 0);"
+                 "                  COINC_TIME_LOAD(15 downto 8) <= COINC_TIME_LOAD_TMP(15 downto 8);"
+                 "                  COINC_TIME_LOAD(7 downto 0) <= COINC_TIME_LOAD_TMP(7 downto 0);"
+                 "                  POST_TIME_LOAD(15 downto 8) <= POST_TIME_LOAD_TMP(15 downto 8);"
+                 "                  POST_TIME_LOAD(7 downto 0) <= POST_TIME_LOAD_TMP(7 downto 0);"
+                 "                  SPARE_BYTES(31 downto 24) <= SPARE_BYTES_TMP(31 downto 24);"
+                 "                  SPARE_BYTES(23 downto 16) <= SPARE_BYTES_TMP(23 downto 16);"
+                 "                  SPARE_BYTES(15 downto 8) <= SPARE_BYTES_TMP(15 downto 8);"
+                 "                  SPARE_BYTES(7 downto 0) <= SPARE_BYTES_TMP(7 downto 0);"
+                 "                  STOP_READING <= '1';"
+                 "                else"
                  "                  READ_ERROR <= '1';"
-                 "  		          READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "                  READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "                end if;"
                  "              end if;"
-                 "            elsif READ_COUNT = 38 then              "
+                 "            elsif READ_COUNT = 38 then"
                  "              READ_ERROR <= '1';"
-                 "  		      READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
+                 "              READ_ERROR_DATA <= \"01100110\"; -- Missing stop byte"
                  "            end if;"
                  "          end if;"
                  "        end if;"
                  "      else"
-                 "        RD_TMP <= '1'; "
+                 "        RD_TMP <= '1';"
                  "        READ_COUNT <= 0;"
-                 "	    READ_ERROR <= '0';"
-                 "	    STOP_READING <= '0';"
+                 "        READ_ERROR <= '0';"
+                 "        STOP_READING <= '0';"
                  "        WRITE_PARAMETER_LIST <= '0';"
-                 "        SOFT_RESET <= '0';	  "
-                 "  	    TIME_OUT_COUNT <= (others => '0');"
+                 "        SOFT_RESET <= '0';"
+                 "        TIME_OUT_COUNT <= (others => '0');"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
-                 "      PRELOAD_DAC_COUNT <= \"000\";        "
+                 "      PRELOAD_DAC_COUNT <= \"000\";"
                  "      PRELOAD_DACS <= '0';"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
                  "      if PRELOAD_DAC_COUNT /= \"111\" then"
@@ -2844,10 +2851,10 @@
                  "        PRELOAD_DACS <= '0';"
                  "      else"
                  "        PRELOAD_DAC_COUNT <= PRELOAD_DAC_COUNT;"
-                 "        PRELOAD_DACS <= '1';              "
+                 "        PRELOAD_DACS <= '1';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2857,10 +2864,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH1_OFFSET_ADJ_POS /= CH1_OFFSET_ADJ_POS_DEL) then"
                  "        SET_CH1_OFFSET_ADJ_POS <= '1';"
                  "      elsif CLR_CH1_OFFSET_ADJ_POS = '1' then"
-                 "        SET_CH1_OFFSET_ADJ_POS <= '0';              "
+                 "        SET_CH1_OFFSET_ADJ_POS <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2870,10 +2877,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH1_OFFSET_ADJ_NEG /= CH1_OFFSET_ADJ_NEG_DEL) then"
                  "        SET_CH1_OFFSET_ADJ_NEG <= '1';"
                  "      elsif CLR_CH1_OFFSET_ADJ_NEG = '1' then"
-                 "        SET_CH1_OFFSET_ADJ_NEG <= '0';              "
+                 "        SET_CH1_OFFSET_ADJ_NEG <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2883,10 +2890,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH2_OFFSET_ADJ_POS /= CH2_OFFSET_ADJ_POS_DEL) then"
                  "        SET_CH2_OFFSET_ADJ_POS <= '1';"
                  "      elsif CLR_CH2_OFFSET_ADJ_POS = '1' then"
-                 "        SET_CH2_OFFSET_ADJ_POS <= '0';              "
+                 "        SET_CH2_OFFSET_ADJ_POS <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2896,10 +2903,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH2_OFFSET_ADJ_NEG /= CH2_OFFSET_ADJ_NEG_DEL) then"
                  "        SET_CH2_OFFSET_ADJ_NEG <= '1';"
                  "      elsif CLR_CH2_OFFSET_ADJ_NEG = '1' then"
-                 "        SET_CH2_OFFSET_ADJ_NEG <= '0';              "
+                 "        SET_CH2_OFFSET_ADJ_NEG <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2909,10 +2916,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH1_GAIN_ADJ_POS /= CH1_GAIN_ADJ_POS_DEL) then"
                  "        SET_CH1_GAIN_ADJ_POS <= '1';"
                  "      elsif CLR_CH1_GAIN_ADJ_POS = '1' then"
-                 "        SET_CH1_GAIN_ADJ_POS <= '0';              "
+                 "        SET_CH1_GAIN_ADJ_POS <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2922,10 +2929,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH1_GAIN_ADJ_NEG /= CH1_GAIN_ADJ_NEG_DEL) then"
                  "        SET_CH1_GAIN_ADJ_NEG <= '1';"
                  "      elsif CLR_CH1_GAIN_ADJ_NEG = '1' then"
-                 "        SET_CH1_GAIN_ADJ_NEG <= '0';              "
+                 "        SET_CH1_GAIN_ADJ_NEG <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2935,10 +2942,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH2_GAIN_ADJ_POS /= CH2_GAIN_ADJ_POS_DEL) then"
                  "        SET_CH2_GAIN_ADJ_POS <= '1';"
                  "      elsif CLR_CH2_GAIN_ADJ_POS = '1' then"
-                 "        SET_CH2_GAIN_ADJ_POS <= '0';              "
+                 "        SET_CH2_GAIN_ADJ_POS <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2948,10 +2955,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH2_GAIN_ADJ_NEG /= CH2_GAIN_ADJ_NEG_DEL) then"
                  "        SET_CH2_GAIN_ADJ_NEG <= '1';"
                  "      elsif CLR_CH2_GAIN_ADJ_NEG = '1' then"
-                 "        SET_CH2_GAIN_ADJ_NEG <= '0';              "
+                 "        SET_CH2_GAIN_ADJ_NEG <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2961,10 +2968,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (COMMON_OFFSET_ADJ /= COMMON_OFFSET_ADJ_DEL) then"
                  "        SET_COMMON_OFFSET_ADJ <= '1';"
                  "      elsif CLR_COMMON_OFFSET_ADJ = '1' then"
-                 "        SET_COMMON_OFFSET_ADJ <= '0';              "
+                 "        SET_COMMON_OFFSET_ADJ <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2974,10 +2981,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (FULL_SCALE_ADJ /= FULL_SCALE_ADJ_DEL) then"
                  "        SET_FULL_SCALE_ADJ <= '1';"
                  "      elsif CLR_FULL_SCALE_ADJ = '1' then"
-                 "        SET_FULL_SCALE_ADJ <= '0';              "
+                 "        SET_FULL_SCALE_ADJ <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -2987,10 +2994,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH1_INTEGRATOR /= CH1_INTEGRATOR_DEL) then"
                  "        SET_CH1_INTEGRATOR <= '1';"
                  "      elsif CLR_CH1_INTEGRATOR = '1' then"
-                 "        SET_CH1_INTEGRATOR <= '0';              "
+                 "        SET_CH1_INTEGRATOR <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -3000,10 +3007,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH2_INTEGRATOR /= CH2_INTEGRATOR_DEL) then"
                  "        SET_CH2_INTEGRATOR <= '1';"
                  "      elsif CLR_CH2_INTEGRATOR = '1' then"
-                 "        SET_CH2_INTEGRATOR <= '0';              "
+                 "        SET_CH2_INTEGRATOR <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -3013,10 +3020,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (COMP_THRES_LOW /= COMP_THRES_LOW_DEL) then"
                  "        SET_COMP_THRES_LOW <= '1';"
                  "      elsif CLR_COMP_THRES_LOW = '1' then"
-                 "        SET_COMP_THRES_LOW <= '0';              "
+                 "        SET_COMP_THRES_LOW <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -3026,10 +3033,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (COMP_THRES_HIGH /= COMP_THRES_HIGH_DEL) then"
                  "        SET_COMP_THRES_HIGH <= '1';"
                  "      elsif CLR_COMP_THRES_HIGH = '1' then"
-                 "        SET_COMP_THRES_HIGH <= '0';              "
+                 "        SET_COMP_THRES_HIGH <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -3039,10 +3046,10 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH1_PMT_HV_ADJ /= CH1_PMT_HV_ADJ_DEL) then"
                  "        SET_CH1_PMT_HV_ADJ <= '1';"
                  "      elsif CLR_CH1_PMT_HV_ADJ = '1' then"
-                 "        SET_CH1_PMT_HV_ADJ <= '0';              "
+                 "        SET_CH1_PMT_HV_ADJ <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,PRELOAD_DACS)"
                  "  begin"
@@ -3052,14 +3059,15 @@
                  "      if (PRELOAD_DACS_DEL1 = '1' and PRELOAD_DACS_DEL2 = '0') or (CH2_PMT_HV_ADJ /= CH2_PMT_HV_ADJ_DEL) then"
                  "        SET_CH2_PMT_HV_ADJ <= '1';"
                  "      elsif CLR_CH2_PMT_HV_ADJ = '1' then"
-                 "        SET_CH2_PMT_HV_ADJ <= '0';              "
+                 "        SET_CH2_PMT_HV_ADJ <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "-- Changes are done because of channelswap on the board."
-                 "-- The DAC outputs to the analog channels are driven with the register of the other"
-                 "-- E.g. If you set the offset of channel 1 (by software), the offset of channel 2 will be set instead"
+                 "  -- Changes are done because of channelswap on the board."
+                 "  -- The DAC outputs to the analog channels are driven with the register of the other"
+                 "  -- E.g. If you set the offset of channel 1 (by software), the offset of channel 2 will be set instead"
+                 ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -3069,7 +3077,7 @@
                  "      DAC_A0 <= '0';"
                  "      DAC_nCS1 <= '1';"
                  "      DAC_nCS2 <= '1';"
-                 "      DAC_DATA_OUT <= \"00000000\";        "
+                 "      DAC_DATA_OUT <= \"00000000\";"
                  "      CLR_CH1_OFFSET_ADJ_POS <= '0';"
                  "      CLR_CH1_OFFSET_ADJ_NEG <= '0';"
                  "      CLR_CH2_OFFSET_ADJ_POS <= '0';"
@@ -3395,9 +3403,10 @@
                  "        end if;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Readout Current ADCs"
+                 ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -3406,10 +3415,10 @@
                  "      if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then  -- Starts at ONE_PPS"
                  "        SET_CURR_ADC <= '1';"
                  "      elsif CLR_CURR_ADC = '1' then"
-                 "        SET_CURR_ADC <= '0';              "
+                 "        SET_CURR_ADC <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST,CURR_ADC_COUNT,ADC_DATA_IN)"
                  "  begin"
@@ -3423,14 +3432,22 @@
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
                  "      if SET_CURR_ADC = '1' then"
                  "        CURR_ADC_COUNT <= CURR_ADC_COUNT + 1;"
-                 "    	case (CURR_ADC_COUNT) is"
-                 "      	  when 1 => ADC_A0 <= '0'; ADC_nRD <= '1';"
-                 "      	  when 8 => ADC_A0 <= '0'; ADC_nRD <= '0'; -- 700ns aquisition time"
-                 "      	  when 36 => ADC_A0 <= '1'; ADC_nRD <= '1'; CH1_PMT_SUPPLY_CURR <= ADC_DATA_IN; -- 2800ns conversion time"
-                 "      	  when 43 => ADC_A0 <= '1'; ADC_nRD <= '0'; -- 700ns aquisition time"
-                 "      	  when 71 => ADC_A0 <= '0'; ADC_nRD <= '1'; CH2_PMT_SUPPLY_CURR <= ADC_DATA_IN; CLR_CURR_ADC <= '1'; -- 2800ns conversion time"
-                 "		  when others =>  -- Do nothing"
-                 "    	end case;"
+                 "        case (CURR_ADC_COUNT) is"
+                 "        when 1 =>  ADC_A0 <= '0';"
+                 "                   ADC_nRD <= '1';"
+                 "        when 8 =>  ADC_A0 <= '0';"
+                 "                   ADC_nRD <= '0';                      -- 700ns aquisition time"
+                 "        when 36 => ADC_A0 <= '1';"
+                 "                   ADC_nRD <= '1';"
+                 "                   CH1_PMT_SUPPLY_CURR <= ADC_DATA_IN;  -- 2800ns conversion time"
+                 "        when 43 => ADC_A0 <= '1';"
+                 "                   ADC_nRD <= '0';                      -- 700ns aquisition time"
+                 "        when 71 => ADC_A0 <= '0';"
+                 "                   ADC_nRD <= '1';"
+                 "                   CH2_PMT_SUPPLY_CURR <= ADC_DATA_IN;"
+                 "                   CLR_CURR_ADC <= '1';                 -- 2800ns conversion time"
+                 "        when others =>  -- Do nothing"
+                 "        end case;"
                  "      else"
                  "        CLR_CURR_ADC <= '0';"
                  "        ADC_nRD <= '1';"
@@ -3438,10 +3455,9 @@
                  "        CURR_ADC_COUNT <= 0;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 ""
-                 "end rtl ; -- of USB_READ_HANDLER"
+                 "end architecture a0 ; -- of USB_READ_HANDLER"
                  ""
                  "")
     )

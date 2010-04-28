@@ -1,0 +1,445 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c8a0020176c5db40fe0961522830000")
+    (NAME "USB_HANDLER")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1920 3328)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (NAME "USB_HANDLER")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "thei")
+      (CREATED 1144412824 "Fri Apr 07 14:27:04 2006")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961532830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "USB_TXE")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1880 152 1960 232)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1856 192)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "USB_TXE")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961542830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "USB_WR")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1880 344 1960 424)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1856 384)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "USB_WR")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961552830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLKRD")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1880 2968 1960 3048)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1856 3008)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "CLKRD")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961562830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SYSRST")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 1880 3096 1960 3176)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1856 3136)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "SYSRST")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961572830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "RDEN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY -40 856 40 936)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "RDEN")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961582830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DIN_VALID")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 216 40 296)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DIN_VALID")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe0961592830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_READY")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 408 40 488)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 448)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_READY")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe09615a2830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "DATA_IN")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "7" "0")
+        )
+      )
+      (GEOMETRY -40 3032 40 3112)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 3072)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "DATA_IN(7:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe09615b2830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "USB_DATA")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "7" "0")
+        )
+      )
+      (GEOMETRY 1880 536 1960 616)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1856 576)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "USB_DATA(7:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a0020176c5db40fe09615c2830000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "READOUT_BUSY")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1880 728 1960 808)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1856 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "READOUT_BUSY")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c8a0020176c5db40fe09615d2830000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c8a0020176c5db40fe09615d2830000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'rtl' of 'USB_HANDLER."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'USB_HANDLER' :"
+                 "-- "
+                 "--   port("
+                 "--     CLKRD        : in     std_logic;"
+                 "--     DATA_IN      : in     std_logic_vector(7 downto 0);"
+                 "--     DATA_READY   : in     std_logic;"
+                 "--     DIN_VALID    : in     std_logic;"
+                 "--     RDEN         : out    std_logic;"
+                 "--     READOUT_BUSY : out    std_logic;"
+                 "--     SYSRST       : in     std_logic;"
+                 "--     USB_DATA     : out    std_logic_vector(7 downto 0);"
+                 "--     USB_TXE      : in     std_logic;"
+                 "--     USB_WR       : out    std_logic);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture rtl of USB_HANDLER is"
+                 ""
+                 "signal RDEN_TMP: std_logic ;"
+                 "signal VALID_BUF1: std_logic ;"
+                 "signal VALID_BUF1_DEL1: std_logic ;"
+                 "signal VALID_BUF1_DEL2: std_logic ;"
+                 "signal VALID_BUF2: std_logic ;"
+                 "signal RST_VALID_BUF1: std_logic ;"
+                 "signal RST_VALID_BUF2: std_logic ;"
+                 "signal DATA_BUF1: std_logic_vector(7 downto 0) ;"
+                 "signal DATA_BUF2: std_logic_vector(7 downto 0) ;"
+                 "signal USB_DATA_TMP: std_logic_vector(7 downto 0) ;"
+                 "signal WR_TMP: std_logic ;"
+                 ""
+                 "begin"
+                 "  "
+                 "  USB_WR <= WR_TMP;"
+                 "  RDEN <= RDEN_TMP;"
+                 "  USB_DATA <= USB_DATA_TMP;"
+                 "  READOUT_BUSY <= DATA_READY or VALID_BUF1;"
+                 "  "
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  VALID_BUF1_DEL1 <= '0';"
+                 "  	  VALID_BUF1_DEL2 <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '0') then "
+                 "  	  if RST_VALID_BUF1 = '1' then"
+                 "  	    VALID_BUF1_DEL1 <= '0';"
+                 "  	    VALID_BUF1_DEL2 <= '0';"
+                 "  	  else"
+                 "        VALID_BUF1_DEL1 <= VALID_BUF1;"
+                 "        VALID_BUF1_DEL2 <= VALID_BUF1_DEL1;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  RDEN_TMP <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '0') then -- RDEN changes on a negative clock edge"
+                 "  	  if DATA_READY = '1' then"
+                 "	    if VALID_BUF1 = '0' then"
+                 "          RDEN_TMP <= not RDEN_TMP;"
+                 "        else"
+                 "          RDEN_TMP <= '0';"
+                 "        end if;"
+                 "      else"
+                 "        RDEN_TMP <= '0';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  WR_TMP <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '1') then "
+                 "  	  if VALID_BUF1_DEL2 = '1' or VALID_BUF2 = '1' then"
+                 "   	    if USB_TXE = '0' then"
+                 "          WR_TMP <= not WR_TMP;"
+                 "        else  "
+                 "          WR_TMP <= '0';"
+                 "		end if;"
+                 "	  else "
+                 "        WR_TMP <= '0';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  DATA_BUF1 <= \"00000000\";"
+                 "  	  DATA_BUF2 <= \"00000000\";"
+                 "  	  VALID_BUF1 <= '0';"
+                 "  	  VALID_BUF2 <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '0') then "
+                 "  	  if RST_VALID_BUF1 = '1' then"
+                 "  	    VALID_BUF1 <= '0';"
+                 "  	  elsif DIN_VALID = '1' then"
+                 "  	    DATA_BUF1 <= DATA_IN;"
+                 "  	    VALID_BUF1 <= DIN_VALID;"
+                 "      end if;"
+                 "  	  if RST_VALID_BUF2 = '1' then"
+                 "  	    VALID_BUF2 <= '0';"
+                 "      elsif DIN_VALID = '1' and VALID_BUF1 = '1' then"
+                 "  	    VALID_BUF2 <= VALID_BUF1;"
+                 "  	    DATA_BUF2 <= DATA_BUF1;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  RST_VALID_BUF1 <= '0';"
+                 "  	  RST_VALID_BUF2 <= '0';"
+                 "    elsif (CLKRD'event and CLKRD = '0') then "
+                 "  	  if WR_TMP = '1' then "
+                 "        if VALID_BUF2  = '1' then"
+                 "          RST_VALID_BUF2 <= '1';"
+                 "        elsif VALID_BUF1_DEL2  = '1' then"
+                 "          RST_VALID_BUF1 <= '1';"
+                 "        end if;"
+                 "      else"
+                 "  	    RST_VALID_BUF1 <= '0';"
+                 "  	    RST_VALID_BUF2 <= '0';"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 "          "
+                 "  process(CLKRD,SYSRST)"
+                 "  begin"
+                 "  	if SYSRST = '1' then"
+                 "  	  USB_DATA_TMP <= \"00000000\";"
+                 "    elsif (CLKRD'event and CLKRD = '1') then "
+                 "      if VALID_BUF2 = '1' then"
+                 "        USB_DATA_TMP <= DATA_BUF2;"
+                 "      elsif VALID_BUF1 = '1' then"
+                 "        USB_DATA_TMP <= DATA_BUF1;"
+                 "      else"
+                 "        USB_DATA_TMP <= USB_DATA_TMP;        "
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
+                 ""
+                 ""
+                 "end architecture rtl ; -- of USB_HANDLER"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

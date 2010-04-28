@@ -5,20 +5,20 @@
     (NAME "THRESHOLD_COUNTERS")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2048 1152)
+    (GEOMETRY 0 0 1664 1024)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "THRESHOLD_COUNTERS")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1146570340 "Tue May 02 13:45:40 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c8a2066f8647544c6605edc9ef20000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 152 40 232)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 192)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -57,11 +57,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 280 40 360)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 320)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -82,11 +82,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 408 40 488)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 448)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -107,11 +107,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 536 40 616)
+      (GEOMETRY -40 472 40 552)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 576)
+        (POSITION 64 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -132,11 +132,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 664 40 744)
+      (GEOMETRY -40 600 40 680)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 704)
+        (POSITION 64 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -157,11 +157,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 792 40 872)
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 832)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -182,11 +182,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 920 40 1000)
+      (GEOMETRY -40 856 40 936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 960)
+        (POSITION 64 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -212,11 +212,11 @@
           (RANGE "63" "0")
         )
       )
-      (GEOMETRY 2008 216 2088 296)
+      (GEOMETRY 1624 216 1704 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1984 256)
+        (POSITION 1600 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -225,19 +225,19 @@
         (TEXT "TH_COUNTERS_OUT(63:0)")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c8a206646647544c6605edc7ef20000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c8a206646647544c6605edc7ef20000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c8a206646647544c6605edc7ef20000")
     (TYPE 2)
     (HDL_IDENT
       (PROPERTY "DEFAULT_ARCH" "true")
-      (NAME "rtl")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'THRESHOLD_COUNTERS."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'THRESHOLD_COUNTERS."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'THRESHOLD_COUNTERS' :"
                  "-- "
@@ -253,7 +253,7 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of THRESHOLD_COUNTERS is"
+                 "architecture a0 of THRESHOLD_COUNTERS is"
                  ""
                  "signal ML1_DEL: std_logic ;"
                  "signal MH1_DEL: std_logic ;"
@@ -267,7 +267,6 @@
                  "signal ML2_COUNTER: std_logic_vector(15 downto 0) ;"
                  "signal MH2_COUNTER: std_logic_vector(15 downto 0) ;"
                  ""
-                 ""
                  "begin"
                  ""
                  "  process(CLK200MHz,SYSRST)"
@@ -276,20 +275,20 @@
                  "      ML1_DEL <= '0';"
                  "      MH1_DEL <= '0';"
                  "      ML2_DEL <= '0';"
-                 "      MH2_DEL <= '0';  "
-                 "      ONE_PPS_DEL1 <= '0';        "
-                 "      ONE_PPS_DEL2 <= '0';        "
-                 "      ONE_PPS_DEL3 <= '0';        "
+                 "      MH2_DEL <= '0';"
+                 "      ONE_PPS_DEL1 <= '0';"
+                 "      ONE_PPS_DEL2 <= '0';"
+                 "      ONE_PPS_DEL3 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      ML1_DEL <= ML1;        "
-                 "      MH1_DEL <= MH1;        "
-                 "      ML2_DEL <= ML2;        "
-                 "      MH2_DEL <= MH2;        "
-                 "      ONE_PPS_DEL1 <= ONE_PPS;        "
-                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;        "
-                 "      ONE_PPS_DEL3 <= ONE_PPS_DEL2;        "
+                 "      ML1_DEL <= ML1;"
+                 "      MH1_DEL <= MH1;"
+                 "      ML2_DEL <= ML2;"
+                 "      MH2_DEL <= MH2;"
+                 "      ONE_PPS_DEL1 <= ONE_PPS;"
+                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
+                 "      ONE_PPS_DEL3 <= ONE_PPS_DEL2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -297,12 +296,12 @@
                  "      ML1_COUNTER <= \"0000000000000000\";"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        ML1_COUNTER <= \"0000000000000000\"; "
+                 "        ML1_COUNTER <= \"0000000000000000\";"
                  "      elsif ML1 = '1' and ML1_DEL = '0' then"
-                 "        ML1_COUNTER <= ML1_COUNTER + \"0000000000000001\";       "
+                 "        ML1_COUNTER <= ML1_COUNTER + \"0000000000000001\";"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -310,12 +309,12 @@
                  "      MH1_COUNTER <= \"0000000000000000\";"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        MH1_COUNTER <= \"0000000000000000\"; "
+                 "        MH1_COUNTER <= \"0000000000000000\";"
                  "      elsif MH1 = '1' and MH1_DEL = '0' then"
-                 "        MH1_COUNTER <= MH1_COUNTER + \"0000000000000001\";       "
+                 "        MH1_COUNTER <= MH1_COUNTER + \"0000000000000001\";"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -323,12 +322,12 @@
                  "      ML2_COUNTER <= \"0000000000000000\";"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        ML2_COUNTER <= \"0000000000000000\"; "
+                 "        ML2_COUNTER <= \"0000000000000000\";"
                  "      elsif ML2 = '1' and ML2_DEL = '0' then"
-                 "        ML2_COUNTER <= ML2_COUNTER + \"0000000000000001\";       "
+                 "        ML2_COUNTER <= ML2_COUNTER + \"0000000000000001\";"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -336,17 +335,17 @@
                  "      MH2_COUNTER <= \"0000000000000000\";"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        MH2_COUNTER <= \"0000000000000000\"; "
+                 "        MH2_COUNTER <= \"0000000000000000\";"
                  "      elsif MH2 = '1' and MH2_DEL = '0' then"
-                 "        MH2_COUNTER <= MH2_COUNTER + \"0000000000000001\";       "
+                 "        MH2_COUNTER <= MH2_COUNTER + \"0000000000000001\";"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
-                 "      TH_COUNTERS_OUT <= (others => '0'); "
+                 "      TH_COUNTERS_OUT <= (others => '0');"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then"
                  "        TH_COUNTERS_OUT(15 downto 0) <= ML1_COUNTER;"
@@ -355,10 +354,9 @@
                  "        TH_COUNTERS_OUT(63 downto 48) <= MH2_COUNTER;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 ""
-                 "end rtl ; -- of THRESHOLD_COUNTERS"
+                 "end architecture a0 ; -- of THRESHOLD_COUNTERS"
                  ""
                  "")
     )

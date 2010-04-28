@@ -5,20 +5,20 @@
     (NAME "DISCRIMINATORS")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2240 2880)
+    (GEOMETRY 0 0 2048 3200)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Tue May 12 11:41:13 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "DISCRIMINATORS")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1142852868 "Mon Mar 20 12:07:48 2006")
-      (MODIFIED 1242121272 "Tue May 12 11:41:12 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd08d8e1448e800f7019860000")
@@ -36,11 +36,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1048 40 1128)
+      (GEOMETRY -40 1112 40 1192)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1088)
+        (POSITION 64 1152)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -65,11 +65,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1176 40 1256)
+      (GEOMETRY -40 1240 40 1320)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1216)
+        (POSITION 64 1280)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -94,11 +94,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1304 40 1384)
+      (GEOMETRY -40 1368 40 1448)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1344)
+        (POSITION 64 1408)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -123,11 +123,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1432 40 1512)
+      (GEOMETRY -40 1496 40 1576)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1472)
+        (POSITION 64 1536)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -152,11 +152,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1816 40 1896)
+      (GEOMETRY -40 1880 40 1960)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1856)
+        (POSITION 64 1920)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -181,11 +181,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 1944 40 2024)
+      (GEOMETRY -40 2008 40 2088)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1984)
+        (POSITION 64 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -210,11 +210,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 2072 40 2152)
+      (GEOMETRY -40 2136 40 2216)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2112)
+        (POSITION 64 2176)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -239,11 +239,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 2200 40 2280)
+      (GEOMETRY -40 2264 40 2344)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2240)
+        (POSITION 64 2304)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -264,11 +264,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2648 40 2728)
+      (GEOMETRY -40 3032 40 3112)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2688)
+        (POSITION 64 3072)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -289,11 +289,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2520 40 2600)
+      (GEOMETRY -40 2904 40 2984)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2560)
+        (POSITION 64 2944)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -319,11 +319,11 @@
           (RANGE "1000" "0")
         )
       )
-      (GEOMETRY -40 2328 40 2408)
+      (GEOMETRY -40 2520 40 2600)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2368)
+        (POSITION 64 2560)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -344,11 +344,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 408 2280 488)
+      (GEOMETRY 2008 408 2088 488)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 448)
+        (POSITION 1984 448)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -369,11 +369,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 536 2280 616)
+      (GEOMETRY 2008 536 2088 616)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 576)
+        (POSITION 1984 576)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -394,11 +394,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 664 2280 744)
+      (GEOMETRY 2008 664 2088 744)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 704)
+        (POSITION 1984 704)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -419,11 +419,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 792 2280 872)
+      (GEOMETRY 2008 792 2088 872)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 832)
+        (POSITION 1984 832)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -444,11 +444,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1624 40 1704)
+      (GEOMETRY -40 1688 40 1768)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1664)
+        (POSITION 64 1728)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -469,11 +469,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 920 2280 1000)
+      (GEOMETRY 2008 920 2088 1000)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 960)
+        (POSITION 1984 960)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -494,11 +494,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 408 40 488)
+      (GEOMETRY -40 472 40 552)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 448)
+        (POSITION 64 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -519,11 +519,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 536 40 616)
+      (GEOMETRY -40 600 40 680)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 576)
+        (POSITION 64 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -544,11 +544,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 664 40 744)
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 704)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -569,11 +569,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 792 40 872)
+      (GEOMETRY -40 856 40 936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 832)
+        (POSITION 64 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -594,11 +594,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1112 2280 1192)
+      (GEOMETRY 2008 1112 2088 1192)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1152)
+        (POSITION 1984 1152)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -619,11 +619,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1240 2280 1320)
+      (GEOMETRY 2008 1240 2088 1320)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1280)
+        (POSITION 1984 1280)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -644,11 +644,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1368 2280 1448)
+      (GEOMETRY 2008 1368 2088 1448)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1408)
+        (POSITION 1984 1408)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -669,11 +669,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2200 1496 2280 1576)
+      (GEOMETRY 2008 1496 2088 1576)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2176 1536)
+        (POSITION 1984 1536)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -694,15 +694,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2200 2008 2280 2088)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2176 2048)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "MASTER")
       )
@@ -724,15 +724,15 @@
           (RANGE "1600" "0")
         )
       )
-      (GEOMETRY 2200 1688 2280 1768)
+      (GEOMETRY -40 2648 40 2728)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2176 1728)
+        (POSITION 64 2688)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "POST_TIME(1600:0)")
       )
@@ -749,31 +749,32 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2200 216 2280 296)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2176 256)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "BLOCK_COINC")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd40d8e1448e800f70f8860000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd40d8e1448e800f70f8860000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd40d8e1448e800f70f8860000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'DISCRIMINATORS."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'DISCRIMINATORS."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'DISCRIMINATORS' :"
                  "-- "
@@ -809,7 +810,7 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of DISCRIMINATORS is"
+                 "architecture a0 of DISCRIMINATORS is"
                  ""
                  "signal ML1_PRE: std_logic ; -- Time Over Threshold channel1 low"
                  "signal ML2_PRE: std_logic ; -- Time Over Threshold channel2 low"
@@ -836,51 +837,51 @@
                  "-- Om er zeker van te zijn dat ze op het eind van posttime in het volgenede blok ingeklokt worden."
                  "-- Dit is om het verschil in looptijd op te vangen tussen een signaal uit de ADC's, ongeveer 20 klokperiodes latency"
                  "-- en de vertraging van een hardware comparator."
-                 "signal COMPL1_IN_DEL1: std_logic ; "
-                 "signal COMPL1_IN_DEL2: std_logic ; "
-                 "signal COMPL1_IN_WIN: std_logic ; "
-                 "signal COMPL1_IN_CNT: integer range 2640 downto 0 ; "
-                 "signal COMPH1_IN_DEL1: std_logic ; "
-                 "signal COMPH1_IN_DEL2: std_logic ; "
-                 "signal COMPH1_IN_WIN: std_logic ; "
-                 "signal COMPH1_IN_CNT: integer range 2640 downto 0 ; "
-                 "signal COMPL2_IN_DEL1: std_logic ; "
-                 "signal COMPL2_IN_DEL2: std_logic ; "
-                 "signal COMPL2_IN_WIN: std_logic ; "
-                 "signal COMPL2_IN_CNT: integer range 2640 downto 0 ; "
-                 "signal COMPH2_IN_DEL1: std_logic ; "
-                 "signal COMPH2_IN_DEL2: std_logic ; "
-                 "signal COMPH2_IN_WIN: std_logic ; "
-                 "signal COMPH2_IN_CNT: integer range 2640 downto 0 ; "
+                 "signal COMPL1_IN_DEL1: std_logic ;"
+                 "signal COMPL1_IN_DEL2: std_logic ;"
+                 "signal COMPL1_IN_WIN: std_logic ;"
+                 "signal COMPL1_IN_CNT: integer range 2640 downto 0 ;"
+                 "signal COMPH1_IN_DEL1: std_logic ;"
+                 "signal COMPH1_IN_DEL2: std_logic ;"
+                 "signal COMPH1_IN_WIN: std_logic ;"
+                 "signal COMPH1_IN_CNT: integer range 2640 downto 0 ;"
+                 "signal COMPL2_IN_DEL1: std_logic ;"
+                 "signal COMPL2_IN_DEL2: std_logic ;"
+                 "signal COMPL2_IN_WIN: std_logic ;"
+                 "signal COMPL2_IN_CNT: integer range 2640 downto 0 ;"
+                 "signal COMPH2_IN_DEL1: std_logic ;"
+                 "signal COMPH2_IN_DEL2: std_logic ;"
+                 "signal COMPH2_IN_WIN: std_logic ;"
+                 "signal COMPH2_IN_CNT: integer range 2640 downto 0 ;"
                  ""
-                 "signal COMP_WIN_LENGTH: integer range 2640 downto 0 ; "
+                 "signal COMP_WIN_LENGTH: integer range 2640 downto 0 ;"
                  ""
                  "signal ML1_DEL1: std_logic ; -- Compensates the delay from slave to master"
-                 "signal ML1_DEL2: std_logic ; "
-                 "signal ML1_DEL3: std_logic ; "
-                 "signal ML1_DEL4: std_logic ; "
-                 "signal MH1_DEL1: std_logic ; "
-                 "signal MH1_DEL2: std_logic ; "
-                 "signal MH1_DEL3: std_logic ; "
-                 "signal MH1_DEL4: std_logic ; "
-                 "signal ML2_DEL1: std_logic ; "
-                 "signal ML2_DEL2: std_logic ; "
-                 "signal ML2_DEL3: std_logic ; "
-                 "signal ML2_DEL4: std_logic ; "
-                 "signal MH2_DEL1: std_logic ; "
-                 "signal MH2_DEL2: std_logic ; "
-                 "signal MH2_DEL3: std_logic ; "
-                 "signal MH2_DEL4: std_logic ; "
+                 "signal ML1_DEL2: std_logic ;"
+                 "signal ML1_DEL3: std_logic ;"
+                 "signal ML1_DEL4: std_logic ;"
+                 "signal MH1_DEL1: std_logic ;"
+                 "signal MH1_DEL2: std_logic ;"
+                 "signal MH1_DEL3: std_logic ;"
+                 "signal MH1_DEL4: std_logic ;"
+                 "signal ML2_DEL1: std_logic ;"
+                 "signal ML2_DEL2: std_logic ;"
+                 "signal ML2_DEL3: std_logic ;"
+                 "signal ML2_DEL4: std_logic ;"
+                 "signal MH2_DEL1: std_logic ;"
+                 "signal MH2_DEL2: std_logic ;"
+                 "signal MH2_DEL3: std_logic ;"
+                 "signal MH2_DEL4: std_logic ;"
                  ""
                  "begin"
                  ""
-                 "--ML1_PRE <= '1' when (DATA_ADC1_POS > THL1 or DATA_ADC1_NEG > THL1) else '0'; -- Discriminator for ML1"
-                 "--ML2_PRE <= '1' when (DATA_ADC2_POS > THL2 or DATA_ADC2_NEG > THL2) else '0'; -- Discriminator for ML2"
-                 "--MH1_PRE <= '1' when (DATA_ADC1_POS > THH1 or DATA_ADC1_NEG > THH1) else '0'; -- Discriminator for MH1"
-                 "--MH2_PRE <= '1' when (DATA_ADC2_POS > THH2 or DATA_ADC2_NEG > THH2) else '0'; -- Discriminator for MH2"
+                 "  --ML1_PRE <= '1' when (DATA_ADC1_POS > THL1 or DATA_ADC1_NEG > THL1) else '0'; -- Discriminator for ML1"
+                 "  --ML2_PRE <= '1' when (DATA_ADC2_POS > THL2 or DATA_ADC2_NEG > THL2) else '0'; -- Discriminator for ML2"
+                 "  --MH1_PRE <= '1' when (DATA_ADC1_POS > THH1 or DATA_ADC1_NEG > THH1) else '0'; -- Discriminator for MH1"
+                 "  --MH2_PRE <= '1' when (DATA_ADC2_POS > THH2 or DATA_ADC2_NEG > THH2) else '0'; -- Discriminator for MH2"
                  ""
-                 "-- Als een slave zijn block_coinc naar een master door wil geven, dan doet hij dat door de threshold signalen"
-                 "-- op een normaal niet bestaande / mogelijke waarde te zetten, namelijk: wel hoge threshold waarden, zonder lage waarden."
+                 "  -- Als een slave zijn block_coinc naar een master door wil geven, dan doet hij dat door de threshold signalen"
+                 "  -- op een normaal niet bestaande / mogelijke waarde te zetten, namelijk: wel hoge threshold waarden, zonder lage waarden."
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -890,8 +891,8 @@
                  "      MH1_OUT <= '0';"
                  "      MH2_OUT <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if MASTER = '0' then "
-                 "        if BLOCK_COINC = '1' then "
+                 "      if MASTER = '0' then"
+                 "        if BLOCK_COINC = '1' then"
                  "          ML1_OUT <= '0';"
                  "          ML2_OUT <= '0';"
                  "          MH1_OUT <= '1';"
@@ -909,19 +910,20 @@
                  "        MH2_OUT <= MH2_DEL4;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "--ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;"
-                 "--MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;"
-                 "--ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;"
-                 "--MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;"
-                 "EXT_TR_OUT <= EXT_TR;"
-                 "COMPL1 <= COMPL1_IN_WIN;"
-                 "COMPL2 <= COMPL2_IN_WIN;"
-                 "COMPH1 <= COMPH1_IN_WIN;"
-                 "COMPH2 <= COMPH2_IN_WIN;"
+                 "  --ML1_OUT <= ML1 when MASTER = '0' else ML1_DEL4;"
+                 "  --MH1_OUT <= MH1 when MASTER = '0' else MH1_DEL4;"
+                 "  --ML2_OUT <= ML2 when MASTER = '0' else ML2_DEL4;"
+                 "  --MH2_OUT <= MH2 when MASTER = '0' else MH2_DEL4;"
                  ""
-                 "COMP_WIN_LENGTH <= COINC_TIME + POST_TIME + 40;"
+                 "  EXT_TR_OUT <= EXT_TR;"
+                 "  COMPL1 <= COMPL1_IN_WIN;"
+                 "  COMPL2 <= COMPL2_IN_WIN;"
+                 "  COMPH1 <= COMPH1_IN_WIN;"
+                 "  COMPH2 <= COMPH2_IN_WIN;"
+                 ""
+                 "  COMP_WIN_LENGTH <= COINC_TIME + POST_TIME + 40;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -947,8 +949,7 @@
                  "        MH2_PRE <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 ""
+                 "  end process;"
                  ""
                  "  -- Delays"
                  "  process(CLK200MHz,SYSRST)"
@@ -985,39 +986,39 @@
                  "      MH2_DEL3 <= '0';"
                  "      MH2_DEL4 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      ML1_PRE_DEL <= ML1_PRE; "
-                 "      ML2_PRE_DEL <= ML2_PRE; "
-                 "      MH1_PRE_DEL <= MH1_PRE; "
-                 "      MH2_PRE_DEL <= MH2_PRE; "
-                 "      EXT_TR_IN_DEL1 <= EXT_TR_IN; "
-                 "      EXT_TR_IN_DEL2 <= EXT_TR_IN_DEL1; "
-                 "      COMPL1_IN_DEL1 <= COMPL1_IN; "
-                 "      COMPL1_IN_DEL2 <= COMPL1_IN_DEL1; "
-                 "      COMPH1_IN_DEL1 <= COMPH1_IN; "
-                 "      COMPH1_IN_DEL2 <= COMPH1_IN_DEL1; "
-                 "      COMPL2_IN_DEL1 <= COMPL2_IN; "
-                 "      COMPL2_IN_DEL2 <= COMPL2_IN_DEL1; "
-                 "      COMPH2_IN_DEL1 <= COMPH2_IN; "
-                 "      COMPH2_IN_DEL2 <= COMPH2_IN_DEL1; "
-                 "      ML1_DEL1 <= ML1; "
-                 "      ML1_DEL2 <= ML1_DEL1; "
-                 "      ML1_DEL3 <= ML1_DEL2; "
-                 "      ML1_DEL4 <= ML1_DEL3; "
-                 "      MH1_DEL1 <= MH1; "
-                 "      MH1_DEL2 <= MH1_DEL1; "
-                 "      MH1_DEL3 <= MH1_DEL2; "
-                 "      MH1_DEL4 <= MH1_DEL3; "
-                 "      ML2_DEL1 <= ML2; "
-                 "      ML2_DEL2 <= ML2_DEL1; "
-                 "      ML2_DEL3 <= ML2_DEL2; "
-                 "      ML2_DEL4 <= ML2_DEL3; "
-                 "      MH2_DEL1 <= MH2; "
-                 "      MH2_DEL2 <= MH2_DEL1; "
-                 "      MH2_DEL3 <= MH2_DEL2; "
-                 "      MH2_DEL4 <= MH2_DEL3; "
+                 "      ML1_PRE_DEL <= ML1_PRE;"
+                 "      ML2_PRE_DEL <= ML2_PRE;"
+                 "      MH1_PRE_DEL <= MH1_PRE;"
+                 "      MH2_PRE_DEL <= MH2_PRE;"
+                 "      EXT_TR_IN_DEL1 <= EXT_TR_IN;"
+                 "      EXT_TR_IN_DEL2 <= EXT_TR_IN_DEL1;"
+                 "      COMPL1_IN_DEL1 <= COMPL1_IN;"
+                 "      COMPL1_IN_DEL2 <= COMPL1_IN_DEL1;"
+                 "      COMPH1_IN_DEL1 <= COMPH1_IN;"
+                 "      COMPH1_IN_DEL2 <= COMPH1_IN_DEL1;"
+                 "      COMPL2_IN_DEL1 <= COMPL2_IN;"
+                 "      COMPL2_IN_DEL2 <= COMPL2_IN_DEL1;"
+                 "      COMPH2_IN_DEL1 <= COMPH2_IN;"
+                 "      COMPH2_IN_DEL2 <= COMPH2_IN_DEL1;"
+                 "      ML1_DEL1 <= ML1;"
+                 "      ML1_DEL2 <= ML1_DEL1;"
+                 "      ML1_DEL3 <= ML1_DEL2;"
+                 "      ML1_DEL4 <= ML1_DEL3;"
+                 "      MH1_DEL1 <= MH1;"
+                 "      MH1_DEL2 <= MH1_DEL1;"
+                 "      MH1_DEL3 <= MH1_DEL2;"
+                 "      MH1_DEL4 <= MH1_DEL3;"
+                 "      ML2_DEL1 <= ML2;"
+                 "      ML2_DEL2 <= ML2_DEL1;"
+                 "      ML2_DEL3 <= ML2_DEL2;"
+                 "      ML2_DEL4 <= ML2_DEL3;"
+                 "      MH2_DEL1 <= MH2;"
+                 "      MH2_DEL2 <= MH2_DEL1;"
+                 "      MH2_DEL3 <= MH2_DEL2;"
+                 "      MH2_DEL4 <= MH2_DEL3;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  -- Coincidence window for ML1"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -1025,12 +1026,12 @@
                  "      ML1 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ML1_PRE = '1' and ML1_PRE_DEL = '0' then  -- On an upgoing egde of ML1_PRE"
-                 "        ML1 <= '1'; "
+                 "        ML1 <= '1';"
                  "      elsif ML1_CNT = COINC_TIME - 1 then"
                  "        ML1 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -1043,7 +1044,7 @@
                  "        ML1_CNT <= ML1_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for ML2"
                  "  process(CLK200MHz,SYSRST)"
@@ -1052,13 +1053,13 @@
                  "      ML2 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if ML2_PRE = '1' and ML2_PRE_DEL = '0' then -- On an upgoing egde of ML2_PRE"
-                 "        ML2 <= '1'; "
+                 "        ML2 <= '1';"
                  "      elsif ML2_CNT = COINC_TIME - 1 then"
                  "        ML2 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -1070,7 +1071,7 @@
                  "        ML2_CNT <= ML2_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for MH1"
                  "  process(CLK200MHz,SYSRST)"
@@ -1079,13 +1080,13 @@
                  "      MH1 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if MH1_PRE = '1' and MH1_PRE_DEL = '0' then  -- On an upgoing egde of MH1_PRE"
-                 "        MH1 <= '1'; "
+                 "        MH1 <= '1';"
                  "      elsif MH1_CNT = COINC_TIME - 1 then"
                  "        MH1 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -1097,7 +1098,7 @@
                  "        MH1_CNT <= MH1_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for MH2"
                  "  process(CLK200MHz,SYSRST)"
@@ -1106,13 +1107,13 @@
                  "      MH2 <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if MH2_PRE = '1' and MH2_PRE_DEL = '0' then -- On an upgoing egde of MH2_PRE"
-                 "        MH2 <= '1'; "
+                 "        MH2 <= '1';"
                  "      elsif MH2_CNT = COINC_TIME - 1 then"
                  "        MH2 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -1124,7 +1125,7 @@
                  "        MH2_CNT <= MH2_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for EXT_TR"
                  "  process(CLK200MHz,SYSRST)"
@@ -1133,13 +1134,13 @@
                  "      EXT_TR <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if EXT_TR_IN_DEL1 = '1' and EXT_TR_IN_DEL2 = '0' then -- On an upgoing egde of EXT_TR_IN"
-                 "        EXT_TR <= '1'; "
+                 "        EXT_TR <= '1';"
                  "      elsif EXT_TR_CNT = COINC_TIME - 1 then"
                  "        EXT_TR <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -1151,7 +1152,7 @@
                  "        EXT_TR_CNT <= EXT_TR_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for COMPL1"
                  "  process(CLK200MHz,SYSRST)"
@@ -1159,26 +1160,26 @@
                  "    if SYSRST = '1' then"
                  "      COMPL1_IN_WIN <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPL1_IN_DEL1 = '1' and COMPL1_IN_DEL2 = '0' then "
-                 "        COMPL1_IN_WIN <= '1'; "
+                 "      if COMPL1_IN_DEL1 = '1' and COMPL1_IN_DEL2 = '0' then"
+                 "        COMPL1_IN_WIN <= '1';"
                  "      elsif COMPL1_IN_CNT = COMP_WIN_LENGTH - 1 then"
                  "        COMPL1_IN_WIN <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      COMPL1_IN_CNT <= 0;"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPL1_IN_WIN = '0' then "
+                 "      if COMPL1_IN_WIN = '0' then"
                  "        COMPL1_IN_CNT <= 0;"
                  "      else"
                  "        COMPL1_IN_CNT <= COMPL1_IN_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for COMPH1"
                  "  process(CLK200MHz,SYSRST)"
@@ -1186,26 +1187,26 @@
                  "    if SYSRST = '1' then"
                  "      COMPH1_IN_WIN <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPH1_IN_DEL1 = '1' and COMPH1_IN_DEL2 = '0' then "
-                 "        COMPH1_IN_WIN <= '1'; "
+                 "      if COMPH1_IN_DEL1 = '1' and COMPH1_IN_DEL2 = '0' then"
+                 "        COMPH1_IN_WIN <= '1';"
                  "      elsif COMPH1_IN_CNT = COMP_WIN_LENGTH - 1 then"
                  "        COMPH1_IN_WIN <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      COMPH1_IN_CNT <= 0;"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPH1_IN_WIN = '0' then "
+                 "      if COMPH1_IN_WIN = '0' then"
                  "        COMPH1_IN_CNT <= 0;"
                  "      else"
                  "        COMPH1_IN_CNT <= COMPH1_IN_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for COMPL2"
                  "  process(CLK200MHz,SYSRST)"
@@ -1213,26 +1214,26 @@
                  "    if SYSRST = '1' then"
                  "      COMPL2_IN_WIN <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPL2_IN_DEL1 = '1' and COMPL2_IN_DEL2 = '0' then "
-                 "        COMPL2_IN_WIN <= '1'; "
+                 "      if COMPL2_IN_DEL1 = '1' and COMPL2_IN_DEL2 = '0' then"
+                 "        COMPL2_IN_WIN <= '1';"
                  "      elsif COMPL2_IN_CNT = COMP_WIN_LENGTH - 1 then"
                  "        COMPL2_IN_WIN <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      COMPL2_IN_CNT <= 0;"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPL2_IN_WIN = '0' then "
+                 "      if COMPL2_IN_WIN = '0' then"
                  "        COMPL2_IN_CNT <= 0;"
                  "      else"
                  "        COMPL2_IN_CNT <= COMPL2_IN_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Coincidence window for COMPH2"
                  "  process(CLK200MHz,SYSRST)"
@@ -1240,28 +1241,28 @@
                  "    if SYSRST = '1' then"
                  "      COMPH2_IN_WIN <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPH2_IN_DEL1 = '1' and COMPH2_IN_DEL2 = '0' then "
-                 "        COMPH2_IN_WIN <= '1'; "
+                 "      if COMPH2_IN_DEL1 = '1' and COMPH2_IN_DEL2 = '0' then"
+                 "        COMPH2_IN_WIN <= '1';"
                  "      elsif COMPH2_IN_CNT = COMP_WIN_LENGTH - 1 then"
                  "        COMPH2_IN_WIN <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      COMPH2_IN_CNT <= 0;"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COMPH2_IN_WIN = '0' then "
+                 "      if COMPH2_IN_WIN = '0' then"
                  "        COMPH2_IN_CNT <= 0;"
                  "      else"
                  "        COMPH2_IN_CNT <= COMPH2_IN_CNT + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "end rtl ; -- of DISCRIMINATORS"
+                 "end architecture a0 ; -- of DISCRIMINATORS"
                  ""
                  "")
     )

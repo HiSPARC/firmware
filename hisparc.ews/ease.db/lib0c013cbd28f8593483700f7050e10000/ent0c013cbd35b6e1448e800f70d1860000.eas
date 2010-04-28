@@ -5,20 +5,20 @@
     (NAME "SLAVE_DETECTOR")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2048 1728)
+    (GEOMETRY 0 0 1536 1280)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "SLAVE_DETECTOR")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1142844243 "Mon Mar 20 09:44:03 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd18b6e1448e800f7002860000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 664 40 744)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 704)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -57,11 +57,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 792 40 872)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 832)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -82,11 +82,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 920 40 1000)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 960)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -107,11 +107,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1048 40 1128)
+      (GEOMETRY -40 472 40 552)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1088)
+        (POSITION 64 512)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -132,11 +132,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1560 40 1640)
+      (GEOMETRY -40 984 40 1064)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1600)
+        (POSITION 64 1024)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -157,11 +157,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1176 40 1256)
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1216)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -182,11 +182,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2008 152 2088 232)
+      (GEOMETRY 1496 728 1576 808)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1984 192)
+        (POSITION 1472 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -207,11 +207,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1304 40 1384)
+      (GEOMETRY -40 856 40 936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1344)
+        (POSITION 64 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -232,15 +232,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 88 40 168)
+      (GEOMETRY 1496 472 1576 552)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 128)
+        (POSITION 1472 512)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SH2_SYNCHR")
       )
@@ -257,15 +257,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 216 40 296)
+      (GEOMETRY 1496 344 1576 424)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 256)
+        (POSITION 1472 384)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SL2_SYNCHR")
       )
@@ -282,15 +282,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 344 40 424)
+      (GEOMETRY 1496 216 1576 296)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 384)
+        (POSITION 1472 256)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SH1_SYNCHR")
       )
@@ -307,31 +307,32 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY 1496 88 1576 168)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 1472 128)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SL1_SYNCHR")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd35b6e1448e800f70e1860000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd35b6e1448e800f70e1860000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd35b6e1448e800f70e1860000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'SLAVE_DETECTOR."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'SLAVE_DETECTOR."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'SLAVE_DETECTOR' :"
                  "-- "
@@ -351,7 +352,7 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of SLAVE_DETECTOR is"
+                 "architecture a0 of SLAVE_DETECTOR is"
                  ""
                  "signal SH1_DEL1: std_logic; -- SH1 after one 200MHz period"
                  "signal SH2_DEL1: std_logic; -- SH2 after one 200MHz period"
@@ -377,7 +378,7 @@
                  "  SH1_SYNCHR <= SH1_DEL1;"
                  "  SL2_SYNCHR <= SL2_DEL1;"
                  "  SH2_SYNCHR <= SH2_DEL1;"
-                 "  "
+                 ""
                  "  -- Delays"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -391,30 +392,30 @@
                  "      SL1_DEL2 <= '1';"
                  "      SL2_DEL2 <= '1';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      SH1_DEL1 <= SH1; "
-                 "      SH2_DEL1 <= SH2; "
-                 "      SL1_DEL1 <= SL1; "
-                 "      SL2_DEL1 <= SL2; "
-                 "      SH1_DEL2 <= SH1_DEL1; "
-                 "      SH2_DEL2 <= SH2_DEL1; "
-                 "      SL1_DEL2 <= SL1_DEL1; "
-                 "      SL2_DEL2 <= SL2_DEL1; "
+                 "      SH1_DEL1 <= SH1;"
+                 "      SH2_DEL1 <= SH2;"
+                 "      SL1_DEL1 <= SL1;"
+                 "      SL2_DEL1 <= SL2;"
+                 "      SH1_DEL2 <= SH1_DEL1;"
+                 "      SH2_DEL2 <= SH2_DEL1;"
+                 "      SL1_DEL2 <= SL1_DEL1;"
+                 "      SL2_DEL2 <= SL2_DEL1;"
                  "    end if;"
-                 "  end process;  "
-                 "      "
+                 "  end process;"
+                 ""
                  "  -- 25.6us stretcher for HIT_ON_SL1"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      HIT_ON_SL1 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then "
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if SL1_DEL1 = '1' and SL1_DEL2 = '0' then  -- On an upgoing egde of SL1"
-                 "        HIT_ON_SL1 <= '1'; "
+                 "        HIT_ON_SL1 <= '1';"
                  "      elsif HIT_ON_SL1_COUNTER = \"11111111\" then"
                  "        HIT_ON_SL1 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
@@ -427,21 +428,21 @@
                  "        HIT_ON_SL1_COUNTER <= HIT_ON_SL1_COUNTER + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "  "
+                 "  end process;"
+                 ""
                  "  -- 25.6us stretcher for HIT_ON_SL2"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      HIT_ON_SL2 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then "
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if SL2_DEL1 = '1' and SL2_DEL2 = '0' then  -- On an upgoing egde of SL2"
-                 "        HIT_ON_SL2 <= '1'; "
+                 "        HIT_ON_SL2 <= '1';"
                  "      elsif HIT_ON_SL2_COUNTER = \"11111111\" then"
                  "        HIT_ON_SL2 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
@@ -454,21 +455,21 @@
                  "        HIT_ON_SL2_COUNTER <= HIT_ON_SL2_COUNTER + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- 25.6us stretcher for HIT_ON_SH1"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      HIT_ON_SH1 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then "
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if SH1_DEL1 = '1' and SH1_DEL2 = '0' then  -- On an upgoing egde of SH1"
-                 "        HIT_ON_SH1 <= '1'; "
+                 "        HIT_ON_SH1 <= '1';"
                  "      elsif HIT_ON_SH1_COUNTER = \"11111111\" then"
                  "        HIT_ON_SH1 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
@@ -481,21 +482,21 @@
                  "        HIT_ON_SH1_COUNTER <= HIT_ON_SH1_COUNTER + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- 25.6us stretcher for HIT_ON_SH2"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
                  "      HIT_ON_SH2 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then "
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if SH2_DEL1 = '1' and SH2_DEL2 = '0' then  -- On an upgoing egde of SH2"
-                 "        HIT_ON_SH2 <= '1'; "
+                 "        HIT_ON_SH2 <= '1';"
                  "      elsif HIT_ON_SH2_COUNTER = \"11111111\" then"
                  "        HIT_ON_SH2 <= '0';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
@@ -508,9 +509,9 @@
                  "        HIT_ON_SH2_COUNTER <= HIT_ON_SH2_COUNTER + 1;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "end rtl ; -- of SLAVE_DETECTOR"
+                 "end architecture a0 ; -- of SLAVE_DETECTOR"
                  ""
                  "")
     )

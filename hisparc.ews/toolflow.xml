@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document_root>
+  <section type="section_root" name="section_root" >
+    <sections>
+      <section type="tool" name="Libero" >
+        <properties>
+          <property key="directory" value="../actel" />
+          <property key="enable" value="true" />
+          <property key="namespace" value="TlActel" />
+          <property key="vendor" value="Actel" />
+        </properties>
+        <sections>
+          <section type="button" name="Libero" >
+            <properties>
+              <property key="bitmap" value="actlibero" />
+              <property key="enable" value="true" />
+              <property key="procedure" value="TlActel::Libero" />
+              <property key="show" value="ease, companion" />
+              <property key="tooltip" value="Start Actel Libero" />
+            </properties>
+          </section>
+          <section type="button" name="Designer" >
+            <properties>
+              <property key="bitmap" value="actdesigner" />
+              <property key="enable" value="true" />
+              <property key="procedure" value="TlActel::Designer" />
+              <property key="show" value="ease, companion" />
+              <property key="tooltip" value="Start Actel Designer" />
+            </properties>
+          </section>
+          <section type="button" name="ActGenMacroBuilder" >
+            <properties>
+              <property key="bitmap" value="actgen" />
+              <property key="enable" value="true" />
+              <property key="procedure" value="TlActel::ActGen" />
+              <property key="show" value="ease, companion" />
+              <property key="tooltip" value="Start Actel ActGen" />
+            </properties>
+          </section>
+        </sections>
+      </section>
+      <section type="VendorVersion" name="Actel" >
+        <properties>
+          <property key="Libero" value="v2010" />
+        </properties>
+      </section>
+      <section type="Simulator" name="Simulator" />
+    </sections>
+  </section>
+</document_root>

@@ -5,20 +5,20 @@
     (NAME "RD_ADDRES_COUNTER")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1984 2368)
+    (GEOMETRY 0 0 1984 1536)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "RD_ADDRES_COUNTER")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1191926705 "Tue Oct 09 12:45:05 2007")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f70b6730000")
@@ -38,11 +38,11 @@
           (RANGE "2020" "0")
         )
       )
-      (GEOMETRY 1944 536 2024 616)
+      (GEOMETRY 1944 216 2024 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 576)
+        (POSITION 1920 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -63,11 +63,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 1304 2024 1384)
+      (GEOMETRY 1944 856 2024 936)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1344)
+        (POSITION 1920 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -88,11 +88,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 920 40 1000)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 960)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -117,11 +117,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 216 2024 296)
+      (GEOMETRY 1944 88 2024 168)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 256)
+        (POSITION 1920 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -146,11 +146,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 1816 2024 1896)
+      (GEOMETRY 1944 1240 2024 1320)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1856)
+        (POSITION 1920 1280)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -175,11 +175,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 1944 2200 2024 2280)
+      (GEOMETRY 1944 1368 2024 1448)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2240)
+        (POSITION 1920 1408)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -200,11 +200,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 1432 2024 1512)
+      (GEOMETRY 1944 984 2024 1064)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1472)
+        (POSITION 1920 1024)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -225,11 +225,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 984 2024 1064)
+      (GEOMETRY 1944 600 2024 680)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1024)
+        (POSITION 1920 640)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -250,11 +250,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 728 40 808)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 768)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -277,20 +277,20 @@
         (MODE 1)
         (BUS
           (DIRECTION 1)
-          (RANGE "2020" "0")
+          (RANGE "2047" "0")
         )
       )
-      (GEOMETRY -40 1176 40 1256)
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1216)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
-        (TEXT "BEGIN_PRE_TIME(2020:0)")
+        (TEXT "BEGIN_PRE_TIME(2047:0)")
       )
     )
     (PORT
@@ -305,11 +305,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 728 2024 808)
+      (GEOMETRY 1944 344 2024 424)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 768)
+        (POSITION 1920 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -330,11 +330,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 536 40 616)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 576)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -343,23 +343,24 @@
         (TEXT "CLK200MHz")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c012ca11bb5b07409210f7055730000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c012ca11bb5b07409210f7055730000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c012ca11bb5b07409210f7055730000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'RD_ADDRES_COUNTER."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'RD_ADDRES_COUNTER."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'RD_ADDRES_COUNTER' :"
                  "-- "
                  "--   port("
-                 "--     BEGIN_PRE_TIME    : in     integer range 2020 downto 0;"
+                 "--     BEGIN_PRE_TIME    : in     integer range 2047 downto 0;"
                  "--     CLK200MHz         : in     std_logic;"
                  "--     CLKRD             : in     std_logic;"
                  "--     COINC_TO_END_TIME : in     std_logic;"
@@ -374,10 +375,10 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of RD_ADDRES_COUNTER is"
+                 "architecture a0 of RD_ADDRES_COUNTER is"
                  ""
                  "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
-                 "signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;  "
+                 "signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;"
                  "signal POS_NEG_PHASE: std_logic ; -- help signal to determine the positive or negative RAM; high means positive"
                  "signal READOUT_BUSY_TMP: std_logic ;"
                  "signal DATA_READY_PRE: std_logic ;"
@@ -389,7 +390,7 @@
                  "begin"
                  ""
                  "  RD_ADDRESS <= RD_ADDRESS_TMP;"
-                 "      "
+                 ""
                  "  -- delays"
                  "  process(CLK200MHz,SYSRST)"
                  "  begin"
@@ -402,7 +403,7 @@
                  "      RDEN_DEL1 <= RDEN;"
                  "      RDEN_DEL2 <= RDEN_DEL1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
                  "  process(CLK200MHz,SYSRST)"
@@ -416,7 +417,7 @@
                  "        TAKE_DATA <= '1';"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- DATA_READY is valid when the FIFOs are not taking data"
                  "  -- not TAKE_DATA is synchronized with the readoutclock"
@@ -429,7 +430,7 @@
                  "      DATA_READY <= DATA_READY_PRE;"
                  "      READOUT_BUSY <= READOUT_BUSY_TMP;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- RD_ADDRESS and toggle outputbus"
                  "  process(CLKRD)"
@@ -446,19 +447,19 @@
                  "          end if;"
                  "        end if;"
                  "        POS_NEG_PHASE <= not POS_NEG_PHASE;"
-                 "        READOUT_BUSY_TMP <= '1';          "
+                 "        READOUT_BUSY_TMP <= '1';"
                  "      else"
                  "        RD_ADDRESS_TMP <= BEGIN_PRE_TIME;"
-                 "        POS_NEG_PHASE <= '1'; "
+                 "        POS_NEG_PHASE <= '1';"
                  "        READOUT_BUSY_TMP <= '0';"
-                 "      end if;  "
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "  "
+                 "  end process;"
+                 ""
                  "  DATA_OUT_TMP <= DATA_OUT_POS  when POS_NEG_PHASE = '1' else DATA_OUT_NEG;"
                  "  DATA_OUT <= DATA_OUT_TMP when READOUT_BUSY_TMP = '1' else \"000000000000\";"
                  ""
-                 "end rtl ; -- of RD_ADDRES_COUNTER"
+                 "end architecture a0 ; -- of RD_ADDRES_COUNTER"
                  ""
                  "")
     )

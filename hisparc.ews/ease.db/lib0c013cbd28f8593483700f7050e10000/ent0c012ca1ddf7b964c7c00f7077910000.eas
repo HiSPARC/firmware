@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 1152 896)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "SOFT_RESET")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1184595933 "Mon Jul 16 16:25:33 2007")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c012ca1e208b964c7c00f70a7910000")
@@ -145,18 +145,19 @@
         (TEXT "TORESET")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c012ca1ddf7b964c7c00f7087910000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c012ca1ddf7b964c7c00f7087910000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c012ca1ddf7b964c7c00f7087910000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'SOFT_RESET."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'SOFT_RESET."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'SOFT_RESET' :"
                  "-- "
@@ -169,30 +170,30 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of SOFT_RESET is"
+                 "architecture a0 of SOFT_RESET is"
                  ""
                  "signal SRESET_COUNT: std_logic_vector(3 downto 0);"
                  ""
                  "begin"
                  ""
                  "  RESOUT <= not SRESET_COUNT(3) or not nHRESET;"
-                 "  "
+                 ""
                  "  process (CLKRD, nHRESET)"
                  "  begin"
-                 "	  if nHRESET = '0' then"
-                 "	    SRESET_COUNT <= (others => '1');                 "
-                 "	  elsif CLKRD'event and CLKRD = '1' then"
+                 "    if nHRESET = '0' then"
+                 "      SRESET_COUNT <= (others => '1');"
+                 "    elsif CLKRD'event and CLKRD = '1' then"
                  "      if SRESET = '1' or TORESET = '1' then"
-                 "	      SRESET_COUNT <= (others => '0');                 "
-                 "	    elsif SRESET_COUNT /= \"1111\" then "
-                 "		    SRESET_COUNT <= SRESET_COUNT + \"0001\";"
-                 "	    else"
-                 "		    SRESET_COUNT <= SRESET_COUNT;"
-                 "	    end if;"
-                 "	  end if;"
+                 "        SRESET_COUNT <= (others => '0');"
+                 "      elsif SRESET_COUNT /= \"1111\" then"
+                 "        SRESET_COUNT <= SRESET_COUNT + \"0001\";"
+                 "      else"
+                 "        SRESET_COUNT <= SRESET_COUNT;"
+                 "      end if;"
+                 "    end if;"
                  "  end process;"
                  ""
-                 "end rtl ; -- of SOFT_RESET"
+                 "end architecture a0 ; -- of SOFT_RESET"
                  ""
                  "")
     )

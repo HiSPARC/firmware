@@ -5,20 +5,20 @@
     (NAME "LVDS_MUX")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2112 2240)
+    (GEOMETRY 0 0 2048 2560)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "LVDS_MUX")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1149853657 "Fri Jun 09 13:47:37 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbde716984487500f7041c00000")
@@ -57,15 +57,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2072 600 2152 680)
+      (GEOMETRY -40 216 40 296)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2048 640)
+        (POSITION 64 256)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "ML1")
       )
@@ -82,15 +82,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2072 728 2152 808)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2048 768)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "ML2")
       )
@@ -107,15 +107,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2072 856 2152 936)
+      (GEOMETRY -40 472 40 552)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2048 896)
+        (POSITION 64 512)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "MH1")
       )
@@ -132,15 +132,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2072 984 2152 1064)
+      (GEOMETRY -40 600 40 680)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2048 1024)
+        (POSITION 64 640)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "MH2")
       )
@@ -157,15 +157,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 2072 152 2152 232)
+      (GEOMETRY -40 1368 40 1448)
       (SENSLIST 1)
-      (SIDE 1)
+      (SIDE 3)
       (LABEL
-        (POSITION 2048 192)
+        (POSITION 64 1408)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
+        (ALIGNMENT 3)
+        (SIDE 3)
         (FORMAT 35)
         (TEXT "COINC_MASTER")
       )
@@ -182,11 +182,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 344 2152 424)
+      (GEOMETRY 2008 1496 2088 1576)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 384)
+        (POSITION 1984 1536)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -207,15 +207,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 280 40 360)
+      (GEOMETRY 2008 88 2088 168)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 320)
+        (POSITION 1984 128)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SL1")
       )
@@ -232,15 +232,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 408 40 488)
+      (GEOMETRY 2008 216 2088 296)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 448)
+        (POSITION 1984 256)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SH1")
       )
@@ -257,15 +257,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 536 40 616)
+      (GEOMETRY 2008 344 2088 424)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 576)
+        (POSITION 1984 384)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SL2")
       )
@@ -282,15 +282,15 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 664 40 744)
+      (GEOMETRY 2008 472 2088 552)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 704)
+        (POSITION 1984 512)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SH2")
       )
@@ -307,11 +307,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1688 40 1768)
+      (GEOMETRY -40 2008 40 2088)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1728)
+        (POSITION 64 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -332,11 +332,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1816 40 1896)
+      (GEOMETRY -40 2136 40 2216)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1856)
+        (POSITION 64 2176)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -357,11 +357,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1944 40 2024)
+      (GEOMETRY -40 2264 40 2344)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1984)
+        (POSITION 64 2304)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -382,11 +382,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 2072 40 2152)
+      (GEOMETRY -40 2392 40 2472)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 2112)
+        (POSITION 64 2432)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -407,11 +407,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 1176 2152 1256)
+      (GEOMETRY 2008 1624 2088 1704)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 1216)
+        (POSITION 1984 1664)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -432,11 +432,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1304 40 1384)
+      (GEOMETRY -40 1624 40 1704)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1344)
+        (POSITION 64 1664)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -457,11 +457,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1432 40 1512)
+      (GEOMETRY -40 1752 40 1832)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1472)
+        (POSITION 64 1792)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -482,11 +482,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 1432 2152 1512)
+      (GEOMETRY 2008 1752 2088 1832)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 1472)
+        (POSITION 1984 1792)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -507,11 +507,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 1688 2152 1768)
+      (GEOMETRY 2008 2008 2088 2088)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 1728)
+        (POSITION 1984 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -532,11 +532,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 1816 2152 1896)
+      (GEOMETRY 2008 2136 2088 2216)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 1856)
+        (POSITION 1984 2176)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -557,11 +557,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 1944 2152 2024)
+      (GEOMETRY 2008 2264 2088 2344)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 1984)
+        (POSITION 1984 2304)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -582,11 +582,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 2072 2072 2152 2152)
+      (GEOMETRY 2008 2392 2088 2472)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2048 2112)
+        (POSITION 1984 2432)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -670,18 +670,19 @@
         (TEXT "CLK10MHz")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd9df5984487500f70e0c00000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd9df5984487500f70e0c00000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd9df5984487500f70e0c00000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'LVDS_MUX."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'LVDS_MUX."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'LVDS_MUX' :"
                  "-- "
@@ -715,12 +716,13 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of LVDS_MUX is"
+                 "architecture a0 of LVDS_MUX is"
                  ""
-                 "signal ONE_PPS_TMP: std_logic ; "
-                 "signal ONE_PPS_DEL1: std_logic ; "
-                 "signal ONE_PPS_DEL2: std_logic ; "
-                 "signal STARTUP_COUNT: std_logic_vector(3 downto 0); "
+                 "signal ONE_PPS_TMP: std_logic ;"
+                 "signal ONE_PPS_DEL1: std_logic ;"
+                 "signal ONE_PPS_DEL2: std_logic ;"
+                 "signal STARTUP_COUNT: std_logic_vector(3 downto 0);"
+                 "signal STARTUP_BLOCK: std_logic ;"
                  ""
                  "begin"
                  ""
@@ -733,10 +735,10 @@
                  "  ONE_PPS_TMP <= ONE_PPS_MASTER when MASTER = '1' else LVDS_IN2;"
                  "  ONE_PPS_OUT <= ONE_PPS_TMP;"
                  ""
-                 "  process(CLK200MHz,STARTUP_COUNT(3))"
+                 "  process(CLK200MHz, STARTUP_BLOCK)"
                  "  begin"
-                 "  	if STARTUP_COUNT(3) = '0' then"
-                 "  	  COINC <= '0';"
+                 "    if (STARTUP_BLOCK = '1') then"
+                 "      COINC <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      if MASTER = '1' then"
                  "        COINC <= COINC_MASTER;"
@@ -744,8 +746,8 @@
                  "        COINC <= LVDS_IN3;"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
-                 "  "
+                 "  end process;"
+                 ""
                  "  LVDS_OUT1 <= GPS_DATA_MASTER when MASTER = '1' else ML1;"
                  "  LVDS_OUT2 <= ONE_PPS_MASTER when MASTER = '1' else MH1;"
                  "  LVDS_OUT3 <= COINC_MASTER when MASTER = '1' else ML2;"
@@ -753,29 +755,31 @@
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
-                 "  	if SYSRST = '1' then"
-                 "  	  ONE_PPS_DEL1 <= '0';"
-                 "  	  ONE_PPS_DEL2 <= '0';"
-                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then "
-                 "  	  ONE_PPS_DEL1 <= ONE_PPS_TMP;"
-                 "  	  ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
+                 "    if SYSRST = '1' then"
+                 "      ONE_PPS_DEL1 <= '0';"
+                 "      ONE_PPS_DEL2 <= '0';"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      ONE_PPS_DEL1 <= ONE_PPS_TMP;"
+                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
                  "    end if;"
                  "  end process;"
                  ""
                  "  process(CLK10MHz,SYSRST)"
                  "  begin"
-                 "  	if SYSRST = '1' then"
-                 "  	  STARTUP_COUNT <= \"0000\";"
-                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then "
-                 "      if STARTUP_COUNT = \"1000\" then -- after 8 seconds "
-                 "  	    STARTUP_COUNT <= STARTUP_COUNT; -- latch countvalue 8  "
+                 "    if SYSRST = '1' then"
+                 "      STARTUP_COUNT <= \"0000\";"
+                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+                 "      if STARTUP_COUNT = \"1000\" then -- after 8 seconds"
+                 "        STARTUP_COUNT <= STARTUP_COUNT; -- latch countvalue 8"
                  "      elsif ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then -- at rising edge of PPS"
-                 "  	    STARTUP_COUNT <= STARTUP_COUNT + \"0001\"; -- increase counter    	   "
+                 "        STARTUP_COUNT <= STARTUP_COUNT + \"0001\"; -- increase counter"
                  "      end if;"
                  "    end if;"
                  "  end process;"
                  ""
-                 "end rtl ; -- of LVDS_MUX"
+                 "  STARTUP_BLOCK <= not STARTUP_COUNT(3);"
+                 ""
+                 "end architecture a0 ; -- of LVDS_MUX"
                  ""
                  "")
     )

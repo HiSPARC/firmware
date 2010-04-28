@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 896 640)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "LED_DRIVER")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1152880772 "Fri Jul 14 14:39:32 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbda9097b440a600f70a9170000")
@@ -120,18 +120,19 @@
         (TEXT "SYSRST")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd48097b440a600f7089170000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd48097b440a600f7089170000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd48097b440a600f7089170000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'LED_DRIVER."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'LED_DRIVER."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'LED_DRIVER' :"
                  "-- "
@@ -143,29 +144,28 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of LED_DRIVER is"
+                 "architecture a0 of LED_DRIVER is"
                  ""
                  "signal LEDSHINE_COUNTER: std_logic_vector(20 downto 0); -- Full is about 0.2 seconds"
                  ""
                  "begin"
-                 "    "
-                 "  process(CLK10MHz,SYSRST,INP)"
+                 ""
+                 "  process(CLK10MHz, SYSRST, INP)"
                  "  begin"
-                 "    if SYSRST = '1' or INP = '1' then"
+                 "    if (SYSRST = '1' or INP = '1') then"
                  "      LEDSHINE_COUNTER <= \"000000000000000000000\";"
                  "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
-                 "      if LEDSHINE_COUNTER /= \"111111111111111111111\" then"
+                 "      if (LEDSHINE_COUNTER /= \"111111111111111111111\") then"
                  "        LEDSHINE_COUNTER <= LEDSHINE_COUNTER + \"000000000000000000001\";"
-                 "      else   "
+                 "      else"
                  "        LEDSHINE_COUNTER <= LEDSHINE_COUNTER; -- locks at full"
                  "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "  nOUTP <= '0' when LEDSHINE_COUNTER /= \"111111111111111111111\" else '1'; "
+                 "  nOUTP <= '0' when (LEDSHINE_COUNTER /= \"111111111111111111111\") else '1';"
                  ""
-                 ""
-                 "end rtl ; -- of LED_DRIVER"
+                 "end architecture a0 ; -- of LED_DRIVER"
                  ""
                  "")
     )

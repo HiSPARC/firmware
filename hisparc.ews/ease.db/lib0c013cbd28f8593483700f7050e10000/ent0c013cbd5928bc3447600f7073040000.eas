@@ -5,20 +5,20 @@
     (NAME "CONVERSION_12_TO_8_BIT")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1984 7040)
+    (GEOMETRY 0 0 1664 4864)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "CONVERSION_12_TO_8_BIT")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1137410709 "Mon Jan 16 12:25:09 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd8738bc3447600f70a3040000")
@@ -36,11 +36,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 600 40 680)
+      (GEOMETRY -40 1496 40 1576)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 640)
+        (POSITION 64 1536)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -61,11 +61,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY -40 1368 40 1448)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 64 1408)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -86,11 +86,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 728 40 808)
+      (GEOMETRY -40 1624 40 1704)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 768)
+        (POSITION 64 1664)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -111,11 +111,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 856 40 936)
+      (GEOMETRY -40 1752 40 1832)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 896)
+        (POSITION 64 1792)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -136,11 +136,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 1048 2024 1128)
+      (GEOMETRY 1624 792 1704 872)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1088)
+        (POSITION 1600 832)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -161,11 +161,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 856 2024 936)
+      (GEOMETRY 1624 664 1704 744)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 896)
+        (POSITION 1600 704)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -190,11 +190,11 @@
           (RANGE "7" "0")
         )
       )
-      (GEOMETRY 1944 3352 2024 3432)
+      (GEOMETRY 1624 2136 1704 2216)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3392)
+        (POSITION 1600 2176)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -215,11 +215,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 2008 2024 2088)
+      (GEOMETRY 1624 2648 1704 2728)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2048)
+        (POSITION 1600 2688)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -246,11 +246,11 @@
           (RANGE "6000" "0")
         )
       )
-      (GEOMETRY -40 3096 40 3176)
+      (GEOMETRY -40 1112 40 1192)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3136)
+        (POSITION 64 1152)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -271,11 +271,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1944 1688 2024 1768)
+      (GEOMETRY 1624 2520 1704 2600)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 1728)
+        (POSITION 1600 2560)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -301,11 +301,11 @@
           (RANGE "12020" "0")
         )
       )
-      (GEOMETRY 1944 2840 2024 2920)
+      (GEOMETRY 1624 1880 1704 1960)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 2880)
+        (POSITION 1600 1920)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -326,11 +326,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1944 3096 2024 3176)
+      (GEOMETRY 1624 2008 1704 2088)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 3136)
+        (POSITION 1600 2048)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -351,11 +351,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 3352 40 3432)
+      (GEOMETRY -40 88 40 168)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 3392)
+        (POSITION 64 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -380,11 +380,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY -40 5272 40 5352)
+      (GEOMETRY -40 2904 40 2984)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5312)
+        (POSITION 64 2944)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -405,11 +405,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 5144 40 5224)
+      (GEOMETRY -40 2776 40 2856)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5184)
+        (POSITION 64 2816)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -430,11 +430,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 5400 40 5480)
+      (GEOMETRY -40 3032 40 3112)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5440)
+        (POSITION 64 3072)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -455,11 +455,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY -40 5528 40 5608)
+      (GEOMETRY -40 3160 40 3240)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5568)
+        (POSITION 64 3200)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -486,11 +486,11 @@
           (RANGE "12000" "0")
         )
       )
-      (GEOMETRY 1944 152 2024 232)
+      (GEOMETRY 1624 536 1704 616)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 192)
+        (POSITION 1600 576)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -515,11 +515,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY -40 5912 40 5992)
+      (GEOMETRY -40 3928 40 4008)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 5952)
+        (POSITION 64 3968)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -544,11 +544,11 @@
           (RANGE "15" "0")
         )
       )
-      (GEOMETRY 1944 4632 2024 4712)
+      (GEOMETRY 1624 3544 1704 3624)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4672)
+        (POSITION 1600 3584)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -574,11 +574,11 @@
           (RANGE "55" "0")
         )
       )
-      (GEOMETRY -40 6744 40 6824)
+      (GEOMETRY -40 4056 40 4136)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 6784)
+        (POSITION 64 4096)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -604,11 +604,11 @@
           (RANGE "31" "0")
         )
       )
-      (GEOMETRY -40 6872 40 6952)
+      (GEOMETRY -40 4184 40 4264)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 6912)
+        (POSITION 64 4224)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -634,11 +634,11 @@
           (RANGE "55" "0")
         )
       )
-      (GEOMETRY 1944 4824 2024 4904)
+      (GEOMETRY 1624 3672 1704 3752)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4864)
+        (POSITION 1600 3712)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -664,11 +664,11 @@
           (RANGE "31" "0")
         )
       )
-      (GEOMETRY 1944 4952 2024 5032)
+      (GEOMETRY 1624 3800 1704 3880)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1920 4992)
+        (POSITION 1600 3840)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -677,18 +677,19 @@
         (TEXT "CTD_OUT(31:0)")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd5928bc3447600f7083040000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd5928bc3447600f7083040000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd5928bc3447600f7083040000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'CONVERSION_12_TO_8_BIT."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'CONVERSION_12_TO_8_BIT."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'CONVERSION_12_TO_8_BIT' :"
                  "-- "
@@ -720,13 +721,13 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of CONVERSION_12_TO_8_BIT is"
+                 "architecture a0 of CONVERSION_12_TO_8_BIT is"
                  ""
                  "signal PHASE1: std_logic;"
                  "signal PHASE2: std_logic;"
-                 "signal PHASE: std_logic_vector(1 downto 0);  "
-                 "signal WR_ADDRESS_CNT: integer range 12020 downto 0;  "
-                 "signal DATA_OUT_TMP: std_logic_vector(3 downto 0);  "
+                 "signal PHASE: std_logic_vector(1 downto 0);"
+                 "signal WR_ADDRESS_CNT: integer range 12020 downto 0;"
+                 "signal DATA_OUT_TMP: std_logic_vector(3 downto 0);"
                  "signal WE_TMP: std_logic;"
                  "signal WE_DEL: std_logic;"
                  "signal FIFO_EMPTY_DEL: std_logic;"
@@ -734,10 +735,10 @@
                  "signal CHANNEL_SELECT_PRE1: std_logic;"
                  "signal CHANNEL_SELECT_PRE2: std_logic;"
                  "signal RDEN_SELECT: std_logic;"
-                 "signal DATA_SELECT: std_logic_vector(11 downto 0);  "
-                 "signal WR_ADDRESS_SELECT_BEGIN: integer range 12020 downto 0;  "
-                 "signal WR_ADDRESS_SELECT_END: integer range 12020 downto 0;  "
-                 "signal TOTAL_TIME_6X_TMP: integer range 12000 downto 0;  "
+                 "signal DATA_SELECT: std_logic_vector(11 downto 0);"
+                 "signal WR_ADDRESS_SELECT_BEGIN: integer range 12020 downto 0;"
+                 "signal WR_ADDRESS_SELECT_END: integer range 12020 downto 0;"
+                 "signal TOTAL_TIME_6X_TMP: integer range 12000 downto 0;"
                  "signal DATA_VALID_SELECT: std_logic;"
                  ""
                  "begin"
@@ -745,11 +746,10 @@
                  "-- each part has the lenght of CONVERSION_CLK"
                  "  PHASE(0) <= PHASE1;"
                  "  PHASE(1) <= PHASE2;"
-                 "  "
+                 ""
                  "  WR_ADDRESS <= WR_ADDRESS_CNT;"
                  "  WE <= WE_TMP;"
                  "  TOTAL_TIME_6X <= TOTAL_TIME_6X_TMP;"
-                 ""
                  ""
                  "  process(CLKRD,DATA_VALID_SELECT)"
                  "  begin"
@@ -758,7 +758,7 @@
                  "    elsif (CLKRD'event and CLKRD = '1') then"
                  "      PHASE1 <= not PHASE1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,DATA_VALID_SELECT)"
                  "  begin"
@@ -767,56 +767,56 @@
                  "    elsif (CLKRD'event and CLKRD = '0') then"
                  "      PHASE2 <= PHASE1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CONVERSION_CLK,DATA_SELECT,WR_ADDRESS_CNT)"
                  "  begin"
                  "    if (CONVERSION_CLK'event and CONVERSION_CLK = '1') then"
                  "      if DATA_VALID_SELECT = '1' then"
                  "        if WR_ADDRESS_CNT < WR_ADDRESS_SELECT_END - 1 then"
-                 "    	  case PHASE is"
-                 "    	    -- In the first part the most significant 8 data bits from the ADCs"
-                 "    	    -- go to the output (input for FIFO) and the other 4 bits to a temporary register"
-                 "      	    when \"10\" => DATA_OUT <= DATA_SELECT(11 downto 4);"
+                 "          case PHASE is"
+                 "            -- In the first part the most significant 8 data bits from the ADCs"
+                 "            -- go to the output (input for FIFO) and the other 4 bits to a temporary register"
+                 "            when \"10\" => DATA_OUT <= DATA_SELECT(11 downto 4);"
                  "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
                  "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT +1;"
-                 "                       "
-                 "      	    -- The write address counter for the FIFO will not change"
-                 "      	    -- The counter only increments in the other 3 parts"
-                 "      	    when \"00\" => DATA_OUT <= DATA_SELECT(11 downto 4);"
+                 ""
+                 "            -- The write address counter for the FIFO will not change"
+                 "            -- The counter only increments in the other 3 parts"
+                 "            when \"00\" => DATA_OUT <= DATA_SELECT(11 downto 4);"
                  "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
-                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT; "
-                 "                       "
-                 "    	    -- In this part the data from the temporary register (this are the least"
-                 "    	    -- significant bits of the former data) go to the most significant bits"
-                 "    	    -- of the FIFO data and the least significant bits of the FIFO will be"
-                 "    	    -- the most significant bits of the new input data."
-                 "      	    when \"01\" => DATA_OUT(7 downto 4) <= DATA_OUT_TMP;"
+                 "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT;"
+                 ""
+                 "            -- In this part the data from the temporary register (this are the least"
+                 "            -- significant bits of the former data) go to the most significant bits"
+                 "            -- of the FIFO data and the least significant bits of the FIFO will be"
+                 "            -- the most significant bits of the new input data."
+                 "            when \"01\" => DATA_OUT(7 downto 4) <= DATA_OUT_TMP;"
                  "                         DATA_OUT(3 downto 0) <= DATA_SELECT(11 downto 8);"
                  "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
                  "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT + 1;"
-                 "                       "
-                 "            -- In the last part the least significant bits of the new input data "
-                 "            -- go to the FIFO              "
-                 "      	    when \"11\" => DATA_OUT <= DATA_SELECT(7 downto 0);"
+                 ""
+                 "            -- In the last part the least significant bits of the new input data"
+                 "            -- go to the FIFO"
+                 "            when \"11\" => DATA_OUT <= DATA_SELECT(7 downto 0);"
                  "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
                  "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT + 1;"
-                 "      	    when others => DATA_OUT <= DATA_SELECT(11 downto 4);"
+                 "            when others => DATA_OUT <= DATA_SELECT(11 downto 4);"
                  "                         DATA_OUT_TMP <= DATA_SELECT(3 downto 0);"
                  "                         WR_ADDRESS_CNT <= WR_ADDRESS_CNT;"
-                 "   		  end case;"
-                 "   	      WE_TMP <= '1';"
-                 "   	    else"
-                 "   	  	  WR_ADDRESS_CNT <= WR_ADDRESS_CNT;"
-                 "   	  	  DATA_OUT <= \"00000000\";"
-                 "   	  	  DATA_OUT_TMP <= \"0000\";"
-                 "   	      WE_TMP <= '0';"
-                 "   	    end if;"
-                 "   	  else"
-                 "   	    WR_ADDRESS_CNT <= WR_ADDRESS_SELECT_BEGIN;"
-                 "   	  end if;     	    "
+                 "          end case;"
+                 "          WE_TMP <= '1';"
+                 "        else"
+                 "          WR_ADDRESS_CNT <= WR_ADDRESS_CNT;"
+                 "          DATA_OUT <= \"00000000\";"
+                 "          DATA_OUT_TMP <= \"0000\";"
+                 "          WE_TMP <= '0';"
+                 "        end if;"
+                 "      else"
+                 "        WR_ADDRESS_CNT <= WR_ADDRESS_SELECT_BEGIN;"
+                 "      end if;"
                  "    end if;"
-                 "  end process; "
+                 "  end process;"
                  ""
                  "  -- Delays"
                  "  process(CLKRD,SYSRST)"
@@ -828,9 +828,9 @@
                  "      WE_DEL <= WE_TMP;"
                  "      FIFO_EMPTY_DEL <= FIFO_EMPTY;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "  -- Read enable must go false at the end of writing the FIFO and true when readout has finished "
+                 "  -- Read enable must go false at the end of writing the FIFO and true when readout has finished"
                  "  process(CLKRD,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -840,11 +840,11 @@
                  "        RDEN_SELECT <= '0';"
                  "      elsif FIFO_EMPTY = '1' and FIFO_EMPTY_DEL = '0' then"
                  "        RDEN_SELECT <= '1';"
-                 "      end if;  "
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "  -- Data conversion (CONV_DATA_READY) must go true at the end of writing the FIFO and false when readout starts "
+                 "  -- Data conversion (CONV_DATA_READY) must go true at the end of writing the FIFO and false when readout starts"
                  "  process(CLKRD,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -854,9 +854,9 @@
                  "        CONV_DATA_READY <= '1';"
                  "      elsif FIFO_EMPTY = '0' and FIFO_EMPTY_DEL = '1' then"
                  "        CONV_DATA_READY <= '0';"
-                 "      end if;  "
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLKRD,SYSRST)"
                  "  begin"
@@ -867,23 +867,23 @@
                  "    elsif (CLKRD'event and CLKRD = '1') then"
                  "      CHANNEL_SELECT_PRE2 <= CHANNEL_SELECT_PRE1;"
                  "      CHANNEL_SELECT <= CHANNEL_SELECT_PRE2;"
-                 "      if WR_ADDRESS_CNT >= TOTAL_TIME_3X - 1 and WR_ADDRESS_CNT < TOTAL_TIME_6X_TMP - 1 then "
+                 "      if WR_ADDRESS_CNT >= TOTAL_TIME_3X - 1 and WR_ADDRESS_CNT < TOTAL_TIME_6X_TMP - 1 then"
                  "        CHANNEL_SELECT_PRE1 <= '1';"
                  "      else"
                  "        CHANNEL_SELECT_PRE1 <= '0';"
-                 "      end if;  "
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  -- Read enable select. If CHANNEL_SELECT = channel 1 then RDEN_CH1 has to be selected and RDEN_CH2 has to be zero"
                  "  -- If CHANNEL_SELECT = channel 2 then RDEN_CH2 has to be selected and RDEN_CH1 has to be zero"
                  "  RDEN_CH1 <= RDEN_SELECT when CHANNEL_SELECT = '0' else '0';"
                  "  RDEN_CH2 <= RDEN_SELECT when CHANNEL_SELECT = '1' else '0';"
-                 "  "
-                 "  -- The input data is from channel 1 when CHANNEL_SELECT = 0 or from channel 2 when CHANNEL_SELECT = 1  "
+                 ""
+                 "  -- The input data is from channel 1 when CHANNEL_SELECT = 0 or from channel 2 when CHANNEL_SELECT = 1"
                  "  DATA_SELECT <= DATA_OUT_CH1 when CHANNEL_SELECT = '0' else DATA_OUT_CH2;"
-                 "  "
-                 "  -- Data valid is from channel 1 when CHANNEL_SELECT = 0 or from channel 2 when CHANNEL_SELECT = 1  "
+                 ""
+                 "  -- Data valid is from channel 1 when CHANNEL_SELECT = 0 or from channel 2 when CHANNEL_SELECT = 1"
                  "  DATA_VALID_SELECT <= DATA_VALID_CH1 when CHANNEL_SELECT = '0' else DATA_VALID_CH2;"
                  ""
                  "  -- FIFO write address has to begin at zero and has to stop at 3 times the total time when doing channel 1"
@@ -892,7 +892,7 @@
                  "  WR_ADDRESS_SELECT_BEGIN <= 0 when CHANNEL_SELECT = '0' else TOTAL_TIME_3X;"
                  "  WR_ADDRESS_SELECT_END <= TOTAL_TIME_3X when CHANNEL_SELECT = '0' else TOTAL_TIME_6X_TMP;"
                  ""
-                 "  -- Take over TRIGGER_PATTERN, GPS_TS and CTD "
+                 "  -- Take over TRIGGER_PATTERN, GPS_TS and CTD"
                  "  process(CLKRD,SYSRST)"
                  "  begin"
                  "    if SYSRST = '1' then"
@@ -904,12 +904,11 @@
                  "        TRIGGER_PATTERN <= TRIGGER_PATTERN_IN;"
                  "        GPS_TS_OUT <= GPS_TS_IN;"
                  "        CTD_OUT <= CTD_IN;"
-                 "      end if;  "
+                 "      end if;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "  "
-                 "end rtl ; -- of CONVERSION_12_TO_8_BIT"
+                 "end architecture a0 ; -- of CONVERSION_12_TO_8_BIT"
                  ""
                  "")
     )

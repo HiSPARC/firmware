@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 640 384)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "INVERTER")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1152878514 "Fri Jul 14 14:01:54 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd0c787b440a600f7019170000")
@@ -70,18 +70,19 @@
         (TEXT "INP")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd2b787b440a600f70f8170000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd2b787b440a600f70f8170000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd2b787b440a600f70f8170000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'INVERTER."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'INVERTER."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'INVERTER' :"
                  "-- "
@@ -91,11 +92,13 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of INVERTER is"
+                 "architecture a0 of INVERTER is"
                  ""
                  "begin"
+                 ""
                  "  OUTP <= not INP;"
-                 "end rtl ; -- of INVERTER"
+                 ""
+                 "end architecture a0 ; -- of INVERTER"
                  ""
                  "")
     )

@@ -1,0 +1,41 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c8a0020d35c5db4c4f096150c230000")
+    (NAME "Toplevel")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 512 1024)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Tue Apr 27 09:30:47 2010")
+      (NAME "Toplevel")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "thei")
+      (CREATED 1272300861 "Mon Apr 26 18:54:21 2010")
+      (MODIFIED 1272300861 "Mon Apr 26 18:54:21 2010")
+    )
+    (ARCH_DECLARATION 1 "arch0c8a0020d35c5db4c4f096151c230000" "structure")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c8a0020d35c5db4c4f096151c230000")
+    (TYPE 1)
+    (HDL_IDENT
+      (NAME "structure")
+      (USERNAME 1)
+    )
+    (DIAGRAM
+      (OBID "diag0c8a0020d35c5db4c4f09615fb230000")
+      (SHEETSIZE 0 0 6400 4266)
+      (GRID 1)
+    )
+    (SCHEMATIC
+    )
+  )
+)
+(END_OF_FILE)

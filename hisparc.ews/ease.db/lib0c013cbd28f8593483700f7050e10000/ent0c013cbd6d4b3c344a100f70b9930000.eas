@@ -5,20 +5,20 @@
     (NAME "SYNCHRONISATION")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 2176 1536)
+    (GEOMETRY 0 0 2048 1216)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed May 13 15:21:40 2009")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
       (NAME "SYNCHRONISATION")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "thei")
       (CREATED 1136899286 "Tue Jan 10 14:21:26 2006")
-      (MODIFIED 1242121356 "Tue May 12 11:42:36 2009")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
     )
     (PORT
       (OBID "eprt0c013cbd315b3c344a100f70e9930000")
@@ -194,11 +194,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 2136 88 2216 168)
+      (GEOMETRY 2008 88 2088 168)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2112 128)
+        (POSITION 1984 128)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -223,11 +223,11 @@
           (RANGE "11" "0")
         )
       )
-      (GEOMETRY 2136 216 2216 296)
+      (GEOMETRY 2008 216 2088 296)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 2112 256)
+        (POSITION 1984 256)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -261,18 +261,19 @@
         (TEXT "LOCKED")
       )
     )
-    (ARCH_DECLARATION 2 "arch0c013cbd6d4b3c344a100f70c9930000" "rtl")
+    (ARCH_DECLARATION 2 "arch0c013cbd6d4b3c344a100f70c9930000" "a0")
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd6d4b3c344a100f70c9930000")
     (TYPE 2)
     (HDL_IDENT
-      (NAME "rtl")
+      (PROPERTY "DEFAULT_ARCH" "true")
+      (NAME "a0")
       (USERNAME 1)
     )
     (HDL_FILE
-      (VHDL_FILE "rtl.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'rtl' of 'SYNCHRONISATION."
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'SYNCHRONISATION."
                  "--------------------------------------------------------------------------------"
                  "-- Copy of the interface declaration of Entity 'SYNCHRONISATION' :"
                  "-- "
@@ -289,18 +290,18 @@
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
-                 "architecture rtl of SYNCHRONISATION is"
+                 "architecture a0 of SYNCHRONISATION is"
                  ""
-                 "signal RST: std_logic; "
+                 "signal RST: std_logic;"
                  "signal DATA_POS_ADC_TMP1: std_logic_vector(11 downto 0);"
                  "signal DATA_POS_ADC_TMP2: std_logic_vector(11 downto 0);"
                  "signal DATA_NEG_ADC_TMP1: std_logic_vector(11 downto 0);"
                  "-- signal DATA_NEG_ADC_TMP2: std_logic_vector(11 downto 0);"
                  ""
                  "begin"
-                 "  "
+                 ""
                  "  RST <= SYSRST or not LOCKED;"
-                 "  "
+                 ""
                  "  process(DCO_POS_ADC,RST)"
                  "  begin"
                  "    if RST = '1' then"
@@ -308,7 +309,7 @@
                  "    elsif (DCO_POS_ADC'event and DCO_POS_ADC = '1') then"
                  "      DATA_POS_ADC_TMP1 <= DATA_POS_ADC;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,RST)"
                  "  begin"
@@ -317,7 +318,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '0') then -- negative edge"
                  "      DATA_POS_ADC_TMP2 <= DATA_POS_ADC_TMP1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,RST)"
                  "  begin"
@@ -326,7 +327,7 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      Dout_POS <= DATA_POS_ADC_TMP2;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "  process(DCO_NEG_ADC,RST)"
                  "  begin"
@@ -335,7 +336,7 @@
                  "    elsif (DCO_NEG_ADC'event and DCO_NEG_ADC = '1') then"
                  "      DATA_NEG_ADC_TMP1 <= DATA_NEG_ADC;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
                  "--  process(CLK200MHz,RST)"
                  "--  begin"
@@ -344,7 +345,7 @@
                  "--    elsif (CLK200MHz'event and CLK200MHz = '0') then"
                  "--      DATA_NEG_ADC_TMP2 <= DATA_NEG_ADC_TMP1;"
                  "--    end if;"
-                 "--  end process;  "
+                 "--  end process;"
                  ""
                  "  process(CLK200MHz,RST)"
                  "  begin"
@@ -353,9 +354,9 @@
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
                  "      Dout_NEG <= DATA_NEG_ADC_TMP1;"
                  "    end if;"
-                 "  end process;  "
+                 "  end process;"
                  ""
-                 "end rtl ; -- of SYNCHRONISATION"
+                 "end architecture a0 ; -- of SYNCHRONISATION"
                  ""
                  "")
     )

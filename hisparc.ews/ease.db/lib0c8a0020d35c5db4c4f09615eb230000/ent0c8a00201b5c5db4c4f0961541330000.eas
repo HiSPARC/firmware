@@ -1,0 +1,193 @@
+(DATABASE_VERSION 7)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c8a00201b5c5db4c4f0961541330000")
+    (NAME "WINDOW_TIME_SETTINGS")
+    (HDL 1)
+    (EXTERNAL 0)
+    (GEOMETRY 0 0 1728 768)
+    (HDL_IDENT
+      (PROPERTY "STAMP_VERSION" "5.2")
+      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (NAME "WINDOW_TIME_SETTINGS")
+      (USERNAME 1)
+    )
+    (OBJSTAMP
+      (DESIGNER "thei")
+      (CREATED 1133875354 "Tue Dec 06 14:22:34 2005")
+      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+    )
+    (PORT
+      (OBID "eprt0c8a00201b5c5db4c4f0961551330000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "POST_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "1600" "0")
+        )
+      )
+      (GEOMETRY -40 472 40 552)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 512)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "POST_TIME(1600:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00201b5c5db4c4f0961561330000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "COINC_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "1000" "0")
+        )
+      )
+      (GEOMETRY -40 600 40 680)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 640)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "COINC_TIME(1000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00201b5c5db4c4f0961571330000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TOTAL_TIME")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2000" "0")
+        )
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "TOTAL_TIME(2000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8a00201b5c5db4c4f0961581330000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TOTAL_TIME_3X")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "6000" "0")
+        )
+      )
+      (GEOMETRY 1688 280 1768 360)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1664 320)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "TOTAL_TIME_3X(6000:0)")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c8a00201b5c5db4c4f0961591330000" "a0")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c8a00201b5c5db4c4f0961591330000")
+    (TYPE 2)
+    (HDL_IDENT
+      (NAME "a0")
+      (USERNAME 1)
+    )
+    (HDL_FILE
+      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
+                 "-- Architecture 'a0' of 'WINDOW_TIME_SETTINGS."
+                 "--------------------------------------------------------------------------------"
+                 "-- Copy of the interface declaration of Entity 'WINDOW_TIME_SETTINGS' :"
+                 "-- "
+                 "--   port("
+                 "--     COINC_TIME    : out    integer range 1000 downto 0;"
+                 "--     POST_TIME     : out    integer range 1600 downto 0;"
+                 "--     TOTAL_TIME    : out    integer range 2000 downto 0;"
+                 "--     TOTAL_TIME_3X : out    integer range 6000 downto 0);"
+                 "-- "
+                 "-- EASE/HDL end ----------------------------------------------------------------"
+                 ""
+                 "architecture a0 of WINDOW_TIME_SETTINGS is"
+                 ""
+                 "signal PRE_TIME_SET: integer range 400 downto 0;-- The maximum PRE_TIME_SET can be 2 us. This are 400 steps of 5 ns. "
+                 "signal COINC_TIME_SET: integer range 1000 downto 0;-- The maximum COINC_TIME_SET can be 5 us. This are 1000 steps of 5 ns.  "
+                 "signal POST_TIME_SET: integer range 1600 downto 0;-- The maximum POST_TIME_SET can be 8 us. This are 1600 steps of 5 ns.  "
+                 "signal TOTAL_TIME_TMP: integer range 2000 downto 0;-- The maximum TOTAL_TIME can be 10 us. This are 2000 steps of 5 ns. "
+                 ""
+                 "begin"
+                 "  PRE_TIME_SET <= 5;"
+                 "  POST_TIME_SET <= 10;"
+                 "  COINC_TIME_SET <= 10;"
+                 "  COINC_TIME <= COINC_TIME_SET;"
+                 "  POST_TIME <= POST_TIME_SET;"
+                 "  TOTAL_TIME_TMP <= PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET when (PRE_TIME_SET + COINC_TIME_SET + POST_TIME_SET) <= 2000 else TOTAL_TIME_TMP;"
+                 "  TOTAL_TIME <= TOTAL_TIME_TMP;"
+                 "  TOTAL_TIME_3X <= TOTAL_TIME_TMP + TOTAL_TIME_TMP + TOTAL_TIME_TMP;"
+                 "  "
+                 "end architecture a0 ; -- of WINDOW_TIME_SETTINGS"
+                 ""
+                 "")
+    )
+  )
+)
+(END_OF_FILE)

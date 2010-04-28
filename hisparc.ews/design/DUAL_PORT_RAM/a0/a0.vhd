@@ -16,28 +16,28 @@
 
 architecture a0 of DUAL_PORT_RAM is
 
-	type MEM is array(0 to 2020) of std_logic_vector(11 downto 0);
-	signal RAM_BLOCK : MEM;
-	signal RD_ADDRESS_REG : integer range 0 to 2020;
+  type MEM is array(0 to 2020) of std_logic_vector(11 downto 0);
+  signal RAM_BLOCK : MEM;
+  signal RD_ADDRESS_REG : integer range 0 to 2020;
 
 begin
-	process (WRCLOCK)
-	begin
-		if (WRCLOCK'event and WRCLOCK = '1') then
-			if (WE = '1') then
-				RAM_BLOCK(WR_ADDRESS) <= DATA_IN;
-			end if;
 
-		end if;
-	end process;
+  process (WRCLOCK)
+  begin
+    if (WRCLOCK'event and WRCLOCK = '1') then
+      if (WE = '1') then
+        RAM_BLOCK(WR_ADDRESS) <= DATA_IN;
+      end if;
+    end if;
+  end process;
 
-	process (RDCLOCK)
-	BEGIN
-		if (RDCLOCK'event and RDCLOCK = '1') then
-			DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);
-			RD_ADDRESS_REG <= RD_ADDRESS;
-		end if;
-	end process;
+  process (RDCLOCK)
+  BEGIN
+    if (RDCLOCK'event and RDCLOCK = '1') then
+      DATA_OUT <= RAM_BLOCK(RD_ADDRESS_REG);
+      RD_ADDRESS_REG <= RD_ADDRESS;
+    end if;
+  end process;
 
-end a0 ; -- of DUAL_PORT_RAM
+end architecture a0 ; -- of DUAL_PORT_RAM
 
