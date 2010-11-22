@@ -1,344 +1,333 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c012ca11bb5b07409210f7045730000")
-    (NAME "RD_ADDRES_COUNTER")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 1984 1536)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 5")
+      (PROPERTY "STAMP_TIME" "Thu Nov 18 15:34:19 2010")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "RD_ADDRES_COUNTER")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 1984 1536)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1191926705 "Tue Oct 09 12:45:05 2007")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1290085416 "Thu Nov 18 14:03:36 2010")
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f70b6730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RD_ADDRESS")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-          (TYPE 7)
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "2020" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RD_ADDRESS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "2040" "0")
+          )
         )
       )
       (GEOMETRY 1944 216 2024 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
-        (TEXT "RD_ADDRESS(2020:0)")
+        (TEXT "RD_ADDRESS(2040:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f70d6730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 1944 856 2024 936)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 896)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDEN")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f70e6730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLKRD")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLKRD")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 344 40 424)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 384)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLKRD")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f70f6730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT_POS")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT_POS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY 1944 88 2024 168)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 128)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_OUT_POS(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f7007730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY 1944 1240 2024 1320)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 1280)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_OUT(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f7017730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT_NEG")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT_NEG")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY 1944 1368 2024 1448)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 1408)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_OUT_NEG(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f7027730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1944 984 2024 1064)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 1024)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_READY")
       )
     )
     (PORT
       (OBID "eprt0c012ca150c5b07409210f7037730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "READOUT_BUSY")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "READOUT_BUSY")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1944 600 2024 680)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 640)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "READOUT_BUSY")
       )
     )
     (PORT
       (OBID "eprt0c012ca1d1c5b07409210f70b8730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "SYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
     )
     (PORT
       (OBID "eprt0c012ca16406b07409210f7059730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "BEGIN_PRE_TIME")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "2047" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "BEGIN_PRE_TIME")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "2040" "0")
+          )
         )
       )
       (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 768)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
-        (TEXT "BEGIN_PRE_TIME(2047:0)")
+        (TEXT "BEGIN_PRE_TIME(2040:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca1aff9c17409310f7006e60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "COINC_TO_END_TIME")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 1944 344 2024 424)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1920 384)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "COINC_TO_END_TIME")
       )
     )
     (PORT
       (OBID "eprt0c012ca12f2ac17409310f7056e60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK200MHz")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLK200MHz")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLK200MHz")
       )
@@ -347,121 +336,130 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c012ca11bb5b07409210f7055730000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'RD_ADDRES_COUNTER."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'RD_ADDRES_COUNTER' :"
-                 "-- "
-                 "--   port("
-                 "--     BEGIN_PRE_TIME    : in     integer range 2047 downto 0;"
-                 "--     CLK200MHz         : in     std_logic;"
-                 "--     CLKRD             : in     std_logic;"
-                 "--     COINC_TO_END_TIME : in     std_logic;"
-                 "--     DATA_OUT          : out    std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT_POS      : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_READY        : out    std_logic;"
-                 "--     RDEN              : in     std_logic;"
-                 "--     RD_ADDRESS        : out    integer range 2020 downto 0;"
-                 "--     READOUT_BUSY      : out    std_logic;"
-                 "--     SYSRST            : in     std_logic);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of RD_ADDRES_COUNTER is"
-                 ""
-                 "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
-                 "signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;"
-                 "signal POS_NEG_PHASE: std_logic ; -- help signal to determine the positive or negative RAM; high means positive"
-                 "signal READOUT_BUSY_TMP: std_logic ;"
-                 "signal DATA_READY_PRE: std_logic ;"
-                 "signal DATA_OUT_TMP: std_logic_vector(11 downto 0);"
-                 "signal COINC_TO_END_TIME_DEL: std_logic ;"
-                 "signal RDEN_DEL1: std_logic ;"
-                 "signal RDEN_DEL2: std_logic ;"
-                 ""
-                 "begin"
-                 ""
-                 "  RD_ADDRESS <= RD_ADDRESS_TMP;"
-                 ""
-                 "  -- delays"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      COINC_TO_END_TIME_DEL <= '0';"
-                 "      RDEN_DEL1 <= '0';"
-                 "      RDEN_DEL2 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;"
-                 "      RDEN_DEL1 <= RDEN;"
-                 "      RDEN_DEL2 <= RDEN_DEL1;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      TAKE_DATA <= '1';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME"
-                 "        TAKE_DATA <= '0';"
-                 "      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN"
-                 "        TAKE_DATA <= '1';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- DATA_READY is valid when the FIFOs are not taking data"
-                 "  -- not TAKE_DATA is synchronized with the readoutclock"
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      DATA_READY_PRE <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      DATA_READY_PRE <= not TAKE_DATA;"
-                 "      DATA_READY <= DATA_READY_PRE;"
-                 "      READOUT_BUSY <= READOUT_BUSY_TMP;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- RD_ADDRESS and toggle outputbus"
-                 "  process(CLKRD)"
-                 "  begin"
-                 "    if (CLKRD'event and CLKRD = '1') then"
-                 "      if RDEN = '1' then"
-                 "        if POS_NEG_PHASE = '1' then"
-                 "          RD_ADDRESS_TMP <= RD_ADDRESS_TMP;"
-                 "        else"
-                 "          if RD_ADDRESS_TMP = 2020 then"
-                 "            RD_ADDRESS_TMP <= 0;"
-                 "          else"
-                 "            RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;"
-                 "          end if;"
-                 "        end if;"
-                 "        POS_NEG_PHASE <= not POS_NEG_PHASE;"
-                 "        READOUT_BUSY_TMP <= '1';"
-                 "      else"
-                 "        RD_ADDRESS_TMP <= BEGIN_PRE_TIME;"
-                 "        POS_NEG_PHASE <= '1';"
-                 "        READOUT_BUSY_TMP <= '0';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  DATA_OUT_TMP <= DATA_OUT_POS  when POS_NEG_PHASE = '1' else DATA_OUT_NEG;"
-                 "  DATA_OUT <= DATA_OUT_TMP when READOUT_BUSY_TMP = '1' else \"000000000000\";"
-                 ""
-                 "end architecture a0 ; -- of RD_ADDRES_COUNTER"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file0c012cfab06badc481300f70b3500000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'RD_ADDRES_COUNTER'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     BEGIN_PRE_TIME    : in     integer range 2040 downto 0;"
+               "--     CLK200MHz         : in     std_logic;"
+               "--     CLKRD             : in     std_logic;"
+               "--     COINC_TO_END_TIME : in     std_logic;"
+               "--     DATA_OUT          : out    std_logic_vector(11 downto 0);"
+               "--     DATA_OUT_NEG      : in     std_logic_vector(11 downto 0);"
+               "--     DATA_OUT_POS      : in     std_logic_vector(11 downto 0);"
+               "--     DATA_READY        : out    std_logic;"
+               "--     RDEN              : in     std_logic;"
+               "--     RD_ADDRESS        : out    integer range 2040 downto 0;"
+               "--     READOUT_BUSY      : out    std_logic;"
+               "--     SYSRST            : in     std_logic);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of RD_ADDRES_COUNTER is"
+               ""
+               "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
+               "signal RD_ADDRESS_TMP: integer range 2040 downto 0 ;"
+               "signal POS_NEG_PHASE: std_logic ; -- help signal to determine the positive or negative RAM; high means positive"
+               "signal READOUT_BUSY_TMP: std_logic ;"
+               "signal DATA_READY_PRE: std_logic ;"
+               "signal DATA_OUT_TMP: std_logic_vector(11 downto 0);"
+               "signal COINC_TO_END_TIME_DEL: std_logic ;"
+               "signal RDEN_DEL1: std_logic ;"
+               "signal RDEN_DEL2: std_logic ;"
+               ""
+               "begin"
+               ""
+               "  RD_ADDRESS <= RD_ADDRESS_TMP;"
+               ""
+               "  -- delays"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      COINC_TO_END_TIME_DEL <= '0';"
+               "      RDEN_DEL1 <= '0';"
+               "      RDEN_DEL2 <= '0';"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;"
+               "      RDEN_DEL1 <= RDEN;"
+               "      RDEN_DEL2 <= RDEN_DEL1;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      TAKE_DATA <= '1';"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME"
+               "        TAKE_DATA <= '0';"
+               "      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN"
+               "        TAKE_DATA <= '1';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- DATA_READY is valid when the FIFOs are not taking data"
+               "  -- not TAKE_DATA is synchronized with the readoutclock"
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      DATA_READY_PRE <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      DATA_READY_PRE <= not TAKE_DATA;"
+               "      DATA_READY <= DATA_READY_PRE;"
+               "      READOUT_BUSY <= READOUT_BUSY_TMP;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- RD_ADDRESS and toggle outputbus"
+               "  process(CLKRD)"
+               "  begin"
+               "    if (CLKRD'event and CLKRD = '1') then"
+               "      if RDEN = '1' then"
+               "        if POS_NEG_PHASE = '1' then"
+               "          RD_ADDRESS_TMP <= RD_ADDRESS_TMP;"
+               "        else"
+               "          if RD_ADDRESS_TMP = 2040 then"
+               "            RD_ADDRESS_TMP <= 0;"
+               "          else"
+               "            RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;"
+               "          end if;"
+               "        end if;"
+               "        POS_NEG_PHASE <= not POS_NEG_PHASE;"
+               "        READOUT_BUSY_TMP <= '1';"
+               "      else"
+               "        RD_ADDRESS_TMP <= BEGIN_PRE_TIME;"
+               "        POS_NEG_PHASE <= '1';"
+               "        READOUT_BUSY_TMP <= '0';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  DATA_OUT_TMP <= DATA_OUT_POS  when POS_NEG_PHASE = '1' else DATA_OUT_NEG;"
+               "  DATA_OUT <= DATA_OUT_TMP when READOUT_BUSY_TMP = '1' else \"000000000000\";"
+               ""
+               "end architecture a0 ; -- of RD_ADDRES_COUNTER"
+               ""
+               "")
+      )
     )
   )
 )

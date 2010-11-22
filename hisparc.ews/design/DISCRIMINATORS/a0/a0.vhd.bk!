@@ -358,7 +358,7 @@ begin
     if SYSRST = '1' then
       EXT_TR <= '0';
     elsif (CLK200MHz'event and CLK200MHz = '1') then
-      if EXT_TR_IN_DEL1 = '1' and EXT_TR_IN_DEL2 = '0' then -- On an upgoing egde of EXT_TR_IN
+      if EXT_TR_IN_DEL1 = '1' and EXT_TR_IN_DEL2 = '0' then -- On an upgoing egde of EXT_TR_IN 
         EXT_TR <= '1';
       elsif EXT_TR_CNT = COINC_TIME - 1 then
         EXT_TR <= '0';

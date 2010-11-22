@@ -1,10 +1,7 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'a0' of entity 'LVDS_MUX'.
--- 
+-- Architecture 'a0' of 'LVDS_MUX.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'LVDS_MUX' :
 -- 
 --   port(
 --     CLK10MHz        : in     std_logic;

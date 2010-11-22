@@ -1,10 +1,7 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'a0' of entity 'LED_DRIVER'.
--- 
+-- Architecture 'a0' of 'LED_DRIVER.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'LED_DRIVER' :
 -- 
 --   port(
 --     CLK10MHz : in     std_logic;

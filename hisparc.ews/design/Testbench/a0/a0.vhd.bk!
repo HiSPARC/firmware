@@ -6,8 +6,8 @@
 --   port(
 --     ADC_A0           : in     std_logic;
 --     ADC_DATA         : out    std_logic_vector(7 downto 0);
---     CLK10MHz         : out    std_logic;
 --     CLK200MHz        : out    std_logic;
+--     CLK40MHz         : out    std_logic;
 --     COMPH1           : out    std_logic;
 --     COMPH2           : out    std_logic;
 --     COMPL1           : out    std_logic;
@@ -20,9 +20,11 @@
 --     DCO_NEG_ADC_CH2  : out    std_logic;
 --     DCO_POS_ADC_CH1  : out    std_logic;
 --     DCO_POS_ADC_CH2  : out    std_logic;
---     EXT_TR_IN        : out    std_logic;
+--     EXT_TR_IN_n      : out    std_logic;
 --     GPS_SDI          : in     std_logic;
 --     GPS_SDO          : out    std_logic;
+--     INTF1_IO         : out    std_logic_vector(2 downto 0);
+--     INTF2_IO         : out    std_logic_vector(7 downto 0);
 --     ONE_PPS          : out    std_logic;
 --     SERIAL_NUMBER    : out    std_logic_vector(9 downto 0);
 --     SH1              : out    std_logic;
@@ -45,6 +47,7 @@
 architecture a0 of Testbench is
 
 signal CLK200MHz_TMP: std_logic ;
+signal CLK40MHz_TMP: std_logic ;
 signal CLK10MHz_TMP: std_logic ;
 signal SYSRST_TMP: std_logic ;
 signal DCO_POS_ADC: std_logic ;
@@ -74,7 +77,7 @@ begin
 
   nSYSRST <= not SYSRST_TMP;
   CLK200MHz <= CLK200MHz_TMP;
-  CLK10MHz <= CLK10MHz_TMP;
+  CLK40MHz <= CLK40MHz_TMP;
   DATA_POS_ADC_CH1 <= DATA_POS_ADC_TMP after 1.7 ns;
   DATA_NEG_ADC_CH1 <= DATA_NEG_ADC_TMP after 1.7 ns;
   DATA_POS_ADC_CH2 <= (DATA_POS_ADC_TMP + "000001000000") after 1.7 ns;
@@ -104,7 +107,7 @@ begin
   SL2 <= '1';
   SH1 <= '1';
   SH2 <= '1';
-  EXT_TR_IN <= '0', '1' after 200 us, '0' after 201 us;
+  EXT_TR_IN_n <= '1', '0' after 200 us, '1' after 201 us;
 
   SPY_CON <= '0';
   SPY_SDO <= '0';
@@ -119,6 +122,12 @@ begin
   begin
     CLK10MHz_TMP <= '0','1' after 50 ns;
     wait for 100 ns;
+  end process;
+
+  process
+  begin
+    CLK40MHz_TMP <= '0','1' after 12.5 ns;
+    wait for 25 ns;
   end process;
 
   process

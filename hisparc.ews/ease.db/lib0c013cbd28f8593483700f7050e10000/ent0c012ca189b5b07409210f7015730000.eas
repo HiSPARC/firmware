@@ -1,288 +1,278 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c012ca189b5b07409210f7015730000")
-    (NAME "WR_ADDRES_COUNTER")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 2048 1024)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 5")
+      (PROPERTY "STAMP_TIME" "Thu Nov 18 15:34:19 2010")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Thu May 20 12:12:08 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "WR_ADDRES_COUNTER")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 2048 1024)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
       (DESIGNER "hansvk")
       (CREATED 1191926680 "Tue Oct 09 12:44:40 2007")
-      (MODIFIED 1274349520 "Thu May 20 11:58:40 2010")
+      (MODIFIED 1290085416 "Thu Nov 18 14:03:36 2010")
     )
     (PORT
       (OBID "eprt0c012ca1feb5b07409210f7085730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "COINC_TO_END_TIME")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 2008 344 2088 424)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1984 384)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "COINC_TO_END_TIME")
       )
     )
     (PORT
       (OBID "eprt0c012ca1feb5b07409210f7006730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "TOTAL_TIME")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-          (TYPE 7)
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "2000" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "TOTAL_TIME")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "2000" "0")
+          )
         )
       )
       (GEOMETRY 2008 216 2088 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1984 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "TOTAL_TIME(2000:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca131c5b07409210f70f7730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "WR_ADDRESS")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-          (TYPE 7)
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "2020" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "WR_ADDRESS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "2040" "0")
+          )
         )
       )
       (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 768)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
-        (TEXT "WR_ADDRESS(2020:0)")
+        (TEXT "WR_ADDRESS(2040:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca131c5b07409210f7008730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "WE")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "WE")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 856 40 936)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 896)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "WE")
       )
     )
     (PORT
       (OBID "eprt0c012ca131c5b07409210f7018730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "SYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
     )
     (PORT
       (OBID "eprt0c012ca131c5b07409210f7028730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK200MHz")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLK200MHz")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLK200MHz")
       )
     )
     (PORT
       (OBID "eprt0c012ca131c5b07409210f7038730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "MASTER")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "MASTER")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 344 40 424)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 384)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "MASTER")
       )
     )
     (PORT
       (OBID "eprt0c012ca15306b07409210f7039730000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "BEGIN_PRE_TIME_OUT")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "2020" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "BEGIN_PRE_TIME_OUT")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "2040" "0")
+          )
         )
       )
       (GEOMETRY -40 600 40 680)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 640)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
-        (TEXT "BEGIN_PRE_TIME_OUT(2020:0)")
+        (TEXT "BEGIN_PRE_TIME_OUT(2040:0)")
       )
     )
     (PORT
       (OBID "eprt0c012ca182d9817409310f70d2e60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 2008 728 2088 808)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1984 768)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDEN_CH1")
       )
     )
     (PORT
       (OBID "eprt0c012ca1353ac17409310f70b6e60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 2008 856 2088 936)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1984 896)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDEN_CH2")
       )
@@ -291,122 +281,127 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c012ca189b5b07409210f7025730000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'WR_ADDRES_COUNTER."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'WR_ADDRES_COUNTER' :"
-                 "-- "
-                 "--   port("
-                 "--     BEGIN_PRE_TIME_OUT : out    integer range 2020 downto 0;"
-                 "--     CLK200MHz          : in     std_logic;"
-                 "--     COINC_TO_END_TIME  : in     std_logic;"
-                 "--     MASTER             : in     std_logic;"
-                 "--     RDEN_CH1           : in     std_logic;"
-                 "--     RDEN_CH2           : in     std_logic;"
-                 "--     SYSRST             : in     std_logic;"
-                 "--     TOTAL_TIME         : in     integer range 2000 downto 0;"
-                 "--     WE                 : out    std_logic;"
-                 "--     WR_ADDRESS         : out    integer range 2020 downto 0);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of WR_ADDRES_COUNTER is"
-                 ""
-                 "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
-                 "signal BEGIN_PRE_TIME: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME"
-                 "signal BEGIN_PRE_TIME_NO_CORR: integer range 2020 downto 0 ; -- write address at begin of PRE_TIME without timecorrection to adjust COINC with the stored event in the FIFO"
-                 "signal BEGIN_PRE_TIME_MASTER: integer range 2020 downto 0 ;"
-                 "signal BEGIN_PRE_TIME_SLAVE : integer range 2020 downto 0 ;"
-                 "signal END_POST_TIME : integer range 2020 downto 0; -- write address at end of POST_TIME"
-                 "signal WR_ADDRESS_TMP: integer range 2020 downto 0;"
-                 "signal COINC_TO_END_TIME_DEL: std_logic ;"
-                 "signal RDEN_DEL1: std_logic ;"
-                 "signal RDEN_DEL2: std_logic ;"
-                 ""
-                 "begin"
-                 ""
-                 "  --Subtract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO"
-                 "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
-                 "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
-                 "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 16 when (END_POST_TIME >= TOTAL_TIME + 16) else (2005 - TOTAL_TIME + END_POST_TIME);"
-                 "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 18 when (END_POST_TIME >= TOTAL_TIME + 18) else (2003 - TOTAL_TIME + END_POST_TIME);"
-                 "  --BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
-                 "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 22 when (END_POST_TIME >= TOTAL_TIME + 22) else (1999 - TOTAL_TIME + END_POST_TIME);"
-                 "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 24 when (END_POST_TIME >= TOTAL_TIME + 24) else (1997 - TOTAL_TIME + END_POST_TIME);"
-                 ""
-                 "  BEGIN_PRE_TIME_NO_CORR <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
-                 ""
-                 "  -- BEGIN_PRE_TIME_MASTER has to start 22 x 5ns sooner, to compensate delay hit master to coincidence matrix."
-                 "  BEGIN_PRE_TIME_MASTER <= BEGIN_PRE_TIME_NO_CORR - 22 when (BEGIN_PRE_TIME_NO_CORR >= 22) else (1999 + BEGIN_PRE_TIME_NO_CORR);"
-                 "  -- BEGIN_PRE_TIME_SLAVE has to start 24 x 5ns sooner, to compensate delay hit slave to coincidence matrix."
-                 "  BEGIN_PRE_TIME_SLAVE <= BEGIN_PRE_TIME_NO_CORR - 24 when (BEGIN_PRE_TIME_NO_CORR >= 24) else (1997 + BEGIN_PRE_TIME_NO_CORR);"
-                 ""
-                 "  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;"
-                 ""
-                 "  WR_ADDRESS <= WR_ADDRESS_TMP;"
-                 "  BEGIN_PRE_TIME_OUT <= BEGIN_PRE_TIME;"
-                 ""
-                 "  -- delays"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      COINC_TO_END_TIME_DEL <= '0';"
-                 "      RDEN_DEL1 <= '0';"
-                 "      RDEN_DEL2 <= '0';"
-                 "      WE <= '1';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;"
-                 "      RDEN_DEL1 <= RDEN_CH1;"
-                 "      RDEN_DEL2 <= RDEN_DEL1;"
-                 "      WE <= TAKE_DATA and not RDEN_CH1 and not RDEN_CH2;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
-                 "  -- and determine END_POST_TIME"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      TAKE_DATA <= '1';"
-                 "      END_POST_TIME <= 0;"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME"
-                 "        TAKE_DATA <= '0';"
-                 "        END_POST_TIME <= WR_ADDRESS_TMP;"
-                 "      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN_CH1"
-                 "        TAKE_DATA <= '1';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- WR_ADDRESS_TMP"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      WR_ADDRESS_TMP <= 0;"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if TAKE_DATA = '1' then"
-                 "        if WR_ADDRESS_TMP = 2020 then"
-                 "          WR_ADDRESS_TMP <= 0;"
-                 "        else"
-                 "          WR_ADDRESS_TMP <= WR_ADDRESS_TMP + 1;"
-                 "        end if;"
-                 "      else"
-                 "        WR_ADDRESS_TMP <= WR_ADDRESS_TMP;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "end architecture a0 ; -- of WR_ADDRES_COUNTER"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file0c012cfab06badc481300f7054700000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'WR_ADDRES_COUNTER'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     BEGIN_PRE_TIME_OUT : out    integer range 2040 downto 0;"
+               "--     CLK200MHz          : in     std_logic;"
+               "--     COINC_TO_END_TIME  : in     std_logic;"
+               "--     MASTER             : in     std_logic;"
+               "--     RDEN_CH1           : in     std_logic;"
+               "--     RDEN_CH2           : in     std_logic;"
+               "--     SYSRST             : in     std_logic;"
+               "--     TOTAL_TIME         : in     integer range 2000 downto 0;"
+               "--     WE                 : out    std_logic;"
+               "--     WR_ADDRESS         : out    integer range 2040 downto 0);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of WR_ADDRES_COUNTER is"
+               ""
+               "signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true"
+               "signal BEGIN_PRE_TIME: integer range 2040 downto 0 ; -- write address at begin of PRE_TIME"
+               "signal BEGIN_PRE_TIME_MASTER: integer range 2040 downto 0 ;"
+               "signal BEGIN_PRE_TIME_SLAVE : integer range 2040 downto 0 ;"
+               "signal END_POST_TIME : integer range 2040 downto 0; -- write address at end of POST_TIME"
+               "signal WR_ADDRESS_TMP: integer range 2040 downto 0;"
+               "signal COINC_TO_END_TIME_DEL: std_logic ;"
+               "signal RDEN_DEL1: std_logic ;"
+               "signal RDEN_DEL2: std_logic ;"
+               ""
+               "begin"
+               ""
+               "  --Distract BEGIN_PRE_TIME with 10 (50ns) to adjust COINC with the stored event in the FIFO"
+               "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 10 when (END_POST_TIME >= TOTAL_TIME + 10) else (2011 - TOTAL_TIME + END_POST_TIME);"
+               "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 12 when (END_POST_TIME >= TOTAL_TIME + 12) else (2009 - TOTAL_TIME + END_POST_TIME);"
+               "  --BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 16 when (END_POST_TIME >= TOTAL_TIME + 16) else (2005 - TOTAL_TIME + END_POST_TIME);"
+               "  --BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 18 when (END_POST_TIME >= TOTAL_TIME + 18) else (2003 - TOTAL_TIME + END_POST_TIME);"
+               "  --BEGIN_PRE_TIME <= END_POST_TIME - TOTAL_TIME when (END_POST_TIME >= TOTAL_TIME) else (2021 - TOTAL_TIME + END_POST_TIME);"
+               ""
+               "  -- BEGIN_PRE_TIME_MASTER has to start 22 x 5ns sooner, to compensate delay hit master to coincidence matrix."
+               "  BEGIN_PRE_TIME_MASTER <= END_POST_TIME - TOTAL_TIME - 22 when (END_POST_TIME >= TOTAL_TIME + 22) else (2019 - TOTAL_TIME + END_POST_TIME);"
+               ""
+               "  -- BEGIN_PRE_TIME_SLAVE has to start 24 x 5ns sooner, to compensate delay hit slave to coincidence matrix."
+               "  BEGIN_PRE_TIME_SLAVE  <= END_POST_TIME - TOTAL_TIME - 24 when (END_POST_TIME >= TOTAL_TIME + 24) else (2017 - TOTAL_TIME + END_POST_TIME);"
+               ""
+               "  BEGIN_PRE_TIME <= BEGIN_PRE_TIME_MASTER when MASTER = '1' else BEGIN_PRE_TIME_SLAVE;"
+               ""
+               "  WR_ADDRESS <= WR_ADDRESS_TMP;"
+               "  BEGIN_PRE_TIME_OUT <= BEGIN_PRE_TIME;"
+               ""
+               "  -- delays"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      COINC_TO_END_TIME_DEL <= '0';"
+               "      RDEN_DEL1 <= '0';"
+               "      RDEN_DEL2 <= '0';"
+               "      WE <= '1';"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      COINC_TO_END_TIME_DEL <= COINC_TO_END_TIME;"
+               "      RDEN_DEL1 <= RDEN_CH1;"
+               "      RDEN_DEL2 <= RDEN_DEL1;"
+               "      WE <= TAKE_DATA and not RDEN_CH1 and not RDEN_CH2;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- Data taking TAKE_DATA stops at end of COINC_TO_END_TIME and starts again after the FIFO has been readout"
+               "  -- and determine END_POST_TIME"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      TAKE_DATA <= '1';"
+               "      END_POST_TIME <= 0;"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_TO_END_TIME = '0' and COINC_TO_END_TIME_DEL = '1' then -- on a negative edge of COINC_TO_END_TIME"
+               "        TAKE_DATA <= '0';"
+               "        END_POST_TIME <= WR_ADDRESS_TMP;"
+               "      elsif RDEN_DEL1 = '0' and RDEN_DEL2 = '1' then -- on a negative edge of RDEN_CH1"
+               "        TAKE_DATA <= '1';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- WR_ADDRESS_TMP"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      WR_ADDRESS_TMP <= 0;"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if TAKE_DATA = '1' then"
+               "        if WR_ADDRESS_TMP = 2040 then"
+               "          WR_ADDRESS_TMP <= 0;"
+               "        else"
+               "          WR_ADDRESS_TMP <= WR_ADDRESS_TMP + 1;"
+               "        end if;"
+               "      else"
+               "        WR_ADDRESS_TMP <= WR_ADDRESS_TMP;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "end architecture a0 ; -- of WR_ADDRES_COUNTER"
+               ""
+               "")
+      )
     )
   )
 )

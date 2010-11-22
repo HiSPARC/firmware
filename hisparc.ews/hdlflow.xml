@@ -2,7 +2,7 @@
 <CONFIGURATION>
   <main version="1.1" />
   <category name="Simulation" >
-    <group enable="false" namespace="TlModelsim" path="" name="Modelsim" >
+    <group enable="false" path="" namespace="TlModelsim" name="Modelsim" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlModelsim::ModelsimStart" name="ModelsimStartGui" toolTip="Start Modelsim Gui" bitmap="modelsim" />
         <button options="" accel="" enable="true" procedure="TlModelsim::LibraryMapping" name="ModelsimLibraryMapping" toolTip="Show Modelsim Library Mapping" bitmap="modelsim" />
@@ -29,20 +29,20 @@
         <button options="" accel="" enable="true" procedure="TlModelsim::SimulateUnit" name="ModelsimStartSimulation" toolTip="Start simulation for the toplevel marker" bitmap="modelsimsim" />
       </companion>
     </group>
-    <group enable="false" namespace="TlNcSim" path="" name="NCSim" cds_lib="./cds.lib" hdl_var="./hdl.var" >
+    <group enable="false" path="" namespace="TlNcSim" cds_lib="./cds.lib" name="NCSim" hdl_var="./hdl.var" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlNcSim::NcLaunch" name="NC_Launch" toolTip="Start NcLaunch Gui" bitmap="ncdesktop" />
-<!-- TODO
-            <button
-              enable    = "true"
-              name      = "NC_CompileFile"
-              procedure = "TlNcSim::EaleCompileFile"
-              options   = "-linedebug"
-              toolTip   = "Compile current file with NcHdl"
-              bitmap    = "nccompilefile"
-              accel     = ""
-            >
-            </button>
+<!-- TODO
+            <button
+              enable    = "true"
+              name      = "NC_CompileFile"
+              procedure = "TlNcSim::EaleCompileFile"
+              options   = "-linedebug"
+              toolTip   = "Compile current file with NcHdl"
+              bitmap    = "nccompilefile"
+              accel     = ""
+            >
+            </button>
 -->      </eale_ease>
       <ease directory="../simulation" >
         <button options="" accel="" enable="true" procedure="TlNcSim::NcLaunch" name="NC_Launch" toolTip="Start NcLaunch Gui" bitmap="ncdesktop" />
@@ -63,7 +63,7 @@
         <button options="" accel="" enable="true" procedure="TlNcSim::SimulateUnit" name="NC_Sim" toolTip="Start simulation for the toplevel marker" bitmap="ncdesktopsim" />
       </companion>
     </group>
-    <group enable="false" namespace="TlRiviera" path="" name="Riviera" >
+    <group enable="false" path="" namespace="TlRiviera" name="Riviera" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlRiviera::RivieraStart" name="RivieraStart" toolTip="Start Riviera Gui" bitmap="riviera" />
         <button options="" accel="" enable="true" procedure="TlRiviera::LibraryMapping" name="RivieraLibraryMapping" toolTip="Show Riviera Library Mapping" bitmap="riviera" />
@@ -89,7 +89,7 @@
         <button options="" accel="" enable="true" procedure="TlRiviera::SimulateUnit" name="RivieraSimulate" toolTip="Start simulation for the toplevel marker" bitmap="rivierasim" />
       </companion>
     </group>
-    <group enable="false" namespace="TlSilos" path="" name="Silos" >
+    <group enable="false" path="" namespace="TlSilos" name="Silos" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlSilos::SilosStart" name="SilosStart" toolTip="Start Silos Gui" bitmap="silos" />
       </eale_ease>
@@ -105,24 +105,24 @@
         <button options="" accel="" enable="true" procedure="TlSilos::SilosProject" name="SilosProject" toolTip="Start Silos Gui and create projectfile" bitmap="silos" />
       </companion>
     </group>
-<!-- VCS -->    <group enable="false" namespace="TlVcs" path="" name="VCS" >
+<!-- VCS -->    <group enable="false" path="" namespace="TlVcs" name="VCS" >
       <eale_ease proddirlink="ease" grouppageenable="false" />
       <companion directory="simulation" >
         <button options="" accel="" enable="true" procedure="TlVcs::CompileFiles" name="Vcs_CompileFiles" toolTip="Compile project files with VCS" bitmap="vcsmarker" />
-<!--
-            <button
-              enable    = "true"
-              name      = "Vcs_Launch"
-              procedure = "TlVcs::SimulateUnit"
-              options   = ""
-              toolTip   = "Compile project files and simulate with VCS"
-              bitmap    = "vcssim"
-              accel     = ""
-            >
-            </button>
+<!--
+            <button
+              enable    = "true"
+              name      = "Vcs_Launch"
+              procedure = "TlVcs::SimulateUnit"
+              options   = ""
+              toolTip   = "Compile project files and simulate with VCS"
+              bitmap    = "vcssim"
+              accel     = ""
+            >
+            </button>
 -->      </companion>
     </group>
-    <group enable="false" namespace="TlVerilogXl" path="" name="Verilog-XL" >
+    <group enable="false" path="" namespace="TlVerilogXl" name="Verilog-XL" >
       <eale_ease proddirlink="ease" grouppageenable="false" />
       <companion directory="veri-xl" >
         <button options="" accel="" enable="true" procedure="TlVerilogXl::CompileFiles" name="VerilogXlCompileFile" toolTip="Compile project files with Verilog-XL" bitmap="verilogxlmarker" />
@@ -131,222 +131,222 @@
       </companion>
     </group>
 <!-- Verilog XL -->  </category>
-<!--
-    <category name      = "Verification" >
-        <group name     = "FpgaConnector"
-            enable      = "false"
-            namespace   = "TlFpgaConnector"
-            path        = "" >
-
-          <eale_ease
-            grouppageenable = "false"
-            proddirlink = "ease"
-          >
-
-          </eale_ease>
-
-          <ease
-            directory   = "../fpgaC" >
-            <button
-              enable    = "true"
-              name      = "FpgaConnectorStart"
-              procedure = "TlFpgaConnector::EaseFpgaConnector"
-              options   = ""
-              toolTip   = "Start FpgaConnector"
-              bitmap    = "fpga_con"
-              accel     = ""
-            >
-            </button>
-
-          </ease>
-
-          <companion
-            directory   = "fpgaC" >
-            <button
-              enable    = "true"
-              name      = "FpgaConnectorStart"
-              procedure = "TlFpgaConnector::TlNavFpgaConnector"
-              options   = ""
-              toolTip   = "Start FpgaConnector"
-              bitmap    = "fpga_con"
-              accel     = ""
-            >
-            </button>
-
-          </companion>
-        </group>
-
-        <group name     = "Hal"
-            enable      = "false"
-            namespace   = "TlNcSimXXX" >
-          <ease
-            directory   = "../hal" >
-            <button
-              enable    = "true"
-              name      = "HalSnapShot"
-              procedure = "TlNcSim::EaseHalSnapShot"
-              options   = ""
-              toolTip   = "Lint the snap shot"
-              bitmap    = "hal"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "HalFiles"
-              procedure = "TlNcSim::EaseHalFiles"
-              options   = ""
-              toolTip   = "Lint verilog files"
-              bitmap    = "hal"
-              accel     = ""
-            >
-            </button>
-
-          </ease>
-          <companion
-            directory   = "hal" >
-            <button
-              enable    = "true"
-              name      = "HalSnapShot"
-              procedure = "TlNcSim::TlNavHalSnapShot"
-              options   = ""
-              toolTip   = "Lint the snap shot"
-              bitmap    = "hal"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "HalFiles"
-              procedure = "TlNcSim::TlNavHalFiles"
-              options   = ""
-              toolTip   = "Lint verilog files"
-              bitmap    = "hal"
-              accel     = ""
-            >
-            </button>
-
-          </companion>
-        </group>
-    </category>
+<!--
+    <category name      = "Verification" >
+        <group name     = "FpgaConnector"
+            enable      = "false"
+            namespace   = "TlFpgaConnector"
+            path        = "" >
+
+          <eale_ease
+            grouppageenable = "false"
+            proddirlink = "ease"
+          >
+
+          </eale_ease>
+
+          <ease
+            directory   = "../fpgaC" >
+            <button
+              enable    = "true"
+              name      = "FpgaConnectorStart"
+              procedure = "TlFpgaConnector::EaseFpgaConnector"
+              options   = ""
+              toolTip   = "Start FpgaConnector"
+              bitmap    = "fpga_con"
+              accel     = ""
+            >
+            </button>
+
+          </ease>
+
+          <companion
+            directory   = "fpgaC" >
+            <button
+              enable    = "true"
+              name      = "FpgaConnectorStart"
+              procedure = "TlFpgaConnector::TlNavFpgaConnector"
+              options   = ""
+              toolTip   = "Start FpgaConnector"
+              bitmap    = "fpga_con"
+              accel     = ""
+            >
+            </button>
+
+          </companion>
+        </group>
+
+        <group name     = "Hal"
+            enable      = "false"
+            namespace   = "TlNcSimXXX" >
+          <ease
+            directory   = "../hal" >
+            <button
+              enable    = "true"
+              name      = "HalSnapShot"
+              procedure = "TlNcSim::EaseHalSnapShot"
+              options   = ""
+              toolTip   = "Lint the snap shot"
+              bitmap    = "hal"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "HalFiles"
+              procedure = "TlNcSim::EaseHalFiles"
+              options   = ""
+              toolTip   = "Lint verilog files"
+              bitmap    = "hal"
+              accel     = ""
+            >
+            </button>
+
+          </ease>
+          <companion
+            directory   = "hal" >
+            <button
+              enable    = "true"
+              name      = "HalSnapShot"
+              procedure = "TlNcSim::TlNavHalSnapShot"
+              options   = ""
+              toolTip   = "Lint the snap shot"
+              bitmap    = "hal"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "HalFiles"
+              procedure = "TlNcSim::TlNavHalFiles"
+              options   = ""
+              toolTip   = "Lint verilog files"
+              bitmap    = "hal"
+              accel     = ""
+            >
+            </button>
+
+          </companion>
+        </group>
+    </category>
 -->  <category name="Synthesis" >
-<!--
-        <group name     = "Leonardo"
-            enable      = "false"
-            namespace   = "TlExemplar"
-            path        = "" >
-
-          <eale_ease
-            grouppageenable = "false"
-            proddirlink = "ease"
-          >
-
-          </eale_ease>
-
-          <ease
-            directory   = "../synthesis" >
-            <button
-              enable    = "true"
-              name      = "LeonardoStart"
-              procedure = "TlExemplar::EaseLeonardo"
-              options   = ""
-              toolTip   = "Start Leonardo Spectrum"
-              bitmap    = "leonardo"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "LeonardoCompileDiagram"
-              procedure = "TlExemplar::EaseCompileDiagram"
-              options   = ""
-              toolTip   = "Analyse current diagram Hdl with Leonardo"
-              bitmap    = "leonardofile"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "LeonardoCompileMarker"
-              procedure = "TlExemplar::EaseCompileMarker"
-              options   = ""
-              toolTip   = "Analyse generated Hdl with Leonardo"
-              bitmap    = "leonardomarker"
-              accel     = ""
-            >
-            </button>
-
-          </ease>
-
-          <eale
-            directory   = "../synthesis" >
-            <button
-              enable    = "true"
-              name      = "LeonardoStart"
-              procedure = "TlExemplar::EaleLeonardo"
-              options   = ""
-              toolTip   = "Start Leonardo Spectrum"
-              bitmap    = "leonardo"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "LeonardoCompileFile"
-              procedure = "TlExemplar::EaleCompile"
-              options   = ""
-              toolTip   = "Analyse current file with Leonardo"
-              bitmap    = "leonardofile"
-              accel     = ""
-            >
-            </button>
-
-          </eale>
-
-          <companion
-            directory   = "synthesis" >
-            <button
-              enable    = "true"
-              name      = "LeonardoStart"
-              procedure = "TlExemplar::TlNavLeonardo"
-              options   = ""
-              toolTip   = "Start Leonardo Spectrum"
-              bitmap    = "leonardo"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "LeonardoCompileFile"
-              procedure = "TlExemplar::TlNavCompileFile"
-              options   = ""
-              toolTip   = "Analyse current file with Leonardo"
-              bitmap    = "leonardofile"
-              accel     = ""
-            >
-            </button>
-
-            <button
-              enable    = "true"
-              name      = "LeonardoCompileMarker"
-              procedure = "TlExemplar::TlNavCompileMarker"
-              options   = ""
-              toolTip   = "Analyse Hdl from marker with Leonardo"
-              bitmap    = "leonardomarker"
-              accel     = ""
-            >
-            </button>
-
-          </companion>
-        </group>
-
--->    <group enable="false" namespace="TlFpgaCompiler" path="" name="FpgaCompiler2" >
+<!--
+        <group name     = "Leonardo"
+            enable      = "false"
+            namespace   = "TlExemplar"
+            path        = "" >
+
+          <eale_ease
+            grouppageenable = "false"
+            proddirlink = "ease"
+          >
+
+          </eale_ease>
+
+          <ease
+            directory   = "../synthesis" >
+            <button
+              enable    = "true"
+              name      = "LeonardoStart"
+              procedure = "TlExemplar::EaseLeonardo"
+              options   = ""
+              toolTip   = "Start Leonardo Spectrum"
+              bitmap    = "leonardo"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "LeonardoCompileDiagram"
+              procedure = "TlExemplar::EaseCompileDiagram"
+              options   = ""
+              toolTip   = "Analyse current diagram Hdl with Leonardo"
+              bitmap    = "leonardofile"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "LeonardoCompileMarker"
+              procedure = "TlExemplar::EaseCompileMarker"
+              options   = ""
+              toolTip   = "Analyse generated Hdl with Leonardo"
+              bitmap    = "leonardomarker"
+              accel     = ""
+            >
+            </button>
+
+          </ease>
+
+          <eale
+            directory   = "../synthesis" >
+            <button
+              enable    = "true"
+              name      = "LeonardoStart"
+              procedure = "TlExemplar::EaleLeonardo"
+              options   = ""
+              toolTip   = "Start Leonardo Spectrum"
+              bitmap    = "leonardo"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "LeonardoCompileFile"
+              procedure = "TlExemplar::EaleCompile"
+              options   = ""
+              toolTip   = "Analyse current file with Leonardo"
+              bitmap    = "leonardofile"
+              accel     = ""
+            >
+            </button>
+
+          </eale>
+
+          <companion
+            directory   = "synthesis" >
+            <button
+              enable    = "true"
+              name      = "LeonardoStart"
+              procedure = "TlExemplar::TlNavLeonardo"
+              options   = ""
+              toolTip   = "Start Leonardo Spectrum"
+              bitmap    = "leonardo"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "LeonardoCompileFile"
+              procedure = "TlExemplar::TlNavCompileFile"
+              options   = ""
+              toolTip   = "Analyse current file with Leonardo"
+              bitmap    = "leonardofile"
+              accel     = ""
+            >
+            </button>
+
+            <button
+              enable    = "true"
+              name      = "LeonardoCompileMarker"
+              procedure = "TlExemplar::TlNavCompileMarker"
+              options   = ""
+              toolTip   = "Analyse Hdl from marker with Leonardo"
+              bitmap    = "leonardomarker"
+              accel     = ""
+            >
+            </button>
+
+          </companion>
+        </group>
+
+-->    <group enable="false" path="" namespace="TlFpgaCompiler" name="FpgaCompiler2" >
       <ease directory="../synthesis" >
         <button options="" accel="" enable="true" procedure="TlFpgaCompiler::Start" name="FpgaCompilerStart" toolTip="Start FpgaCompiler" bitmap="fpga_express.png" />
         <button options="" accel="" enable="true" procedure="TlFpgaCompiler::AnalyzeFiles" name="FpgaCompilerAnalyze" toolTip="Analyze generated HDL files with FpgaCompiler" bitmap="fpga_express.png" />
@@ -362,7 +362,7 @@
         <button options="" accel="" enable="true" procedure="TlFpgaCompiler::AnalyzeFiles" name="FpgaCompilerAnalyze" toolTip="Analyze HDL files with FpgaCompiler" bitmap="fpga_express.png" />
       </companion>
     </group>
-    <group enable="false" namespace="TlSynopsys" path="" name="Synopsys" >
+    <group enable="false" path="" namespace="TlSynopsys" name="Synopsys" >
       <ease directory="../synthesis" >
         <button options="" accel="" enable="true" procedure="TlSynopsys::Start" name="DesignAnalyzerStart" toolTip="Start Synopsys Design Analyzer" bitmap="dc.png" />
         <button options="" accel="" enable="true" procedure="TlSynopsys::Makefile" name="SynopsysMakefile" toolTip="Create dc_shell synthesis scripts" bitmap="dc_makefile.png" />
@@ -380,21 +380,21 @@
         <button options="" accel="" enable="true" procedure="TlSynopsys::StartSynthesis" name="DcShellRunScript" toolTip="Start Synopsys dc_shell with script" bitmap="dc_run.png" />
       </companion>
     </group>
-    <group enable="false" namespace="TlSynplicity" path="" name="Synplify" >
+    <group enable="false" path="" namespace="TlSynplicity" name="Synplify" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlSynplicity::SynplifyStart" name="SynplifyStart" toolTip="Start Synplify" bitmap="synplify" />
         <button options="" accel="" enable="true" procedure="TlSynplicity::SynplifyProStart" name="SynplifyStartPro" toolTip="Start Synplify Pro" bitmap="synplify" />
-<!-- TODO
-            <button
-              enable    = "true"
-              name      = "SynplifyCompileFile"
-              procedure = "TlSynplicity::EaleCompile"
-              options   = ""
-              toolTip   = "Analyse current file with Synplify"
-              bitmap    = "synplifyfile"
-              accel     = ""
-            >
-            </button>
+<!-- TODO
+            <button
+              enable    = "true"
+              name      = "SynplifyCompileFile"
+              procedure = "TlSynplicity::EaleCompile"
+              options   = ""
+              toolTip   = "Analyse current file with Synplify"
+              bitmap    = "synplifyfile"
+              accel     = ""
+            >
+            </button>
 -->      </eale_ease>
       <ease directory="../synthesis" >
         <button options="" accel="" enable="true" procedure="TlSynplicity::SynplifyStart" name="SynplifyStart" toolTip="Start Synplify" bitmap="synplify" />
@@ -415,7 +415,7 @@
     </group>
   </category>
   <category name="Backend" >
-    <group enable="true" namespace="TlActel" path="" name="Actel" >
+    <group enable="false" path="" namespace="TlActel" name="Actel" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlActel::Libero" name="Libero" toolTip="Start Actel Cleanup" bitmap="actlibero" />
         <button options="" accel="" enable="true" procedure="TlActel::Designer" name="Designer" toolTip="Start Actel Designer" bitmap="actdesigner" />
@@ -437,7 +437,7 @@
         <button options="" accel="" enable="true" procedure="TlActel::ActGen" name="ActGenMacroBuilder" toolTip="Start Actel ActGen" bitmap="actgen" />
       </companion>
     </group>
-    <group enable="false" namespace="TlAltera" path="" name="Altera" >
+    <group enable="false" path="" namespace="TlAltera" name="Altera" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlAltera::Quartus" name="Quartus2" toolTip="Start Altera Quartus2" bitmap="quartus2" />
       </eale_ease>
@@ -451,7 +451,7 @@
         <button options="" accel="" enable="true" procedure="TlAltera::Quartus" name="Quartus2" toolTip="Start Altera Quartus2" bitmap="quartus2" />
       </companion>
     </group>
-    <group enable="false" namespace="TlXilinx" path="" name="Xilinx" >
+    <group enable="false" path="" namespace="TlXilinx" name="Xilinx" >
       <eale_ease proddirlink="ease" grouppageenable="false" >
         <button options="" accel="" enable="true" procedure="TlXilinx::ProjectNavigator" name="XilinxProjNav" toolTip="Start Xilinx Project Navigator" bitmap="xilinx_ise" />
         <button options="" accel="" enable="true" procedure="TlXilinx::DesignManager" name="XilinxDesMan" toolTip="Start Xilinx P&amp;R" bitmap="xilinx_des" />

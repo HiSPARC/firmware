@@ -1,14 +1,17 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- Architecture 'a0' of 'LED_ONE_SHOT.
+-- 
+-- Architecture 'a0' of entity 'LED_ONE_SHOT'.
+-- 
 --------------------------------------------------------------------------------
--- Copy of the interface declaration of Entity 'LED_ONE_SHOT' :
+-- 
+-- Copy of the interface declaration:
 -- 
 --   port(
 --     CLK10MHz : in     std_logic;
 --     INP      : in     std_logic;
+--     OUTP     : out    std_logic;
 --     STARTUP  : in     std_logic;
---     SYSRST   : in     std_logic;
---     nOUTP    : out    std_logic);
+--     SYSRST   : in     std_logic);
 -- 
 -- EASE/HDL end ----------------------------------------------------------------
 
@@ -35,7 +38,7 @@ begin
     end if;
   end process;
 
-  nOUTP <= STARTUP or not LED_ON;
+  OUTP <= LED_ON and not STARTUP;
 
 end architecture a0 ; -- of LED_ONE_SHOT
 

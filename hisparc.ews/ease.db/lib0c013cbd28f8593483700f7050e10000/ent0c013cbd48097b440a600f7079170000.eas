@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 896 640)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_TIME" "Wed Jun 02 16:05:13 2010")
       (NAME "LED_DRIVER")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1152880772 "Fri Jul 14 14:39:32 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1275487320 "Wed Jun 02 16:02:00 2010")
     )
     (PORT
       (OBID "eprt0c013cbda9097b440a600f70a9170000")
@@ -50,7 +50,7 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "nOUTP")
+          (NAME "OUTP")
           (USERNAME 1)
         )
         (HDL_TYPE
@@ -67,7 +67,7 @@
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
-        (TEXT "nOUTP")
+        (TEXT "OUTP")
       )
     )
     (PORT
@@ -139,8 +139,8 @@
                  "--   port("
                  "--     CLK10MHz : in     std_logic;"
                  "--     INP      : in     std_logic;"
-                 "--     SYSRST   : in     std_logic;"
-                 "--     nOUTP    : out    std_logic);"
+                 "--     OUTP     : out    std_logic;"
+                 "--     SYSRST   : in     std_logic);"
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
@@ -163,7 +163,7 @@
                  "    end if;"
                  "  end process;"
                  ""
-                 "  nOUTP <= '0' when (LEDSHINE_COUNTER /= \"111111111111111111111\") else '1';"
+                 "  OUTP <= '1' when (LEDSHINE_COUNTER /= \"111111111111111111111\") else '0';"
                  ""
                  "end architecture a0 ; -- of LED_DRIVER"
                  ""

@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 2048 1216)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_TIME" "Mon Jun 07 11:16:37 2010")
       (NAME "SYNCHRONISATION")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1136899286 "Tue Jan 10 14:21:26 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1275650215 "Fri Jun 04 13:16:55 2010")
     )
     (PORT
       (OBID "eprt0c013cbd315b3c344a100f70e9930000")
@@ -32,15 +32,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 792 40 872)
+      (GEOMETRY 2008 600 2088 680)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 832)
+        (POSITION 1984 640)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "CLK200MHz")
       )
@@ -57,15 +57,15 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 664 40 744)
+      (GEOMETRY 2008 472 2088 552)
       (SENSLIST 1)
-      (SIDE 3)
+      (SIDE 1)
       (LABEL
-        (POSITION 64 704)
+        (POSITION 1984 512)
         (SCALE 96)
         (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
+        (ALIGNMENT 5)
+        (SIDE 1)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
@@ -248,17 +248,100 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 920 40 1000)
+      (GEOMETRY 2008 984 2088 1064)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1984 1024)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LOCKED")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfaa95150c405900f702b100000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "FAKE_DATA")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY 2008 728 2088 808)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1984 768)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "FAKE_DATA")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfac1fd80c480010f7034510000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "FAKE_DATA_POS")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 960)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
         (SIDE 3)
         (FORMAT 35)
-        (TEXT "LOCKED")
+        (TEXT "FAKE_DATA_POS(11:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfac1fd80c480010f7044510000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "FAKE_DATA_NEG")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "11" "0")
+        )
+      )
+      (GEOMETRY -40 856 40 936)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 896)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "FAKE_DATA_NEG(11:0)")
       )
     )
     (ARCH_DECLARATION 2 "arch0c013cbd6d4b3c344a100f70c9930000" "a0")
@@ -278,30 +361,36 @@
                  "-- Copy of the interface declaration of Entity 'SYNCHRONISATION' :"
                  "-- "
                  "--   port("
-                 "--     CLK200MHz    : in     std_logic;"
-                 "--     DATA_NEG_ADC : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_POS_ADC : in     std_logic_vector(11 downto 0);"
-                 "--     DCO_NEG_ADC  : in     std_logic;"
-                 "--     DCO_POS_ADC  : in     std_logic;"
-                 "--     DOUT_NEG     : out    std_logic_vector(11 downto 0);"
-                 "--     DOUT_POS     : out    std_logic_vector(11 downto 0);"
-                 "--     LOCKED       : in     std_logic;"
-                 "--     SYSRST       : in     std_logic);"
+                 "--     CLK200MHz     : in     std_logic;"
+                 "--     DATA_NEG_ADC  : in     std_logic_vector(11 downto 0);"
+                 "--     DATA_POS_ADC  : in     std_logic_vector(11 downto 0);"
+                 "--     DCO_NEG_ADC   : in     std_logic;"
+                 "--     DCO_POS_ADC   : in     std_logic;"
+                 "--     DOUT_NEG      : out    std_logic_vector(11 downto 0);"
+                 "--     DOUT_POS      : out    std_logic_vector(11 downto 0);"
+                 "--     FAKE_DATA     : in     std_logic;"
+                 "--     FAKE_DATA_NEG : in     std_logic_vector(11 downto 0);"
+                 "--     FAKE_DATA_POS : in     std_logic_vector(11 downto 0);"
+                 "--     LOCKED        : in     std_logic;"
+                 "--     SYSRST        : in     std_logic);"
                  "-- "
                  "-- EASE/HDL end ----------------------------------------------------------------"
                  ""
                  "architecture a0 of SYNCHRONISATION is"
                  ""
                  "signal RST: std_logic;"
+                 ""
                  "signal DATA_POS_ADC_TMP1: std_logic_vector(11 downto 0);"
                  "signal DATA_POS_ADC_TMP2: std_logic_vector(11 downto 0);"
                  "signal DATA_NEG_ADC_TMP1: std_logic_vector(11 downto 0);"
-                 "-- signal DATA_NEG_ADC_TMP2: std_logic_vector(11 downto 0);"
+                 "signal DATA_NEG_ADC_TMP2: std_logic_vector(11 downto 0);"
                  ""
                  "begin"
                  ""
                  "  RST <= SYSRST or not LOCKED;"
                  ""
+                 "-- SYNCHRONISATION ADC signals"
+                 "-- Latch positive ADC signals on ADC clock"
                  "  process(DCO_POS_ADC,RST)"
                  "  begin"
                  "    if RST = '1' then"
@@ -311,12 +400,17 @@
                  "    end if;"
                  "  end process;"
                  ""
+                 "-- Synchronize DATA_POS_ADC_TMP1 with CLK200MHz or latch fake data"
                  "  process(CLK200MHz,RST)"
                  "  begin"
                  "    if RST = '1' then"
                  "      DATA_POS_ADC_TMP2 <= (others => '0');"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '0') then -- negative edge"
-                 "      DATA_POS_ADC_TMP2 <= DATA_POS_ADC_TMP1;"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+                 "      if FAKE_DATA = '0' then"
+                 "        DATA_POS_ADC_TMP2 <= DATA_POS_ADC_TMP1;"
+                 "      else"
+                 "        DATA_POS_ADC_TMP2 <= FAKE_DATA_POS;"
+                 "      end if;"
                  "    end if;"
                  "  end process;"
                  ""
@@ -329,6 +423,7 @@
                  "    end if;"
                  "  end process;"
                  ""
+                 "-- Latch negative ADC signals on ADC clock"
                  "  process(DCO_NEG_ADC,RST)"
                  "  begin"
                  "    if RST = '1' then"
@@ -338,21 +433,26 @@
                  "    end if;"
                  "  end process;"
                  ""
-                 "--  process(CLK200MHz,RST)"
-                 "--  begin"
-                 "--    if RST = '1' then"
-                 "--      DATA_NEG_ADC_TMP2 <= (others => '0');"
-                 "--    elsif (CLK200MHz'event and CLK200MHz = '0') then"
-                 "--      DATA_NEG_ADC_TMP2 <= DATA_NEG_ADC_TMP1;"
-                 "--    end if;"
-                 "--  end process;"
+                 "-- Synchronize DATA_NEG_ADC_TMP1 with CLK200MHz or latch fake data"
+                 "  process(CLK200MHz,RST)"
+                 "  begin"
+                 "    if RST = '1' then"
+                 "      DATA_NEG_ADC_TMP2 <= (others => '0');"
+                 "    elsif (CLK200MHz'event and CLK200MHz = '0') then -- negative edge"
+                 "      if FAKE_DATA = '0' then"
+                 "        DATA_NEG_ADC_TMP2 <= DATA_NEG_ADC_TMP1;"
+                 "      else"
+                 "        DATA_NEG_ADC_TMP2 <= FAKE_DATA_NEG;"
+                 "      end if;"
+                 "    end if;"
+                 "  end process;"
                  ""
                  "  process(CLK200MHz,RST)"
                  "  begin"
                  "    if RST = '1' then"
                  "      Dout_NEG <= (others => '0');"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      Dout_NEG <= DATA_NEG_ADC_TMP1;"
+                 "      Dout_NEG <= DATA_NEG_ADC_TMP2;"
                  "    end if;"
                  "  end process;"
                  ""

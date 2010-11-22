@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 1792 6272)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_TIME" "Wed Jun 02 14:57:50 2010")
       (NAME "Testbench")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1133954471 "Wed Dec 07 12:21:11 2005")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1275483470 "Wed Jun 02 14:57:50 2010")
     )
     (PORT
       (OBID "eprt0c013cbdfb5c693483700f7074e10000")
@@ -391,7 +391,7 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK10MHz")
+          (NAME "CLK40MHz")
           (USERNAME 1)
         )
         (HDL_TYPE
@@ -408,7 +408,7 @@
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
-        (TEXT "CLK10MHz")
+        (TEXT "CLK40MHz")
       )
     )
     (PORT
@@ -416,7 +416,7 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "EXT_TR_IN")
+          (NAME "EXT_TR_IN_n")
           (USERNAME 1)
         )
         (HDL_TYPE
@@ -433,7 +433,7 @@
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
-        (TEXT "EXT_TR_IN")
+        (TEXT "EXT_TR_IN_n")
       )
     )
     (PORT
@@ -814,11 +814,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1752 5080 1832 5160)
+      (GEOMETRY 1752 5592 1832 5672)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1728 5120)
+        (POSITION 1728 5632)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -839,11 +839,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1752 5720 1832 5800)
+      (GEOMETRY 1752 5464 1832 5544)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1728 5760)
+        (POSITION 1728 5504)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -864,11 +864,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1752 5592 1832 5672)
+      (GEOMETRY 1752 5336 1832 5416)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1728 5632)
+        (POSITION 1728 5376)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -889,11 +889,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY 1752 5464 1832 5544)
+      (GEOMETRY 1752 5208 1832 5288)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1728 5504)
+        (POSITION 1728 5248)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -914,17 +914,75 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1752 5336 1832 5416)
+      (GEOMETRY 1752 5080 1832 5160)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1728 5376)
+        (POSITION 1728 5120)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
         (TEXT "SPY_CON")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfadd0560c480010f70da410000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "INTF1_IO")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "2" "0")
+        )
+      )
+      (GEOMETRY 1752 5848 1832 5928)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1728 5888)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "INTF1_IO(2:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfadd0560c480010f70ea410000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "INTF2_IO")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "7" "0")
+        )
+      )
+      (GEOMETRY 1752 5976 1832 6056)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1728 6016)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "INTF2_IO(7:0)")
       )
     )
     (ARCH_DECLARATION 2 "arch0c013cbd7a5c693483700f7004e10000" "a0")
@@ -945,8 +1003,8 @@
                  "--   port("
                  "--     ADC_A0           : in     std_logic;"
                  "--     ADC_DATA         : out    std_logic_vector(7 downto 0);"
-                 "--     CLK10MHz         : out    std_logic;"
                  "--     CLK200MHz        : out    std_logic;"
+                 "--     CLK40MHz         : out    std_logic;"
                  "--     COMPH1           : out    std_logic;"
                  "--     COMPH2           : out    std_logic;"
                  "--     COMPL1           : out    std_logic;"
@@ -959,9 +1017,11 @@
                  "--     DCO_NEG_ADC_CH2  : out    std_logic;"
                  "--     DCO_POS_ADC_CH1  : out    std_logic;"
                  "--     DCO_POS_ADC_CH2  : out    std_logic;"
-                 "--     EXT_TR_IN        : out    std_logic;"
+                 "--     EXT_TR_IN_n      : out    std_logic;"
                  "--     GPS_SDI          : in     std_logic;"
                  "--     GPS_SDO          : out    std_logic;"
+                 "--     INTF1_IO         : out    std_logic_vector(2 downto 0);"
+                 "--     INTF2_IO         : out    std_logic_vector(7 downto 0);"
                  "--     ONE_PPS          : out    std_logic;"
                  "--     SERIAL_NUMBER    : out    std_logic_vector(9 downto 0);"
                  "--     SH1              : out    std_logic;"
@@ -984,6 +1044,7 @@
                  "architecture a0 of Testbench is"
                  ""
                  "signal CLK200MHz_TMP: std_logic ;"
+                 "signal CLK40MHz_TMP: std_logic ;"
                  "signal CLK10MHz_TMP: std_logic ;"
                  "signal SYSRST_TMP: std_logic ;"
                  "signal DCO_POS_ADC: std_logic ;"
@@ -1013,7 +1074,7 @@
                  ""
                  "  nSYSRST <= not SYSRST_TMP;"
                  "  CLK200MHz <= CLK200MHz_TMP;"
-                 "  CLK10MHz <= CLK10MHz_TMP;"
+                 "  CLK40MHz <= CLK40MHz_TMP;"
                  "  DATA_POS_ADC_CH1 <= DATA_POS_ADC_TMP after 1.7 ns;"
                  "  DATA_NEG_ADC_CH1 <= DATA_NEG_ADC_TMP after 1.7 ns;"
                  "  DATA_POS_ADC_CH2 <= (DATA_POS_ADC_TMP + \"000001000000\") after 1.7 ns;"
@@ -1043,7 +1104,7 @@
                  "  SL2 <= '1';"
                  "  SH1 <= '1';"
                  "  SH2 <= '1';"
-                 "  EXT_TR_IN <= '0', '1' after 200 us, '0' after 201 us;"
+                 "  EXT_TR_IN_n <= '1', '0' after 200 us, '1' after 201 us;"
                  ""
                  "  SPY_CON <= '0';"
                  "  SPY_SDO <= '0';"
@@ -1058,6 +1119,12 @@
                  "  begin"
                  "    CLK10MHz_TMP <= '0','1' after 50 ns;"
                  "    wait for 100 ns;"
+                 "  end process;"
+                 ""
+                 "  process"
+                 "  begin"
+                 "    CLK40MHz_TMP <= '0','1' after 12.5 ns;"
+                 "    wait for 25 ns;"
                  "  end process;"
                  ""
                  "  process"

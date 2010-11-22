@@ -5,20 +5,20 @@
     (NAME "LEDS")
     (HDL 1)
     (EXTERNAL 0)
-    (GEOMETRY 0 0 1280 1664)
+    (GEOMETRY 0 0 1280 2112)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 11:51:13 2010")
+      (PROPERTY "STAMP_TIME" "Wed Jun 02 21:33:53 2010")
       (NAME "LEDS")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1265804034 "Wed Feb 10 13:13:54 2010")
-      (MODIFIED 1272448252 "Wed Apr 28 11:50:52 2010")
+      (MODIFIED 1275506964 "Wed Jun 02 21:29:24 2010")
     )
     (PORT
       (OBID "eprt0c8ad3af333a27b4cbe09615d0a70000")
@@ -32,11 +32,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 88 40 168)
+      (GEOMETRY -40 344 40 424)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 128)
+        (POSITION 64 384)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -57,11 +57,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1368 40 1448)
+      (GEOMETRY -40 1816 40 1896)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1408)
+        (POSITION 64 1856)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -82,11 +82,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1496 40 1576)
+      (GEOMETRY -40 1944 40 2024)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1536)
+        (POSITION 64 1984)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -107,11 +107,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 216 40 296)
+      (GEOMETRY -40 728 40 808)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 256)
+        (POSITION 64 768)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -132,11 +132,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 472 40 552)
+      (GEOMETRY -40 856 40 936)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 512)
+        (POSITION 64 896)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -150,7 +150,32 @@
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED5")
+          (NAME "LED4")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1240 1048 1320 1128)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1216 1088)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LED4")
+      )
+    )
+    (PORT
+      (OBID "eprt0c8ad3afb83a27b4cbe0961512a70000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LED2")
           (USERNAME 1)
         )
         (HDL_TYPE
@@ -167,11 +192,11 @@
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
-        (TEXT "LED5")
+        (TEXT "LED2")
       )
     )
     (PORT
-      (OBID "eprt0c8ad3afb83a27b4cbe0961512a70000")
+      (OBID "eprt0c8ad3afc93a27b4cbe0961542a70000")
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
@@ -182,42 +207,17 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1240 88 1320 168)
+      (GEOMETRY 1240 536 1320 616)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1216 128)
+        (POSITION 1216 576)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
         (TEXT "LED3")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8ad3afc93a27b4cbe0961542a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED8")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY 1240 600 1320 680)
-      (SENSLIST 1)
-      (SIDE 1)
-      (LABEL
-        (POSITION 1216 640)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
-        (FORMAT 35)
-        (TEXT "LED8")
       )
     )
     (PORT
@@ -232,11 +232,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 600 40 680)
+      (GEOMETRY -40 1048 40 1128)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 640)
+        (POSITION 64 1088)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -246,178 +246,28 @@
       )
     )
     (PORT
-      (OBID "eprt0c8ad3afac3a27b4cbe09615a2a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_RXF")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-      )
-      (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 768)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "USB_RXF")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8ad3af4d3a27b4cbe09615d2a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED4")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY 1240 728 1320 808)
-      (SENSLIST 1)
-      (SIDE 1)
-      (LABEL
-        (POSITION 1216 768)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
-        (FORMAT 35)
-        (TEXT "LED4")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8ad3af2e3a27b4cbe0961503a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_WR")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-      )
-      (GEOMETRY -40 856 40 936)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 896)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "USB_WR")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8ad3af5f3a27b4cbe0961533a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED6")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY 1240 856 1320 936)
-      (SENSLIST 1)
-      (SIDE 1)
-      (LABEL
-        (POSITION 1216 896)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
-        (FORMAT 35)
-        (TEXT "LED6")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8ad3af704a27b4cbe0961563a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_TXE")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-      )
-      (GEOMETRY -40 984 40 1064)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 1024)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "USB_TXE")
-      )
-    )
-    (PORT
-      (OBID "eprt0c8ad3af314a27b4cbe0961593a70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED9")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-      )
-      (GEOMETRY 1240 984 1320 1064)
-      (SENSLIST 1)
-      (SIDE 1)
-      (LABEL
-        (POSITION 1216 1024)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 5)
-        (SIDE 1)
-        (FORMAT 35)
-        (TEXT "LED9")
-      )
-    )
-    (PORT
       (OBID "eprt0c8ad3afb26a27b4cbe09615f7a70000")
       (HDL_OBJECT
         (HDL_IDENT
           (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED7")
+          (NAME "COINC_LED")
           (USERNAME 1)
         )
         (HDL_TYPE
         )
         (MODE 2)
       )
-      (GEOMETRY 1240 472 1320 552)
+      (GEOMETRY 1240 792 1320 872)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1216 512)
+        (POSITION 1216 832)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
-        (TEXT "LED7")
+        (TEXT "COINC_LED")
       )
     )
     (PORT
@@ -432,11 +282,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 344 40 424)
+      (GEOMETRY -40 536 40 616)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 384)
+        (POSITION 64 576)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -457,11 +307,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1112 40 1192)
+      (GEOMETRY -40 1304 40 1384)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1152)
+        (POSITION 64 1344)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -482,11 +332,11 @@
         )
         (MODE 1)
       )
-      (GEOMETRY -40 1240 40 1320)
+      (GEOMETRY -40 1432 40 1512)
       (SENSLIST 1)
       (SIDE 3)
       (LABEL
-        (POSITION 64 1280)
+        (POSITION 64 1472)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 3)
@@ -507,11 +357,11 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1240 1112 1320 1192)
+      (GEOMETRY 1240 1304 1320 1384)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1216 1152)
+        (POSITION 1216 1344)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
@@ -532,17 +382,117 @@
         )
         (MODE 2)
       )
-      (GEOMETRY 1240 1240 1320 1320)
+      (GEOMETRY 1240 1432 1320 1512)
       (SENSLIST 1)
       (SIDE 1)
       (LABEL
-        (POSITION 1216 1280)
+        (POSITION 1216 1472)
         (SCALE 96)
         (COLOR "Black")
         (ALIGNMENT 5)
         (SIDE 1)
         (FORMAT 35)
         (TEXT "LEDH2")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfa12b660c480010f70dc410000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "MASTER")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 88 40 168)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfa53b660c480010f700d410000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "SLAVE_PRESENT")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 216 40 296)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "SLAVE_PRESENT")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfaf8b660c480010f703d410000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LED0")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1240 88 1320 168)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1216 128)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LED0")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfa69b660c480010f706d410000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "LED1")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 2)
+      )
+      (GEOMETRY 1240 216 1320 296)
+      (SENSLIST 1)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1216 256)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 5)
+        (SIDE 1)
+        (FORMAT 35)
+        (TEXT "LED1")
       )
     )
     (ARCH_DECLARATION 1 "arch0c8ad3af203a27b4cbe09615b0a70000" "a0")
@@ -574,11 +524,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 984 600 1064 680)
+        (GEOMETRY 1496 2392 1576 2472)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 960 640)
+          (POSITION 1472 2432)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -682,11 +632,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 984 1752 1064 1832)
+        (GEOMETRY 6104 1624 6184 1704)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 960 1792)
+          (POSITION 6080 1664)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -708,11 +658,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 984 1624 1064 1704)
+        (GEOMETRY 6104 1496 6184 1576)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 960 1664)
+          (POSITION 6080 1536)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -727,29 +677,55 @@
         (HDL_OBJECT
           (HDL_IDENT
             (PROPERTY "SensitivityList" "Yes")
-            (NAME "LED5")
+            (NAME "LED4")
             (USERNAME 1)
           )
           (HDL_TYPE
           )
           (MODE 2)
         )
-        (GEOMETRY 2904 1752 2984 1832)
+        (GEOMETRY 8024 600 8104 680)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 3026 1781)
+          (POSITION 8146 629)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
           (SIDE 3)
           (FORMAT 35)
-          (TEXT "LED5")
+          (TEXT "LED4")
         )
       )
       (PORT
         (OBID "aprt0c8ad3afb83a27b4cbe0961532a70000")
         (PORT "eprt0c8ad3afb83a27b4cbe0961512a70000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "LED2")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
+        )
+        (GEOMETRY 3416 2392 3496 2472)
+        (SENSLIST 1)
+        (SIDE 3)
+        (LABEL
+          (POSITION 3520 2432)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 3)
+          (SIDE 3)
+          (FORMAT 35)
+          (TEXT "LED2")
+        )
+      )
+      (PORT
+        (OBID "aprt0c8ad3afc93a27b4cbe0961562a70000")
+        (PORT "eprt0c8ad3afc93a27b4cbe0961542a70000")
         (HDL_OBJECT
           (HDL_IDENT
             (PROPERTY "SensitivityList" "Yes")
@@ -760,43 +736,17 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 2904 600 2984 680)
+        (GEOMETRY 3416 3288 3496 3368)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 3008 640)
+          (POSITION 3520 3328)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
           (SIDE 3)
           (FORMAT 35)
           (TEXT "LED3")
-        )
-      )
-      (PORT
-        (OBID "aprt0c8ad3afc93a27b4cbe0961562a70000")
-        (PORT "eprt0c8ad3afc93a27b4cbe0961542a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "LED8")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 2)
-        )
-        (GEOMETRY 8536 600 8616 680)
-        (SENSLIST 1)
-        (SIDE 3)
-        (LABEL
-          (POSITION 8640 640)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 3)
-          (SIDE 3)
-          (FORMAT 35)
-          (TEXT "LED8")
         )
       )
       (PORT
@@ -812,11 +762,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 5464 600 5544 680)
+        (GEOMETRY 4952 600 5032 680)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 5440 640)
+          (POSITION 4928 640)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -826,185 +776,29 @@
         )
       )
       (PORT
-        (OBID "aprt0c8ad3afac3a27b4cbe09615c2a70000")
-        (PORT "eprt0c8ad3afac3a27b4cbe09615a2a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "USB_RXF")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 1)
-        )
-        (GEOMETRY 5464 1624 5544 1704)
-        (SENSLIST 1)
-        (SIDE 1)
-        (LABEL
-          (POSITION 5440 1664)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 5)
-          (SIDE 1)
-          (FORMAT 35)
-          (TEXT "USB_RXF")
-        )
-      )
-      (PORT
-        (OBID "aprt0c8ad3af4d3a27b4cbe09615f2a70000")
-        (PORT "eprt0c8ad3af4d3a27b4cbe09615d2a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "LED4")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 2)
-        )
-        (GEOMETRY 8536 1624 8616 1704)
-        (SENSLIST 1)
-        (SIDE 3)
-        (LABEL
-          (POSITION 8640 1664)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 3)
-          (SIDE 3)
-          (FORMAT 35)
-          (TEXT "LED4")
-        )
-      )
-      (PORT
-        (OBID "aprt0c8ad3af2e3a27b4cbe0961523a70000")
-        (PORT "eprt0c8ad3af2e3a27b4cbe0961503a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "USB_WR")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 1)
-        )
-        (GEOMETRY 5464 2520 5544 2600)
-        (SENSLIST 1)
-        (SIDE 1)
-        (LABEL
-          (POSITION 5440 2560)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 5)
-          (SIDE 1)
-          (FORMAT 35)
-          (TEXT "USB_WR")
-        )
-      )
-      (PORT
-        (OBID "aprt0c8ad3af5f3a27b4cbe0961553a70000")
-        (PORT "eprt0c8ad3af5f3a27b4cbe0961533a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "LED6")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 2)
-        )
-        (GEOMETRY 8536 2520 8616 2600)
-        (SENSLIST 1)
-        (SIDE 3)
-        (LABEL
-          (POSITION 8640 2560)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 3)
-          (SIDE 3)
-          (FORMAT 35)
-          (TEXT "LED6")
-        )
-      )
-      (PORT
-        (OBID "aprt0c8ad3af704a27b4cbe0961583a70000")
-        (PORT "eprt0c8ad3af704a27b4cbe0961563a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "USB_TXE")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 1)
-        )
-        (GEOMETRY 5464 3544 5544 3624)
-        (SENSLIST 1)
-        (SIDE 1)
-        (LABEL
-          (POSITION 5440 3584)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 5)
-          (SIDE 1)
-          (FORMAT 35)
-          (TEXT "USB_TXE")
-        )
-      )
-      (PORT
-        (OBID "aprt0c8ad3af314a27b4cbe09615b3a70000")
-        (PORT "eprt0c8ad3af314a27b4cbe0961593a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (PROPERTY "SensitivityList" "Yes")
-            (NAME "LED9")
-            (USERNAME 1)
-          )
-          (HDL_TYPE
-          )
-          (MODE 2)
-        )
-        (GEOMETRY 8536 3544 8616 3624)
-        (SENSLIST 1)
-        (SIDE 3)
-        (LABEL
-          (POSITION 8640 3584)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 3)
-          (SIDE 3)
-          (FORMAT 35)
-          (TEXT "LED9")
-        )
-      )
-      (PORT
         (OBID "aprt0c8ad3afb26a27b4cbe0961518a70000")
         (PORT "eprt0c8ad3afb26a27b4cbe09615f7a70000")
         (HDL_OBJECT
           (HDL_IDENT
             (PROPERTY "SensitivityList" "Yes")
-            (NAME "LED7")
+            (NAME "COINC_LED")
             (USERNAME 1)
           )
           (HDL_TYPE
           )
           (MODE 2)
         )
-        (GEOMETRY 2904 2648 2984 2728)
+        (GEOMETRY 8024 1624 8104 1704)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 3008 2688)
+          (POSITION 8128 1664)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
           (SIDE 3)
           (FORMAT 35)
-          (TEXT "LED7")
+          (TEXT "COINC_LED")
         )
       )
       (PORT
@@ -1020,11 +814,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 984 2648 1064 2728)
+        (GEOMETRY 1496 3288 1576 3368)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 960 2688)
+          (POSITION 1472 3328)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -1046,11 +840,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 984 3544 1064 3624)
+        (GEOMETRY 6104 2392 6184 2472)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 960 3584)
+          (POSITION 6080 2432)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -1072,11 +866,11 @@
           )
           (MODE 1)
         )
-        (GEOMETRY 984 4568 1064 4648)
+        (GEOMETRY 6104 3416 6184 3496)
         (SENSLIST 1)
         (SIDE 1)
         (LABEL
-          (POSITION 960 4608)
+          (POSITION 6080 3456)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 5)
@@ -1098,11 +892,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 2904 3544 2984 3624)
+        (GEOMETRY 8024 2392 8104 2472)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 3008 3584)
+          (POSITION 8128 2432)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -1124,11 +918,11 @@
           )
           (MODE 2)
         )
-        (GEOMETRY 2904 4568 2984 4648)
+        (GEOMETRY 8024 3416 8104 3496)
         (SENSLIST 1)
         (SIDE 3)
         (LABEL
-          (POSITION 3008 4608)
+          (POSITION 8128 3456)
           (SCALE 96)
           (COLOR "Black")
           (ALIGNMENT 3)
@@ -1137,605 +931,108 @@
           (TEXT "LEDH2")
         )
       )
-      (COMPONENT
-        (OBID "comp0c8ad3af844a27b4cbe09615c3a70000")
-        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd48097b440a600f7079170000")
-        (HDL_IDENT
-          (NAME "u26")
-          (USERNAME 1)
+      (PORT
+        (OBID "aprt0c012cfa12b660c480010f70fc410000")
+        (PORT "eprt0c012cfa12b660c480010f70dc410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "MASTER")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 1)
         )
-        (GEOMETRY 7168 3456 8064 4096)
-        (SIDE 0)
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961514a70000")
-          (PORT "eprt0c013cbda9097b440a600f70a9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "INP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 3544 7208 3624)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 7232 3584)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "INP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961524a70000")
-          (PORT "eprt0c013cbd4a097b440a600f70c9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 8024 3544 8104 3624)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 8000 3584)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "nOUTP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961534a70000")
-          (PORT "eprt0c013cbdbd097b440a600f70e9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "CLK10MHz")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 3736 7208 3816)
-          (SENSLIST 1)
-          (SIDE 3)
-          (CBN
-            (HDL_IDENT
-              (USERNAME 1)
-            )
-            (GEOMETRY 6944 3736 7112 3816)
-            (TYPE 0)
-            (LABEL
-              (POSITION 6912 3776)
-              (SCALE 96)
-              (COLOR "Black")
-              (ALIGNMENT 5)
-              (SIDE 3)
-              (FORMAT 1)
-            )
-          )
-          (LABEL
-            (POSITION 7232 3776)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "CLK10MHz")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961544a70000")
-          (PORT "eprt0c013cbd70197b440a600f700a170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "SYSRST")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 3928 7208 4008)
-          (SENSLIST 1)
-          (SIDE 3)
-          (CBN
-            (HDL_IDENT
-              (USERNAME 1)
-            )
-            (GEOMETRY 6944 3928 7112 4008)
-            (TYPE 0)
-            (LABEL
-              (POSITION 6912 3968)
-              (SCALE 96)
-              (COLOR "Black")
-              (ALIGNMENT 5)
-              (SIDE 3)
-              (FORMAT 1)
-            )
-          )
-          (LABEL
-            (POSITION 7232 3968)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "SYSRST")
-          )
-        )
+        (GEOMETRY 1432 600 1512 680)
+        (SENSLIST 1)
+        (SIDE 1)
         (LABEL
-          (POSITION 7184 3440)
-          (SCALE 128)
+          (POSITION 1408 640)
+          (SCALE 96)
           (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 13)
-          (TEXT "u26:LED_DRIVER:a0(V)")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "MASTER")
         )
       )
-      (COMPONENT
-        (OBID "comp0c8ad3af844a27b4cbe09615d3a70000")
-        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd2b787b440a600f70e8170000")
-        (HDL_IDENT
-          (NAME "u30")
-          (USERNAME 1)
+      (PORT
+        (OBID "aprt0c012cfa53b660c480010f702d410000")
+        (PORT "eprt0c012cfa53b660c480010f700d410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "SLAVE_PRESENT")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 1)
         )
-        (GEOMETRY 5888 3392 6528 3776)
-        (SIDE 0)
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961554a70000")
-          (PORT "eprt0c013cbd0c787b440a600f7019170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "OUTP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 6488 3544 6568 3624)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 6464 3584)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "OUTP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961564a70000")
-          (PORT "eprt0c013cbd3e787b440a600f7039170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "INP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 5848 3544 5928 3624)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 5940 3596)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "INP")
-          )
-        )
+        (GEOMETRY 1496 1496 1576 1576)
+        (SENSLIST 1)
+        (SIDE 1)
         (LABEL
-          (POSITION 5727 3402)
-          (SCALE 128)
+          (POSITION 1472 1536)
+          (SCALE 96)
           (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 13)
-          (TEXT "u30:INVERTER:a0(V)")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "SLAVE_PRESENT")
         )
       )
-      (COMPONENT
-        (OBID "comp0c8ad3af684a27b4cbe0961594a70000")
-        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd48097b440a600f7079170000")
-        (HDL_IDENT
-          (NAME "u27")
-          (USERNAME 1)
+      (PORT
+        (OBID "aprt0c012cfaf8b660c480010f705d410000")
+        (PORT "eprt0c012cfaf8b660c480010f703d410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "LED0")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
         )
-        (GEOMETRY 7168 2432 8064 3072)
-        (SIDE 0)
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe09615d4a70000")
-          (PORT "eprt0c013cbda9097b440a600f70a9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "INP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 2520 7208 2600)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 7232 2560)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "INP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe09615e4a70000")
-          (PORT "eprt0c013cbd4a097b440a600f70c9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 8024 2520 8104 2600)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 8000 2560)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "nOUTP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe09615f4a70000")
-          (PORT "eprt0c013cbdbd097b440a600f70e9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "CLK10MHz")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 2712 7208 2792)
-          (SENSLIST 1)
-          (SIDE 3)
-          (CBN
-            (HDL_IDENT
-              (USERNAME 1)
-            )
-            (GEOMETRY 6944 2712 7112 2792)
-            (TYPE 0)
-            (LABEL
-              (POSITION 6912 2752)
-              (SCALE 96)
-              (COLOR "Black")
-              (ALIGNMENT 5)
-              (SIDE 3)
-              (FORMAT 1)
-            )
-          )
-          (LABEL
-            (POSITION 7232 2752)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "CLK10MHz")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe0961505a70000")
-          (PORT "eprt0c013cbd70197b440a600f700a170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "SYSRST")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 2904 7208 2984)
-          (SENSLIST 1)
-          (SIDE 3)
-          (CBN
-            (HDL_IDENT
-              (USERNAME 1)
-            )
-            (GEOMETRY 6944 2904 7112 2984)
-            (TYPE 0)
-            (LABEL
-              (POSITION 6912 2944)
-              (SCALE 96)
-              (COLOR "Black")
-              (ALIGNMENT 5)
-              (SIDE 3)
-              (FORMAT 1)
-            )
-          )
-          (LABEL
-            (POSITION 7232 2944)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "SYSRST")
-          )
-        )
+        (GEOMETRY 3416 600 3496 680)
+        (SENSLIST 1)
+        (SIDE 3)
         (LABEL
-          (POSITION 7184 2416)
-          (SCALE 128)
+          (POSITION 3520 640)
+          (SCALE 96)
           (COLOR "Black")
-          (ALIGNMENT 6)
+          (ALIGNMENT 3)
           (SIDE 3)
-          (FORMAT 13)
-          (TEXT "u27:LED_DRIVER:a0(V)")
+          (FORMAT 35)
+          (TEXT "LED0")
         )
       )
-      (COMPONENT
-        (OBID "comp0c8ad3af905a27b4cbe0961525a70000")
-        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd48097b440a600f7079170000")
-        (HDL_IDENT
-          (NAME "u28")
-          (USERNAME 1)
+      (PORT
+        (OBID "aprt0c012cfa69b660c480010f708d410000")
+        (PORT "eprt0c012cfa69b660c480010f706d410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "LED1")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 2)
         )
-        (GEOMETRY 7168 1536 8064 2176)
-        (SIDE 0)
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe0961575a70000")
-          (PORT "eprt0c013cbda9097b440a600f70a9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "INP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 1624 7208 1704)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 7232 1664)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "INP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe0961585a70000")
-          (PORT "eprt0c013cbd4a097b440a600f70c9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 8024 1624 8104 1704)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 8000 1664)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "nOUTP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe0961595a70000")
-          (PORT "eprt0c013cbdbd097b440a600f70e9170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "CLK10MHz")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 1816 7208 1896)
-          (SENSLIST 1)
-          (SIDE 3)
-          (CBN
-            (HDL_IDENT
-              (USERNAME 1)
-            )
-            (GEOMETRY 6944 1816 7112 1896)
-            (TYPE 0)
-            (LABEL
-              (POSITION 6912 1856)
-              (SCALE 96)
-              (COLOR "Black")
-              (ALIGNMENT 5)
-              (SIDE 3)
-              (FORMAT 1)
-            )
-          )
-          (LABEL
-            (POSITION 7232 1856)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "CLK10MHz")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe09615a5a70000")
-          (PORT "eprt0c013cbd70197b440a600f700a170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "SYSRST")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 7128 2008 7208 2088)
-          (SENSLIST 1)
-          (SIDE 3)
-          (CBN
-            (HDL_IDENT
-              (USERNAME 1)
-            )
-            (GEOMETRY 6944 2008 7112 2088)
-            (TYPE 0)
-            (LABEL
-              (POSITION 6912 2048)
-              (SCALE 96)
-              (COLOR "Black")
-              (ALIGNMENT 5)
-              (SIDE 3)
-              (FORMAT 1)
-            )
-          )
-          (LABEL
-            (POSITION 7232 2048)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "SYSRST")
-          )
-        )
+        (GEOMETRY 3416 1496 3496 1576)
+        (SENSLIST 1)
+        (SIDE 3)
         (LABEL
-          (POSITION 7184 1520)
-          (SCALE 128)
+          (POSITION 3520 1536)
+          (SCALE 96)
           (COLOR "Black")
-          (ALIGNMENT 6)
+          (ALIGNMENT 3)
           (SIDE 3)
-          (FORMAT 13)
-          (TEXT "u28:LED_DRIVER:a0(V)")
-        )
-      )
-      (COMPONENT
-        (OBID "comp0c8ad3af905a27b4cbe0961535a70000")
-        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd2b787b440a600f70e8170000")
-        (HDL_IDENT
-          (NAME "u31")
-          (USERNAME 1)
-        )
-        (GEOMETRY 6080 1472 6720 1856)
-        (SIDE 0)
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe09615b5a70000")
-          (PORT "eprt0c013cbd0c787b440a600f7019170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "OUTP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 2)
-          )
-          (GEOMETRY 6680 1624 6760 1704)
-          (SENSLIST 1)
-          (SIDE 1)
-          (LABEL
-            (POSITION 6656 1664)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 5)
-            (SIDE 1)
-            (FORMAT 35)
-            (TEXT "OUTP")
-          )
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe09615c5a70000")
-          (PORT "eprt0c013cbd3e787b440a600f7039170000")
-          (HDL_OBJECT
-            (HDL_IDENT
-              (PROPERTY "SensitivityList" "Yes")
-              (NAME "INP")
-              (USERNAME 1)
-            )
-            (HDL_TYPE
-            )
-            (MODE 1)
-          )
-          (GEOMETRY 6040 1624 6120 1704)
-          (SENSLIST 1)
-          (SIDE 3)
-          (LABEL
-            (POSITION 6132 1676)
-            (SCALE 96)
-            (COLOR "Black")
-            (ALIGNMENT 3)
-            (SIDE 3)
-            (FORMAT 35)
-            (TEXT "INP")
-          )
-        )
-        (LABEL
-          (POSITION 5871 1476)
-          (SCALE 128)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 13)
-          (TEXT "u31:INVERTER:a0(V)")
+          (FORMAT 35)
+          (TEXT "LED1")
         )
       )
       (COMPONENT
@@ -1745,7 +1042,7 @@
           (NAME "u29")
           (USERNAME 1)
         )
-        (GEOMETRY 7168 512 8064 1152)
+        (GEOMETRY 6656 512 7552 1152)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3af935a27b4cbe0961546a70000")
@@ -1760,11 +1057,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 7128 600 7208 680)
+          (GEOMETRY 6616 600 6696 680)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 7232 640)
+            (POSITION 6720 640)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -1779,24 +1076,24 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
+              (NAME "OUTP")
               (USERNAME 1)
             )
             (HDL_TYPE
             )
             (MODE 2)
           )
-          (GEOMETRY 8024 600 8104 680)
+          (GEOMETRY 7512 600 7592 680)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 8000 640)
+            (POSITION 7488 640)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
             (SIDE 1)
             (FORMAT 35)
-            (TEXT "nOUTP")
+            (TEXT "OUTP")
           )
         )
         (PORT
@@ -1812,17 +1109,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 7128 792 7208 872)
+          (GEOMETRY 6616 792 6696 872)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 6944 792 7112 872)
+            (GEOMETRY 6432 792 6600 872)
             (TYPE 0)
             (LABEL
-              (POSITION 6912 832)
+              (POSITION 6400 832)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -1831,7 +1128,7 @@
             )
           )
           (LABEL
-            (POSITION 7232 832)
+            (POSITION 6720 832)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -1853,17 +1150,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 7128 984 7208 1064)
+          (GEOMETRY 6616 984 6696 1064)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 6944 984 7112 1064)
+            (GEOMETRY 6432 984 6600 1064)
             (TYPE 0)
             (LABEL
-              (POSITION 6912 1024)
+              (POSITION 6400 1024)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -1872,7 +1169,7 @@
             )
           )
           (LABEL
-            (POSITION 7232 1024)
+            (POSITION 6720 1024)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -1882,7 +1179,7 @@
           )
         )
         (LABEL
-          (POSITION 7184 496)
+          (POSITION 6672 496)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -1898,7 +1195,7 @@
           (NAME "u32")
           (USERNAME 1)
         )
-        (GEOMETRY 6080 448 6720 832)
+        (GEOMETRY 5568 448 6208 832)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3af935a27b4cbe0961586a70000")
@@ -1913,11 +1210,11 @@
             )
             (MODE 2)
           )
-          (GEOMETRY 6680 600 6760 680)
+          (GEOMETRY 6168 600 6248 680)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 6656 640)
+            (POSITION 6144 640)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
@@ -1939,11 +1236,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 6040 600 6120 680)
+          (GEOMETRY 5528 600 5608 680)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 6132 652)
+            (POSITION 5620 652)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -1953,7 +1250,7 @@
           )
         )
         (LABEL
-          (POSITION 5887 434)
+          (POSITION 5375 434)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -1969,7 +1266,7 @@
           (NAME "u4")
           (USERNAME 1)
         )
-        (GEOMETRY 1536 1536 2432 2176)
+        (GEOMETRY 6656 1408 7552 2048)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3af285a27b4cbe0961507a70000")
@@ -1984,11 +1281,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 1752 1576 1832)
+          (GEOMETRY 6616 1624 6696 1704)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 1600 1792)
+            (POSITION 6720 1664)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2010,17 +1307,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 1880 1576 1960)
+          (GEOMETRY 6616 1752 6696 1832)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 1880 1480 1960)
+            (GEOMETRY 6432 1752 6600 1832)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 1920)
+              (POSITION 6400 1792)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2029,7 +1326,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 1920)
+            (POSITION 6720 1792)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2051,17 +1348,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 2008 1576 2088)
+          (GEOMETRY 6616 1880 6696 1960)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 2008 1480 2088)
+            (GEOMETRY 6432 1880 6600 1960)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 2048)
+              (POSITION 6400 1920)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2070,7 +1367,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 2048)
+            (POSITION 6720 1920)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2085,24 +1382,24 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
+              (NAME "OUTP")
               (USERNAME 1)
             )
             (HDL_TYPE
             )
             (MODE 2)
           )
-          (GEOMETRY 2392 1752 2472 1832)
+          (GEOMETRY 7512 1624 7592 1704)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 2368 1792)
+            (POSITION 7488 1664)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
             (SIDE 1)
             (FORMAT 35)
-            (TEXT "nOUTP")
+            (TEXT "OUTP")
           )
         )
         (PORT
@@ -2118,11 +1415,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 1624 1576 1704)
+          (GEOMETRY 6616 1496 6696 1576)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 1600 1664)
+            (POSITION 6720 1536)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2132,7 +1429,7 @@
           )
         )
         (LABEL
-          (POSITION 1552 1520)
+          (POSITION 6672 1392)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -2148,7 +1445,7 @@
           (NAME "u23")
           (USERNAME 1)
         )
-        (GEOMETRY 1536 512 2432 1152)
+        (GEOMETRY 2048 2304 2944 2944)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3afbd5a27b4cbe09615a7a70000")
@@ -2163,11 +1460,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 600 1576 680)
+          (GEOMETRY 2008 2392 2088 2472)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 1600 640)
+            (POSITION 2112 2432)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2182,24 +1479,24 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
+              (NAME "OUTP")
               (USERNAME 1)
             )
             (HDL_TYPE
             )
             (MODE 2)
           )
-          (GEOMETRY 2392 600 2472 680)
+          (GEOMETRY 2904 2392 2984 2472)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 2368 640)
+            (POSITION 2880 2432)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
             (SIDE 1)
             (FORMAT 35)
-            (TEXT "nOUTP")
+            (TEXT "OUTP")
           )
         )
         (PORT
@@ -2215,17 +1512,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 792 1576 872)
+          (GEOMETRY 2008 2584 2088 2664)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 792 1480 872)
+            (GEOMETRY 1824 2584 1992 2664)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 832)
+              (POSITION 1792 2624)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2234,7 +1531,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 832)
+            (POSITION 2112 2624)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2256,17 +1553,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 984 1576 1064)
+          (GEOMETRY 2008 2776 2088 2856)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 984 1480 1064)
+            (GEOMETRY 1824 2776 1992 2856)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 1024)
+              (POSITION 1792 2816)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2275,7 +1572,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 1024)
+            (POSITION 2112 2816)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2285,7 +1582,7 @@
           )
         )
         (LABEL
-          (POSITION 1552 496)
+          (POSITION 2064 2288)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -2301,7 +1598,7 @@
           (NAME "u3")
           (USERNAME 1)
         )
-        (GEOMETRY 1536 2560 2432 3200)
+        (GEOMETRY 2048 3200 2944 3840)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3afb36a27b4cbe0961568a70000")
@@ -2316,11 +1613,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 2648 1576 2728)
+          (GEOMETRY 2008 3288 2088 3368)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 1600 2688)
+            (POSITION 2112 3328)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2335,24 +1632,24 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
+              (NAME "OUTP")
               (USERNAME 1)
             )
             (HDL_TYPE
             )
             (MODE 2)
           )
-          (GEOMETRY 2392 2648 2472 2728)
+          (GEOMETRY 2904 3288 2984 3368)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 2368 2688)
+            (POSITION 2880 3328)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
             (SIDE 1)
             (FORMAT 35)
-            (TEXT "nOUTP")
+            (TEXT "OUTP")
           )
         )
         (PORT
@@ -2368,17 +1665,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 2840 1576 2920)
+          (GEOMETRY 2008 3480 2088 3560)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 2840 1480 2920)
+            (GEOMETRY 1824 3480 1992 3560)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 2880)
+              (POSITION 1792 3520)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2387,7 +1684,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 2880)
+            (POSITION 2112 3520)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2409,17 +1706,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 3032 1576 3112)
+          (GEOMETRY 2008 3672 2088 3752)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 3032 1480 3112)
+            (GEOMETRY 1824 3672 1992 3752)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 3072)
+              (POSITION 1792 3712)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2428,7 +1725,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 3072)
+            (POSITION 2112 3712)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2438,7 +1735,7 @@
           )
         )
         (LABEL
-          (POSITION 1552 2544)
+          (POSITION 2064 3184)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -2454,7 +1751,7 @@
           (NAME "u2")
           (USERNAME 1)
         )
-        (GEOMETRY 1536 3456 2432 4096)
+        (GEOMETRY 6656 2304 7552 2944)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3afe2ef7db48ce096155b570000")
@@ -2469,11 +1766,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 3544 1576 3624)
+          (GEOMETRY 6616 2392 6696 2472)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 1600 3584)
+            (POSITION 6720 2432)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2488,24 +1785,24 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
+              (NAME "OUTP")
               (USERNAME 1)
             )
             (HDL_TYPE
             )
             (MODE 2)
           )
-          (GEOMETRY 2392 3544 2472 3624)
+          (GEOMETRY 7512 2392 7592 2472)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 2368 3584)
+            (POSITION 7488 2432)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
             (SIDE 1)
             (FORMAT 35)
-            (TEXT "nOUTP")
+            (TEXT "OUTP")
           )
         )
         (PORT
@@ -2521,17 +1818,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 3736 1576 3816)
+          (GEOMETRY 6616 2584 6696 2664)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 3736 1480 3816)
+            (GEOMETRY 6432 2584 6600 2664)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 3776)
+              (POSITION 6400 2624)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2540,7 +1837,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 3776)
+            (POSITION 6720 2624)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2562,17 +1859,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 3928 1576 4008)
+          (GEOMETRY 6616 2776 6696 2856)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 3928 1480 4008)
+            (GEOMETRY 6432 2776 6600 2856)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 3968)
+              (POSITION 6400 2816)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2581,7 +1878,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 3968)
+            (POSITION 6720 2816)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2591,7 +1888,7 @@
           )
         )
         (LABEL
-          (POSITION 1552 3440)
+          (POSITION 6672 2288)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
@@ -2607,7 +1904,7 @@
           (NAME "u1")
           (USERNAME 1)
         )
-        (GEOMETRY 1536 4480 2432 5120)
+        (GEOMETRY 6656 3328 7552 3968)
         (SIDE 0)
         (PORT
           (OBID "cprt0c8ad3af33ef7db48ce09615ab570000")
@@ -2622,11 +1919,11 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 4568 1576 4648)
+          (GEOMETRY 6616 3416 6696 3496)
           (SENSLIST 1)
           (SIDE 3)
           (LABEL
-            (POSITION 1600 4608)
+            (POSITION 6720 3456)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2641,24 +1938,24 @@
           (HDL_OBJECT
             (HDL_IDENT
               (PROPERTY "SensitivityList" "Yes")
-              (NAME "nOUTP")
+              (NAME "OUTP")
               (USERNAME 1)
             )
             (HDL_TYPE
             )
             (MODE 2)
           )
-          (GEOMETRY 2392 4568 2472 4648)
+          (GEOMETRY 7512 3416 7592 3496)
           (SENSLIST 1)
           (SIDE 1)
           (LABEL
-            (POSITION 2368 4608)
+            (POSITION 7488 3456)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 5)
             (SIDE 1)
             (FORMAT 35)
-            (TEXT "nOUTP")
+            (TEXT "OUTP")
           )
         )
         (PORT
@@ -2674,17 +1971,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 4760 1576 4840)
+          (GEOMETRY 6616 3608 6696 3688)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 4760 1480 4840)
+            (GEOMETRY 6432 3608 6600 3688)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 4800)
+              (POSITION 6400 3648)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2693,7 +1990,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 4800)
+            (POSITION 6720 3648)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2715,17 +2012,17 @@
             )
             (MODE 1)
           )
-          (GEOMETRY 1496 4952 1576 5032)
+          (GEOMETRY 6616 3800 6696 3880)
           (SENSLIST 1)
           (SIDE 3)
           (CBN
             (HDL_IDENT
               (USERNAME 1)
             )
-            (GEOMETRY 1312 4952 1480 5032)
+            (GEOMETRY 6432 3800 6600 3880)
             (TYPE 0)
             (LABEL
-              (POSITION 1280 4992)
+              (POSITION 6400 3840)
               (SCALE 96)
               (COLOR "Black")
               (ALIGNMENT 5)
@@ -2734,7 +2031,7 @@
             )
           )
           (LABEL
-            (POSITION 1600 4992)
+            (POSITION 6720 3840)
             (SCALE 96)
             (COLOR "Black")
             (ALIGNMENT 3)
@@ -2744,13 +2041,319 @@
           )
         )
         (LABEL
-          (POSITION 1552 4464)
+          (POSITION 6672 3312)
           (SCALE 128)
           (COLOR "Black")
           (ALIGNMENT 6)
           (SIDE 3)
           (FORMAT 13)
           (TEXT "u1:LED_DRIVER:a0(V)")
+        )
+      )
+      (COMPONENT
+        (OBID "comp0c012cfa2db660c480010f709d410000")
+        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd48097b440a600f7079170000")
+        (HDL_IDENT
+          (NAME "u5")
+          (USERNAME 1)
+        )
+        (GEOMETRY 2048 512 2944 1152)
+        (SIDE 0)
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70ad410000")
+          (PORT "eprt0c013cbda9097b440a600f70a9170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "INP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 2008 600 2088 680)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 2112 640)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "INP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70bd410000")
+          (PORT "eprt0c013cbd4a097b440a600f70c9170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "OUTP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 2904 600 2984 680)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 2880 640)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "OUTP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70cd410000")
+          (PORT "eprt0c013cbdbd097b440a600f70e9170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "CLK10MHz")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 2008 792 2088 872)
+          (SENSLIST 1)
+          (SIDE 3)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 1824 792 1992 872)
+            (TYPE 0)
+            (LABEL
+              (POSITION 1792 832)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 5)
+              (SIDE 3)
+              (FORMAT 1)
+            )
+          )
+          (LABEL
+            (POSITION 2112 832)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "CLK10MHz")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70dd410000")
+          (PORT "eprt0c013cbd70197b440a600f700a170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "SYSRST")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 2008 984 2088 1064)
+          (SENSLIST 1)
+          (SIDE 3)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 1824 984 1992 1064)
+            (TYPE 0)
+            (LABEL
+              (POSITION 1792 1024)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 5)
+              (SIDE 3)
+              (FORMAT 1)
+            )
+          )
+          (LABEL
+            (POSITION 2112 1024)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "SYSRST")
+          )
+        )
+        (LABEL
+          (POSITION 2064 496)
+          (SCALE 128)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 13)
+          (TEXT "u5:LED_DRIVER:a0(V)")
+        )
+      )
+      (COMPONENT
+        (OBID "comp0c012cfacdb660c480010f70ed410000")
+        (ENTITY "lib0c013cbd28f8593483700f7050e10000" "ent0c013cbd48097b440a600f7079170000")
+        (HDL_IDENT
+          (NAME "u6")
+          (USERNAME 1)
+        )
+        (GEOMETRY 2048 1408 2944 2048)
+        (SIDE 0)
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f70fd410000")
+          (PORT "eprt0c013cbda9097b440a600f70a9170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "INP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 2008 1496 2088 1576)
+          (SENSLIST 1)
+          (SIDE 3)
+          (LABEL
+            (POSITION 2112 1536)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "INP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f700e410000")
+          (PORT "eprt0c013cbd4a097b440a600f70c9170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "OUTP")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 2)
+          )
+          (GEOMETRY 2904 1496 2984 1576)
+          (SENSLIST 1)
+          (SIDE 1)
+          (LABEL
+            (POSITION 2880 1536)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 5)
+            (SIDE 1)
+            (FORMAT 35)
+            (TEXT "OUTP")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f701e410000")
+          (PORT "eprt0c013cbdbd097b440a600f70e9170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "CLK10MHz")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 2008 1688 2088 1768)
+          (SENSLIST 1)
+          (SIDE 3)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 1824 1688 1992 1768)
+            (TYPE 0)
+            (LABEL
+              (POSITION 1792 1728)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 5)
+              (SIDE 3)
+              (FORMAT 1)
+            )
+          )
+          (LABEL
+            (POSITION 2112 1728)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "CLK10MHz")
+          )
+        )
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f702e410000")
+          (PORT "eprt0c013cbd70197b440a600f700a170000")
+          (HDL_OBJECT
+            (HDL_IDENT
+              (PROPERTY "SensitivityList" "Yes")
+              (NAME "SYSRST")
+              (USERNAME 1)
+            )
+            (HDL_TYPE
+            )
+            (MODE 1)
+          )
+          (GEOMETRY 2008 1880 2088 1960)
+          (SENSLIST 1)
+          (SIDE 3)
+          (CBN
+            (HDL_IDENT
+              (USERNAME 1)
+            )
+            (GEOMETRY 1824 1880 1992 1960)
+            (TYPE 0)
+            (LABEL
+              (POSITION 1792 1920)
+              (SCALE 96)
+              (COLOR "Black")
+              (ALIGNMENT 5)
+              (SIDE 3)
+              (FORMAT 1)
+            )
+          )
+          (LABEL
+            (POSITION 2112 1920)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 3)
+            (FORMAT 35)
+            (TEXT "SYSRST")
+          )
+        )
+        (LABEL
+          (POSITION 2064 1392)
+          (SCALE 128)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 13)
+          (TEXT "u6:LED_DRIVER:a0(V)")
         )
       )
       (NET
@@ -2765,18 +2368,6 @@
         )
         (PORT
           (OBID "aprt0c8ad3af743a27b4cbe0961521a70000")
-          (NAME "CLK10MHz")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961534a70000")
-          (NAME "CLK10MHz")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe09615f4a70000")
-          (NAME "CLK10MHz")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe0961595a70000")
           (NAME "CLK10MHz")
         )
         (PORT
@@ -2801,6 +2392,14 @@
         )
         (PORT
           (OBID "cprt0c8ad3af33ef7db48ce09615cb570000")
+          (NAME "CLK10MHz")
+        )
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70cd410000")
+          (NAME "CLK10MHz")
+        )
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f701e410000")
           (NAME "CLK10MHz")
         )
         (LABEL
@@ -2827,18 +2426,6 @@
           (NAME "SYSRST")
         )
         (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961544a70000")
-          (NAME "SYSRST")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe0961505a70000")
-          (NAME "SYSRST")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe09615a5a70000")
-          (NAME "SYSRST")
-        )
-        (PORT
           (OBID "cprt0c8ad3af935a27b4cbe0961576a70000")
           (NAME "SYSRST")
         )
@@ -2862,61 +2449,13 @@
           (OBID "cprt0c8ad3af33ef7db48ce09615db570000")
           (NAME "SYSRST")
         )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af844a27b4cbe0961584a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "Net_1")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 6592 3584 7104 3584)
         (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961554a70000")
-          (NAME "OUTP")
+          (OBID "cprt0c012cfa2db660c480010f70dd410000")
+          (NAME "SYSRST")
         )
         (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961514a70000")
-          (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af905a27b4cbe09615e5a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "Net_2")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 6784 1664 7104 1664)
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe09615b5a70000")
-          (NAME "OUTP")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe0961575a70000")
-          (NAME "INP")
+          (OBID "cprt0c012cfacdb660c480010f702e410000")
+          (NAME "SYSRST")
         )
         (LABEL
           (POSITION 0 0)
@@ -2937,7 +2476,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 6784 640 7104 640)
+        (WIRE 6272 640 6592 640)
         (PORT
           (OBID "cprt0c8ad3af935a27b4cbe0961586a70000")
           (NAME "OUTP")
@@ -2965,7 +2504,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 1088 1664 1472 1664)
+        (WIRE 6208 1536 6592 1536)
         (PORT
           (OBID "aprt0c8ad3afe73a27b4cbe09615d1a70000")
           (NAME "STARTUP")
@@ -2993,7 +2532,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 1088 1792 1472 1792)
+        (WIRE 6208 1664 6592 1664)
         (PORT
           (OBID "aprt0c8ad3afb53a27b4cbe09615a1a70000")
           (NAME "COINC")
@@ -3001,90 +2540,6 @@
         (PORT
           (OBID "cprt0c8ad3af285a27b4cbe0961507a70000")
           (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3afa66a27b4cbe0961509a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED5")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 2496 1792 2880 1792)
-        (PORT
-          (OBID "cprt0c8ad3af285a27b4cbe0961537a70000")
-          (NAME "nOUTP")
-        )
-        (PORT
-          (OBID "aprt0c8ad3af283a27b4cbe0961502a70000")
-          (NAME "LED5")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3afe66a27b4cbe0961519a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED3")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 2880 640 2496 640)
-        (PORT
-          (OBID "aprt0c8ad3afb83a27b4cbe0961532a70000")
-          (NAME "LED3")
-        )
-        (PORT
-          (OBID "cprt0c8ad3afbd5a27b4cbe09615b7a70000")
-          (NAME "nOUTP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af076a27b4cbe0961529a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED7")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 2880 2688 2496 2688)
-        (PORT
-          (OBID "aprt0c8ad3afb26a27b4cbe0961518a70000")
-          (NAME "LED7")
-        )
-        (PORT
-          (OBID "cprt0c8ad3afb36a27b4cbe0961578a70000")
-          (NAME "nOUTP")
         )
         (LABEL
           (POSITION 0 0)
@@ -3105,7 +2560,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 1472 2688 1088 2688)
+        (WIRE 1984 3328 1600 3328)
         (PORT
           (OBID "cprt0c8ad3afb36a27b4cbe0961568a70000")
           (NAME "INP")
@@ -3133,7 +2588,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 5568 640 6016 640)
+        (WIRE 5056 640 5504 640)
         (PORT
           (OBID "aprt0c8ad3af9b3a27b4cbe0961592a70000")
           (NAME "USB_RD")
@@ -3141,202 +2596,6 @@
         (PORT
           (OBID "cprt0c8ad3af935a27b4cbe0961596a70000")
           (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3afb76a27b4cbe0961569a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "USB_RXF")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 5568 1664 6016 1664)
-        (PORT
-          (OBID "aprt0c8ad3afac3a27b4cbe09615c2a70000")
-          (NAME "USB_RXF")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe09615c5a70000")
-          (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3afd76a27b4cbe0961579a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "USB_WR")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 5568 2560 7104 2560)
-        (PORT
-          (OBID "aprt0c8ad3af2e3a27b4cbe0961523a70000")
-          (NAME "USB_WR")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe09615d4a70000")
-          (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af086a27b4cbe0961589a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "USB_TXE")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 5568 3584 5824 3584)
-        (PORT
-          (OBID "aprt0c8ad3af704a27b4cbe0961583a70000")
-          (NAME "USB_TXE")
-        )
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961564a70000")
-          (NAME "INP")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af386a27b4cbe0961599a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED8")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 8128 640 8512 640)
-        (PORT
-          (OBID "cprt0c8ad3af935a27b4cbe0961556a70000")
-          (NAME "nOUTP")
-        )
-        (PORT
-          (OBID "aprt0c8ad3afc93a27b4cbe0961562a70000")
-          (NAME "LED8")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af686a27b4cbe09615a9a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED4")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 8128 1664 8512 1664)
-        (PORT
-          (OBID "cprt0c8ad3af905a27b4cbe0961585a70000")
-          (NAME "nOUTP")
-        )
-        (PORT
-          (OBID "aprt0c8ad3af4d3a27b4cbe09615f2a70000")
-          (NAME "LED4")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3af886a27b4cbe09615b9a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED6")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 8128 2560 8512 2560)
-        (PORT
-          (OBID "cprt0c8ad3af684a27b4cbe09615e4a70000")
-          (NAME "nOUTP")
-        )
-        (PORT
-          (OBID "aprt0c8ad3af5f3a27b4cbe0961553a70000")
-          (NAME "LED6")
-        )
-        (LABEL
-          (POSITION 0 0)
-          (SCALE 96)
-          (COLOR "Black")
-          (ALIGNMENT 6)
-          (SIDE 3)
-          (FORMAT 3)
-        )
-      )
-      (NET
-        (OBID "net0c8ad3afa86a27b4cbe09615c9a70000")
-        (HDL_OBJECT
-          (HDL_IDENT
-            (NAME "LED9")
-            (USERNAME 0)
-          )
-          (HDL_TYPE
-          )
-        )
-        (WIRE 8128 3584 8512 3584)
-        (PORT
-          (OBID "cprt0c8ad3af844a27b4cbe0961524a70000")
-          (NAME "nOUTP")
-        )
-        (PORT
-          (OBID "aprt0c8ad3af314a27b4cbe09615b3a70000")
-          (NAME "LED9")
         )
         (LABEL
           (POSITION 0 0)
@@ -3357,7 +2616,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 1088 640 1472 640)
+        (WIRE 1600 2432 1984 2432)
         (PORT
           (OBID "aprt0c8ad3af333a27b4cbe09615f0a70000")
           (NAME "ONE_PPS")
@@ -3385,7 +2644,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 1088 3584 1472 3584)
+        (WIRE 6208 2432 6592 2432)
         (PORT
           (OBID "aprt0c8ad3afb7ef7db48ce096150c570000")
           (NAME "HIT1")
@@ -3413,7 +2672,7 @@
           (HDL_TYPE
           )
         )
-        (WIRE 1088 4608 1472 4608)
+        (WIRE 6208 3456 6592 3456)
         (PORT
           (OBID "aprt0c8ad3af08ef7db48ce096153c570000")
           (NAME "HIT2")
@@ -3441,10 +2700,10 @@
           (HDL_TYPE
           )
         )
-        (WIRE 2496 3584 2880 3584)
+        (WIRE 7616 2432 8000 2432)
         (PORT
           (OBID "cprt0c8ad3afe2ef7db48ce096156b570000")
-          (NAME "nOUTP")
+          (NAME "OUTP")
         )
         (PORT
           (OBID "aprt0c8ad3aff8ef7db48ce096156c570000")
@@ -3469,14 +2728,238 @@
           (HDL_TYPE
           )
         )
-        (WIRE 2496 4608 2880 4608)
+        (WIRE 7616 3456 8000 3456)
         (PORT
           (OBID "cprt0c8ad3af33ef7db48ce09615bb570000")
-          (NAME "nOUTP")
+          (NAME "OUTP")
         )
         (PORT
           (OBID "aprt0c8ad3af49ef7db48ce096159c570000")
           (NAME "LEDH2")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa859660c480010f701c410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "COINC_LED")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 7616 1664 8000 1664)
+        (PORT
+          (OBID "cprt0c8ad3af285a27b4cbe0961537a70000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "aprt0c8ad3afb26a27b4cbe0961518a70000")
+          (NAME "COINC_LED")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa52c660c480010f703e410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "MASTER")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 1536 640 1984 640)
+        (PORT
+          (OBID "aprt0c012cfa12b660c480010f70fc410000")
+          (NAME "MASTER")
+        )
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70ad410000")
+          (NAME "INP")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa82c660c480010f704e410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "LED0")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 3008 640 3392 640)
+        (PORT
+          (OBID "cprt0c012cfa2db660c480010f70bd410000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "aprt0c012cfaf8b660c480010f705d410000")
+          (NAME "LED0")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfaf2c660c480010f705e410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "SLAVE_PRESENT")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 1600 1536 1984 1536)
+        (PORT
+          (OBID "aprt0c012cfa53b660c480010f702d410000")
+          (NAME "SLAVE_PRESENT")
+        )
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f70fd410000")
+          (NAME "INP")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa33c660c480010f706e410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "LED1")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 3008 1536 3392 1536)
+        (PORT
+          (OBID "cprt0c012cfacdb660c480010f700e410000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "aprt0c012cfa69b660c480010f708d410000")
+          (NAME "LED1")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa03d660c480010f709f410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "LED2")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 3008 2432 3392 2432)
+        (PORT
+          (OBID "cprt0c8ad3afbd5a27b4cbe09615b7a70000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "aprt0c8ad3afb83a27b4cbe0961532a70000")
+          (NAME "LED2")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa94fa60c480010f70ef410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "LED3")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 3008 3328 3392 3328)
+        (PORT
+          (OBID "cprt0c8ad3afb36a27b4cbe0961578a70000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "aprt0c8ad3afc93a27b4cbe0961562a70000")
+          (NAME "LED3")
+        )
+        (LABEL
+          (POSITION 0 0)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 6)
+          (SIDE 3)
+          (FORMAT 3)
+        )
+      )
+      (NET
+        (OBID "net0c012cfa16fa60c480010f70ff410000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (NAME "LED4")
+            (USERNAME 0)
+          )
+          (HDL_TYPE
+          )
+        )
+        (WIRE 7616 640 8000 640)
+        (PORT
+          (OBID "cprt0c8ad3af935a27b4cbe0961556a70000")
+          (NAME "OUTP")
+        )
+        (PORT
+          (OBID "aprt0c8ad3af283a27b4cbe0961502a70000")
+          (NAME "LED4")
         )
         (LABEL
           (POSITION 0 0)

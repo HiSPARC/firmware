@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 2432 4224)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 12:42:13 2010")
+      (PROPERTY "STAMP_TIME" "Fri May 28 14:28:48 2010")
       (NAME "DataMux")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1272355345 "Tue Apr 27 10:02:25 2010")
-      (MODIFIED 1272450815 "Wed Apr 28 12:33:35 2010")
+      (MODIFIED 1275049711 "Fri May 28 14:28:31 2010")
     )
     (PORT
       (OBID "eprt0c8ad3af4da96db4032096158b160000")
@@ -891,6 +891,62 @@
         (SIDE 3)
         (FORMAT 35)
         (TEXT "CTD_IN(31:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfa386bffb405900f7007000000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "TOTAL_TIME_3X")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+          (NAME "integer")
+          (TYPE 7)
+        )
+        (MODE 1)
+        (BUS
+          (DIRECTION 1)
+          (RANGE "6000" "0")
+        )
+      )
+      (GEOMETRY -40 1624 40 1704)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1664)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "TOTAL_TIME_3X(6000:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfaad6bffb405900f7097000000")
+      (HDL_OBJECT
+        (HDL_IDENT
+          (PROPERTY "SensitivityList" "Yes")
+          (NAME "CLK10MHz")
+          (USERNAME 1)
+        )
+        (HDL_TYPE
+        )
+        (MODE 1)
+      )
+      (GEOMETRY -40 1496 40 1576)
+      (SENSLIST 1)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1536)
+        (SCALE 96)
+        (COLOR "Black")
+        (ALIGNMENT 3)
+        (SIDE 3)
+        (FORMAT 35)
+        (TEXT "CLK10MHz")
       )
     )
     (ARCH_DECLARATION 1 "arch0c8ad3af11a96db403209615e4160000" "a0")
@@ -1857,6 +1913,94 @@
           (SIDE 1)
           (FORMAT 35)
           (TEXT "CTD_IN(31:0)")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012cfa386bffb405900f7017000000")
+        (PORT "eprt0c012cfa386bffb405900f7007000000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "TOTAL_TIME_3X")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+            (NAME "integer")
+            (TYPE 7)
+          )
+          (MODE 1)
+          (BUS
+            (DIRECTION 1)
+            (RANGE "6000" "0")
+          )
+        )
+        (GEOMETRY 2136 728 2216 808)
+        (SENSLIST 1)
+        (SIDE 1)
+        (CBN
+          (HDL_IDENT
+            (USERNAME 1)
+          )
+          (GEOMETRY 2232 728 2400 808)
+          (TYPE 0)
+          (LABEL
+            (POSITION 2432 768)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 1)
+            (FORMAT 1)
+          )
+        )
+        (LABEL
+          (POSITION 2112 768)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "TOTAL_TIME_3X(6000:0)")
+        )
+      )
+      (PORT
+        (OBID "aprt0c012cfaad6bffb405900f70a7000000")
+        (PORT "eprt0c012cfaad6bffb405900f7097000000")
+        (HDL_OBJECT
+          (HDL_IDENT
+            (PROPERTY "SensitivityList" "Yes")
+            (NAME "CLK10MHz")
+            (USERNAME 1)
+          )
+          (HDL_TYPE
+          )
+          (MODE 1)
+        )
+        (GEOMETRY 2136 600 2216 680)
+        (SENSLIST 1)
+        (SIDE 1)
+        (CBN
+          (HDL_IDENT
+            (USERNAME 1)
+          )
+          (GEOMETRY 2232 600 2400 680)
+          (TYPE 0)
+          (LABEL
+            (POSITION 2432 640)
+            (SCALE 96)
+            (COLOR "Black")
+            (ALIGNMENT 3)
+            (SIDE 1)
+            (FORMAT 1)
+          )
+        )
+        (LABEL
+          (POSITION 2112 640)
+          (SCALE 96)
+          (COLOR "Black")
+          (ALIGNMENT 5)
+          (SIDE 1)
+          (FORMAT 35)
+          (TEXT "CLK10MHz")
         )
       )
       (COMPONENT
@@ -4271,6 +4415,10 @@
           (OBID "cprt0c8ad3afb5a96db40320961507160000")
           (NAME "WRCLOCK")
         )
+        (PORT
+          (OBID "aprt0c012cfaad6bffb405900f70a7000000")
+          (NAME "CLK10MHz")
+        )
         (LABEL
           (POSITION 0 0)
           (SCALE 96)
@@ -4298,6 +4446,10 @@
         )
         (PORT
           (OBID "cprt0c8ad3afb5a96db403209615c5160000")
+          (NAME "TOTAL_TIME_3X")
+        )
+        (PORT
+          (OBID "aprt0c012cfa386bffb405900f7017000000")
           (NAME "TOTAL_TIME_3X")
         )
         (LABEL

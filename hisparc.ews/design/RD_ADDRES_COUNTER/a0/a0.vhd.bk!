@@ -1,13 +1,10 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'a0' of entity 'RD_ADDRES_COUNTER'.
--- 
+-- Architecture 'a0' of 'RD_ADDRES_COUNTER.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'RD_ADDRES_COUNTER' :
 -- 
 --   port(
---     BEGIN_PRE_TIME    : in     integer range 2040 downto 0;
+--     BEGIN_PRE_TIME    : in     integer range 2047 downto 0;
 --     CLK200MHz         : in     std_logic;
 --     CLKRD             : in     std_logic;
 --     COINC_TO_END_TIME : in     std_logic;
@@ -16,7 +13,7 @@
 --     DATA_OUT_POS      : in     std_logic_vector(11 downto 0);
 --     DATA_READY        : out    std_logic;
 --     RDEN              : in     std_logic;
---     RD_ADDRESS        : out    integer range 2040 downto 0;
+--     RD_ADDRESS        : out    integer range 2020 downto 0;
 --     READOUT_BUSY      : out    std_logic;
 --     SYSRST            : in     std_logic);
 -- 
@@ -25,7 +22,7 @@
 architecture a0 of RD_ADDRES_COUNTER is
 
 signal TAKE_DATA: std_logic ; -- RAMs are in write mode when true
-signal RD_ADDRESS_TMP: integer range 2040 downto 0 ;
+signal RD_ADDRESS_TMP: integer range 2020 downto 0 ;
 signal POS_NEG_PHASE: std_logic ; -- help signal to determine the positive or negative RAM; high means positive
 signal READOUT_BUSY_TMP: std_logic ;
 signal DATA_READY_PRE: std_logic ;
@@ -87,7 +84,7 @@ begin
         if POS_NEG_PHASE = '1' then
           RD_ADDRESS_TMP <= RD_ADDRESS_TMP;
         else
-          if RD_ADDRESS_TMP = 2040 then
+          if RD_ADDRESS_TMP = 2020 then
             RD_ADDRESS_TMP <= 0;
           else
             RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;

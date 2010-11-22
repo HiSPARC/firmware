@@ -8,17 +8,17 @@
     (GEOMETRY 0 0 2048 3200)
     (HDL_IDENT
       (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+      (PROPERTY "STAMP_REVISION" "Revision 13")
       (PROPERTY "STAMP_PLATFORM" "PC")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_TIME" "Wed Jun 02 14:57:50 2010")
       (NAME "DISCRIMINATORS")
       (USERNAME 1)
     )
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "hansvk")
       (CREATED 1142852868 "Mon Mar 20 12:07:48 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1275483420 "Wed Jun 02 14:57:00 2010")
     )
     (PORT
       (OBID "eprt0c013cbd08d8e1448e800f7019860000")
@@ -1133,7 +1133,7 @@
                  "    if SYSRST = '1' then"
                  "      EXT_TR <= '0';"
                  "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if EXT_TR_IN_DEL1 = '1' and EXT_TR_IN_DEL2 = '0' then -- On an upgoing egde of EXT_TR_IN"
+                 "      if EXT_TR_IN_DEL1 = '1' and EXT_TR_IN_DEL2 = '0' then -- On an upgoing egde of EXT_TR_IN "
                  "        EXT_TR <= '1';"
                  "      elsif EXT_TR_CNT = COINC_TIME - 1 then"
                  "        EXT_TR <= '0';"

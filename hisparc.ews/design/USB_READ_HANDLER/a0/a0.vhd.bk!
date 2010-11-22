@@ -1,10 +1,7 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'a0' of entity 'USB_READ_HANDLER'.
--- 
+-- Architecture 'a0' of 'USB_READ_HANDLER.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'USB_READ_HANDLER' :
 -- 
 --   port(
 --     ADC_A0                      : out    std_logic;
@@ -1416,9 +1413,14 @@ begin
     elsif (CLK10MHz'event and CLK10MHz = '1') then
       if SET_CH1_OFFSET_ADJ_POS = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH1_OFFSET_ADJ_POS; -- DAC E
+          DAC_DATA_OUT <= CH1_OFFSET_ADJ_POS;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '0';
+--          DAC_A0 <= '0';
+--          DAC_nCS1 <= '0';
+--          DAC_nCS2 <= '1';
           DAC_A2 <= '1';
-          DAC_A1 <= '0';
+          DAC_A1 <= '1';
           DAC_A0 <= '0';
           DAC_nCS1 <= '0';
           DAC_nCS2 <= '1';
@@ -1432,9 +1434,14 @@ begin
         end if;
       elsif SET_CH1_OFFSET_ADJ_NEG = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH1_OFFSET_ADJ_NEG; -- DAC F
+          DAC_DATA_OUT <= CH1_OFFSET_ADJ_NEG;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '0';
+--          DAC_A0 <= '1';
+--          DAC_nCS1 <= '0';
+--          DAC_nCS2 <= '1';
           DAC_A2 <= '1';
-          DAC_A1 <= '0';
+          DAC_A1 <= '1';
           DAC_A0 <= '1';
           DAC_nCS1 <= '0';
           DAC_nCS2 <= '1';
@@ -1448,9 +1455,14 @@ begin
         end if;
       elsif SET_CH2_OFFSET_ADJ_POS = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH2_OFFSET_ADJ_POS; -- DAC G
+          DAC_DATA_OUT <= CH2_OFFSET_ADJ_POS;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '1';
+--          DAC_A0 <= '0';
+--          DAC_nCS1 <= '0';
+--          DAC_nCS2 <= '1';
           DAC_A2 <= '1';
-          DAC_A1 <= '1';
+          DAC_A1 <= '0';
           DAC_A0 <= '0';
           DAC_nCS1 <= '0';
           DAC_nCS2 <= '1';
@@ -1464,9 +1476,14 @@ begin
         end if;
       elsif SET_CH2_OFFSET_ADJ_NEG = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH2_OFFSET_ADJ_NEG; -- DAC H
+          DAC_DATA_OUT <= CH2_OFFSET_ADJ_NEG;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '1';
+--          DAC_A0 <= '1';
+--          DAC_nCS1 <= '0';
+--          DAC_nCS2 <= '1';
           DAC_A2 <= '1';
-          DAC_A1 <= '1';
+          DAC_A1 <= '0';
           DAC_A0 <= '1';
           DAC_nCS1 <= '0';
           DAC_nCS2 <= '1';
@@ -1480,8 +1497,13 @@ begin
         end if;
       elsif SET_CH1_GAIN_ADJ_POS = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH1_GAIN_ADJ_POS; -- DAC B
-          DAC_A2 <= '0';
+          DAC_DATA_OUT <= CH1_GAIN_ADJ_POS;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '0';
+--          DAC_A0 <= '0';
+--          DAC_nCS1 <= '1';
+--          DAC_nCS2 <= '0';
+          DAC_A2 <= '1';
           DAC_A1 <= '0';
           DAC_A0 <= '1';
           DAC_nCS1 <= '1';
@@ -1496,8 +1518,13 @@ begin
         end if;
       elsif SET_CH1_GAIN_ADJ_NEG = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH1_GAIN_ADJ_NEG; -- DAC D
-          DAC_A2 <= '0';
+          DAC_DATA_OUT <= CH1_GAIN_ADJ_NEG;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '0';
+--          DAC_A0 <= '1';
+--          DAC_nCS1 <= '1';
+--          DAC_nCS2 <= '0';
+          DAC_A2 <= '1';
           DAC_A1 <= '1';
           DAC_A0 <= '1';
           DAC_nCS1 <= '1';
@@ -1512,7 +1539,12 @@ begin
         end if;
       elsif SET_CH2_GAIN_ADJ_POS = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH2_GAIN_ADJ_POS; -- DAC E
+          DAC_DATA_OUT <= CH2_GAIN_ADJ_POS;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '1';
+--          DAC_A0 <= '0';
+--          DAC_nCS1 <= '1';
+--          DAC_nCS2 <= '0';
           DAC_A2 <= '1';
           DAC_A1 <= '0';
           DAC_A0 <= '0';
@@ -1528,7 +1560,12 @@ begin
         end if;
       elsif SET_CH2_GAIN_ADJ_NEG = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH2_GAIN_ADJ_NEG; -- DAC G
+          DAC_DATA_OUT <= CH2_GAIN_ADJ_NEG;
+--          DAC_A2 <= '1';
+--          DAC_A1 <= '1';
+--          DAC_A0 <= '1';
+--          DAC_nCS1 <= '1';
+--          DAC_nCS2 <= '0';
           DAC_A2 <= '1';
           DAC_A1 <= '1';
           DAC_A0 <= '0';
@@ -1544,7 +1581,7 @@ begin
         end if;
       elsif SET_COMMON_OFFSET_ADJ = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= COMMON_OFFSET_ADJ; -- DAC C
+          DAC_DATA_OUT <= COMMON_OFFSET_ADJ;
           DAC_A2 <= '0';
           DAC_A1 <= '1';
           DAC_A0 <= '0';
@@ -1560,7 +1597,7 @@ begin
         end if;
       elsif SET_FULL_SCALE_ADJ = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= FULL_SCALE_ADJ; -- DAC D
+          DAC_DATA_OUT <= FULL_SCALE_ADJ;
           DAC_A2 <= '0';
           DAC_A1 <= '1';
           DAC_A0 <= '1';
@@ -1576,9 +1613,14 @@ begin
         end if;
       elsif SET_CH1_INTEGRATOR = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH1_INTEGRATOR; -- DAC F
-          DAC_A2 <= '1';
-          DAC_A1 <= '0';
+          DAC_DATA_OUT <= CH1_INTEGRATOR;
+--          DAC_A2 <= '0';
+--          DAC_A1 <= '1';
+--          DAC_A0 <= '0';
+--          DAC_nCS1 <= '1';
+--          DAC_nCS2 <= '0';
+          DAC_A2 <= '0';
+          DAC_A1 <= '1';
           DAC_A0 <= '1';
           DAC_nCS1 <= '1';
           DAC_nCS2 <= '0';
@@ -1592,10 +1634,15 @@ begin
         end if;
       elsif SET_CH2_INTEGRATOR = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH2_INTEGRATOR; -- DAC H
-          DAC_A2 <= '1';
+          DAC_DATA_OUT <= CH2_INTEGRATOR;
+--          DAC_A2 <= '0';
+--          DAC_A1 <= '1';
+--          DAC_A0 <= '1';
+--          DAC_nCS1 <= '1';
+--          DAC_nCS2 <= '0';
+          DAC_A2 <= '0';
           DAC_A1 <= '1';
-          DAC_A0 <= '1';
+          DAC_A0 <= '0';
           DAC_nCS1 <= '1';
           DAC_nCS2 <= '0';
           WR_DACS <= '0';
@@ -1608,7 +1655,7 @@ begin
         end if;
       elsif SET_COMP_THRES_LOW = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= COMP_THRES_LOW; -- DAC A
+          DAC_DATA_OUT <= COMP_THRES_LOW;
           DAC_A2 <= '0';
           DAC_A1 <= '0';
           DAC_A0 <= '0';
@@ -1624,7 +1671,7 @@ begin
         end if;
       elsif SET_COMP_THRES_HIGH = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= COMP_THRES_HIGH; -- DAC B
+          DAC_DATA_OUT <= COMP_THRES_HIGH;
           DAC_A2 <= '0';
           DAC_A1 <= '0';
           DAC_A0 <= '1';
@@ -1640,7 +1687,7 @@ begin
         end if;
       elsif SET_CH1_PMT_HV_ADJ = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH1_PMT_HV_ADJ; -- DAC A
+          DAC_DATA_OUT <= CH1_PMT_HV_ADJ;
           DAC_A2 <= '0';
           DAC_A1 <= '0';
           DAC_A0 <= '0';
@@ -1656,10 +1703,10 @@ begin
         end if;
       elsif SET_CH2_PMT_HV_ADJ = '1' then
         if WR_DACS = '1' then
-          DAC_DATA_OUT <= CH2_PMT_HV_ADJ; -- DAC C
+          DAC_DATA_OUT <= CH2_PMT_HV_ADJ;
           DAC_A2 <= '0';
-          DAC_A1 <= '1';
-          DAC_A0 <= '0';
+          DAC_A1 <= '0';
+          DAC_A0 <= '1';
           DAC_nCS1 <= '1';
           DAC_nCS2 <= '0';
           WR_DACS <= '0';

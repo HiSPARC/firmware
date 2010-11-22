@@ -1,10 +1,7 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'a0' of entity 'TRIGGER_MATRIX'.
--- 
+-- Architecture 'a0' of 'TRIGGER_MATRIX.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'TRIGGER_MATRIX' :
 -- 
 --   port(
 --     BLOCK_COINC       : in     std_logic;
