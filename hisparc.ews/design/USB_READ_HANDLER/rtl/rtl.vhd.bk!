@@ -1,10 +1,7 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'rtl' of entity 'USB_READ_HANDLER'.
--- 
+-- Architecture 'rtl' of 'USB_READ_HANDLER.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'USB_READ_HANDLER' :
 -- 
 --   port(
 --     ADC_A0                      : out    std_logic;

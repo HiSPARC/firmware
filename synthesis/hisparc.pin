@@ -1,4 +1,4 @@
- -- Copyright (C) 1991-2009 Altera Corporation
+ -- Copyright (C) 1991-2010 Altera Corporation
  -- Your use of Altera Corporation's design tools, logic functions 
  -- and other software and tools, and its AMPP partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -48,10 +48,9 @@
  --					This pin should be connected to GND. It may also be connected  to a
  --					valid signal  on the board  (low, high, or toggling)  if that signal
  --					is required for a different revision of the design.
- -- GND*          : Unused  I/O  pin.   For transceiver I/O banks (Bank 13, 14, 15, 16 and 17),
- --           	    connect each pin marked GND* either individually through a 10k Ohm resistor
- --           	    to GND or tie all pins together and connect through a single 10k Ohm resistor
- --           	    to GND.
+ -- GND*          : Unused  I/O  pin.   For transceiver I/O banks, connect each pin marked GND*
+ --           	    either individually through a 10k Ohm resistor to GND or tie all pins
+ --           	    together and connect through a single 10k Ohm resistor to GND.
  --           	    For non-transceiver I/O banks, connect each pin marked GND* directly to GND
  --           	    or leave it unconnected.
  -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
@@ -67,7 +66,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Full Version
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 CHIP  "hisparc"  ASSIGNED TO AN: EP2C35F484C6
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -250,7 +249,7 @@ DAC_DATA_0                   : F21       : output : 3.3-V LVTTL       :         
 DAC_DATA_7                   : F22       : output : 3.3-V LVTTL       :         : 5         : Y              
 ADC_MODE                     : G1        : output : 3.3-V LVTTL       :         : 2         : Y              
 ADC_DATA[0]                  : G2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : G3        :        :                   :         : 2         :                
+HIT3CH1                      : G3        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : G4        : gnd    :                   :         :           :                
 GND*                         : G5        :        :                   :         : 2         :                
 SERIAL_NUMBER[4]             : G6        : input  : 3.3-V LVTTL       :         : 2         : Y              
@@ -273,8 +272,8 @@ DAC_nCS1                     : G22       : output : 3.3-V LVTTL       :         
 ADC_DATA[1]                  : H1        : input  : 3.3-V LVTTL       :         : 2         : Y              
 ADC_DATA[2]                  : H2        : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : H3        :        :                   :         : 2         :                
-GND*                         : H4        :        :                   :         : 2         :                
-GND*                         : H5        :        :                   :         : 2         :                
+HIT2CH2                      : H4        : output : 3.3-V LVTTL       :         : 2         : Y              
+HIT2CH1                      : H5        : output : 3.3-V LVTTL       :         : 2         : Y              
 SERIAL_NUMBER[9]             : H6        : input  : 3.3-V LVTTL       :         : 2         : Y              
 LED9                         : H7        : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCINT                       : H8        : power  :                   : 1.2V    :           :                
@@ -296,7 +295,7 @@ ADC_DATA[3]                  : J1        : input  : 3.3-V LVTTL       :         
 ADC_nRD                      : J2        : output : 3.3-V LVTTL       :         : 2         : Y              
 ADC_nINT                     : J3        : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : J4        :        :                   :         : 2         :                
-GND*                         : J5        :        :                   :         : 2         :                
+HIT3CH2                      : J5        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : J6        :        :                   :         : 2         :                
 VCCIO2                       : J7        : power  :                   : 3.3V    : 2         :                
 GND                          : J8        : gnd    :                   :         :           :                

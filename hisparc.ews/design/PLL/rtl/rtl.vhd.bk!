@@ -1,10 +1,7 @@
 -- EASE/HDL begin --------------------------------------------------------------
--- 
--- Architecture 'rtl' of entity 'PLL'.
--- 
+-- Architecture 'rtl' of 'PLL.
 --------------------------------------------------------------------------------
--- 
--- Copy of the interface declaration:
+-- Copy of the interface declaration of Entity 'PLL' :
 -- 
 --   port(
 --     CLK200MHz : out    std_logic;

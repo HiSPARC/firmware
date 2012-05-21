@@ -1,0 +1,166 @@
+(DATABASE_VERSION 15)
+(ENTITY_FILE
+  (ENTITY
+    (OBID "ent0c012cfa9ef42bf483510f7014c40000")
+    (PROPERTIES
+      (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 8")
+      (PROPERTY "STAMP_TIME" "Tue May 15 14:52:17 2012")
+      (PROPERTY "STAMP_TOOL" "Ease")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
+      (NAME "LED_SELECT")
+      (USERNAME 1)
+    )
+    (GEOMETRY 0 0 1472 3328)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
+    (OBJSTAMP
+      (DESIGNER "hansvk")
+      (CREATED 1337085929 "Tue May 15 14:45:29 2012")
+      (MODIFIED 1337086337 "Tue May 15 14:52:17 2012")
+    )
+    (PORT
+      (OBID "eprt0c012cfa69052bf483510f7045c40000")
+      (HDL_IDENT
+        (NAME "LED_PATTERN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "3" "0")
+          )
+        )
+      )
+      (GEOMETRY 1432 2712 1512 2792)
+      (SIDE 1)
+      (LABEL
+        (POSITION 1408 2752)
+        (SCALE 96)
+        (COLOR_LINE 0)
+        (SIDE 3)
+        (ALIGNMENT 5)
+        (FORMAT 35)
+        (TEXT "LED_PATTERN(3:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfac9052bf483510f7085c40000")
+      (HDL_IDENT
+        (NAME "MASTER_PATTERN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "3" "0")
+          )
+        )
+      )
+      (GEOMETRY -40 216 40 296)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 256)
+        (SCALE 96)
+        (COLOR_LINE 0)
+        (SIDE 3)
+        (ALIGNMENT 3)
+        (FORMAT 35)
+        (TEXT "MASTER_PATTERN(3:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfa1a052bf483510f70c5c40000")
+      (HDL_IDENT
+        (NAME "SLAVE_PATTERN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "3" "0")
+          )
+        )
+      )
+      (GEOMETRY -40 2264 40 2344)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 2304)
+        (SCALE 96)
+        (COLOR_LINE 0)
+        (SIDE 3)
+        (ALIGNMENT 3)
+        (FORMAT 35)
+        (TEXT "SLAVE_PATTERN(3:0)")
+      )
+    )
+    (PORT
+      (OBID "eprt0c012cfa2c052bf483510f7006c40000")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "MASTER")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+        )
+      )
+      (GEOMETRY -40 3032 40 3112)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 3072)
+        (SCALE 96)
+        (COLOR_LINE 0)
+        (SIDE 3)
+        (ALIGNMENT 3)
+        (FORMAT 35)
+        (TEXT "MASTER")
+      )
+    )
+    (ARCH_DECLARATION 2 "arch0c012cfa9ef42bf483510f7034c40000" "rtl")
+  )
+  (ARCH_DEFINITION
+    (OBID "arch0c012cfa9ef42bf483510f7034c40000")
+    (HDL_IDENT
+      (NAME "rtl")
+      (USERNAME 1)
+    )
+    (TYPE 2)
+    (HDL_FILE
+      (VHDL_FILE
+        (OBID "file0c012cfa9ef42bf483510f7054c40000")
+        (NAME "rtl.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'rtl' of entity 'LED_SELECT'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     LED_PATTERN    : out    std_logic_vector(3 downto 0);"
+               "--     MASTER         : in     std_logic;"
+               "--     MASTER_PATTERN : in     std_logic_vector(3 downto 0);"
+               "--     SLAVE_PATTERN  : in     std_logic_vector(3 downto 0));"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture rtl of LED_SELECT is"
+               ""
+               "begin"
+               ""
+               "  LED_PATTERN <= MASTER_PATTERN when MASTER = '1' else SLAVE_PATTERN;"
+               ""
+               "end rtl ; -- of LED_SELECT"
+               ""
+               "")
+      )
+    )
+  )
+)
+(END_OF_FILE)

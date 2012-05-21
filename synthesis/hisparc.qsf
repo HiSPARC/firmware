@@ -27,8 +27,7 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "3.0 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:37:21  DECEMBER 13, 2005"
-set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
-set_global_assignment -name VHDL_FILE design.vhd
+set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 
 # Pin & Location Assignments
 # ==========================
@@ -323,7 +322,6 @@ set_global_assignment -name NONSYNCHSTRUCT_RULE_ASYN_RAM OFF
 set_global_assignment -name CLK_CAT OFF
 set_global_assignment -name CLK_RULE_COMB_CLOCK OFF
 set_global_assignment -name CLK_RULE_INV_CLOCK OFF
-set_global_assignment -name CLK_RULE_GATING_SCHEME OFF
 set_global_assignment -name CLK_RULE_INPINS_CLKNET OFF
 set_global_assignment -name CLK_RULE_CLKNET_CLKSPINES OFF
 set_global_assignment -name CLK_RULE_MIX_EDGES OFF
@@ -615,7 +613,6 @@ set_global_assignment -name LL_STATE LOCKED -section_id Region_0
 set_global_assignment -name LL_AUTO_SIZE OFF -section_id Region_0
 set_global_assignment -name LL_RESERVED OFF -section_id Region_0
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id Region_0
-set_global_assignment -name LL_SOFT OFF -section_id Region_0
 
 	# end LOGICLOCK_REGION(Region_0)
 	# ------------------------------
@@ -632,7 +629,6 @@ set_global_assignment -name LL_STATE LOCKED -section_id Region_1
 set_global_assignment -name LL_AUTO_SIZE OFF -section_id Region_1
 set_global_assignment -name LL_RESERVED OFF -section_id Region_1
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id Region_1
-set_global_assignment -name LL_SOFT OFF -section_id Region_1
 
 	# end LOGICLOCK_REGION(Region_1)
 	# ------------------------------
@@ -643,9 +639,22 @@ set_global_assignment -name LL_SOFT OFF -section_id Region_1
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name LL_ENABLED ON -section_id Region_0
-set_global_assignment -name LL_RESERVED_IS_LIMITED OFF -section_id Region_0
 set_global_assignment -name LL_SECURITY_ROUTING_INTERFACE OFF -section_id Region_0
 set_global_assignment -name LL_ENABLED ON -section_id Region_1
-set_global_assignment -name LL_RESERVED_IS_LIMITED OFF -section_id Region_1
 set_global_assignment -name LL_SECURITY_ROUTING_INTERFACE OFF -section_id Region_1
 set_global_assignment -name MISC_FILE "D:/PRJ/HiSparc/synt hisparc Quartus90/hisparc.dpf"
+
+set_location_assignment PIN_H5 -to HIT2CH1
+set_location_assignment PIN_H4 -to HIT2CH2
+set_location_assignment PIN_G3 -to HIT3CH1
+set_location_assignment PIN_J5 -to HIT3CH2
+set_global_assignment -name SDC_FILE hisparc.out.sdc
+set_global_assignment -name VHDL_FILE design.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name LL_RESERVED_IS_LIMITED OFF -section_id Region_0
+set_global_assignment -name LL_SOFT OFF -section_id Region_0
+set_global_assignment -name LL_RESERVED_IS_LIMITED OFF -section_id Region_1
+set_global_assignment -name LL_SOFT OFF -section_id Region_1
