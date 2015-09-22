@@ -39,7 +39,6 @@
 --     ERROR_READ_OUT              : out    std_logic;
 --     FAKE_DATA                   : out    std_logic;
 --     FORCE_MASTER                : out    std_logic;
---     GPS_FLAGS                   : in     std_logic_vector(7 downto 0);
 --     GPS_PROG_ENABLE             : out    std_logic;
 --     MASTER                      : in     std_logic;
 --     ONE_PPS                     : in     std_logic;
@@ -71,7 +70,9 @@
 --     USB_RXF                     : in     std_logic;
 --     USB_WRITE_BUSY              : in     std_logic;
 --     USB_WRITE_ENABLE            : out    std_logic;
---     USB_WRITE_REQUEST           : in     std_logic);
+--     USB_WRITE_REQUEST           : in     std_logic;
+--     UTC_PPS                     : in     std_logic;
+--     UTC_TIME                    : in     std_logic);
 -- 
 -- EASE/HDL end ----------------------------------------------------------------
 
@@ -260,13 +261,13 @@ begin
   FORCE_MASTER <= FORCE_MASTER_TMP;
   FORCE_MASTER_TMP <= MASTER when CHANGE_MS_STATE = '0' else not MASTER;
 
-  STATUS(5 downto 3) <= "000";
-  STATUS(7)	<= GPS_FLAGS(0);
-  STATUS(6)	<= GPS_FLAGS(1);
+  STATUS(7 downto 5) <= "000";
+  STATUS(4) <= UTC_PPS;
+  STATUS(3) <= UTC_TIME;
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00010010";
+  SOFTWARE_VERSION <= "00010100";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);
@@ -1712,12 +1713,12 @@ begin
                    ADC_nRD <= '0';                      -- 700ns aquisition time
         when 36 => ADC_A0 <= '1';
                    ADC_nRD <= '1';
-                   CH1_PMT_SUPPLY_CURR <= ADC_DATA_IN;  -- 2800ns conversion time
+                   CH2_PMT_SUPPLY_CURR <= ADC_DATA_IN;  -- 2800ns conversion time
         when 43 => ADC_A0 <= '1';
                    ADC_nRD <= '0';                      -- 700ns aquisition time
         when 71 => ADC_A0 <= '0';
                    ADC_nRD <= '1';
-                   CH2_PMT_SUPPLY_CURR <= ADC_DATA_IN;
+                   CH1_PMT_SUPPLY_CURR <= ADC_DATA_IN;
                    CLR_CURR_ADC <= '1';                 -- 2800ns conversion time
         when others =>  -- Do nothing
         end case;

@@ -1,282 +1,273 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0583cf2f3731cc34c5c05edcb3a60000")
-    (NAME "EVENT_FIFO_CONTROL")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 1472 1344)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 8")
+      (PROPERTY "STAMP_TIME" "Fri Jul 22 17:14:24 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "EVENT_FIFO_CONTROL")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 1472 1344)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "raism_2")
       (CREATED 1137447795 "Mon Jan 16 22:43:15 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1311345699 "Fri Jul 22 16:41:39 2011")
     )
     (PORT
       (OBID "eprt0583cf2fa931cc34c5c05edce3a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY_CONV")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY_CONV")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 664 40 744)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 704)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_READY_CONV")
       )
     )
     (PORT
       (OBID "eprt0583cf2f8d31cc34c5c05edc04a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLKRD")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLKRD")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLKRD")
       )
     )
     (PORT
       (OBID "eprt0583cf2fce31cc34c5c05edc24a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RD_ADDRESS")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "12020" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RD_ADDRESS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "12020" "0")
+          )
         )
       )
       (GEOMETRY 1432 1112 1512 1192)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1408 1152)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RD_ADDRESS(12020:0)")
       )
     )
     (PORT
       (OBID "eprt0583cf2faf31cc34c5c05edc44a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDCLOCK")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDCLOCK")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1432 984 1512 1064)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1408 1024)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDCLOCK")
       )
     )
     (PORT
       (OBID "eprt0c013cbd579acc3442400f705fc70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 1432 728 1512 808)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1408 768)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDEN")
       )
     )
     (PORT
       (OBID "eprt0c013cbdcb9acc3442400f708fc70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "FIFO_EMPTY")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "FIFO_EMPTY")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 792 40 872)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 832)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "FIFO_EMPTY")
       )
     )
     (PORT
       (OBID "eprt0c013cbdbcaacc3442400f70bfc70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "TOTAL_TIME_6X")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "integer")
-          (TYPE 7)
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "12000" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "TOTAL_TIME_6X")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "integer")
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "12000" "0")
+          )
         )
       )
       (GEOMETRY -40 536 40 616)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 576)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "TOTAL_TIME_6X(12000:0)")
       )
     )
     (PORT
       (OBID "eprt0c013cbdf7bacc3442400f70efc70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "SYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
     )
     (PORT
       (OBID "eprt0c013cbd3cfacc3442400f7000d70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DOUT_VALID")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DOUT_VALID")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1432 216 1512 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1408 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DOUT_VALID")
       )
     )
     (PORT
       (OBID "eprt0c013cbd5ffacc3442400f7020d70000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "EVENT_DATA_READY")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "EVENT_DATA_READY")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1432 344 1512 424)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1408 384)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "EVENT_DATA_READY")
       )
@@ -285,112 +276,121 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0583cf2f3731cc34c5c05edcc3a60000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'EVENT_FIFO_CONTROL."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'EVENT_FIFO_CONTROL' :"
-                 "-- "
-                 "--   port("
-                 "--     CLKRD            : in     std_logic;"
-                 "--     DATA_READY_CONV  : in     std_logic;"
-                 "--     DOUT_VALID       : out    std_logic;"
-                 "--     EVENT_DATA_READY : out    std_logic;"
-                 "--     FIFO_EMPTY       : out    std_logic;"
-                 "--     RDCLOCK          : out    std_logic;"
-                 "--     RDEN             : in     std_logic;"
-                 "--     RD_ADDRESS       : out    integer range 12020 downto 0;"
-                 "--     SYSRST           : in     std_logic;"
-                 "--     TOTAL_TIME_6X    : in     integer range 12000 downto 0);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of EVENT_FIFO_CONTROL is"
-                 ""
-                 "signal DATA_READY_CONV_DEL: std_logic;"
-                 "signal DATA_VALID_TMP: std_logic;"
-                 "signal DATA_VALID_TMP2: std_logic;"
-                 "signal EVENT_DATA_READY_TMP: std_logic;"
-                 "signal EVENT_DATA_READY_TMP2: std_logic;"
-                 "signal RDEN_TMP: std_logic; -- needed to synchronize read enable"
-                 "signal RD_ADDRESS_TMP: integer range 12020 downto 0;"
-                 ""
-                 "begin"
-                 ""
-                 "  RD_ADDRESS <= RD_ADDRESS_TMP;"
-                 "  RDCLOCK <= CLKRD;"
-                 "  DOUT_VALID <= DATA_VALID_TMP2 and EVENT_DATA_READY_TMP2;"
-                 "  EVENT_DATA_READY <= EVENT_DATA_READY_TMP;"
-                 "  FIFO_EMPTY <= not EVENT_DATA_READY_TMP;"
-                 ""
-                 "  -- Delay's"
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      DATA_READY_CONV_DEL <= '0';"
-                 "      DATA_VALID_TMP2 <= '0';"
-                 "      EVENT_DATA_READY_TMP2 <= '0';"
-                 "      RDEN_TMP <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      DATA_READY_CONV_DEL <= DATA_READY_CONV;"
-                 "      DATA_VALID_TMP2 <= DATA_VALID_TMP;"
-                 "      EVENT_DATA_READY_TMP2 <= EVENT_DATA_READY_TMP;"
-                 "      RDEN_TMP <= RDEN;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- EVENT_DATA_READY must be valid if DATA_READY_CONV goes true."
-                 "  -- in other words: the USB device gets the signal that there is data in the FIFO to readout."
-                 "  -- EVENT_DATA_READY must go low at the end of readout."
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      EVENT_DATA_READY_TMP <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      -- on a positive edge of DATA_READY_CONV"
-                 "      if DATA_READY_CONV = '1' and DATA_READY_CONV_DEL = '0' then"
-                 "        EVENT_DATA_READY_TMP <= '1';"
-                 "      elsif RD_ADDRESS_TMP > TOTAL_TIME_6X - 1 then"
-                 "        EVENT_DATA_READY_TMP <= '0';"
-                 "      else"
-                 "        EVENT_DATA_READY_TMP <= EVENT_DATA_READY_TMP;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- This signal is true when the data from the FIFO is valid."
-                 "  -- DATA_VALID must be valid if DATA_READY_CONV goes true and USB asks for readout."
-                 "  -- DATA_VALID must go low at the end of readout."
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      DATA_VALID_TMP <= '0';"
-                 "      RD_ADDRESS_TMP <= 0;"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      if EVENT_DATA_READY_TMP = '1' then"
-                 "        if RDEN_TMP = '1' then"
-                 "          DATA_VALID_TMP <= '1';"
-                 "          RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;"
-                 "        else"
-                 "          DATA_VALID_TMP <= '0';"
-                 "          RD_ADDRESS_TMP <= RD_ADDRESS_TMP;"
-                 "        end if;"
-                 "      else"
-                 "        RD_ADDRESS_TMP <= 0;"
-                 "        DATA_VALID_TMP <= '0';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "end architecture a0 ; -- of EVENT_FIFO_CONTROL"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file2cba257032c892e44821641c00650000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'EVENT_FIFO_CONTROL'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     CLKRD            : in     std_logic;"
+               "--     DATA_READY_CONV  : in     std_logic;"
+               "--     DOUT_VALID       : out    std_logic;"
+               "--     EVENT_DATA_READY : out    std_logic;"
+               "--     FIFO_EMPTY       : out    std_logic;"
+               "--     RDCLOCK          : out    std_logic;"
+               "--     RDEN             : in     std_logic;"
+               "--     RD_ADDRESS       : out    integer range 12020 downto 0;"
+               "--     SYSRST           : in     std_logic;"
+               "--     TOTAL_TIME_6X    : in     integer range 12000 downto 0);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of EVENT_FIFO_CONTROL is"
+               ""
+               "signal DATA_READY_CONV_DEL: std_logic;"
+               "signal DATA_VALID_TMP: std_logic;"
+               "signal DATA_VALID_TMP2: std_logic;"
+               "signal EVENT_DATA_READY_TMP: std_logic;"
+               "signal EVENT_DATA_READY_TMP2: std_logic;"
+               "signal RDEN_TMP: std_logic; -- needed to synchronize read enable"
+               "signal RD_ADDRESS_TMP: integer range 12020 downto 0;"
+               ""
+               "begin"
+               ""
+               "  RD_ADDRESS <= RD_ADDRESS_TMP;"
+               "  RDCLOCK <= CLKRD;"
+               "  DOUT_VALID <= DATA_VALID_TMP2 and EVENT_DATA_READY_TMP2;"
+               "  EVENT_DATA_READY <= EVENT_DATA_READY_TMP;"
+               "  FIFO_EMPTY <= not EVENT_DATA_READY_TMP;"
+               ""
+               "  -- Delay's"
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      DATA_READY_CONV_DEL <= '0';"
+               "      DATA_VALID_TMP2 <= '0';"
+               "      EVENT_DATA_READY_TMP2 <= '0';"
+               "      RDEN_TMP <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      DATA_READY_CONV_DEL <= DATA_READY_CONV;"
+               "      DATA_VALID_TMP2 <= DATA_VALID_TMP;"
+               "      EVENT_DATA_READY_TMP2 <= EVENT_DATA_READY_TMP;"
+               "      RDEN_TMP <= RDEN;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- EVENT_DATA_READY must be valid if DATA_READY_CONV goes true."
+               "  -- in other words: the USB device gets the signal that there is data in the FIFO to readout."
+               "  -- EVENT_DATA_READY must go low at the end of readout."
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      EVENT_DATA_READY_TMP <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      -- on a positive edge of DATA_READY_CONV"
+               "      if DATA_READY_CONV = '1' and DATA_READY_CONV_DEL = '0' then"
+               "        EVENT_DATA_READY_TMP <= '1';"
+               "      elsif RD_ADDRESS_TMP > TOTAL_TIME_6X - 1 then"
+               "        EVENT_DATA_READY_TMP <= '0';"
+               "      else"
+               "        EVENT_DATA_READY_TMP <= EVENT_DATA_READY_TMP;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- This signal is true when the data from the FIFO is valid."
+               "  -- DATA_VALID must be valid if DATA_READY_CONV goes true and USB asks for readout."
+               "  -- DATA_VALID must go low at the end of readout."
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      DATA_VALID_TMP <= '0';"
+               "      RD_ADDRESS_TMP <= 0;"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      if EVENT_DATA_READY_TMP = '1' then"
+               "        if RDEN_TMP = '1' then"
+               "          DATA_VALID_TMP <= '1';"
+               "          RD_ADDRESS_TMP <= RD_ADDRESS_TMP + 1;"
+               "        else"
+               "          DATA_VALID_TMP <= '0';"
+               "          RD_ADDRESS_TMP <= RD_ADDRESS_TMP;"
+               "        end if;"
+               "      else"
+               "        RD_ADDRESS_TMP <= 0;"
+               "        DATA_VALID_TMP <= '0';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "end architecture a0 ; -- of EVENT_FIFO_CONTROL"
+               ""
+               "")
+      )
     )
   )
 )

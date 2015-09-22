@@ -1,304 +1,295 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c013cbdf285f44409500f70c0a60000")
-    (NAME "EVENT_DATA_HANDLER")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 1664 960)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 8")
+      (PROPERTY "STAMP_TIME" "Fri Jul 22 17:14:24 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "EVENT_DATA_HANDLER")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 1664 960)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "raism_2")
       (CREATED 1146050607 "Wed Apr 26 13:23:27 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1311345699 "Fri Jul 22 16:41:39 2011")
     )
     (PORT
       (OBID "eprt0c013cbd8985f44409500f7021a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 344 40 424)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 384)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "RDEN")
       )
     )
     (PORT
       (OBID "eprt0c013cbd8985f44409500f7031a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DIN_VALID")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DIN_VALID")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DIN_VALID")
       )
     )
     (PORT
       (OBID "eprt0c013cbd8985f44409500f7041a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 1624 216 1704 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1600 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_READY")
       )
     )
     (PORT
       (OBID "eprt0c013cbd6a85f44409500f7081a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_IN")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "7" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_IN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "7" "0")
+          )
         )
       )
       (GEOMETRY -40 472 40 552)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 512)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_IN(7:0)")
       )
     )
     (PORT
       (OBID "eprt0c013cbd7b85f44409500f70a1a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLKRD")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLKRD")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 600 40 680)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 640)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLKRD")
       )
     )
     (PORT
       (OBID "eprt0c013cbd7b85f44409500f70b1a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "SYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 768)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
     )
     (PORT
       (OBID "eprt0c013cbd9d85f44409500f70e1a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "READOUT_BUSY")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "READOUT_BUSY")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1624 600 1704 680)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1600 640)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "READOUT_BUSY")
       )
     )
     (PORT
       (OBID "eprt0c013cbd77b5f44409500f7064a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "WR")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "WR")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 1624 728 1704 808)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1600 768)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "WR")
       )
     )
     (PORT
       (OBID "eprt0c013cbdadb5f44409500f7045a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_DATA")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "7" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "USB_DATA")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "7" "0")
+          )
         )
       )
       (GEOMETRY 1624 344 1704 424)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1600 384)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "USB_DATA(7:0)")
       )
     )
     (PORT
       (OBID "eprt0c013cbd71c5f44409500f7085a60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "WR_EN")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "WR_EN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1624 472 1704 552)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1600 512)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "WR_EN")
       )
     )
     (PORT
       (OBID "eprt0c8a2066b5e725444ea05edc62f40000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY_FIFO")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY_FIFO")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_READY_FIFO")
       )
@@ -307,146 +298,155 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbdf285f44409500f70d0a60000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'EVENT_DATA_HANDLER."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'EVENT_DATA_HANDLER' :"
-                 "-- "
-                 "--   port("
-                 "--     CLKRD           : in     std_logic;"
-                 "--     DATA_IN         : in     std_logic_vector(7 downto 0);"
-                 "--     DATA_READY      : in     std_logic;"
-                 "--     DATA_READY_FIFO : in     std_logic;"
-                 "--     DIN_VALID       : in     std_logic;"
-                 "--     RDEN            : out    std_logic;"
-                 "--     READOUT_BUSY    : out    std_logic;"
-                 "--     SYSRST          : in     std_logic;"
-                 "--     USB_DATA        : out    std_logic_vector(7 downto 0);"
-                 "--     WR              : in     std_logic;"
-                 "--     WR_EN           : out    std_logic);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of EVENT_DATA_HANDLER is"
-                 ""
-                 "signal RDEN_TMP: std_logic ;"
-                 "signal VALID_BUF1: std_logic ;"
-                 "signal VALID_BUF1_DEL1: std_logic ;"
-                 "signal VALID_BUF1_DEL2: std_logic ;"
-                 "signal VALID_BUF2: std_logic ;"
-                 "signal RST_VALID_BUF1: std_logic ;"
-                 "signal RST_VALID_BUF2: std_logic ;"
-                 "signal DATA_BUF1: std_logic_vector(7 downto 0) ;"
-                 "signal DATA_BUF2: std_logic_vector(7 downto 0) ;"
-                 "signal USB_DATA_TMP: std_logic_vector(7 downto 0) ;"
-                 ""
-                 "begin"
-                 ""
-                 "  RDEN <= RDEN_TMP;"
-                 "  USB_DATA <= USB_DATA_TMP;"
-                 "  READOUT_BUSY <= DATA_READY_FIFO or VALID_BUF1;"
-                 "  WR_EN <= VALID_BUF1_DEL2 or VALID_BUF2;"
-                 ""
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      VALID_BUF1_DEL1 <= '0';"
-                 "      VALID_BUF1_DEL2 <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '0') then"
-                 "      if RST_VALID_BUF1 = '1' then"
-                 "        VALID_BUF1_DEL1 <= '0';"
-                 "        VALID_BUF1_DEL2 <= '0';"
-                 "      else"
-                 "        VALID_BUF1_DEL1 <= VALID_BUF1;"
-                 "        VALID_BUF1_DEL2 <= VALID_BUF1_DEL1;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      RDEN_TMP <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '0') then -- RDEN changes on a negative clock edge"
-                 "      if DATA_READY = '1' then"
-                 "        if VALID_BUF1 = '0' then"
-                 "          RDEN_TMP <= not RDEN_TMP;"
-                 "        else"
-                 "          RDEN_TMP <= '0';"
-                 "        end if;"
-                 "      else"
-                 "        RDEN_TMP <= '0';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      DATA_BUF1 <= \"00000000\";"
-                 "      DATA_BUF2 <= \"00000000\";"
-                 "      VALID_BUF1 <= '0';"
-                 "      VALID_BUF2 <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '0') then"
-                 "      if RST_VALID_BUF1 = '1' then"
-                 "        VALID_BUF1 <= '0';"
-                 "      elsif DIN_VALID = '1' then"
-                 "        DATA_BUF1 <= DATA_IN;"
-                 "        VALID_BUF1 <= DIN_VALID;"
-                 "      end if;"
-                 "      if RST_VALID_BUF2 = '1' then"
-                 "        VALID_BUF2 <= '0';"
-                 "      elsif DIN_VALID = '1' and VALID_BUF1 = '1' then"
-                 "        VALID_BUF2 <= VALID_BUF1;"
-                 "        DATA_BUF2 <= DATA_BUF1;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      RST_VALID_BUF1 <= '0';"
-                 "      RST_VALID_BUF2 <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '0') then"
-                 "      if WR = '1' then"
-                 "        if VALID_BUF2  = '1' then"
-                 "          RST_VALID_BUF2 <= '1';"
-                 "        elsif VALID_BUF1_DEL2  = '1' then"
-                 "          RST_VALID_BUF1 <= '1';"
-                 "        end if;"
-                 "      else"
-                 "        RST_VALID_BUF1 <= '0';"
-                 "        RST_VALID_BUF2 <= '0';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      USB_DATA_TMP <= \"00000000\";"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      if VALID_BUF2 = '1' then"
-                 "        USB_DATA_TMP <= DATA_BUF2;"
-                 "      elsif VALID_BUF1 = '1' then"
-                 "        USB_DATA_TMP <= DATA_BUF1;"
-                 "      else"
-                 "        USB_DATA_TMP <= USB_DATA_TMP;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "end architecture a0 ; -- of EVENT_DATA_HANDLER"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file2cba257032c892e44821641cef550000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'EVENT_DATA_HANDLER'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     CLKRD           : in     std_logic;"
+               "--     DATA_IN         : in     std_logic_vector(7 downto 0);"
+               "--     DATA_READY      : in     std_logic;"
+               "--     DATA_READY_FIFO : in     std_logic;"
+               "--     DIN_VALID       : in     std_logic;"
+               "--     RDEN            : out    std_logic;"
+               "--     READOUT_BUSY    : out    std_logic;"
+               "--     SYSRST          : in     std_logic;"
+               "--     USB_DATA        : out    std_logic_vector(7 downto 0);"
+               "--     WR              : in     std_logic;"
+               "--     WR_EN           : out    std_logic);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of EVENT_DATA_HANDLER is"
+               ""
+               "signal RDEN_TMP: std_logic ;"
+               "signal VALID_BUF1: std_logic ;"
+               "signal VALID_BUF1_DEL1: std_logic ;"
+               "signal VALID_BUF1_DEL2: std_logic ;"
+               "signal VALID_BUF2: std_logic ;"
+               "signal RST_VALID_BUF1: std_logic ;"
+               "signal RST_VALID_BUF2: std_logic ;"
+               "signal DATA_BUF1: std_logic_vector(7 downto 0) ;"
+               "signal DATA_BUF2: std_logic_vector(7 downto 0) ;"
+               "signal USB_DATA_TMP: std_logic_vector(7 downto 0) ;"
+               ""
+               "begin"
+               ""
+               "  RDEN <= RDEN_TMP;"
+               "  USB_DATA <= USB_DATA_TMP;"
+               "  READOUT_BUSY <= DATA_READY_FIFO or VALID_BUF1;"
+               "  WR_EN <= VALID_BUF1_DEL2 or VALID_BUF2;"
+               ""
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      VALID_BUF1_DEL1 <= '0';"
+               "      VALID_BUF1_DEL2 <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '0') then"
+               "      if RST_VALID_BUF1 = '1' then"
+               "        VALID_BUF1_DEL1 <= '0';"
+               "        VALID_BUF1_DEL2 <= '0';"
+               "      else"
+               "        VALID_BUF1_DEL1 <= VALID_BUF1;"
+               "        VALID_BUF1_DEL2 <= VALID_BUF1_DEL1;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      RDEN_TMP <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '0') then -- RDEN changes on a negative clock edge"
+               "      if DATA_READY = '1' then"
+               "        if VALID_BUF1 = '0' then"
+               "          RDEN_TMP <= not RDEN_TMP;"
+               "        else"
+               "          RDEN_TMP <= '0';"
+               "        end if;"
+               "      else"
+               "        RDEN_TMP <= '0';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      DATA_BUF1 <= \"00000000\";"
+               "      DATA_BUF2 <= \"00000000\";"
+               "      VALID_BUF1 <= '0';"
+               "      VALID_BUF2 <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '0') then"
+               "      if RST_VALID_BUF1 = '1' then"
+               "        VALID_BUF1 <= '0';"
+               "      elsif DIN_VALID = '1' then"
+               "        DATA_BUF1 <= DATA_IN;"
+               "        VALID_BUF1 <= DIN_VALID;"
+               "      end if;"
+               "      if RST_VALID_BUF2 = '1' then"
+               "        VALID_BUF2 <= '0';"
+               "      elsif DIN_VALID = '1' and VALID_BUF1 = '1' then"
+               "        VALID_BUF2 <= VALID_BUF1;"
+               "        DATA_BUF2 <= DATA_BUF1;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      RST_VALID_BUF1 <= '0';"
+               "      RST_VALID_BUF2 <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '0') then"
+               "      if WR = '1' then"
+               "        if VALID_BUF2  = '1' then"
+               "          RST_VALID_BUF2 <= '1';"
+               "        elsif VALID_BUF1_DEL2  = '1' then"
+               "          RST_VALID_BUF1 <= '1';"
+               "        end if;"
+               "      else"
+               "        RST_VALID_BUF1 <= '0';"
+               "        RST_VALID_BUF2 <= '0';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      USB_DATA_TMP <= \"00000000\";"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      if VALID_BUF2 = '1' then"
+               "        USB_DATA_TMP <= DATA_BUF2;"
+               "      elsif VALID_BUF1 = '1' then"
+               "        USB_DATA_TMP <= DATA_BUF1;"
+               "      else"
+               "        USB_DATA_TMP <= USB_DATA_TMP;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "end architecture a0 ; -- of EVENT_DATA_HANDLER"
+               ""
+               "")
+      )
     )
   )
 )

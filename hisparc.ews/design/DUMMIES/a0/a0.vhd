@@ -13,7 +13,9 @@
 --     LED5       : out    std_logic;
 --     LED6       : out    std_logic;
 --     LED7       : out    std_logic;
---     USB_nPWREN : in     std_logic);
+--     USB_nPWREN : in     std_logic;
+--     UTC_PPS    : in     std_logic;
+--     UTC_TIME   : in     std_logic);
 -- 
 -- EASE/HDL end ----------------------------------------------------------------
 
@@ -31,8 +33,9 @@ begin
 -- LED3 is used for COINC
   LED4 <= '0';
   LED5 <= '0';
-  LED6 <= '0';
-  LED7 <= '0';
+  LED6 <= UTC_TIME;
+  LED7 <= UTC_PPS;
+
 
 end architecture a0 ; -- of DUMMIES
 

@@ -1,998 +1,963 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c8a2046d5327054c3b05edc3d850000")
-    (NAME "FIFO_SELECT")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 2176 5248)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 8")
+      (PROPERTY "STAMP_TIME" "Fri Jul 22 17:14:24 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "FIFO_SELECT")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 2176 5248)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "raism_2")
       (CREATED 1158095709 "Tue Sep 12 23:15:09 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1311345699 "Fri Jul 22 16:41:39 2011")
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc6d850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "COINC_TO_END_TIME")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 3544 40 3624)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 3584)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "COINC_TO_END_TIME")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc7d850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT1_CH1")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT1_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY -40 600 40 680)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 640)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_OUT1_CH1(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc8d850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME_FIFO1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "COINC_TO_END_TIME_FIFO1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 3288 40 3368)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 3328)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "COINC_TO_END_TIME_FIFO1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc9d850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN1_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN1_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 1368 40 1448)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 1408)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "RDEN1_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edcad850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY1_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY1_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 856 40 936)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 896)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_READY1_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edcbd850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "READOUT_BUSY1_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "READOUT_BUSY1_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 1112 40 1192)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 1152)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "READOUT_BUSY1_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edccd850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT2_CH1")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT2_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 768)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_OUT2_CH1(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edcdd850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN2_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN2_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 1496 40 1576)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 1536)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "RDEN2_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edced850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY2_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY2_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 984 40 1064)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 1024)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_READY2_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edcfd850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "READOUT_BUSY2_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "READOUT_BUSY2_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 1240 40 1320)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 1280)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "READOUT_BUSY2_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc0e850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "COINC_TO_END_TIME_FIFO2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "COINC_TO_END_TIME_FIFO2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 3416 40 3496)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 3456)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "COINC_TO_END_TIME_FIFO2")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc1e850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "SYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc2e850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLKRD")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLKRD")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLKRD")
       )
     )
     (PORT
       (OBID "eprt0c8a2046f9327054c3b05edc3e850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK200MHz")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLK200MHz")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 344 40 424)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 384)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLK200MHz")
       )
     )
     (PORT
       (OBID "eprt0c8a204686427054c3b05edc2f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT1_CH2")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT1_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY -40 2008 40 2088)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2048)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_OUT1_CH2(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a204667427054c3b05edc4f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN1_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN1_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 2776 40 2856)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2816)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "RDEN1_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a204677427054c3b05edc5f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY1_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY1_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 2264 40 2344)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2304)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_READY1_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a204687427054c3b05edc6f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "READOUT_BUSY1_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "READOUT_BUSY1_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 2520 40 2600)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2560)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "READOUT_BUSY1_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a204697427054c3b05edc7f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT2_CH2")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT2_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY -40 2136 40 2216)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2176)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_OUT2_CH2(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046a7427054c3b05edc8f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN2_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN2_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 2904 40 2984)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2944)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "RDEN2_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a2046b7427054c3b05edc9f850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY2_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY2_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 2392 40 2472)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2432)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "DATA_READY2_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a2046c7427054c3b05edcaf850000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "READOUT_BUSY2_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "READOUT_BUSY2_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 2648 40 2728)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 2688)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "READOUT_BUSY2_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a2046cb427054c3b05edc60950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "TRIGGER_PATTERN_IN")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "15" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "TRIGGER_PATTERN_IN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "15" "0")
+          )
         )
       )
       (GEOMETRY -40 4312 40 4392)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 4352)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "TRIGGER_PATTERN_IN(15:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a20463e427054c3b05edc80950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT_CH1")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY 2136 1496 2216 1576)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 1536)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_OUT_CH1(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a20463e427054c3b05edc90950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 2136 1752 2216 1832)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 1792)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDEN_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a20463e427054c3b05edca0950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 2136 1368 2216 1448)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 1408)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_READY_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a20463e427054c3b05edcb0950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_VALID_CH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_VALID_CH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 2136 1624 2216 1704)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 1664)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_VALID_CH1")
       )
     )
     (PORT
       (OBID "eprt0c8a204632527054c3b05edc01950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_OUT_CH2")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "11" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_OUT_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "11" "0")
+          )
         )
       )
       (GEOMETRY 2136 2904 2216 2984)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 2944)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_OUT_CH2(11:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a204632527054c3b05edc11950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "RDEN_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "RDEN_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 2136 3160 2216 3240)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 3200)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "RDEN_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a204642527054c3b05edc21950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_READY_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_READY_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 2136 2776 2216 2856)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 2816)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_READY_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a204652527054c3b05edc31950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "DATA_VALID_CH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "DATA_VALID_CH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 2136 3032 2216 3112)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 3072)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "DATA_VALID_CH2")
       )
     )
     (PORT
       (OBID "eprt0c8a2046e4527054c3b05edc81950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "TRIGGER_PATTERN")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "15" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "TRIGGER_PATTERN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "15" "0")
+          )
         )
       )
       (GEOMETRY 2136 3928 2216 4008)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 3968)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "TRIGGER_PATTERN(15:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046e4527054c3b05edc91950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "GPS_TS_IN")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "std_logic_vector")
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "55" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "GPS_TS_IN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "std_logic_vector")
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "55" "0")
+          )
         )
       )
       (GEOMETRY -40 4440 40 4520)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 4480)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "GPS_TS_IN(55:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046e4527054c3b05edca1950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CTD_IN")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "std_logic_vector")
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "31" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CTD_IN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "std_logic_vector")
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "31" "0")
+          )
         )
       )
       (GEOMETRY -40 4568 40 4648)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 4608)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CTD_IN(31:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046e4527054c3b05edcb1950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "GPS_TS_OUT")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "std_logic_vector")
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "55" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "GPS_TS_OUT")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "std_logic_vector")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "55" "0")
+          )
         )
       )
       (GEOMETRY 2136 4056 2216 4136)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 4096)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "GPS_TS_OUT(55:0)")
       )
     )
     (PORT
       (OBID "eprt0c8a2046e4527054c3b05edcc1950000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CTD_OUT")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "std_logic_vector")
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "31" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CTD_OUT")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "std_logic_vector")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "31" "0")
+          )
         )
       )
       (GEOMETRY 2136 4184 2216 4264)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 2112 4224)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "CTD_OUT(31:0)")
       )
     )
     (PORT
       (OBID "eprt0c013cbd179d7054c9800f7002260000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "BLOCK_COINC")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "BLOCK_COINC")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY -40 3800 40 3880)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 3840)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "BLOCK_COINC")
       )
@@ -1001,310 +966,319 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c8a2046d5327054c3b05edc4d850000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'FIFO_SELECT."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'FIFO_SELECT' :"
-                 "-- "
-                 "--   port("
-                 "--     BLOCK_COINC             : out    std_logic;"
-                 "--     CLK200MHz               : in     std_logic;"
-                 "--     CLKRD                   : in     std_logic;"
-                 "--     COINC_TO_END_TIME       : in     std_logic;"
-                 "--     COINC_TO_END_TIME_FIFO1 : out    std_logic;"
-                 "--     COINC_TO_END_TIME_FIFO2 : out    std_logic;"
-                 "--     CTD_IN                  : in     std_logic_vector(31 downto 0);"
-                 "--     CTD_OUT                 : out    std_logic_vector(31 downto 0);"
-                 "--     DATA_OUT1_CH1           : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT1_CH2           : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT2_CH1           : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT2_CH2           : in     std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT_CH1            : out    std_logic_vector(11 downto 0);"
-                 "--     DATA_OUT_CH2            : out    std_logic_vector(11 downto 0);"
-                 "--     DATA_READY1_CH1         : in     std_logic;"
-                 "--     DATA_READY1_CH2         : in     std_logic;"
-                 "--     DATA_READY2_CH1         : in     std_logic;"
-                 "--     DATA_READY2_CH2         : in     std_logic;"
-                 "--     DATA_READY_CH1          : out    std_logic;"
-                 "--     DATA_READY_CH2          : out    std_logic;"
-                 "--     DATA_VALID_CH1          : out    std_logic;"
-                 "--     DATA_VALID_CH2          : out    std_logic;"
-                 "--     GPS_TS_IN               : in     std_logic_vector(55 downto 0);"
-                 "--     GPS_TS_OUT              : out    std_logic_vector(55 downto 0);"
-                 "--     RDEN1_CH1               : out    std_logic;"
-                 "--     RDEN1_CH2               : out    std_logic;"
-                 "--     RDEN2_CH1               : out    std_logic;"
-                 "--     RDEN2_CH2               : out    std_logic;"
-                 "--     RDEN_CH1                : in     std_logic;"
-                 "--     RDEN_CH2                : in     std_logic;"
-                 "--     READOUT_BUSY1_CH1       : in     std_logic;"
-                 "--     READOUT_BUSY1_CH2       : in     std_logic;"
-                 "--     READOUT_BUSY2_CH1       : in     std_logic;"
-                 "--     READOUT_BUSY2_CH2       : in     std_logic;"
-                 "--     SYSRST                  : in     std_logic;"
-                 "--     TRIGGER_PATTERN         : out    std_logic_vector(15 downto 0);"
-                 "--     TRIGGER_PATTERN_IN      : in     std_logic_vector(15 downto 0));"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of FIFO_SELECT is"
-                 ""
-                 "signal COINC_TO_END_TIME_DEL1: std_logic;"
-                 "signal COINC_SWITCH: std_logic_vector(1 downto 0); -- bit0 is gates coinc to channel 1 and bit1 to channel 2"
-                 "signal BLOCK_SWITCH: std_logic_vector(1 downto 0); -- bit0 is set at a coinc to channel 1 and bit1 is set at a coinc to channel 2; end of readout of the channel, clears the bit"
-                 "signal DATA_READY1: std_logic; -- active when there is latched data in one of the first fifo's"
-                 "signal DATA_READY2: std_logic; -- active when there is latched data in one of the second fifo's"
-                 "signal DATA_READY1_DEL1: std_logic; -- delay's to synchronize it with the 200MHz"
-                 "signal DATA_READY2_DEL1: std_logic; -- delay's to synchronize it with the 200MHz"
-                 "signal DATA_READY1_DEL2: std_logic;"
-                 "signal DATA_READY2_DEL2: std_logic;"
-                 "signal DATA_READY_FIFO1: std_logic;"
-                 "signal DATA_READY_FIFO2: std_logic;"
-                 "signal READY: std_logic_vector(1 downto 0); -- bit0 selects FIFO1 and bit1 selects FIFO2"
-                 "signal COINC_TO_FIFO1: std_logic;"
-                 "signal COINC_TO_FIFO1_DEL1: std_logic;"
-                 "signal COINC_TO_FIFO2: std_logic;"
-                 "signal COINC_TO_FIFO2_DEL1: std_logic;"
-                 "signal RDEN_CH2_DEL1: std_logic;"
-                 "signal TRIGGER_PATTERN_TIME1: std_logic_vector(15 downto 0);"
-                 "signal TRIGGER_PATTERN_TIME2: std_logic_vector(15 downto 0);"
-                 "signal CTD_TIME1: std_logic_vector(31 downto 0);"
-                 "signal CTD_TIME2: std_logic_vector(31 downto 0);"
-                 "signal GPS_TS_TIME1: std_logic_vector(55 downto 0);"
-                 "signal GPS_TS_TIME2: std_logic_vector(55 downto 0);"
-                 ""
-                 "begin"
-                 ""
-                 "  COINC_TO_END_TIME_FIFO1 <= COINC_TO_FIFO1;"
-                 "  COINC_TO_END_TIME_FIFO2 <= COINC_TO_FIFO2;"
-                 ""
-                 "  -- DATA_READY_FIFO is true when there is data in both fifo's of the channels made on the same COINC"
-                 "  DATA_READY_FIFO1 <= DATA_READY1_CH1 and DATA_READY1_CH2;"
-                 "  DATA_READY_FIFO2 <= DATA_READY2_CH1 and DATA_READY2_CH2;"
-                 ""
-                 "  -- BLOCK_COINC if FIFO's1 and FIFO's2 are full"
-                 "  BLOCK_COINC <= '1' when BLOCK_SWITCH = \"11\" else '0';"
-                 ""
-                 "  DATA_READY1 <= DATA_READY1_CH1 or DATA_READY1_CH2;"
-                 "  DATA_READY2 <= DATA_READY2_CH1 or DATA_READY2_CH2;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      COINC_SWITCH <= \"00\";"
-                 "      BLOCK_SWITCH <= \"00\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if DATA_READY1_DEL1 = '0' and  DATA_READY1_DEL2 = '1' then -- on a falling edge of DATA_READY1, the first fifo's have been read out"
-                 "        COINC_SWITCH(0) <= '0'; -- Clear coinc_switch0"
-                 "        BLOCK_SWITCH(0) <= '0'; -- Clear block_switch0"
-                 "      elsif DATA_READY2_DEL1 = '0' and  DATA_READY2_DEL2 = '1' then -- on a falling edge of DATA_READY2, the second fifo's have been read out"
-                 "        COINC_SWITCH(1) <= '0'; -- Clear coinc_switch1"
-                 "        BLOCK_SWITCH(1) <= '0'; -- Clear block_switch1"
-                 "      elsif BLOCK_SWITCH /= \"11\" and (COINC_SWITCH = \"00\" or COINC_SWITCH = \"10\") and COINC_TO_END_TIME = '1' and  COINC_TO_END_TIME_DEL1 = '0' then -- on a rising edge of COINC_TO_END_TIME and COINC_SWITCH(0) = '0'"
-                 "        COINC_SWITCH <= \"01\"; -- Set coinc_switch0"
-                 "        BLOCK_SWITCH(0) <= '1'; -- Set block_switch0"
-                 "      elsif BLOCK_SWITCH /= \"11\" and COINC_SWITCH = \"01\" and COINC_TO_END_TIME = '1' and  COINC_TO_END_TIME_DEL1 = '0' then -- on a rising edge of COINC_TO_END_TIME and COINC_SWITCH(0) = '1' and COINC_SWITCH(1) = '0'"
-                 "        COINC_SWITCH <= \"10\"; -- Set coinc_switch1"
-                 "        BLOCK_SWITCH(1) <= '1'; -- Set block_switch1"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- COINC Multiplexer"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      COINC_TO_FIFO1 <= '0';"
-                 "      COINC_TO_FIFO2 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_SWITCH = \"01\" then"
-                 "        COINC_TO_FIFO1 <= COINC_TO_END_TIME_DEL1;"
-                 "      elsif COINC_SWITCH = \"10\" then"
-                 "        COINC_TO_FIFO2 <= COINC_TO_END_TIME_DEL1;"
-                 "      else"
-                 "        COINC_TO_FIFO1 <= '0';"
-                 "        COINC_TO_FIFO2 <= '0';"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- delay's  on CLK200MHz"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      COINC_TO_END_TIME_DEL1 <= '0';"
-                 "      DATA_READY1_DEL1 <= '0';"
-                 "      DATA_READY1_DEL2 <= '0';"
-                 "      DATA_READY2_DEL1 <= '0';"
-                 "      DATA_READY2_DEL2 <= '0';"
-                 "      COINC_TO_FIFO1_DEL1 <= '0';"
-                 "      COINC_TO_FIFO2_DEL1 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      COINC_TO_END_TIME_DEL1 <= COINC_TO_END_TIME;"
-                 "      DATA_READY1_DEL1 <= DATA_READY1;"
-                 "      DATA_READY1_DEL2 <= DATA_READY1_DEL1;"
-                 "      DATA_READY2_DEL1 <= DATA_READY2;"
-                 "      DATA_READY2_DEL2 <= DATA_READY2_DEL1;"
-                 "      COINC_TO_FIFO1_DEL1 <= COINC_TO_FIFO1;"
-                 "      COINC_TO_FIFO2_DEL1 <= COINC_TO_FIFO2;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- delay's  on CLKRD"
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      RDEN_CH2_DEL1 <= '0';"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      RDEN_CH2_DEL1 <= RDEN_CH2;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- Determine which channel has to be readout"
-                 "  -- A event in both FIFO's of the channels have been written to the next FIFO at the end of RDEN_CH2"
-                 "  -- Thus at the end of RDEN_CH2 a new situation must be checked"
-                 "  process(CLKRD,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      READY <= \"00\"; -- default state"
-                 "    elsif (CLKRD'event and CLKRD = '1') then"
-                 "      if (READY = \"11\") or (RDEN_CH2 = '0' and RDEN_CH2_DEL1 = '1') then -- clear READY"
-                 "        READY <= \"00\"; -- default state"
-                 "      elsif READY(0) = '1' or READY(1) = '1' then -- Latch READY if there is data in one of the FIFO's"
-                 "        READY <= READY;"
-                 "      else -- if there is no data the FIFO's"
-                 "        READY(0) <= DATA_READY_FIFO1;"
-                 "        READY(1) <= DATA_READY_FIFO2;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- Multiplexer"
-                 "  process(READY,DATA_OUT1_CH1,DATA_OUT2_CH1,DATA_OUT1_CH2,DATA_OUT2_CH2,"
-                 "          DATA_READY1_CH1,DATA_READY2_CH1,DATA_READY1_CH2,DATA_READY2_CH2,"
-                 "          RDEN_CH1,RDEN_CH2,"
-                 "          READOUT_BUSY1_CH1,READOUT_BUSY2_CH1,READOUT_BUSY1_CH2,READOUT_BUSY2_CH2,"
-                 "          TRIGGER_PATTERN_TIME1,GPS_TS_TIME1,CTD_TIME1,TRIGGER_PATTERN_TIME2,GPS_TS_TIME2,CTD_TIME2)"
-                 "  begin"
-                 "    case(READY) is"
-                 "      when \"00\" => DATA_OUT_CH1 <= DATA_OUT1_CH1;"
-                 "                   DATA_READY_CH1 <= '0';"
-                 "                   RDEN1_CH1 <= '0';"
-                 "                   RDEN2_CH1 <= '0';"
-                 "                   DATA_OUT_CH2 <= DATA_OUT1_CH2;"
-                 "                   DATA_READY_CH2 <= '0';"
-                 "                   DATA_VALID_CH1 <= '0';"
-                 "                   DATA_VALID_CH2 <= '0';"
-                 "                   RDEN1_CH2 <= '0';"
-                 "                   RDEN2_CH2 <= '0';"
-                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
-                 "                   GPS_TS_OUT <= GPS_TS_TIME1;"
-                 "                   CTD_OUT <= CTD_TIME1;"
-                 "      when \"01\" => DATA_OUT_CH1 <= DATA_OUT1_CH1;"
-                 "                   DATA_READY_CH1 <= DATA_READY1_CH1;"
-                 "                   RDEN1_CH1 <= RDEN_CH1;"
-                 "                   RDEN2_CH1 <= '0';"
-                 "                   DATA_OUT_CH2 <= DATA_OUT1_CH2;"
-                 "                   DATA_READY_CH2 <= DATA_READY1_CH2;"
-                 "                   DATA_VALID_CH1 <= READOUT_BUSY1_CH1;"
-                 "                   DATA_VALID_CH2 <= READOUT_BUSY1_CH2;"
-                 "                   RDEN1_CH2 <= RDEN_CH2;"
-                 "                   RDEN2_CH2 <= '0';"
-                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
-                 "                   GPS_TS_OUT <= GPS_TS_TIME1;"
-                 "                   CTD_OUT <= CTD_TIME1;"
-                 "      when \"10\" => DATA_OUT_CH1 <= DATA_OUT2_CH1;"
-                 "                   DATA_READY_CH1 <= DATA_READY2_CH1;"
-                 "                   RDEN1_CH1 <= '0';"
-                 "                   RDEN2_CH1 <= RDEN_CH1;"
-                 "                   DATA_OUT_CH2 <= DATA_OUT2_CH2;"
-                 "                   DATA_READY_CH2 <= DATA_READY2_CH2;"
-                 "                   DATA_VALID_CH1 <= READOUT_BUSY2_CH1;"
-                 "                   DATA_VALID_CH2 <= READOUT_BUSY2_CH2;"
-                 "                   RDEN1_CH2 <= '0';"
-                 "                   RDEN2_CH2 <= RDEN_CH2;"
-                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME2;"
-                 "                   GPS_TS_OUT <= GPS_TS_TIME2;"
-                 "                   CTD_OUT <= CTD_TIME2;"
-                 "      when \"11\" => DATA_OUT_CH1 <= DATA_OUT1_CH1; -- never assigned"
-                 "                   DATA_READY_CH1 <= '0';"
-                 "                   RDEN1_CH1 <= '0';"
-                 "                   RDEN2_CH1 <= '0';"
-                 "                   DATA_OUT_CH2 <= DATA_OUT1_CH2;"
-                 "                   DATA_READY_CH2 <= '0';"
-                 "                   DATA_VALID_CH1 <= '0';"
-                 "                   DATA_VALID_CH2 <= '0';"
-                 "                   RDEN1_CH2 <= '0';"
-                 "                   RDEN2_CH2 <= '0';"
-                 "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
-                 "                   GPS_TS_OUT <= GPS_TS_TIME1;"
-                 "                   CTD_OUT <= CTD_TIME1;"
-                 "      when others =>"
-                 "    end case;"
-                 "  end process;"
-                 ""
-                 "  -- For a master COINC_TO_END_TIME is 20ns delayed"
-                 "  -- This is to compensate for the slave to master time (cable, drivers)"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      GPS_TS_TIME1 <= \"00000000000000000000000000000000000000000000000000000000\";"
-                 "      CTD_TIME1 <= \"00000000000000000000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_FIFO1 = '1' and COINC_TO_FIFO1_DEL1 = '0' then"
-                 "        GPS_TS_TIME1 <= GPS_TS_IN;"
-                 "        CTD_TIME1 <= CTD_IN;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      GPS_TS_TIME2 <= \"00000000000000000000000000000000000000000000000000000000\";"
-                 "      CTD_TIME2 <= \"00000000000000000000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_FIFO2 = '1' and COINC_TO_FIFO2_DEL1 = '0' then"
-                 "        GPS_TS_TIME2 <= GPS_TS_IN;"
-                 "        CTD_TIME2 <= CTD_IN;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_FIFO1"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      TRIGGER_PATTERN_TIME1 <= \"0000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_FIFO1 = '0' and COINC_TO_FIFO1_DEL1 = '1' then"
-                 "        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_FIFO2"
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      TRIGGER_PATTERN_TIME2 <= \"0000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if COINC_TO_FIFO2 = '0' and COINC_TO_FIFO2_DEL1 = '1' then"
-                 "        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "end architecture a0 ; -- of FIFO_SELECT"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file2cba257032c892e44821641c20650000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'FIFO_SELECT'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     BLOCK_COINC             : out    std_logic;"
+               "--     CLK200MHz               : in     std_logic;"
+               "--     CLKRD                   : in     std_logic;"
+               "--     COINC_TO_END_TIME       : in     std_logic;"
+               "--     COINC_TO_END_TIME_FIFO1 : out    std_logic;"
+               "--     COINC_TO_END_TIME_FIFO2 : out    std_logic;"
+               "--     CTD_IN                  : in     std_logic_vector(31 downto 0);"
+               "--     CTD_OUT                 : out    std_logic_vector(31 downto 0);"
+               "--     DATA_OUT1_CH1           : in     std_logic_vector(11 downto 0);"
+               "--     DATA_OUT1_CH2           : in     std_logic_vector(11 downto 0);"
+               "--     DATA_OUT2_CH1           : in     std_logic_vector(11 downto 0);"
+               "--     DATA_OUT2_CH2           : in     std_logic_vector(11 downto 0);"
+               "--     DATA_OUT_CH1            : out    std_logic_vector(11 downto 0);"
+               "--     DATA_OUT_CH2            : out    std_logic_vector(11 downto 0);"
+               "--     DATA_READY1_CH1         : in     std_logic;"
+               "--     DATA_READY1_CH2         : in     std_logic;"
+               "--     DATA_READY2_CH1         : in     std_logic;"
+               "--     DATA_READY2_CH2         : in     std_logic;"
+               "--     DATA_READY_CH1          : out    std_logic;"
+               "--     DATA_READY_CH2          : out    std_logic;"
+               "--     DATA_VALID_CH1          : out    std_logic;"
+               "--     DATA_VALID_CH2          : out    std_logic;"
+               "--     GPS_TS_IN               : in     std_logic_vector(55 downto 0);"
+               "--     GPS_TS_OUT              : out    std_logic_vector(55 downto 0);"
+               "--     RDEN1_CH1               : out    std_logic;"
+               "--     RDEN1_CH2               : out    std_logic;"
+               "--     RDEN2_CH1               : out    std_logic;"
+               "--     RDEN2_CH2               : out    std_logic;"
+               "--     RDEN_CH1                : in     std_logic;"
+               "--     RDEN_CH2                : in     std_logic;"
+               "--     READOUT_BUSY1_CH1       : in     std_logic;"
+               "--     READOUT_BUSY1_CH2       : in     std_logic;"
+               "--     READOUT_BUSY2_CH1       : in     std_logic;"
+               "--     READOUT_BUSY2_CH2       : in     std_logic;"
+               "--     SYSRST                  : in     std_logic;"
+               "--     TRIGGER_PATTERN         : out    std_logic_vector(15 downto 0);"
+               "--     TRIGGER_PATTERN_IN      : in     std_logic_vector(15 downto 0));"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of FIFO_SELECT is"
+               ""
+               "signal COINC_TO_END_TIME_DEL1: std_logic;"
+               "signal COINC_SWITCH: std_logic_vector(1 downto 0); -- bit0 is gates coinc to channel 1 and bit1 to channel 2"
+               "signal BLOCK_SWITCH: std_logic_vector(1 downto 0); -- bit0 is set at a coinc to channel 1 and bit1 is set at a coinc to channel 2; end of readout of the channel, clears the bit"
+               "signal DATA_READY1: std_logic; -- active when there is latched data in one of the first fifo's"
+               "signal DATA_READY2: std_logic; -- active when there is latched data in one of the second fifo's"
+               "signal DATA_READY1_DEL1: std_logic; -- delay's to synchronize it with the 200MHz"
+               "signal DATA_READY2_DEL1: std_logic; -- delay's to synchronize it with the 200MHz"
+               "signal DATA_READY1_DEL2: std_logic;"
+               "signal DATA_READY2_DEL2: std_logic;"
+               "signal DATA_READY_FIFO1: std_logic;"
+               "signal DATA_READY_FIFO2: std_logic;"
+               "signal READY: std_logic_vector(1 downto 0); -- bit0 selects FIFO1 and bit1 selects FIFO2"
+               "signal COINC_TO_FIFO1: std_logic;"
+               "signal COINC_TO_FIFO1_DEL1: std_logic;"
+               "signal COINC_TO_FIFO2: std_logic;"
+               "signal COINC_TO_FIFO2_DEL1: std_logic;"
+               "signal RDEN_CH2_DEL1: std_logic;"
+               "signal TRIGGER_PATTERN_TIME1: std_logic_vector(15 downto 0);"
+               "signal TRIGGER_PATTERN_TIME2: std_logic_vector(15 downto 0);"
+               "signal CTD_TIME1: std_logic_vector(31 downto 0);"
+               "signal CTD_TIME2: std_logic_vector(31 downto 0);"
+               "signal GPS_TS_TIME1: std_logic_vector(55 downto 0);"
+               "signal GPS_TS_TIME2: std_logic_vector(55 downto 0);"
+               ""
+               "begin"
+               ""
+               "  COINC_TO_END_TIME_FIFO1 <= COINC_TO_FIFO1;"
+               "  COINC_TO_END_TIME_FIFO2 <= COINC_TO_FIFO2;"
+               ""
+               "  -- DATA_READY_FIFO is true when there is data in both fifo's of the channels made on the same COINC"
+               "  DATA_READY_FIFO1 <= DATA_READY1_CH1 and DATA_READY1_CH2;"
+               "  DATA_READY_FIFO2 <= DATA_READY2_CH1 and DATA_READY2_CH2;"
+               ""
+               "  -- BLOCK_COINC if FIFO's1 and FIFO's2 are full"
+               "  BLOCK_COINC <= '1' when BLOCK_SWITCH = \"11\" else '0';"
+               ""
+               "  DATA_READY1 <= DATA_READY1_CH1 or DATA_READY1_CH2;"
+               "  DATA_READY2 <= DATA_READY2_CH1 or DATA_READY2_CH2;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      COINC_SWITCH <= \"00\";"
+               "      BLOCK_SWITCH <= \"00\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if DATA_READY1_DEL1 = '0' and  DATA_READY1_DEL2 = '1' then -- on a falling edge of DATA_READY1, the first fifo's have been read out"
+               "        COINC_SWITCH(0) <= '0'; -- Clear coinc_switch0"
+               "        BLOCK_SWITCH(0) <= '0'; -- Clear block_switch0"
+               "      elsif DATA_READY2_DEL1 = '0' and  DATA_READY2_DEL2 = '1' then -- on a falling edge of DATA_READY2, the second fifo's have been read out"
+               "        COINC_SWITCH(1) <= '0'; -- Clear coinc_switch1"
+               "        BLOCK_SWITCH(1) <= '0'; -- Clear block_switch1"
+               "      elsif BLOCK_SWITCH /= \"11\" and (COINC_SWITCH = \"00\" or COINC_SWITCH = \"10\") and COINC_TO_END_TIME = '1' and  COINC_TO_END_TIME_DEL1 = '0' then -- on a rising edge of COINC_TO_END_TIME and COINC_SWITCH(0) = '0'"
+               "        COINC_SWITCH <= \"01\"; -- Set coinc_switch0"
+               "        BLOCK_SWITCH(0) <= '1'; -- Set block_switch0"
+               "      elsif BLOCK_SWITCH /= \"11\" and COINC_SWITCH = \"01\" and COINC_TO_END_TIME = '1' and  COINC_TO_END_TIME_DEL1 = '0' then -- on a rising edge of COINC_TO_END_TIME and COINC_SWITCH(0) = '1' and COINC_SWITCH(1) = '0'"
+               "        COINC_SWITCH <= \"10\"; -- Set coinc_switch1"
+               "        BLOCK_SWITCH(1) <= '1'; -- Set block_switch1"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- COINC Multiplexer"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      COINC_TO_FIFO1 <= '0';"
+               "      COINC_TO_FIFO2 <= '0';"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_SWITCH = \"01\" then"
+               "        COINC_TO_FIFO1 <= COINC_TO_END_TIME_DEL1;"
+               "      elsif COINC_SWITCH = \"10\" then"
+               "        COINC_TO_FIFO2 <= COINC_TO_END_TIME_DEL1;"
+               "      else"
+               "        COINC_TO_FIFO1 <= '0';"
+               "        COINC_TO_FIFO2 <= '0';"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- delay's  on CLK200MHz"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      COINC_TO_END_TIME_DEL1 <= '0';"
+               "      DATA_READY1_DEL1 <= '0';"
+               "      DATA_READY1_DEL2 <= '0';"
+               "      DATA_READY2_DEL1 <= '0';"
+               "      DATA_READY2_DEL2 <= '0';"
+               "      COINC_TO_FIFO1_DEL1 <= '0';"
+               "      COINC_TO_FIFO2_DEL1 <= '0';"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      COINC_TO_END_TIME_DEL1 <= COINC_TO_END_TIME;"
+               "      DATA_READY1_DEL1 <= DATA_READY1;"
+               "      DATA_READY1_DEL2 <= DATA_READY1_DEL1;"
+               "      DATA_READY2_DEL1 <= DATA_READY2;"
+               "      DATA_READY2_DEL2 <= DATA_READY2_DEL1;"
+               "      COINC_TO_FIFO1_DEL1 <= COINC_TO_FIFO1;"
+               "      COINC_TO_FIFO2_DEL1 <= COINC_TO_FIFO2;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- delay's  on CLKRD"
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      RDEN_CH2_DEL1 <= '0';"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      RDEN_CH2_DEL1 <= RDEN_CH2;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- Determine which channel has to be readout"
+               "  -- A event in both FIFO's of the channels have been written to the next FIFO at the end of RDEN_CH2"
+               "  -- Thus at the end of RDEN_CH2 a new situation must be checked"
+               "  process(CLKRD,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      READY <= \"00\"; -- default state"
+               "    elsif (CLKRD'event and CLKRD = '1') then"
+               "      if (READY = \"11\") or (RDEN_CH2 = '0' and RDEN_CH2_DEL1 = '1') then -- clear READY"
+               "        READY <= \"00\"; -- default state"
+               "      elsif READY(0) = '1' or READY(1) = '1' then -- Latch READY if there is data in one of the FIFO's"
+               "        READY <= READY;"
+               "      else -- if there is no data the FIFO's"
+               "        READY(0) <= DATA_READY_FIFO1;"
+               "        READY(1) <= DATA_READY_FIFO2;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- Multiplexer"
+               "  process(READY,DATA_OUT1_CH1,DATA_OUT2_CH1,DATA_OUT1_CH2,DATA_OUT2_CH2,"
+               "          DATA_READY1_CH1,DATA_READY2_CH1,DATA_READY1_CH2,DATA_READY2_CH2,"
+               "          RDEN_CH1,RDEN_CH2,"
+               "          READOUT_BUSY1_CH1,READOUT_BUSY2_CH1,READOUT_BUSY1_CH2,READOUT_BUSY2_CH2,"
+               "          TRIGGER_PATTERN_TIME1,GPS_TS_TIME1,CTD_TIME1,TRIGGER_PATTERN_TIME2,GPS_TS_TIME2,CTD_TIME2)"
+               "  begin"
+               "    case(READY) is"
+               "      when \"00\" => DATA_OUT_CH1 <= DATA_OUT1_CH1;"
+               "                   DATA_READY_CH1 <= '0';"
+               "                   RDEN1_CH1 <= '0';"
+               "                   RDEN2_CH1 <= '0';"
+               "                   DATA_OUT_CH2 <= DATA_OUT1_CH2;"
+               "                   DATA_READY_CH2 <= '0';"
+               "                   DATA_VALID_CH1 <= '0';"
+               "                   DATA_VALID_CH2 <= '0';"
+               "                   RDEN1_CH2 <= '0';"
+               "                   RDEN2_CH2 <= '0';"
+               "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
+               "                   GPS_TS_OUT <= GPS_TS_TIME1;"
+               "                   CTD_OUT <= CTD_TIME1;"
+               "      when \"01\" => DATA_OUT_CH1 <= DATA_OUT1_CH1;"
+               "                   DATA_READY_CH1 <= DATA_READY1_CH1;"
+               "                   RDEN1_CH1 <= RDEN_CH1;"
+               "                   RDEN2_CH1 <= '0';"
+               "                   DATA_OUT_CH2 <= DATA_OUT1_CH2;"
+               "                   DATA_READY_CH2 <= DATA_READY1_CH2;"
+               "                   DATA_VALID_CH1 <= READOUT_BUSY1_CH1;"
+               "                   DATA_VALID_CH2 <= READOUT_BUSY1_CH2;"
+               "                   RDEN1_CH2 <= RDEN_CH2;"
+               "                   RDEN2_CH2 <= '0';"
+               "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
+               "                   GPS_TS_OUT <= GPS_TS_TIME1;"
+               "                   CTD_OUT <= CTD_TIME1;"
+               "      when \"10\" => DATA_OUT_CH1 <= DATA_OUT2_CH1;"
+               "                   DATA_READY_CH1 <= DATA_READY2_CH1;"
+               "                   RDEN1_CH1 <= '0';"
+               "                   RDEN2_CH1 <= RDEN_CH1;"
+               "                   DATA_OUT_CH2 <= DATA_OUT2_CH2;"
+               "                   DATA_READY_CH2 <= DATA_READY2_CH2;"
+               "                   DATA_VALID_CH1 <= READOUT_BUSY2_CH1;"
+               "                   DATA_VALID_CH2 <= READOUT_BUSY2_CH2;"
+               "                   RDEN1_CH2 <= '0';"
+               "                   RDEN2_CH2 <= RDEN_CH2;"
+               "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME2;"
+               "                   GPS_TS_OUT <= GPS_TS_TIME2;"
+               "                   CTD_OUT <= CTD_TIME2;"
+               "      when \"11\" => DATA_OUT_CH1 <= DATA_OUT1_CH1; -- never assigned"
+               "                   DATA_READY_CH1 <= '0';"
+               "                   RDEN1_CH1 <= '0';"
+               "                   RDEN2_CH1 <= '0';"
+               "                   DATA_OUT_CH2 <= DATA_OUT1_CH2;"
+               "                   DATA_READY_CH2 <= '0';"
+               "                   DATA_VALID_CH1 <= '0';"
+               "                   DATA_VALID_CH2 <= '0';"
+               "                   RDEN1_CH2 <= '0';"
+               "                   RDEN2_CH2 <= '0';"
+               "                   TRIGGER_PATTERN <= TRIGGER_PATTERN_TIME1;"
+               "                   GPS_TS_OUT <= GPS_TS_TIME1;"
+               "                   CTD_OUT <= CTD_TIME1;"
+               "      when others =>"
+               "    end case;"
+               "  end process;"
+               ""
+               "  -- For a master COINC_TO_END_TIME is 20ns delayed"
+               "  -- This is to compensate for the slave to master time (cable, drivers)"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      GPS_TS_TIME1 <= \"00000000000000000000000000000000000000000000000000000000\";"
+               "      CTD_TIME1 <= \"00000000000000000000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_TO_FIFO1 = '1' and COINC_TO_FIFO1_DEL1 = '0' then"
+               "        GPS_TS_TIME1 <= GPS_TS_IN;"
+               "        CTD_TIME1 <= CTD_IN;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      GPS_TS_TIME2 <= \"00000000000000000000000000000000000000000000000000000000\";"
+               "      CTD_TIME2 <= \"00000000000000000000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_TO_FIFO2 = '1' and COINC_TO_FIFO2_DEL1 = '0' then"
+               "        GPS_TS_TIME2 <= GPS_TS_IN;"
+               "        CTD_TIME2 <= CTD_IN;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_FIFO1"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      TRIGGER_PATTERN_TIME1 <= \"0000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_TO_FIFO1 = '0' and COINC_TO_FIFO1_DEL1 = '1' then"
+               "        TRIGGER_PATTERN_TIME1 <= TRIGGER_PATTERN_IN;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  -- Latch TRIGGER_PATTERN on negative edge of COINC_TO_FIFO2"
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      TRIGGER_PATTERN_TIME2 <= \"0000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if COINC_TO_FIFO2 = '0' and COINC_TO_FIFO2_DEL1 = '1' then"
+               "        TRIGGER_PATTERN_TIME2 <= TRIGGER_PATTERN_IN;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "end architecture a0 ; -- of FIFO_SELECT"
+               ""
+               "")
+      )
     )
   )
 )

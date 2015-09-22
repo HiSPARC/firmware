@@ -1,71 +1,71 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c013cbd2b787b440a600f70e8170000")
-    (NAME "INVERTER")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 640 384)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 8")
+      (PROPERTY "STAMP_TIME" "Fri Jul 22 17:14:24 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "INVERTER")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 640 384)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "raism_2")
       (CREATED 1152878514 "Fri Jul 14 14:01:54 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1311345699 "Fri Jul 22 16:41:39 2011")
     )
     (PORT
       (OBID "eprt0c013cbd0c787b440a600f7019170000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "OUTP")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "OUTP")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 600 152 680 232)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 576 192)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "OUTP")
       )
     )
     (PORT
       (OBID "eprt0c013cbd3e787b440a600f7039170000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "INP")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "INP")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 152 40 232)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 52 204)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "INP")
       )
@@ -74,33 +74,42 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbd2b787b440a600f70f8170000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'INVERTER."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'INVERTER' :"
-                 "-- "
-                 "--   port("
-                 "--     INP  : in     std_logic;"
-                 "--     OUTP : out    std_logic);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of INVERTER is"
-                 ""
-                 "begin"
-                 ""
-                 "  OUTP <= not INP;"
-                 ""
-                 "end architecture a0 ; -- of INVERTER"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file2cba257032c892e44821641c40650000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'INVERTER'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     INP  : in     std_logic;"
+               "--     OUTP : out    std_logic);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of INVERTER is"
+               ""
+               "begin"
+               ""
+               "  OUTP <= not INP;"
+               ""
+               "end architecture a0 ; -- of INVERTER"
+               ""
+               "")
+      )
     )
   )
 )

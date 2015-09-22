@@ -1,13 +1,13 @@
-(DATABASE_VERSION 15)
+(DATABASE_VERSION 16)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c013cbde08165440d800f7038140000")
     (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
-      (PROPERTY "STAMP_REVISION" "Revision 7")
-      (PROPERTY "STAMP_TIME" "Tue Jan 25 09:07:41 2011")
+      (PROPERTY "STAMP_REVISION" "Revision 8")
+      (PROPERTY "STAMP_TIME" "Fri May 15 21:55:01 2015")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_VERSION" "7.3")
+      (PROPERTY "STAMP_VERSION" "7.4")
     )
     (HDL_IDENT
       (NAME "USB_READ_HANDLER")
@@ -18,9 +18,9 @@
     (HDL 1)
     (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "Hanzel")
+      (DESIGNER "hansvk")
       (CREATED 1146492942 "Mon May 01 16:15:42 2006")
-      (MODIFIED 1295942861 "Tue Jan 25 09:07:41 2011")
+      (MODIFIED 1431719700 "Fri May 15 21:55:00 2015")
     )
     (PORT
       (OBID "eprt0c013cbd028165440d800f7068140000")
@@ -1632,6 +1632,48 @@
         (TEXT "FAKE_DATA")
       )
     )
+    (PORT
+      (OBID "eprt2cba2570b90b92e44821641ca2c50000")
+      (HDL_IDENT
+        (NAME "UTC_TIME")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+        )
+      )
+      (GEOMETRY -40 1496 40 1576)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1536)
+        (SCALE 96)
+        (COLOR_LINE 0)
+        (SIDE 1)
+        (ALIGNMENT 3)
+        (FORMAT 35)
+        (TEXT "UTC_TIME")
+      )
+    )
+    (PORT
+      (OBID "eprt2cba2570e90b92e44821641c03c50000")
+      (HDL_IDENT
+        (NAME "UTC_PPS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+        )
+      )
+      (GEOMETRY -40 1624 40 1704)
+      (SIDE 3)
+      (LABEL
+        (POSITION 64 1664)
+        (SCALE 96)
+        (COLOR_LINE 0)
+        (SIDE 1)
+        (ALIGNMENT 3)
+        (FORMAT 35)
+        (TEXT "UTC_PPS")
+      )
+    )
     (ARCH_DECLARATION 2 "arch0c013cbde08165440d800f7048140000" "a0")
   )
   (ARCH_DEFINITION
@@ -1720,7 +1762,9 @@
                "--     USB_RXF                     : in     std_logic;"
                "--     USB_WRITE_BUSY              : in     std_logic;"
                "--     USB_WRITE_ENABLE            : out    std_logic;"
-               "--     USB_WRITE_REQUEST           : in     std_logic);"
+               "--     USB_WRITE_REQUEST           : in     std_logic;"
+               "--     UTC_PPS                     : in     std_logic;"
+               "--     UTC_TIME                    : in     std_logic);"
                "-- "
                "-- EASE/HDL end ----------------------------------------------------------------"
                ""
@@ -1909,11 +1953,13 @@
                "  FORCE_MASTER <= FORCE_MASTER_TMP;"
                "  FORCE_MASTER_TMP <= MASTER when CHANGE_MS_STATE = '0' else not MASTER;"
                ""
-               "  STATUS(7 downto 3) <= \"00000\";"
+               "  STATUS(7 downto 5) <= \"000\";"
+               "  STATUS(4) <= UTC_PPS;"
+               "  STATUS(3) <= UTC_TIME;"
                "  STATUS(2) <= USB_WRITE_ALLOWED;"
                "  STATUS(1) <= SLAVE_PRESENT;"
                "  STATUS(0) <= FORCE_MASTER_TMP;"
-               "  SOFTWARE_VERSION <= \"00010010\";"
+               "  SOFTWARE_VERSION <= \"00010100\";"
                "  VERSION(23 downto 16) <= SOFTWARE_VERSION;"
                "  VERSION(15 downto 10) <= \"000000\";"
                "  VERSION(9) <= not SERIAL_NUMBER(9);"
@@ -3359,12 +3405,12 @@
                "                   ADC_nRD <= '0';                      -- 700ns aquisition time"
                "        when 36 => ADC_A0 <= '1';"
                "                   ADC_nRD <= '1';"
-               "                   CH1_PMT_SUPPLY_CURR <= ADC_DATA_IN;  -- 2800ns conversion time"
+               "                   CH2_PMT_SUPPLY_CURR <= ADC_DATA_IN;  -- 2800ns conversion time"
                "        when 43 => ADC_A0 <= '1';"
                "                   ADC_nRD <= '0';                      -- 700ns aquisition time"
                "        when 71 => ADC_A0 <= '0';"
                "                   ADC_nRD <= '1';"
-               "                   CH2_PMT_SUPPLY_CURR <= ADC_DATA_IN;"
+               "                   CH1_PMT_SUPPLY_CURR <= ADC_DATA_IN;"
                "                   CLR_CURR_ADC <= '1';                 -- 2800ns conversion time"
                "        when others =>  -- Do nothing"
                "        end case;"
