@@ -1,226 +1,220 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c8a206646647544c6605edc6ef20000")
-    (NAME "THRESHOLD_COUNTERS")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 1664 1024)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 7")
+      (PROPERTY "STAMP_TIME" "Thu Jan 13 14:58:35 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "THRESHOLD_COUNTERS")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 1664 1024)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "Hanzel")
       (CREATED 1146570340 "Tue May 02 13:45:40 2006")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1294926030 "Thu Jan 13 14:40:30 2011")
     )
     (PORT
       (OBID "eprt0c8a2066f8647544c6605edc9ef20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "ML1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "ML1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "ML1")
       )
     )
     (PORT
       (OBID "eprt0c8a2066f8647544c6605edcaef20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "ML2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "ML2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "ML2")
       )
     )
     (PORT
       (OBID "eprt0c8a2066f8647544c6605edcbef20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "MH1")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "MH1")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 344 40 424)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 384)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "MH1")
       )
     )
     (PORT
       (OBID "eprt0c8a2066f8647544c6605edccef20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "MH2")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "MH2")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 472 40 552)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 512)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "MH2")
       )
     )
     (PORT
       (OBID "eprt0c8a2066eb647544c6605edc1ff20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "SYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 600 40 680)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 640)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "SYSRST")
       )
     )
     (PORT
       (OBID "eprt0c8a2066eb647544c6605edc2ff20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK200MHz")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLK200MHz")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 768)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLK200MHz")
       )
     )
     (PORT
       (OBID "eprt0c8a2066dc847544c6605edc9ff20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "ONE_PPS")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "ONE_PPS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 856 40 936)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 896)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "ONE_PPS")
       )
     )
     (PORT
       (OBID "eprt0c8a2066e6947544c6605edc20030000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "TH_COUNTERS_OUT")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-          (NAME "std_logic_vector")
-        )
-        (MODE 2)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "63" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "TH_COUNTERS_OUT")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (TYPE "std_logic_vector")
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "63" "0")
+          )
         )
       )
       (GEOMETRY 1624 216 1704 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1600 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "TH_COUNTERS_OUT(63:0)")
       )
@@ -229,136 +223,145 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c8a206646647544c6605edc7ef20000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'THRESHOLD_COUNTERS."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'THRESHOLD_COUNTERS' :"
-                 "-- "
-                 "--   port("
-                 "--     CLK200MHz       : in     std_logic;"
-                 "--     MH1             : in     std_logic;"
-                 "--     MH2             : in     std_logic;"
-                 "--     ML1             : in     std_logic;"
-                 "--     ML2             : in     std_logic;"
-                 "--     ONE_PPS         : in     std_logic;"
-                 "--     SYSRST          : in     std_logic;"
-                 "--     TH_COUNTERS_OUT : out    std_logic_vector(63 downto 0));"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of THRESHOLD_COUNTERS is"
-                 ""
-                 "signal ML1_DEL: std_logic ;"
-                 "signal MH1_DEL: std_logic ;"
-                 "signal ML2_DEL: std_logic ;"
-                 "signal MH2_DEL: std_logic ;"
-                 "signal ONE_PPS_DEL1: std_logic ; -- One delay needed to synchronize the asynchronious ONE_PPS with the 200MHz"
-                 "signal ONE_PPS_DEL2: std_logic ;"
-                 "signal ONE_PPS_DEL3: std_logic ;"
-                 "signal ML1_COUNTER: std_logic_vector(15 downto 0) ;"
-                 "signal MH1_COUNTER: std_logic_vector(15 downto 0) ;"
-                 "signal ML2_COUNTER: std_logic_vector(15 downto 0) ;"
-                 "signal MH2_COUNTER: std_logic_vector(15 downto 0) ;"
-                 ""
-                 "begin"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      ML1_DEL <= '0';"
-                 "      MH1_DEL <= '0';"
-                 "      ML2_DEL <= '0';"
-                 "      MH2_DEL <= '0';"
-                 "      ONE_PPS_DEL1 <= '0';"
-                 "      ONE_PPS_DEL2 <= '0';"
-                 "      ONE_PPS_DEL3 <= '0';"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      ML1_DEL <= ML1;"
-                 "      MH1_DEL <= MH1;"
-                 "      ML2_DEL <= ML2;"
-                 "      MH2_DEL <= MH2;"
-                 "      ONE_PPS_DEL1 <= ONE_PPS;"
-                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
-                 "      ONE_PPS_DEL3 <= ONE_PPS_DEL2;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      ML1_COUNTER <= \"0000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        ML1_COUNTER <= \"0000000000000000\";"
-                 "      elsif ML1 = '1' and ML1_DEL = '0' then"
-                 "        ML1_COUNTER <= ML1_COUNTER + \"0000000000000001\";"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      MH1_COUNTER <= \"0000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        MH1_COUNTER <= \"0000000000000000\";"
-                 "      elsif MH1 = '1' and MH1_DEL = '0' then"
-                 "        MH1_COUNTER <= MH1_COUNTER + \"0000000000000001\";"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      ML2_COUNTER <= \"0000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        ML2_COUNTER <= \"0000000000000000\";"
-                 "      elsif ML2 = '1' and ML2_DEL = '0' then"
-                 "        ML2_COUNTER <= ML2_COUNTER + \"0000000000000001\";"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      MH2_COUNTER <= \"0000000000000000\";"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
-                 "        MH2_COUNTER <= \"0000000000000000\";"
-                 "      elsif MH2 = '1' and MH2_DEL = '0' then"
-                 "        MH2_COUNTER <= MH2_COUNTER + \"0000000000000001\";"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK200MHz,SYSRST)"
-                 "  begin"
-                 "    if SYSRST = '1' then"
-                 "      TH_COUNTERS_OUT <= (others => '0');"
-                 "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
-                 "      if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then"
-                 "        TH_COUNTERS_OUT(15 downto 0) <= ML1_COUNTER;"
-                 "        TH_COUNTERS_OUT(31 downto 16) <= MH1_COUNTER;"
-                 "        TH_COUNTERS_OUT(47 downto 32) <= ML2_COUNTER;"
-                 "        TH_COUNTERS_OUT(63 downto 48) <= MH2_COUNTER;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "end architecture a0 ; -- of THRESHOLD_COUNTERS"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file0c01ab80ec00f2d4c0207cf04a950000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'THRESHOLD_COUNTERS'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     CLK200MHz       : in     std_logic;"
+               "--     MH1             : in     std_logic;"
+               "--     MH2             : in     std_logic;"
+               "--     ML1             : in     std_logic;"
+               "--     ML2             : in     std_logic;"
+               "--     ONE_PPS         : in     std_logic;"
+               "--     SYSRST          : in     std_logic;"
+               "--     TH_COUNTERS_OUT : out    std_logic_vector(63 downto 0));"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of THRESHOLD_COUNTERS is"
+               ""
+               "signal ML1_DEL: std_logic ;"
+               "signal MH1_DEL: std_logic ;"
+               "signal ML2_DEL: std_logic ;"
+               "signal MH2_DEL: std_logic ;"
+               "signal ONE_PPS_DEL1: std_logic ; -- One delay needed to synchronize the asynchronious ONE_PPS with the 200MHz"
+               "signal ONE_PPS_DEL2: std_logic ;"
+               "signal ONE_PPS_DEL3: std_logic ;"
+               "signal ML1_COUNTER: std_logic_vector(15 downto 0) ;"
+               "signal MH1_COUNTER: std_logic_vector(15 downto 0) ;"
+               "signal ML2_COUNTER: std_logic_vector(15 downto 0) ;"
+               "signal MH2_COUNTER: std_logic_vector(15 downto 0) ;"
+               ""
+               "begin"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      ML1_DEL <= '0';"
+               "      MH1_DEL <= '0';"
+               "      ML2_DEL <= '0';"
+               "      MH2_DEL <= '0';"
+               "      ONE_PPS_DEL1 <= '0';"
+               "      ONE_PPS_DEL2 <= '0';"
+               "      ONE_PPS_DEL3 <= '0';"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      ML1_DEL <= ML1;"
+               "      MH1_DEL <= MH1;"
+               "      ML2_DEL <= ML2;"
+               "      MH2_DEL <= MH2;"
+               "      ONE_PPS_DEL1 <= ONE_PPS;"
+               "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
+               "      ONE_PPS_DEL3 <= ONE_PPS_DEL2;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      ML1_COUNTER <= \"0000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
+               "        ML1_COUNTER <= \"0000000000000000\";"
+               "      elsif ML1 = '1' and ML1_DEL = '0' then"
+               "        ML1_COUNTER <= ML1_COUNTER + \"0000000000000001\";"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      MH1_COUNTER <= \"0000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
+               "        MH1_COUNTER <= \"0000000000000000\";"
+               "      elsif MH1 = '1' and MH1_DEL = '0' then"
+               "        MH1_COUNTER <= MH1_COUNTER + \"0000000000000001\";"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      ML2_COUNTER <= \"0000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
+               "        ML2_COUNTER <= \"0000000000000000\";"
+               "      elsif ML2 = '1' and ML2_DEL = '0' then"
+               "        ML2_COUNTER <= ML2_COUNTER + \"0000000000000001\";"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      MH2_COUNTER <= \"0000000000000000\";"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if ONE_PPS_DEL2 = '1' and ONE_PPS_DEL3 = '0' then"
+               "        MH2_COUNTER <= \"0000000000000000\";"
+               "      elsif MH2 = '1' and MH2_DEL = '0' then"
+               "        MH2_COUNTER <= MH2_COUNTER + \"0000000000000001\";"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK200MHz,SYSRST)"
+               "  begin"
+               "    if SYSRST = '1' then"
+               "      TH_COUNTERS_OUT <= (others => '0');"
+               "    elsif (CLK200MHz'event and CLK200MHz = '1') then"
+               "      if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then"
+               "        TH_COUNTERS_OUT(15 downto 0) <= ML1_COUNTER;"
+               "        TH_COUNTERS_OUT(31 downto 16) <= MH1_COUNTER;"
+               "        TH_COUNTERS_OUT(47 downto 32) <= ML2_COUNTER;"
+               "        TH_COUNTERS_OUT(63 downto 48) <= MH2_COUNTER;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "end architecture a0 ; -- of THRESHOLD_COUNTERS"
+               ""
+               "")
+      )
     )
   )
 )

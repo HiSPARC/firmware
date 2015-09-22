@@ -1,196 +1,191 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c012ca13423967449e00f704ed60000")
-    (NAME "READOUT_TIMED_OUT")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 1920 1024)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 10")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 7")
+      (PROPERTY "STAMP_TIME" "Fri Jan 21 11:37:18 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Wed Apr 28 14:38:38 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "READOUT_TIMED_OUT")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 1920 1024)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "thei")
+      (DESIGNER "Hanzel")
       (CREATED 1198076483 "Wed Dec 19 16:01:23 2007")
-      (MODIFIED 1272458299 "Wed Apr 28 14:38:19 2010")
+      (MODIFIED 1295606017 "Fri Jan 21 11:33:37 2011")
     )
     (PORT
       (OBID "eprt0c012ca10923967449e00f707ed60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_TXE")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "USB_TXE")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY 1880 216 1960 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1856 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "USB_TXE")
       )
     )
     (PORT
       (OBID "eprt0c012ca13a23967449e00f709ed60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_WRITE_REQUEST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "USB_WRITE_REQUEST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 128)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "USB_WRITE_REQUEST")
       )
     )
     (PORT
       (OBID "eprt0c012ca10b23967449e00f70bed60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "ONE_PPS")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "ONE_PPS")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 408 40 488)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 448)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "ONE_PPS")
       )
     )
     (PORT
       (OBID "eprt0c012ca10e23967449e00f70ded60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "nSYSRST")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "nSYSRST")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 600 40 680)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 640)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "nSYSRST")
       )
     )
     (PORT
       (OBID "eprt0c012ca10e23967449e00f70eed60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK10MHz")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "CLK10MHz")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 728 40 808)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 768)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "CLK10MHz")
       )
     )
     (PORT
       (OBID "eprt0c012ca1d033967449e00f701fd60000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "TIME_OUT_RESET")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "TIME_OUT_RESET")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1880 600 1960 680)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1856 640)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "TIME_OUT_RESET")
       )
     )
     (PORT
       (OBID "eprt0c012ca10269c87440d00f7085e50000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_RXF")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "USB_RXF")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
         )
-        (HDL_TYPE
-        )
-        (MODE 1)
       )
       (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
       (SIDE 3)
       (LABEL
         (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "USB_RXF")
       )
@@ -199,85 +194,94 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c012ca13423967449e00f705ed60000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'READOUT_TIMED_OUT."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'READOUT_TIMED_OUT' :"
-                 "-- "
-                 "--   port("
-                 "--     CLK10MHz          : in     std_logic;"
-                 "--     ONE_PPS           : in     std_logic;"
-                 "--     TIME_OUT_RESET    : out    std_logic;"
-                 "--     USB_RXF           : in     std_logic;"
-                 "--     USB_TXE           : in     std_logic;"
-                 "--     USB_WRITE_REQUEST : in     std_logic;"
-                 "--     nSYSRST           : in     std_logic);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of READOUT_TIMED_OUT is"
-                 ""
-                 "signal TIME_OUT_COUNT: std_logic_vector(3 downto 0); "
-                 "signal USB_TXE_DEL1: std_logic ; "
-                 "signal USB_TXE_DEL2: std_logic ; "
-                 "signal USB_RXF_DEL1: std_logic ; "
-                 "signal USB_RXF_DEL2: std_logic ; "
-                 "signal ONE_PPS_DEL1: std_logic ; "
-                 "signal ONE_PPS_DEL2: std_logic ; "
-                 ""
-                 ""
-                 "begin"
-                 ""
-                 "  TIME_OUT_RESET <= TIME_OUT_COUNT(3);"
-                 ""
-                 "  process(CLK10MHz,nSYSRST)"
-                 "  begin"
-                 "    if nSYSRST = '0' then"
-                 "      USB_TXE_DEL1 <= '0';"
-                 "      USB_TXE_DEL2 <= '0';"
-                 "      USB_RXF_DEL1 <= '0';"
-                 "      USB_RXF_DEL2 <= '0';"
-                 "      ONE_PPS_DEL1 <= '0';"
-                 "      ONE_PPS_DEL2 <= '0';"
-                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then "
-                 "      USB_TXE_DEL1 <= USB_TXE;"
-                 "      USB_TXE_DEL2 <= USB_TXE_DEL1;"
-                 "      USB_RXF_DEL1 <= USB_RXF;"
-                 "      USB_RXF_DEL2 <= USB_RXF_DEL1;"
-                 "      ONE_PPS_DEL1 <= ONE_PPS;"
-                 "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "  process(CLK10MHz,nSYSRST)"
-                 "  begin"
-                 "    if nSYSRST = '0' then"
-                 "      TIME_OUT_COUNT <= \"0000\";"
-                 "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
-                 "      if (USB_TXE_DEL1 = '0' and USB_TXE_DEL2 = '1') or (USB_RXF_DEL1 = '0' and USB_RXF_DEL2 = '1') then"
-                 "        -- at falling edge of TXE or falling edge of RXF"
-                 "        TIME_OUT_COUNT <= \"0000\";           -- reset counter"
-                 "      elsif TIME_OUT_COUNT = \"1000\" then    -- after 8 seconds no TXE"
-                 "        TIME_OUT_COUNT <= TIME_OUT_COUNT;   -- latch countvalue 8"
-                 "      elsif USB_WRITE_REQUEST = '1' then"
-                 "        if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then"
-                 "          -- at rising edge of PPS"
-                 "          TIME_OUT_COUNT <= TIME_OUT_COUNT + \"0001\"; -- increase counter"
-                 "        end if;"
-                 "      end if;"
-                 "    end if;"
-                 "  end process;"
-                 ""
-                 "end architecture a0 ; -- of READOUT_TIMED_OUT"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file0c01ab45101693d48d307cf01c420000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'READOUT_TIMED_OUT'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     CLK10MHz          : in     std_logic;"
+               "--     ONE_PPS           : in     std_logic;"
+               "--     TIME_OUT_RESET    : out    std_logic;"
+               "--     USB_RXF           : in     std_logic;"
+               "--     USB_TXE           : in     std_logic;"
+               "--     USB_WRITE_REQUEST : in     std_logic;"
+               "--     nSYSRST           : in     std_logic);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               "architecture a0 of READOUT_TIMED_OUT is"
+               ""
+               "signal TIME_OUT_COUNT: std_logic_vector(3 downto 0); "
+               "signal USB_TXE_DEL1: std_logic ; "
+               "signal USB_TXE_DEL2: std_logic ; "
+               "signal USB_RXF_DEL1: std_logic ; "
+               "signal USB_RXF_DEL2: std_logic ; "
+               "signal ONE_PPS_DEL1: std_logic ; "
+               "signal ONE_PPS_DEL2: std_logic ; "
+               ""
+               ""
+               "begin"
+               ""
+               "  TIME_OUT_RESET <= TIME_OUT_COUNT(3);"
+               ""
+               "  process(CLK10MHz,nSYSRST)"
+               "  begin"
+               "    if nSYSRST = '0' then"
+               "      USB_TXE_DEL1 <= '0';"
+               "      USB_TXE_DEL2 <= '0';"
+               "      USB_RXF_DEL1 <= '0';"
+               "      USB_RXF_DEL2 <= '0';"
+               "      ONE_PPS_DEL1 <= '0';"
+               "      ONE_PPS_DEL2 <= '0';"
+               "    elsif (CLK10MHz'event and CLK10MHz = '1') then "
+               "      USB_TXE_DEL1 <= USB_TXE;"
+               "      USB_TXE_DEL2 <= USB_TXE_DEL1;"
+               "      USB_RXF_DEL1 <= USB_RXF;"
+               "      USB_RXF_DEL2 <= USB_RXF_DEL1;"
+               "      ONE_PPS_DEL1 <= ONE_PPS;"
+               "      ONE_PPS_DEL2 <= ONE_PPS_DEL1;"
+               "    end if;"
+               "  end process;"
+               ""
+               "  process(CLK10MHz,nSYSRST)"
+               "  begin"
+               "    if nSYSRST = '0' then"
+               "      TIME_OUT_COUNT <= \"0000\";"
+               "    elsif (CLK10MHz'event and CLK10MHz = '1') then"
+               "      if (USB_TXE_DEL1 = '0' and USB_TXE_DEL2 = '1') or (USB_RXF_DEL1 = '0' and USB_RXF_DEL2 = '1') then"
+               "        -- at falling edge of TXE or falling edge of RXF"
+               "        TIME_OUT_COUNT <= \"0000\";           -- reset counter"
+               "      elsif TIME_OUT_COUNT = \"1000\" then    -- after 8 seconds no TXE"
+               "        TIME_OUT_COUNT <= TIME_OUT_COUNT;   -- latch countvalue 8"
+               "      elsif USB_WRITE_REQUEST = '1' then"
+               "        if ONE_PPS_DEL1 = '1' and ONE_PPS_DEL2 = '0' then"
+               "          -- at rising edge of PPS"
+               "          TIME_OUT_COUNT <= TIME_OUT_COUNT + \"0001\"; -- increase counter"
+               "        end if;"
+               "      end if;"
+               "    end if;"
+               "  end process;"
+               ""
+               "end architecture a0 ; -- of READOUT_TIMED_OUT"
+               ""
+               "")
+      )
     )
   )
 )

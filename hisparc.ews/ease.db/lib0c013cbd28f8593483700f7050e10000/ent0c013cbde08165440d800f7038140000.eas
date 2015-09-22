@@ -4,8 +4,8 @@
     (OBID "ent0c013cbde08165440d800f7038140000")
     (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
-      (PROPERTY "STAMP_REVISION" "Revision 5")
-      (PROPERTY "STAMP_TIME" "Mon Nov 15 14:03:42 2010")
+      (PROPERTY "STAMP_REVISION" "Revision 7")
+      (PROPERTY "STAMP_TIME" "Tue Jan 25 09:07:41 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
       (PROPERTY "STAMP_VERSION" "7.3")
     )
@@ -18,9 +18,9 @@
     (HDL 1)
     (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "Hanzel")
       (CREATED 1146492942 "Mon May 01 16:15:42 2006")
-      (MODIFIED 1289824851 "Mon Nov 15 13:40:51 2010")
+      (MODIFIED 1295942861 "Tue Jan 25 09:07:41 2011")
     )
     (PORT
       (OBID "eprt0c013cbd028165440d800f7068140000")
@@ -1902,7 +1902,8 @@
                ""
                "  USB_WRITE_ALLOWED <= SPARE_BYTES(0);"
                "  SECOND_MESSAGE_ALLOWED <= SPARE_BYTES(1);"
-               "  GPS_PROG_ENABLE <= SPARE_BYTES(2);"
+               "--  GPS_PROG_ENABLE <= SPARE_BYTES(2);"
+               "  GPS_PROG_ENABLE <= '1';"
                "  CHANGE_MS_STATE <= SPARE_BYTES(3);"
                "  FAKE_DATA <= SPARE_BYTES(4);"
                "  FORCE_MASTER <= FORCE_MASTER_TMP;"
@@ -1912,7 +1913,7 @@
                "  STATUS(2) <= USB_WRITE_ALLOWED;"
                "  STATUS(1) <= SLAVE_PRESENT;"
                "  STATUS(0) <= FORCE_MASTER_TMP;"
-               "  SOFTWARE_VERSION <= \"00001111\";"
+               "  SOFTWARE_VERSION <= \"00010010\";"
                "  VERSION(23 downto 16) <= SOFTWARE_VERSION;"
                "  VERSION(15 downto 10) <= \"000000\";"
                "  VERSION(9) <= not SERIAL_NUMBER(9);"

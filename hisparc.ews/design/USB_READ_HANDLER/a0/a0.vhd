@@ -39,6 +39,7 @@
 --     ERROR_READ_OUT              : out    std_logic;
 --     FAKE_DATA                   : out    std_logic;
 --     FORCE_MASTER                : out    std_logic;
+--     GPS_FLAGS                   : in     std_logic_vector(7 downto 0);
 --     GPS_PROG_ENABLE             : out    std_logic;
 --     MASTER                      : in     std_logic;
 --     ONE_PPS                     : in     std_logic;
@@ -252,17 +253,20 @@ begin
 
   USB_WRITE_ALLOWED <= SPARE_BYTES(0);
   SECOND_MESSAGE_ALLOWED <= SPARE_BYTES(1);
-  GPS_PROG_ENABLE <= SPARE_BYTES(2);
+--  GPS_PROG_ENABLE <= SPARE_BYTES(2);
+  GPS_PROG_ENABLE <= '1';
   CHANGE_MS_STATE <= SPARE_BYTES(3);
   FAKE_DATA <= SPARE_BYTES(4);
   FORCE_MASTER <= FORCE_MASTER_TMP;
   FORCE_MASTER_TMP <= MASTER when CHANGE_MS_STATE = '0' else not MASTER;
 
-  STATUS(7 downto 3) <= "00000";
+  STATUS(5 downto 3) <= "000";
+  STATUS(7)	<= GPS_FLAGS(0);
+  STATUS(6)	<= GPS_FLAGS(1);
   STATUS(2) <= USB_WRITE_ALLOWED;
   STATUS(1) <= SLAVE_PRESENT;
   STATUS(0) <= FORCE_MASTER_TMP;
-  SOFTWARE_VERSION <= "00001111";
+  SOFTWARE_VERSION <= "00010010";
   VERSION(23 downto 16) <= SOFTWARE_VERSION;
   VERSION(15 downto 10) <= "000000";
   VERSION(9) <= not SERIAL_NUMBER(9);

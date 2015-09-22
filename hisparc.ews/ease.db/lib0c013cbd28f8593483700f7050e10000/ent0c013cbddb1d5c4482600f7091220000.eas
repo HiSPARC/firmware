@@ -1,254 +1,199 @@
-(DATABASE_VERSION 7)
+(DATABASE_VERSION 15)
 (ENTITY_FILE
   (ENTITY
     (OBID "ent0c013cbddb1d5c4482600f7091220000")
-    (NAME "DUMMIES")
-    (HDL 1)
-    (EXTERNAL 0)
-    (GEOMETRY 0 0 1408 896)
-    (HDL_IDENT
-      (PROPERTY "STAMP_VERSION" "5.2")
-      (PROPERTY "STAMP_REVISION" "Revision 13")
+    (PROPERTIES
       (PROPERTY "STAMP_PLATFORM" "PC")
+      (PROPERTY "STAMP_REVISION" "Revision 7")
+      (PROPERTY "STAMP_TIME" "Fri Jan 21 11:37:18 2011")
       (PROPERTY "STAMP_TOOL" "Ease")
-      (PROPERTY "STAMP_TIME" "Mon Jun 07 11:16:37 2010")
+      (PROPERTY "STAMP_VERSION" "7.3")
+    )
+    (HDL_IDENT
       (NAME "DUMMIES")
       (USERNAME 1)
     )
+    (GEOMETRY 0 0 1408 640)
+    (SIDE 0)
+    (HDL 1)
+    (EXTERNAL 0)
     (OBJSTAMP
-      (DESIGNER "hansvk")
+      (DESIGNER "Hanzel")
       (CREATED 1153814973 "Tue Jul 25 10:09:33 2006")
-      (MODIFIED 1275902197 "Mon Jun 07 11:16:37 2010")
+      (MODIFIED 1295606232 "Fri Jan 21 11:37:12 2011")
     )
     (PORT
       (OBID "eprt0c8a2066e61c9d4442e05edc33e20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED4")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "LED4")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1368 88 1448 168)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1344 128)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "LED4")
       )
     )
     (PORT
       (OBID "eprt0c8a2066e61c9d4442e05edc43e20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED5")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "LED5")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1368 216 1448 296)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1344 256)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "LED5")
       )
     )
     (PORT
       (OBID "eprt0c8a2066e61c9d4442e05edc53e20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED6")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "LED6")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1368 344 1448 424)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1344 384)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "LED6")
       )
     )
     (PORT
       (OBID "eprt0c8a2066e61c9d4442e05edc63e20000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "LED7")
-          (USERNAME 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "LED7")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
         )
-        (HDL_TYPE
-        )
-        (MODE 2)
       )
       (GEOMETRY 1368 472 1448 552)
-      (SENSLIST 1)
       (SIDE 1)
       (LABEL
         (POSITION 1344 512)
         (SCALE 96)
-        (COLOR "Black")
+        (COLOR_LINE 0)
+        (SIDE 3)
         (ALIGNMENT 5)
-        (SIDE 1)
         (FORMAT 35)
         (TEXT "LED7")
       )
     )
     (PORT
       (OBID "eprt0c012cfa821560c480010f703b410000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "INTF1_IO")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "2" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "INTF1_IO")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 2)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "2" "0")
+          )
         )
       )
-      (GEOMETRY -40 88 40 168)
-      (SENSLIST 1)
+      (GEOMETRY -40 216 40 296)
       (SIDE 3)
       (LABEL
-        (POSITION 64 128)
+        (POSITION 64 256)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "INTF1_IO(2:0)")
       )
     )
     (PORT
       (OBID "eprt0c012cfa821560c480010f704b410000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "INTF2_IO")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-        (BUS
-          (DIRECTION 1)
-          (RANGE "7" "0")
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
+      )
+      (HDL_IDENT
+        (NAME "INTF2_IO")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+          (CONSTRAINT
+            (DIRECTION 1)
+            (RANGE "7" "0")
+          )
         )
       )
-      (GEOMETRY -40 216 40 296)
-      (SENSLIST 1)
+      (GEOMETRY -40 344 40 424)
       (SIDE 3)
       (LABEL
-        (POSITION 64 256)
+        (POSITION 64 384)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "INTF2_IO(7:0)")
       )
     )
     (PORT
-      (OBID "eprt0c012cfa53ba80c480010f7033510000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "CLK10MHz")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-      )
-      (GEOMETRY -40 536 40 616)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 576)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "CLK10MHz")
-      )
-    )
-    (PORT
-      (OBID "eprt0c012cfa53ba80c480010f7043510000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "SYSRST")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
-      )
-      (GEOMETRY -40 664 40 744)
-      (SENSLIST 1)
-      (SIDE 3)
-      (LABEL
-        (POSITION 64 704)
-        (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
-        (SIDE 3)
-        (FORMAT 35)
-        (TEXT "SYSRST")
-      )
-    )
-    (PORT
       (OBID "eprt0c012cfafd8bc0c480010f70c4510000")
-      (HDL_OBJECT
-        (HDL_IDENT
-          (PROPERTY "SensitivityList" "Yes")
-          (NAME "USB_nPWREN")
-          (USERNAME 1)
-        )
-        (HDL_TYPE
-        )
-        (MODE 1)
+      (PROPERTIES
+        (PROPERTY "SensitivityList" "Yes")
       )
-      (GEOMETRY -40 344 40 424)
-      (SENSLIST 1)
+      (HDL_IDENT
+        (NAME "USB_nPWREN")
+        (USERNAME 1)
+        (ATTRIBUTES
+          (MODE 1)
+        )
+      )
+      (GEOMETRY -40 472 40 552)
       (SIDE 3)
       (LABEL
-        (POSITION 64 384)
+        (POSITION 64 512)
         (SCALE 96)
-        (COLOR "Black")
-        (ALIGNMENT 3)
+        (COLOR_LINE 0)
         (SIDE 3)
+        (ALIGNMENT 3)
         (FORMAT 35)
         (TEXT "USB_nPWREN")
       )
@@ -257,48 +202,58 @@
   )
   (ARCH_DEFINITION
     (OBID "arch0c013cbddb1d5c4482600f70a1220000")
-    (TYPE 2)
-    (HDL_IDENT
+    (PROPERTIES
       (PROPERTY "DEFAULT_ARCH" "true")
+    )
+    (HDL_IDENT
       (NAME "a0")
       (USERNAME 1)
     )
+    (TYPE 2)
     (HDL_FILE
-      (VHDL_FILE "a0.vhd" "-- EASE/HDL begin --------------------------------------------------------------"
-                 "-- Architecture 'a0' of 'DUMMIES."
-                 "--------------------------------------------------------------------------------"
-                 "-- Copy of the interface declaration of Entity 'DUMMIES' :"
-                 "-- "
-                 "--   port("
-                 "--     CLK10MHz   : in     std_logic;"
-                 "--     INTF1_IO   : in     std_logic_vector(2 downto 0);"
-                 "--     INTF2_IO   : in     std_logic_vector(7 downto 0);"
-                 "--     LED4       : out    std_logic;"
-                 "--     LED5       : out    std_logic;"
-                 "--     LED6       : out    std_logic;"
-                 "--     LED7       : out    std_logic;"
-                 "--     SYSRST     : in     std_logic;"
-                 "--     USB_nPWREN : in     std_logic);"
-                 "-- "
-                 "-- EASE/HDL end ----------------------------------------------------------------"
-                 ""
-                 "architecture a0 of DUMMIES is"
-                 ""
-                 "begin"
-                 ""
-                 "-- The ADC input signals are not connected"
-                 ""
-                 "-- LED1 is used for SLAVE_PRESENT"
-                 "-- LED2 is used for MASTER (GPS PRESENT)"
-                 "-- LED3 is used for COINC"
-                 "  LED4 <= '0';"
-                 "  LED5 <= '0';"
-                 "  LED6 <= '0';"
-                 "  LED7 <= '0';"
-                 ""
-                 "end architecture a0 ; -- of DUMMIES"
-                 ""
-                 "")
+      (VHDL_FILE
+        (OBID "file0c01ab80646ad2d4cf607cf0e7500000")
+        (NAME "a0.vhd")
+        (VALUE "-- EASE/HDL begin --------------------------------------------------------------"
+               "-- "
+               "-- Architecture 'a0' of entity 'DUMMIES'."
+               "-- "
+               "--------------------------------------------------------------------------------"
+               "-- "
+               "-- Copy of the interface declaration:"
+               "-- "
+               "--   port("
+               "--     INTF1_IO   : out    std_logic_vector(2 downto 0);"
+               "--     INTF2_IO   : in     std_logic_vector(7 downto 0);"
+               "--     LED4       : out    std_logic;"
+               "--     LED5       : out    std_logic;"
+               "--     LED6       : out    std_logic;"
+               "--     LED7       : out    std_logic;"
+               "--     USB_nPWREN : in     std_logic);"
+               "-- "
+               "-- EASE/HDL end ----------------------------------------------------------------"
+               ""
+               ""
+               "architecture a0 of DUMMIES is"
+               ""
+               "begin"
+               ""
+               "  INTF1_IO(0) <= '0';"
+               "  INTF1_IO(1) <= '0';"
+               "  INTF1_IO(2) <= '0';"
+               ""
+               "-- LED1 is used for SLAVE_PRESENT"
+               "-- LED2 is used for MASTER (GPS PRESENT)"
+               "-- LED3 is used for COINC"
+               "  LED4 <= '0';"
+               "  LED5 <= '0';"
+               "  LED6 <= '0';"
+               "  LED7 <= '0';"
+               ""
+               "end architecture a0 ; -- of DUMMIES"
+               ""
+               "")
+      )
     )
   )
 )
