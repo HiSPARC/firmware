@@ -60,8 +60,13 @@ CTP (Count Ticks between PPS) is a counter value. CTP represents the number of
 clock periods of the 200 MHz clock between two PPS signals. This value will be
 renewed every second. It will be set to one on a PPS signal and counts up in
 5 ns steps till the next PPS signal. On a PPS signal this value is stored and
-set to one again. PPS Quantization Error: This field carries the PPS
-quantization error in units of seconds.
+set to one again.
+
+
+Quantization Error
+^^^^^^^^^^^^^^^^^^
+
+This field carries the PPS quantization error in units of nanoseconds.
 
 
 Threshold counters over threshold information
