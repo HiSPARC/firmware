@@ -88,7 +88,7 @@ offset is the sum of the first quantization error and a synchronization error.
 By synchronizing the asynchrone PPS signal with the 200 MHz counter a
 synchronization error is made. This could be an error of maximal 5 ns. This is
 reduced to 2.5 ns by clocking the least significant bit of the counter on the
-negative edge of the 200 MHz system clock also. The highest bit (bit31) of CTP
+negative edge of the 200 MHz system clock also. The highest bit (bit 31) of CTP
 in the second-message-data indicates if the time offset has to be adjust with
 2.5 ns. The synchronization error for event-message-data Sn is in 
 second-message-data Sn.
@@ -108,7 +108,7 @@ Header Identifier Message info Data    End
 
 A message always starts with a header byte (99h) followed by an identifier
 byte, message info, data and an end byte (66h). The identifier byte gives the
-type of the message. Types are e.g. GPS time, measurement data, control
+type of the message. Types are e.g. one second, measurement data, control
 setting etc. The message info bytes give some information about the data.
 Message info can be trigger information or time settings. In case of a control
 setting this information is omitted (N = 0). The number of data bytes depends
@@ -119,7 +119,7 @@ of measured event data it can be a few thousand bytes.
 One second message
 ------------------
 
-Every second on a pulse per second signal (1PPS) from the GPS receiver, the
+Every second on a pulse per second (PPS) signal from the GPS receiver, the
 HiSPARC electronics sends a message to the computer. The time information is
 used for calibration. This message contains also the number of times that an
 analog input signal went over a threshold level during 1 second. After these
@@ -139,12 +139,15 @@ Header Identifier GPS     CTP     Quantization Threshold     Satellite   End
 ====== ========== ======= ======= ============ ============= =========== ===
 
 
-The GPS Time stamp is data from the GPS receiver and will be renewed every
-second.
-
+.. _gps_time_stamp:
 
 GPS Time stamp structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+The GPS time stamp is data from the GPS receiver and will be renewed every
+second. The values in the one second message are actually the date and time of
+the preceding second, because the actual time is not immediately known by the
+electronics.
 
 ====== ====== ======= ====== ======= =======
 Day    Month  Year    Hours  Minutes Seconds
@@ -223,7 +226,7 @@ Header Identifier Trigger   Trigger Pre     Trigger Post    GPS     CTP     Data
  
 
 Trigger condition
------------------
+^^^^^^^^^^^^^^^^^
 
 The trigger condition byte is set by LabView. The content of this byte selects
 a pattern that allows a coincidence of the input event signals which go over
@@ -306,7 +309,7 @@ Trigger condition Description trigger condition
 
 
 Trigger pattern
----------------
+^^^^^^^^^^^^^^^
 
 The trigger pattern contains two bytes. The lower byte gives the status of the
 threshold signals at the coincidence. Later on, in the analysis, one can trace
@@ -340,7 +343,7 @@ Higher byte, bit 7   Calibration mode
 
 
 Time Windows
-------------
+^^^^^^^^^^^^
 
 There are three time windows which are placed next to each other. Together
 they form the total time in which the data of an event is stored and readout.
@@ -364,15 +367,21 @@ trigger window byte must be between 0 and 1000. The value of the post trigger
 time window byte must be between 0 and 1600.
 
 
-Data Time
----------
+GPS time stamp
+^^^^^^^^^^^^^^
 
-On a trigger the momentary time is latched. The time consists of the GPS time
-and the CTD.
+See :ref:`gps_time_stamp`.
+
+
+CTD
+^^^
+
+On a trigger the value of the clock counter is latched. This value is called
+the CTD.
 
 
 Data
-----
+^^^^
 
 The sum of the three window bytes cannot exceed 2000 steps of 5 ns (i.e. 10
 µs). The time resolution of one channel is 2.5 ns. The analog input is sampled
@@ -547,7 +556,7 @@ FF         0       Reset electronics
 
 
 Status byte
------------
+^^^^^^^^^^^
 
 At the moment only bit 0, 1 and 7 are implemented. Bits 6 down to 2 are zero.
 Bit 0 is the master bit and will be high if the electronics have a GPS on
@@ -556,7 +565,7 @@ detected.
 
 
 Version number
---------------
+^^^^^^^^^^^^^^
 
 The version number has a length of three bytes and consists of two parts: a
 software- and a hardware part. The ten lower bits (9 down to 0) represent a
@@ -577,14 +586,14 @@ reset, the electronics is in listing mode. This means that there will be no
 data sent from the electronics to the PC. To put the electronics in writing
 mode also, the least significant bit of Spare bytes has to be set. Thus the
 first command for LabView to send must be 99 35 00 00 00 01 66. After this,
-the statusword can be asked by applying a get control parameter list command
-(99 55 66). The statusword can be found in the 32th byte returned data. There
-can be checked if the module is a master (least significant bit - b0 = '1') or
-a slave (b0 = '0'). When a slave module is attached to a master, then b1 = '1'
-in the statusword of the master. After switching the electronics on or after a
-soft reset, the module does not send one second messages. To put this on, bit
-1 of Spare bytes has to be set also by sending 99 35 00 00 00 03 66. Now, the
-electronics is fully up and running.
+the status byte can be retrieved by applying a get control parameter list
+command (99 55 66). The status byte will be the 32th byte in the returned
+data, i.e. identifier 34. This can be used to check if the module is a master
+(least significant bit - b0 = '1') or a slave (b0 = '0'). When a slave module
+is attached to a master, then b1 = '1' in the status byte of the master. After
+switching the electronics on or after a soft reset, the module does not send
+one second messages. To activate this, bit 1 of Spare bytes has to be set also
+by sending 99 35 00 00 00 03 66. Now, the electronics is fully up and running.
 
 
 Features
