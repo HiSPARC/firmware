@@ -205,7 +205,7 @@ Satellite signal information
 Measured data message
 ---------------------
 
-On a coincidence of a chosen event pattern measured data will be sent to the
+On a trigger of a chosen event pattern measured data will be sent to the
 computer as follows.
 
 
@@ -232,16 +232,16 @@ a low- and a high level. A HiSPARC electronic unit has two inputs. Two units
 can be combined as a master and a slave. Therefore combinations can be made of
 eight input signals over threshold voltages (threshold signals). There are
 four high signals and four low signals. If a slave is not present, the high
-and low signals from the slave are zero. A coincidence can also be forced with
+and low signals from the slave are zero. A trigger can also be forced with
 an external trigger signal. The trigger condition of threshold signals is
 selected with bit 0 to 5 of the trigger matrix byte. The external trigger is
 selected with bit 6. The most significant bit selects the calibration mode.
 When this bit is active, the other 7 bits are omitted. If a signal goes above
 the high threshold, then of course it also goes above the low threshold.
 Therefore if the condition is e.g. "at least two low signals", then this means
-that the condition is also met when there is one signal low and one high. Or
-if there are two high signals. Or when there is one high signal and two low
-ones, etc.
+that the condition is also met when there is one signal low and one other
+high. Or if there are two high signals. Or when there is one high signal and
+two low ones, etc.
 
 ================= ========= =========== ======================================
 Trigger condition Description trigger condition
@@ -310,7 +310,7 @@ Trigger pattern
 
 The trigger pattern contains two bytes. The lower byte gives the status of the
 threshold signals at the coincidence. Later on, in the analysis, one can trace
-back which signals(s) made the coincidence happen, taking the trigger
+back which signals(s) made the trigger happen, taking the trigger
 condition in account. The higher byte contains information about the HiSPARC
 electronic set and the external trigger. Each channel has two hardware
 comparators on the analog input. The input signal is compared with two
@@ -349,37 +349,37 @@ they form the total time in which the data of an event is stored and readout.
    :width: 627px
 
 
-The Pre time window can be set from 0 µs to 2 µs.
+The pre-trigger time window can be set from 0 µs to 2 µs.
 
-The Coincidence time window can be set from 0 µs to 5 µs.
+The trigger time window can be set from 0 µs to 5 µs.
 
-The Post time window can be set from 0 µs to 8 µs.
+The post-trigger time window can be set from 0 µs to 8 µs.
 
-The coincidence window time may not be larger than the post window time. The
-total time may not be larger than 10 us.
+The trigger time window time may not be larger than the post-trigger time
+window. The total time  window may not be larger than 10 µs.
 
-The times are set in 5 ns steps. In other words the contents of the pre time
-window byte must be between 0 and 400. The value of the coincidence window
-byte must be between 0 and 1000. The value of the post time window byte must
-be between 0 and 1600.
+The times are set in 5 ns steps. In other words the contents of the
+pre-trigger time window byte must be between 0 and 400. The value of the
+trigger window byte must be between 0 and 1000. The value of the post trigger
+time window byte must be between 0 and 1600.
 
 
 Data Time
 ---------
 
-On a coincidence the momentarily time is latched. The time consists of the GPS
-time and the CTP (Count Ticks between PPS) time.
+On a trigger the momentary time is latched. The time consists of the GPS time
+and the CTD.
 
 
 Data
 ----
 
-The sum of the three window bytes cannot exceed 2000 steps of 5 ns. The time
-resolution of one channel is 2.5 ns. The analog input is sampled with a 12 bit
-amplitude resolution and the output words to the computer are 8 bit. This
-means that there are 1.5 times more output words than sampled values per
-channel. Therefore the number of data output bytes is six times (5 ns / 2.5 ns
-x 2 channels x 1.5) the sum of the three window bytes.
+The sum of the three window bytes cannot exceed 2000 steps of 5 ns (i.e. 10
+µs). The time resolution of one channel is 2.5 ns. The analog input is sampled
+with a 12 bit amplitude resolution and the output words to the computer are 8
+bit. This means that there are 1.5 times more output words than sampled values
+per channel. Therefore the number of data output bytes is six times (5 ns /
+2.5 ns x 2 channels x 12 bit / 8 bit = 6) the sum of the three window bytes.
 
 
 Comparator data message
@@ -489,7 +489,7 @@ Communication error
 ====== ========== ====== ===
 Header Identifier Data   End
 ====== ========== ====== ===
-99     55         1 byte 66
+99     88         1 byte 66
 ====== ========== ====== ===
 
 If a message is misunderstood by the electronics, a message with identifier 88
@@ -526,9 +526,9 @@ Identifier N bytes Description                       Default value
 22         2       Channel 2 threshold low           0100 (256 ADC counts)
 23         2       Channel 2 threshold high          0800 (2048 ADC counts)
 30         1       Trigger condition                 08 (at least one high)
-31         2       Pre coincidence time              00C8 (1 µs)
-32         2       Coincidence time                  0190 (2 µs)
-33         2       Post coincidence time             0190 (2 µs)
+31         2       Pre trigger time                  00C8 (1 µs)
+32         2       Trigger time                      0190 (2 µs)
+33         2       Post trigger time                 0190 (2 µs)
 34         1       Status electronics
 35         4       Spare bytes
 40         1       Channel 1 PMT supply current      FF corresponds with 25 mA

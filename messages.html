@@ -374,7 +374,7 @@ level 12</th>
 </div>
 <div class="section" id="measured-data-message">
 <h2>Measured data message<a class="headerlink" href="#measured-data-message" title="Permalink to this headline">¶</a></h2>
-<p>On a coincidence of a chosen event pattern measured data will be sent to the
+<p>On a trigger of a chosen event pattern measured data will be sent to the
 computer as follows.</p>
 <div class="section" id="measurement-data-structure">
 <h3>Measurement data structure<a class="headerlink" href="#measurement-data-structure" title="Permalink to this headline">¶</a></h3>
@@ -444,16 +444,16 @@ a low- and a high level. A HiSPARC electronic unit has two inputs. Two units
 can be combined as a master and a slave. Therefore combinations can be made of
 eight input signals over threshold voltages (threshold signals). There are
 four high signals and four low signals. If a slave is not present, the high
-and low signals from the slave are zero. A coincidence can also be forced with
+and low signals from the slave are zero. A trigger can also be forced with
 an external trigger signal. The trigger condition of threshold signals is
 selected with bit 0 to 5 of the trigger matrix byte. The external trigger is
 selected with bit 6. The most significant bit selects the calibration mode.
 When this bit is active, the other 7 bits are omitted. If a signal goes above
 the high threshold, then of course it also goes above the low threshold.
 Therefore if the condition is e.g. &#8220;at least two low signals&#8221;, then this means
-that the condition is also met when there is one signal low and one high. Or
-if there are two high signals. Or when there is one high signal and two low
-ones, etc.</p>
+that the condition is also met when there is one signal low and one other
+high. Or if there are two high signals. Or when there is one high signal and
+two low ones, etc.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="23%" />
@@ -662,7 +662,7 @@ trigger condition given by the xxx xxx</td>
 <h2>Trigger pattern<a class="headerlink" href="#trigger-pattern" title="Permalink to this headline">¶</a></h2>
 <p>The trigger pattern contains two bytes. The lower byte gives the status of the
 threshold signals at the coincidence. Later on, in the analysis, one can trace
-back which signals(s) made the coincidence happen, taking the trigger
+back which signals(s) made the trigger happen, taking the trigger
 condition in account. The higher byte contains information about the HiSPARC
 electronic set and the external trigger. Each channel has two hardware
 comparators on the analog input. The input signal is compared with two
@@ -735,29 +735,29 @@ digitalization range. The compared signals are also latched at a coincidence.</p
 <p>There are three time windows which are placed next to each other. Together
 they form the total time in which the data of an event is stored and readout.</p>
 <a class="reference internal image-reference" href="_images/windows.jpg"><img alt="_images/windows.jpg" src="_images/windows.jpg" style="width: 627px;" /></a>
-<p>The Pre time window can be set from 0 µs to 2 µs.</p>
-<p>The Coincidence time window can be set from 0 µs to 5 µs.</p>
-<p>The Post time window can be set from 0 µs to 8 µs.</p>
-<p>The coincidence window time may not be larger than the post window time. The
-total time may not be larger than 10 us.</p>
-<p>The times are set in 5 ns steps. In other words the contents of the pre time
-window byte must be between 0 and 400. The value of the coincidence window
-byte must be between 0 and 1000. The value of the post time window byte must
-be between 0 and 1600.</p>
+<p>The pre-trigger time window can be set from 0 µs to 2 µs.</p>
+<p>The trigger time window can be set from 0 µs to 5 µs.</p>
+<p>The post-trigger time window can be set from 0 µs to 8 µs.</p>
+<p>The trigger time window time may not be larger than the post-trigger time
+window. The total time  window may not be larger than 10 µs.</p>
+<p>The times are set in 5 ns steps. In other words the contents of the
+pre-trigger time window byte must be between 0 and 400. The value of the
+trigger window byte must be between 0 and 1000. The value of the post trigger
+time window byte must be between 0 and 1600.</p>
 </div>
 <div class="section" id="data-time">
 <h2>Data Time<a class="headerlink" href="#data-time" title="Permalink to this headline">¶</a></h2>
-<p>On a coincidence the momentarily time is latched. The time consists of the GPS
-time and the CTP (Count Ticks between PPS) time.</p>
+<p>On a trigger the momentary time is latched. The time consists of the GPS time
+and the CTD.</p>
 </div>
 <div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
-<p>The sum of the three window bytes cannot exceed 2000 steps of 5 ns. The time
-resolution of one channel is 2.5 ns. The analog input is sampled with a 12 bit
-amplitude resolution and the output words to the computer are 8 bit. This
-means that there are 1.5 times more output words than sampled values per
-channel. Therefore the number of data output bytes is six times (5 ns / 2.5 ns
-x 2 channels x 1.5) the sum of the three window bytes.</p>
+<p>The sum of the three window bytes cannot exceed 2000 steps of 5 ns (i.e. 10
+µs). The time resolution of one channel is 2.5 ns. The analog input is sampled
+with a 12 bit amplitude resolution and the output words to the computer are 8
+bit. This means that there are 1.5 times more output words than sampled values
+per channel. Therefore the number of data output bytes is six times (5 ns /
+2.5 ns x 2 channels x 12 bit / 8 bit = 6) the sum of the three window bytes.</p>
 </div>
 <div class="section" id="comparator-data-message">
 <h2>Comparator data message<a class="headerlink" href="#comparator-data-message" title="Permalink to this headline">¶</a></h2>
@@ -981,7 +981,7 @@ values from the control parameter list will be applied.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>99</td>
-<td>55</td>
+<td>88</td>
 <td>1 byte</td>
 <td>66</td>
 </tr>
@@ -1117,17 +1117,17 @@ the end byte is not detected, the data byte will be 66.</p>
 </tr>
 <tr class="row-odd"><td>31</td>
 <td>2</td>
-<td>Pre coincidence time</td>
+<td>Pre trigger time</td>
 <td>00C8 (1 µs)</td>
 </tr>
 <tr class="row-even"><td>32</td>
 <td>2</td>
-<td>Coincidence time</td>
+<td>Trigger time</td>
 <td>0190 (2 µs)</td>
 </tr>
 <tr class="row-odd"><td>33</td>
 <td>2</td>
-<td>Post coincidence time</td>
+<td>Post trigger time</td>
 <td>0190 (2 µs)</td>
 </tr>
 <tr class="row-even"><td>34</td>
