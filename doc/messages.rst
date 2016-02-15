@@ -1,106 +1,70 @@
 Message Structures HiSPARC
 ==========================
 
-General message structure
--------------------------
-
-====== ========== ============ ======= ===
-Header Identifier Message info Data    End
-====== ========== ============ ======= ===
-99     1 byte     N bytes      N bytes 66
-====== ========== ============ ======= ===
-
-A message always starts with a header byte (99h) followed by an identifier
-byte, message info, data and an end byte (66h). The identifier byte gives the
-type of the message. Types are e.g. GPS time, measurement data, control
-setting etc. The message info bytes give some information about the data.
-Message info can be trigger information or time settings. In case of a control
-setting this information is omitted (N = 0). The number of data bytes depends
-on the type. In case of a control setting it will be a few bytes and in case
-of measured event data it can be a few thousand bytes.
- 
-
-One second message
-------------------
-
-Every second on a pulse per second signal (1PPS) from the GPS receiver, the
-HiSPARC electronics sends a message to the computer. The time information is
-used for calibration. This message contains also the number of times that an
-analog input signal went over a threshold level during 1 second. After these
-bytes, 61 bytes of satellite signal information are send.
+The HiSPARC electronics communicate to the PC using structured messages. These
+message structures are described on this page.
 
 
-One second structure
-^^^^^^^^^^^^^^^^^^^^
+Dataflow example
+----------------
 
-====== ========== ======= ======= ============ ============== =========== ===
-Header Identifier GPS     CTP     Quantization Threshold      Satellite   End
-                  time            Error        Counters Over  signal 
-                  stamp                        threshold      information
-                                               information
-====== ========== ======= ======= ============ ============== =========== ===
-99     A4         7 bytes 4 bytes 4 bytes      8 bytes        61 bytes    66
-====== ========== ======= ======= ============ ============== =========== ===
+In normal operation the electronics receive synchronization pulses from the
+GPS called the Pulse Per Second (PPS). The time between PPS is counted by the
+internal 200 MHz clock, the value is reset at each PPS and the final value is
+called the Count Ticks between PPS (CTP). When the PPS occurs the HiSPARC
+electronics sends a one second message to the PC containing the CTP value.
+When a trigger occurs the clock counter is also stored, this value is called
+the Count Ticks to Data (CTD). This is sent to the PC in a measured data
+message. An example of the order of these messages and their relation to the
+GPS clock and internal clock is shown in the following figure.
 
-
-The GPS Time stamp is data from the GPS receiver and will be renewed every
-second.
-
-
-GPS Time stamp structure
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-====== ====== ======= ====== ======= =======
-Day    Month  Year    Hours  Minutes Seconds
-====== ====== ======= ====== ======= =======
-1 byte 1 byte 2 bytes 1 byte 1 byte  1 byte
-====== ====== ======= ====== ======= =======
-
-CTP (Count Ticks between PPS) is a counter value. CTP represents the number of
-clock periods of the 200 MHz clock between two PPS signals. This value will be
-renewed every second. It will be set to one on a PPS signal and counts up in
-5 ns steps till the next PPS signal. On a PPS signal this value is stored and
-set to one again.
+.. image:: images/dataflow.png
+   :width: 639px
 
 
-Quantization Error
-^^^^^^^^^^^^^^^^^^
+Successive data to PC
+^^^^^^^^^^^^^^^^^^^^^
 
-This field carries the PPS quantization error in units of nanoseconds.
+================ =========================== =========== =====================
+Message to PC    Counter (200 MHz)           Actual time Time stamp in message
+================ =========================== =========== =====================
+One second       End value CTP of Dn-1       Sn+1        Sn
+Measurement data Momentary value CTD of Dn   Sn+1        Sn
+One second       End value CTP of Dn         Sn+2        Sn+1
+One second       End value CTP of Dn+1       Sn+3        Sn+2
+Measurement data Momentary value CTD of Dn+2 Sn+3        Sn+2
+One second       End value CTP of Dn+2       Sn+4        Sn+3
+================ =========================== =========== =====================
 
-
-Threshold counters over threshold information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-======= ======= ======= =======
-Threshold Counters
--------------------------------
-Channel 2       Channel 1
---------------- ---------------
-high    low     high    low
-======= ======= ======= =======
-2 bytes 2 bytes 2 bytes 2 bytes
-======= ======= ======= =======
-
-
-Satellite signal information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------+---------+-------+----------+---------+--------+ 
-| Number of |Satellite|Signal |Satellite |Satellite|Signal  |
-| tracked   |number 1 |level 1|numbers   |number 12|level 12|
-| satellites|         |       |and levels|         |        |
-|           |         |       |2 to 11   |         |        |
-+===========+=========+=======+==========+=========+========+ 
-| 1 byte    |1 byte   |4 bytes|50 bytes  |1 byte   |4 bytes |
-+-----------+---------+-------+----------+---------+--------+ 
+.. note::
+   The time stamps in the messages are offset by one second. This is because
+   the Primary Timing Packet containing the GPS time stamp information is sent
+   by the GPS module to the electronics up to 20 ms after the PPS. This is
+   taken into account when calculating the exact event time, see
+   :eq:`timestamp`.
 
 
 How to calculate the right event time
 -------------------------------------
 
-.. image:: images/event_time.jpg
-   :width: 655px
+.. image:: images/event_time.png
+   :width: 550px
+
+When a measured data message is received by the PC it needs to wait two more
+seconds before it can accurately calculate the GPS timestamp of the event.
+This is because two one second messages of the following PPS's are required.
+These contain the CTP, :math:`\Delta t_{\mathrm{Q1}}`, and :math:`\Delta
+t_{\mathrm{Q2}}`. The one second message before the measured data message
+(i.e. with the same time stamp) contains the Sn and :math:`\Delta
+t_{\mathrm{Sync}}`.
+
+.. math::
+   \mathrm{Time[ns]} =
+      (\mathrm{Sn} + 1) \cdot 10^9 + 
+      \Delta t_{\mathrm{Sync}} + \Delta t_{\mathrm{Q1}} +
+      \left(\frac{\mathrm{CTD}}{\mathrm{CTP}}\right) \cdot
+      \left(10^9 - \Delta t_{\mathrm{Q1}} + \Delta t_{\mathrm{Q2}}\right)
+   :label: timestamp
 
 The electronics generates event-message-data and second-message-data. The
 event-message-data is labeled on second basis by the GPS time stamp. To get
@@ -130,12 +94,112 @@ in the second-message-data indicates if the time offset has to be adjust with
 second-message-data Sn.
 
 
-Example of dataflow
--------------------
+HiSPARC messages
+----------------
+
+General message structure
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+====== ========== ============ ======= ===
+Header Identifier Message info Data    End
+====== ========== ============ ======= ===
+99     1 byte     N bytes      N bytes 66
+====== ========== ============ ======= ===
+
+A message always starts with a header byte (99h) followed by an identifier
+byte, message info, data and an end byte (66h). The identifier byte gives the
+type of the message. Types are e.g. GPS time, measurement data, control
+setting etc. The message info bytes give some information about the data.
+Message info can be trigger information or time settings. In case of a control
+setting this information is omitted (N = 0). The number of data bytes depends
+on the type. In case of a control setting it will be a few bytes and in case
+of measured event data it can be a few thousand bytes.
 
 
-.. image:: images/dataflow.jpg
-   :width: 639px
+One second message
+------------------
+
+Every second on a pulse per second signal (1PPS) from the GPS receiver, the
+HiSPARC electronics sends a message to the computer. The time information is
+used for calibration. This message contains also the number of times that an
+analog input signal went over a threshold level during 1 second. After these
+bytes, 61 bytes of satellite signal information are sent.
+
+
+One second structure
+^^^^^^^^^^^^^^^^^^^^
+
+====== ========== ======= ======= ============ ============= =========== ===
+Header Identifier GPS     CTP     Quantization Threshold     Satellite   End
+                  time            Error        Counters Over signal 
+                  stamp                        threshold     information
+                                               information
+====== ========== ======= ======= ============ ============= =========== ===
+99     A4         7 bytes 4 bytes 4 bytes      8 bytes       61 bytes    66
+====== ========== ======= ======= ============ ============= =========== ===
+
+
+The GPS Time stamp is data from the GPS receiver and will be renewed every
+second.
+
+
+GPS Time stamp structure
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+====== ====== ======= ====== ======= =======
+Day    Month  Year    Hours  Minutes Seconds
+====== ====== ======= ====== ======= =======
+1 byte 1 byte 2 bytes 1 byte 1 byte  1 byte
+====== ====== ======= ====== ======= =======
+
+
+CTP
+^^^
+
+CTP is a counter value. CTP represents the number of clock periods of the 200
+MHz clock between two PPS signals. This value will be renewed every second. It
+will be set to one on a PPS signal and counts up in 5 ns steps till the next
+PPS signal. On a PPS signal this value is stored and set to one again.
+
+.. warning::
+   The highest bit (bit 31) of CTP in the second-message-data indicates if the
+   time offset has to be adjust with 2.5 ns. This is the :math:`\Delta
+   t_{\mathrm{Sync}}` in :eq:`timestamp`. This bit should be removed before the
+   CTP value is used in :eq:`timestamp`!
+
+
+Quantization Error
+^^^^^^^^^^^^^^^^^^
+
+This field carries the PPS quantization error in units of nanoseconds. This is
+the quantization error for the previous PPS.
+
+
+Threshold counters over threshold information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+======= ======= ======= =======
+Threshold Counters
+-------------------------------
+Channel 2       Channel 1
+--------------- ---------------
+high    low     high    low
+======= ======= ======= =======
+2 bytes 2 bytes 2 bytes 2 bytes
+======= ======= ======= =======
+
+
+Satellite signal information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------+---------+-------+----------+---------+--------+ 
+| Number of |Satellite|Signal |Satellite |Satellite|Signal  |
+| tracked   |number 1 |level 1|numbers   |number 12|level 12|
+| satellites|         |       |and levels|         |        |
+|           |         |       |2 to 11   |         |        |
++===========+=========+=======+==========+=========+========+ 
+| 1 byte    |1 byte   |4 bytes|50 bytes  |1 byte   |4 bytes |
++-----------+---------+-------+----------+---------+--------+ 
 
 
 Measured data message
@@ -161,7 +225,7 @@ Header Identifier Trigger   Trigger Pre     Trigger Post    GPS     CTP     Data
 Trigger condition
 -----------------
 
-The trigger condition byte is set by Labview. The content of this byte selects
+The trigger condition byte is set by LabView. The content of this byte selects
 a pattern that allows a coincidence of the input event signals which go over
 threshold. Every input signal can be discriminated with two threshold levels;
 a low- and a high level. A HiSPARC electronic unit has two inputs. Two units
@@ -256,14 +320,14 @@ digitalization range. The compared signals are also latched at a coincidence.
 ==================== =================================
 Trigger pattern bits Description
 ==================== =================================
-Lower byte, bit 0    Master Channel 1 lower threshold
-Lower byte, bit 1    Master Channel 1 higher threshold
-Lower byte, bit 2    Master Channel 2 lower threshold
-Lower byte, bit 3    Master Channel 2 higher threshold
-Lower byte, bit 4    Slave Channel 1 lower threshold
-Lower byte, bit 5    Slave Channel 1 higher threshold
-Lower byte, bit 6    Slave Channel 2 lower threshold
-Lower byte, bit 7    Slave Channel 2 higher threshold
+Lower byte, bit 0    Master channel 1 lower threshold
+Lower byte, bit 1    Master channel 1 higher threshold
+Lower byte, bit 2    Master channel 2 lower threshold
+Lower byte, bit 3    Master channel 2 higher threshold
+Lower byte, bit 4    Slave channel 1 lower threshold
+Lower byte, bit 5    Slave channel 1 higher threshold
+Lower byte, bit 6    Slave channel 2 lower threshold
+Lower byte, bit 7    Slave channel 2 higher threshold
 Higher byte, bit 0   External trigger
 Higher byte, bit 1   Master (1) or slave (0)
 Higher byte, bit 2   Slave present
@@ -271,7 +335,7 @@ Higher byte, bit 3   Channel 1 comparator level low
 Higher byte, bit 4   Channel 1 comparator level high
 Higher byte, bit 5   Channel 2 comparator level low
 Higher byte, bit 6   Channel 2 comparator level high
-Higher byte, bit 7   Calibration Mode
+Higher byte, bit 7   Calibration mode
 ==================== =================================
 
 
@@ -322,35 +386,35 @@ Comparator data message
 -----------------------
 
 As said before: Each channel has two hardware comparators on the analog input.
-The input signal is compared with two threshold levels: -5 V and -10 V. If the
-input signal exceeds one of the levels, the GPS time is latched and the time
-the signal stays larger than the level is counted in 5 ns steps. If one or more
-comparators detect a input signal larger then their level, a message is
-generated.
+The input signal is compared with two threshold levels (defaults are -5 V and
+-10 V). If the input signal exceeds one of the levels, the GPS time is latched
+and the time the signal stays larger than the level is counted in 5 ns steps.
+If one or more comparators detect a input signal larger then their level, a
+message is generated.
 
 
 Comparator data structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ====== ========== ========== ======= ======= ================== ===
-Header Identifier Comparator GPS     CTP     Comparator Counter End
-                  Identifier time            Signal over
+Header Identifier Comparator GPS     CTP     Comparator counter End
+                  identifier time            signal over
                              stamp           threshold time
 ====== ========== ========== ======= ======= ================== ===
 99     A2         1 byte     7 bytes 4 bytes 4 bytes            66
 ====== ========== ========== ======= ======= ================== ===
 
 
-Comparator Identifier
+Comparator identifier
 ^^^^^^^^^^^^^^^^^^^^^
 
 ===================== =====================
-Comparator Identifier Comparator
+Comparator identifier Comparator
 ===================== =====================
-0000 0001             -5 V level Channel 1
-0000 0010             -10 V level Channel 1
-0000 0100             -5 V level Channel 2
-0000 1000             -10 V level Channel 2
+0000 0001             -5 V level channel 1
+0000 0010             -10 V level channel 1
+0000 0100             -5 V level channel 2
+0000 1000             -10 V level channel 2
 ===================== =====================
 
 
@@ -367,7 +431,7 @@ Header Identifier Data    End
 ====== ========== ======= ===
 
 Control parameters from identifier 10 to 35 can be written individual by
-Labview.
+LabView.
 
 
 Set control parameter list structure
@@ -386,7 +450,7 @@ be written in one message.
 Get control parameter list structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Send by software)
+(Sent by software)
 
 ====== ========== ===
 Header Identifier End
@@ -394,7 +458,7 @@ Header Identifier End
 99     55         66
 ====== ========== ===
 
-When applying identifier 55 all settings from identifier 10 to 47 will be send
+When applying identifier 55 all settings from identifier 10 to 47 will be sent
 in one message.
 
 (Return by HiSPARC electronics)
@@ -429,7 +493,7 @@ Header Identifier Data   End
 ====== ========== ====== ===
 
 If a message is misunderstood by the electronics, a message with identifier 88
-following with the identifier of the misunderstood message will be send in
+following with the identifier of the misunderstood message will be sent in
 return. If the header byte is not detected, the data byte will be 99. If an
 identifier of a non existing message is detected, the data byte will be 89. If
 the end byte is not detected, the data byte will be 66.
@@ -439,28 +503,28 @@ Control parameter list
 ^^^^^^^^^^^^^^^^^^^^^^
 
 ========== ======= ================================= =========================
-Identifier N bytes Description                       Default Value
+Identifier N bytes Description                       Default value
 ========== ======= ================================= =========================
-10         1       Channel 1 Offset adjust positive  80
-11         1       Channel 1 Offset adjust negative  80
-12         1       Channel 2 Offset adjust positive  80
-13         1       Channel 2 Offset adjust negative  80
-14         1       Channel 1 Gain adjust positive    80
-15         1       Channel 1 Gain adjust negative    80
-16         1       Channel 2 Gain adjust positive    80
-17         1       Channel 2 Gain adjust negative    80
+10         1       Channel 1 offset adjust positive  80
+11         1       Channel 1 offset adjust negative  80
+12         1       Channel 2 offset adjust positive  80
+13         1       Channel 2 offset adjust negative  80
+14         1       Channel 1 gain adjust positive    80
+15         1       Channel 1 gain adjust negative    80
+16         1       Channel 2 gain adjust positive    80
+17         1       Channel 2 gain adjust negative    80
 18         1       Common offset adjust              00
 19         1       Full scale adjust                 00
-1A         1       Channel 1 Integrator time         FF
-1B         1       Channel 2 Integrator time         FF
+1A         1       Channel 1 integrator time         FF
+1B         1       Channel 2 integrator time         FF
 1C         1       Comparator threshold low          58 (-5 V)
 1D         1       Comparator threshold high         E6 (-10 V)
-1E         1       Channel 1 PMT high voltage adjust 00 (0.3 V - 1.5 V)
-1F         1       Channel 2 PMT high voltage adjust 00  
-20         2       Channel 1 Threshold low           0100 (125 mV)
-21         2       Channel 1 Threshold high          0800 (1 V)
-22         2       Channel 2 Threshold low           0100 (125 mV)
-23         2       Channel 2 Threshold high          0800 (1 V)
+1E         1       Channel 1 PMT high voltage adjust 00 (0.3 V)
+1F         1       Channel 2 PMT high voltage adjust 00 (0.3 V)  
+20         2       Channel 1 threshold low           0100 (256 ADC counts)
+21         2       Channel 1 threshold high          0800 (2048 ADC counts)
+22         2       Channel 2 threshold low           0100 (256 ADC counts)
+23         2       Channel 2 threshold high          0800 (2048 ADC counts)
 30         1       Trigger condition                 08 (at least one high)
 31         2       Pre coincidence time              00C8 (1 µs)
 32         2       Coincidence time                  0190 (2 µs)
@@ -507,19 +571,19 @@ How to startup
 
 Connect the HiSPARC Electronics via USB with the PC and switch the power of
 the electronics on. Run the LabView program and a master module should be
-recognized as "HiSPARC II Master" and a slave module as "HiSPARC II Slave".
-After switching the electronics on or after a soft reset, the electronics is
-in listing mode. This means that there will be no data send from the
-electronics to the PC. To put the electronics in writing mode also, the least
-significant bit of Spare bytes has to be set. Thus the first command for
-LabView to send must be 99 35 00 00 00 01 66. After this, the statusword can
-be asked by applying a get control parameter list command (99 55 66). The
-statusword can be found in the 32th byte returned data. There can be checked
-if the module is a master (least significant bit - b0 = '1') or a slave (b0 =
-'0'). When a slave module is attached to a master, then b1 = '1' in the
-statusword of the master. After switching the electronics on or after a soft
-reset, the module does not send one second messages. To put this on, bit 1 of
-Spare bytes has to be set also by sending 99 35 00 00 00 03 66. Now, the
+recognized as "HiSPARC II Master"and a slave module as "HiSPARC II Slave" (or
+"III" instead of "II"). After switching the electronics on or after a soft
+reset, the electronics is in listing mode. This means that there will be no
+data sent from the electronics to the PC. To put the electronics in writing
+mode also, the least significant bit of Spare bytes has to be set. Thus the
+first command for LabView to send must be 99 35 00 00 00 01 66. After this,
+the statusword can be asked by applying a get control parameter list command
+(99 55 66). The statusword can be found in the 32th byte returned data. There
+can be checked if the module is a master (least significant bit - b0 = '1') or
+a slave (b0 = '0'). When a slave module is attached to a master, then b1 = '1'
+in the statusword of the master. After switching the electronics on or after a
+soft reset, the module does not send one second messages. To put this on, bit
+1 of Spare bytes has to be set also by sending 99 35 00 00 00 03 66. Now, the
 electronics is fully up and running.
 
 
