@@ -489,7 +489,7 @@ Communication error
 ====== ========== ====== ===
 Header Identifier Data   End
 ====== ========== ====== ===
-99     55         1 byte 66
+99     88         1 byte 66
 ====== ========== ====== ===
 
 If a message is misunderstood by the electronics, a message with identifier 88
