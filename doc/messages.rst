@@ -46,6 +46,7 @@ Header Identifier GPS     CTP     Quantization Threshold      Satellite   End
 The GPS Time stamp is data from the GPS receiver and will be renewed every
 second.
 
+
 GPS Time stamp structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -56,9 +57,9 @@ Day    Month  Year    Hours  Minutes Seconds
 ====== ====== ======= ====== ======= =======
 
 CTP (Count Ticks between PPS) is a counter value. CTP represents the number of
-clock periods of the 200MHz clock between two PPS signals. This value will be
+clock periods of the 200 MHz clock between two PPS signals. This value will be
 renewed every second. It will be set to one on a PPS signal and counts up in
-5ns steps till the next PPS signal. On a PPS signal this value is stored and
+5 ns steps till the next PPS signal. On a PPS signal this value is stored and
 set to one again. PPS Quantization Error: This field carries the PPS
 quantization error in units of seconds.
 
@@ -100,11 +101,11 @@ The electronics generates event-message-data and second-message-data. The
 event-message-data is labeled on second basis by the GPS time stamp. To get
 the event time in nanosecond accuracy, the following has to be done. Take for
 example an event measured in time Sn (second n). The event-data contains a CTD
-value. This is the counter value of the system 200MHz counter latched at the
-incomming event. The CTD value represents the number of 5ns steps from a PPS
+value. This is the counter value of the system 200 MHz counter latched at the
+incomming event. The CTD value represents the number of 5 ns steps from a PPS
 (Pulse Per Second) signal till the incomming event. A PPS signal comes every
 second from the GPS reciever. First the ratio between CTD and CTP has to be
-calculated. CTP is the end value of the 200MHz counter at the moment of a PPS
+calculated. CTP is the end value of the 200 MHz counter at the moment of a PPS
 signal. The CTP value belonging to the CTD value of Sn comes in the 
 second-message-data of Sn+1. This ratio has to be multiplied with a "real"
 second expressed in nanoseconds. The time between two PPS signals should be
@@ -115,12 +116,12 @@ event-message-data Sn are in second-message-data Sn+1 (Quantization error 1)
 en second-message-data Sn+2 (Quantization error 2). Now the ratio CTD/CTP can
 be expressed in nanoseconds and has to be add with a time offset. The time
 offset is the sum of the first quantization error and a synchronization error.
-By synchronizing the asynchrone PPS signal with the 200MHz counter a
-synchronization error is made. This could be an error of maximal 5ns. This is
-reduced to 2.5ns by clocking the least significant bit of the counter on the
-negative edge of the 200MHz system clock also. The highest bit (bit31) of CTP
+By synchronizing the asynchrone PPS signal with the 200 MHz counter a
+synchronization error is made. This could be an error of maximal 5 ns. This is
+reduced to 2.5 ns by clocking the least significant bit of the counter on the
+negative edge of the 200 MHz system clock also. The highest bit (bit31) of CTP
 in the second-message-data indicates if the time offset has to be adjust with
-2.5ns. The synchronization error for event-message-data Sn is in 
+2.5 ns. The synchronization error for event-message-data Sn is in 
 second-message-data Sn.
 
 
@@ -244,8 +245,8 @@ back which signals(s) made the coincidence happen, taking the trigger
 condition in account. The higher byte contains information about the HiSPARC
 electronic set and the external trigger. Each channel has two hardware
 comparators on the analog input. The input signal is compared with two
-threshold levels: -5V and -10V. These levels are beyond the ADC digitalization
-range. The compared signals are also latched at a coincidence.
+threshold levels: -5 V and -10 V. These levels are beyond the ADC
+digitalization range. The compared signals are also latched at a coincidence.
 
 ==================== =================================
 Trigger pattern bits Description
@@ -279,11 +280,11 @@ they form the total time in which the data of an event is stored and readout.
    :width: 627px
 
 
-The Pre time window can be set from 0 to 2 us.
+The Pre time window can be set from 0 µs to 2 µs.
 
-The Coincidence time window can be set from 0 to 5 us.
+The Coincidence time window can be set from 0 µs to 5 µs.
 
-The Post time window can be set from 0 to 8 us.
+The Post time window can be set from 0 µs to 8 µs.
 
 The coincidence window time may not be larger than the post window time. The
 total time may not be larger than 10 us.
@@ -304,23 +305,24 @@ time and the CTP (Count Ticks between PPS) time.
 Data
 ----
 
-The sum of the three window bytes cannot exceed 2000 steps of 5ns. The time
-resolution of one channel is 2.5ns. The analog input is sampled with a 12 bit
+The sum of the three window bytes cannot exceed 2000 steps of 5 ns. The time
+resolution of one channel is 2.5 ns. The analog input is sampled with a 12 bit
 amplitude resolution and the output words to the computer are 8 bit. This
 means that there are 1.5 times more output words than sampled values per
-channel. Therefore the number of data output bytes is six times (5ns/2.5ns x 2
-channels x 1.5) the sum of the three window bytes.
+channel. Therefore the number of data output bytes is six times (5 ns / 2.5 ns
+x 2 channels x 1.5) the sum of the three window bytes.
 
 
 Comparator data message
 -----------------------
 
 As said before: Each channel has two hardware comparators on the analog input.
-The input signal is compared with two threshold levels: -5V and -10V. If the
+The input signal is compared with two threshold levels: -5 V and -10 V. If the
 input signal exceeds one of the levels, the GPS time is latched and the time
-the signal stays larger than the level is counted in 5ns steps. If one or more
+the signal stays larger than the level is counted in 5 ns steps. If one or more
 comparators detect a input signal larger then their level, a message is
 generated.
+
 
 Comparator data structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -337,14 +339,14 @@ Header Identifier Comparator GPS     CTP     Comparator Counter End
 Comparator Identifier
 ^^^^^^^^^^^^^^^^^^^^^
 
-===================== ====================
+===================== =====================
 Comparator Identifier Comparator
-===================== ====================
-0000 0001             -5V level Channel 1
-0000 0010             -10V level Channel 1
-0000 0100             -5V level Channel 2
-0000 1000             -10V level Channel 2
-===================== ====================
+===================== =====================
+0000 0001             -5 V level Channel 1
+0000 0010             -10 V level Channel 1
+0000 0100             -5 V level Channel 2
+0000 1000             -10 V level Channel 2
+===================== =====================
 
 
 Control parameters
@@ -375,6 +377,7 @@ Header Identifier Data     End
 When applying identifier 50 all settings from identifier 10 to 33 and 35 can
 be written in one message.
 
+
 Get control parameter list structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -397,6 +400,7 @@ Header Identifier Data     End
 99     55         76 bytes 66
 ====== ========== ======== ===
 
+
 Soft reset
 ^^^^^^^^^^
 
@@ -408,6 +412,7 @@ Header Identifier End
 
 When applying identifier FF the electronics get a soft reset and the default
 values from the control parameter list will be applied.
+
 
 Communication error
 ^^^^^^^^^^^^^^^^^^^
@@ -428,9 +433,9 @@ the end byte is not detected, the data byte will be 66.
 Control parameter list
 ^^^^^^^^^^^^^^^^^^^^^^
 
-========== ======= ================================= ========================
+========== ======= ================================= =========================
 Identifier N bytes Description                       Default Value
-========== ======= ================================= ========================
+========== ======= ================================= =========================
 10         1       Channel 1 Offset adjust positive  80
 11         1       Channel 1 Offset adjust negative  80
 12         1       Channel 2 Offset adjust positive  80
@@ -443,22 +448,22 @@ Identifier N bytes Description                       Default Value
 19         1       Full scale adjust                 00
 1A         1       Channel 1 Integrator time         FF
 1B         1       Channel 2 Integrator time         FF
-1C         1       Comparator threshold low          58 (-5V)
-1D         1       Comparator threshold high         E6 (-10V)
-1E         1       Channel 1 PMT high voltage adjust 00 (0.3 - 1.5V)
+1C         1       Comparator threshold low          58 (-5 V)
+1D         1       Comparator threshold high         E6 (-10 V)
+1E         1       Channel 1 PMT high voltage adjust 00 (0.3 V - 1.5 V)
 1F         1       Channel 2 PMT high voltage adjust 00  
-20         2       Channel 1 Threshold low           0100 (125mV)
-21         2       Channel 1 Threshold high          0800 (1V)
-22         2       Channel 2 Threshold low           0100 (125mV)
-23         2       Channel 2 Threshold high          0800 (1V)
+20         2       Channel 1 Threshold low           0100 (125 mV)
+21         2       Channel 1 Threshold high          0800 (1 V)
+22         2       Channel 2 Threshold low           0100 (125 mV)
+23         2       Channel 2 Threshold high          0800 (1 V)
 30         1       Trigger condition                 08 (at least one high)
-31         2       Pre coincidence time              00C8 (1us)
-32         2       Coincidence time                  0190 (2us)
-33         2       Post coincidence time             0190 (2us)
+31         2       Pre coincidence time              00C8 (1 µs)
+32         2       Coincidence time                  0190 (2 µs)
+33         2       Post coincidence time             0190 (2 µs)
 34         1       Status electronics
 35         4       Spare bytes
-40         1       Channel 1 PMT supply current      FF corresponds with 25mA
-41         1       Channel 2 PMT supply current      FF corresponds with 25mA
+40         1       Channel 1 PMT supply current      FF corresponds with 25 mA
+41         1       Channel 2 PMT supply current      FF corresponds with 25 mA
 42         7       GPS time stamp
 43         8       GPS position longitude
 44         8       GPS position latitude
@@ -469,7 +474,7 @@ Identifier N bytes Description                       Default Value
 55         0       Get control parameter list
 88         1       Communication error
 FF         0       Reset electronics
-========== ======= ================================= ========================
+========== ======= ================================= =========================
 
 
 Status byte
@@ -511,6 +516,7 @@ statusword of the master. After switching the electronics on or after a soft
 reset, the module does not send one second messages. To put this on, bit 1 of
 Spare bytes has to be set also by sending 99 35 00 00 00 03 66. Now, the
 electronics is fully up and running.
+
 
 Features
 --------
