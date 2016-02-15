@@ -1,0 +1,18 @@
+table {
+    font-size: 12px;}
+
+table.docutils {
+    border: 0px;
+    border-top: 2px solid #888;
+    border-bottom: 2px solid #888;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+table.docutils td, table.docutils th {
+    padding: 0.4em 0.4em;
+    border: 0px;}
+
+table.docutils th {
+    border-bottom: 1px solid #aaa;}

@@ -1,0 +1,1366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Message Structures HiSPARC &mdash; HiSPARC firmware 20 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="HiSPARC firmware 20 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to HiSPARC firmware’s documentation!" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="message-structures-hisparc">
+<h1>Message Structures HiSPARC<a class="headerlink" href="#message-structures-hisparc" title="Permalink to this headline">¶</a></h1>
+<p>The HiSPARC electronics communicate to the PC using structured messages. These
+message structures are described on this page.</p>
+<div class="section" id="dataflow-example">
+<h2>Dataflow example<a class="headerlink" href="#dataflow-example" title="Permalink to this headline">¶</a></h2>
+<p>In normal operation the electronics receive synchronization pulses from the
+GPS called the Pulse Per Second (PPS). The time between PPS is counted by the
+internal 200 MHz clock, the value is reset at each PPS and the final value is
+called the Count Ticks between PPS (CTP). When the PPS occurs the HiSPARC
+electronics sends a one second message to the PC containing the CTP value.
+When a trigger occurs the clock counter is also stored, this value is called
+the Count Ticks to Data (CTD). This is sent to the PC in a measured data
+message. An example of the order of these messages and their relation to the
+GPS clock and internal clock is shown in the following figure.</p>
+<a class="reference internal image-reference" href="_images/dataflow.png"><img alt="_images/dataflow.png" src="_images/dataflow.png" style="width: 639px;" /></a>
+<div class="section" id="successive-data-to-pc">
+<h3>Successive data to PC<a class="headerlink" href="#successive-data-to-pc" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="36%" />
+<col width="15%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Message to PC</th>
+<th class="head">Counter (200 MHz)</th>
+<th class="head">Actual time</th>
+<th class="head">Time stamp in message</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>One second</td>
+<td>End value CTP of Dn-1</td>
+<td>Sn+1</td>
+<td>Sn</td>
+</tr>
+<tr class="row-odd"><td>Measurement data</td>
+<td>Momentary value CTD of Dn</td>
+<td>Sn+1</td>
+<td>Sn</td>
+</tr>
+<tr class="row-even"><td>One second</td>
+<td>End value CTP of Dn</td>
+<td>Sn+2</td>
+<td>Sn+1</td>
+</tr>
+<tr class="row-odd"><td>One second</td>
+<td>End value CTP of Dn+1</td>
+<td>Sn+3</td>
+<td>Sn+2</td>
+</tr>
+<tr class="row-even"><td>Measurement data</td>
+<td>Momentary value CTD of Dn+2</td>
+<td>Sn+3</td>
+<td>Sn+2</td>
+</tr>
+<tr class="row-odd"><td>One second</td>
+<td>End value CTP of Dn+2</td>
+<td>Sn+4</td>
+<td>Sn+3</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The time stamps in the messages are offset by one second. This is because
+the Primary Timing Packet containing the GPS time stamp information is sent
+by the GPS module to the electronics up to 20 ms after the PPS. This is
+taken into account when calculating the exact event time, see
+<a href="#equation-timestamp">(1)</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-calculate-the-right-event-time">
+<h2>How to calculate the right event time<a class="headerlink" href="#how-to-calculate-the-right-event-time" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/event_time.png"><img alt="_images/event_time.png" src="_images/event_time.png" style="width: 550px;" /></a>
+<p>When a measured data message is received by the PC it needs to wait two more
+seconds before it can accurately calculate the GPS timestamp of the event.
+This is because two one second messages of the following PPS&#8217;s are required.
+These contain the CTP, <span class="math">\(\Delta t_{\mathrm{Q1}}\)</span>, and <span class="math">\(\Delta
+t_{\mathrm{Q2}}\)</span>. The one second message before the measured data message
+(i.e. with the same time stamp) contains the Sn and <span class="math">\(\Delta
+t_{\mathrm{Sync}}\)</span>.</p>
+<div class="math" id="equation-timestamp">
+<span class="eqno">(1)</span>\[\mathrm{Time[ns]} =
+   (\mathrm{Sn} + 1) \cdot 10^9 +
+   \Delta t_{\mathrm{Sync}} + \Delta t_{\mathrm{Q1}} +
+   \left(\frac{\mathrm{CTD}}{\mathrm{CTP}}\right) \cdot
+   \left(10^9 - \Delta t_{\mathrm{Q1}} + \Delta t_{\mathrm{Q2}}\right)\]</div>
+<p>The electronics generates event-message-data and second-message-data. The
+event-message-data is labeled on second basis by the GPS time stamp. To get
+the event time in nanosecond accuracy, the following has to be done. Take for
+example an event measured in time Sn (second n). The event-data contains a CTD
+value. This is the counter value of the system 200 MHz counter latched at the
+incomming event. The CTD value represents the number of 5 ns steps from a PPS
+(Pulse Per Second) signal till the incomming event. A PPS signal comes every
+second from the GPS reciever. First the ratio between CTD and CTP has to be
+calculated. CTP is the end value of the 200 MHz counter at the moment of a PPS
+signal. The CTP value belonging to the CTD value of Sn comes in the
+second-message-data of Sn+1. This ratio has to be multiplied with a &#8220;real&#8221;
+second expressed in nanoseconds. The time between two PPS signals should be
+exactly one second. Unfortunately the PPS signals have a time error with
+respect to a &#8220;world second&#8221;. This error is called the quantization error and
+can be read from the second-message-data. The quantization errors for
+event-message-data Sn are in second-message-data Sn+1 (Quantization error 1)
+en second-message-data Sn+2 (Quantization error 2). Now the ratio CTD/CTP can
+be expressed in nanoseconds and has to be add with a time offset. The time
+offset is the sum of the first quantization error and a synchronization error.
+By synchronizing the asynchrone PPS signal with the 200 MHz counter a
+synchronization error is made. This could be an error of maximal 5 ns. This is
+reduced to 2.5 ns by clocking the least significant bit of the counter on the
+negative edge of the 200 MHz system clock also. The highest bit (bit31) of CTP
+in the second-message-data indicates if the time offset has to be adjust with
+2.5 ns. The synchronization error for event-message-data Sn is in
+second-message-data Sn.</p>
+</div>
+<div class="section" id="hisparc-messages">
+<h2>HiSPARC messages<a class="headerlink" href="#hisparc-messages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-message-structure">
+<h3>General message structure<a class="headerlink" href="#general-message-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="26%" />
+<col width="32%" />
+<col width="18%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Message info</th>
+<th class="head">Data</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>1 byte</td>
+<td>N bytes</td>
+<td>N bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>A message always starts with a header byte (99h) followed by an identifier
+byte, message info, data and an end byte (66h). The identifier byte gives the
+type of the message. Types are e.g. GPS time, measurement data, control
+setting etc. The message info bytes give some information about the data.
+Message info can be trigger information or time settings. In case of a control
+setting this information is omitted (N = 0). The number of data bytes depends
+on the type. In case of a control setting it will be a few bytes and in case
+of measured event data it can be a few thousand bytes.</p>
+</div>
+</div>
+<div class="section" id="one-second-message">
+<h2>One second message<a class="headerlink" href="#one-second-message" title="Permalink to this headline">¶</a></h2>
+<p>Every second on a pulse per second signal (1PPS) from the GPS receiver, the
+HiSPARC electronics sends a message to the computer. The time information is
+used for calibration. This message contains also the number of times that an
+analog input signal went over a threshold level during 1 second. After these
+bytes, 61 bytes of satellite signal information are sent.</p>
+<div class="section" id="one-second-structure">
+<h3>One second structure<a class="headerlink" href="#one-second-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="14%" />
+<col width="10%" />
+<col width="10%" />
+<col width="17%" />
+<col width="19%" />
+<col width="16%" />
+<col width="4%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">GPS
+time
+stamp</th>
+<th class="head">CTP</th>
+<th class="head">Quantization
+Error</th>
+<th class="head">Threshold
+Counters Over
+threshold
+information</th>
+<th class="head">Satellite
+signal
+information</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>A4</td>
+<td>7 bytes</td>
+<td>4 bytes</td>
+<td>4 bytes</td>
+<td>8 bytes</td>
+<td>61 bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>The GPS Time stamp is data from the GPS receiver and will be renewed every
+second.</p>
+</div>
+<div class="section" id="gps-time-stamp-structure">
+<h3>GPS Time stamp structure<a class="headerlink" href="#gps-time-stamp-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="18%" />
+<col width="15%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Day</th>
+<th class="head">Month</th>
+<th class="head">Year</th>
+<th class="head">Hours</th>
+<th class="head">Minutes</th>
+<th class="head">Seconds</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1 byte</td>
+<td>1 byte</td>
+<td>2 bytes</td>
+<td>1 byte</td>
+<td>1 byte</td>
+<td>1 byte</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ctp">
+<h3>CTP<a class="headerlink" href="#ctp" title="Permalink to this headline">¶</a></h3>
+<p>CTP is a counter value. CTP represents the number of clock periods of the 200
+MHz clock between two PPS signals. This value will be renewed every second. It
+will be set to one on a PPS signal and counts up in 5 ns steps till the next
+PPS signal. On a PPS signal this value is stored and set to one again.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The highest bit (bit 31) of CTP in the second-message-data indicates if the
+time offset has to be adjust with 2.5 ns. This is the <span class="math">\(\Delta
+t_{\mathrm{Sync}}\)</span> in <a href="#equation-timestamp">(1)</a>. This bit should be removed before the
+CTP value is used in <a href="#equation-timestamp">(1)</a>!</p>
+</div>
+</div>
+<div class="section" id="quantization-error">
+<h3>Quantization Error<a class="headerlink" href="#quantization-error" title="Permalink to this headline">¶</a></h3>
+<p>This field carries the PPS quantization error in units of nanoseconds. This is
+the quantization error for the previous PPS.</p>
+</div>
+<div class="section" id="threshold-counters-over-threshold-information">
+<h3>Threshold counters over threshold information<a class="headerlink" href="#threshold-counters-over-threshold-information" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="4">Threshold Counters</th>
+</tr>
+<tr class="row-even"><th class="head" colspan="2">Channel 2</th>
+<th class="head" colspan="2">Channel 1</th>
+</tr>
+<tr class="row-odd"><th class="head">high</th>
+<th class="head">low</th>
+<th class="head">high</th>
+<th class="head">low</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2 bytes</td>
+<td>2 bytes</td>
+<td>2 bytes</td>
+<td>2 bytes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="satellite-signal-information">
+<h3>Satellite signal information<a class="headerlink" href="#satellite-signal-information" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="17%" />
+<col width="13%" />
+<col width="19%" />
+<col width="17%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Number of
+tracked
+satellites</th>
+<th class="head">Satellite
+number 1</th>
+<th class="head">Signal
+level 1</th>
+<th class="head">Satellite
+numbers
+and levels
+2 to 11</th>
+<th class="head">Satellite
+number 12</th>
+<th class="head">Signal
+level 12</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1 byte</td>
+<td>1 byte</td>
+<td>4 bytes</td>
+<td>50 bytes</td>
+<td>1 byte</td>
+<td>4 bytes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="measured-data-message">
+<h2>Measured data message<a class="headerlink" href="#measured-data-message" title="Permalink to this headline">¶</a></h2>
+<p>On a coincidence of a chosen event pattern measured data will be sent to the
+computer as follows.</p>
+<div class="section" id="measurement-data-structure">
+<h3>Measurement data structure<a class="headerlink" href="#measurement-data-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="13%" />
+<col width="12%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="4%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Trigger
+condition</th>
+<th class="head">Trigger
+pattern</th>
+<th class="head">Pre
+trigger
+time
+window</th>
+<th class="head">Trigger
+time
+window</th>
+<th class="head">Post
+trigger
+time
+window</th>
+<th class="head">GPS
+time
+stamp</th>
+<th class="head">CTP</th>
+<th class="head">Data</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>A0</td>
+<td>1 byte</td>
+<td>2 bytes</td>
+<td>2 bytes</td>
+<td>2 bytes</td>
+<td>2 bytes</td>
+<td>7 bytes</td>
+<td>4 bytes</td>
+<td>N bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="trigger-condition">
+<h2>Trigger condition<a class="headerlink" href="#trigger-condition" title="Permalink to this headline">¶</a></h2>
+<p>The trigger condition byte is set by LabView. The content of this byte selects
+a pattern that allows a coincidence of the input event signals which go over
+threshold. Every input signal can be discriminated with two threshold levels;
+a low- and a high level. A HiSPARC electronic unit has two inputs. Two units
+can be combined as a master and a slave. Therefore combinations can be made of
+eight input signals over threshold voltages (threshold signals). There are
+four high signals and four low signals. If a slave is not present, the high
+and low signals from the slave are zero. A coincidence can also be forced with
+an external trigger signal. The trigger condition of threshold signals is
+selected with bit 0 to 5 of the trigger matrix byte. The external trigger is
+selected with bit 6. The most significant bit selects the calibration mode.
+When this bit is active, the other 7 bits are omitted. If a signal goes above
+the high threshold, then of course it also goes above the low threshold.
+Therefore if the condition is e.g. &#8220;at least two low signals&#8221;, then this means
+that the condition is also met when there is one signal low and one high. Or
+if there are two high signals. Or when there is one high signal and two low
+ones, etc.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="12%" />
+<col width="15%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Trigger condition</th>
+<th class="head" colspan="3">Description trigger condition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>00 000 001</td>
+<td>0H and 1L</td>
+<td>Tr. con. 1</td>
+<td>At least one low signal</td>
+</tr>
+<tr class="row-odd"><td>00 000 010</td>
+<td>0H and 2L</td>
+<td>Tr. con. 2</td>
+<td>At least two low signals</td>
+</tr>
+<tr class="row-even"><td>00 000 011</td>
+<td>0H and 3L</td>
+<td>Tr. con. 3</td>
+<td>At least three low signals</td>
+</tr>
+<tr class="row-odd"><td>00 000 100</td>
+<td>0H and 4L</td>
+<td>Tr. con. 4</td>
+<td>At least four low signals</td>
+</tr>
+<tr class="row-even"><td>00 001 000</td>
+<td>1H and 0L</td>
+<td>Tr. con. 5</td>
+<td>At least one high signal</td>
+</tr>
+<tr class="row-odd"><td>00 001 001</td>
+<td>1H and 1L</td>
+<td>Tr. con. 6</td>
+<td>At least one high signal and
+at least one other low</td>
+</tr>
+<tr class="row-even"><td>00 001 010</td>
+<td>1H and 2L</td>
+<td>Tr. con. 7</td>
+<td>At least one high signal and
+at least two others low</td>
+</tr>
+<tr class="row-odd"><td>00 001 011</td>
+<td>1H and 3L</td>
+<td>Tr. con. 8</td>
+<td>At least one high signal and
+at least three others low</td>
+</tr>
+<tr class="row-even"><td>00 010 000</td>
+<td>2H and 0L</td>
+<td>Tr. con. 9</td>
+<td>At least two high signals</td>
+</tr>
+<tr class="row-odd"><td>00 010 001</td>
+<td>2H and 1L</td>
+<td>Tr. con. 10</td>
+<td>At least two high signals and
+at least one other low</td>
+</tr>
+<tr class="row-even"><td>00 010 010</td>
+<td>2H and 2L</td>
+<td>Tr. con. 11</td>
+<td>At least two high signals and
+at least two others low</td>
+</tr>
+<tr class="row-odd"><td>00 011 000</td>
+<td>3H and 0L</td>
+<td>Tr. con. 12</td>
+<td>At least three high signals</td>
+</tr>
+<tr class="row-even"><td>00 011 001</td>
+<td>3H and 1L</td>
+<td>Tr. con. 13</td>
+<td>At least three high signals and
+at least one other low</td>
+</tr>
+<tr class="row-odd"><td>00 100 000</td>
+<td>4H and 0L</td>
+<td>Tr. con. 14</td>
+<td>All four signals high</td>
+</tr>
+<tr class="row-even"><td>00 001 100</td>
+<td>1H or 1L</td>
+<td>Tr. con. 15</td>
+<td>At least one high signal or
+at least one other low</td>
+</tr>
+<tr class="row-odd"><td>00 001 101</td>
+<td>1H or 2L</td>
+<td>Tr. con. 16</td>
+<td>At least one high signal or
+at least two others low</td>
+</tr>
+<tr class="row-even"><td>00 001 110</td>
+<td>1H or 3L</td>
+<td>Tr. con. 17</td>
+<td>At least one high signal or
+at least three others low</td>
+</tr>
+<tr class="row-odd"><td>00 001 111</td>
+<td>1H or 4L</td>
+<td>Tr. con. 18</td>
+<td>At least one high signal or
+all four others low</td>
+</tr>
+<tr class="row-even"><td>00 010 100</td>
+<td>2H or 1L</td>
+<td>Tr. con. 19</td>
+<td>At least two high signals or
+at least one other low</td>
+</tr>
+<tr class="row-odd"><td>00 010 101</td>
+<td>2H or 2L</td>
+<td>Tr. con. 20</td>
+<td>At least two high signals or
+at least two others low</td>
+</tr>
+<tr class="row-even"><td>00 010 110</td>
+<td>2H or 3L</td>
+<td>Tr. con. 21</td>
+<td>At least two high signals or
+at least three others low</td>
+</tr>
+<tr class="row-odd"><td>00 010 111</td>
+<td>2H or 4L</td>
+<td>Tr. con. 22</td>
+<td>At least two high signals or
+all four others low</td>
+</tr>
+<tr class="row-even"><td>00 011 100</td>
+<td>3H or 1L</td>
+<td>Tr. con. 23</td>
+<td>At least three high signals or
+at least one other low</td>
+</tr>
+<tr class="row-odd"><td>00 011 101</td>
+<td>3H or 2L</td>
+<td>Tr. con. 24</td>
+<td>At least three high signals or
+at least two others low</td>
+</tr>
+<tr class="row-even"><td>00 011 110</td>
+<td>3H or 3L</td>
+<td>Tr. con. 25</td>
+<td>At least three high signals or
+at least three others low</td>
+</tr>
+<tr class="row-odd"><td>00 011 111</td>
+<td>3H or 4L</td>
+<td>Tr. con. 26</td>
+<td>At least three high signals or
+all four others low</td>
+</tr>
+<tr class="row-even"><td>00 100 100</td>
+<td>4H or 1L</td>
+<td>Tr. con. 27</td>
+<td>All four signals high or
+at least one other low</td>
+</tr>
+<tr class="row-odd"><td>00 100 101</td>
+<td>4H or 2L</td>
+<td>Tr. con. 28</td>
+<td>All four signals high or
+at least two others low</td>
+</tr>
+<tr class="row-even"><td>00 100 110</td>
+<td>4H or 3L</td>
+<td>Tr. con. 29</td>
+<td>All four signals high or
+at least three others low</td>
+</tr>
+<tr class="row-odd"><td>00 100 111</td>
+<td>4H or 4L</td>
+<td>Tr. con. 30</td>
+<td>All four signals high or
+all four others low</td>
+</tr>
+<tr class="row-even"><td>01 000 000</td>
+<td>&nbsp;</td>
+<td>Tr. con. 31</td>
+<td>Use external trigger only</td>
+</tr>
+<tr class="row-odd"><td>01 xxx xxx</td>
+<td>&nbsp;</td>
+<td>Tr. con. 32</td>
+<td>Use external trigger and selected
+trigger condition given by the xxx xxx</td>
+</tr>
+<tr class="row-even"><td>1x xxx xxx</td>
+<td>&nbsp;</td>
+<td>Tr. con. 33</td>
+<td>Calibration Mode</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="trigger-pattern">
+<h2>Trigger pattern<a class="headerlink" href="#trigger-pattern" title="Permalink to this headline">¶</a></h2>
+<p>The trigger pattern contains two bytes. The lower byte gives the status of the
+threshold signals at the coincidence. Later on, in the analysis, one can trace
+back which signals(s) made the coincidence happen, taking the trigger
+condition in account. The higher byte contains information about the HiSPARC
+electronic set and the external trigger. Each channel has two hardware
+comparators on the analog input. The input signal is compared with two
+threshold levels: -5 V and -10 V. These levels are beyond the ADC
+digitalization range. The compared signals are also latched at a coincidence.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Trigger pattern bits</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Lower byte, bit 0</td>
+<td>Master channel 1 lower threshold</td>
+</tr>
+<tr class="row-odd"><td>Lower byte, bit 1</td>
+<td>Master channel 1 higher threshold</td>
+</tr>
+<tr class="row-even"><td>Lower byte, bit 2</td>
+<td>Master channel 2 lower threshold</td>
+</tr>
+<tr class="row-odd"><td>Lower byte, bit 3</td>
+<td>Master channel 2 higher threshold</td>
+</tr>
+<tr class="row-even"><td>Lower byte, bit 4</td>
+<td>Slave channel 1 lower threshold</td>
+</tr>
+<tr class="row-odd"><td>Lower byte, bit 5</td>
+<td>Slave channel 1 higher threshold</td>
+</tr>
+<tr class="row-even"><td>Lower byte, bit 6</td>
+<td>Slave channel 2 lower threshold</td>
+</tr>
+<tr class="row-odd"><td>Lower byte, bit 7</td>
+<td>Slave channel 2 higher threshold</td>
+</tr>
+<tr class="row-even"><td>Higher byte, bit 0</td>
+<td>External trigger</td>
+</tr>
+<tr class="row-odd"><td>Higher byte, bit 1</td>
+<td>Master (1) or slave (0)</td>
+</tr>
+<tr class="row-even"><td>Higher byte, bit 2</td>
+<td>Slave present</td>
+</tr>
+<tr class="row-odd"><td>Higher byte, bit 3</td>
+<td>Channel 1 comparator level low</td>
+</tr>
+<tr class="row-even"><td>Higher byte, bit 4</td>
+<td>Channel 1 comparator level high</td>
+</tr>
+<tr class="row-odd"><td>Higher byte, bit 5</td>
+<td>Channel 2 comparator level low</td>
+</tr>
+<tr class="row-even"><td>Higher byte, bit 6</td>
+<td>Channel 2 comparator level high</td>
+</tr>
+<tr class="row-odd"><td>Higher byte, bit 7</td>
+<td>Calibration mode</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="time-windows">
+<h2>Time Windows<a class="headerlink" href="#time-windows" title="Permalink to this headline">¶</a></h2>
+<p>There are three time windows which are placed next to each other. Together
+they form the total time in which the data of an event is stored and readout.</p>
+<a class="reference internal image-reference" href="_images/windows.jpg"><img alt="_images/windows.jpg" src="_images/windows.jpg" style="width: 627px;" /></a>
+<p>The Pre time window can be set from 0 µs to 2 µs.</p>
+<p>The Coincidence time window can be set from 0 µs to 5 µs.</p>
+<p>The Post time window can be set from 0 µs to 8 µs.</p>
+<p>The coincidence window time may not be larger than the post window time. The
+total time may not be larger than 10 us.</p>
+<p>The times are set in 5 ns steps. In other words the contents of the pre time
+window byte must be between 0 and 400. The value of the coincidence window
+byte must be between 0 and 1000. The value of the post time window byte must
+be between 0 and 1600.</p>
+</div>
+<div class="section" id="data-time">
+<h2>Data Time<a class="headerlink" href="#data-time" title="Permalink to this headline">¶</a></h2>
+<p>On a coincidence the momentarily time is latched. The time consists of the GPS
+time and the CTP (Count Ticks between PPS) time.</p>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<p>The sum of the three window bytes cannot exceed 2000 steps of 5 ns. The time
+resolution of one channel is 2.5 ns. The analog input is sampled with a 12 bit
+amplitude resolution and the output words to the computer are 8 bit. This
+means that there are 1.5 times more output words than sampled values per
+channel. Therefore the number of data output bytes is six times (5 ns / 2.5 ns
+x 2 channels x 1.5) the sum of the three window bytes.</p>
+</div>
+<div class="section" id="comparator-data-message">
+<h2>Comparator data message<a class="headerlink" href="#comparator-data-message" title="Permalink to this headline">¶</a></h2>
+<p>As said before: Each channel has two hardware comparators on the analog input.
+The input signal is compared with two threshold levels (defaults are -5 V and
+-10 V). If the input signal exceeds one of the levels, the GPS time is latched
+and the time the signal stays larger than the level is counted in 5 ns steps.
+If one or more comparators detect a input signal larger then their level, a
+message is generated.</p>
+<div class="section" id="comparator-data-structure">
+<h3>Comparator data structure<a class="headerlink" href="#comparator-data-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="16%" />
+<col width="16%" />
+<col width="11%" />
+<col width="11%" />
+<col width="30%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Comparator
+identifier</th>
+<th class="head">GPS
+time
+stamp</th>
+<th class="head">CTP</th>
+<th class="head">Comparator counter
+signal over
+threshold time</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>A2</td>
+<td>1 byte</td>
+<td>7 bytes</td>
+<td>4 bytes</td>
+<td>4 bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="comparator-identifier">
+<h3>Comparator identifier<a class="headerlink" href="#comparator-identifier" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Comparator identifier</th>
+<th class="head">Comparator</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0000 0001</td>
+<td>-5 V level channel 1</td>
+</tr>
+<tr class="row-odd"><td>0000 0010</td>
+<td>-10 V level channel 1</td>
+</tr>
+<tr class="row-even"><td>0000 0100</td>
+<td>-5 V level channel 2</td>
+</tr>
+<tr class="row-odd"><td>0000 1000</td>
+<td>-10 V level channel 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="control-parameters">
+<h2>Control parameters<a class="headerlink" href="#control-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="individually-parameters-control-structure">
+<h3>Individually parameters control structure<a class="headerlink" href="#individually-parameters-control-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="38%" />
+<col width="27%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Data</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>See list</td>
+<td>N bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>Control parameters from identifier 10 to 35 can be written individual by
+LabView.</p>
+</div>
+<div class="section" id="set-control-parameter-list-structure">
+<h3>Set control parameter list structure<a class="headerlink" href="#set-control-parameter-list-structure" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="37%" />
+<col width="30%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Data</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>50</td>
+<td>35 bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>When applying identifier 50 all settings from identifier 10 to 33 and 35 can
+be written in one message.</p>
+</div>
+<div class="section" id="get-control-parameter-list-structure">
+<h3>Get control parameter list structure<a class="headerlink" href="#get-control-parameter-list-structure" title="Permalink to this headline">¶</a></h3>
+<p>(Sent by software)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="53%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>55</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>When applying identifier 55 all settings from identifier 10 to 47 will be sent
+in one message.</p>
+<p>(Return by HiSPARC electronics)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="37%" />
+<col width="30%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Data</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>55</td>
+<td>76 bytes</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="soft-reset">
+<h3>Soft reset<a class="headerlink" href="#soft-reset" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="53%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>FF</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>When applying identifier FF the electronics get a soft reset and the default
+values from the control parameter list will be applied.</p>
+</div>
+<div class="section" id="communication-error">
+<h3>Communication error<a class="headerlink" href="#communication-error" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="40%" />
+<col width="24%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Identifier</th>
+<th class="head">Data</th>
+<th class="head">End</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>99</td>
+<td>55</td>
+<td>1 byte</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>If a message is misunderstood by the electronics, a message with identifier 88
+following with the identifier of the misunderstood message will be sent in
+return. If the header byte is not detected, the data byte will be 99. If an
+identifier of a non existing message is detected, the data byte will be 89. If
+the end byte is not detected, the data byte will be 66.</p>
+</div>
+<div class="section" id="control-parameter-list">
+<h3>Control parameter list<a class="headerlink" href="#control-parameter-list" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="9%" />
+<col width="44%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Identifier</th>
+<th class="head">N bytes</th>
+<th class="head">Description</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>10</td>
+<td>1</td>
+<td>Channel 1 offset adjust positive</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>11</td>
+<td>1</td>
+<td>Channel 1 offset adjust negative</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td>1</td>
+<td>Channel 2 offset adjust positive</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>13</td>
+<td>1</td>
+<td>Channel 2 offset adjust negative</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>14</td>
+<td>1</td>
+<td>Channel 1 gain adjust positive</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>15</td>
+<td>1</td>
+<td>Channel 1 gain adjust negative</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>16</td>
+<td>1</td>
+<td>Channel 2 gain adjust positive</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>17</td>
+<td>1</td>
+<td>Channel 2 gain adjust negative</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>18</td>
+<td>1</td>
+<td>Common offset adjust</td>
+<td>00</td>
+</tr>
+<tr class="row-odd"><td>19</td>
+<td>1</td>
+<td>Full scale adjust</td>
+<td>00</td>
+</tr>
+<tr class="row-even"><td>1A</td>
+<td>1</td>
+<td>Channel 1 integrator time</td>
+<td>FF</td>
+</tr>
+<tr class="row-odd"><td>1B</td>
+<td>1</td>
+<td>Channel 2 integrator time</td>
+<td>FF</td>
+</tr>
+<tr class="row-even"><td>1C</td>
+<td>1</td>
+<td>Comparator threshold low</td>
+<td>58 (-5 V)</td>
+</tr>
+<tr class="row-odd"><td>1D</td>
+<td>1</td>
+<td>Comparator threshold high</td>
+<td>E6 (-10 V)</td>
+</tr>
+<tr class="row-even"><td>1E</td>
+<td>1</td>
+<td>Channel 1 PMT high voltage adjust</td>
+<td>00 (0.3 V)</td>
+</tr>
+<tr class="row-odd"><td>1F</td>
+<td>1</td>
+<td>Channel 2 PMT high voltage adjust</td>
+<td>00 (0.3 V)</td>
+</tr>
+<tr class="row-even"><td>20</td>
+<td>2</td>
+<td>Channel 1 threshold low</td>
+<td>0100 (256 ADC counts)</td>
+</tr>
+<tr class="row-odd"><td>21</td>
+<td>2</td>
+<td>Channel 1 threshold high</td>
+<td>0800 (2048 ADC counts)</td>
+</tr>
+<tr class="row-even"><td>22</td>
+<td>2</td>
+<td>Channel 2 threshold low</td>
+<td>0100 (256 ADC counts)</td>
+</tr>
+<tr class="row-odd"><td>23</td>
+<td>2</td>
+<td>Channel 2 threshold high</td>
+<td>0800 (2048 ADC counts)</td>
+</tr>
+<tr class="row-even"><td>30</td>
+<td>1</td>
+<td>Trigger condition</td>
+<td>08 (at least one high)</td>
+</tr>
+<tr class="row-odd"><td>31</td>
+<td>2</td>
+<td>Pre coincidence time</td>
+<td>00C8 (1 µs)</td>
+</tr>
+<tr class="row-even"><td>32</td>
+<td>2</td>
+<td>Coincidence time</td>
+<td>0190 (2 µs)</td>
+</tr>
+<tr class="row-odd"><td>33</td>
+<td>2</td>
+<td>Post coincidence time</td>
+<td>0190 (2 µs)</td>
+</tr>
+<tr class="row-even"><td>34</td>
+<td>1</td>
+<td>Status electronics</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>35</td>
+<td>4</td>
+<td>Spare bytes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>40</td>
+<td>1</td>
+<td>Channel 1 PMT supply current</td>
+<td>FF corresponds with 25 mA</td>
+</tr>
+<tr class="row-odd"><td>41</td>
+<td>1</td>
+<td>Channel 2 PMT supply current</td>
+<td>FF corresponds with 25 mA</td>
+</tr>
+<tr class="row-even"><td>42</td>
+<td>7</td>
+<td>GPS time stamp</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>43</td>
+<td>8</td>
+<td>GPS position longitude</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>44</td>
+<td>8</td>
+<td>GPS position latitude</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>45</td>
+<td>8</td>
+<td>GPS position altitude</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>46</td>
+<td>4</td>
+<td>Temperture electronics</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>47</td>
+<td>3</td>
+<td>Version number</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>50</td>
+<td>35</td>
+<td>Set control parameter list</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>55</td>
+<td>0</td>
+<td>Get control parameter list</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>88</td>
+<td>1</td>
+<td>Communication error</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>FF</td>
+<td>0</td>
+<td>Reset electronics</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="status-byte">
+<h2>Status byte<a class="headerlink" href="#status-byte" title="Permalink to this headline">¶</a></h2>
+<p>At the moment only bit 0, 1 and 7 are implemented. Bits 6 down to 2 are zero.
+Bit 0 is the master bit and will be high if the electronics have a GPS on
+board. Bit 1 is the slave-present bit and will be high if a slave unit is
+detected.</p>
+</div>
+<div class="section" id="version-number">
+<h2>Version number<a class="headerlink" href="#version-number" title="Permalink to this headline">¶</a></h2>
+<p>The version number has a length of three bytes and consists of two parts: a
+software- and a hardware part. The ten lower bits (9 down to 0) represent a
+hardware serial number. Each unit has his own serial number / address and is
+set by jumpers on the board. The eight higher bits (23 down to 16) represent a
+software version of the code of the field programmable gate array (FPGA). Bits
+15 down to 10 are logical zero.</p>
+</div>
+<div class="section" id="how-to-startup">
+<h2>How to startup<a class="headerlink" href="#how-to-startup" title="Permalink to this headline">¶</a></h2>
+<p>Connect the HiSPARC Electronics via USB with the PC and switch the power of
+the electronics on. Run the LabView program and a master module should be
+recognized as &#8220;HiSPARC II Master&#8221;and a slave module as &#8220;HiSPARC II Slave&#8221; (or
+&#8220;III&#8221; instead of &#8220;II&#8221;). After switching the electronics on or after a soft
+reset, the electronics is in listing mode. This means that there will be no
+data sent from the electronics to the PC. To put the electronics in writing
+mode also, the least significant bit of Spare bytes has to be set. Thus the
+first command for LabView to send must be 99 35 00 00 00 01 66. After this,
+the statusword can be asked by applying a get control parameter list command
+(99 55 66). The statusword can be found in the 32th byte returned data. There
+can be checked if the module is a master (least significant bit - b0 = &#8216;1&#8217;) or
+a slave (b0 = &#8216;0&#8217;). When a slave module is attached to a master, then b1 = &#8216;1&#8217;
+in the statusword of the master. After switching the electronics on or after a
+soft reset, the module does not send one second messages. To put this on, bit
+1 of Spare bytes has to be set also by sending 99 35 00 00 00 03 66. Now, the
+electronics is fully up and running.</p>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>From startup it is not possible to program the GPS reciever. This can be
+enabled by setting bit 2 of Spare bytes to &#8216;1&#8217;. If this bit is set, it is
+possible to program the GPS reciever with the software from Trimble.</li>
+<li>Only a master and slave combination can work like a 4 channel oscilloscoop.
+The master generates a common trigger for the two modules from the data of
+the four inputs. To let a master/master or slave/slave combination work, a
+master has to be forced to work as slave or a slave as master. This can be
+done when bit 3 of Spare bytes is set to &#8216;1&#8217;. This bit alternates the
+master/slave state.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/header.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Message Structures HiSPARC</a><ul>
+<li><a class="reference internal" href="#dataflow-example">Dataflow example</a><ul>
+<li><a class="reference internal" href="#successive-data-to-pc">Successive data to PC</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-calculate-the-right-event-time">How to calculate the right event time</a></li>
+<li><a class="reference internal" href="#hisparc-messages">HiSPARC messages</a><ul>
+<li><a class="reference internal" href="#general-message-structure">General message structure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#one-second-message">One second message</a><ul>
+<li><a class="reference internal" href="#one-second-structure">One second structure</a></li>
+<li><a class="reference internal" href="#gps-time-stamp-structure">GPS Time stamp structure</a></li>
+<li><a class="reference internal" href="#ctp">CTP</a></li>
+<li><a class="reference internal" href="#quantization-error">Quantization Error</a></li>
+<li><a class="reference internal" href="#threshold-counters-over-threshold-information">Threshold counters over threshold information</a></li>
+<li><a class="reference internal" href="#satellite-signal-information">Satellite signal information</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#measured-data-message">Measured data message</a><ul>
+<li><a class="reference internal" href="#measurement-data-structure">Measurement data structure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trigger-condition">Trigger condition</a></li>
+<li><a class="reference internal" href="#trigger-pattern">Trigger pattern</a></li>
+<li><a class="reference internal" href="#time-windows">Time Windows</a></li>
+<li><a class="reference internal" href="#data-time">Data Time</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+<li><a class="reference internal" href="#comparator-data-message">Comparator data message</a><ul>
+<li><a class="reference internal" href="#comparator-data-structure">Comparator data structure</a></li>
+<li><a class="reference internal" href="#comparator-identifier">Comparator identifier</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#control-parameters">Control parameters</a><ul>
+<li><a class="reference internal" href="#individually-parameters-control-structure">Individually parameters control structure</a></li>
+<li><a class="reference internal" href="#set-control-parameter-list-structure">Set control parameter list structure</a></li>
+<li><a class="reference internal" href="#get-control-parameter-list-structure">Get control parameter list structure</a></li>
+<li><a class="reference internal" href="#soft-reset">Soft reset</a></li>
+<li><a class="reference internal" href="#communication-error">Communication error</a></li>
+<li><a class="reference internal" href="#control-parameter-list">Control parameter list</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#status-byte">Status byte</a></li>
+<li><a class="reference internal" href="#version-number">Version number</a></li>
+<li><a class="reference internal" href="#how-to-startup">How to startup</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to HiSPARC firmware&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/messages.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Hans Verkooijen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/messages.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
